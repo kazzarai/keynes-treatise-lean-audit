@@ -4,11 +4,12 @@
 *A Treatise on Probability*, Part II (Chapters 12–17), with exact kernel
 dependency measurements for every verified theorem.**
 
-- **93 / 100** numbered theorems of the reconstruction ledger kernel-checked
-  (all 15 structural anchor theorems; Chapters 15 and 17 complete, Chapter 14
-  at 45/47, Chapter 13 at 25/30)
-- **158 kernel-checked items** in the extensional development, plus the
-  intensional (`KeynesI`) development, across 14 files — zero `sorry`
+- **98 / 100** numbered theorems of the reconstruction ledger kernel-checked
+  (all 15 structural anchor theorems; Chapters 13, 15 and 17 complete,
+  Chapter 14 at 45/47 — the two open items await the English original and
+  `List.Perm` infrastructure respectively)
+- **163 kernel-checked items** in the extensional development, plus the
+  intensional (`KeynesI`) development, across 15 files — zero `sorry`
 - Every verified theorem reports its **exact axiom cut-set** via
   `#print axioms` — the audit measures the gap between what Keynes *cites*
   and what his theorems *need*
@@ -22,9 +23,9 @@ dependency measurements for every verified theorem.**
   form — collated against the source text — and their kernel cut-set is
   **empty of Keynes axioms**: comparative relevance transmission is pure
   ordered-field algebra
-- Canonical, reproducible evidence: [`logs/keynes_audit_canonical_run_20260708_v3.log`](logs/keynes_audit_canonical_run_20260708_v3.log)
+- Canonical, reproducible evidence: [`logs/keynes_audit_canonical_run_20260708_v4.log`](logs/keynes_audit_canonical_run_20260708_v4.log)
   records toolchain, dependency pins, **SHA-256 of every source file**, and
-  the complete output of a single verified run (14/14 files, exit 0)
+  the complete output of a single verified run (15/15 files, exit 0)
 
 by **Kazunari Arai** (新井一成), with Claude (Anthropic).
 Companion paper (working draft): *Formal Verification, Philosophical
@@ -69,9 +70,10 @@ canonical run**.
 | `phases/…phase6c.lean` | **Pedantic encoding**: deep-embedded propositional syntax, truth-table tautology semantics, and **Theorem (12) demoted from axiom to theorem** along Keynes's own route (Def. VIII + both directional forms of Def. X) | KeynesI |
 | `phases/…phase7a.lean` | Conditional-certainty bridge (13.16.1)/(13.16.3) (a reclassification correction — see collation status) | +2 |
 | `phases/…phase7b.lean` | **First source-collated batch** (Sato tr., pp. 168–172): complement-irrelevance (14.30), conditioned relevance transmission (14.33)/(14.33.1)/(14.35), premise combination (14.39)/(14.40) | +6 |
+| `phases/…phase7c.lean` | **Second source-collated batch** (Sato tr., pp. 160–162), completing Chapter 13: strengthened equivalence principle (13.12.1), (13.15.1), the disjunctive/conditional certainty family (13.16)/(13.16.2), conditional equivalence (13.17) | +5 |
 | `prolog/keynes_axioms_v2.pl` | Citation database of Part II: 25 definitions/axioms, 100 theorems, 177 citation relations (SWI-Prolog) | — |
-| `logs/…canonical_run_20260708_v3.log` | **The citable evidence artifact** (14 files) | — |
-| `logs/…canonical_run_20260708.log` | Superseded same-day run over the 12-file corpus (retained as development history) | — |
+| `logs/…canonical_run_20260708_v4.log` | **The citable evidence artifact** (15 files) | — |
+| `logs/…canonical_run_20260708_v3.log`, `logs/…canonical_run_20260708.log` | Superseded same-day runs over earlier corpora (retained as development history) | — |
 | `docs/PHASE6C_DESIGN.md` | Design notes for the intensional migration, incl. planned Popper-function countermodel | — |
 
 ## Reading a dependency list
@@ -123,12 +125,11 @@ canonical run**.
    forms `α/b` are read with ambient evidence as `α/(b∧h)`.
 5. DB nodes (38.1) and (48) state the same two-hypothesis Bayes formula; one
    Lean theorem is credited to both.
-6. The 7 unverified numbered theorems, with reasons: (13.12.1), (13.15.1),
-   (13.16), (13.16.2), (13.17) — reconstruction-ledger glosses damaged,
-   source collation pending; (14.34) — the scan of the translation loses an
-   overbar, leaving the statement ambiguous (one reading collapses to an
-   identity via Def. X symmetry), pending the English original; (14.42.2) —
-   permutation invariance, awaiting `List.Perm` infrastructure.
+6. The 2 unverified numbered theorems, with reasons: (14.34) — the scan of
+   the translation loses an overbar, leaving the statement ambiguous (one
+   reading collapses to an identity via Def. X symmetry), pending the
+   English original; (14.42.2) — permutation invariance, awaiting
+   `List.Perm` infrastructure.
 
 ## Fidelity and collation status (read before quoting "faithful to Keynes")
 
@@ -143,21 +144,29 @@ directions:
 - The ledger's headline for (33)–(35) ("transitivity of relevance") was a
   misleading summary; the source text states *conditioned comparative*
   transmission theorems, now verified as `phase7b` with page references.
+- Most damaged ledger glosses turned out to be **lost negation overbars**:
+  e.g. the ledger's (13.16) read `(h₁+h₂)/h = 1` (false as stated), while
+  the source reads `(h₁+h̄₂)/h = 1`. Collation recovered and `phase7c`
+  verified the entire damaged Chapter-13 group.
 - The ledger **undercounts** the original's sub-numbered items:
   (29.1)–(29.3), (33.1), (38.2), (40.1) exist in the source but not in the
   ledger. One of these, (33.1), is verified here as an extra-ledger item.
+- A notable corpus-level result: Keynes's Ax. (ii) (the equality axiom) is
+  **never load-bearing** in any of the 98 verified dependency sets — even
+  for (13.12.1), whose printed proof invokes it explicitly, the kernel
+  route closes through certainty propagation (13.9) plus the equivalence
+  theorem (13.12).
 - A systematic collation pass over all verified statements (page reference
   per theorem) is the gate we have set ourselves for submitting the
   companion paper.
 
 ## Roadmap (v1.1)
 
-1. Collate and formalise the five damaged Chapter-13 glosses (7c).
-2. Resolve (14.34) against the English original (7d).
-3. `List.Perm` infrastructure for (14.42.2) (7e).
-4. **Full source-collation pass** over all verified statements (7f) —
+1. Resolve (14.34) against the English original (7d).
+2. `List.Perm` infrastructure for (14.42.2) (7e).
+3. **Full source-collation pass** over all verified statements (7f) —
    completion of this item is the submission gate for the companion paper.
-5. Popper-function countermodel certifying that the degeneracy theorem is
+4. Popper-function countermodel certifying that the degeneracy theorem is
    unprovable in the pedantic encoding (6c-model).
 
 ## Citation
