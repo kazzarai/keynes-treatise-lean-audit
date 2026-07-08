@@ -1,0 +1,12 @@
+# Minimal lake project for the Keynes Part II kernel audit.
+# The Mathlib revision is pinned by lake-manifest.json (and repeated here).
+# Usage:
+#   lake exe cache get
+#   lake env lean phases/keynes_part_ii_<phase>.lean
+
+name = "keynes_audit"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "5e932f97dd25535344f80f9dd8da3aab83df0fe6"
