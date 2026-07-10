@@ -4,12 +4,13 @@
 *A Treatise on Probability*, Part II (Chapters 12–17), with exact kernel
 dependency measurements for every verified theorem.**
 
-- **98 / 100** numbered theorems of the reconstruction ledger kernel-checked
-  (all 15 structural anchor theorems; Chapters 13, 15 and 17 complete,
-  Chapter 14 at 45/47 — the two open items await the English original and
-  `List.Perm` infrastructure respectively)
-- **163 kernel-checked items** in the extensional development, plus the
-  intensional (`KeynesI`) development, across 15 files — zero `sorry`
+- **100 / 100** numbered theorems of the reconstruction ledger
+  kernel-checked — **every chapter complete** (13: 30/30, 14: 47/47,
+  15: 6/6, 17: 17/17), with one annotation: (14.34) is verified in
+  corrected form, its printed form being machine-refuted (see **Errata**)
+- **169 kernel-checked items** in the extensional development, plus the
+  intensional (`KeynesI`) development and the erratum countermodel, across
+  17 files — zero `sorry`
 - Every verified theorem reports its **exact axiom cut-set** via
   `#print axioms` — the audit measures the gap between what Keynes *cites*
   and what his theorems *need*
@@ -23,9 +24,9 @@ dependency measurements for every verified theorem.**
   form — collated against the source text — and their kernel cut-set is
   **empty of Keynes axioms**: comparative relevance transmission is pure
   ordered-field algebra
-- Canonical, reproducible evidence: [`logs/keynes_audit_canonical_run_20260708_v4.log`](logs/keynes_audit_canonical_run_20260708_v4.log)
+- Canonical, reproducible evidence: [`logs/keynes_audit_canonical_run_20260709_v5.log`](logs/keynes_audit_canonical_run_20260709_v5.log)
   records toolchain, dependency pins, **SHA-256 of every source file**, and
-  the complete output of a single verified run (15/15 files, exit 0)
+  the complete output of a single verified run (17/17 files, exit 0)
 
 by **Kazunari Arai** (新井一成), with Claude (Anthropic).
 Companion paper (working draft): *Formal Verification, Philosophical
@@ -71,9 +72,11 @@ canonical run**.
 | `phases/…phase7a.lean` | Conditional-certainty bridge (13.16.1)/(13.16.3) (a reclassification correction — see collation status) | +2 |
 | `phases/…phase7b.lean` | **First source-collated batch** (Sato tr., pp. 168–172): complement-irrelevance (14.30), conditioned relevance transmission (14.33)/(14.33.1)/(14.35), premise combination (14.39)/(14.40) | +6 |
 | `phases/…phase7c.lean` | **Second source-collated batch** (Sato tr., pp. 160–162), completing Chapter 13: strengthened equivalence principle (13.12.1), (13.15.1), the disjunctive/conditional certainty family (13.16)/(13.16.2), conditional equivalence (13.17) | +5 |
+| `phases/…phase7d.lean` | **The (14.34) erratum, resolved both ways**: machine proof that the printed bridge's RHS is trivialised by Keynes's own Def. X; an axiom-free rational countermodel (weights 2,1,1,2) falsifying the printed equation while satisfying all hypotheses; and the **corrected (34)** — a rearrangement of the inverse principle (38) — verified | +1 |
+| `phases/…phase7e.lean` | General permutation rule (14.42.2) via `List.Perm` induction — the ledger's final item | +1 |
 | `prolog/keynes_axioms_v2.pl` | Citation database of Part II: 25 definitions/axioms, 100 theorems, 177 citation relations (SWI-Prolog) | — |
-| `logs/…canonical_run_20260708_v4.log` | **The citable evidence artifact** (15 files) | — |
-| `logs/…canonical_run_20260708_v3.log`, `logs/…canonical_run_20260708.log` | Superseded same-day runs over earlier corpora (retained as development history) | — |
+| `logs/…canonical_run_20260709_v5.log` | **The citable evidence artifact** (17 files) | — |
+| `logs/…canonical_run_20260708_v4.log`, `…_v3.log`, `…20260708.log` | Superseded runs over earlier corpora (retained as development history) | — |
 | `docs/PHASE6C_DESIGN.md` | Design notes for the intensional migration, incl. planned Popper-function countermodel | — |
 
 ## Reading a dependency list
@@ -125,11 +128,34 @@ canonical run**.
    forms `α/b` are read with ambient evidence as `α/(b∧h)`.
 5. DB nodes (38.1) and (48) state the same two-hypothesis Bayes formula; one
    Lean theorem is credited to both.
-6. The 2 unverified numbered theorems, with reasons: (14.34) — the scan of
-   the translation loses an overbar, leaving the statement ambiguous (one
-   reading collapses to an identity via Def. X symmetry), pending the
-   English original; (14.42.2) — permutation invariance, awaiting
-   `List.Perm` infrastructure.
+6. Every ledger item is verified; one carries an annotation. (14.34) is
+   verified in its **corrected** form — the printed form is machine-refuted
+   (see Errata below).
+
+## Errata in the source, machine-certified
+
+Collation against the English original (Project Gutenberg #32625, a
+faithful transcription of the 1921 Macmillan edition) and the Japanese
+Collected-Writings translation shows both editions agree — so the following
+are defects of the source itself, not of any edition:
+
+- **(14.33), prose vs. proof**: the statement reads "h₁ is not **more**
+  favourable to a/hx than x is to a/hh₁", while Keynes's own printed proof
+  requires (and we verify) "not **less**". The inequality direction in the
+  prose is a slip; `phase7b` formalises the proof-side (true) form.
+- **(14.34), the bridge display**: the printed equation's RHS is
+  trivialised to 1 by Keynes's own Def. X applied on evidence *ha*
+  (machine proof: `th_34_printed_rhs_trivial`), while its LHS telescopes to
+  (a/hh₁)/(a/hx) ≠ 1 in general — an axiom-free rational countermodel
+  (weights 2,1,1,2) satisfies every hypothesis of (34) as printed and
+  falsifies both the display and the theorem
+  (`Erratum34Countermodel`, all checks by `norm_num`). The correct bridge,
+
+  > (a/hh₁)/(a/hx) = (h₁/ah)/(h₁/h) · (x/h)/(x/ah),
+
+  is a rearrangement of the inverse principle (38) — the diagnosis is that
+  two evidence subscripts were interchanged (h ↔ ha). The corrected
+  theorem is verified as `th_14_34`.
 
 ## Fidelity and collation status (read before quoting "faithful to Keynes")
 
@@ -162,19 +188,27 @@ directions:
 
 ## Roadmap (v1.1)
 
-1. Resolve (14.34) against the English original (7d).
-2. `List.Perm` infrastructure for (14.42.2) (7e).
-3. **Full source-collation pass** over all verified statements (7f) —
+1. **Full source-collation pass** over all verified statements (7f) — a
+   page reference for every theorem, plus a systematic related-work survey;
    completion of this item is the submission gate for the companion paper.
-4. Popper-function countermodel certifying that the degeneracy theorem is
+   (Chapter 16, the observations chapter, joins the collation scope: it
+   contains Keynes's named prose restatements of the key theorems.)
+2. Popper-function countermodel certifying that the degeneracy theorem is
    unprovable in the pedantic encoding (6c-model).
+3. External kernel re-check of the corpus via an independent verifier, to
+   extend the trust chain beyond the shipping kernel.
+4. **Phase 8 (research direction): the weight of argument.** Axiomatise
+   Keynes's *weight* (Treatise, Ch. VI) alongside the audited probability
+   calculus and formalise its role as the bridge to the *General Theory*'s
+   treatment of confidence (GT Ch. 12) — the point where the boundary view
+   meets macroeconomics.
 
 ## Citation
 
 ```
 Arai, K. (2026). Keynes's Treatise on Probability, Part II: a Lean 4 kernel
 audit. https://github.com/kazzarai/keynes-treatise-lean-audit
-(canonical run v3, 2026-07-08, Lean 4 v4.29.1)
+(canonical run v5, 2026-07-09, Lean 4 v4.29.1)
 ```
 
 ## License
