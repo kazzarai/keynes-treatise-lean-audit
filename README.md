@@ -8,9 +8,15 @@ dependency measurements for every verified theorem.**
   kernel-checked — **every chapter complete** (13: 30/30, 14: 47/47,
   15: 6/6, 17: 17/17), with one annotation: (14.34) is verified in
   corrected form, its printed form being machine-refuted (see **Errata**)
-- **169 kernel-checked items** in the extensional development, plus the
-  intensional (`KeynesI`) development and the erratum countermodel, across
-  17 files — zero `sorry`
+- **189 kernel-checked `#print axioms` verdicts** across **19 files**
+  (extensional development, intensional/`KeynesI` development, erratum
+  countermodel, and the source-form batch `7g`/`7h`) — zero `sorry`
+- **Full source collation completed (July 2026)**: every ledger row collated
+  against the 1921 text (Gutenberg transcription, line-anchored) and the
+  Collected Writings translation (page images); Chapter 17 additionally
+  collated against Boole's *Laws of Thought* (1854). Fidelity tally:
+  **93 exact / 6 faithful-core / 1 machine-certified erratum** — no verified
+  theorem withdrawn. Row-by-row index: [`docs/COLLATION_INDEX_7F.md`](docs/COLLATION_INDEX_7F.md)
 - Every verified theorem reports its **exact axiom cut-set** via
   `#print axioms` — the audit measures the gap between what Keynes *cites*
   and what his theorems *need*
@@ -24,9 +30,9 @@ dependency measurements for every verified theorem.**
   form — collated against the source text — and their kernel cut-set is
   **empty of Keynes axioms**: comparative relevance transmission is pure
   ordered-field algebra
-- Canonical, reproducible evidence: [`logs/keynes_audit_canonical_run_20260709_v5.log`](logs/keynes_audit_canonical_run_20260709_v5.log)
+- Canonical, reproducible evidence: [`logs/keynes_audit_canonical_run_20260714_v6.log`](logs/keynes_audit_canonical_run_20260714_v6.log)
   records toolchain, dependency pins, **SHA-256 of every source file**, and
-  the complete output of a single verified run (17/17 files, exit 0)
+  the complete output of a single verified run (19/19 files, exit 0)
 
 by **Kazunari Arai** (新井一成), with Claude (Anthropic).
 Companion paper (working draft): *Formal Verification, Philosophical
@@ -74,9 +80,12 @@ canonical run**.
 | `phases/…phase7c.lean` | **Second source-collated batch** (Sato tr., pp. 160–162), completing Chapter 13: strengthened equivalence principle (13.12.1), (13.15.1), the disjunctive/conditional certainty family (13.16)/(13.16.2), conditional equivalence (13.17) | +5 |
 | `phases/…phase7d.lean` | **The (14.34) erratum, resolved both ways**: machine proof that the printed bridge's RHS is trivialised by Keynes's own Def. X; an axiom-free rational countermodel (weights 2,1,1,2) falsifying the printed equation while satisfying all hypotheses; and the **corrected (34)** — a rearrangement of the inverse principle (38) — verified | +1 |
 | `phases/…phase7e.lean` | General permutation rule (14.42.2) via `List.Perm` induction — the ledger's final item | +1 |
+| `phases/…phase7g.lean` | **Source-exact forms I** (from the 7f collation queue): full inclusion–exclusion (24.4)/(24.5), chained-exclusive additivity (24.6)/(24.7), total probability (25), posterior normalisation (25.1), overbar forms (26)/(26.1)/(28)/(28.1), the p=1/2 special case (40.1), the general m,n form of (50) on the intensional carrier (with `ax_mae` renamed **`ax_vii`** per the collation), and Keynes's six-equation elimination example (55) — verified at the substrate floor | +13 |
+| `phases/…phase7h.lean` | **Source-exact forms II**: Johnson's multi-evidence formulae as **division-free product identities** — (46.1) at `{Pr, Def. X (both forms)}` + floor, no non-vanishing guards — (47.1), (48), (48.1), the (49) exchange step and (49.1) mixture core; the chain-complement recursion of (57)(i); and Boole's Problem X in full: closed form, the *true* (58.2) (log-convexity of the predictive sequence), and the posterior (58.3), with Boole's tacit assumption as the named hypothesis `NegChainIndep` | +14 |
 | `prolog/keynes_axioms_v2.pl` | Citation database of Part II: 25 definitions/axioms, 100 theorems, 177 citation relations (SWI-Prolog) | — |
-| `logs/…canonical_run_20260709_v5.log` | **The citable evidence artifact** (17 files) | — |
-| `logs/…canonical_run_20260708_v4.log`, `…_v3.log`, `…20260708.log` | Superseded runs over earlier corpora (retained as development history) | — |
+| `docs/COLLATION_INDEX_7F.md` | **Row-by-row collation index**: page/line anchor and fidelity status for every ledger row; errata catalogue; Boole (1854) attribution map | — |
+| `logs/…canonical_run_20260714_v6.log` | **The citable evidence artifact** (19 files) | — |
+| `logs/…canonical_run_20260709_v5.log`, `…_v4.log`, `…_v3.log`, `…20260708.log` | Superseded runs over earlier corpora (retained as development history) | — |
 | `docs/PHASE6C_DESIGN.md` | Design notes for the intensional migration, incl. planned Popper-function countermodel | — |
 
 ## Reading a dependency list
@@ -87,7 +96,7 @@ canonical run**.
 ```
 
 - `propext, Classical.choice, Quot.sound` — the **floor**: Lean's own axioms
-  (the classical-extensional substrate). Across all 12 files it never grows:
+  (the classical-extensional substrate). Across all 19 files it never grows:
   no theorem needs a fourth kernel axiom. Recursors (`List.rec` etc.) never
   appear — induction and convergence are consumed by the kernel without
   leaving an axiom trace.
@@ -178,21 +187,28 @@ directions:
   (29.1)–(29.3), (33.1), (38.2), (40.1) exist in the source but not in the
   ledger. One of these, (33.1), is verified here as an extra-ledger item.
 - A notable corpus-level result: Keynes's Ax. (ii) (the equality axiom) is
-  **never load-bearing** in any of the 98 verified dependency sets — even
+  **never load-bearing** in any verified dependency set in the corpus — even
   for (13.12.1), whose printed proof invokes it explicitly, the kernel
   route closes through certainty propagation (13.9) plus the equivalence
   theorem (13.12).
-- A systematic collation pass over all verified statements (page reference
-  per theorem) is the gate we have set ourselves for submitting the
-  companion paper.
+- **The systematic collation pass (7f) is complete** (July 2026): a page and
+  line anchor for every ledger row, with fidelity tally
+  **93 exact / 6 faithful-core / 0 relabelled / 1 erratum** after the
+  source-form batch `phase7g`/`phase7h` (canonical run v6). The 14 items the
+  collation had flagged as mislabelled are all resolved; the starkest case —
+  the ledger's (58.2), which proved the *decrease* of the joint chain product
+  where the source asserts the *increase* of the predictive ratio — is now
+  verified in its true form (`th_17_58_2_src`, log-convexity), with the old
+  lemma retained as an auxiliary. See `docs/COLLATION_INDEX_7F.md`.
 
-## Roadmap (v1.1)
+## Roadmap (v1.2)
 
-1. **Full source-collation pass** over all verified statements (7f) — a
-   page reference for every theorem, plus a systematic related-work survey;
-   completion of this item is the submission gate for the companion paper.
-   (Chapter 16, the observations chapter, joins the collation scope: it
-   contains Keynes's named prose restatements of the key theorems.)
+1. ~~**Full source-collation pass** over all verified statements (7f)~~ —
+   **done** (July 2026; see Fidelity section and `docs/COLLATION_INDEX_7F.md`).
+   Remaining collation extension: Chapter 16 (the observations chapter),
+   which contains Keynes's named prose restatements of the key theorems;
+   and the six remaining faithful-core items ((44), (46), (46.2), (49)
+   full monotone sequence, (57.1)/(57.3) full Π-coefficient forms).
 2. Popper-function countermodel certifying that the degeneracy theorem is
    unprovable in the pedantic encoding (6c-model).
 3. External kernel re-check of the corpus via an independent verifier, to
@@ -208,7 +224,7 @@ directions:
 ```
 Arai, K. (2026). Keynes's Treatise on Probability, Part II: a Lean 4 kernel
 audit. https://github.com/kazzarai/keynes-treatise-lean-audit
-(canonical run v5, 2026-07-09, Lean 4 v4.29.1)
+(release v1.0; canonical run v6, 2026-07-15, Lean 4 v4.29.1)
 ```
 
 ## License
