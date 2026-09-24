@@ -8,10 +8,13 @@ dependency measurements for every verified theorem.**
   kernel-checked — **every chapter complete** (13: 30/30, 14: 47/47,
   15: 6/6, 17: 17/17), with one annotation: (14.34) is verified in
   corrected form, its printed form being machine-refuted (see **Errata**)
-- **228 kernel-checked `#print axioms` verdicts** across **22 files**
+- **236 kernel-checked `#print axioms` verdicts** across **23 files**
+  (recount against the log: the v1.1 headline said 228 for 22 files; the
+  v7 log contains 227 verdict lines — phase 8a prints 13 verdicts for its
+  14 theorems — so v8 = 227 + 9)
   (extensional development, intensional/`KeynesI` development, erratum
-  countermodel, the source-form batch `7g`/`7h`, and the weight trilogy
-  `8a`–`8c`) — zero `sorry`
+  countermodel, the source-form batch `7g`/`7h`, the weight trilogy
+  `8a`–`8c`, and the Ch. VI axiom-anchor file `8d`) — zero `sorry`
 - **Full source collation completed (July 2026)**: every ledger row collated
   against the 1921 text (Gutenberg transcription, line-anchored) and the
   Collected Writings translation (page images); Chapter 17 additionally
@@ -40,11 +43,11 @@ dependency measurements for every verified theorem.**
   form — collated against the source text — and their kernel cut-set is
   **empty of Keynes axioms**: comparative relevance transmission is pure
   ordered-field algebra
-- Canonical, reproducible evidence: [`logs/keynes_audit_canonical_run_20260801_v7.log`](logs/keynes_audit_canonical_run_20260801_v7.log)
+- Canonical, reproducible evidence: [`logs/keynes_audit_canonical_run_20260925_v8.log`](logs/keynes_audit_canonical_run_20260925_v8.log)
   records toolchain, dependency pins, **SHA-256 of every source file**, and
-  the complete output of a single verified run (**22/22 files, exit 0**);
-  regenerate with `bash run_v7.sh`. The v6 log (19 files) is retained as
-  development history
+  the complete output of a single verified run (**23/23 files, exit 0**);
+  regenerate with `bash run_v8.sh`. The v7 log (22 files) and v6 log
+  (19 files) are retained as development history
 
 by **Kazunari Arai** (新井一成), with Claude (Anthropic).
 Companion paper (working draft): *Formal Verification, Philosophical
@@ -63,7 +66,7 @@ in `lean-toolchain` / `lake-manifest.json`.
 # inside a lake project using the pinned toolchain + manifest
 lake exe cache get                     # fetch prebuilt Mathlib oleans
 lake env lean phases/keynes_part_ii_pilot.lean     # or any other phase file
-bash run_v7.sh                         # full canonical run (SHA-256-bound log)
+bash run_v8.sh                         # full canonical run (SHA-256-bound log)
 ```
 
 Expected: exit code 0; warnings such as `unused variable` are benign. The
@@ -95,14 +98,15 @@ canonical run**.
 | `phases/…phase7e.lean` | General permutation rule (14.42.2) via `List.Perm` induction — the ledger's final item | +1 |
 | `phases/…phase7g.lean` | **Source-exact forms I** (from the 7f collation queue): full inclusion–exclusion (24.4)/(24.5), chained-exclusive additivity (24.6)/(24.7), total probability (25), posterior normalisation (25.1), overbar forms (26)/(26.1)/(28)/(28.1), the p=1/2 special case (40.1), the general m,n form of (50) on the intensional carrier (with `ax_mae` renamed **`ax_vii`** per the collation), and Keynes's six-equation elimination example (55) — verified at the substrate floor | +13 |
 | `phases/…phase7h.lean` | **Source-exact forms II**: Johnson's multi-evidence formulae as **division-free product identities** — (46.1) at `{Pr, Def. X (both forms)}` + floor, no non-vanishing guards — (47.1), (48), (48.1), the (49) exchange step and (49.1) mixture core; the chain-complement recursion of (57)(i); and Boole's Problem X in full: closed form, the *true* (58.2) (log-convexity of the predictive sequence), and the posterior (58.3), with Boole's tacit assumption as the named hypothesis `NegChainIndep` | +14 |
-| `phases/…phase8a.lean` | **Ch. 26 coefficient c** = 2pw/((1+q)(1+w)): risk identities R = pqA = qE, Czuber's reinsurance series, boundary values, footnote comparative statics F1–F3, the F4 adjudication (printed-direction theorem + amended-direction witnesses), superadditivity | +14 |
+| `phases/…phase8a.lean` | **Ch. 26 coefficient c** = 2pw/((1+q)(1+w)): risk identities R = pqA = qE, Czuber's reinsurance series, boundary values, footnote comparative statics F1–F3, the F4 adjudication (printed-direction theorem + amended-direction witnesses), superadditivity | +13 |
 | `phases/…phase8b.lean` | **Short-term probability weighting** W = p/(p+H) (Murata 2010; Takayabu–Arai 2012): the 2012 subadditivity conjecture resolved — refutation at the center pair (ln 2 > 1/2; interior witness; base-2 twin) and the regional theorem p₁+p₂ ≤ e/(1+e) (derivative-free); subcertainty central/edge split; inverse-S certified | +16 |
 | `phases/…phase8c.lean` | **Brady weight** V = K/(K+I): range, K-monotonicity (subjective time), the Brady limit I→∞, the intersubjective-time counterexample and its general form | +9 |
+| `phases/…phase8d.lean` | **Ch. VI anchors** (first Part-I file): Keynes's own weight principles as axioms over a primitive `V` — monotonicity (§1), complement symmetry (§3), mutual-inference equivalence (§4) — with relevance defined as strict weight-increase (§2); the §3 dichotomy `th_vi_2` and Keynes's own three-alternative chain `th_vi_4`. **Load datum: the chain's kernel cut-set is `{Pr, V, ax_vi_compl, ax_vi_equiv}` — the monotonicity axiom is idle in Keynes's own Ch. VI derivation.** ℚ certificates for the §6 numerical example and urn pair; bridge to phase 8c (the §1 thesis holds when new evidence raises K alone, and has an intersubjective counterexample) | +9 |
 | `prolog/keynes_axioms_v2.pl` | Citation database of Part II: 25 definitions/axioms, 100 theorems, 177 citation relations (SWI-Prolog) | — |
 | `docs/COLLATION_INDEX_7F.md` | **Row-by-row collation index**: page/line anchor and fidelity status for every ledger row; errata catalogue; Boole (1854) attribution map | — |
-| `logs/…canonical_run_20260801_v7.log` | **The citable evidence artifact** (22 files) | — |
-| `run_v7.sh` | Regenerates the canonical log over `phases/*.lean` (SHA-256-bound) | — |
-| `logs/…canonical_run_20260714_v6.log`, `…_v5.log`, `…_v4.log`, `…_v3.log`, `…20260708.log` | Superseded runs over earlier corpora (retained as development history) | — |
+| `logs/…canonical_run_20260925_v8.log` | **The citable evidence artifact** (23 files) | — |
+| `run_v8.sh` | Regenerates the canonical log over `phases/*.lean` (SHA-256-bound) | — |
+| `logs/…canonical_run_20260801_v7.log`, `…20260714_v6.log`, `…_v5.log`, `…_v4.log`, `…_v3.log`, `…20260708.log` | Superseded runs over earlier corpora (retained as development history) | — |
 | `docs/PHASE6C_DESIGN.md` | Design notes for the intensional migration, incl. planned Popper-function countermodel | — |
 
 ## Reading a dependency list
@@ -113,11 +117,14 @@ canonical run**.
 ```
 
 - `propext, Classical.choice, Quot.sound` — the **floor**: Lean's own axioms
-  (the classical-extensional substrate). Across all 22 files it never grows:
+  (the classical-extensional substrate). Across all 23 files it never grows:
   no theorem needs a fourth kernel axiom. Recursors (`List.rec` etc.) never
   appear — induction and convergence are consumed by the kernel without
-  leaving an axiom trace. The phase-8 files declare no `Keynes.*` axioms at
-  all — the weight layer is pure real analysis over the floor.
+  leaving an axiom trace. The phase-8a–8c files declare no `Keynes.*` axioms at
+  all — the weight layer is pure real analysis over the floor. Phase 8d is the
+  exception by design: it declares Keynes's Ch. VI weight principles as named
+  axioms (`KeynesWeightVI.ax_vi_*`) precisely so that `#print axioms` can
+  report which of them his own derivation consumes.
 - `Keynes.Pr` — the primitive probability relation (`Prop → Prop → ℝ`;
   no measure theory is imported anywhere).
 - The rest — the Keynes axioms actually load-bearing. Compare with the
@@ -223,7 +230,7 @@ directions:
   (see the file headers for verbatim attribution, including the first
   formulation of W in Murata 2010).
 
-## Roadmap (v1.3)
+## Roadmap (v1.4)
 
 1. ~~**Full source-collation pass** over all verified statements (7f)~~ —
    **done** (July 2026; see Fidelity section and `docs/COLLATION_INDEX_7F.md`).
@@ -235,11 +242,12 @@ directions:
    unprovable in the pedantic encoding (6c-model).
 3. External kernel re-check of the corpus via an independent verifier, to
    extend the trust chain beyond the shipping kernel.
-4. ~~Phase 8: the weight of argument~~ — **done in substance (August
-   2026)**: the Ch. 26 coefficient, the 2012 weighting function (conjecture
-   resolved) and Brady's V are verified (the weight trilogy, canonical run
-   v7). Remaining: source-exact anchoring of the Ch. VI prose claims
-   (phase 8d) and the GT Ch. 12 bridge.
+4. ~~Phase 8: the weight of argument~~ — **done (August–September 2026)**:
+   the Ch. 26 coefficient, the 2012 weighting function (conjecture
+   resolved), Brady's V, and the Ch. VI axiom anchors (8d, first Part-I
+   file: the monotonicity principle is idle in Keynes's own derivation) are
+   verified (canonical run v8). Remaining: the GT Ch. 12 bridge.
+   A Keynes–Ramsey track is flagged in `ramsey/` (scope only, no results).
 5. Phase 9: replicate and adjudicate the 2012 Prolog structural analysis
    (the derivation-order lattice question, the INRC-group embedding, and
    ledger provenance from the thesis appendices).
@@ -249,7 +257,7 @@ directions:
 ```
 Arai, K. (2026). Keynes's Treatise on Probability, Part II: a Lean 4 kernel
 audit. https://github.com/kazzarai/keynes-treatise-lean-audit
-(release v1.1; canonical run v7, 2026-08-01, Lean 4 v4.29.1)
+(release v1.2; canonical run v8, 2026-09-25, Lean 4 v4.29.1)
 ```
 
 ## License
