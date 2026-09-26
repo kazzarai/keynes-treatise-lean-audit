@@ -8,19 +8,25 @@ dependency measurements for every verified theorem.**
   kernel-checked — **every chapter complete** (13: 30/30, 14: 47/47,
   15: 6/6, 17: 17/17), with one annotation: (14.34) is verified in
   corrected form, its printed form being machine-refuted (see **Errata**)
-- **236 kernel-checked `#print axioms` verdicts** across **23 files**
-  (recount against the log: the v1.1 headline said 228 for 22 files; the
-  v7 log contains 227 verdict lines — phase 8a prints 13 verdicts for its
-  14 theorems — so v8 = 227 + 9)
+- **261 kernel-checked `#print axioms` verdicts** across **24 files**
+  (v8 = 236; phase 7i adds 25)
   (extensional development, intensional/`KeynesI` development, erratum
   countermodel, the source-form batch `7g`/`7h`, the weight trilogy
-  `8a`–`8c`, and the Ch. VI axiom-anchor file `8d`) — zero `sorry`
-- **Full source collation completed (July 2026)**: every ledger row collated
-  against the 1921 text (Gutenberg transcription, line-anchored) and the
-  Collected Writings translation (page images); Chapter 17 additionally
-  collated against Boole's *Laws of Thought* (1854). Fidelity tally:
-  **93 exact / 6 faithful-core / 1 machine-certified erratum** — no verified
-  theorem withdrawn. Row-by-row index: [`docs/COLLATION_INDEX_7F.md`](docs/COLLATION_INDEX_7F.md)
+  `8a`–`8c`, the Ch. VI axiom-anchor file `8d`, and the 1921-image
+  re-collation file `7i`) — zero `sorry`
+- **Collation against the 1921 Macmillan page images (September 2026)**:
+  every ledger row re-read on the scanned first edition (Cornell copy,
+  archive.org `cu31924014110435`), which supersedes the July collation
+  (Gutenberg transcription + Collected Writings translation). The image pass
+  found 13 Lean statements that deviated from the printed propositions and
+  five printed propositions that are false; both are resolved in `phase7i`.
+  Fidelity tally (100 ledger rows): **86 verified as printed / 4 core
+  verified (general form not assembled) / 1 index inconsistency (consistent
+  form verified) / 4 strict inequalities (inclusive form verified, strictness
+  refuted) / 5 printed propositions machine-refuted and verified in corrected
+  form**. No theorem withdrawn. Row-by-row index:
+  [`docs/COLLATION_INDEX_1921.md`](docs/COLLATION_INDEX_1921.md)
+  (the July index `docs/COLLATION_INDEX_7F.md` is retained as history)
 - **The weight trilogy (August 2026, `phase8a`–`8c`)**: Chapter 26's
   conventional coefficient *c* (footnote comparative statics F1–F3 verified,
   the F4 non-comparability adjudicated, superadditivity), the short-term
@@ -43,10 +49,10 @@ dependency measurements for every verified theorem.**
   form — collated against the source text — and their kernel cut-set is
   **empty of Keynes axioms**: comparative relevance transmission is pure
   ordered-field algebra
-- Canonical, reproducible evidence: [`logs/keynes_audit_canonical_run_20260925_v8.log`](logs/keynes_audit_canonical_run_20260925_v8.log)
+- Canonical, reproducible evidence: [`logs/keynes_audit_canonical_run_20260926_v9.log`](logs/keynes_audit_canonical_run_20260926_v9.log)
   records toolchain, dependency pins, **SHA-256 of every source file**, and
-  the complete output of a single verified run (**23/23 files, exit 0**);
-  regenerate with `bash run_v8.sh`. The v7 log (22 files) and v6 log
+  the complete output of a single verified run (**24/24 files, exit 0**);
+  regenerate with `bash run_v9.sh`. The v8 log (23 files), v7 log (22 files) and v6 log
   (19 files) are retained as development history
 
 by **Kazunari Arai** (新井一成), with Claude (Anthropic).
@@ -66,7 +72,7 @@ in `lean-toolchain` / `lake-manifest.json`.
 # inside a lake project using the pinned toolchain + manifest
 lake exe cache get                     # fetch prebuilt Mathlib oleans
 lake env lean phases/keynes_part_ii_pilot.lean     # or any other phase file
-bash run_v8.sh                         # full canonical run (SHA-256-bound log)
+bash run_v9.sh                         # full canonical run (SHA-256-bound log)
 ```
 
 Expected: exit code 0; warnings such as `unused variable` are benign. The
@@ -104,9 +110,10 @@ canonical run**.
 | `phases/…phase8d.lean` | **Ch. VI anchors** (first Part-I file): Keynes's own weight principles as axioms over a primitive `V` — monotonicity (§1), complement symmetry (§3), mutual-inference equivalence (§4) — with relevance defined as strict weight-increase (§2); the §3 dichotomy `th_vi_2` and Keynes's own three-alternative chain `th_vi_4`. **Load datum: the chain's kernel cut-set is `{Pr, V, ax_vi_compl, ax_vi_equiv}` — the monotonicity axiom is idle in Keynes's own Ch. VI derivation.** ℚ certificates for the §6 numerical example and urn pair; bridge to phase 8c (the §1 thesis holds when new evidence raises K alone, and has an intersubjective counterexample) | +9 |
 | `prolog/keynes_axioms_v2.pl` | Citation database of Part II: 25 definitions/axioms, 100 theorems, 177 citation relations (SWI-Prolog) | — |
 | `docs/COLLATION_INDEX_7F.md` | **Row-by-row collation index**: page/line anchor and fidelity status for every ledger row; errata catalogue; Boole (1854) attribution map | — |
-| `logs/…canonical_run_20260925_v8.log` | **The citable evidence artifact** (23 files) | — |
-| `run_v8.sh` | Regenerates the canonical log over `phases/*.lean` (SHA-256-bound) | — |
-| `logs/…canonical_run_20260801_v7.log`, `…20260714_v6.log`, `…_v5.log`, `…_v4.log`, `…_v3.log`, `…20260708.log` | Superseded runs over earlier corpora (retained as development history) | — |
+| `phases/…phase7i.lean` | **1921-image re-collation**: the 13 statements the image pass found deviating from print, re-stated and verified in their printed form — (2)(3) disjunctive range forms, (10) three-term equality, (11) conclusion a/h=1, (37) chain-conditional hypothesis, (38.1) general two-alternative form, (43) separative-factor identities, (46.2) consistent two-letter form, (49.1) coefficient decomposition + monotonicity corollary, (56.4) bound triple, (57.1) the Π-coefficient equality itself, (57.2) bounds without independence, (57.3) Π-coefficient lower bound; plus machine refutations of five printed propositions — (35) non-strict hypothesis (8-region countermodel), (46.1) missing (x/h)ⁿ factor (8-region countermodel), (58.2) missing (1−q) factor and (58.3) exponent off by one (rational instances), (52)/(53) strictness — with the corrected forms verified | +25 |
+| `logs/…canonical_run_20260926_v9.log` | **The citable evidence artifact** (24 files) | — |
+| `run_v9.sh` | Regenerates the canonical log over `phases/*.lean` (SHA-256-bound) | — |
+| `logs/…canonical_run_20260925_v8.log`, `…20260801_v7.log`, `…20260714_v6.log`, `…_v5.log`, `…_v4.log`, `…_v3.log`, `…20260708.log` | Superseded runs over earlier corpora (retained as development history) | — |
 | `docs/PHASE6C_DESIGN.md` | Design notes for the intensional migration, incl. planned Popper-function countermodel | — |
 
 ## Reading a dependency list
@@ -117,7 +124,7 @@ canonical run**.
 ```
 
 - `propext, Classical.choice, Quot.sound` — the **floor**: Lean's own axioms
-  (the classical-extensional substrate). Across all 23 files it never grows:
+  (the classical-extensional substrate). Across all 24 files it never grows:
   no theorem needs a fourth kernel axiom. Recursors (`List.rec` etc.) never
   appear — induction and convergence are consumed by the kernel without
   leaving an axiom trace. The phase-8a–8c files declare no `Keynes.*` axioms at
@@ -168,15 +175,34 @@ canonical run**.
 
 ## Errata in the source, machine-certified
 
-Collation against the English original (Project Gutenberg #32625, a
-faithful transcription of the 1921 Macmillan edition) and the Japanese
-Collected-Writings translation shows both editions agree — so the following
-are defects of the source itself, not of any edition:
+Every item below was read on the page images of the 1921 Macmillan first
+edition (September 2026); the Gutenberg transcription and the Japanese
+Collected-Writings translation were used only as aids. (A July note claiming
+a prose/proof reversal in (14.33) is **withdrawn**: the 1921 page reads "not
+less favourable", consistent with the proof; the reversal was a Gutenberg
+transcription error.)
 
-- **(14.33), prose vs. proof**: the statement reads "h₁ is not **more**
-  favourable to a/hx than x is to a/hh₁", while Keynes's own printed proof
-  requires (and we verify) "not **less**". The inequality direction in the
-  prose is a slip; `phase7b` formalises the proof-side (true) form.
+Substantive — the printed proposition is false, machine-refuted, and
+verified in corrected form:
+
+- **(14.35)**, `phase7i`: the hypothesis "x is not **more** favourable to
+  a/h than h₁x is" is printed non-strict; an 8-region rational countermodel
+  satisfies all printed hypotheses (with equality in that one) while h₁ is
+  irrelevant to a, so the conclusion fails. The strict form is verified
+  (`th_14_35`, `phase7b`).
+- **(14.46.1)**, `phase7i`: the display omits the factor (x/h)ⁿ that the
+  cumulative formula (46) requires — the very omission Keynes calls "the
+  second incorrect statement" on the same page. An 8-region countermodel
+  with unequal priors breaks the printed proportionality; the form with the
+  factor holds.
+- **(17.58.2)**, `phase7i`: the numerator of the printed difference formula
+  carries one factor (1 − q); the correct numerator is a(p−a)q^{n−2}(1−q)²
+  (`th_17_58_2_numerator`, an identity). At a=½, p=¾, n=2 the true
+  difference is 1/15, the printed expression 2/15.
+- **(17.58.3)**, `phase7i`: the printed closed form a/[a+(p−a)qⁿ] has the
+  exponent one too high; with y₁ = p the correct form is a/[a+(p−a)q^{n−1}]
+  (n=1: 2/3 vs printed 4/5). The division-free form t_n·f(n) = a is
+  verified (`phase7h`).
 - **(14.34), the bridge display**: the printed equation's RHS is
   trivialised to 1 by Keynes's own Def. X applied on evidence *ha*
   (machine proof: `th_34_printed_rhs_trivial`), while its LHS telescopes to
@@ -190,6 +216,13 @@ are defects of the source itself, not of any edition:
   is a rearrangement of the inverse principle (38) — the diagnosis is that
   two evidence subscripts were interchanged (h ↔ ha). The corrected
   theorem is verified as `th_14_34`.
+
+Minor — strict inequalities that are not derivable (equality is attainable;
+the inclusive forms are what the corpus verifies): **(15.52)**, **(15.53)**,
+**(17.56.2)**, **(17.56.5)** (`phase7i` exhibits the equality cases for
+(52) and (53)). Typographical: **(14.46.2)** prints Π^{n−1} against
+(x/h)^{−n}, an index mismatch; the consistent two-letter form is verified
+(`th_14_46_2_src2`).
 
 ## Fidelity and collation status (read before quoting "faithful to Keynes")
 
@@ -216,28 +249,30 @@ directions:
   for (13.12.1), whose printed proof invokes it explicitly, the kernel
   route closes through certainty propagation (13.9) plus the equivalence
   theorem (13.12).
-- **The systematic collation pass (7f) is complete** (July 2026): a page and
-  line anchor for every ledger row, with fidelity tally
-  **93 exact / 6 faithful-core / 0 relabelled / 1 erratum** after the
-  source-form batch `phase7g`/`phase7h` (canonical run v6). The 14 items the
-  collation had flagged as mislabelled are all resolved; the starkest case —
-  the ledger's (58.2), which proved the *decrease* of the joint chain product
-  where the source asserts the *increase* of the predictive ratio — is now
-  verified in its true form (`th_17_58_2_src`, log-convexity), with the old
-  lemma retained as an auxiliary. See `docs/COLLATION_INDEX_7F.md`.
+- **The July collation pass (7f)** anchored every ledger row to the Gutenberg
+  transcription and the translation's page images and reported
+  93 exact / 6 faithful-core / 1 erratum. **The September pass against the
+  1921 first-edition page images supersedes it**: it found that 13 Lean
+  statements had drifted from the printed propositions (weakened, partial,
+  or differently stated) and that five printed propositions are false.
+  Both are resolved in `phase7i`; the honest tally is now
+  **86 / 4 / 1 / 4 / 5** as defined above. Lesson recorded for the method:
+  a transcription and a translation are not independent enough to stand in
+  for the printed page. See `docs/COLLATION_INDEX_1921.md`.
 - The weight trilogy (`phase8a`–`8c`) lies **outside** the 100-item Part-II
   ledger; its source anchors are Ch. VI / Ch. XXVI and Takayabu–Arai (2012)
   (see the file headers for verbatim attribution, including the first
   formulation of W in Murata 2010).
 
-## Roadmap (v1.4)
+## Roadmap (v1.5)
 
-1. ~~**Full source-collation pass** over all verified statements (7f)~~ —
-   **done** (July 2026; see Fidelity section and `docs/COLLATION_INDEX_7F.md`).
-   Remaining collation extension: Chapter 16 (the observations chapter),
-   which contains Keynes's named prose restatements of the key theorems;
-   and the six remaining faithful-core items ((44), (46), (46.2), (49)
-   full monotone sequence, (57.1)/(57.3) full Π-coefficient forms).
+1. ~~**Full source-collation pass** (7f, July 2026)~~ superseded by the
+   ~~**1921 first-edition image pass** (7i, September 2026)~~ — **done**.
+   Remaining: Chapter 16 (prose restatements, no numbered theorems); the four
+   core items ((44), (46), (49), (49.1) in general n-letter form); and
+   **Chapter 17 §§3–12** (the 1911 JRSS "principal averages" material, 41
+   un-numbered formulae, ledgered under Keynes's 1911 numbering — not yet
+   formalised).
 2. Popper-function countermodel certifying that the degeneracy theorem is
    unprovable in the pedantic encoding (6c-model).
 3. External kernel re-check of the corpus via an independent verifier, to
@@ -257,7 +292,7 @@ directions:
 ```
 Arai, K. (2026). Keynes's Treatise on Probability, Part II: a Lean 4 kernel
 audit. https://github.com/kazzarai/keynes-treatise-lean-audit
-(release v1.2; canonical run v8, 2026-09-25, Lean 4 v4.29.1)
+(release v1.3; canonical run v9, 2026-09-26, Lean 4 v4.29.1)
 ```
 
 ## License
