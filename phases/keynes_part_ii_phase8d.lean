@@ -26,6 +26,12 @@
    Brady模型 V=K/(K+I) で「証拠の増加 = Kのみ増加」と読めば
    テーゼは厳密に成立し (subjective_time_mono と同内容)、
    「K と I がともに増加」する間主観的読みでは反例が存在する。
+   NOTE (2026-10, PR#5): this file encodes V on the extensional carrier
+   (Prop → Prop → ℝ). Under propext + classical logic the weight relation
+   degenerates: V a h = V True h for every a (theorem V_collapse below).
+   The "monotonicity axiom not used" load datum is therefore a record of
+   this proof's dependencies, not evidence about Keynes's system. The
+   re-encoding on the intensional carrier (IProp) is phase 8d′.
    ============================================================ -/
 
 import Mathlib
@@ -152,5 +158,14 @@ theorem th_vi_1_brady_exits :
 #print axioms KeynesWeightVI.th_vi_6_urn_unknown_half
 #print axioms KeynesWeightVI.th_vi_1_brady_holds
 #print axioms KeynesWeightVI.th_vi_1_brady_exits
+
+/-- Extensional-collapse certificate (not counted as a verdict): on this
+    carrier every proposition is `True` or `False` up to `propext`, and
+    complement symmetry identifies the two cases. -/
+theorem V_collapse (a h : Prop) : V a h = V True h := by
+  by_cases ha : a
+  · rw [eq_true ha]
+  · have h1 : V a h = V (¬a) h := ax_vi_compl a h
+    rw [h1, eq_true ha]
 
 end KeynesWeightVI

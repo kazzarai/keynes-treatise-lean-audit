@@ -4,3 +4,4 @@ build/
 *.ilean
 *.trace
 .DS_Store
+logs/check_*.log
