@@ -1,0 +1,22 @@
+name: check
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  check_all:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          build: false
+          use-mathlib-cache: true
+      - name: check_all
+        run: bash tools/check_all.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: check-logs
+          path: logs/check_*.log
