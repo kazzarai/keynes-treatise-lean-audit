@@ -23,9 +23,9 @@ printf '{"verdicts": %d, "files": %d, "date": "%s"}\n' "$total" "${#FILES[@]}" "
 echo "[3] verdicts=$total files=${#FILES[@]} -> logs/progress.json" | tee -a "$LOG"
 # hygiene patterns are assembled at runtime so this script does not match itself
 U="/Use""rs/"; H="/ho""me/"; W='C:'"$(printf '\\\\')"
-if grep -rIl --exclude-dir=.lake --exclude-dir=.git --exclude-dir=logs -e "$U" -e "$H" -e "$W" . >/dev/null 2>&1; then
+if grep -rIl --exclude-dir=.lake --exclude-dir=.git --exclude=.git --exclude-dir=logs -e "$U" -e "$H" -e "$W" . >/dev/null 2>&1; then
   echo "[8] RED hygiene: local absolute paths in:" | tee -a "$LOG"
-  grep -rIl --exclude-dir=.lake --exclude-dir=.git --exclude-dir=logs -e "$U" -e "$H" -e "$W" . | tee -a "$LOG"; red=1
+  grep -rIl --exclude-dir=.lake --exclude-dir=.git --exclude=.git --exclude-dir=logs -e "$U" -e "$H" -e "$W" . | tee -a "$LOG"; red=1
 else echo "[8] ok hygiene" | tee -a "$LOG"; fi
 echo "=== RESULT: $([ $red -eq 0 ] && echo GREEN || echo RED) ===" | tee -a "$LOG"
 exit $red
