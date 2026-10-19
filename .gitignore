@@ -5,3 +5,4 @@ build/
 *.trace
 .DS_Store
 logs/check_*.log
+.lake
