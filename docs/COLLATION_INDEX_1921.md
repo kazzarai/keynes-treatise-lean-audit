@@ -127,6 +127,16 @@
 
 (5) 番号欠落 / (15) h₁h₂/h・by II. / (16) 内側バー / (18) a/a=1 / (21) a/h₂ / (24.5) 指数 (−1)^{n−1} / (27) by (v.) / (29) h₂側の追加 / (33) not more→not less / (42.1) 波括弧 / (49) x̄/h / (49.1) −1 の位置 / (51) x/ȳh / (55) μ⩽ / (56.1) 4箇所 / (57) 二重バー・余分な /
 
+## 第 III 部 (Phase 9c: 第 XXII 章 folio 251–264、Notes (ii.) folio 276–277) — 候補行
+
+上の 100 項目 (第 II 部) とは別に数える。分類の確定 (S → F の格上げ、T の採否) は保留中。
+
+| 章 | 項目 | folio | Phase (Lean) | 分類 | 注記 |
+|---|---|---|---|---|---|
+| Notes (ii.) | (viii.) E-III-4 | 276 | 9c E_III_4_countermodel, E_III_4_corrected_imp_printed, def_viii_l_imp_src | S (疑義) | printed second condition reads b/hk ≠ 1 (no l), while (iv.) and (ix.) carry l (b/kl, b/hkl); the printed form and the l-supplied form differ in a two-point model (E_III_4_countermodel), and the l-supplied form implies the printed form in the finite model (FinSys) (E_III_4_corrected_imp_printed); on Keynes's own system the same implication (def_viii_l_imp_src) needs two hypotheses not in the printed text, hperm (b/hkl = b/lhk, a rearrangement of the premiss) and hl (l/hk ≠ 0). Whether the missing l is a printing error (F) is undecided |
+| 22 | F22.18 (260) / F22.19 (260) | 260 | 9c th_22_18, th_22_19, F22_18_needs_premisses | T 候補 (前提の補充) | printed "C/HE being greater than C/H" is stated with only "C/H has a finite value" as premiss; in the finite model (FinSys, non-empty premisses, satisfying the Part II axiom forms) C/H > 0 alone does not yield C/HE > C/H (C = {0}, H = univ, E = {1} gives C/H = 1/2, C/HE = 0). Lean adds the Chapter XX premisses E/CH = 1 and E/H < 1 (likewise E′/HH′ = 1, E′/H′ < 1 for F22.19) |
+| Notes (ii.) | (viii.), (ix.) の h | 276 | 9c def_viii_src, def_viii_l, def_ix | 注記 (量化の補充) | (vi.), (vii.) say "there is an existential proposition h such that …"; (viii.), (ix.) print the conditions on h without this quantifier. Lean reads (viii.), (ix.) with ∃ h as in (vi.), (vii.) |
+
 ## 8a/8d のアンカー (台帳外)
 
 phase8a: 第26章§7 の係数・恒等式・脚注 F1〜F4 は folio **315** の印刷と一致 (Lean コメントの folio 314 は誤記)。F4 の印刷仮定 w=w′, q>q′ を画像で確定、印刷の「比較不能」は脚注内で自己矛盾 (keynes_F4_printed_determinate)。
