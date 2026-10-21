@@ -119,6 +119,17 @@
 | 17 | (58.2) | 193 | P5→7h | F | numerator lacks a factor (1−q); refuted at a=1/2,p=3/4,n=2 (7i Erratum58); corrected (1−q)^2 verified (7h core, 7i) |
 | 17 | (58.3) | 193 | P5→7h | F | closed form exponent n should be n−1; refuted at n=1 (7i Erratum58); t_n·f(n)=a verified (7h) |
 
+## 6c (内包版、B09 修復 2026-10-20) — T: 前提の補充 (台帳100項目の外)
+
+Phase 6c (`phases/keynes_part_ii_phase6c.lean`) states the following on the intensional carrier (`IProp`, `PrI`) with a premiss `Cons h` ("h is not an inconsistent conjunction", Axiom (i) proviso, folio 135) that the printed formula does not carry. "T" here means *premiss supplied*, not the index-inconsistency sense used in the 100-row ledger above; these rows are outside that ledger and do not change its totals.
+
+| 章 | 定理 | folio | Phase (Lean) | 分類 | 注記 |
+|---|---|---|---|---|---|
+| 13 | (1) | 139 | 6c th_13_1_i | T | Printed a/h + ā/h = 1 has no proviso; Lean adds Cons h, since the step b/h = 1 in Keynes's proof exists only for a consistent premiss (Axiom (i)). |
+| 13 | (12) | 141 | 6c th_12_i, th_12_i_short | T | Printed "If (a≡b)/h = 1, a/h = b/h" has no proviso; Lean adds Cons h, the range in which (a≡b)/h exists (Axiom (i)). |
+| 13 | (13) | 141 | 6c th_13_13_conj_i | T | Printed "a/a = 1, unless a is inconsistent"; Lean states the premiss-(a∧h) form a/(a∧h) = 1 with Cons h and Cons (a∧h), because the 6c axiom set has no premiss substitution (Axiom (ii)). |
+| 14 | (24) | 144 | 6c th_24_i | T | Printed (a+b)/h = a/h + b/h − ab/h has no proviso; Lean adds Cons h, inherited from the substitution principle (12) used in the proof. |
+
 ## 撤回
 
 - (33): Phase 7d ヘッダの「原典散文が証明と逆向き」は Gutenberg 転記誤り ("not more")。1921年版は "not less favourable" で命題文と証明が整合。正誤表から外す。
