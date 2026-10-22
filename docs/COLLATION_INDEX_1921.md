@@ -179,3 +179,14 @@ folio 307–323 の全葉を画像で通読し、記号式 27 件 (F26.1–F26.2
 | 26 | F26.26 | 319 | 8a2 `th_26_laurent_limit` | E | 「b = ∞ なら f(a) = 1」を b → ∞ の極限で |
 | 26 | F26.27 | 322 | — | — | Buffon の 1/10,000 (経験的定数、対象外) |
 | 26 | F 補 1 | 311 fn1 | 8a2 `th_26_fn_leibniz_division` (補助) | E | Leibniz の比例分割 (言語的記述) |
+## 第III部 第19章 (phase9b、台帳外・暫定)
+
+台帳 `第III部帰納/台帳_ch19_類推.md` の行番号 #n を用いる (第19章の印刷式には番号がない)。内包キャリア (IProp/PrI) + 全称量化子。
+
+| 章 | 台帳行 | folio | Phase (Lean) | 分類 | 注記 |
+|---|---|---|---|---|---|
+| 19 | #16 | 225 | 9b th_19_16_src | E | g(φ₁,f)/h = g(φ₁φ₂,f).g(φ₁φ̄₂,f)/h ≤ g(φ,f)/h, as printed; #13–14 not needed; #15 unfolded by definition |
+| 19 | #17 | 225 | 9b th_19_17, th_19_17_src_iff, Erratum19_17Countermodel | F | 2nd line prints g(φf₁,f₂)/h . g(φ,f₁)/h; the first factor lacks the condition g(φ,f₁). Printed form ⇔ (g(φ,f₁)/h = 0 or irrelevance); refuted on 2 instances × 2 fair coins plus a third instance with φ₁ true, φ₂ false (1/16 ≠ 9/16·1/4; the printed premises #13–14 g(φ₁,φ₂)/h ≠ 1, g(f₁,f₂)/h ≠ 1 hold in the model, `hypotheses_of_17_hold`). Corrected g(φf₁,f₂)/g(φ,f₁)h . g(φ,f₁)/h verified; the inequality ≤ g(φ,f₁)/h is unaffected |
+| 19 | #18 | 225 | 9b th_19_18_src | E | g(φ,f₁)/h ≥ g(φ,f)/h ≥ g(φ₁,f)/h, as printed. The prose (#12, folio 224 "increases"/"diminish") is strict; strictness is not derivable even with #13–15 (StrictnessCountermodel: all three equal 1) |
+| 19 | #35 | 230 | 9b p_sec9 | T | general formula prints the negative-analogy term as `Ā(_aφ¹)` (superscript 1); folios 227–229, 231 print `φ′`. Read as `_aφ′`; noted in the Lean comment, not refuted (symbol slip, no proposition at stake) |
+| 19 | #7–10, #26, #29, #32, #34, #38, #42 | 223–231 | 9b A, Abar, p_sec6–p_sec9, ev_partial, ev_negative | — | notation only (definitions); §5–§11 claims that need extra principles are listed as 形式化の境界の記録 in the Lean file, not stated as theorems |
