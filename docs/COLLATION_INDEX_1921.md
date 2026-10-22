@@ -138,6 +138,18 @@ Phase 6c (`phases/keynes_part_ii_phase6c.lean`) states the following on the inte
 
 (5) 番号欠落 / (15) h₁h₂/h・by II. / (16) 内側バー / (18) a/a=1 / (21) a/h₂ / (24.5) 指数 (−1)^{n−1} / (27) by (v.) / (29) h₂側の追加 / (33) not more→not less / (42.1) 波括弧 / (49) x̄/h / (49.1) −1 の位置 / (51) x/ȳh / (55) μ⩽ / (56.1) 4箇所 / (57) 二重バー・余分な /
 
+## 第 III 部 第 XX・XXII 章 (phase9a、台帳外、分類は裁定待ち)
+
+照合: `原典照合1921/img_partIII/folio_235–238.png`, `folio_254.png`、台帳 `第III部帰納/台帳_ch20_純粋帰納.md`。Lean: `phases/keynes_part_iii_phase9a.lean`。分類欄は作業役の候補で、裁定は司令塔。
+
+| 章 | 式 | folio | Phase (Lean) | 分類 (候補) | 注記 |
+|---|---|---|---|---|---|
+| 20 | F20.6 第 2 段 (E-III-1) | 235 | 9a th_20_6_src / ErratumE_III_1 / th_20_6_cor | F | 第 2 段の分子は印刷では `x_n/hx_1…x_{n−1}` で g が脱落 (結合確率 `g x_n/hx_1…x_{n−1}` であるべき)。印刷のままでは第 2 段は p_n = 1 のときに限り成り立つ (th_20_6_src)。数値反駁 p_0=1/8, p_1=1/4, p_2=1/2 (ErratumE_III_1)。g を復した 4 段を検証 (th_20_6_cor; 条件 p_0 ≠ 0, x_1…x_n/h ≠ 0)。第 1・3・4 段のみの連鎖は th_20_6_lines134 |
+| 22 | folio 254 の条件 `x_r/x_1…x_{r−1}ḡh = 1 − ε` (E-III-2) | 254 (対 237) | 9a th_22_254_eq_src / th_E_III_2_not_lt / th_E_III_2_refutes_F20_16 / th_22_254_eq_exact | E または T | 第 XX 章 folio 237 は `< 1 − ε`、folio 254 は `= 1 − ε`。等号版は同じ ε で第 XX 章の印刷前提を満たさず (a)、脚注 F20.16 の `< (1 − ε)^n` を反証する (b) が、ε/2 を取れば印刷形 th_20_15_src から極限が出る (c)。結論は壊れない (E 寄り)。章間の不整合として T も候補 |
+| 20 | F20.9 `p_n > p_{n−1} so long as y_n ≠ 1` (F20.9-a) | 236 | 9a th_20_9_src / th_20_9_iff / th_20_9_needs_p_pos / th_20_9_J_zero / Witness_F20_9_J | S または C | Keynes が明示しない前提 p_{n−1} > 0 と x_1…x_{n−1}/h ≠ 0 (前提が不可能でない) を付して検証。p_{n−1} = 0 なら (y_n ≠ 0 のもとで) p_n = 0 で狭義不等号は破れる (th_20_9_needs_p_pos、公理群の中)。x_1…x_{n−1}/h = 0 なら p_0 = 0 で p_n は定まらない (th_20_9_J_zero、数値例 Witness_F20_9_J)。脚注 F20.13 (folio 236) は同文の再掲 |
+
+phase9a の末尾は、phase6c 由来の公理群 (`def_VIII_i` と `ax_iii_taut` を不整合な証拠に適用) が矛盾を導くこと (`th_6c_axioms_inconsistent`) を記録する。修復は phase6c の管轄で裁定待ち。
+
 ## 8a/8d のアンカー (台帳外)
 
 phase8a: 第26章§7 の係数・恒等式・脚注 F1〜F4 は folio **315** の印刷と一致 (Lean コメントの folio 314 は誤記)。F4 の印刷仮定 w=w′, q>q′ を画像で確定、印刷の「比較不能」は脚注内で自己矛盾 (keynes_F4_printed_determinate)。
