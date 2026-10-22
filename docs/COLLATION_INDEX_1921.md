@@ -138,6 +138,27 @@ Phase 6c (`phases/keynes_part_ii_phase6c.lean`) states the following on the inte
 
 (5) 番号欠落 / (15) h₁h₂/h・by II. / (16) 内側バー / (18) a/a=1 / (21) a/h₂ / (24.5) 指数 (−1)^{n−1} / (27) by (v.) / (29) h₂側の追加 / (33) not more→not less / (42.1) 波括弧 / (49) x̄/h / (49.1) −1 の位置 / (51) x/ȳh / (55) μ⩽ / (56.1) 4箇所 / (57) 二重バー・余分な /
 
+## 第 III 部 第 XX・XXII 章 (phase9a、台帳外、分類は裁定待ち)
+
+照合: `原典照合1921/img_partIII/folio_235–238.png`, `folio_254.png`、台帳 `第III部帰納/台帳_ch20_純粋帰納.md`。Lean: `phases/keynes_part_iii_phase9a.lean`。分類欄は作業役の候補で、裁定は司令塔。
+
+| 章 | 式 | folio | Phase (Lean) | 分類 (候補) | 注記 |
+|---|---|---|---|---|---|
+| 20 | F20.6 第 2 段 (E-III-1) | 235 | 9a th_20_6_src / ErratumE_III_1 / th_20_6_cor | F | 第 2 段の分子は印刷では `x_n/hx_1…x_{n−1}` で g が脱落 (結合確率 `g x_n/hx_1…x_{n−1}` であるべき)。印刷のままでは第 2 段は p_n = 1 のときに限り成り立つ (th_20_6_src)。数値反駁 p_0=1/8, p_1=1/4, p_2=1/2 (ErratumE_III_1)。g を復した 4 段を検証 (th_20_6_cor; 条件 p_0 ≠ 0, x_1…x_n/h ≠ 0)。第 1・3・4 段のみの連鎖は th_20_6_lines134 |
+| 22 | folio 254 の条件 `x_r/x_1…x_{r−1}ḡh = 1 − ε` (E-III-2) | 254 (対 237) | 9a th_22_254_eq_src / th_E_III_2_not_lt / th_E_III_2_refutes_F20_16 / th_22_254_eq_exact | E または T | 第 XX 章 folio 237 は `< 1 − ε`、folio 254 は `= 1 − ε`。等号版は同じ ε で第 XX 章の印刷前提を満たさず (a)、脚注 F20.16 の `< (1 − ε)^n` を反証する (b) が、ε/2 を取れば印刷形 th_20_15_src から極限が出る (c)。結論は壊れない (E 寄り)。章間の不整合として T も候補 |
+| 20 | F20.9 `p_n > p_{n−1} so long as y_n ≠ 1` (F20.9-a) | 236 | 9a th_20_9_src / th_20_9_iff / th_20_9_needs_p_pos / th_20_9_J_zero / Witness_F20_9_J | S または C | Keynes が明示しない前提 p_{n−1} > 0 と x_1…x_{n−1}/h ≠ 0 (前提が不可能でない) を付して検証。p_{n−1} = 0 なら (y_n ≠ 0 のもとで) p_n = 0 で狭義不等号は破れる (th_20_9_needs_p_pos、公理群の中)。x_1…x_{n−1}/h = 0 なら p_0 = 0 で p_n は定まらない (th_20_9_J_zero、数値例 Witness_F20_9_J)。脚注 F20.13 (folio 236) は同文の再掲 |
+
+phase9a の末尾は、phase6c 由来の公理群 (`def_VIII_i` と `ax_iii_taut` を不整合な証拠に適用) が矛盾を導くこと (`th_6c_axioms_inconsistent`) を記録する。修復は phase6c の管轄で裁定待ち。
+## 第 III 部 (Phase 9c: 第 XXII 章 folio 251–264、Notes (ii.) folio 276–277) — 候補行
+
+上の 100 項目 (第 II 部) とは別に数える。分類の確定 (S → F の格上げ、T の採否) は保留中。
+
+| 章 | 項目 | folio | Phase (Lean) | 分類 | 注記 |
+|---|---|---|---|---|---|
+| Notes (ii.) | (viii.) E-III-4 | 276 | 9c E_III_4_countermodel, E_III_4_corrected_imp_printed, def_viii_l_imp_src | S (疑義) | printed second condition reads b/hk ≠ 1 (no l), while (iv.) and (ix.) carry l (b/kl, b/hkl); the printed form and the l-supplied form differ in a two-point model (E_III_4_countermodel), and the l-supplied form implies the printed form in the finite model (FinSys) (E_III_4_corrected_imp_printed); on Keynes's own system the same implication (def_viii_l_imp_src) needs two hypotheses not in the printed text, hperm (b/hkl = b/lhk, a rearrangement of the premiss) and hl (l/hk ≠ 0). Whether the missing l is a printing error (F) is undecided |
+| 22 | F22.18 (260) / F22.19 (260) | 260 | 9c th_22_18, th_22_19, F22_18_needs_premisses | T 候補 (前提の補充) | printed "C/HE being greater than C/H" is stated with only "C/H has a finite value" as premiss; in the finite model (FinSys, non-empty premisses, satisfying the Part II axiom forms) C/H > 0 alone does not yield C/HE > C/H (C = {0}, H = univ, E = {1} gives C/H = 1/2, C/HE = 0). Lean adds the Chapter XX premisses E/CH = 1 and E/H < 1 (likewise E′/HH′ = 1, E′/H′ < 1 for F22.19) |
+| Notes (ii.) | (viii.), (ix.) の h | 276 | 9c def_viii_src, def_viii_l, def_ix | 注記 (量化の補充) | (vi.), (vii.) say "there is an existential proposition h such that …"; (viii.), (ix.) print the conditions on h without this quantifier. Lean reads (viii.), (ix.) with ∃ h as in (vi.), (vii.) |
+
 ## 8a/8d のアンカー (台帳外)
 
 phase8a: 第26章§7 の係数・恒等式・脚注 F1〜F4 は folio **315** の印刷と一致 (Lean コメントの folio 314 は誤記)。F4 の印刷仮定 w=w′, q>q′ を画像で確定、印刷の「比較不能」は脚注内で自己矛盾 (keynes_F4_printed_determinate)。
@@ -167,3 +188,14 @@ folio 307–323 の全葉を画像で通読し、記号式 27 件 (F26.1–F26.2
 | 26 | F26.26 | 319 | 8a2 `th_26_laurent_limit` | E | 「b = ∞ なら f(a) = 1」を b → ∞ の極限で |
 | 26 | F26.27 | 322 | — | — | Buffon の 1/10,000 (経験的定数、対象外) |
 | 26 | F 補 1 | 311 fn1 | 8a2 `th_26_fn_leibniz_division` (補助) | E | Leibniz の比例分割 (言語的記述) |
+## 第III部 第19章 (phase9b、台帳外・暫定)
+
+台帳 `第III部帰納/台帳_ch19_類推.md` の行番号 #n を用いる (第19章の印刷式には番号がない)。内包キャリア (IProp/PrI) + 全称量化子。
+
+| 章 | 台帳行 | folio | Phase (Lean) | 分類 | 注記 |
+|---|---|---|---|---|---|
+| 19 | #16 | 225 | 9b th_19_16_src | E | g(φ₁,f)/h = g(φ₁φ₂,f).g(φ₁φ̄₂,f)/h ≤ g(φ,f)/h, as printed; #13–14 not needed; #15 unfolded by definition |
+| 19 | #17 | 225 | 9b th_19_17, th_19_17_src_iff, Erratum19_17Countermodel | F | 2nd line prints g(φf₁,f₂)/h . g(φ,f₁)/h; the first factor lacks the condition g(φ,f₁). Printed form ⇔ (g(φ,f₁)/h = 0 or irrelevance); refuted on 2 instances × 2 fair coins plus a third instance with φ₁ true, φ₂ false (1/16 ≠ 9/16·1/4; the printed premises #13–14 g(φ₁,φ₂)/h ≠ 1, g(f₁,f₂)/h ≠ 1 hold in the model, `hypotheses_of_17_hold`). Corrected g(φf₁,f₂)/g(φ,f₁)h . g(φ,f₁)/h verified; the inequality ≤ g(φ,f₁)/h is unaffected |
+| 19 | #18 | 225 | 9b th_19_18_src | E | g(φ,f₁)/h ≥ g(φ,f)/h ≥ g(φ₁,f)/h, as printed. The prose (#12, folio 224 "increases"/"diminish") is strict; strictness is not derivable even with #13–15 (StrictnessCountermodel: all three equal 1) |
+| 19 | #35 | 230 | 9b p_sec9 | T | general formula prints the negative-analogy term as `Ā(_aφ¹)` (superscript 1); folios 227–229, 231 print `φ′`. Read as `_aφ′`; noted in the Lean comment, not refuted (symbol slip, no proposition at stake) |
+| 19 | #7–10, #26, #29, #32, #34, #38, #42 | 223–231 | 9b A, Abar, p_sec6–p_sec9, ev_partial, ev_negative | — | notation only (definitions); §5–§11 claims that need extra principles are listed as 形式化の境界の記録 in the Lean file, not stated as theorems |
