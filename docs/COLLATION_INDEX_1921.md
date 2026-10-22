@@ -149,6 +149,15 @@ Phase 6c (`phases/keynes_part_ii_phase6c.lean`) states the following on the inte
 | 20 | F20.9 `p_n > p_{n−1} so long as y_n ≠ 1` (F20.9-a) | 236 | 9a th_20_9_src / th_20_9_iff / th_20_9_needs_p_pos / th_20_9_J_zero / Witness_F20_9_J | S または C | Keynes が明示しない前提 p_{n−1} > 0 と x_1…x_{n−1}/h ≠ 0 (前提が不可能でない) を付して検証。p_{n−1} = 0 なら (y_n ≠ 0 のもとで) p_n = 0 で狭義不等号は破れる (th_20_9_needs_p_pos、公理群の中)。x_1…x_{n−1}/h = 0 なら p_0 = 0 で p_n は定まらない (th_20_9_J_zero、数値例 Witness_F20_9_J)。脚注 F20.13 (folio 236) は同文の再掲 |
 
 phase9a の末尾は、phase6c 由来の公理群 (`def_VIII_i` と `ax_iii_taut` を不整合な証拠に適用) が矛盾を導くこと (`th_6c_axioms_inconsistent`) を記録する。修復は phase6c の管轄で裁定待ち。
+## 第 III 部 (Phase 9c: 第 XXII 章 folio 251–264、Notes (ii.) folio 276–277) — 候補行
+
+上の 100 項目 (第 II 部) とは別に数える。分類の確定 (S → F の格上げ、T の採否) は保留中。
+
+| 章 | 項目 | folio | Phase (Lean) | 分類 | 注記 |
+|---|---|---|---|---|---|
+| Notes (ii.) | (viii.) E-III-4 | 276 | 9c E_III_4_countermodel, E_III_4_corrected_imp_printed, def_viii_l_imp_src | S (疑義) | printed second condition reads b/hk ≠ 1 (no l), while (iv.) and (ix.) carry l (b/kl, b/hkl); the printed form and the l-supplied form differ in a two-point model (E_III_4_countermodel), and the l-supplied form implies the printed form in the finite model (FinSys) (E_III_4_corrected_imp_printed); on Keynes's own system the same implication (def_viii_l_imp_src) needs two hypotheses not in the printed text, hperm (b/hkl = b/lhk, a rearrangement of the premiss) and hl (l/hk ≠ 0). Whether the missing l is a printing error (F) is undecided |
+| 22 | F22.18 (260) / F22.19 (260) | 260 | 9c th_22_18, th_22_19, F22_18_needs_premisses | T 候補 (前提の補充) | printed "C/HE being greater than C/H" is stated with only "C/H has a finite value" as premiss; in the finite model (FinSys, non-empty premisses, satisfying the Part II axiom forms) C/H > 0 alone does not yield C/HE > C/H (C = {0}, H = univ, E = {1} gives C/H = 1/2, C/HE = 0). Lean adds the Chapter XX premisses E/CH = 1 and E/H < 1 (likewise E′/HH′ = 1, E′/H′ < 1 for F22.19) |
+| Notes (ii.) | (viii.), (ix.) の h | 276 | 9c def_viii_src, def_viii_l, def_ix | 注記 (量化の補充) | (vi.), (vii.) say "there is an existential proposition h such that …"; (viii.), (ix.) print the conditions on h without this quantifier. Lean reads (viii.), (ix.) with ∃ h as in (vi.), (vii.) |
 
 ## 8a/8d のアンカー (台帳外)
 
