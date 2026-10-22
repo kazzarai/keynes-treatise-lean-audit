@@ -142,3 +142,28 @@ Phase 6c (`phases/keynes_part_ii_phase6c.lean`) states the following on the inte
 
 phase8a: 第26章§7 の係数・恒等式・脚注 F1〜F4 は folio **315** の印刷と一致 (Lean コメントの folio 314 は誤記)。F4 の印刷仮定 w=w′, q>q′ を画像で確定、印刷の「比較不能」は脚注内で自己矛盾 (keynes_F4_printed_determinate)。
 phase8d: 第6章の文言・数値アンカー (§1 核文、§3 補元対称、§4 三択連鎖、§6 分数、§8 和/差) は folio 71–79 の印刷と一致。
+
+## 第26章 (台帳外: `原典照合1921/台帳_ch26.md`、phase8a / phase8a2、2026-10-20 更新)
+
+folio 307–323 の全葉を画像で通読し、記号式 27 件 (F26.1–F26.27) を台帳化。8a 未検証分を `phases/keynes_part_iv_phase8a2.lean` で定理化 (36 判定)。分類は上の E/C/T/S/F に倣う。「候補」は所見候補 (正誤表への採否は裁定待ち)。F26.23 の S は「疑義 (印刷にない設定を置いた上での不一致)」の意味で用いる (狭義不等号ではない; 第26章限りの用法、裁定待ち)。
+
+| 章 | 台帳 | folio | Phase (Lean) | 分類 | 注記 |
+|---|---|---|---|---|---|
+| 26 | F26.1–7 | 315 | 8a `c`, `risk_identities`, `c_one_one`, `c_zero_*` | E | 係数 c = 2pw/((1+q)(1+w))、R = p(A−E) = pqA = qE、境界値 |
+| 26 | F26.8 | 315 fn1 | 8a2 `th_26_fn1_second_order_risk`, `czuberRisk` | E | R₁ = qR = q²E (印刷どおり) |
+| 26 | F26.9 | 315 fn1 | 8a2 `th_26_fn1_printed_iff`, `th_26_fn1_printed_refuted`, `th_26_fn1_consistent_R`, `th_26_fn1_consistent_reindexed`, `th_26_fn1_czuber_tsum` | T 候補 | 印刷は R₁ = qR = q²E と定義した上で E+R₁+R₂+… = E(1+q+q²+…) = E/(1−q) = E/p = A と書く。この定義では左辺は E(1+q²+q³+…) で、第 1 の等号は qE = 0 のときのみ (q = 1/2, E = 1 で 3/2 ≠ 2)。整合形 (一次のリスク R を級数に含める / 添字を R₁ = qE と読み替える) と係数級数 E/(1−q) = E/p = A を検証 |
+| 26 | F26.10–12 | 315 fn2 | 8a `keynes_F1`–`keynes_F3` (8a2 `th_26_fn2_F2`) | E | 脚注 2 の F1–F3 |
+| 26 | F26.13 (F4) | 315 fn2 | 8a `keynes_F4_*` → 8a2 `th_26_fn2_F4_printed_determinate`, `_amended_witness_lt/gt` | F | 印刷「w=w′, q>q′ では一般に比較できない」は F2 の記号交換で cA < c′A′ が確定 (8a 既出、正誤候補 #3); 修正案 w>w′, q>q′ は両向きの証人で真に非比較 |
+| 26 | F26.14 | 316 | 8a2 `th_26_first_head` (補助) | E | 利得規則 2^{r−1} の確率模型 (1/2)^r |
+| 26 | F26.15 / F26.17 | 317 | 8a2 `th_26_petersburg_term`, `th_26_petersburg_finite`; 必要性 `th_26_petersburg_term_r0` | E | Σ_1^n (½)^r 2^{r−1} = n/2 |
+| 26 | F26.16 / F26.17 | 317 | 8a2 `th_26_petersburg_unbounded`, `_tendsto`, `_not_summable` | E | 「無限の和」の三形 |
+| 26 | F26.18 / F26.19 | 317 | 8a2 `th_26_bernoulli_deriv`, `th_26_bernoulli_initial` (補助) | E | dy = k dx/x ⇒ y = k log(x/a) |
+| 26 | F26.20 | 318 | 8a2 `th_26_moral_expectation`; 反例 `th_26_laplace_printed_refuted` | F 候補 | 印刷 x = (a+x₁)p₁(a+x₂)p₂… は指数 p₁, p₂ がベースラインに落ちている; 文字どおりの積は a = 1, x_i = 1, p_i = ½ で偽; 指数形 Π(a+x_i)^{p_i} を検証 |
+| 26 | F26.21 | 318 | 8a2 `th_26_bernoulli_summable`, `th_26_bernoulli_stake_strict`, `th_26_bernoulli_stake_bounds` | E | 印刷「£1000 の財産で £6 の掛金」: 対数効用の公平掛金 s* は存在して 5.9 < s* < 6 (log の Taylor 評価、s* ≈ 5.97); £6 ちょうどは払い過ぎ。「£6」は丸めの読み |
+| 26 | F26.22 | 318 | 8a2 `th_26_cramer_cap`; `th_26_two_pow_24`, `th_26_printed_16777116_refuted` | F 候補 | 「2²⁴ (16,777,116)」は 16,777,216 の誤り (百の位); 結論 £13 は検証 |
+| 26 | F26.23 | 318 | 8a2 `th_26_cramer_sqrt_expectation`, `th_26_cramer_sqrt_stake`, `th_26_cramer_sqrt_dubious` | S | 印刷「£2 : 9s.」; Paul の初期財産 0 という印刷にない設定の下では 3/2 + √2 ≈ £2 18s 3d (Cramer 原文「約 2.9」の読み替えか)。設定を置いた判定なので疑義に留める |
+| 26 | F26.24 | 319 | 8a2 `th_26_relative_risk`, `th_26_relative_risk_tendsto`, `th_26_petersburg_risk_unbounded` | E | 解釈つき (R の多結果への拡張は印刷にない); 1 − 1/n ≤ R/E < 1、R/E → 1、R は非有界 |
+| 26 | F26.25 | 319 | 8a2 `th_26_laurent_poorer` | C | f(a) = b/(a+b) 自体は Laurent の引用 (Keynes も導出せず)、単調性のみ検証 |
+| 26 | F26.26 | 319 | 8a2 `th_26_laurent_limit` | E | 「b = ∞ なら f(a) = 1」を b → ∞ の極限で |
+| 26 | F26.27 | 322 | — | — | Buffon の 1/10,000 (経験的定数、対象外) |
+| 26 | F 補 1 | 311 fn1 | 8a2 `th_26_fn_leibniz_division` (補助) | E | Leibniz の比例分割 (言語的記述) |
