@@ -176,7 +176,7 @@ canonical run**.
 | `prolog/keynes_axioms_v2.pl` | Citation database of Part II: 25 definitions/axioms, 100 theorems, 177 citation relations (SWI-Prolog) | — |
 | `docs/COLLATION_INDEX_7F.md` | **Row-by-row collation index**: page/line anchor and fidelity status for every ledger row; errata catalogue; Boole (1854) attribution map | — |
 | `phases/…phase7i.lean` | **1921-image re-collation**: the 13 statements the image pass found deviating from print, re-stated and verified in their printed form — (2)(3) disjunctive range forms, (10) three-term equality, (11) conclusion a/h=1, (37) chain-conditional hypothesis, (38.1) general two-alternative form, (43) separative-factor identities, (46.2) consistent two-letter form, (49.1) coefficient decomposition + monotonicity corollary, (56.4) bound triple, (57.1) the Π-coefficient equality itself, (57.2) bounds without independence, (57.3) Π-coefficient lower bound; plus machine refutations of five printed propositions — (35) non-strict hypothesis (8-region countermodel), (46.1) missing (x/h)ⁿ factor (8-region countermodel), (58.2) missing (1−q) factor and (58.3) exponent off by one (rational instances), (52)/(53) strictness — with the corrected forms verified | +25 |
-| `logs/…canonical_run_20261022_v10.log` | **The citable evidence artifact** (33 files) | — |
+| `logs/…canonical_run_20261023_v10.log` | **The citable evidence artifact** (33 files) | — |
 | `run_v10.sh` | Regenerates the canonical log over `phases/*.lean` (SHA-256-bound) | — |
 | `logs/…canonical_run_20260926_v9.log`, `run_v9.sh` | Superseded (24 files) | — |
 | `logs/…canonical_run_20260925_v8.log`, `…20260801_v7.log`, `…20260714_v6.log`, `…_v5.log`, `…_v4.log`, `…_v3.log`, `…20260708.log` | Superseded runs over earlier corpora (retained as development history) | — |
@@ -361,7 +361,7 @@ directions:
 ```
 Arai, K. (2026). Keynes's Treatise on Probability, Part II: a Lean 4 kernel
 audit. https://github.com/kazzarai/keynes-treatise-lean-audit
-(release v1.5; canonical run v10, 2026-10-22, Lean 4 v4.29.1)
+(release v1.5; canonical run v10, 2026-10-23, Lean 4 v4.29.1)
 ```
 
 ## License
