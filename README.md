@@ -1,15 +1,42 @@
-# Keynes's *Treatise on Probability* (1921), Part II — A Lean 4 Kernel Audit
+# Keynes's *Treatise on Probability* (1921) — A Lean 4 Kernel Audit (Part II complete; Parts I, III, IV in progress)
 
 **Machine-checked formalisation of the axiom system of J. M. Keynes's
-*A Treatise on Probability*, Part II (Chapters 12–17), with exact kernel
-dependency measurements for every verified theorem.**
+*A Treatise on Probability* — Part II (Chapters 12–17) complete, including
+the un-numbered Chapter 17 §§3–12 material — with exact kernel dependency
+measurements for every verified theorem, extended (v1.5) to Chapter VI
+(weight of arguments), Part III (Chapters 19, 20, 22 and the Notes on
+Chapter 22) and the whole of Chapter 26.**
+
+- **v1.5 (October 2026): 581 kernel-checked `#print axioms` verdicts across
+  33 files, zero `sorry`.** Headline result of this release — **Keynes's
+  consistency proviso is load-bearing.** The intensional axiom layer
+  (`phase6c`, as shipped in v1.0–v1.4) omitted the clause of Axiom (i),
+  folio 135, "*h* is not an inconsistent conjunction", and read Def. VIII as
+  a biconditional; from that set `False` is derivable
+  (`phase6c_inconsistency.lean`, kept as a record). The layer is repaired by
+  a consistency predicate `Cons` (Axiom (i); Def. VI, folio 134; the
+  "unless *a* is inconsistent" clauses of (13), (13.1), (14), folio 141), and
+  a two-world finite model (`phase6c_model.lean`) satisfies every repaired
+  axiom while realising the intermediate value 1/2 — the first consistency
+  certificate for a non-trivial encoding of Keynes's relations. By contrast
+  the extensional layer is consistent without the proviso but **forced to be
+  two-valued**: `ax_iii_true` + Def. IX alone pin every model to the
+  truth-value of the conclusion (`ext_forced`, `phase7i_model.lean`), so the
+  premiss cannot contribute. *Trivial, inconsistent, or Keynes's own
+  proviso* — the proviso is what separates the three.
+  **Caveat for citation:** theorems of the intensional layer verified before
+  v1.5 were derived from an inconsistent axiom set; all of them are re-verified
+  in v1.5 under the repaired axioms with the proviso made explicit as a `Cons`
+  hypothesis (recorded as T-rows in the collation index).
 
 - **100 / 100** numbered theorems of the reconstruction ledger
   kernel-checked — **every chapter complete** (13: 30/30, 14: 47/47,
   15: 6/6, 17: 17/17), with one annotation: (14.34) is verified in
   corrected form, its printed form being machine-refuted (see **Errata**)
-- **261 kernel-checked `#print axioms` verdicts** across **24 files**
-  (v8 = 236; phase 7i adds 25)
+- **581 kernel-checked `#print axioms` verdicts** across **33 files**
+  (v1.4 = 261 / 24; v1.5 adds 8d′ 27, 9x 71, 9a 60, 9b 28, 9c 36, 8a2 36,
+  6c repair +5 (7 → 12), 6c-inconsistency 2, 6c-model 19, 7i-model 36:
+  261 + 320 = 581)
   (extensional development, intensional/`KeynesI` development, erratum
   countermodel, the source-form batch `7g`/`7h`, the weight trilogy
   `8a`–`8c`, the Ch. VI axiom-anchor file `8d`, and the 1921-image
@@ -27,6 +54,34 @@ dependency measurements for every verified theorem.**
   form**. No theorem withdrawn. Row-by-row index:
   [`docs/COLLATION_INDEX_1921.md`](docs/COLLATION_INDEX_1921.md)
   (the July index `docs/COLLATION_INDEX_7F.md` is retained as history)
+- **Chapter 17 §§3–12 (the 1911 JRSS "principal averages" material), v1.5,
+  `phase9x`**: all 41 un-numbered formulae (ledgered under Keynes's 1911
+  numbering, collated on folios 194–208) formalised; the three
+  law-of-error ↔ average correspondences (normal ↔ arithmetic mean,
+  McAlister ↔ geometric mean, median law ↔ median) proved globally with a
+  joint counterexample (0,0,3); the "most general form" claims verified as
+  sufficiency only — their generality needs an extra continuity principle,
+  recorded as a boundary of the formalisation; printed-form deviations
+  recorded (T-1 φ(z) for φ(y) on folio 202, T-3 missing prime on folio 200,
+  and a sign error in the (ii)-9 integral identification, machine-refuted)
+- **Part III, v1.5 (`phase9a`, `9b`, `9c`)**: Chapter 20 pure induction
+  F20.1–F20.21 (recurrence, closed form, the limit theorem with the printed
+  strict inequalities; the first-edition dropped *g* on folio 235 (E-III-1)
+  and the `= 1 − ε` of folio 254 (E-III-2) both machine-adjudicated);
+  Chapter 19 §4 (the inequality chain of folio 225, with the printed second
+  line refuted on a 2-instance model — the condition g(φ,f₁) is missing — and
+  verified in corrected form); Chapter 22 and the Notes (ii) definitions
+  (i.)–(x.), with the (viii.)/(ix.) asymmetry (E-III-4) recorded as a doubt
+- **Chapter 26, exhaustive (v1.5, `phase8a2`)**: every printed expression of
+  the chapter (folios 315–322) verified; new candidate index inconsistency in
+  the Czuber reinsurance footnote on folio 315 (R₁ = q²E against
+  E + R₁ + R₂ + … = E(1 + q + q² + …): one term out of step) recorded as T
+- **Chapter VI on the intensional carrier (v1.5, `phase8dp`)**: weight of
+  arguments as a function of the *inference* rather than of the
+  proposition; the §4 witness in Keynes's own configuration (two different
+  three-fold alternatives); weight is not a function of probability; the
+  two embedding rules of Shiozawa (1983) each collapse (rule I to a two-valued
+  Π, rule II to Pr ≡ 0)
 - **The weight trilogy (August 2026, `phase8a`–`8c`)**: Chapter 26's
   conventional coefficient *c* (footnote comparative statics F1–F3 verified,
   the F4 non-comparability adjudicated, superadditivity), the short-term
@@ -49,11 +104,12 @@ dependency measurements for every verified theorem.**
   form — collated against the source text — and their kernel cut-set is
   **empty of Keynes axioms**: comparative relevance transmission is pure
   ordered-field algebra
-- Canonical, reproducible evidence: [`logs/keynes_audit_canonical_run_20260926_v9.log`](logs/keynes_audit_canonical_run_20260926_v9.log)
+- Canonical, reproducible evidence: [`logs/keynes_audit_canonical_run_20261023_v10.log`](logs/keynes_audit_canonical_run_20261023_v10.log)
   records toolchain, dependency pins, **SHA-256 of every source file**, and
-  the complete output of a single verified run (**24/24 files, exit 0**);
-  regenerate with `bash run_v9.sh`. The v8 log (23 files), v7 log (22 files) and v6 log
-  (19 files) are retained as development history
+  the complete output of a single verified run (**33/33 files, exit 0**);
+  regenerate with `bash run_v10.sh`. The mechanical gate `tools/check_all.sh`
+  (also run in CI on every pull request) writes `logs/progress.json`. The v9
+  (24 files), v8, v7 and v6 logs are retained as development history
 
 by **Kazunari Arai** (新井一成), with Claude (Anthropic).
 Companion paper (working draft): *Formal Verification, Philosophical
@@ -109,11 +165,20 @@ canonical run**.
 | `phases/…phase8b.lean` | **Short-term probability weighting** W = p/(p+H) (Murata 2010; Takayabu–Arai 2012): the 2012 subadditivity conjecture resolved — refutation at the center pair (ln 2 > 1/2; interior witness; base-2 twin) and the regional theorem p₁+p₂ ≤ e/(1+e) (derivative-free); subcertainty central/edge split; inverse-S certified | +16 |
 | `phases/…phase8c.lean` | **Brady weight** V = K/(K+I): range, K-monotonicity (subjective time), the Brady limit I→∞, the intersubjective-time counterexample and its general form | +9 |
 | `phases/…phase8d.lean` | **Ch. VI anchors** (first Part-I file): Keynes's own weight principles as axioms over a primitive `V` — monotonicity (§1), complement symmetry (§3), mutual-inference equivalence (§4) — with relevance defined as strict weight-increase (§2); the §3 dichotomy `th_vi_2` and Keynes's own three-alternative chain `th_vi_4`. Load datum: the chain's kernel cut-set is `{Pr, V, ax_vi_compl, ax_vi_equiv}`. **Caveat (PR#5):** on this extensional carrier the weight relation degenerates (`V_collapse`: V a h = V True h), so the absence of the monotonicity axiom records this proof's dependencies, not a property of Keynes's system; the intensional re-encoding is phase 8d′. ℚ certificates for the §6 numerical example and urn pair; bridge to phase 8c (the §1 thesis holds when new evidence raises K alone, and has an intersubjective counterexample) | +9 |
+| `phases/keynes_part_i_phase8dp.lean` | **Ch. VI on the intensional carrier (8d′)**: weight on inferences; §4 witness in Keynes's configuration; weight not a function of probability; chain principles; Shiozawa's rules I/II collapse; model of the whole axiom layer | +27 |
+| `phases/…phase6c_inconsistency.lean` | **Record**: the pre-v1.5 intensional axiom set (no proviso, biconditional Def. VIII) derives `False` in four steps | +2 |
+| `phases/…phase6c_model.lean` | **Consistency certificate** for the repaired 6c: two-world finite model satisfying all 12 axioms, intermediate value 1/2, refutation of the old route | +19 |
+| `phases/…phase7i_model.lean` | **Extensional layer is consistent but two-valued**: model of all extensional axioms; `ext_forced` (ax_iii_true + Def. IX pin every model to the conclusion's truth value); the naive numerical axiom excluded by theorem | +36 |
+| `phases/…phase9x.lean` | **Ch. 17 §§3–12** (1911 JRSS): the 41 formulae, three law-of-error correspondences, counterexamples, printed-form deviations T-1/T-3 and the (ii)-9 sign error | +71 |
+| `phases/keynes_part_iii_phase9a.lean` | **Ch. 20 pure induction** F20.1–F20.21: recurrence, closed form, limit theorem; E-III-1 (dropped *g*, folio 235) and E-III-2 (`= 1 − ε`, folio 254) adjudicated | +60 |
+| `phases/keynes_part_iii_phase9b.lean` | **Ch. 19 §4** inequality chain (folio 225), the printed second line refuted and corrected; notation of §§6–11 as boundary records | +28 |
+| `phases/keynes_part_iii_phase9c.lean` | **Ch. 22 and Notes (ii)**: limited independent variety, F22.9–F22.19, the causal definitions (i.)–(x.), E-III-4 countermodel; finite-model independence of the six added axioms | +36 |
 | `prolog/keynes_axioms_v2.pl` | Citation database of Part II: 25 definitions/axioms, 100 theorems, 177 citation relations (SWI-Prolog) | — |
 | `docs/COLLATION_INDEX_7F.md` | **Row-by-row collation index**: page/line anchor and fidelity status for every ledger row; errata catalogue; Boole (1854) attribution map | — |
 | `phases/…phase7i.lean` | **1921-image re-collation**: the 13 statements the image pass found deviating from print, re-stated and verified in their printed form — (2)(3) disjunctive range forms, (10) three-term equality, (11) conclusion a/h=1, (37) chain-conditional hypothesis, (38.1) general two-alternative form, (43) separative-factor identities, (46.2) consistent two-letter form, (49.1) coefficient decomposition + monotonicity corollary, (56.4) bound triple, (57.1) the Π-coefficient equality itself, (57.2) bounds without independence, (57.3) Π-coefficient lower bound; plus machine refutations of five printed propositions — (35) non-strict hypothesis (8-region countermodel), (46.1) missing (x/h)ⁿ factor (8-region countermodel), (58.2) missing (1−q) factor and (58.3) exponent off by one (rational instances), (52)/(53) strictness — with the corrected forms verified | +25 |
-| `logs/…canonical_run_20260926_v9.log` | **The citable evidence artifact** (24 files) | — |
-| `run_v9.sh` | Regenerates the canonical log over `phases/*.lean` (SHA-256-bound) | — |
+| `logs/…canonical_run_20261022_v10.log` | **The citable evidence artifact** (33 files) | — |
+| `run_v10.sh` | Regenerates the canonical log over `phases/*.lean` (SHA-256-bound) | — |
+| `logs/…canonical_run_20260926_v9.log`, `run_v9.sh` | Superseded (24 files) | — |
 | `logs/…canonical_run_20260925_v8.log`, `…20260801_v7.log`, `…20260714_v6.log`, `…_v5.log`, `…_v4.log`, `…_v3.log`, `…20260708.log` | Superseded runs over earlier corpora (retained as development history) | — |
 | `docs/PHASE6C_DESIGN.md` | Design notes for the intensional migration, incl. planned Popper-function countermodel | — |
 
@@ -265,17 +330,20 @@ directions:
   (see the file headers for verbatim attribution, including the first
   formulation of W in Murata 2010).
 
-## Roadmap (v1.5)
+## Roadmap (v1.6)
 
 1. ~~**Full source-collation pass** (7f, July 2026)~~ superseded by the
    ~~**1921 first-edition image pass** (7i, September 2026)~~ — **done**.
    Remaining: Chapter 16 (prose restatements, no numbered theorems); the four
-   core items ((44), (46), (49), (49.1) in general n-letter form); and
-   **Chapter 17 §§3–12** (the 1911 JRSS "principal averages" material, 41
-   un-numbered formulae, ledgered under Keynes's 1911 numbering — not yet
-   formalised).
-2. Popper-function countermodel certifying that the degeneracy theorem is
-   unprovable in the pedantic encoding (6c-model).
+   core items ((44), (46), (49), (49.1) in general n-letter form).
+   ~~**Chapter 17 §§3–12**~~ — **done (v1.5, `phase9x`)**.
+2. ~~Popper-function countermodel~~ — **done in a stronger form (v1.5)**:
+   the repaired intensional layer has a finite model with intermediate
+   values (`phase6c_model`), while the extensional layer is proved
+   two-valued (`ext_forced`). Remaining: the uniqueness question for the
+   law of error without a continuity principle (whether several laws fit the
+   same data — the boundary where Keynes's finite apparatus hands over).
+   Also remaining: Part III Chapters 18, 21, 23; Part IV Chapters 24–25; Part V.
 3. External kernel re-check of the corpus via an independent verifier, to
    extend the trust chain beyond the shipping kernel.
 4. ~~Phase 8: the weight of argument~~ — **done (August–September 2026)**:
@@ -293,7 +361,7 @@ directions:
 ```
 Arai, K. (2026). Keynes's Treatise on Probability, Part II: a Lean 4 kernel
 audit. https://github.com/kazzarai/keynes-treatise-lean-audit
-(release v1.3; canonical run v9, 2026-09-26, Lean 4 v4.29.1)
+(release v1.5; canonical run v10, 2026-10-22, Lean 4 v4.29.1)
 ```
 
 ## License
