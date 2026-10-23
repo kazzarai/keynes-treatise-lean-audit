@@ -1,0 +1,3524 @@
+CANONICAL RUN v10 — Keynes audit v1.5: Part II complete (incl. Ch.17 §§3–12), Ch. VI (8d, 8dp), Part III (9a–9c), Ch. 26 (8a2), 6c repair + models
+date: 2026-10-23T02:33:30Z UTC
+Lean (version 4.29.1, arm64-apple-darwin24.6.0, commit f72c35b3f637c8c6571d353742168ab66cc22c00, Release)
+--- file hashes (sha256) ---
+15a47b0eeb779390a491577d3e5ec9f27587f809a13220d7dce428041cd58f0c  phases/keynes_part_i_phase8dp.lean
+996e1e147c434443efa87f0ee410d13a932427ab0b24aa94b4250f1ec780bb07  phases/keynes_part_ii_phase2.lean
+b8df792ffafb792bde1eecc6eb83d03adc4f9d8c4d015047b52daf44c3d166cd  phases/keynes_part_ii_phase3a.lean
+c90944da9e00f005cd31a43bf8500e382449d0056cb8107180a332fc14fce1a1  phases/keynes_part_ii_phase3b.lean
+aee45111106a9329e8ee74c50987c009819830bc06b1ebf4840b6627ea2895e6  phases/keynes_part_ii_phase3c.lean
+2563a850bcb833326e6b4d8fd5caba3a84f3a4a6096126741945991a05c4b2d0  phases/keynes_part_ii_phase3d.lean
+5f6e409952e1126f8b7911bc19943d3a74be2c3dca6e6d676c347bea912517a2  phases/keynes_part_ii_phase4.lean
+ddaf3fd00a7c062e74b195c4a24e744fb3139f80321d77f08fe779e95190dee6  phases/keynes_part_ii_phase5.lean
+64c942af64776e5ebc71f5d0babf8dd0f5c0020db8c6f109dbacd3d06f1f7f1e  phases/keynes_part_ii_phase6a.lean
+af3ed8ccd2a6728f1a42cda3b0c748550873d287aec7a60651d348df29be9417  phases/keynes_part_ii_phase6b.lean
+d287de0a45da6a6acdf425fa73e629c85812ad7a90df08067642e6c01221d3f4  phases/keynes_part_ii_phase6c.lean
+fac9b8c29cad3f833bbab4c9c78f3fb2199ac50df5dcd42d8a70b1c07201345f  phases/keynes_part_ii_phase6c_inconsistency.lean
+2c018602c87c906c29122547c4ef8581cb38e16d2d98a26509642b2fac4df5ca  phases/keynes_part_ii_phase6c_model.lean
+4e3e240596b03055b17499cd02a6408a9fe1246e50ad4d91375dfbf74f5fedf4  phases/keynes_part_ii_phase6c_skeleton.lean
+b938d05c52e91cf8a1a4e59dddd935ec184769287ba8dcad713e07d91cdc1b14  phases/keynes_part_ii_phase7a.lean
+66bbafd26d67d97163bbf4324b4243b9bd6f3f38026ea3e8757977bf0af2ad38  phases/keynes_part_ii_phase7b.lean
+3553cf82b137597ccaf1f232387b45a10415e9e05a1b0851f36f73d7ad1d5c58  phases/keynes_part_ii_phase7c.lean
+1a8e84dd383bd5abaa2ec1db3e3c8e54c2ab756c2fdba783518ca7391ea00d7f  phases/keynes_part_ii_phase7d.lean
+ac572e4c8f7536cb50e882c6d514db38e60a3e4152bdbd88f45ad2b435023e68  phases/keynes_part_ii_phase7e.lean
+17b686c95216a055df665634e6006912293b08d1b85ae6927c459733f58d55df  phases/keynes_part_ii_phase7g.lean
+eebed7e049e2f06b3a7170390499de22d7f2e2249401d3c70d8e7640dd68f622  phases/keynes_part_ii_phase7h.lean
+50809179c99f4c27aaddd4ac6bb9172d602a68a1c1fccbd8cb425ebfa36a6524  phases/keynes_part_ii_phase7i.lean
+aa6b435fcf37c5129b3e671694b0c6fd6382a41e13e7faa451f5ef8a84fe0071  phases/keynes_part_ii_phase7i_model.lean
+74ef3b38513bff8804c8d0779eec23993841c66c71585e351df4f26d38e34c5c  phases/keynes_part_ii_phase8a.lean
+cc9cd9b7d12ccea55f75227ce72e2a3af138f5a904058e24b1c6559cd3f2e34d  phases/keynes_part_ii_phase8b.lean
+69ce71a9eb300ffa19d557c659524282dad157e72dcfc76ebc1178b9277f94c3  phases/keynes_part_ii_phase8c.lean
+9c59d3445647e79141b1ec853561c2cbfbe738c3e7be433892d63eed695e05c4  phases/keynes_part_ii_phase8d.lean
+f8cabaaa03de4b26233d29f4a954efd297f30b7e2b1994e82dfd73efe5bd52fc  phases/keynes_part_ii_phase9x.lean
+9656039a8cb1ff485f932826ca5e8cd5ad7a978f5a1d9b26ccd211e68a1d22bc  phases/keynes_part_ii_pilot.lean
+acf504fe7aa9f7e940bbdacd55f72117e170fd8fe2086072a3866d1df8f4bb31  phases/keynes_part_iii_phase9a.lean
+c9104ed91c198defdec34b47014390188cc5a2587ee491245f83f38ea9df48fa  phases/keynes_part_iii_phase9b.lean
+e940f08d6a65ce3ac31e6d49d6867d179ddd91a3c982d4e6e2712e70c9336461  phases/keynes_part_iii_phase9c.lean
+0e180d79e9b3fcd0abfbd3745e439618b04696585ea29385f12f026ceeeed0a8  phases/keynes_part_iv_phase8a2.lean
+===================================================================
+
+=== FILE: keynes_part_i_phase8dp.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+KeynesWeightVIp.th_first_tier_injective : Function.Injective fun p => KeynesWeightVIp.arg p.1 p.2
+KeynesWeightVIp.th_vi_4_chain_i : ∀ (a b c h : KeynesWeightVIp.IProp),
+  KeynesWeightVIp.V (KeynesWeightVIp.arg a h) = KeynesWeightVIp.V (KeynesWeightVIp.arg b h) →
+    KeynesWeightVIp.PrI (KeynesWeightVIp.inot a) (KeynesWeightVIp.iand (KeynesWeightVIp.ior b c) h) = 1 →
+      KeynesWeightVIp.PrI (KeynesWeightVIp.ior b c) (KeynesWeightVIp.iand (KeynesWeightVIp.inot a) h) = 1 →
+        KeynesWeightVIp.V (KeynesWeightVIp.arg b h) =
+          KeynesWeightVIp.V (KeynesWeightVIp.arg (KeynesWeightVIp.ior b c) h)
+KeynesWeightVIp.th_8dp_indifference_witness : have S := KeynesWeightVIp.finModel KeynesWeightVIp.V_rows;
+have h := Finset.univ;
+S.KeynesPr ∧
+  S.Mono ∧
+    S.Compl ∧
+      S.Equiv ∧
+        (∀ (i j : Fin 3), S.Pr (KeynesWeightVIp.row i) h = S.Pr (KeynesWeightVIp.col j) h) ∧
+          (∀ (i j : Fin 3), S.V (KeynesWeightVIp.row i) h = S.V (KeynesWeightVIp.row j) h) ∧
+            (∀ (i j : Fin 3), S.V (KeynesWeightVIp.col i) h = S.V (KeynesWeightVIp.col j) h) ∧
+              S.V (KeynesWeightVIp.row 0) h ≠ S.V (KeynesWeightVIp.col 0) h
+KeynesWeightVIp.th_8dp_weight_not_function_of_probability : ∃ Γ S,
+  S.KeynesPr ∧ S.Mono ∧ S.Compl ∧ S.Equiv ∧ ∃ a b h, S.Pr a h = S.Pr b h ∧ S.V a h ≠ S.V b h
+KeynesWeightVIp.th_8dp_axiom_layer_model : KeynesWeightVIp.boolModel.KeynesPr ∧
+  KeynesWeightVIp.boolModel.Cert ∧
+    KeynesWeightVIp.boolModel.Mono ∧ KeynesWeightVIp.boolModel.Compl ∧ KeynesWeightVIp.boolModel.Equiv
+KeynesWeightVIp.th_8dp_rule_II_i_no_certainty : (∀ (a b h : KeynesWeightVIp.IProp),
+    KeynesWeightVIp.PrI a (KeynesWeightVIp.iand b h) = KeynesWeightVIp.PrI b h) →
+  False
+'KeynesWeightVIp.th_first_tier_injective' depends on axioms: [propext, KeynesWeightVIp.IProp]
+'KeynesWeightVIp.th_vi_2_dichotomy_i' depends on axioms: [propext,
+ Classical.choice,
+ KeynesWeightVIp.IProp,
+ KeynesWeightVIp.V,
+ KeynesWeightVIp.ax_vi_mono_i,
+ KeynesWeightVIp.iand,
+ Quot.sound]
+'KeynesWeightVIp.th_vi_4_chain_i' depends on axioms: [propext,
+ Classical.choice,
+ KeynesWeightVIp.IProp,
+ KeynesWeightVIp.PrI,
+ KeynesWeightVIp.V,
+ KeynesWeightVIp.ax_vi_compl_i,
+ KeynesWeightVIp.ax_vi_equiv_i,
+ KeynesWeightVIp.iand,
+ KeynesWeightVIp.inot,
+ KeynesWeightVIp.ior,
+ Quot.sound]
+'KeynesWeightVIp.WeightStructure.chain_of_compl_equiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.axiomatic_KeynesPr' depends on axioms: [propext,
+ Classical.choice,
+ KeynesWeightVIp.IProp,
+ KeynesWeightVIp.PrI,
+ KeynesWeightVIp.V,
+ KeynesWeightVIp.ax_range_hi_i,
+ KeynesWeightVIp.ax_range_lo_i,
+ KeynesWeightVIp.def_IX_i,
+ KeynesWeightVIp.def_X_left_i,
+ KeynesWeightVIp.def_X_right_i,
+ KeynesWeightVIp.iand,
+ KeynesWeightVIp.inot,
+ KeynesWeightVIp.ior,
+ Quot.sound]
+'KeynesWeightVIp.V₁_function_of_prF' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_nondegenerate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_two_triads' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_indifference_witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_weight_not_function_of_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_V_split_breaks_indifference' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.axiomatic_Cert' depends on axioms: [propext,
+ Classical.choice,
+ KeynesWeightVIp.IProp,
+ KeynesWeightVIp.PrI,
+ KeynesWeightVIp.V,
+ KeynesWeightVIp.ax_cert_i,
+ KeynesWeightVIp.iand,
+ KeynesWeightVIp.inot,
+ KeynesWeightVIp.ior,
+ KeynesWeightVIp.itrue,
+ Quot.sound]
+'KeynesWeightVIp.th_8dp_axiom_layer_model' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_chain_needs_compl' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_chain_needs_equiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_chain_without_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_table6_rows_sat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_rule_I_finite_model' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_rule_I_scheme_model' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_rule_I_finite_degenerate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_rule_I_i_square' depends on axioms: [propext,
+ Classical.choice,
+ KeynesWeightVIp.IProp,
+ KeynesWeightVIp.PrI,
+ KeynesWeightVIp.def_X_left_i,
+ KeynesWeightVIp.iand,
+ Quot.sound]
+'KeynesWeightVIp.th_8dp_rule_I_i_degenerate' depends on axioms: [propext,
+ Classical.choice,
+ KeynesWeightVIp.IProp,
+ KeynesWeightVIp.PrI,
+ KeynesWeightVIp.def_X_left_i,
+ KeynesWeightVIp.iand,
+ Quot.sound]
+'KeynesWeightVIp.th_8dp_rule_II_zero_model' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_rule_II_scheme_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_rule_II_scheme_no_certainty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVIp.th_8dp_rule_II_i' depends on axioms: [propext,
+ Classical.choice,
+ KeynesWeightVIp.IProp,
+ KeynesWeightVIp.PrI,
+ KeynesWeightVIp.def_IX_i,
+ KeynesWeightVIp.def_X_left_i,
+ KeynesWeightVIp.iand,
+ KeynesWeightVIp.inot,
+ Quot.sound]
+'KeynesWeightVIp.th_8dp_rule_II_i_no_certainty' depends on axioms: [propext,
+ Classical.choice,
+ KeynesWeightVIp.IProp,
+ KeynesWeightVIp.PrI,
+ KeynesWeightVIp.ax_cert_i,
+ KeynesWeightVIp.def_IX_i,
+ KeynesWeightVIp.def_X_left_i,
+ KeynesWeightVIp.iand,
+ KeynesWeightVIp.inot,
+ KeynesWeightVIp.itrue,
+ Quot.sound]
+EXIT_keynes_part_i_phase8dp:0
+
+=== FILE: keynes_part_ii_phase2.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+Keynes.th_13_1 : ∀ (α h : Prop), Keynes.Pr α h + Keynes.Pr (¬α) h = 1
+Keynes.th_13_2 : ∀ (α h : Prop), Keynes.NonCertain α h → Keynes.Pr α h < 1
+Keynes.th_13_3 : ∀ (α h : Prop), Keynes.NonImpossible α h → 0 < Keynes.Pr α h
+Keynes.th_13_19 : ∀ (α h : Prop), Keynes.Pr (α ∧ ¬α) h = 0
+Keynes.th_13_20 : ∀ (α h : Prop), Keynes.Pr (α ∨ ¬α) h = 1
+Keynes.th_24 : ∀ (α β h : Prop), Keynes.Pr (α ∨ β) h = Keynes.Pr α h + Keynes.Pr β h - Keynes.Pr (α ∧ β) h
+Keynes.th_24_1 : ∀ (α β h : Prop), Keynes.Pr (α ∧ β) h = 0 → Keynes.Pr (α ∨ β) h = Keynes.Pr α h + Keynes.Pr β h
+'Keynes.th_13_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_13_2' depends on axioms: [propext, Classical.choice, Keynes.Pr, Quot.sound]
+'Keynes.th_13_3' depends on axioms: [propext, Classical.choice, Keynes.Pr, Quot.sound]
+'Keynes.th_13_19' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Keynes.def_IX, Quot.sound]
+'Keynes.th_13_20' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_24' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Keynes.def_IX, Quot.sound]
+'Keynes.th_24_1' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Keynes.def_IX, Quot.sound]
+EXIT_keynes_part_ii_phase2:0
+
+=== FILE: keynes_part_ii_phase3a.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+Keynes.th_14_24_2 : ∀ (α b h : Prop), Keynes.Pr (α ∧ b) h + Keynes.Pr (¬α ∧ b) h = Keynes.Pr b h
+Keynes.th_14_36 : ∀ (α β h : Prop), Keynes.Independent α β h → Keynes.Pr (α ∧ β) h = Keynes.Pr α h * Keynes.Pr β h
+Keynes.th_14_38_b : ∀ (α b h : Prop), Keynes.Pr b h ≠ 0 → Keynes.Pr α (b ∧ h) = Keynes.Pr (α ∧ b) h / Keynes.Pr b h
+'Keynes.th_14_24_2' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_14_36' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.def_X_left, Quot.sound]
+'Keynes.th_14_38_b' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_XI,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_13_19' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Keynes.def_IX, Quot.sound]
+'Keynes.th_13_20' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_24' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Keynes.def_IX, Quot.sound]
+EXIT_keynes_part_ii_phase3a:0
+
+=== FILE: keynes_part_ii_phase3b.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+Keynes.Infl : Prop → Prop → Prop → ℝ
+Keynes.th_14_41_b : ∀ (α β h : Prop),
+  Keynes.Pr α h ≠ 0 → Keynes.Pr β h ≠ 0 → Keynes.Pr (α ∧ β) h = Keynes.Infl α β h * Keynes.Pr α h * Keynes.Pr β h
+Keynes.th_14_42 : ∀ (α β h : Prop), Keynes.Infl α β h = Keynes.Infl β α h
+Keynes.th_14_44 : ∀ (α β h : Prop),
+  Keynes.Independent α β h → Keynes.Pr α h ≠ 0 → Keynes.Pr β h ≠ 0 → Keynes.Infl α β h = 1
+Keynes.th_14_44_1 : ∀ (α β h : Prop),
+  Keynes.Pr α h ≠ 0 → Keynes.Pr β h ≠ 0 → Keynes.Infl α β h = 1 → Keynes.Pr (α ∧ β) h = Keynes.Pr α h * Keynes.Pr β h
+Keynes.infl_eq_one_iff_indep_product : ∀ (α β h : Prop),
+  Keynes.Pr α h ≠ 0 → Keynes.Pr β h ≠ 0 → (Keynes.Infl α β h = 1 ↔ Keynes.Pr (α ∧ β) h = Keynes.Pr α h * Keynes.Pr β h)
+'Keynes.th_14_41_b' depends on axioms: [propext, Classical.choice, Keynes.Pr, Quot.sound]
+'Keynes.th_14_42' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Quot.sound]
+'Keynes.th_14_44' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.def_X_left, Quot.sound]
+'Keynes.th_14_44_1' depends on axioms: [propext, Classical.choice, Keynes.Pr, Quot.sound]
+'Keynes.infl_eq_one_iff_indep_product' depends on axioms: [propext, Classical.choice, Keynes.Pr, Quot.sound]
+'Keynes.th_14_36' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.def_X_left, Quot.sound]
+'Keynes.th_24' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Keynes.def_IX, Quot.sound]
+EXIT_keynes_part_ii_phase3b:0
+
+=== FILE: keynes_part_ii_phase3c.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+Keynes.Infl3 : Prop → Prop → Prop → Prop → ℝ
+Keynes.th_14_45_b : ∀ (α β h : Prop), Keynes.Infl (α ∧ α) β h = Keynes.Infl α β h
+Keynes.th_14_41_c : ∀ (α β γ h : Prop),
+  Keynes.Pr α h ≠ 0 →
+    Keynes.Pr β h ≠ 0 →
+      Keynes.Pr γ h ≠ 0 → Keynes.Pr (α ∧ β ∧ γ) h = Keynes.Infl3 α β γ h * Keynes.Pr α h * Keynes.Pr β h * Keynes.Pr γ h
+Keynes.th_14_42_c : ∀ (α β γ h : Prop), Keynes.Infl3 α β γ h = Keynes.Infl3 α γ β h
+Keynes.th_14_43 : ∀ (α β γ h : Prop),
+  Keynes.Pr α ((β ∧ γ) ∧ h) = Keynes.Pr α h → Keynes.Pr (α ∧ β ∧ γ) h = Keynes.Pr α h * Keynes.Pr (β ∧ γ) h
+Keynes.th_14_38_full : ∀ (α β h : Prop),
+  Keynes.Pr β h ≠ 0 → Keynes.Pr α (β ∧ h) = Keynes.Pr β (α ∧ h) * Keynes.Pr α h / Keynes.Pr β h
+'Keynes.th_14_45_b' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Quot.sound]
+'Keynes.th_14_41_c' depends on axioms: [propext, Classical.choice, Keynes.Pr, Quot.sound]
+'Keynes.th_14_42_c' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Quot.sound]
+'Keynes.th_14_43' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.def_X_left, Quot.sound]
+'Keynes.th_14_38_full' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_XI,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_36' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.def_X_left, Quot.sound]
+'Keynes.th_14_42' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Quot.sound]
+EXIT_keynes_part_ii_phase3c:0
+
+=== FILE: keynes_part_ii_phase3d.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+phases/keynes_part_ii_phase3d.lean:108:5: warning: unused variable `hα₂_post`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+phases/keynes_part_ii_phase3d.lean:121:19: warning: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+phases/keynes_part_ii_phase3d.lean:146:5: warning: unused variable `hp1`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+phases/keynes_part_ii_phase3d.lean:146:24: warning: unused variable `hp2`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Keynes.th_14_46_seq : ∀ (α β₁ β₂ h : Prop),
+  Keynes.Pr (β₁ ∧ β₂) h ≠ 0 →
+    Keynes.Pr α ((β₁ ∧ β₂) ∧ h) = Keynes.Pr (β₁ ∧ β₂) (α ∧ h) * Keynes.Pr α h / Keynes.Pr (β₁ ∧ β₂) h
+Keynes.th_14_47_odds : ∀ (α₁ α₂ β h : Prop),
+  Keynes.Pr β h ≠ 0 →
+    Keynes.Pr α₂ (β ∧ h) ≠ 0 →
+      Keynes.Pr α₂ h ≠ 0 →
+        Keynes.Pr β (α₂ ∧ h) ≠ 0 →
+          Keynes.Pr α₁ (β ∧ h) / Keynes.Pr α₂ (β ∧ h) =
+            Keynes.Pr α₁ h * Keynes.Pr β (α₁ ∧ h) / (Keynes.Pr α₂ h * Keynes.Pr β (α₂ ∧ h))
+Keynes.th_14_48_binary : ∀ (α β h : Prop),
+  Keynes.Pr α h ≠ 0 →
+    Keynes.Pr (¬α) h ≠ 0 →
+      Keynes.Pr β h ≠ 0 →
+        Keynes.Pr α (β ∧ h) =
+          Keynes.Pr α h * Keynes.Pr β (α ∧ h) /
+            (Keynes.Pr α h * Keynes.Pr β (α ∧ h) + Keynes.Pr (¬α) h * Keynes.Pr β (¬α ∧ h))
+'Keynes.th_14_46_seq' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_XI,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_47_odds' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_XI,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_48_binary' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_IX,
+ Keynes.def_XI,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_38_full' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_XI,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+EXIT_keynes_part_ii_phase3d:0
+
+=== FILE: keynes_part_ii_phase4.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+Keynes.th_15_degeneracy : ∀ (α h : Prop), Keynes.Pr α h = 0 ∨ Keynes.Pr α h = 1
+Keynes.Naive.collapse : False
+Keynes.th_ax_xviii_absorbed : ∀ (P : ℝ) (n : ℕ), Keynes.addTimes n P = ↑n * P
+Keynes.th_ax_xix_absorbed : ∀ (n : ℕ) (v : ℝ), ↑n ≠ 0 → ↑n * v = 1 → v = 1 / ↑n
+Keynes.Intensional.th_15_50 : ∀ (p q n : ℕ), p + q ≤ n → n ≠ 0 → ∃ a e, Keynes.Intensional.PrI a e = ↑p / ↑n + ↑q / ↑n
+Keynes.th_15_51 : ∀ (α y h : Prop),
+  Keynes.Pr α h + Keynes.Pr y h - 1 ≤ Keynes.Pr (α ∧ y) h ∧
+    Keynes.Pr (α ∧ y) h ≤ Keynes.Pr α h ∧ Keynes.Pr (α ∧ y) h ≤ Keynes.Pr y h
+Keynes.th_15_52 : ∀ (h : Prop) (l : List Prop), Keynes.sumPr l h - (↑l.length - 1) ≤ Keynes.Pr (Keynes.bigAnd l) h
+Keynes.th_15_53 : ∀ (α y h : Prop),
+  Keynes.Pr (α ∧ y) h + Keynes.Pr (¬α ∧ ¬y) h ≤ 1 - Keynes.Pr α h + Keynes.Pr y h ∧
+    Keynes.Pr (α ∧ y) h + Keynes.Pr (¬α ∧ ¬y) h ≤ 1 - Keynes.Pr y h + Keynes.Pr α h
+Keynes.th_15_54 : ∀ (α y h : Prop), Keynes.Pr (α ∧ y) h - Keynes.Pr (¬α ∧ ¬y) h = Keynes.Pr α h + Keynes.Pr y h - 1
+Keynes.th_15_55 : ∀ (P A B t : ℝ), 0 ≤ B → P = A + B * t → 0 ≤ t → t ≤ 1 → A ≤ P ∧ P ≤ A + B
+'Keynes.th_15_degeneracy' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.Naive.collapse' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Quot.sound,
+ Keynes.Naive.ax_mae_prop]
+'Keynes.th_ax_xviii_absorbed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Keynes.th_ax_xix_absorbed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Keynes.Intensional.th_15_50' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ Keynes.Intensional.IProp,
+ Keynes.Intensional.PrI,
+ Keynes.Intensional.ax_mae]
+'Keynes.th_15_51' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_15_52' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_15_53' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_15_54' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_15_55' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Keynes.th_13_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_24' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Keynes.def_IX, Quot.sound]
+'Keynes.pr_false' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Keynes.def_IX, Quot.sound]
+EXIT_keynes_part_ii_phase4:0
+
+=== FILE: keynes_part_ii_phase5.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+phases/keynes_part_ii_phase5.lean:522:21: warning: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Keynes.th_14_49 : ∀ (β₁ β₂ h : Prop),
+  0 < Keynes.Pr β₁ h → Keynes.Pr β₁ h * Keynes.Pr β₂ h < Keynes.Pr (β₁ ∧ β₂) h → Keynes.Pr β₂ h < Keynes.Pr β₂ (β₁ ∧ h)
+Keynes.th_14_49_infl : ∀ (β₁ β₂ h : Prop),
+  0 < Keynes.Pr β₁ h → 0 < Keynes.Pr β₂ h → 1 < Keynes.Infl β₁ β₂ h → Keynes.Pr β₂ h < Keynes.Pr β₂ (β₁ ∧ h)
+Keynes.th_17_56_raw : ∀ (α₁ α₂ E h : Prop),
+  Keynes.Pr (α₁ ∨ α₂) (E ∧ h) = 1 →
+    Keynes.Pr E h = Keynes.Pr (α₁ ∧ E) h + Keynes.Pr (α₂ ∧ E) h - Keynes.Pr ((α₁ ∧ α₂) ∧ E) h
+Keynes.th_17_56 : ∀ (α₁ α₂ E h : Prop),
+  Keynes.Pr (α₁ ∨ α₂) (E ∧ h) = 1 →
+    Keynes.Pr E h =
+      Keynes.Pr E (α₁ ∧ h) * Keynes.Pr α₁ h + Keynes.Pr E (α₂ ∧ h) * Keynes.Pr α₂ h -
+        Keynes.Pr (α₁ ∧ α₂) (E ∧ h) * Keynes.Pr E h
+Keynes.th_17_56_1 : ∀ (α₁ α₂ E h : Prop),
+  Keynes.Pr (α₁ ∨ α₂) (E ∧ h) = 1 →
+    Keynes.Pr E (α₁ ∧ h) * Keynes.Pr α₁ h ≤ Keynes.Pr E h ∧
+      Keynes.Pr E (α₂ ∧ h) * Keynes.Pr α₂ h ≤ Keynes.Pr E h ∧
+        Keynes.Pr E h ≤ Keynes.Pr E (α₁ ∧ h) * Keynes.Pr α₁ h + Keynes.Pr E (α₂ ∧ h) * Keynes.Pr α₂ h ∧
+          Keynes.Pr E h ≤ 1 - Keynes.Pr α₁ h + Keynes.Pr E (α₁ ∧ h) * Keynes.Pr α₁ h ∧
+            Keynes.Pr E h ≤ 1 - Keynes.Pr α₂ h + Keynes.Pr E (α₂ ∧ h) * Keynes.Pr α₂ h
+Keynes.th_17_56_2 : ∀ (α₁ α₂ E h : Prop),
+  Keynes.Pr (α₁ ∨ α₂) (E ∧ h) = 1 → Keynes.Pr E h ≤ Keynes.Pr E (α₁ ∧ h) + Keynes.Pr E (α₂ ∧ h)
+Keynes.th_17_56_3 : ∀ (α₁ α₂ E h : Prop),
+  Keynes.Pr (α₁ ∨ α₂) (E ∧ h) = 1 →
+    Keynes.Pr E (α₁ ∧ h) * Keynes.Pr α₁ h ≤ Keynes.Pr E h ∧
+      Keynes.Pr E h ≤ 1 - Keynes.Pr α₁ h + Keynes.Pr E (α₁ ∧ h) * Keynes.Pr α₁ h
+Keynes.th_17_56_4 : ∀ (α₁ α₂ E h : Prop),
+  Keynes.Pr (α₁ ∨ α₂) (E ∧ h) = 1 → Keynes.Pr E h ≤ Keynes.Pr E (α₁ ∧ h) * Keynes.Pr α₁ h + Keynes.Pr α₂ h
+Keynes.th_17_56_5 : ∀ (α₁ α₂ E h : Prop),
+  Keynes.Pr (α₁ ∨ α₂) (E ∧ h) = 1 →
+    Keynes.Pr α₁ (α₂ ∧ h) = Keynes.Pr α₁ h →
+      Keynes.Pr E (α₁ ∧ h) * Keynes.Pr α₁ h + Keynes.Pr E (α₂ ∧ h) * Keynes.Pr α₂ h - Keynes.Pr α₁ h * Keynes.Pr α₂ h ≤
+        Keynes.Pr E h
+Keynes.th_17_57 : ∀ (causes : List Prop) (E h : Prop),
+  Keynes.Pr (Keynes.bigOr causes) (E ∧ h) = 1 →
+    Keynes.Pr E h =
+      Keynes.sumPr (List.map (fun p => p ∧ E) causes) h - Keynes.overlapSum (List.map (fun p => p ∧ E) causes) h
+Keynes.th_17_57_2 : ∀ (causes : List Prop) (E h : Prop),
+  Keynes.Pr (Keynes.bigOr causes) (E ∧ h) = 1 → ∀ α ∈ causes, Keynes.Pr E (α ∧ h) * Keynes.Pr α h ≤ Keynes.Pr E h
+Keynes.th_17_57_6 : ∀ (αr E h : Prop),
+  Keynes.Pr E h ≠ 0 → Keynes.Pr αr (E ∧ h) = Keynes.Pr E (αr ∧ h) * Keynes.Pr αr h / Keynes.Pr E h
+Keynes.th_17_58 : ∀ (h : Prop) (l : List Prop), Keynes.Pr (Keynes.bigAnd l) h = Keynes.chainProd l h
+Keynes.th_17_58_1 : ∀ (h : Prop) (l : List Prop), (∀ p ∈ l, ∀ (e : Prop), Keynes.Pr p e = 1) → Keynes.chainProd l h = 1
+Keynes.th_17_58_2 : ∀ (h p : Prop) (l : List Prop), Keynes.chainProd (p :: l) h ≤ Keynes.chainProd l h
+Keynes.th_17_58_3 : ∀ (a r : ℝ) (n : ℕ), 0 < a → a ≤ 1 → 0 ≤ r → (a - (1 - a) * r ^ n) / a ≤ a / (a + (1 - a) * r ^ n)
+'Keynes.th_14_49' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_14_49_infl' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_17_56_raw' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_17_56' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_17_56_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_17_56_2' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_17_56_3' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_17_56_4' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_17_56_5' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_17_57' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_17_57_2' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_17_57_6' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_XI,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_17_58' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_true,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_17_58_1' depends on axioms: [propext, Classical.choice, Keynes.Pr, Quot.sound]
+'Keynes.th_17_58_2' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Quot.sound]
+'Keynes.th_17_58_3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Keynes.th_24' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Keynes.def_IX, Quot.sound]
+'Keynes.pr_false' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Keynes.def_IX, Quot.sound]
+'Keynes.th_14_38_full' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_XI,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.incl_excl' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.pr_le_bigOr' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.chainProd_nonneg' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_range_lo, Quot.sound]
+EXIT_keynes_part_ii_phase5:0
+
+=== FILE: keynes_part_ii_phase6a.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+phases/keynes_part_ii_phase6a.lean:240:45: warning: 'norm_num' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+phases/keynes_part_ii_phase6a.lean:457:21: warning: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Keynes.th_14_25 : ∀ (causes : List Prop) (E h : Prop),
+  Keynes.Pr (Keynes.bigOr causes) h = 1 →
+    List.Pairwise (fun a b => Keynes.Pr (a ∧ b) h = 0) causes → Keynes.Pr E h = Keynes.weightSum causes E h
+Keynes.th_14_25_1 : ∀ (causes : List Prop) (E h : Prop),
+  Keynes.Pr (Keynes.bigOr causes) h = 1 →
+    List.Pairwise (fun a b => Keynes.Pr (a ∧ b) h = 0) causes →
+      Keynes.Pr E h = Keynes.sumPr (List.map (fun a => a ∧ E) causes) h
+Keynes.th_14_46_1 : ∀ (α β h : Prop),
+  Keynes.Pr β h ≠ 0 → Keynes.Pr α ((β ∧ β) ∧ h) = Keynes.Pr β (α ∧ h) * Keynes.Pr α h / Keynes.Pr β h
+Keynes.th_14_46_2 : ∀ (causes : List Prop) (E h : Prop),
+  Keynes.Pr (Keynes.bigOr causes) h = 1 →
+    List.Pairwise (fun a b => Keynes.Pr (a ∧ b) h = 0) causes →
+      Keynes.Pr E h ≠ 0 →
+        ∀ α ∈ causes, Keynes.Pr α (E ∧ h) = Keynes.Pr E (α ∧ h) * Keynes.Pr α h / Keynes.weightSum causes E h
+Keynes.th_14_47_1 : ∀ (causes : List Prop) (E h : Prop),
+  Keynes.Pr (Keynes.bigOr causes) h = 1 →
+    List.Pairwise (fun a b => Keynes.Pr (a ∧ b) h = 0) causes →
+      Keynes.Pr E h ≠ 0 →
+        ∀ α ∈ causes,
+          Keynes.weightSum causes E h ≠ 0 →
+            Keynes.Pr α (E ∧ h) * Keynes.weightSum causes E h = Keynes.Pr E (α ∧ h) * Keynes.Pr α h
+Keynes.th_14_49_1 : ∀ (causes : List Prop) (E h : Prop),
+  Keynes.Pr (Keynes.bigOr causes) h = 1 →
+    List.Pairwise (fun a b => Keynes.Pr (a ∧ b) h = 0) causes →
+      Keynes.Pr E h ≠ 0 →
+        ∀ α ∈ causes,
+          0 < Keynes.Pr α h →
+            0 < Keynes.weightSum causes E h →
+              Keynes.weightSum causes E h < Keynes.Pr E (α ∧ h) → Keynes.Pr α h < Keynes.Pr α (E ∧ h)
+Keynes.th_17_57_1 : ∀ (causes : List Prop) (E h : Prop),
+  Keynes.Pr (Keynes.bigOr causes) (E ∧ h) = 1 →
+    List.Pairwise (fun a b => Keynes.Pr (a ∧ b) h = Keynes.Pr a h * Keynes.Pr b h) causes →
+      Keynes.sumPr (List.map (fun a => a ∧ E) causes) h - Keynes.pairProdSum causes h ≤ Keynes.Pr E h
+Keynes.th_17_57_3 : ∀ (causes : List Prop) (E h : Prop),
+  Keynes.Pr (Keynes.bigOr causes) (E ∧ h) = 1 →
+    List.Pairwise (fun a b => Keynes.Pr (a ∧ b) h = Keynes.Pr a h * Keynes.Pr b h) causes →
+      ∀ α ∈ causes,
+        Keynes.sumPr (List.map (fun a => a ∧ E) causes) h - Keynes.pairProdSum causes h ≤ Keynes.Pr E h ∧
+          Keynes.Pr E h ≤ 1 - Keynes.Pr α h + Keynes.Pr E (α ∧ h) * Keynes.Pr α h
+Keynes.th_17_57_4 : ∀ (causes : List Prop) (E h : Prop),
+  Keynes.Pr (Keynes.bigOr causes) (E ∧ h) = 1 →
+    Keynes.Pr E (Keynes.bigOr causes ∧ h) = 1 →
+      Keynes.NegChainIndep causes h → Keynes.Pr E h = 1 - Keynes.prodComplement causes h
+Keynes.th_17_57_5 : ∀ (causes : List Prop) (E h : Prop),
+  Keynes.Pr (Keynes.bigOr causes) (E ∧ h) = 1 →
+    List.Pairwise (fun a b => Keynes.Pr (a ∧ b) h = Keynes.Pr a h * Keynes.Pr b h) causes →
+      Keynes.sumPr (List.map (fun a => a ∧ E) causes) h - Keynes.pairProdSum causes h ≤ Keynes.Pr E h ∧
+        Keynes.Pr E h ≤ Keynes.sumPr (List.map (fun a => a ∧ E) causes) h
+'Keynes.th_14_25' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_25_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_46_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_ev,
+ Keynes.def_XI,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_46_2' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_XI,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_47_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_XI,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_49_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_XI,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_17_57_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_17_57_3' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_17_57_4' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_17_57_5' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_17_57' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.prodComplement_eq' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.overlapSum_map_le_pairProdSum' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.overlapSum_map_and_zero_of_excl' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+EXIT_keynes_part_ii_phase6a:0
+
+=== FILE: keynes_part_ii_phase6b.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+phases/keynes_part_ii_phase6b.lean:226:8: warning: 'linear_combination -hx' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+phases/keynes_part_ii_phase6b.lean:226:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+phases/keynes_part_ii_phase6b.lean:386:45: warning: 'norm_num' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+phases/keynes_part_ii_phase6b.lean:545:8: warning: 'linear_combination hl - hr' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+phases/keynes_part_ii_phase6b.lean:545:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Keynes.th_13_4 : ∀ (α b h : Prop), Keynes.Pr (α ∧ b) h ≤ Keynes.Pr b h
+Keynes.th_13_12 : ∀ (α b h : Prop), Keynes.Pr (α ↔ b) h = 1 → Keynes.Pr α h = Keynes.Pr b h
+Keynes.th_13_13 : ∀ (α h : Prop), Keynes.Pr α h ≠ 0 → Keynes.Pr α (α ∧ h) = 1
+Keynes.th_13_18 : ∀ (α h : Prop), Keynes.Pr α (α ∧ h) = 1 ∨ Keynes.Pr (¬α) (¬α ∧ h) = 1
+Keynes.th_13_21 : ∀ (α h₁ h₂ h : Prop), Keynes.Pr α (h₁ ∧ h) = 1 → Keynes.Pr α (h₂ ∧ h) = 0 → Keynes.Pr (h₁ ∧ h₂) h = 0
+Keynes.th_14_24_6 : ∀ (h : Prop) (l : List Prop),
+  List.Pairwise (fun a b => Keynes.Pr (a ∧ b) h = 0) l → Keynes.Pr (Keynes.bigOr l) h = Keynes.sumPr l h
+Keynes.th_14_26 : ∀ (α h : Prop), Keynes.Pr h h = 1 → Keynes.Pr (α ∧ h) h = Keynes.Pr α h
+Keynes.th_14_29 : ∀ (α h₁ h₂ h : Prop),
+  Keynes.Pr α ((h₁ ∨ h₂) ∧ h) = 1 →
+    Keynes.Pr h₁ ((h₁ ∨ h₂) ∧ h) ≠ 0 →
+      Keynes.Pr h₂ ((h₁ ∨ h₂) ∧ h) ≠ 0 → Keynes.Pr α (h₁ ∧ h) = 1 ∧ Keynes.Pr α (h₂ ∧ h) = 1
+Keynes.th_14_31 : ∀ (α₁ α₂ h : Prop),
+  Keynes.Pr α₂ (α₁ ∧ h) = Keynes.Pr α₂ h → Keynes.Pr α₂ h ≠ 0 → Keynes.Pr α₁ (α₂ ∧ h) = Keynes.Pr α₁ h
+Keynes.th_14_32 : ∀ (α h₁ h : Prop),
+  0 < Keynes.Pr α h → 0 < Keynes.Pr h₁ h → Keynes.Pr α h < Keynes.Pr α (h₁ ∧ h) → Keynes.Pr h₁ h < Keynes.Pr h₁ (α ∧ h)
+Keynes.th_14_37_full : ∀ (h : Prop) (v : ℝ) (l : List Prop),
+  (∀ p ∈ l, ∀ (e : Prop), Keynes.Pr p e = v) → Keynes.Pr (Keynes.bigAnd l) h = v ^ l.length
+Keynes.th_14_41_2 : ∀ (l : List Prop) (h : Prop),
+  Keynes.prodPr l h ≠ 0 → Keynes.Pr (Keynes.bigAnd l) h = Keynes.InflN l h * Keynes.prodPr l h
+'Keynes.th_13_4' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_13_5' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_range_lo, Quot.sound]
+'Keynes.th_13_6' depends on axioms: [propext, Classical.choice, Keynes.Pr, Quot.sound]
+'Keynes.th_13_7' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Quot.sound]
+'Keynes.th_13_8' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_9' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_10' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_13_11' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_12' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_13_13' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_13_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_13_2' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_14' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_13_15' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.def_X_left, Quot.sound]
+'Keynes.th_13_18' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_21' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_ev,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_13_22' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_23' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_14_24_3' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_14_24_4' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_14_24_5' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_14_24_6' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_14_24_7' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_14_26' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_ev,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_14_26_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_ev,
+ Keynes.ax_iii_op,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_14_27' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_14_27_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_14_28' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_14_28_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_14_29' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_ev,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_14_31' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_32' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_37' depends on axioms: [propext, Classical.choice, Keynes.Pr, Quot.sound]
+'Keynes.th_14_37_full' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_true,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_14_41_2' depends on axioms: [propext, Classical.choice, Keynes.Pr, Quot.sound]
+'Keynes.chain_rule' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_true,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.incl_excl' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_IX,
+ Quot.sound]
+EXIT_keynes_part_ii_phase6b:0
+
+=== FILE: keynes_part_ii_phase6c.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+KeynesI.th_12_i : ∀ (a b h : KeynesI.IProp),
+  KeynesI.Cons h → KeynesI.PrI (KeynesI.iiff a b) h = 1 → KeynesI.PrI a h = KeynesI.PrI b h
+KeynesI.th_12_i_short : ∀ (a b h : KeynesI.IProp),
+  KeynesI.Cons h → KeynesI.PrI (KeynesI.iiff a b) h = 1 → KeynesI.PrI a h = KeynesI.PrI b h
+KeynesI.subst_taut : ∀ (f g : KeynesI.Form) (env : ℕ → KeynesI.IProp) (h : KeynesI.IProp),
+  KeynesI.Cons h → KeynesI.Taut (f.iffF g) → KeynesI.PrI (KeynesI.interp env f) h = KeynesI.PrI (KeynesI.interp env g) h
+KeynesI.itrue_certain : ∀ (h : KeynesI.IProp), KeynesI.Cons h → KeynesI.PrI KeynesI.itrue h = 1
+KeynesI.th_13_1_i : ∀ (a h : KeynesI.IProp), KeynesI.Cons h → KeynesI.PrI a h + KeynesI.PrI (KeynesI.inot a) h = 1
+KeynesI.th_24_i : ∀ (a b h : KeynesI.IProp),
+  KeynesI.Cons h →
+    KeynesI.PrI (KeynesI.ior a b) h = KeynesI.PrI a h + KeynesI.PrI b h - KeynesI.PrI (KeynesI.iand a b) h
+KeynesI.th_14_36_i : ∀ (a b h : KeynesI.IProp),
+  KeynesI.PrI a (KeynesI.iand b h) = KeynesI.PrI a h →
+    KeynesI.PrI (KeynesI.iand a b) h = KeynesI.PrI a h * KeynesI.PrI b h
+KeynesI.th_14_38_full_i : ∀ (a b h : KeynesI.IProp),
+  KeynesI.PrI b h ≠ 0 →
+    KeynesI.PrI a (KeynesI.iand b h) = KeynesI.PrI b (KeynesI.iand a h) * KeynesI.PrI a h / KeynesI.PrI b h
+KeynesI.th_13_13_conj_i : ∀ (a h : KeynesI.IProp),
+  KeynesI.Cons h → KeynesI.Cons (KeynesI.iand a h) → KeynesI.PrI a (KeynesI.iand a h) = 1
+'KeynesI.itrue_certain' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.Cons,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.true_conj' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.Cons,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.cons_of_pos,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_13_1_i' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.Cons,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.cons_of_pos,
+ KeynesI.def_IX_i,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.taut_neg_zero' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.Cons,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.cons_of_pos,
+ KeynesI.def_IX_i,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.conj_neg_cert_zero' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.Cons,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.cons_of_pos,
+ KeynesI.def_IX_i,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_12_i' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.Cons,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.cons_of_pos,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_12_i_short' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.Cons,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.cons_of_pos,
+ KeynesI.def_IX_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.subst_taut' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.Cons,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.cons_of_pos,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_24_i' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.Cons,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.cons_of_pos,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_14_36_i' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ Quot.sound]
+'KeynesI.th_14_38_full_i' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.def_XI_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ Quot.sound]
+'KeynesI.th_13_13_conj_i' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.Cons,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_VIII_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+EXIT_keynes_part_ii_phase6c:0
+
+=== FILE: keynes_part_ii_phase6c_inconsistency.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+KeynesI_old.pr_self_evidence_old : ∀ (a h : KeynesI_old.IProp), KeynesI_old.PrI a (KeynesI_old.iand a h) = 1
+KeynesI_old.th_6c_old_inconsistent : False
+'KeynesI_old.pr_self_evidence_old' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI_old.IProp,
+ KeynesI_old.PrI,
+ KeynesI_old.ax_iii_taut,
+ KeynesI_old.def_VIII_i,
+ KeynesI_old.iand,
+ KeynesI_old.iiff,
+ KeynesI_old.inot,
+ KeynesI_old.ior,
+ KeynesI_old.itrue,
+ Quot.sound]
+'KeynesI_old.th_6c_old_inconsistent' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI_old.IProp,
+ KeynesI_old.PrI,
+ KeynesI_old.ax_iii_taut,
+ KeynesI_old.def_IX_i,
+ KeynesI_old.def_VIII_i,
+ KeynesI_old.def_X_left_i,
+ KeynesI_old.def_X_right_i,
+ KeynesI_old.iand,
+ KeynesI_old.iiff,
+ KeynesI_old.inot,
+ KeynesI_old.ior,
+ KeynesI_old.itrue,
+ Quot.sound]
+EXIT_keynes_part_ii_phase6c_inconsistency:0
+
+=== FILE: keynes_part_ii_phase6c_model.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+KeynesI_model.finSys : KeynesI_model.Sys KeynesI_model.finOps
+KeynesI_model.not_self_evidence : ¬∀ (S : KeynesI_model.Ops),
+    KeynesI_model.Sys S → ∀ (a h : S.IProp), S.PrI a (S.iand a h) = 1
+KeynesI_model.model_not_self_evidence : ∃ a h, KeynesI_model.pr a (KeynesI_model.mand a h) ≠ 1
+KeynesI_model.model_intermediate_value : KeynesI_model.pr {0} Finset.univ = 1 / 2
+'KeynesI_model.model_def_IX_i' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_def_X_left_i' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_def_X_right_i' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_def_XI_i' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_ax_range_lo_i' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_ax_range_hi_i' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_def_VIII_i' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_def_VIII_i_src' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_ax_iii_taut' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_cons_true' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_cons_of_pos_src' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_cons_of_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_cons_iff_taut' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.finSys' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_not_self_evidence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_old_def_VIII_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_old_ax_iii_taut_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.not_self_evidence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI_model.model_intermediate_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT_keynes_part_ii_phase6c_model:0
+
+=== FILE: keynes_part_ii_phase6c_skeleton.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+KeynesI.smoke_comm : ∀ (p q h : KeynesI.IProp), KeynesI.PrI (KeynesI.iand p q) h = KeynesI.PrI (KeynesI.iand q p) h
+KeynesI.smoke_idem : ∀ (p h : KeynesI.IProp), KeynesI.PrI (KeynesI.iand p p) h = KeynesI.PrI p h
+KeynesI.smoke_compl : ∀ (p h : KeynesI.IProp),
+  KeynesI.PrI (KeynesI.iand KeynesI.itrue (KeynesI.inot p)) h + KeynesI.PrI (KeynesI.iand KeynesI.itrue p) h =
+    KeynesI.PrI KeynesI.itrue h
+'KeynesI.smoke_comm' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.KTaut,
+ KeynesI.PrI,
+ KeynesI.ax_iii_pedantic,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.ktaut_and_comm,
+ KeynesI.th_12_i,
+ Quot.sound]
+'KeynesI.smoke_idem' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.KTaut,
+ KeynesI.PrI,
+ KeynesI.ax_iii_pedantic,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.ktaut_and_idem,
+ KeynesI.th_12_i,
+ Quot.sound]
+'KeynesI.smoke_compl' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.def_IX_i,
+ KeynesI.iand,
+ KeynesI.inot,
+ KeynesI.itrue,
+ Quot.sound]
+EXIT_keynes_part_ii_phase6c_skeleton:0
+
+=== FILE: keynes_part_ii_phase7a.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+Keynes.th_13_16_1 : ∀ (h₁ h₂ h : Prop), Keynes.Pr h₁ (h₂ ∧ h) = 1 → Keynes.Pr (h₂ → h₁) h = 1
+Keynes.th_13_16_3 : ∀ (h₁ h₂ h : Prop), Keynes.Pr (h₂ → h₁) h = 1 → Keynes.Pr h₂ h ≠ 0 → Keynes.Pr h₁ (h₂ ∧ h) = 1
+'Keynes.th_13_16_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_16_3' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Quot.sound]
+EXIT_keynes_part_ii_phase7a:0
+
+=== FILE: keynes_part_ii_phase7b.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+Keynes.th_14_30 : ∀ (a h₂ k : Prop),
+  Keynes.Pr a (h₂ ∧ k) = Keynes.Pr a k → Keynes.Pr (¬h₂) k ≠ 0 → Keynes.Pr a (¬h₂ ∧ k) = Keynes.Pr a k
+Keynes.th_14_33 : ∀ (a x h₁ h : Prop),
+  Keynes.Pr a h < Keynes.Pr a (x ∧ h) →
+    0 < Keynes.Pr a (h₁ ∧ x ∧ h) →
+      Keynes.Pr a (h₁ ∧ x ∧ h) * Keynes.Pr a (x ∧ h) ≤ Keynes.Pr a (h₁ ∧ x ∧ h) * Keynes.Pr a (h₁ ∧ h) →
+        Keynes.Pr a h < Keynes.Pr a (h₁ ∧ h)
+Keynes.th_14_33_1 : ∀ (a x h₁ h : Prop),
+  Keynes.Pr a h < Keynes.Pr a (x ∧ h) →
+    Keynes.Pr a (x ∧ h) ≤ Keynes.Pr a (h₁ ∧ x ∧ h) →
+      Keynes.Pr a (h₁ ∧ x ∧ h) ≤ Keynes.Pr a (h₁ ∧ h) → Keynes.Pr a h < Keynes.Pr a (h₁ ∧ h)
+Keynes.th_14_35 : ∀ (a x h₁ h : Prop),
+  0 < Keynes.Pr a h →
+    Keynes.Pr a h < Keynes.Pr a (x ∧ h) →
+      Keynes.Pr a (x ∧ h) < Keynes.Pr a (h₁ ∧ x ∧ h) →
+        Keynes.Pr a (h₁ ∧ x ∧ h) * Keynes.Pr a h ≤ Keynes.Pr a (x ∧ h) * Keynes.Pr a (h₁ ∧ h) →
+          Keynes.Pr a h < Keynes.Pr a (h₁ ∧ h)
+Keynes.th_14_39 : ∀ (a h₁ h₂ h : Prop),
+  Keynes.Pr (h₁ ∧ h₂) h ≠ 0 →
+    Keynes.Pr a ((h₁ ∧ h₂) ∧ h) = Keynes.Pr (a ∧ h₁ ∧ h₂) h / (Keynes.Pr (a ∧ h₁ ∧ h₂) h + Keynes.Pr (¬a ∧ h₁ ∧ h₂) h)
+Keynes.th_14_40 : ∀ (a h₁ h₂ : Prop),
+  Keynes.Pr h₁ h₂ ≠ 0 →
+    Keynes.Pr a (h₁ ∧ h₂) =
+      Keynes.Pr h₁ (a ∧ h₂) * Keynes.Pr a h₂ /
+        (Keynes.Pr h₁ (a ∧ h₂) * Keynes.Pr a h₂ + Keynes.Pr h₁ (¬a ∧ h₂) * (1 - Keynes.Pr a h₂))
+'Keynes.th_14_30' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_14_33' depends on axioms: [propext, Classical.choice, Keynes.Pr, Quot.sound]
+'Keynes.th_14_33_1' depends on axioms: [propext, Classical.choice, Keynes.Pr, Quot.sound]
+'Keynes.th_14_35' depends on axioms: [propext, Classical.choice, Keynes.Pr, Quot.sound]
+'Keynes.th_14_39' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_IX,
+ Keynes.def_XI,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_14_40' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_XI,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_13_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_14_38_full' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_XI,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+EXIT_keynes_part_ii_phase7b:0
+
+=== FILE: keynes_part_ii_phase7c.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+Keynes.th_13_12_1 : ∀ (a b x h : Prop),
+  Keynes.Pr (a ↔ b) h = 1 → Keynes.Pr x h ≠ 0 → Keynes.Pr a (x ∧ h) = Keynes.Pr b (x ∧ h)
+Keynes.th_13_15_1 : ∀ (h₁ h₂ h : Prop), Keynes.Pr (h₁ ∧ h₂) h = 0 → Keynes.Pr h₂ h ≠ 0 → Keynes.Pr h₁ (h₂ ∧ h) = 0
+Keynes.th_13_16 : ∀ (h₁ h₂ h : Prop), Keynes.Pr h₁ (h₂ ∧ h) = 1 → Keynes.Pr (h₁ ∨ ¬h₂) h = 1
+Keynes.th_13_16_2 : ∀ (h₁ h₂ h : Prop), Keynes.Pr (h₁ ∨ ¬h₂) h = 1 → Keynes.Pr h₂ h ≠ 0 → Keynes.Pr h₁ (h₂ ∧ h) = 1
+Keynes.th_13_17 : ∀ (a b h₁ h : Prop),
+  Keynes.Pr (h₁ → (a ↔ b)) h = 1 → Keynes.Pr h₁ h ≠ 0 → Keynes.Pr a (h₁ ∧ h) = Keynes.Pr b (h₁ ∧ h)
+'Keynes.th_13_12_1' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_15_1' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.def_X_left, Quot.sound]
+'Keynes.th_13_16' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_16_2' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_17' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_9' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_13_12' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_13_16_3' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+EXIT_keynes_part_ii_phase7c:0
+
+=== FILE: keynes_part_ii_phase7d.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+Keynes.th_34_printed_rhs_trivial : ∀ (a x h₁ h : Prop),
+  0 < Keynes.Pr x (a ∧ h) →
+    0 < Keynes.Pr h₁ (x ∧ a ∧ h) →
+      Keynes.Pr x (h₁ ∧ a ∧ h) * Keynes.Pr h₁ (a ∧ h) / (Keynes.Pr x (a ∧ h) * Keynes.Pr h₁ (x ∧ a ∧ h)) = 1
+Keynes.th_14_34 : ∀ (a x h₁ h : Prop),
+  Keynes.Pr a h < Keynes.Pr a (x ∧ h) →
+    0 < Keynes.Pr h₁ h →
+      0 < Keynes.Pr x h →
+        Keynes.Pr x (a ∧ h) * Keynes.Pr h₁ h ≤ Keynes.Pr h₁ (a ∧ h) * Keynes.Pr x h →
+          Keynes.Pr a h < Keynes.Pr a (h₁ ∧ h)
+Erratum34Countermodel.printed_bridge_false : Erratum34Countermodel.D / Erratum34Countermodel.B *
+      (Erratum34Countermodel.C / Erratum34Countermodel.D) =
+    3 / 4 ∧
+  Erratum34Countermodel.u₁ / Erratum34Countermodel.v₂ * (Erratum34Countermodel.v₁ / Erratum34Countermodel.u₂) = 1 ∧
+    Erratum34Countermodel.D / Erratum34Countermodel.B * (Erratum34Countermodel.C / Erratum34Countermodel.D) ≠
+      Erratum34Countermodel.u₁ / Erratum34Countermodel.v₂ * (Erratum34Countermodel.v₁ / Erratum34Countermodel.u₂)
+'Keynes.th_34_printed_rhs_trivial' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_34' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_range_lo,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Erratum34Countermodel.masses_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erratum34Countermodel.model_satisfies_X_instances' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erratum34Countermodel.hypotheses_of_34_hold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erratum34Countermodel.conclusion_of_34_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erratum34Countermodel.printed_bridge_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT_keynes_part_ii_phase7d:0
+
+=== FILE: keynes_part_ii_phase7e.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+@Keynes.bigAnd_perm : ∀ {l l' : List Prop}, l.Perm l' → (Keynes.bigAnd l ↔ Keynes.bigAnd l')
+Keynes.prodPr_perm : ∀ (h : Prop) {l l' : List Prop}, l.Perm l' → Keynes.prodPr l h = Keynes.prodPr l' h
+Keynes.th_14_42_2_pr : ∀ (h : Prop) {l l' : List Prop},
+  l.Perm l' → Keynes.Pr (Keynes.bigAnd l) h = Keynes.Pr (Keynes.bigAnd l') h
+Keynes.th_14_42_2 : ∀ (h : Prop) {l l' : List Prop}, l.Perm l' → Keynes.InflN l h = Keynes.InflN l' h
+'Keynes.bigAnd_perm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Keynes.prodPr_perm' depends on axioms: [propext, Classical.choice, Keynes.Pr, Quot.sound]
+'Keynes.th_14_42_2_pr' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Quot.sound]
+'Keynes.th_14_42_2' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Quot.sound]
+EXIT_keynes_part_ii_phase7e:0
+
+=== FILE: keynes_part_ii_phase7g.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+Keynes.th_14_24_4_src : ∀ (a b c h : Prop),
+  Keynes.Pr (a ∨ b ∨ c) h =
+    Keynes.Pr a h + Keynes.Pr b h + Keynes.Pr c h - Keynes.Pr (a ∧ b) h - Keynes.Pr (b ∧ c) h - Keynes.Pr (a ∧ c) h +
+      Keynes.Pr (a ∧ b ∧ c) h
+Keynes.th_14_24_5_src : ∀ (h : Prop) (l : List Prop), Keynes.Pr (Keynes.bigOr l) h = Keynes.ieSum l h
+Keynes.th_14_24_6_src : ∀ (h : Prop) (l : List Prop),
+  Keynes.chainExclusive l h → Keynes.Pr (Keynes.bigOr l) h = Keynes.sumPr l h
+Keynes.th_14_24_7_src : ∀ (h : Prop) (l : List Prop),
+  Keynes.chainExclusive l h → Keynes.Pr (Keynes.bigOr l) h = 1 → Keynes.sumPr l h = 1
+Keynes.th_14_25_src : ∀ (a h : Prop) (l : List Prop),
+  Keynes.Pr (Keynes.bigOr l) (a ∧ h) = 1 →
+    Keynes.chainExclusive (List.map (fun p => p ∧ a) l) h → Keynes.Pr a h = Keynes.sumPr (List.map (fun p => p ∧ a) l) h
+Keynes.th_14_25_1_src : ∀ (a h p : Prop) (l : List Prop),
+  Keynes.Pr (Keynes.bigOr l) (a ∧ h) = 1 →
+    Keynes.chainExclusive (List.map (fun q => q ∧ a) l) h →
+      Keynes.Pr p (a ∧ h) * Keynes.sumPr (List.map (fun q => q ∧ a) l) h = Keynes.Pr (p ∧ a) h
+Keynes.th_14_26_src : ∀ (a h : Prop), Keynes.Pr (¬h) h = 0 → Keynes.Pr a h = Keynes.Pr (a ∨ ¬h) h
+Keynes.th_14_26_1_src : ∀ (a h : Prop), Keynes.Pr (¬h) h = 0 → Keynes.Pr a h = Keynes.Pr (h → a) h
+Keynes.th_14_28_src : ∀ (a b h : Prop), Keynes.Pr a h = 1 → Keynes.Pr (a ∨ ¬b) h = 1
+Keynes.th_14_28_1_src : ∀ (a b h : Prop), Keynes.Pr a h = 0 → Keynes.Pr (¬a ∨ b) h = 1
+Keynes.th_14_40_1_src : ∀ (a h₁ h₂ : Prop),
+  Keynes.Pr a h₁ = 1 / 2 →
+    Keynes.Pr a (h₂ ∧ h₁) * (Keynes.Pr h₂ (a ∧ h₁) + Keynes.Pr h₂ (¬a ∧ h₁)) = Keynes.Pr h₂ (a ∧ h₁)
+Keynes.Intensional.th_15_50_src : ∀ (m n : ℕ),
+  m ≠ 0 → n ≠ 0 → m + n ≤ m * n → ∃ a e, Keynes.Intensional.PrI a e = 1 / ↑m + 1 / ↑n
+Keynes.th_15_55_worked : ∀ (lam mu nu rho sig tau ups a b c d e : ℝ),
+  lam + nu = a →
+    lam + sig = b →
+      lam + nu + sig = c →
+        lam + mu + nu + rho = d →
+          lam + mu + sig + tau = e →
+            lam + mu + nu + rho + sig + tau + ups = 1 →
+              0 ≤ lam →
+                0 ≤ mu →
+                  0 ≤ nu →
+                    0 ≤ rho → 0 ≤ sig → 0 ≤ tau → 0 ≤ ups → (a ≤ c ∧ b ≤ c) ∧ c ≤ a + b ∧ c ≤ a + 1 - d ∧ c ≤ b + 1 - e
+'Keynes.th_14_24_4_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_14_24_5_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_14_24_6_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_14_24_7_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_14_25_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_14_25_1_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_14_26_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_26_1_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_28_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_28_1_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_40_1_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.Intensional.th_15_50_src' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ Keynes.Intensional.IProp,
+ Keynes.Intensional.PrI,
+ Keynes.Intensional.ax_vii]
+'Keynes.Intensional.th_15_50_xix_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Keynes.th_15_55_worked' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT_keynes_part_ii_phase7g:0
+
+=== FILE: keynes_part_ii_phase7h.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+Keynes.pr_swap : ∀ (p q h : Prop), Keynes.Pr p (q ∧ h) * Keynes.Pr q h = Keynes.Pr q (p ∧ h) * Keynes.Pr p h
+Keynes.th_14_46_1_src : ∀ (x h a : Prop) (l : List Prop),
+  Keynes.Pr x (Keynes.bigAnd (a :: l) ∧ h) * Keynes.Pr (Keynes.bigAnd (a :: l)) h * Keynes.Pr x h ^ l.length *
+      Keynes.prodPr (a :: l) (x ∧ h) =
+    Keynes.Pr (Keynes.bigAnd (a :: l)) (x ∧ h) * (List.map (fun b => Keynes.Pr x (b ∧ h) * Keynes.Pr b h) (a :: l)).prod
+Keynes.th_14_47_1_src : ∀ (x h : Prop) (l : List Prop),
+  Keynes.Pr (Keynes.bigAnd l ∧ x) h * Keynes.prodPr l (x ∧ h) * Keynes.Pr x h ^ l.length =
+    Keynes.Pr x h * Keynes.Pr (Keynes.bigAnd l) (x ∧ h) * (List.map (fun a => Keynes.Pr (a ∧ x) h) l).prod
+Keynes.th_14_48_src : ∀ (x x' h a : Prop) (l : List Prop),
+  Keynes.Pr x (Keynes.bigAnd (a :: l) ∧ h) * Keynes.Pr (Keynes.bigAnd (a :: l)) h * Keynes.Pr x h ^ l.length *
+        Keynes.prodPr (a :: l) (x ∧ h) *
+      (Keynes.Pr (Keynes.bigAnd (a :: l)) (x' ∧ h) *
+        (List.map (fun b => Keynes.Pr x' (b ∧ h) * Keynes.Pr b h) (a :: l)).prod) =
+    Keynes.Pr x' (Keynes.bigAnd (a :: l) ∧ h) * Keynes.Pr (Keynes.bigAnd (a :: l)) h * Keynes.Pr x' h ^ l.length *
+        Keynes.prodPr (a :: l) (x' ∧ h) *
+      (Keynes.Pr (Keynes.bigAnd (a :: l)) (x ∧ h) *
+        (List.map (fun b => Keynes.Pr x (b ∧ h) * Keynes.Pr b h) (a :: l)).prod)
+Keynes.th_14_48_1_src : ∀ (a x x' h : Prop) (l : List Prop),
+  Keynes.Pr (Keynes.bigAnd (a :: l)) (x ∧ h) * Keynes.Pr (Keynes.bigAnd l) (x' ∧ h) *
+      Keynes.Pr a (Keynes.bigAnd l ∧ x' ∧ h) =
+    Keynes.Pr (Keynes.bigAnd (a :: l)) (x' ∧ h) * Keynes.Pr (Keynes.bigAnd l) (x ∧ h) *
+      Keynes.Pr a (Keynes.bigAnd l ∧ x ∧ h)
+Keynes.th_14_49_step_src : ∀ (G G' xk x0 xk' x0' : ℝ),
+  G' < G → x0 < xk → xk - x0 = x0' - xk' → x0 * G + x0' * G' < xk * G + xk' * G'
+Keynes.th_14_49_1_src : ∀ (x h : Prop) (l : List Prop),
+  Keynes.Pr (Keynes.bigAnd l) h =
+    Keynes.Pr (Keynes.bigAnd l) (x ∧ h) * Keynes.Pr x h + Keynes.Pr (Keynes.bigAnd l) (¬x ∧ h) * Keynes.Pr (¬x) h
+Keynes.th_17_57_i_src : ∀ (E h : Prop) (l : List Prop) (N : Prop), Keynes.Pr (E ∧ N) h = Keynes.booleDecomp E h l N
+Keynes.th_17_57_ii_n2 : ∀ (E a₁ a₂ h : Prop),
+  Keynes.Pr (E ∧ (True ∧ ¬a₁) ∧ ¬a₂) h = 0 →
+    Keynes.Pr E h = Keynes.Pr (E ∧ a₁) h + Keynes.Pr (E ∧ a₂) h - Keynes.Pr ((E ∧ a₂) ∧ a₁) h
+Keynes.th_17_57_1_mr : ∀ (E N a h : Prop),
+  Keynes.Pr ((E ∧ a) ∧ ¬N) h = Keynes.Pr E ((¬N ∧ a) ∧ h) * Keynes.Pr (¬N ∧ a) h
+Keynes.th_17_58_closed : ∀ (x : ℕ → Prop) (t h : Prop) (aa q : ℝ),
+  Keynes.Pr t h = aa →
+    (∀ (n k : ℕ), Keynes.Pr (x (n + 1)) (Keynes.chainN x k ∧ t ∧ h) = 1) →
+      (∀ (n : ℕ), Keynes.Pr (x (n + 1)) (Keynes.chainN x n ∧ ¬t ∧ h) = q) →
+        ∀ (n : ℕ), Keynes.Pr (Keynes.chainN x n) h = aa + (1 - aa) * q ^ n
+Keynes.th_17_58_1_src : ∀ (x : ℕ → Prop) (t h : Prop) (aa : ℝ),
+  Keynes.Pr t h = aa →
+    (∀ (n k : ℕ), Keynes.Pr (x (n + 1)) (Keynes.chainN x k ∧ t ∧ h) = 1) →
+      (∀ (n : ℕ), Keynes.Pr (x (n + 1)) (Keynes.chainN x n ∧ ¬t ∧ h) = 0) →
+        ∀ (n : ℕ), Keynes.Pr (Keynes.chainN x (n + 2)) h = Keynes.Pr (Keynes.chainN x (n + 1)) h
+Keynes.th_17_58_2_src : ∀ (x : ℕ → Prop) (t h : Prop) (aa q : ℝ),
+  Keynes.Pr t h = aa →
+    (∀ (n k : ℕ), Keynes.Pr (x (n + 1)) (Keynes.chainN x k ∧ t ∧ h) = 1) →
+      (∀ (n : ℕ), Keynes.Pr (x (n + 1)) (Keynes.chainN x n ∧ ¬t ∧ h) = q) →
+        0 < aa →
+          aa < 1 →
+            0 < q →
+              q < 1 →
+                ∀ (n : ℕ),
+                  Keynes.Pr (Keynes.chainN x (n + 2)) h * Keynes.Pr (Keynes.chainN x n) h >
+                    Keynes.Pr (Keynes.chainN x (n + 1)) h ^ 2
+Keynes.th_17_58_3_src : ∀ (x : ℕ → Prop) (t h : Prop) (aa : ℝ),
+  Keynes.Pr t h = aa →
+    (∀ (n k : ℕ), Keynes.Pr (x (n + 1)) (Keynes.chainN x k ∧ t ∧ h) = 1) →
+      ∀ (n : ℕ), Keynes.Pr t (Keynes.chainN x n ∧ h) * Keynes.Pr (Keynes.chainN x n) h = aa
+'Keynes.th_14_46_1_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_47_1_src' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.def_X_left, Quot.sound]
+'Keynes.th_14_48_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_48_1_src' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.def_X_left, Quot.sound]
+'Keynes.th_14_49_step_src' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Keynes.th_14_49_1_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_17_57_i_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_17_57_ii_n2' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_17_57_1_mr' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.q_value' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_17_58_closed' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_17_58_1_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_17_58_2_core' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Keynes.th_17_58_2_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_17_58_3_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_true,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+EXIT_keynes_part_ii_phase7h:0
+
+=== FILE: keynes_part_ii_phase7i.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+'Keynes.th_13_2_src' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_range_hi, Quot.sound]
+'Keynes.th_13_3_src' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_range_lo, Quot.sound]
+'Keynes.th_13_10_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_13_11_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_37_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_true,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_14_38_1_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_43_src' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Quot.sound]
+'Keynes.th_14_43_src_2' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Quot.sound]
+'Keynes.th_14_46_2_src2' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_14_49_1_src2' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.def_X_left, Quot.sound]
+'Keynes.th_14_49_1_cor2' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_17_56_4_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_17_57_1_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_17_57_2_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Quot.sound]
+'Keynes.th_17_57_3_src' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.ax_range_hi,
+ Keynes.ax_range_lo,
+ Keynes.def_IX,
+ Keynes.def_X_left,
+ Keynes.def_X_right,
+ Quot.sound]
+'Keynes.th_15_52_strict_fails' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Quot.sound]
+'Keynes.th_15_53_strict_fails' depends on axioms: [propext,
+ Classical.choice,
+ Keynes.Pr,
+ Keynes.ax_iii_op,
+ Keynes.ax_iii_true,
+ Keynes.def_IX,
+ Quot.sound]
+'Keynes.th_17_58_2_numerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erratum58.printed_58_2_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erratum58.corrected_58_2_holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erratum58.printed_58_3_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erratum35Countermodel.hypotheses_of_35_hold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erratum35Countermodel.conclusion_of_35_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erratum46_1Countermodel.printed_46_1_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Erratum46_1Countermodel.corrected_46_holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT_keynes_part_ii_phase7i:0
+
+=== FILE: keynes_part_ii_phase7i_model.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+'KeynesExtModel.m_ax_iii_op' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_ax_iii_true' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_def_IX' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_def_X_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_def_X_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_ax_range_lo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_ax_range_hi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.ext7i_consistent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_ax_ii' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_ax_iva_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_ax_iva_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_ax_ivb' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_ax_ivc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_ax_v' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_ax_vi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_def_XI' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_def_XII' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.ext2_consistent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_ax_iii_ev' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_ax_vi_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_ax_vi_compl' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.m_ax_vi_equiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.op_of_propext' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.ext_forced' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.ext_premiss_irrelevant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.PrM_inconsistent_premiss' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.ext_forced_needs_true' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.ext_forced_needs_IX' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.ext_forced_fails_without_true' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.ext_forced_fails_without_IX' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.d_def_X_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.d_def_X_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.d_ax_range_lo' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.PrD_not_ax_iii_true' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.ext7d_premiss_matters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesExtModel.ext_all_consistent' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT_keynes_part_ii_phase7i_model:0
+
+=== FILE: keynes_part_ii_phase8a.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+phases/keynes_part_ii_phase8a.lean:94:25: warning: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+phases/keynes_part_ii_phase8a.lean:96:25: warning: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+phases/keynes_part_ii_phase8a.lean:122:8: warning: 'rw [div_le_one hd]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+phases/keynes_part_ii_phase8a.lean:122:28: warning: 'exact key' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+phases/keynes_part_ii_phase8a.lean:122:8: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+phases/keynes_part_ii_phase8a.lean:122:28: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+KeynesWeight.risk_identities : ∀ (p A : ℝ), p * (A - p * A) = p * (1 - p) * A ∧ p * (1 - p) * A = (1 - p) * (p * A)
+KeynesWeight.czuber_partial : ∀ (p A : ℝ) (n : ℕ), p * A * KeynesWeight.geomSum (1 - p) n = A * (1 - (1 - p) ^ (n + 1))
+KeynesWeight.czuber_remainder : ∀ (p A : ℝ) (n : ℕ), A - p * A * KeynesWeight.geomSum (1 - p) n = A * (1 - p) ^ (n + 1)
+KeynesWeight.c_one_one : KeynesWeight.c 1 1 = 1
+@KeynesWeight.c_le_one : ∀ {p w : ℝ}, 0 ≤ p → p ≤ 1 → 0 ≤ w → w ≤ 1 → KeynesWeight.c p w ≤ 1
+@KeynesWeight.keynes_F1 : ∀ {p w w' A A' : ℝ},
+  0 < p → p ≤ 1 → 0 < A → p * A = p * A' → 0 ≤ w' → w' < w → KeynesWeight.c p w' * A' < KeynesWeight.c p w * A
+KeynesWeight.keynes_F4_amended_witness_lt : KeynesWeight.c (1 / 2) 1 * 2 < KeynesWeight.c (3 / 4) (9 / 10) * (4 / 3)
+KeynesWeight.keynes_F4_amended_witness_gt : KeynesWeight.c (3 / 4) (1 / 100) * (4 / 3) < KeynesWeight.c (1 / 2) 1 * 2
+@KeynesWeight.c_superadd : ∀ {p₁ p₂ w : ℝ},
+  0 ≤ p₁ → 0 ≤ p₂ → p₁ + p₂ ≤ 1 → 0 ≤ w → KeynesWeight.c p₁ w + KeynesWeight.c p₂ w ≤ KeynesWeight.c (p₁ + p₂) w
+'KeynesWeight.risk_identities' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeight.czuber_partial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeight.czuber_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeight.c_one_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeight.c_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeight.c_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeight.keynes_F1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeight.keynes_F2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeight.keynes_F3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeight.keynes_F4_printed_determinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeight.keynes_F4_amended_witness_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeight.keynes_F4_amended_witness_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeight.c_superadd' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT_keynes_part_ii_phase8a:0
+
+=== FILE: keynes_part_ii_phase8b.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+phases/keynes_part_ii_phase8b.lean:139:57: warning: unused variable `huv`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+phases/keynes_part_ii_phase8b.lean:153:57: warning: unused variable `huv`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+W_zero : W 0 = 0
+conj2012_global_refuted : ∃ p₁ p₂, 0 < p₁ ∧ 0 < p₂ ∧ p₁ + p₂ ≤ 1 ∧ W p₁ + W p₂ < W (p₁ + p₂)
+@subadd_small_prob : ∀ {p₁ p₂ : ℝ}, 0 < p₁ → 0 < p₂ → (p₁ + p₂) * (1 + rexp 1) ≤ rexp 1 → W (p₁ + p₂) ≤ W p₁ + W p₂
+'KeynesWeightW.W_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightW.W_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightW.W_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightW.underweight_at_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightW.subadd_fails_at_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightW.conj2012_global_refuted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightW.D_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightW.subadd_small_prob' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightW.subadd_up_to_073' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightW.subcert_at_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightW.supercert_at_edge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightW.overweight_at_edge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightW.inverse_S_certified' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightW.subadd_fails_interior' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightW.W2_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightW.base2_subadd_fails_at_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT_keynes_part_ii_phase8b:0
+
+=== FILE: keynes_part_ii_phase8c.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+@V_nonneg : ∀ {K I : ℝ}, 0 ≤ K → 0 ≤ I → 0 ≤ V K I
+brady_limit : ∀ (K : ℝ), Tendsto (fun I => V K I) atTop (𝓝 0)
+intersubjective_time_counterexample : ∃ K I K' I', 0 < K ∧ 0 < I ∧ K < K' ∧ I < I' ∧ V K' I' < V K I
+'KeynesWeightV.V_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightV.V_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightV.V_zero_knowledge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightV.V_full_knowledge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightV.subjective_time_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightV.ignorance_decreases_weight' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightV.brady_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightV.intersubjective_time_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightV.intersubjective_general' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT_keynes_part_ii_phase8c:0
+
+=== FILE: keynes_part_ii_phase8d.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+th_vi_4_chain : ∀ (a b c h : Prop),
+  V a h = V b h → Pr (¬a) ((b ∨ c) ∧ h) = 1 → Pr (b ∨ c) (¬a ∧ h) = 1 → V b h = V (b ∨ c) h
+@th_vi_1_brady_holds : ∀ {K K' I : ℝ}, 0 < K → 0 ≤ I → K ≤ K' → VB K I ≤ VB K' I
+'KeynesWeightVI.th_vi_2_dichotomy' depends on axioms: [propext, Classical.choice, V, ax_vi_mono, Quot.sound]
+'KeynesWeightVI.th_vi_4_chain' depends on axioms: [propext,
+ Classical.choice,
+ Pr,
+ V,
+ ax_vi_compl,
+ ax_vi_equiv,
+ Quot.sound]
+'KeynesWeightVI.th_vi_6_dist1_sums' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVI.th_vi_6_dist2_sums' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVI.th_vi_6_pe1_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVI.th_vi_6_pe2_ge_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVI.th_vi_6_urn_unknown_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVI.th_vi_1_brady_holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesWeightVI.th_vi_1_brady_exits' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT_keynes_part_ii_phase8d:0
+
+=== FILE: keynes_part_ii_phase9x.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+'KeynesI.th_17_1911_U1_src' depends on axioms: [propext,
+ choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ Quot.sound]
+'KeynesI.th_17_1911_U1_needs_X_right' depends on axioms: [propext, choice, Quot.sound]
+'KeynesI.th_17_1911_U2_src' depends on axioms: [propext,
+ choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_17_1911_U2_corrected' depends on axioms: [propext,
+ choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_17_1911_U4_src' depends on axioms: [propext,
+ choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_17_1911_U5_src' depends on axioms: [propext,
+ choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_17_1911_U6_src' depends on axioms: [propext,
+ choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_17_1911_U7_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_U9_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_1_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_2_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_3_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_3_abs' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_4_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_5_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_6_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_7_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_8_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_8_leads_gmean' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_9_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_9_leads_gmean' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_10_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_11_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_11_leads_hmean' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_12_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_i_1_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_i_2_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_i_3_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_i_5_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_i_5_law' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_i_6_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_i_6_integrate' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_i_6_sign' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_ii_1_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_ii_3_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_ii_3_impossible' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_ii_4_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_ii_6_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_ii_6_int' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_ii_8_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_ii_8_phi' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_ii_9_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_ii_9_printed_fails' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_ii_9_corrected' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_ii_9_corrected_int' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_iii_1_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_iii_3_printed_fails' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_iv_2_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_iv_3_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_iv_5_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_iv_6_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_iv_6_corrected' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_v_2_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_v_3_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_vi_2_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_vi_2_arith' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_vi_3_law' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_vi_3_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_vi_3_stationary' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_vi_4_law' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_vi_4_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_vi_4_exceeds_one' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_counterexample' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1911_counterexample_gmean' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1921_N3_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1921_N4_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1921_N4_order' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1921_N5_src' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1921_N5_identity' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1921_N5_general' depends on axioms: [propext, choice, Quot.sound]
+'KeynesLawOfError.th_17_1921_N7_src' depends on axioms: [propext, choice, Quot.sound]
+EXIT_keynes_part_ii_phase9x:0
+
+=== FILE: keynes_part_ii_pilot.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+Keynes.th_24 : ∀ (α β h : Prop), Keynes.Pr (α ∨ β) h = Keynes.Pr α h + Keynes.Pr β h - Keynes.Pr (α ∧ β) h
+Keynes.th_24_1 : ∀ (α β h : Prop), Keynes.Pr (α ∧ β) h = 0 → Keynes.Pr (α ∨ β) h = Keynes.Pr α h + Keynes.Pr β h
+'Keynes.th_24' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Keynes.def_IX, Quot.sound]
+'Keynes.th_24_1' depends on axioms: [propext, Classical.choice, Keynes.Pr, Keynes.ax_iii_op, Keynes.def_IX, Quot.sound]
+EXIT_keynes_part_ii_pilot:0
+
+=== FILE: keynes_part_iii_phase9a.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+'KeynesI.th_13_10_i' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_13_9_i' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.pr_iand_itrue_evidence' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.pr_evidence_assoc' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.pr_evidence_comm' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.p_zero' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.J_succ' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.Q_succ' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ KeynesI.inot,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.conj_certain' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_10_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_11_first' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_7_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_6' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_6_lines134' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.joint_eq' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_6_cor' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_6_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_9_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_9_iff' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_9_needs_p_pos' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_9_J_zero' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_13_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_S_III_1' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_range_hi_i,
+ KeynesI.iand,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_S_III_1_vacuous' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_range_hi_i,
+ KeynesI.iand,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_11_denom' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_11_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_11_den_zero' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.limit_of_Q' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_12_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_12_p0_zero' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_14' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.iand,
+ KeynesI.inot,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_16_le' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_16_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.Q_le_of_tail' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ KeynesI.inot,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_17_pow' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.th_20_17_src' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.th_20_17_bound' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_15' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_15_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_19_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_18_src' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.th_20_20_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_20_20_Js_zero' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_E_III_2_not_lt' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.iand,
+ KeynesI.inot,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_22_254_eq_exact' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_E_III_2_refutes_F20_16' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_22_254_eq_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_E_III_2_eq_imp_le' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.iand,
+ KeynesI.inot,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.pr_self_evidence' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_VIII_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_6c_axioms_inconsistent' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'ErratumE_III_1.relations' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ErratumE_III_1.printed_line2_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ErratumE_III_1.corrected_line2_holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Witness_F20_9_J.relations' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Witness_F20_9_J.hypotheses_hold_conclusion_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Witness_F20_11_den.relations' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Witness_F20_11_den.denominator_zero_formula_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Witness_F20_20_Js.relations' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Witness_F20_20_Js.hypotheses_hold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Witness_F20_20_Js.conclusion_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT_keynes_part_iii_phase9a:0
+
+=== FILE: keynes_part_iii_phase9b.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+KeynesIII.th_19_16_src : ∀ (φ₁ φ₂ f : KeynesIII.PFun) (h : KeynesIII.IProp),
+  KeynesIII.PrI (KeynesIII.g φ₁ f) h =
+      KeynesIII.PrI (KeynesIII.iand (KeynesIII.g (φ₁ ∧ₚ φ₂) f) (KeynesIII.g (φ₁ ∧ₚ ¬ₚφ₂) f)) h ∧
+    KeynesIII.PrI (KeynesIII.iand (KeynesIII.g (φ₁ ∧ₚ φ₂) f) (KeynesIII.g (φ₁ ∧ₚ ¬ₚφ₂) f)) h ≤
+      KeynesIII.PrI (KeynesIII.g (φ₁ ∧ₚ φ₂) f) h
+KeynesIII.th_19_17 : ∀ (φ f₁ f₂ : KeynesIII.PFun) (h : KeynesIII.IProp),
+  KeynesIII.PrI (KeynesIII.g φ (f₁ ∧ₚ f₂)) h =
+      KeynesIII.PrI (KeynesIII.g (φ ∧ₚ f₁) f₂) (KeynesIII.iand (KeynesIII.g φ f₁) h) *
+        KeynesIII.PrI (KeynesIII.g φ f₁) h ∧
+    KeynesIII.PrI (KeynesIII.g (φ ∧ₚ f₁) f₂) (KeynesIII.iand (KeynesIII.g φ f₁) h) *
+        KeynesIII.PrI (KeynesIII.g φ f₁) h ≤
+      KeynesIII.PrI (KeynesIII.g φ f₁) h
+KeynesIII.th_19_17_src_iff : ∀ (φ f₁ f₂ : KeynesIII.PFun) (h : KeynesIII.IProp),
+  KeynesIII.PrI (KeynesIII.g φ (f₁ ∧ₚ f₂)) h =
+      KeynesIII.PrI (KeynesIII.g (φ ∧ₚ f₁) f₂) h * KeynesIII.PrI (KeynesIII.g φ f₁) h ↔
+    KeynesIII.PrI (KeynesIII.g φ f₁) h = 0 ∨
+      KeynesIII.PrI (KeynesIII.g (φ ∧ₚ f₁) f₂) (KeynesIII.iand (KeynesIII.g φ f₁) h) =
+        KeynesIII.PrI (KeynesIII.g (φ ∧ₚ f₁) f₂) h
+KeynesIII.th_19_18_src : ∀ (φ₁ φ₂ f₁ f₂ : KeynesIII.PFun) (h : KeynesIII.IProp),
+  KeynesIII.PrI (KeynesIII.g (φ₁ ∧ₚ φ₂) f₁) h ≥ KeynesIII.PrI (KeynesIII.g (φ₁ ∧ₚ φ₂) (f₁ ∧ₚ f₂)) h ∧
+    KeynesIII.PrI (KeynesIII.g (φ₁ ∧ₚ φ₂) (f₁ ∧ₚ f₂)) h ≥ KeynesIII.PrI (KeynesIII.g φ₁ (f₁ ∧ₚ f₂)) h
+KeynesIII.Erratum19_17Countermodel.printed_form_fails : ¬KeynesIII.Erratum19_17Countermodel.P_g_f =
+    KeynesIII.Erratum19_17Countermodel.P_imp * KeynesIII.Erratum19_17Countermodel.P_g_f1
+KeynesIII.Erratum19_17Countermodel.hypotheses_of_17_hold : KeynesIII.Erratum19_17Countermodel.P_ind_φ ≠ 1 ∧
+  KeynesIII.Erratum19_17Countermodel.P_ind_f ≠ 1
+KeynesIII.StrictnessCountermodel.chain_is_equality : KeynesIII.StrictnessCountermodel.P_g_f1 =
+    KeynesIII.StrictnessCountermodel.P_g_f ∧
+  KeynesIII.StrictnessCountermodel.P_g_f = KeynesIII.StrictnessCountermodel.P_g1_f ∧
+    ¬KeynesIII.StrictnessCountermodel.P_g_f1 > KeynesIII.StrictnessCountermodel.P_g_f ∧
+      ¬KeynesIII.StrictnessCountermodel.P_g_f > KeynesIII.StrictnessCountermodel.P_g1_f
+KeynesIII.QuantifierNecessity.th_19_16_eq_fails_exists : KeynesIII.QuantifierNecessity.ex
+      KeynesIII.QuantifierNecessity.F16 =
+    false ∧
+  (KeynesIII.QuantifierNecessity.ex KeynesIII.QuantifierNecessity.G16a &&
+      KeynesIII.QuantifierNecessity.ex KeynesIII.QuantifierNecessity.G16b) =
+    true
+KeynesIII.QuantifierNecessity.th_19_16_eq_fails_twist : KeynesIII.QuantifierNecessity.tw
+      KeynesIII.QuantifierNecessity.F16 =
+    true ∧
+  (KeynesIII.QuantifierNecessity.tw KeynesIII.QuantifierNecessity.G16a &&
+      KeynesIII.QuantifierNecessity.tw KeynesIII.QuantifierNecessity.G16b) =
+    false
+'KeynesIII.th_12_i' depends on axioms: [propext,
+ Classical.choice,
+ KeynesIII.IProp,
+ KeynesIII.PrI,
+ KeynesIII.def_VIII_i,
+ KeynesIII.def_X_left_i,
+ KeynesIII.def_X_right_i,
+ KeynesIII.iand,
+ KeynesIII.iiff,
+ Quot.sound]
+'KeynesIII.pr_conj_le_left_i' depends on axioms: [propext,
+ Classical.choice,
+ KeynesIII.IProp,
+ KeynesIII.PrI,
+ KeynesIII.ax_range_hi_i,
+ KeynesIII.ax_range_lo_i,
+ KeynesIII.def_X_right_i,
+ KeynesIII.iand,
+ Quot.sound]
+'KeynesIII.A_three' depends on axioms: [propext, KeynesIII.IProp, KeynesIII.Inst, KeynesIII.iand, KeynesIII.itrue]
+'KeynesIII.Abar_example' depends on axioms: [propext,
+ KeynesIII.IProp,
+ KeynesIII.Inst,
+ KeynesIII.iand,
+ KeynesIII.inot,
+ KeynesIII.ior,
+ KeynesIII.itrue]
+'KeynesIII.th_19_16_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesIII.IProp,
+ KeynesIII.Inst,
+ KeynesIII.PrI,
+ KeynesIII.ax_all_iand,
+ KeynesIII.ax_iii_all,
+ KeynesIII.ax_range_hi_i,
+ KeynesIII.ax_range_lo_i,
+ KeynesIII.def_VIII_i,
+ KeynesIII.def_X_left_i,
+ KeynesIII.def_X_right_i,
+ KeynesIII.iall,
+ KeynesIII.iand,
+ KeynesIII.iiff,
+ KeynesIII.inot,
+ KeynesIII.ior,
+ KeynesIII.itrue,
+ Quot.sound]
+'KeynesIII.pr_g_concl_split' depends on axioms: [propext,
+ Classical.choice,
+ KeynesIII.IProp,
+ KeynesIII.Inst,
+ KeynesIII.PrI,
+ KeynesIII.ax_all_iand,
+ KeynesIII.ax_iii_all,
+ KeynesIII.def_VIII_i,
+ KeynesIII.def_X_left_i,
+ KeynesIII.def_X_right_i,
+ KeynesIII.iall,
+ KeynesIII.iand,
+ KeynesIII.iiff,
+ KeynesIII.inot,
+ KeynesIII.ior,
+ KeynesIII.itrue,
+ Quot.sound]
+'KeynesIII.th_19_17' depends on axioms: [propext,
+ Classical.choice,
+ KeynesIII.IProp,
+ KeynesIII.Inst,
+ KeynesIII.PrI,
+ KeynesIII.ax_all_iand,
+ KeynesIII.ax_iii_all,
+ KeynesIII.ax_range_hi_i,
+ KeynesIII.ax_range_lo_i,
+ KeynesIII.def_VIII_i,
+ KeynesIII.def_X_left_i,
+ KeynesIII.def_X_right_i,
+ KeynesIII.iall,
+ KeynesIII.iand,
+ KeynesIII.iiff,
+ KeynesIII.inot,
+ KeynesIII.ior,
+ KeynesIII.itrue,
+ Quot.sound]
+'KeynesIII.th_19_17_src_iff' depends on axioms: [propext,
+ Classical.choice,
+ KeynesIII.IProp,
+ KeynesIII.Inst,
+ KeynesIII.PrI,
+ KeynesIII.ax_all_iand,
+ KeynesIII.ax_iii_all,
+ KeynesIII.ax_range_hi_i,
+ KeynesIII.ax_range_lo_i,
+ KeynesIII.def_VIII_i,
+ KeynesIII.def_X_left_i,
+ KeynesIII.def_X_right_i,
+ KeynesIII.iall,
+ KeynesIII.iand,
+ KeynesIII.iiff,
+ KeynesIII.inot,
+ KeynesIII.ior,
+ KeynesIII.itrue,
+ Quot.sound]
+'KeynesIII.th_19_18_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesIII.IProp,
+ KeynesIII.Inst,
+ KeynesIII.PrI,
+ KeynesIII.ax_all_iand,
+ KeynesIII.ax_iii_all,
+ KeynesIII.ax_range_hi_i,
+ KeynesIII.ax_range_lo_i,
+ KeynesIII.def_VIII_i,
+ KeynesIII.def_X_left_i,
+ KeynesIII.def_X_right_i,
+ KeynesIII.iall,
+ KeynesIII.iand,
+ KeynesIII.iiff,
+ KeynesIII.inot,
+ KeynesIII.ior,
+ KeynesIII.itrue,
+ Quot.sound]
+'KeynesIII.Erratum19_17Countermodel.masses_consistent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesIII.Erratum19_17Countermodel.corrected_form_holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesIII.Erratum19_17Countermodel.printed_form_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesIII.Erratum19_17Countermodel.inequality_holds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesIII.Erratum19_17Countermodel.masses_by_enumeration' depends on axioms: [propext]
+'KeynesIII.Erratum19_17Countermodel.instance_c_inert' depends on axioms: [propext]
+'KeynesIII.Erratum19_17Countermodel.masses_match_enumeration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesIII.Erratum19_17Countermodel.hypotheses_of_17_hold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesIII.StrictnessCountermodel.masses_by_enumeration' depends on axioms: [propext]
+'KeynesIII.StrictnessCountermodel.masses_match_enumeration' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesIII.StrictnessCountermodel.independence_premises_hold' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesIII.StrictnessCountermodel.chain_is_equality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesIII.QuantifierNecessity.taut_16' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesIII.QuantifierNecessity.exists_respects_taut' depends on axioms: [propext]
+'KeynesIII.QuantifierNecessity.all_iand_fails_exists' does not depend on any axioms
+'KeynesIII.QuantifierNecessity.th_19_16_eq_fails_exists' does not depend on any axioms
+'KeynesIII.QuantifierNecessity.twist_conj' depends on axioms: [propext]
+'KeynesIII.QuantifierNecessity.iii_all_fails_twist' depends on axioms: [propext]
+'KeynesIII.QuantifierNecessity.th_19_16_eq_fails_twist' depends on axioms: [propext]
+'KeynesIII.p_sec8_nil' depends on axioms: [propext,
+ Classical.choice,
+ KeynesIII.IProp,
+ KeynesIII.Inst,
+ KeynesIII.PrI,
+ KeynesIII.iall,
+ KeynesIII.iand,
+ KeynesIII.inot,
+ KeynesIII.ior,
+ KeynesIII.itrue,
+ Quot.sound]
+'KeynesIII.p_sec9_single' depends on axioms: [propext,
+ Classical.choice,
+ KeynesIII.IProp,
+ KeynesIII.Inst,
+ KeynesIII.PrI,
+ KeynesIII.iall,
+ KeynesIII.iand,
+ KeynesIII.inot,
+ KeynesIII.ior,
+ KeynesIII.itrue,
+ Quot.sound]
+EXIT_keynes_part_iii_phase9b:0
+
+=== FILE: keynes_part_iii_phase9c.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+@KeynesI.th_22_1 : ∀ {Obj : Type} {n r : ℕ} (a : Fin r → Obj → KeynesI.IProp) (x : Fin n → Obj) (h : KeynesI.IProp),
+  KeynesI.PrI (KeynesI.posAnalogy a x) h ≠ 0 →
+    ∀ (i : Fin r) (j : Fin n), KeynesI.PrI (a i (x j)) (KeynesI.iand (KeynesI.posAnalogy a x) h) = 1
+@KeynesI.th_22_2 : ∀ {Obj : Type} (a : ℕ → Obj → KeynesI.IProp) (r : ℕ) (g h : KeynesI.IProp),
+  KeynesI.BoundUp g h (KeynesI.prem_22_2 a) (KeynesI.concl_22_2 a r) →
+    ∀ (o : Obj),
+      KeynesI.PrI g (KeynesI.iand (KeynesI.prem_22_2 a o) h) ≤
+        KeynesI.PrI (KeynesI.concl_22_2 a r o) (KeynesI.iand (KeynesI.prem_22_2 a o) h)
+@KeynesI.th_22_4 : ∀ {Obj : Type} (a : ℕ → Obj → KeynesI.IProp) (o : Obj) {ms mt mu : ℕ} (S : Fin ms → ℕ)
+  (T : Fin mt → ℕ) (U : Fin mu → ℕ) (h : KeynesI.IProp),
+  KeynesI.PrI (KeynesI.iand (KeynesI.qualSet a o T) (KeynesI.qualSet a o U)) (KeynesI.iand (KeynesI.qualSet a o S) h) ≤
+    KeynesI.PrI (KeynesI.qualSet a o T) (KeynesI.iand (KeynesI.qualSet a o S) h)
+KeynesI.th_22_9_src : 0 < KeynesI.p_0
+KeynesI.th_22_9 : ∀ (n : ℕ),
+  0 < KeynesI.p_0 ∧
+    KeynesI.p_ KeynesI.g_ KeynesI.h_ KeynesI.x_ n =
+      KeynesI.p_0 / (KeynesI.p_0 + KeynesI.Y_ KeynesI.g_ KeynesI.h_ KeynesI.x_ n * (1 - KeynesI.p_0))
+KeynesI.th_22_10 : ∀ (n : ℕ), KeynesI.PrI (KeynesI.conjInst KeynesI.x_ n) (KeynesI.iand KeynesI.g_ KeynesI.h_) = 1
+KeynesI.th_22_11_src : Filter.Tendsto (KeynesI.p_ KeynesI.g_ KeynesI.h_ KeynesI.x_) Filter.atTop (nhds 1)
+KeynesI.cor_22_11_chXX : ∀ (g h : KeynesI.IProp) (x : ℕ → KeynesI.IProp),
+  (∀ (r : ℕ), KeynesI.PrI (x r) (KeynesI.iand g h) = 1) →
+    0 < KeynesI.PrI g h →
+      ∀ (ε : ℝ),
+        0 < ε → (∀ (n : ℕ), KeynesI.y_ g h x n ≤ 1 - ε) → Filter.Tendsto (KeynesI.p_ g h x) Filter.atTop (nhds 1)
+KeynesI.th_22_12 : ∀ (n : ℕ),
+  KeynesI.p_ KeynesI.g_ KeynesI.h_ KeynesI.x_ n ≤ KeynesI.p_ KeynesI.g_ KeynesI.h_ KeynesI.x_ (n + 1)
+KeynesI.th_22_12_analogy : ∀ (p p' Y : ℝ),
+  0 < p → p ≤ p' → p' ≤ 1 → 0 ≤ Y → Y ≤ 1 → p / (p + Y * (1 - p)) ≤ p' / (p' + Y * (1 - p'))
+KeynesI.th_22_17 : ∀ (C E H : KeynesI.IProp),
+  KeynesI.PrI C H = 0 → KeynesI.PrI E H ≠ 0 → KeynesI.PrI C (KeynesI.iand E H) = 0
+KeynesI.th_22_18 : KeynesI.PrI KeynesI.E_ (KeynesI.iand KeynesI.C_ KeynesI.H_) = 1 →
+  KeynesI.PrI KeynesI.E_ KeynesI.H_ < 1 →
+    KeynesI.PrI KeynesI.C_ KeynesI.H_ < KeynesI.PrI KeynesI.C_ (KeynesI.iand KeynesI.E_ KeynesI.H_)
+KeynesI.th_22_19 : KeynesI.PrI KeynesI.E'_ (KeynesI.iand KeynesI.H_ KeynesI.H'_) = 1 →
+  KeynesI.PrI KeynesI.E'_ KeynesI.H'_ < 1 →
+    KeynesI.PrI KeynesI.H_ KeynesI.H'_ < KeynesI.PrI KeynesI.H_ (KeynesI.iand KeynesI.E'_ KeynesI.H'_)
+KeynesI.E_III_4_countermodel : KeynesI.Notes_ii.PossSuffCauseUnder_src KeynesI.FinSys (fun x => True) Finset.univ {0}
+    Finset.univ {0} ∧
+  ¬KeynesI.Notes_ii.PossSuffCauseUnder_l KeynesI.FinSys (fun x => True) Finset.univ {0} Finset.univ {0}
+KeynesI.E_III_4_corrected_imp_printed : ∀ (Ex : Finset (Fin 2) → Prop) (a b k l : Finset (Fin 2)),
+  KeynesI.Notes_ii.PossSuffCauseUnder_l KeynesI.FinSys Ex a b k l →
+    KeynesI.Notes_ii.PossSuffCauseUnder_src KeynesI.FinSys Ex a b k l
+KeynesI.F22_18_needs_premisses : 0 < KeynesI.finPr {0} Finset.univ ∧
+  KeynesI.finPr {1} Finset.univ ≠ 0 ∧
+    ¬KeynesI.finPr {0} Finset.univ < KeynesI.finPr {0} ({1} ∩ Finset.univ) ∧ KeynesI.finPr {1} ({0} ∩ Finset.univ) ≠ 1
+'KeynesI.th_22_1' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_22_2' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ Quot.sound]
+'KeynesI.th_22_4' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_22_9_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.Obj_,
+ KeynesI.PrI,
+ KeynesI.ax_22_limited_independent_variety,
+ KeynesI.f_,
+ KeynesI.gen,
+ KeynesI.h_,
+ KeynesI.φ_,
+ Quot.sound]
+'KeynesI.th_22_9' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.Obj_,
+ KeynesI.PrI,
+ KeynesI.ax_22_10_instances_certain,
+ KeynesI.ax_22_limited_independent_variety,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.f_,
+ KeynesI.gen,
+ KeynesI.h_,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ KeynesI.x_,
+ KeynesI.φ_,
+ Quot.sound]
+'KeynesI.th_22_10' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.Obj_,
+ KeynesI.PrI,
+ KeynesI.ax_22_10_instances_certain,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.f_,
+ KeynesI.gen,
+ KeynesI.h_,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ KeynesI.x_,
+ KeynesI.φ_,
+ Quot.sound]
+'KeynesI.th_22_11_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.Obj_,
+ KeynesI.PrI,
+ KeynesI.ax_22_10_instances_certain,
+ KeynesI.ax_22_11_eps_finite,
+ KeynesI.ax_22_limited_independent_variety,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.f_,
+ KeynesI.gen,
+ KeynesI.h_,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ KeynesI.x_,
+ KeynesI.φ_,
+ Quot.sound]
+'KeynesI.cor_22_11_chXX' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.th_22_12' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.Obj_,
+ KeynesI.PrI,
+ KeynesI.ax_22_10_instances_certain,
+ KeynesI.ax_22_limited_independent_variety,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.f_,
+ KeynesI.gen,
+ KeynesI.h_,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ KeynesI.x_,
+ KeynesI.φ_,
+ Quot.sound]
+'KeynesI.th_22_12_analogy' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.th_22_17' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ Quot.sound]
+'KeynesI.th_22_18' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.C_,
+ KeynesI.E_,
+ KeynesI.H_,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_22_17_CH_finite,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ Quot.sound]
+'KeynesI.th_22_19' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.E'_,
+ KeynesI.H'_,
+ KeynesI.H_,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_22_19_HH'_finite,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ Quot.sound]
+'KeynesI.notes_viii_certain_add_l' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.def_viii_l_imp_src' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.ax_range_hi_i,
+ KeynesI.ax_range_lo_i,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.def_viii_l_dep' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.ax_iii_taut,
+ KeynesI.def_IX_i,
+ KeynesI.def_VIII_i,
+ KeynesI.def_X_left_i,
+ KeynesI.def_X_right_i,
+ KeynesI.iand,
+ KeynesI.iiff,
+ KeynesI.inot,
+ KeynesI.ior,
+ KeynesI.itrue,
+ Quot.sound]
+'KeynesI.def_ix_dep' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.def_IX_i,
+ KeynesI.def_X_left_i,
+ KeynesI.iand,
+ KeynesI.inot,
+ Quot.sound]
+'KeynesI.def_x_src_symm' depends on axioms: [propext,
+ Classical.choice,
+ KeynesI.IProp,
+ KeynesI.PrI,
+ KeynesI.iand,
+ KeynesI.inot,
+ Quot.sound]
+'KeynesI.E_III_4_countermodel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.E_III_4_corrected_imp_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.E_III_4_old_hyp_false' depends on axioms: [propext, Quot.sound]
+'KeynesI.E_III_4_corrected_holds_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.finPr_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.finPr_VIII' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.finPr_IX' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.finPr_X_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.finPr_X_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.finPr_taut' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.finSys_partII' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.F22_18_needs_premisses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.indep_ax_22_liv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.indep_ax_22_9' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.indep_ax_22_10' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.indep_ax_22_11' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.indep_ax_22_17' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesI.indep_ax_22_19' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT_keynes_part_iii_phase9c:0
+
+=== FILE: keynes_part_iv_phase8a2.lean ===
+warning: manifest out of date: git revision of dependency 'mathlib' changed; use `lake update mathlib` to update it
+KeynesCh26.th_26_fn1_printed_iff : ∀ (q E : ℝ),
+  0 ≤ q → q < 1 → (E + ∑' (k : ℕ), KeynesCh26.czuberRisk q E (k + 1) = E * ∑' (k : ℕ), q ^ k ↔ q * E = 0)
+KeynesCh26.th_26_fn1_czuber_tsum : ∀ (p A : ℝ),
+  0 < p →
+    p ≤ 1 → p * A * ∑' (k : ℕ), (1 - p) ^ k = p * A / (1 - (1 - p)) ∧ p * A / (1 - (1 - p)) = p * A / p ∧ p * A / p = A
+KeynesCh26.th_26_petersburg_finite : ∀ (n : ℕ), ∑ r ∈ Finset.Icc 1 n, (1 / 2) ^ r * 2 ^ (r - 1) = ↑n / 2
+@KeynesCh26.th_26_moral_expectation : ∀ {ι : Type u_1} (s : Finset ι) (p x : ι → ℝ) (a k : ℝ),
+  0 < a →
+    (∀ i ∈ s, 0 < a + x i) →
+      ∑ i ∈ s, p i = 1 → k * Real.log ((∏ i ∈ s, (a + x i) ^ p i) / a) = ∑ i ∈ s, p i * (k * Real.log ((a + x i) / a))
+KeynesCh26.th_26_cramer_cap : ∑' (r : ℕ), KeynesCh26.cramerCapped r = 13
+KeynesCh26.th_26_cramer_sqrt_expectation : ∑' (r : ℕ), (1 / 2) ^ (r + 1) * √(2 ^ r) = 1 + √2 / 2
+KeynesCh26.th_26_bernoulli_stake_bounds : (∃ s,
+    59 / 10 < s ∧ s < 6 ∧ KeynesCh26.bernoulliMoral 1000 s = Real.log 1000) ∧
+  ∀ s ≤ 1000, KeynesCh26.bernoulliMoral 1000 s = Real.log 1000 → 59 / 10 < s ∧ s < 6
+KeynesCh26.th_26_relative_risk : ∀ (n : ℕ),
+  1 ≤ n →
+    KeynesCh26.petersburgRisk n / (↑n / 2) = 1 - (1 - (1 / 2) ^ n) / ↑n ∧
+      1 - 1 / ↑n ≤ KeynesCh26.petersburgRisk n / (↑n / 2) ∧ KeynesCh26.petersburgRisk n / (↑n / 2) < 1
+KeynesCh26.th_26_relative_risk_tendsto : Filter.Tendsto (fun n => KeynesCh26.petersburgRisk n / (↑n / 2)) Filter.atTop
+  (nhds 1)
+KeynesCh26.th_26_laurent_limit : ∀ (a : ℝ), 0 ≤ a → Filter.Tendsto (fun b => b / (a + b)) Filter.atTop (nhds 1)
+'KeynesCh26.th_26_fn1_second_order_risk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_fn1_printed_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_fn1_printed_refuted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_fn1_consistent_R' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_fn1_consistent_reindexed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_fn1_czuber_tsum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_fn2_F4_printed_determinate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_fn2_F4_amended_witness_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_fn2_F4_amended_witness_gt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_first_head' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_petersburg_term' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_petersburg_term_r0' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_petersburg_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_petersburg_unbounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_petersburg_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_petersburg_not_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_bernoulli_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_bernoulli_initial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_moral_expectation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_laplace_printed_refuted' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_two_pow_24' depends on axioms: [propext]
+'KeynesCh26.th_26_printed_16777116_refuted' depends on axioms: [propext]
+'KeynesCh26.th_26_cramer_cap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_cramer_sqrt_expectation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_cramer_sqrt_stake' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_cramer_sqrt_dubious' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_bernoulli_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_bernoulli_stake_strict' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_bernoulli_stake_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_petersburg_risk_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_relative_risk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_relative_risk_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_petersburg_risk_unbounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_laurent_poorer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_laurent_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'KeynesCh26.th_26_fn_leibniz_division' depends on axioms: [propext, Classical.choice, Quot.sound]
+EXIT_keynes_part_iv_phase8a2:0
+
+=== CANONICAL RUN COMPLETE 2026-10-23T02:38:23Z UTC ===
