@@ -45,7 +45,7 @@
 #        + floor。NegChainIndep 経由で範囲原理は不要と予測。
 #
 # ## 実行方法 (Mac ローカル)
-#   cd ~/keynes-lean/keynes_audit
+#   cd <repository root>
 #   lake env lean phases/keynes_part_ii_phase6a.lean
 -/
 

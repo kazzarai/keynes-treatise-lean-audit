@@ -28,7 +28,7 @@
 #        (Phase 6b の th_13_12 の証明構造の内包版)。
 #
 # ## 実行方法 (Mac ローカル)
-#   cd ~/keynes-lean/keynes_audit
+#   cd <repository root>
 #   lake env lean phases/keynes_part_ii_phase6c_skeleton.lean
 -/
 
