@@ -178,7 +178,7 @@ canonical run**.
 | `phases/…phase7i.lean` | **1921-image re-collation**: the 13 statements the image pass found deviating from print, re-stated and verified in their printed form — (2)(3) disjunctive range forms, (10) three-term equality, (11) conclusion a/h=1, (37) chain-conditional hypothesis, (38.1) general two-alternative form, (43) separative-factor identities, (46.2) consistent two-letter form, (49.1) coefficient decomposition + monotonicity corollary, (56.4) bound triple, (57.1) the Π-coefficient equality itself, (57.2) bounds without independence, (57.3) Π-coefficient lower bound; plus machine refutations of five printed propositions — (35) non-strict hypothesis (8-region countermodel), (46.1) missing (x/h)ⁿ factor (8-region countermodel), (58.2) missing (1−q) factor and (58.3) exponent off by one (rational instances), (52)/(53) strictness — with the corrected forms verified | +25 |
 | `logs/…canonical_run_20261022_v10.log` | **The citable evidence artifact** (33 files) | — |
 | `run_v10.sh` | Regenerates the canonical log over `phases/*.lean` (SHA-256-bound) | — |
-| `logs/…canonical_run_20260926_v9.log`, `run_v9.sh` | Superseded (24 files) | — |
+| `logs/…canonical_run_20260926_v9.log` | Superseded run (24 files); the runner of each superseded log is the `run_v*.sh` of the corresponding tag | — |
 | `logs/…canonical_run_20260925_v8.log`, `…20260801_v7.log`, `…20260714_v6.log`, `…_v5.log`, `…_v4.log`, `…_v3.log`, `…20260708.log` | Superseded runs over earlier corpora (retained as development history) | — |
 | `docs/PHASE6C_DESIGN.md` | Design notes for the intensional migration, incl. planned Popper-function countermodel | — |
 

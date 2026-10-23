@@ -45,7 +45,7 @@
 #       #print axioms に痕跡を残さない。
 #
 # ## 実行方法 (Mac ローカル)
-#   cd ~/keynes-lean/keynes_audit
+#   cd <repository root>
 #   lake env lean phases/keynes_part_ii_phase5.lean
 -/
 

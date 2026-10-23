@@ -40,7 +40,7 @@
 #        **定理として**出る (Keynes は 6 ノードを引くが kernel は 2 公理)。
 #
 # ## 実行方法 (Mac ローカル)
-#   cd ~/keynes-lean/keynes_audit
+#   cd <repository root>
 #   lake env lean phases/keynes_part_ii_phase6b.lean
 -/
 

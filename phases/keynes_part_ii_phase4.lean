@@ -56,7 +56,7 @@
 #   カーネルレベルの確認である。
 #
 # ## 実行方法 (Mac ローカル)
-#   cd ~/keynes-lean/keynes_audit
+#   cd <repository root>
 #   lake env lean phases/keynes_part_ii_phase4.lean
 #   (警告 [unused variable 等] は想定内。エラーが 0 で #print axioms 出力が
 #    出ていれば成功)
