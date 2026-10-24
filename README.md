@@ -7,6 +7,29 @@ measurements for every verified theorem, extended (v1.5) to Chapter VI
 (weight of arguments), Part III (Chapters 19, 20, 22 and the Notes on
 Chapter 22) and the whole of Chapter 26.**
 
+- **v1.6 (October 2026): 610 kernel-checked verdicts across 34 files, zero
+  `sorry`; and a complete formula census of the 1921 first edition.**
+  (a) `phase6c_necessity` (29 verdicts) closes the question left open in
+  v1.5: *where* is the proviso needed? With the printed, one-directional
+  Def. VIII the axiom set is consistent even without the proviso and admits
+  an intermediate value (`th_S0_consistent`, `model_intermediate_value`);
+  with the biconditional reading and the proviso placed only on Axiom (i) it
+  is inconsistent (`th_VIII_bicond_iii_cons_inconsistent`). So the proviso
+  is needed exactly on the reverse direction of Def. VIII — four readings,
+  four verdicts: truth-as-certainty → two-valued; biconditional without
+  proviso → `False`; printed direction → consistent, intermediate value;
+  biconditional with proviso → consistent, intermediate value.
+  (b) **Formula census**: every printed formula of all 33 chapters and the
+  Notes on Part III, counted from the page images under one written rule —
+  **1,175 formula lines, 731 notations, 698 items (202 numbered)**, each row
+  with its transcription as printed, position, and a mechanically decided
+  Lean status (✓ printed form stated / ≈ equivalent form / ✎ refuted and
+  corrected / not yet). 240 of 698 items are covered by a theorem (151 of
+  the 202 numbered items); the rest is dominated by proof-interior lines,
+  Chapter 16 and Part V. Ledger, rule and per-chapter table:
+  [`docs/全数台帳/`](docs/全数台帳/) (English guide in its README). To our
+  knowledge this is the first complete count of the formulae of the
+  *Treatise*.
 - **v1.5 (October 2026): 581 kernel-checked `#print axioms` verdicts across
   33 files, zero `sorry`.** Headline result of this release — **Keynes's
   consistency proviso is load-bearing.** The intensional axiom layer
@@ -361,7 +384,7 @@ directions:
 ```
 Arai, K. (2026). Keynes's Treatise on Probability, Part II: a Lean 4 kernel
 audit. https://github.com/kazzarai/keynes-treatise-lean-audit
-(release v1.5; canonical run v10, 2026-10-23, Lean 4 v4.29.1)
+(release v1.6; canonical run v10 + phase6c_necessity, 2026-10-24, Lean 4 v4.29.1)
 ```
 
 ## License
