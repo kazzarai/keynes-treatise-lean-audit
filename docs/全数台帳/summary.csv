@@ -1,0 +1,35 @@
+章,題,folio_from,folio_to,式,項目数,記法,うち番号付き,✓,≈,✎,未(式),記法のLean対応
+1,The Meaning of Probability,3,9,1,1,0,0,0,0,0,1,0
+2,Probability in Relation to the Theory of Knowledge,10,19,0,0,0,0,0,0,0,0,0
+3,The Measurement of Probabilities,20,40,8,8,19,0,0,0,0,8,0
+4,The Principle of Indifference,41,64,31,31,95,0,5,0,0,26,0
+5,Other Methods of Determining Probabilities,65,70,16,16,22,0,0,0,0,16,0
+6,The Weight of Arguments,71,78,32,32,26,0,11,2,0,19,2
+7,Historical Retrospect,79,91,0,0,5,0,0,0,0,0,0
+8,The Frequency Theory of Probability,92,110,14,14,14,0,2,1,0,11,0
+9,The Constructive Theory of Part I. Summarised,111,112,0,0,1,0,0,0,0,0,0
+10,Introductory,115,122,29,26,13,12,17,6,0,6,11
+11,The Theory of Groups,123,132,30,30,2,0,0,0,0,30,1
+12,The Definitions and Axioms of Inference and Probability,133,138,56,30,16,47,14,9,0,33,7
+13,The Fundamental Theorems of Necessary Inference,139,143,169,36,0,167,32,26,0,111,0
+14,The Fundamental Theorems of Probable Inference,144,157,188,70,37,173,40,26,1,121,10
+15,Numerical Measurement and Approximation of Probabilities,158,163,62,23,6,49,7,3,3,49,3
+16,Observations on the Theorems of Chapter XIV. and their Developments including Testimony,164,185,89,89,41,0,1,0,0,88,1
+17,Some Problems in Inverse Probability including Averages,186,214,202,54,20,197,19,75,7,101,17
+18,Introduction (Part III),217,221,0,0,1,0,0,0,0,0,0
+19,The Nature of Argument by Analogy,222,232,16,16,49,0,3,2,2,9,40
+20,The Value of Multiplication of Instances or Pure Induction,233,241,30,30,10,0,15,7,2,6,10
+21,The Nature of Inductive Argument Continued,242,250,3,3,4,0,0,0,0,3,0
+22,The Justification of these Methods,251,264,3,3,25,0,3,0,0,0,16
+23,Some Historical Notes on Induction,265,273,0,0,0,0,0,0,0,0,0
+24,"The Meanings of Objective Chance, and of Randomness",281,292,0,0,18,0,0,0,0,0,0
+25,Some Problems Arising out of the Discussion of Chance,293,306,4,4,6,0,0,1,0,3,6
+26,The Application of Probability to Conduct,307,323,31,31,11,0,6,10,1,14,9
+27,The Nature of Statistical Inference,327,331,0,0,0,0,0,0,0,0,0
+28,The Law of Great Numbers,332,336,0,0,0,0,0,0,0,0,0
+29,The Use of à priori Probabilities for the Prediction of Statistical Frequency,337,366,83,83,106,2,0,0,0,83,0
+30,The Mathematical Use of Statistical Frequencies for the Determination of Probability à posteriori — the Methods of Laplace,367,383,12,12,52,0,0,0,0,12,0
+31,The Inversion of Bernoulli's Theorem,384,390,2,2,44,0,0,0,0,2,0
+32,The Inductive Use of Statistical Frequencies for the Determination of Probability à posteriori — the Methods of Lexis,391,405,26,26,7,0,0,0,0,26,0
+33,Outline of a Constructive Theory,406,428,18,18,79,0,0,0,0,18,0
+N3,Notes on Part III,274,280,20,10,2,19,20,0,0,0,2
