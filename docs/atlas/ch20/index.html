@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula atlas, Chapter 20</title>
+<style>
+body{background:#fff;color:#111;font-family:Georgia,'Times New Roman',serif;margin:0;padding:24px 12px}
+main{max-width:900px;margin:0 auto}
+h1{font-size:1.5em;margin:0 0 .2em}
+.sub{color:#444;margin:0 0 1em}
+table.sum{border-collapse:collapse;margin:.5em 0 1em;font-size:.95em}
+table.sum th,table.sum td{border:1px solid #bbb;padding:3px 10px;text-align:left}
+.rules{font-size:.92em;line-height:1.45;color:#222;border-left:3px solid #ccc;padding-left:12px}
+.card{border:1px solid #ccc;border-radius:4px;margin:18px 0;padding:10px 12px}
+.card img{display:block;width:100%;height:auto;border:1px solid #eee;margin:4px 0 8px}
+.card h2{font-size:1.05em;margin:0 0 4px;font-family:Menlo,Consolas,monospace}
+.meta{font-size:.9em;color:#333;margin-bottom:4px}
+.shared{font-size:.82em;color:#666;margin:-4px 0 6px}
+dl{display:grid;grid-template-columns:8.5em 1fr;gap:3px 10px;margin:0;font-size:.92em}
+dt{color:#555}
+dd{margin:0;word-break:break-word}
+code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;padding:0 2px}
+.mark{display:inline-block;min-width:1.6em;text-align:center;border-radius:3px;padding:0 4px;margin-right:6px;font-weight:bold}
+.printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
+.notation{background:#f3eaf6}
+footer{font-size:.85em;color:#666;margin-top:2em}
+</style></head><body><main>
+<h1>Chapter XX &quot;The Value of Multiplication of Instances, or Pure Induction&quot;</h1>
+<p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 233&ndash;241 (Cornell copy, PDF pp. 253&ndash;261). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
+<table class="sum"><tr><th>Ledger rows</th><td>40</td></tr>
+<tr><th>Formulas</th><td>30 (display 15, inline 15; items 30, numbered 0)</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>15 &nbsp; <span class="mark equiv">&asymp;</span>7 &nbsp; <span class="mark corrected">&#9998;</span>2 &nbsp; <span class="mark none">&#26410;</span>6</td></tr>
+<tr><th>Notation</th><td>10 (with a Lean counterpart 10)</td></tr>
+<tr><th>Reference rows</th><td>0</td></tr></table>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv; &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
+<section class="card" id="ch20-001">
+<h2>ch20-001</h2>
+<img src="img/ch20-001.png" alt="x₁x₂ . . . xₙ" loading="lazy">
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>x₁x₂ . . . xₙ</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9a/C (事例の連言 x₁…xₙ)</dd>
+<dt>Anchor words</dt><dd><code>let</code> / <code>represent instances of g.</code></dd>
+<dt>Remarks</dt><dd>F20.1 の導入文</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 506&ndash;555 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-002">
+<h2>ch20-002</h2>
+<img src="img/ch20-002.png" alt="x₁/gh = 1," loading="lazy">
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>x₁/gh = 1,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9a/Instances (定理の仮定 hx)</dd>
+<dt>Anchor words</dt><dd><code>Then</code></dd>
+<dt>Remarks</dt><dd>F20.1</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 559&ndash;607 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-003">
+<h2>ch20-003</h2>
+<img src="img/ch20-002.png" alt="x₂/gh = 1" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-002">ch20-002</a>.</div>
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>x₂/gh = 1</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9a/Instances (定理の仮定 hx)</dd>
+<dt>Anchor words</dt><dd><code>x₁/gh = 1,</code> (直前)</dd>
+<dt>Remarks</dt><dd>F20.1</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 559&ndash;607 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-004">
+<h2>ch20-004</h2>
+<img src="img/ch20-002.png" alt=". . . xₙ/gh = 1 ;" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-002">ch20-002</a>.</div>
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>. . . xₙ/gh = 1 ;</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9a/Instances (定理の仮定 hx)</dd>
+<dt>Anchor words</dt><dd><code>given g, that is to say</code> (直後)</dd>
+<dt>Remarks</dt><dd>F20.1。三つ目は省略点の後。帰結 x₁…xₙ/gh = 1 は phase9a/conj_certain</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 559&ndash;607 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-005">
+<h2>ch20-005</h2>
+<img src="img/ch20-005.png" alt="g/hx₁x₂ . . . xₙ" loading="lazy">
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g/hx₁x₂ . . . xₙ</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9a/p</dd>
+<dt>Anchor words</dt><dd><code>to determine the probability</code></dd>
+<dt>Remarks</dt><dd>F20.2</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 660&ndash;708 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-006">
+<h2>ch20-006</h2>
+<img src="img/ch20-006.png" alt="x₁/h = x₂/h = . . . = xₙ/h." loading="lazy">
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>x₁/h = x₂/h = . . . = xₙ/h.</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(def だけ: 述語 phase9a/EquallyLikely はどの定理文にも現れない)</dd>
+<dt>Anchor words</dt><dd><code>with greater reliance than any other, i.e.</code></dd>
+<dt>Remarks</dt><dd>F20.3</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 1083&ndash;1128 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-007">
+<h2>ch20-007</h2>
+<img src="img/ch20-007.png" alt="g/hx₁x₂ . . . xₙ = pₙ" loading="lazy">
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>g/hx₁x₂ . . . xₙ = pₙ</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9a/p (def 本体)</dd>
+<dt>Anchor words</dt><dd><code>Write</code></dd>
+<dt>Remarks</dt><dd>F20.4</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 1158&ndash;1203 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-008">
+<h2>ch20-008</h2>
+<img src="img/ch20-008.png" alt="x_{n+1}/hx₁x₂ . . . xₙ = y_{n+1} ;" loading="lazy">
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>x_{n+1}/hx₁x₂ . . . xₙ = y_{n+1} ;</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9a/y (def 本体)</dd>
+<dt>Anchor words</dt><dd><code>and</code></dd>
+<dt>Remarks</dt><dd>F20.5</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 1228&ndash;1274 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-009">
+<h2>ch20-009</h2>
+<img src="img/ch20-009.png" alt="pₙ/p_{n−1} = (g/hx₁ . . . xₙ) / (g/hx₁ . . . x_{n−1}) = (xₙ/hx₁ . . . x_{n−1}) / (g/hx₁ . . . x_{n−1} . xₙ/hx₁ . . . x_{n−1})" loading="lazy">
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>pₙ/p_{n−1} = (g/hx₁ . . . xₙ) / (g/hx₁ . . . x_{n−1}) = (xₙ/hx₁ . . . x_{n−1}) / (g/hx₁ . . . x_{n−1} . xₙ/hx₁ . . . x_{n−1})</code></dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>phase9a/th_20_6_cor (第 1 連言肢); 反駁 phase9a/ErratumE_III_1.printed_line2_false</dd>
+<dt>Anchor words</dt><dd><code>then</code></dd>
+<dt>Remarks</dt><dd>F20.6 第 1 行。第 2 の等号の分子は <code>xₙ/hx₁ . . . x_{n−1}</code> で <code>g</code> 脱落 (索引 E-III-1、分類 F)。分数横線が分子より左右に長い。th_20_6_cor 第 1 連言肢は分子を g を復した結合確率 gxₙ/hx₁ . . . x_{n−1} に替えて述べる。印刷形が成り立つのは pₙ = 1 のときに限る (phase9a/th_20_6_src)。第 1 の等号は定義 p の展開</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 1341&ndash;1696 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-010">
+<h2>ch20-010</h2>
+<img src="img/ch20-009.png" alt="= (xₙ/ghx₁ . . . x_{n−1}) / (xₙ/hx₁ . . . x_{n−1})" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-009">ch20-009</a>.</div>
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>= (xₙ/ghx₁ . . . x_{n−1}) / (xₙ/hx₁ . . . x_{n−1})</code></dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>phase9a/th_20_6_cor (第 2 連言肢); 反駁 phase9a/ErratumE_III_1.printed_line2_false</dd>
+<dt>Anchor words</dt><dd><code>then</code> (ブロック 2 行目)</dd>
+<dt>Remarks</dt><dd>F20.6 第 2 行。補則 8 の既知の裁定 (ch20-010 = ✎)。印刷ではこの行の左項は ch20-009 の第 2 項 (g 脱落) で、th_20_6_cor 第 2 連言肢は左項を g を復した形に替えて述べる (印刷どおりの左項では等号は成り立たない: 左辺 1/pₙ₋₁、右辺 1/yₙ)</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 1341&ndash;1696 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-011">
+<h2>ch20-011</h2>
+<img src="img/ch20-009.png" alt="= 1/yₙ ." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-009">ch20-009</a>.</div>
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>= 1/yₙ .</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase9a/th_20_6_cor (第 3 連言肢; 略記 yₙ の代入)</dd>
+<dt>Anchor words</dt><dd><code>then</code> (ブロック 3 行目)</dd>
+<dt>Remarks</dt><dd>F20.6 第 3 行。左項 (ch20-010 の右辺) の分子は印刷どおりで、th_20_6_cor 第 3 連言肢 <code>PrI (x (n+1)) (iand g (iand (C x n) h)) / y (n+1) = 1 / y (n+1)</code> に現れる。分母 xₙ/hx₁ . . . x_{n−1} は Keynes の略記 y で書かれ、略記の代入は補則 8 の「定義の代入」に当たるので ≈ (細則 6、司令塔裁定 2026-10-25; 第 3 回は ✓; 添字のずらし n ↔ n+1)。連鎖の両端 pₙ/p_{n−1} = 1/yₙ は phase9a/th_20_6_lines134 (ch20-012)</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 1341&ndash;1696 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-012">
+<h2>ch20-012</h2>
+<img src="img/ch20-012.png" alt="∴ pₙ/p_{n−1} = 1/yₙ," loading="lazy">
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>∴ pₙ/p_{n−1} = 1/yₙ,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9a/th_20_6_lines134</dd>
+<dt>Reprint of</dt><dd><a href="#ch20-011">ch20-011</a></dd>
+<dt>Anchor words</dt><dd><code>and hence</code> (直後)</dd>
+<dt>Remarks</dt><dd>F20.7。ch20-009〜011 の連鎖の両端を ∴ で再掲。印刷は行頭 ∴ から散文に続く行 (分数は横線)。添字のずらし n ↔ n+1。乗法形 p_{n+1} · y_{n+1} = pₙ は phase9a/th_20_6</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 1716&ndash;1816 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-013">
+<h2>ch20-013</h2>
+<img src="img/ch20-012.png" alt="pₙ = (1/(y₁y₂ . . . yₙ)) . p₀," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-012">ch20-012</a>.</div>
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>pₙ = (1/(y₁y₂ . . . yₙ)) . p₀,</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase9a/th_20_7_src (略記 p₀ の代入)</dd>
+<dt>Anchor words</dt><dd><code>and hence</code></dd>
+<dt>Remarks</dt><dd>F20.7。条件 y₁…yₙ ≠ 0 は Lean 側で付す。定理文は p₀ を PrI g h と展開し (Keynes の略記の代入 = 補則 8 の「定義の代入」なので ≈: 細則 6、司令塔裁定 2026-10-25; 第 3 回は ✓)、y₁y₂ . . . yₙ を ∏ で書く</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 1716&ndash;1816 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-014">
+<h2>ch20-014</h2>
+<img src="img/ch20-012.png" alt="p₀ = g/h," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-012">ch20-012</a>.</div>
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>p₀ = g/h,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9a/p_zero</dd>
+<dt>Anchor words</dt><dd><code>where</code> / <code>, i.e. p₀</code></dd>
+<dt>Remarks</dt><dd>F20.7 (p₀ の定義)</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 1716&ndash;1816 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-015">
+<h2>ch20-015</h2>
+<img src="img/ch20-015.png" alt="φ(x) ≡ &#x27; x can be inferred from h &#x27;" loading="lazy">
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>φ(x) ≡ &#x27; x can be inferred from h &#x27;</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(対応なし: 脚注の一般化記法)</dd>
+<dt>Anchor words</dt><dd><code>and we put</code></dd>
+<dt>Remarks</dt><dd>F20.8。被定義項は引用符つきの語句</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 1957&ndash;1993 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-016">
+<h2>ch20-016</h2>
+<img src="img/ch20-015.png" alt="f(x) ≡ x," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-015">ch20-015</a>.</div>
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>f(x) ≡ x,</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(対応なし: 脚注の一般化記法)</dd>
+<dt>Anchor words</dt><dd><code>and</code> / <code>, then</code></dd>
+<dt>Remarks</dt><dd>F20.8</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 1957&ndash;1993 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-017">
+<h2>ch20-017</h2>
+<img src="img/ch20-015.png" alt="g(φ, f) ≡ h." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-015">ch20-015</a>.</div>
+<div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f) ≡ h.</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(対応なし: 脚注の一般化記法)</dd>
+<dt>Anchor words</dt><dd><code>then</code> / <code>Since</code></dd>
+<dt>Remarks</dt><dd>F20.8。第19章の記法 g(φ, f)</dd>
+<dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 1957&ndash;1993 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-018">
+<h2>ch20-018</h2>
+<img src="img/ch20-018.png" alt="pₙ &gt; p_{n−1}" loading="lazy">
+<div class="meta">folio 236 (PDF p. 256) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>pₙ &gt; p_{n−1}</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9a/th_20_9_src</dd>
+<dt>Anchor words</dt><dd><code>It follows, therefore, that</code></dd>
+<dt>Remarks</dt><dd>F20.9。索引 F20.9-a (S/C: 前提 p_{n−1} &gt; 0, x₁…x_{n−1}/h ≠ 0 を補う)。前提の必要性は phase9a/th_20_9_iff, th_20_9_needs_p_pos, th_20_9_J_zero</dd>
+<dt>Crop</dt><dd>folio 236, x 125&ndash;1335, y 216&ndash;262 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-019">
+<h2>ch20-019</h2>
+<img src="img/ch20-018.png" alt="yₙ ≠ 1." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-018">ch20-018</a>.</div>
+<div class="meta">folio 236 (PDF p. 256) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>yₙ ≠ 1.</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9a/th_20_9_src (仮定 hy)</dd>
+<dt>Anchor words</dt><dd><code>so long as</code></dd>
+<dt>Remarks</dt><dd>F20.9。≠ は <code>=</code> に縦棒</dd>
+<dt>Crop</dt><dd>folio 236, x 125&ndash;1335, y 216&ndash;262 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-020">
+<h2>ch20-020</h2>
+<img src="img/ch20-020.png" alt="x₁x₂ . . . xₙ/h = xₙ/hx₁x₂ . . . x_{n−1} . x₁x₂ . . . x_{n−1}/h" loading="lazy">
+<div class="meta">folio 236 (PDF p. 256) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>x₁x₂ . . . xₙ/h = xₙ/hx₁x₂ . . . x_{n−1} . x₁x₂ . . . x_{n−1}/h</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase9a/J_succ (略記 yₙ の代入)</dd>
+<dt>Anchor words</dt><dd><code>Further,</code></dd>
+<dt>Remarks</dt><dd>F20.10 第 1 行。行末右端に遊離したピリオド 1 個 (原寸で確認)。定理文 <code>J (n+1) = y (n+1) * J n</code> は xₙ/hx₁ . . . x_{n−1} を Keynes の略記 y で (略記の代入 = 補則 8 の「定義の代入」なので ≈: 細則 6、司令塔裁定 2026-10-25; 第 3 回は ✓)、x₁ . . . xₙ/h を Lean 側の略名 J で書く (細則 6 裁定事項 A′)</dd>
+<dt>Crop</dt><dd>folio 236, x 125&ndash;1335, y 335&ndash;483 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-021">
+<h2>ch20-021</h2>
+<img src="img/ch20-020.png" alt="= yₙ . x₁x₂ . . . x_{n−1}/h" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-020">ch20-020</a>.</div>
+<div class="meta">folio 236 (PDF p. 256) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>= yₙ . x₁x₂ . . . x_{n−1}/h</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9a/J_succ</dd>
+<dt>Anchor words</dt><dd><code>Further,</code> (ブロック 2 行目)</dd>
+<dt>Remarks</dt><dd>F20.10 第 2 行。x₁x₂ . . . x_{n−1}/h は Lean 側の略名 J (細則 6 裁定事項 A′)</dd>
+<dt>Crop</dt><dd>folio 236, x 125&ndash;1335, y 335&ndash;483 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-022">
+<h2>ch20-022</h2>
+<img src="img/ch20-020.png" alt="= yₙy_{n−1} . . . y₁." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-020">ch20-020</a>.</div>
+<div class="meta">folio 236 (PDF p. 256) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>= yₙy_{n−1} . . . y₁.</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9a/th_20_10_src</dd>
+<dt>Anchor words</dt><dd><code>Further,</code> (ブロック 3 行目)</dd>
+<dt>Remarks</dt><dd>F20.10 第 3 行。定理文 <code>J n = ∏ i ∈ range n, y (i+1)</code> (左項 x₁ . . . xₙ/h は略名 J: 細則 6 裁定事項 A′; yₙy_{n−1} . . . y₁ は Finset 上の ∏ で書き、順序を持たない)</dd>
+<dt>Crop</dt><dd>folio 236, x 125&ndash;1335, y 335&ndash;483 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-023">
+<h2>ch20-023</h2>
+<img src="img/ch20-023.png" alt="∴ pₙ = p₀/(y₁y₂ . . . yₙ) = p₀/(x₁x₂ . . . xₙ/h)" loading="lazy">
+<div class="meta">folio 236 (PDF p. 256) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>∴ pₙ = p₀/(y₁y₂ . . . yₙ) = p₀/(x₁x₂ . . . xₙ/h)</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase9a/th_20_11_first (分母を払った積の形); 第 1 等号は phase9a/th_20_7_src ((1/∏y) · p₀ の形)</dd>
+<dt>Reprint of</dt><dd><a href="#ch20-013">ch20-013</a></dd>
+<dt>Anchor words</dt><dd><code>= yₙy_{n−1} . . . y₁.</code> (直前)</dd>
+<dt>Remarks</dt><dd>F20.11 第 1 行 (等号 2 個、印刷 1 行)。第 2 等号の商の形 p₀/(x₁ . . . xₙ/h) は、定理文では分母を払った積の形 pₙ · x₁ . . . xₙ/h = p₀ (th_20_11_first) でしか現れない。第 1 等号 p₀/(y₁ . . . yₙ) も th_20_7_src では (1/∏y) · p₀ の形。補則 8 の「分母を払った形」に当たるので行として ≈ (読み手役 第 2 回の申し送り)</dd>
+<dt>Crop</dt><dd>folio 236, x 125&ndash;1335, y 519&ndash;989 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-024">
+<h2>ch20-024</h2>
+<img src="img/ch20-023.png" alt="= p₀/(x₁x₂ . . . xₙg/h + x₁x₂ . . . xₙḡ/h)" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-023">ch20-023</a>.</div>
+<div class="meta">folio 236 (PDF p. 256) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>= p₀/(x₁x₂ . . . xₙg/h + x₁x₂ . . . xₙḡ/h)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(phase9a/th_20_11_denom の証明内)</dd>
+<dt>Anchor words</dt><dd><code>∴ pₙ =</code> (ブロック 2 行目)</dd>
+<dt>Remarks</dt><dd>F20.11 第 2 行。ḡ の棒あり。def_IX_i の事例</dd>
+<dt>Crop</dt><dd>folio 236, x 125&ndash;1335, y 519&ndash;989 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-025">
+<h2>ch20-025</h2>
+<img src="img/ch20-023.png" alt="= p₀/(g/h + x₁x₂ . . . xₙ/ḡh . ḡ/h)" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-023">ch20-023</a>.</div>
+<div class="meta">folio 236 (PDF p. 256) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>= p₀/(g/h + x₁x₂ . . . xₙ/ḡh . ḡ/h)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(phase9a/th_20_11_denom の証明内)</dd>
+<dt>Anchor words</dt><dd><code>∴ pₙ =</code> (ブロック 3 行目)</dd>
+<dt>Remarks</dt><dd>F20.11 第 3 行。<code>g/h</code> は棒なし、<code>ḡh</code>, <code>ḡ/h</code> は棒あり。ḡ/h を 1 − p₀ に置き換える前の形</dd>
+<dt>Crop</dt><dd>folio 236, x 125&ndash;1335, y 519&ndash;989 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-026">
+<h2>ch20-026</h2>
+<img src="img/ch20-023.png" alt="= p₀/(p₀ + x₁x₂ . . . xₙ/ḡh(1 − p₀))." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-023">ch20-023</a>.</div>
+<div class="meta">folio 236 (PDF p. 256) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>= p₀/(p₀ + x₁x₂ . . . xₙ/ḡh(1 − p₀)).</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase9a/th_20_11_src (条件 分母 ≠ 0; 略記 p₀ の代入)</dd>
+<dt>Anchor words</dt><dd><code>∴ pₙ =</code> (ブロック 4 行目)</dd>
+<dt>Remarks</dt><dd>F20.11 最終形。定理文は p₀ を PrI g h と展開し (Keynes の略記の代入 = 補則 8 の「定義の代入」なので ≈: 細則 6、司令塔裁定 2026-10-25; 第 3 回は ✓)、x₁ . . . xₙ/ḡh を Lean 側の略名 Q で書く (細則 6 裁定事項 A′)。分母 0 の場合は phase9a/th_20_11_den_zero, Witness_F20_11_den</dd>
+<dt>Crop</dt><dd>folio 236, x 125&ndash;1335, y 519&ndash;989 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-027">
+<h2>ch20-027</h2>
+<img src="img/ch20-027.png" alt="x₁x₂ . . . xₙ/ḡh . 1/p₀" loading="lazy">
+<div class="meta">folio 236 (PDF p. 256) &middot; &sect;3 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>x₁x₂ . . . xₙ/ḡh . 1/p₀</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9a/Q, phase9a/th_20_12_src, phase9a/limit_of_Q</dd>
+<dt>Anchor words</dt><dd><code>as a limit, if</code> / <code>approaches zero as a limit</code></dd>
+<dt>Remarks</dt><dd>F20.12。<code>1/p₀</code> は行内で横線分数</dd>
+<dt>Crop</dt><dd>folio 236, x 125&ndash;1335, y 999&ndash;1097 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-028">
+<h2>ch20-028</h2>
+<img src="img/ch20-028.png" alt="pₙ &gt; p_{n−1}" loading="lazy">
+<div class="meta">folio 236 (PDF p. 256) &middot; &sect;4 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>pₙ &gt; p_{n−1}</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9a/th_20_13_src</dd>
+<dt>Reprint of</dt><dd><a href="#ch20-018">ch20-018</a></dd>
+<dt>Anchor words</dt><dd><code>Since</code></dd>
+<dt>Remarks</dt><dd>F20.13 (F20.9 の再掲)</dd>
+<dt>Crop</dt><dd>folio 236, x 125&ndash;1335, y 2179&ndash;2212 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-029">
+<h2>ch20-029</h2>
+<img src="img/ch20-028.png" alt="yₙ ≠ 1." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-028">ch20-028</a>.</div>
+<div class="meta">folio 236 (PDF p. 256) &middot; &sect;4 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>yₙ ≠ 1.</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9a/th_20_13_src (仮定 hy)</dd>
+<dt>Reprint of</dt><dd><a href="#ch20-019">ch20-019</a></dd>
+<dt>Anchor words</dt><dd><code>so long as</code></dd>
+<dt>Remarks</dt><dd>F20.13</dd>
+<dt>Crop</dt><dd>folio 236, x 125&ndash;1335, y 2179&ndash;2212 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-030">
+<h2>ch20-030</h2>
+<img src="img/ch20-030.png" alt="x₁x₂ . . . xₙ/ḡh" loading="lazy">
+<div class="meta">folio 237 (PDF p. 257) &middot; &sect;5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>x₁x₂ . . . xₙ/ḡh</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9a/Q, phase9a/th_20_14</dd>
+<dt>Anchor words</dt><dd><code>as n increases,</code> / <code>becomes small compared with p₀</code></dd>
+<dt>Remarks</dt><dd>F20.14</dd>
+<dt>Crop</dt><dd>folio 237, x 125&ndash;1335, y 351&ndash;398 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-031">
+<h2>ch20-031</h2>
+<img src="img/ch20-031.png" alt="x_r/x₁x₂ . . . x_{r−1}ḡh &lt; 1 − ε" loading="lazy">
+<div class="meta">folio 237 (PDF p. 257) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>x_r/x₁x₂ . . . x_{r−1}ḡh &lt; 1 − ε</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9a/th_20_15_src (仮定 hq)</dd>
+<dt>Anchor words</dt><dd><code>increased, provided that</code></dd>
+<dt>Remarks</dt><dd>F20.15。第22章 folio 254 では <code>= 1 − ε</code> (索引 E-III-2)。仮定 hq は左辺を Lean 側の略名 q で書く (細則 6 裁定事項 A′; 添字のずらし r ↔ r+1)</dd>
+<dt>Crop</dt><dd>folio 237, x 125&ndash;1335, y 718&ndash;763 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-032">
+<h2>ch20-032</h2>
+<img src="img/ch20-032.png" alt="p₀ &gt; η," loading="lazy">
+<div class="meta">folio 237 (PDF p. 257) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>p₀ &gt; η,</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase9a/th_20_15_src (仮定 hp0; 略記 p₀ の代入)</dd>
+<dt>Anchor words</dt><dd><code>for all values of r, and</code></dd>
+<dt>Remarks</dt><dd>F20.15。仮定 <code>η &lt; PrI g h</code> (p₀ を展開: Keynes の略記の代入 = 補則 8 の「定義の代入」なので ≈、細則 6、司令塔裁定 2026-10-25; 第 3 回は ✓; <code>&gt;</code> と <code>&lt;</code> の左右)</dd>
+<dt>Crop</dt><dd>folio 237, x 125&ndash;1335, y 792&ndash;837 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-033">
+<h2>ch20-033</h2>
+<img src="img/ch20-033.png" alt="x₁x₂ . . . xₙ/ḡh = xₙ/x₁x₂ . . . x_{n−1}ḡh . x₁x₂ . . . x_{n−1}/ḡh &lt; (1 − ε)ⁿ," loading="lazy">
+<div class="meta">folio 237 (PDF p. 257) &middot; &sect;5 &middot; Footnote 1 &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>x₁x₂ . . . xₙ/ḡh = xₙ/x₁x₂ . . . x_{n−1}ḡh . x₁x₂ . . . x_{n−1}/ḡh &lt; (1 − ε)ⁿ,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9a/th_20_16_src</dd>
+<dt>Anchor words</dt><dd><code>is as follows :</code></dd>
+<dt>Remarks</dt><dd>F20.16。等号と不等号を 1 行に含む (印刷 1 行)。<code>x_{n−1}ḡh</code> は添字 1 と ḡ が接触 (詰め組、原寸で n−1 と判読)。定理文は等号と不等号を連言 2 個に分け、Lean 側の略名 Q, q で書く (細則 6 裁定事項 A′)</dd>
+<dt>Crop</dt><dd>folio 237, x 125&ndash;1335, y 1865&ndash;1907 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-034">
+<h2>ch20-034</h2>
+<img src="img/ch20-034.png" alt="p₀ &gt; η" loading="lazy">
+<div class="meta">folio 237 (PDF p. 257) &middot; &sect;5 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>p₀ &gt; η</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase9a/th_20_16_src (仮定 hp0; 略記 p₀ の代入)</dd>
+<dt>Reprint of</dt><dd><a href="#ch20-032">ch20-032</a></dd>
+<dt>Anchor words</dt><dd><code>where ε is finite and</code></dd>
+<dt>Remarks</dt><dd>F20.16。仮定 <code>η &lt; PrI g h</code> (ch20-032 と同じく p₀ を展開: 細則 6、司令塔裁定 2026-10-25; 第 3 回は ✓)</dd>
+<dt>Crop</dt><dd>folio 237, x 125&ndash;1335, y 1915&ndash;1952 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-035">
+<h2>ch20-035</h2>
+<img src="img/ch20-035.png" alt="(1 − ε)ⁿ" loading="lazy">
+<div class="meta">folio 237 (PDF p. 257) &middot; &sect;5 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>(1 − ε)ⁿ</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9a/th_20_17_pow</dd>
+<dt>Anchor words</dt><dd><code>such that both</code></dd>
+<dt>Remarks</dt><dd>F20.17</dd>
+<dt>Crop</dt><dd>folio 237, x 125&ndash;1335, y 1960&ndash;2030 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-036">
+<h2>ch20-036</h2>
+<img src="img/ch20-035.png" alt="(1 − ε)ⁿ/η" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch20-035">ch20-035</a>.</div>
+<div class="meta">folio 237 (PDF p. 257) &middot; &sect;5 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>(1 − ε)ⁿ/η</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9a/th_20_17_src, phase9a/th_20_17_bound</dd>
+<dt>Anchor words</dt><dd><code>and</code> / <code>are less than any given finite quantity</code></dd>
+<dt>Remarks</dt><dd>F20.17。行内で横線分数</dd>
+<dt>Crop</dt><dd>folio 237, x 125&ndash;1335, y 1960&ndash;2030 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-037">
+<h2>ch20-037</h2>
+<img src="img/ch20-037.png" alt="p₁p₂ . . . p_r" loading="lazy">
+<div class="meta">folio 237 (PDF p. 257) &middot; &sect;5 &middot; Footnote 2 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>p₁p₂ . . . p_r</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9a/KeynesLimit</dd>
+<dt>Anchor words</dt><dd><code>a series of probabilities</code></dd>
+<dt>Remarks</dt><dd>F20.18</dd>
+<dt>Crop</dt><dd>folio 237, x 125&ndash;1335, y 2068&ndash;2103 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-038">
+<h2>ch20-038</h2>
+<img src="img/ch20-038.png" alt="ε . γ," loading="lazy">
+<div class="meta">folio 237 (PDF p. 257) &middot; &sect;5 &middot; Footnote 2 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>ε . γ,</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9a/KeynesLimit, phase9a/γ_certainty, phase9a/th_20_18_src</dd>
+<dt>Anchor words</dt><dd><code>is less than</code> / <code>where γ is the measure of certainty.</code></dd>
+<dt>Remarks</dt><dd>F20.18</dd>
+<dt>Crop</dt><dd>folio 237, x 125&ndash;1335, y 2176&ndash;2210 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-039">
+<h2>ch20-039</h2>
+<img src="img/ch20-039.png" alt="x_r/x₁x₂ . . . x_{r−1}ḡh" loading="lazy">
+<div class="meta">folio 238 (PDF p. 258) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>x_r/x₁x₂ . . . x_{r−1}ḡh</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9a/q, phase9a/th_20_19_src</dd>
+<dt>Reprint of</dt><dd><a href="#ch20-031">ch20-031</a></dd>
+<dt>Anchor words</dt><dd><code>are (1) that</code> / <code>falls short of certainty</code></dd>
+<dt>Remarks</dt><dd>F20.19。条件の言語的再掲</dd>
+<dt>Crop</dt><dd>folio 238, x 125&ndash;1335, y 611&ndash;656 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch20-040">
+<h2>ch20-040</h2>
+<img src="img/ch20-040.png" alt="x_r/x₁x₂ . . . x_{r−1}ḡh" loading="lazy">
+<div class="meta">folio 238 (PDF p. 258) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>x_r/x₁x₂ . . . x_{r−1}ḡh</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9a/q, phase9a/th_20_20_src, phase9a/Q_le_of_tail</dd>
+<dt>Reprint of</dt><dd><a href="#ch20-031">ch20-031</a></dd>
+<dt>Anchor words</dt><dd><code>(1) That</code> / <code>falls short of certainty</code></dd>
+<dt>Remarks</dt><dd>F20.20。「beyond a specified value s」; (2) の <code>p_s</code> は裸記号</dd>
+<dt>Crop</dt><dd>folio 238, x 125&ndash;1335, y 862&ndash;907 (full-size scan pixels)</dd>
+</dl></section>
+<footer>Generated by tools/atlas/gen.py from the ledger ch20.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
+</main></body></html>
