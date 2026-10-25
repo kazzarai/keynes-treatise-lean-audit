@@ -9,6 +9,10 @@ h1{font-size:1.5em;margin:0 0 .2em}
 .sub{color:#444;margin:0 0 1em}
 table.sum{border-collapse:collapse;margin:.5em 0 1em;font-size:.95em}
 table.sum th,table.sum td{border:1px solid #bbb;padding:3px 10px;text-align:left}
+.wide{overflow-x:auto}
+.wide table.sum{max-width:none}
+table.sum td,table.sum th{white-space:nowrap}
+table.sum td{font-variant-numeric:tabular-nums}
 .rules{font-size:.92em;line-height:1.45;color:#222;border-left:3px solid #ccc;padding-left:12px}
 .card{border:1px solid #ccc;border-radius:4px;margin:18px 0;padding:10px 12px}
 .card img{display:block;width:100%;height:auto;border:1px solid #eee;margin:4px 0 8px}
@@ -23,16 +27,25 @@ code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;pad
 .printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
 .notation{background:#f3eaf6}
 footer{font-size:.85em;color:#666;margin-top:2em}
+nav.nav{font-size:.92em;margin:0 0 1em}
+nav.nav a{white-space:nowrap}
+nav.nav.end{margin:2em 0 0}
+.filter{font-size:.92em;margin:0 0 1em}
+.filter button{font-family:inherit;font-size:1em;border:1px solid #bbb;background:#fff;color:#111;border-radius:3px;padding:2px 8px;margin:0 4px 4px 0;cursor:pointer}
+.filter button.on{background:#333;color:#fff;border-color:#333}
 </style></head><body><main>
+<nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch10/index.html">&larr; Ch. 10</a> | <a href="../ch12/index.html">Ch. 12 &rarr;</a></nav>
 <h1>Chapter XI. The Theory of Groups, with special reference to Logical Consistence, Inference, and Logical Priority</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 123&ndash;132 (Cornell copy, PDF pp. 143&ndash;152). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<table class="sum"><tr><th>Ledger rows</th><td>35</td></tr>
+<div class="wide"><table class="sum"><tr><th>Formulas in Lean</th><td><b>0 / 30 formulas (&#10003;0 &asymp;0 &#9998;0), not yet 30 &mdash; 0.0%</b></td></tr>
+<tr><th>Ledger rows</th><td>35</td></tr>
 <tr><th>Formulas</th><td>30 (display 0, inline 30; items 30, numbered 0)</td></tr>
 <tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>0 &nbsp; <span class="mark equiv">&asymp;</span>0 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>30</td></tr>
 <tr><th>Notation</th><td>2 (with a Lean counterpart 1)</td></tr>
 <tr><th>Reference rows</th><td>0</td></tr>
 <tr><th>Bare-symbol rows (not counted)</th><td>3</td></tr>
-</table>
+</table></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (35)</button><button type="button" data-k="printed">&#10003; (0)</button><button type="button" data-k="equiv">&asymp; (0)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (30)</button><button type="button" data-k="notation">notation (2)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
 <section class="card" id="ch11-001">
 <h2>ch11-001</h2>
@@ -429,5 +442,14 @@ footer{font-size:.85em;color:#666;margin-top:2em}
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 131, x 125&ndash;1335, y 758&ndash;807 (full-size scan pixels)</dd>
 </dl></section>
+<nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch10/index.html">&larr; Ch. 10</a> | <a href="../ch12/index.html">Ch. 12 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch11.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
+<script>(function(){
+var K={"ch11-001":"none","ch11-002":"","ch11-003":"none","ch11-004":"none","ch11-005":"","ch11-006":"none","ch11-007":"none","ch11-008":"none","ch11-009":"none","ch11-010":"none","ch11-011":"none","ch11-012":"none","ch11-013":"none","ch11-014":"none","ch11-015":"none","ch11-016":"none","ch11-017":"","ch11-018":"none","ch11-019":"none","ch11-020":"none","ch11-021":"notation","ch11-022":"none","ch11-023":"none","ch11-024":"none","ch11-025":"none","ch11-026":"none","ch11-027":"none","ch11-028":"none","ch11-029":"notation","ch11-030":"none","ch11-031":"none","ch11-032":"none","ch11-033":"none","ch11-034":"none","ch11-035":"none"};
+var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
+function show(k){
+ for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';
+ for(var j=0;j<bs.length;j++)bs[j].className=(bs[j].getAttribute('data-k')===k)?'on':'';}
+for(var j=0;j<bs.length;j++)bs[j].onclick=function(){show(this.getAttribute('data-k'));};
+f.hidden=false;})();</script>
 </main></body></html>

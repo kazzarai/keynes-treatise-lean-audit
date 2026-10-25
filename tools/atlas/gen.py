@@ -5,7 +5,11 @@
 # 列の順序は台帳の見出し行から決める (第I部の台帳は 項目ID が 2 列目、第III部以降は 7 列目)。
 # 空欄の印は "—" と "–" の両方を受ける。行が 1 本もない章は 1 行の断り書きだけを出す。
 # 見出しの「第N章」は英語の「Chapter <ローマ数字>」に直す。
-# 使い方: python3 -I gen.py <ledger.md> <coords.json> <out.html>
+# 頁の先頭と末尾に目次 (../index.html)・前章・次章へのナビ、集計表に「Lean 済」の 1 行、その下に絞り込みボタンを置く。
+# 集計表とナビのリンクは折り返さない (集計表は .wide で包み、幅が足りなければ横スクロール)。
+# ボタンは JavaScript で .card の表示を切り替える。JS が無ければボタンは隠れたままで、全カードが見える。
+# ナビ・Lean 済の行・ボタンの文言は辞書 UI から引く (--lang ja で切り替え; 既定は en)。
+# 使い方: python3 -I gen.py [--lang ja] <ledger.md> <coords.json> <out.html>
 import html
 import json
 import os
@@ -54,6 +58,10 @@ h1{font-size:1.5em;margin:0 0 .2em}
 .sub{color:#444;margin:0 0 1em}
 table.sum{border-collapse:collapse;margin:.5em 0 1em;font-size:.95em}
 table.sum th,table.sum td{border:1px solid #bbb;padding:3px 10px;text-align:left}
+.wide{overflow-x:auto}
+.wide table.sum{max-width:none}
+table.sum td,table.sum th{white-space:nowrap}
+table.sum td{font-variant-numeric:tabular-nums}
 .rules{font-size:.92em;line-height:1.45;color:#222;border-left:3px solid #ccc;padding-left:12px}
 .card{border:1px solid #ccc;border-radius:4px;margin:18px 0;padding:10px 12px}
 .card img{display:block;width:100%;height:auto;border:1px solid #eee;margin:4px 0 8px}
@@ -68,7 +76,60 @@ code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;pad
 .printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
 .notation{background:#f3eaf6}
 footer{font-size:.85em;color:#666;margin-top:2em}
+nav.nav{font-size:.92em;margin:0 0 1em}
+nav.nav a{white-space:nowrap}
+nav.nav.end{margin:2em 0 0}
+.filter{font-size:.92em;margin:0 0 1em}
+.filter button{font-family:inherit;font-size:1em;border:1px solid #bbb;background:#fff;color:#111;border-radius:3px;padding:2px 8px;margin:0 4px 4px 0;cursor:pointer}
+.filter button.on{background:#333;color:#fff;border-color:#333}
 """
+
+# 章の並び (ナビの前後と目次の順序)。Notes on Part III は第23章の後ろ。
+ORDER = [f"ch{i:02d}" for i in range(1, 24)] + ["notes_III"] + [f"ch{i:02d}" for i in range(24, 34)]
+
+# 追加した表示文言の辞書 (ナビ・Lean 済の行・絞り込みボタン)
+UI = {
+    "en": {
+        "index": "Atlas index", "ch": "Ch. {n}", "notes": "Notes on Part III",
+        "lean_th": "Formulas in Lean",
+        "lean_td": "{m} / {n} formulas (&#10003;{a} &asymp;{b} &#9998;{c}), not yet {k} &mdash; {p}",
+        "no_formula": "no formulae",
+        "show": "Show:", "all": "All", "notyet": "not yet", "notation": "notation",
+    },
+    "ja": {
+        "index": "図鑑の目次", "ch": "第 {n} 章", "notes": "第III部の注",
+        "lean_th": "Lean 済",
+        "lean_td": "{m} / {n} 式（&#10003;{a} &asymp;{b} &#9998;{c}）、未 {k} &mdash; {p}",
+        "no_formula": "式なし",
+        "show": "表示:", "all": "すべて", "notyet": "未", "notation": "記法",
+    },
+}
+
+
+def pct(m, n):
+    return f"{100 * m / n:.1f}%" if n else "&mdash;"
+
+
+def nav_label(chap, t):
+    return t["notes"] if chap == "notes_III" else t["ch"].format(n=int(chap[2:]))
+
+
+def nav(chap, t, end=False):
+    # 目次・前章・次章へのリンク 1 行 (端の章は片側だけ)
+    i = ORDER.index(chap)
+    parts = [f'<a href="../index.html">&larr; {html.escape(t["index"])}</a>']
+    if i > 0:
+        parts.append(f'<a href="../{ORDER[i - 1]}/index.html">&larr; {html.escape(nav_label(ORDER[i - 1], t))}</a>')
+    if i + 1 < len(ORDER):
+        parts.append(f'<a href="../{ORDER[i + 1]}/index.html">{html.escape(nav_label(ORDER[i + 1], t))} &rarr;</a>')
+    return f'<nav class="nav{" end" if end else ""}">' + " | ".join(parts) + "</nav>"
+
+
+def category(r):
+    # 絞り込みの分類: 式は Lean 欄の印、記法は notation、参考・裸記号は All のときだけ見える
+    if r["type"] == "式":
+        return MARK[lean_mark(r)][0]
+    return "notation" if r["type"] == "記法" else ""
 
 
 def roman(n):
@@ -199,7 +260,14 @@ def summary(rows):
 
 
 def main():
-    ledger, coords, out = sys.argv[1], sys.argv[2], sys.argv[3]
+    args = sys.argv[1:]
+    lang = "en"
+    if "--lang" in args:
+        i = args.index("--lang")
+        lang = args[i + 1]
+        del args[i:i + 2]
+    t = UI[lang]
+    ledger, coords, out = args[0], args[1], args[2]
     chap, title, (fa, fb, pa, pb), rows = read_ledger(ledger)
     co = {e["id"]: e for e in json.load(open(coords, encoding="utf-8"))}
     missing = [r["id"] for r in rows if r["id"] not in co]
@@ -213,10 +281,11 @@ def main():
 
     o = []
     o.append("<!DOCTYPE html>")
-    o.append('<html lang="en"><head><meta charset="utf-8">')
+    o.append(f'<html lang="{lang}"><head><meta charset="utf-8">')
     o.append('<meta name="viewport" content="width=device-width, initial-scale=1">')
     o.append(f"<title>Formula atlas, {chno}</title>")
     o.append(f"<style>{CSS}</style></head><body><main>")
+    o.append(nav(chap, t))
     o.append(f"<h1>{html.escape(title)}</h1>")
     o.append(f'<p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), '
              f"first edition, pp. {fa}&ndash;{fb} (Cornell copy, PDF pp. {pa}&ndash;{pb}). "
@@ -224,7 +293,15 @@ def main():
     if not rows:
         o.append("<p>No printed formula or notation.</p>")
     else:
-        o.append('<table class="sum"><tr><th>Ledger rows</th><td>' + str(s["rows"]) + "</td></tr>")
+        done = mk["✓"] + mk["≈"] + mk["✎"]
+        if s["formula"]:
+            lean_td = t["lean_td"].format(m=done, n=s["formula"], a=mk["✓"], b=mk["≈"], c=mk["✎"],
+                                          k=mk["未"], p=pct(done, s["formula"]))
+        else:
+            lean_td = html.escape(t["no_formula"])
+        o.append(f'<div class="wide"><table class="sum"><tr><th>{html.escape(t["lean_th"])}</th>'
+                 f'<td><b>{lean_td}</b></td></tr>')
+        o.append('<tr><th>Ledger rows</th><td>' + str(s["rows"]) + "</td></tr>")
         o.append(f'<tr><th>Formulas</th><td>{s["formula"]} (display {s["f_display"]}, inline {s["f_inline"]}; '
                  f'items {s["items"]}, numbered {s["numbered"]})</td></tr>')
         o.append(f'<tr><th>Formulas by Lean status</th><td>'
@@ -236,7 +313,16 @@ def main():
         o.append(f'<tr><th>Reference rows</th><td>{s["reference"]}</td></tr>')
         if s["bare"]:
             o.append(f'<tr><th>Bare-symbol rows (not counted)</th><td>{s["bare"]}</td></tr>')
-        o.append("</table>")
+        o.append("</table></div>")
+        cats = [category(r) for r in rows]
+        btns = [("all", t["all"], len(rows)), ("printed", "&#10003;", cats.count("printed")),
+                ("equiv", "&asymp;", cats.count("equiv")), ("corrected", "&#9998;", cats.count("corrected")),
+                ("none", html.escape(t["notyet"]), cats.count("none")),
+                ("notation", html.escape(t["notation"]), cats.count("notation"))]
+        on = ' class="on"'
+        o.append(f'<div class="filter" hidden>{html.escape(t["show"])} '
+                 + "".join(f'<button type="button" data-k="{k}"{on if k == "all" else ""}>'
+                           f"{lab} ({n})</button>" for k, lab, n in btns) + "</div>")
         o.append(f'<p class="rules">{RULES}</p>')
 
     for r in rows:
@@ -277,13 +363,27 @@ def main():
                  f'y {e["y0"]}&ndash;{e["y1"]} (full-size scan pixels)</dd>')
         o.append("</dl></section>")
 
+    o.append(nav(chap, t, end=True))
     o.append(f"<footer>Generated by tools/atlas/gen.py from the ledger {os.path.basename(ledger)} and "
              f"{os.path.basename(coords)}; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted "
              f"from the ledger as written. Do not edit this file by hand.</footer>")
+    if rows:
+        # 絞り込み: 行ID → 分類の表を埋め、押したボタンの分類のカードだけを見せる
+        kmap = json.dumps({r["id"]: c for r, c in zip(rows, cats)}, separators=(",", ":"))
+        o.append("<script>(function(){")
+        o.append(f"var K={kmap};")
+        o.append("var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),"
+                 "cs=document.querySelectorAll('section.card');")
+        o.append("function show(k){")
+        o.append(" for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';")
+        o.append(" for(var j=0;j<bs.length;j++)bs[j].className=(bs[j].getAttribute('data-k')===k)?'on':'';}")
+        o.append("for(var j=0;j<bs.length;j++)bs[j].onclick=function(){show(this.getAttribute('data-k'));};")
+        o.append("f.hidden=false;})();</script>")
     o.append("</main></body></html>")
     open(out, "w", encoding="utf-8").write("\n".join(o) + "\n")
     print(f"{chap}: {s['rows']} cards, formulas {s['formula']} "
           f"(✓{mk['✓']} ≈{mk['≈']} ✎{mk['✎']} 未{mk['未']}), notation {s['notation']}")
 
 
-main()
+if __name__ == "__main__":
+    main()
