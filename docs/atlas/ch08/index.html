@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula atlas, Chapter 8</title>
+<style>
+body{background:#fff;color:#111;font-family:Georgia,'Times New Roman',serif;margin:0;padding:24px 12px}
+main{max-width:900px;margin:0 auto}
+h1{font-size:1.5em;margin:0 0 .2em}
+.sub{color:#444;margin:0 0 1em}
+table.sum{border-collapse:collapse;margin:.5em 0 1em;font-size:.95em}
+table.sum th,table.sum td{border:1px solid #bbb;padding:3px 10px;text-align:left}
+.rules{font-size:.92em;line-height:1.45;color:#222;border-left:3px solid #ccc;padding-left:12px}
+.card{border:1px solid #ccc;border-radius:4px;margin:18px 0;padding:10px 12px}
+.card img{display:block;width:100%;height:auto;border:1px solid #eee;margin:4px 0 8px}
+.card h2{font-size:1.05em;margin:0 0 4px;font-family:Menlo,Consolas,monospace}
+.meta{font-size:.9em;color:#333;margin-bottom:4px}
+.shared{font-size:.82em;color:#666;margin:-4px 0 6px}
+dl{display:grid;grid-template-columns:8.5em 1fr;gap:3px 10px;margin:0;font-size:.92em}
+dt{color:#555}
+dd{margin:0;word-break:break-word}
+code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;padding:0 2px}
+.mark{display:inline-block;min-width:1.6em;text-align:center;border-radius:3px;padding:0 4px;margin-right:6px;font-weight:bold}
+.printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
+.notation{background:#f3eaf6}
+footer{font-size:.85em;color:#666;margin-top:2em}
+</style></head><body><main>
+<h1>Chapter VIII. The Frequency Theory of Probability</h1>
+<p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 92&ndash;110 (Cornell copy, PDF pp. 112&ndash;130). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
+<table class="sum"><tr><th>Ledger rows</th><td>29</td></tr>
+<tr><th>Formulas</th><td>14 (display 2, inline 12; items 14, numbered 0)</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>2 &nbsp; <span class="mark equiv">&asymp;</span>1 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>11</td></tr>
+<tr><th>Notation</th><td>14 (with a Lean counterpart 0)</td></tr>
+<tr><th>Reference rows</th><td>1</td></tr>
+</table>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
+<section class="card" id="ch08-001">
+<h2>ch08-001</h2>
+<img src="img/ch08-001.png" alt="x/y" loading="lazy">
+<div class="meta">folio 94 (PDF p. 114) &middot; &sect;3 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>x/y</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Venn (Logic of Chance; 要約)</dd>
+<dt>Anchor words</dt><dd>having a certain characteristic is</dd>
+<dt>Remarks</dt><dd>横線の分数 (頻度比)。関係記号なし</dd>
+<dt>Crop</dt><dd>folio 94, x 125&ndash;1335, y 1463&ndash;1529 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-002">
+<h2>ch08-002</h2>
+<img src="img/ch08-002.png" alt="x/y" loading="lazy">
+<div class="meta">folio 94 (PDF p. 114) &middot; &sect;3 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>x/y</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Venn (要約)</dd>
+<dt>Anchor words</dt><dd>a proportion</dd>
+<dt>Remarks</dt><dd>同上</dd>
+<dt>Crop</dt><dd>folio 94, x 125&ndash;1335, y 1529&ndash;1595 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-003">
+<h2>ch08-003</h2>
+<img src="img/ch08-003.png" alt="3/10ths" loading="lazy">
+<div class="meta">folio 99 (PDF p. 119) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>3/10ths</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Venn</dd>
+<dt>Anchor words</dt><dd>in its first four years is</dd>
+<dt>Remarks</dt><dd>数値 (活字は 3 over 10 に ths)</dd>
+<dt>Crop</dt><dd>folio 99, x 125&ndash;1335, y 790&ndash;837 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-004">
+<h2>ch08-004</h2>
+<img src="img/ch08-004.png" alt="3/10ths" loading="lazy">
+<div class="meta">folio 99 (PDF p. 119) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>3/10ths</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Venn</dd>
+<dt>Anchor words</dt><dd>the statistical frequency really is</dd>
+<dt>Remarks</dt><dd>数値</dd>
+<dt>Crop</dt><dd>folio 99, x 125&ndash;1335, y 1040&ndash;1089 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-005">
+<h2>ch08-005</h2>
+<img src="img/ch08-005.png" alt="a/h" loading="lazy">
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>a/h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>If a/h denotes</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 208&ndash;262 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-006">
+<h2>ch08-006</h2>
+<img src="img/ch08-006.png" alt="(a + b)/h = a/h + b/h − ab/h" loading="lazy">
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(a + b)/h = a/h + b/h − ab/h</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase2/th_24</dd>
+<dt>Anchor words</dt><dd>this theorem may be written</dd>
+<dt>Remarks</dt><dd>加法定理 (Addition Theorem)。hires で確認。定理文 Pr (α ∨ β) h = Pr α h + Pr β h − Pr (α ∧ β) h は印刷と同形 (第II部 第14章 (24); COLLATION_INDEX 14 (24) E)。同じ定理は pilot/th_24, phase3a/4/5/6b/7g にも再掲</dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 260&ndash;311 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-007">
+<h2>ch08-007</h2>
+<img src="img/ch08-007.png" alt="α_f" loading="lazy">
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd>α_f</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>未</dd>
+<dt>Anchor words</dt><dd>Let</dd>
+<dt>Remarks</dt><dd>「Let α_f represent the truth-frequency of any class α」。裸記号 (添字付き 1 文字) なので補則 1 により記法に数えない。活字は斜体 a と同形 (ヘッダ参照)。第 1 回は a_f と転記して記法 1 本に数えていた</dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 563&ndash;614 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-008">
+<h2>ch08-008</h2>
+<img src="img/ch08-008.png" alt="a_α/h" loading="lazy">
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>a_α/h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>and let</dd>
+<dt>Remarks</dt><dd>参照類 α による確率。「α being the class of reference determined by this hypothesis」</dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 614&ndash;665 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-009">
+<h2>ch08-009</h2>
+<img src="img/ch08-009.png" alt="a_α/h = α_f" loading="lazy">
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a_α/h = α_f</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>We then have</dd>
+<dt>Remarks</dt><dd>頻度理論の定義。右辺は類 α の真理頻度 (ch08-007 の定義) なので α_f と転記 (第 1 回は a_f)</dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 713&ndash;769 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-010">
+<h2>ch08-010</h2>
+<img src="img/ch08-010.png" alt="(a + b)_δ/h = a_α/h + b_β/h − ab_γ/h." loading="lazy">
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(a + b)_δ/h = a_α/h + b_β/h − ab_γ/h.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>which will be of the form :</dd>
+<dt>Remarks</dt><dd>頻度記法での加法定理 (証明すべき形)。hires で添字 δ, α, β, γ を確認</dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 907&ndash;962 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-011">
+<h2>ch08-011</h2>
+<img src="img/ch08-011.png" alt="δ′_f = α_f + β_f − αβ_f" loading="lazy">
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>δ′_f = α_f + β_f − αβ_f</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>arithmetic of classes that</dd>
+<dt>Remarks</dt><dd>類の算術。第 1 項・第 3 項の活字は斜体 a と同形だが、直前の「such that a is an α and b a β」と直後の「where αβ is the class of propositions which are members of both α and β」から類 α と読む (ヘッダの方針)。第 1 回の [?] は転記方針の不統一から生じたもので外した</dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 1094&ndash;1147 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-012">
+<h2>ch08-012</h2>
+<img src="img/ch08-011.png" alt="αβ" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch08-011">ch08-011</a>.</div>
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>αβ</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>where αβ is the class</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 1094&ndash;1147 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-013">
+<h2>ch08-013</h2>
+<img src="img/ch08-013.png" alt="δ = δ′" loading="lazy">
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>δ = δ′</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>In the case, therefore, where</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 1194&ndash;1245 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-014">
+<h2>ch08-014</h2>
+<img src="img/ch08-013.png" alt="γ = αβ" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch08-013">ch08-013</a>.</div>
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>γ = αβ</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>and</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 1194&ndash;1245 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-015">
+<h2>ch08-015</h2>
+<img src="img/ch08-015.png" alt="(a + b)" loading="lazy">
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>(a + b)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>classes of reference for</dd>
+<dt>Remarks</dt><dd>選言命題</dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 1447&ndash;1496 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-016">
+<h2>ch08-016</h2>
+<img src="img/ch08-015.png" alt="ab" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch08-015">ch08-015</a>.</div>
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>ab</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>for (a + b) and</dd>
+<dt>Remarks</dt><dd>連言命題</dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 1447&ndash;1496 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-017">
+<h2>ch08-017</h2>
+<img src="img/ch08-017.png" alt="αβ" loading="lazy">
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>αβ</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>no information whatever regarding</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 1546&ndash;1597 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-018">
+<h2>ch08-018</h2>
+<img src="img/ch08-018.png" alt="δ = δ′" loading="lazy">
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>δ = δ′</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch08-013">ch08-013</a></dd>
+<dt>Anchor words</dt><dd>where it happens that</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 1749&ndash;1797 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-019">
+<h2>ch08-019</h2>
+<img src="img/ch08-018.png" alt="γ = αβ" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch08-018">ch08-018</a>.</div>
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>γ = αβ</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch08-014">ch08-014</a></dd>
+<dt>Anchor words</dt><dd>and</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 1749&ndash;1797 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-020">
+<h2>ch08-020</h2>
+<img src="img/ch08-020.png" alt="p₁/q" loading="lazy">
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>p₁/q</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>in the population is</dd>
+<dt>Remarks</dt><dd>横線の分数 (黒髪の割合)</dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 1914&ndash;2006 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-021">
+<h2>ch08-021</h2>
+<img src="img/ch08-020.png" alt="p₂/q" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch08-020">ch08-020</a>.</div>
+<div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>p₂/q</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>the proportion of colour-blind men</dd>
+<dt>Remarks</dt><dd>横線の分数</dd>
+<dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 1914&ndash;2006 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-022">
+<h2>ch08-022</h2>
+<img src="img/ch08-022.png" alt="ab/h = p₁p₂/q²" loading="lazy">
+<div class="meta">folio 106 (PDF p. 126) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ab/h = p₁p₂/q²</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>relative to the given data,</dd>
+<dt>Remarks</dt><dd>「independent for knowledge」のときの連言の確率 (hires で確認)</dd>
+<dt>Crop</dt><dd>folio 106, x 125&ndash;1335, y 378&ndash;470 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-023">
+<h2>ch08-023</h2>
+<img src="img/ch08-023.png" alt="(a + b)/h = p₁/q + p₂/q − p₁p₂/q²" loading="lazy">
+<div class="meta">folio 106 (PDF p. 126) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(a + b)/h = p₁/q + p₂/q − p₁p₂/q²</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>by the addition theorem,</dd>
+<dt>Remarks</dt><dd>2 行にまたがる行内式を 1 本</dd>
+<dt>Crop</dt><dd>folio 106, x 125&ndash;1335, y 488&ndash;677 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-024">
+<h2>ch08-024</h2>
+<img src="img/ch08-024.png" alt="αβ_f = p₁p₂/q²" loading="lazy">
+<div class="meta">folio 106 (PDF p. 126) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>αβ_f = p₁p₂/q²</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>invalid; for</dd>
+<dt>Remarks</dt><dd>「only if this is the actual proportion in fact」</dd>
+<dt>Crop</dt><dd>folio 106, x 125&ndash;1335, y 693&ndash;784 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-025">
+<h2>ch08-025</h2>
+<img src="img/ch08-025.png" alt="ab/h = a/bh . b/h" loading="lazy">
+<div class="meta">folio 106 (PDF p. 126) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ab/h = a/bh . b/h</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase2/def_X_left</dd>
+<dt>Anchor words</dt><dd>multiplication theorem</dd>
+<dt>Remarks</dt><dd>乗法定理。公理文 Pr (p ∧ q) h = Pr p (q ∧ h) * Pr q h は印刷と同形 (Def. X 左形; 第II部 第12章)。pilot/3a/3c/5/6b/7a/7b/7g にも同文。脚注 4「Vide Chapter XII. § 6, and Chapter XIV. § 4」</dd>
+<dt>Crop</dt><dd>folio 106, x 125&ndash;1335, y 989&ndash;1038 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-026">
+<h2>ch08-026</h2>
+<img src="img/ch08-026.png" alt="ab_δ/h = a_γ/bh . b_β/h" loading="lazy">
+<div class="meta">folio 106 (PDF p. 126) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ab_δ/h = a_γ/bh . b_β/h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>will be of the form</dd>
+<dt>Remarks</dt><dd>頻度記法での乗法定理 (hires で添字 δ, γ, β を確認)</dd>
+<dt>Crop</dt><dd>folio 106, x 125&ndash;1335, y 1089&ndash;1142 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-027">
+<h2>ch08-027</h2>
+<img src="img/ch08-027.png" alt="b/ah ⁄ c/ah = a/bh ⁄ a/ch . b/h ⁄ c/h" loading="lazy">
+<div class="meta">folio 106 (PDF p. 126) &middot; &sect;13 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b/ah ⁄ c/ah = a/bh ⁄ a/ch . b/h ⁄ c/h</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase3d/th_14_47_odds</dd>
+<dt>Anchor words</dt><dd>theorem of inverse probability</dd>
+<dt>Remarks</dt><dd>逆確率定理。印刷は三つの縦分数 (b/ah over c/ah など) の等式。定理文は α₁ := b, α₂ := c, β := a で左辺が同形、右辺は (Pr b h · Pr a (b∧h)) / (Pr c h · Pr a (c∧h)) と積をまとめた並べ替え (代数的に同値、修正ではない) なので補則 8 の ≈。非零前提 4 つ (Pr a h, Pr c (a∧h), Pr c h, Pr a (c∧h) ≠ 0) を追加 → 前提を足した対応の扱いは裁定事項 (ch04-055, 056 と同じ)。脚注 5「Vide Chapter XIV. § 5」</dd>
+<dt>Crop</dt><dd>folio 106, x 125&ndash;1335, y 1509&ndash;1617 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-028">
+<h2>ch08-028</h2>
+<img src="img/ch08-028.png" alt="a + b" loading="lazy">
+<div class="meta">folio 106 (PDF p. 126) &middot; &sect;13 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>a + b</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>the disjunctive</dd>
+<dt>Remarks</dt><dd>「is never interpreted so as to exclude the conjunctive ab」</dd>
+<dt>Crop</dt><dd>folio 106, x 125&ndash;1335, y 1899&ndash;1936 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch08-029">
+<h2>ch08-029</h2>
+<img src="img/ch08-029.png" alt="ab" loading="lazy">
+<div class="meta">folio 106 (PDF p. 126) &middot; &sect;13 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>ab</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>to exclude the conjunctive</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 106, x 125&ndash;1335, y 1936&ndash;1971 (full-size scan pixels)</dd>
+</dl></section>
+<footer>Generated by tools/atlas/gen.py from the ledger ch08.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
+</main></body></html>

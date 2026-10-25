@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula atlas, Chapter 26</title>
+<style>
+body{background:#fff;color:#111;font-family:Georgia,'Times New Roman',serif;margin:0;padding:24px 12px}
+main{max-width:900px;margin:0 auto}
+h1{font-size:1.5em;margin:0 0 .2em}
+.sub{color:#444;margin:0 0 1em}
+table.sum{border-collapse:collapse;margin:.5em 0 1em;font-size:.95em}
+table.sum th,table.sum td{border:1px solid #bbb;padding:3px 10px;text-align:left}
+.rules{font-size:.92em;line-height:1.45;color:#222;border-left:3px solid #ccc;padding-left:12px}
+.card{border:1px solid #ccc;border-radius:4px;margin:18px 0;padding:10px 12px}
+.card img{display:block;width:100%;height:auto;border:1px solid #eee;margin:4px 0 8px}
+.card h2{font-size:1.05em;margin:0 0 4px;font-family:Menlo,Consolas,monospace}
+.meta{font-size:.9em;color:#333;margin-bottom:4px}
+.shared{font-size:.82em;color:#666;margin:-4px 0 6px}
+dl{display:grid;grid-template-columns:8.5em 1fr;gap:3px 10px;margin:0;font-size:.92em}
+dt{color:#555}
+dd{margin:0;word-break:break-word}
+code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;padding:0 2px}
+.mark{display:inline-block;min-width:1.6em;text-align:center;border-radius:3px;padding:0 4px;margin-right:6px;font-weight:bold}
+.printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
+.notation{background:#f3eaf6}
+footer{font-size:.85em;color:#666;margin-top:2em}
+</style></head><body><main>
+<h1>Chapter XXVI. The Application of Probability to Conduct</h1>
+<p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 307&ndash;323 (Cornell copy, PDF pp. 327&ndash;343). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
+<table class="sum"><tr><th>Ledger rows</th><td>43</td></tr>
+<tr><th>Formulas</th><td>31 (display 3, inline 28; items 31, numbered 0)</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>6 &nbsp; <span class="mark equiv">&asymp;</span>10 &nbsp; <span class="mark corrected">&#9998;</span>1 &nbsp; <span class="mark none">&#26410;</span>14</td></tr>
+<tr><th>Notation</th><td>11 (with a Lean counterpart 9)</td></tr>
+<tr><th>Reference rows</th><td>1</td></tr>
+</table>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
+<section class="card" id="ch26-001">
+<h2>ch26-001</h2>
+<img src="img/ch26-001.png" alt="(p + q = 1)," loading="lazy">
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>(p + q = 1),</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>p its probability</code></dd>
+<dt>Remarks</dt><dd>F26.1。未の理由: phase8a, phase8a2 とも q を 1 − p に置換して扱い、この関係は定理文に現れない (補則 8 既知の裁定)。phase8a/risk_identities と phase8a/c の分母 1 + q = 2 − p がこの約定を前提にする</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 989&ndash;1040 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-002">
+<h2>ch26-002</h2>
+<img src="img/ch26-002.png" alt="E = pA," loading="lazy">
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>E = pA,</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>so that</code></dd>
+<dt>Remarks</dt><dd>F26.2。数学的期待の定義。未の理由: E の def がなく、phase8a/risk_identities は E を pA に置換した形 (補則 8 既知の裁定)</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 1040&ndash;1090 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-003">
+<h2>ch26-003</h2>
+<img src="img/ch26-003.png" alt="R = p(A − E) = p(1 − p)A = pqA = qE." loading="lazy">
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>R = p(A − E) = p(1 − p)A = pqA = qE.</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase8a/risk_identities</dd>
+<dt>Anchor words</dt><dd><code>where</code></dd>
+<dt>Remarks</dt><dd>F26.3。印刷は 2 行に跨る (1 行目末 <code>R = p(A − E) =</code>、2 行目頭 <code>p(1 − p)A = pqA = qE.</code>)。行内の連鎖なので 1 本 (裁定事項)。≈ の理由: 定理文 <code>p * (A − p * A) = p * (1 − p) * A ∧ p * (1 − p) * A = (1 − p) * (p * A)</code> は E = pA, q = 1 − p を代入した連鎖 (定義の代入)。先頭の <code>R =</code> は名前付けで、R の def はない</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 1040&ndash;1140 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-004">
+<h2>ch26-004</h2>
+<img src="img/ch26-004.png" alt="qE" loading="lazy">
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>qE</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase8a/risk_identities</dd>
+<dt>Anchor words</dt><dd><code>so that</code> / <code>is the &#x27;risk.&#x27;</code></dd>
+<dt>Remarks</dt><dd>F26.4。「so that qE is the &#x27;risk.&#x27;」。定理文の第 2 連言肢の右辺 (1 − p)(pA) に q = 1 − p, E = pA を代入した形で現れる</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 1241&ndash;1290 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-005">
+<h2>ch26-005</h2>
+<img src="img/ch26-005.png" alt="c = 2pw/((1 + q)(1 + w))," loading="lazy">
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>c = 2pw/((1 + q)(1 + w)),</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase8a/c</dd>
+<dt>Anchor words</dt><dd><code>such as</code></dd>
+<dt>Remarks</dt><dd>F26.5。横線分数 (分子 2pw、分母 (1+q)(1+w))。行内だが分数のため行間が広い。≈ の理由: def <code>c p w := 2 * p * w / ((2 − p) * (1 + w))</code> は分母の 1 + q を 2 − p に置換した形 (定義の代入)。phase8a2/c は同一の def。分母を払った形は phase8a/c_spec, phase8a2/c_spec</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 1440&ndash;1548 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-006">
+<h2>ch26-006</h2>
+<img src="img/ch26-006.png" alt="p = 1" loading="lazy">
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>p = 1</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>is equal to unity when</code></dd>
+<dt>Remarks</dt><dd>F26.6 前半。未の理由: 条件 p = 1 は phase8a/c_one_one (<code>c 1 1 = 1</code>) に p := 1 の代入値としてしか現れず、関係式としては定理文にない (補則 8 の「置換で吸収」と同じ仕組み; 代入値を ≈ に数えるかは裁定事項)</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 1548&ndash;1598 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-007">
+<h2>ch26-007</h2>
+<img src="img/ch26-006.png" alt="w = 1," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-006">ch26-006</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>w = 1,</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>and</code> / <code>and to zero when</code> (直後)</dd>
+<dt>Remarks</dt><dd>F26.6 後半。未の理由: ch26-006 と同じ (phase8a/c_one_one に w := 1 の代入値; 裁定事項)</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 1548&ndash;1598 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-008">
+<h2>ch26-008</h2>
+<img src="img/ch26-008.png" alt="p = 0" loading="lazy">
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>p = 0</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>to zero when</code></dd>
+<dt>Remarks</dt><dd>F26.7 前半。未の理由: phase8a/c_zero_p (<code>c 0 w = 0</code>) に p := 0 の代入値としてしか現れない (裁定事項)</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 1598&ndash;1648 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-009">
+<h2>ch26-009</h2>
+<img src="img/ch26-008.png" alt="w = 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-008">ch26-008</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>w = 0,</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>or</code> / <code>and has an intermediate value</code> (直後)</dd>
+<dt>Remarks</dt><dd>F26.7 後半。未の理由: phase8a/c_zero_w (<code>c p 0 = 0</code>) に w := 0 の代入値としてしか現れない (裁定事項)。「中間の値」(語) は phase8a/c_nonneg, c_le_one</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 1598&ndash;1648 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-010">
+<h2>ch26-010</h2>
+<img src="img/ch26-010.png" alt="R₁ = qR = q²E." loading="lazy">
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>R₁ = qR = q²E.</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase8a2/czuberRisk_one</dd>
+<dt>Quoted from</dt><dd>Czuber</dd>
+<dt>Anchor words</dt><dd><code>of the second order,</code></dd>
+<dt>Remarks</dt><dd>F26.8。出典 Czuber, *Wahrscheinlichkeitsrechnung* vol. ii. pp. 219 et seq. ≈ の理由: 定理文 <code>czuberRisk q E 1 = q * (q * E) ∧ czuberRisk q E 1 = q ^ 2 * E</code> は R₁ を czuberRisk q E 1 と書き、R を qE に置換した形 (定義の代入)。第 2 等号 qR = q²E 単独は phase8a2/th_26_fn1_second_order_risk (<code>q * (q * E) = q ^ 2 * E</code>、同じく R を置換)</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 1939&ndash;1975 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-011">
+<h2>ch26-011</h2>
+<img src="img/ch26-011.png" alt="E + R₁ + R₂ + . . . = E(1 + q + q² + . . .) = E/(1 − q) = E/p = A." loading="lazy">
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 1 &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>E + R₁ + R₂ + . . . = E(1 + q + q² + . . .) = E/(1 − q) = E/p = A.</code></dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>phase8a2/th_26_fn1_consistent_R (反駁 phase8a2/th_26_fn1_printed_refuted)</dd>
+<dt>Quoted from</dt><dd>Czuber</dd>
+<dt>Anchor words</dt><dd><code>shifted :</code></dd>
+<dt>Remarks</dt><dd>F26.9。印刷は 1 行 (脚注の独立行)、<code>E/(1−q)</code>, <code>E/p</code> は横線分数。T 候補 (添字): 直前の定義 R₁ = qR = q²E のもとでは第 1 の等号は qE = 0 のときに限り成り立つ (phase8a2/th_26_fn1_printed_iff; 反例 q = 1/2, E = 1 は th_26_fn1_printed_refuted)。✎ の修正形は 2 通り: th_26_fn1_consistent_R (R を第 0 項に含める <code>E + Σ R_k = E/(1 − q)</code>) と th_26_fn1_consistent_reindexed (添字を R_k = q^k E に直す)。第 2〜4 等号だけなら phase8a2/th_26_fn1_czuber_tsum (E = pA, q = 1 − p を代入した形、≈ 相当)。有限閉形式は phase8a/czuber_partial, czuber_remainder</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2010&ndash;2088 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-012">
+<h2>ch26-012</h2>
+<img src="img/ch26-012.png" alt="pA = p′A′," loading="lazy">
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>pA = p′A′,</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase8a/keynes_F1</dd>
+<dt>Anchor words</dt><dd><code>If</code></dd>
+<dt>Remarks</dt><dd>F26.10 (F1) 第 1 条件。≈ の理由: 仮定 hE は <code>p * A = p * A′</code> で、F1 の第 3 条件 q = q′ (ch26-014、未) を p′ = p として吸収したため p′ が p に同一視されている (✓ ではない)</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2088&ndash;2126 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-013">
+<h2>ch26-013</h2>
+<img src="img/ch26-012.png" alt="w &gt; w′," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-012">ch26-012</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>w &gt; w′,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase8a/keynes_F1</dd>
+<dt>Anchor words</dt><dd><code>If pA = p′A′,</code> の直後 / <code>and</code> (直後)</dd>
+<dt>Remarks</dt><dd>F26.10 第 2 条件。仮定 hww : <code>w′ &lt; w</code> (<code>&gt;</code> と <code>&lt;</code> の向きは Lean の記法の差)</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2088&ndash;2126 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-014">
+<h2>ch26-014</h2>
+<img src="img/ch26-012.png" alt="q = q′," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-012">ch26-012</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>q = q′,</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>and</code> / <code>then</code> (直後)</dd>
+<dt>Remarks</dt><dd>F26.10 第 3 条件。未の理由: phase8a/keynes_F1 は p′ を p に置換して表し、この関係は定理文に現れない (補則 8 既知の裁定)</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2088&ndash;2126 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-015">
+<h2>ch26-015</h2>
+<img src="img/ch26-012.png" alt="cA &gt; c′A′ ;" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-012">ch26-012</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>cA &gt; c′A′ ;</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase8a/keynes_F1</dd>
+<dt>Anchor words</dt><dd><code>then</code> (1 回目)</dd>
+<dt>Remarks</dt><dd>F26.10 結論。≈ の理由: 結論 <code>c p w′ * A′ &lt; c p w * A</code> は c′ = c(p′, w′) の p′ を p に同一視した形 (ch26-012 と同じ吸収)</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2088&ndash;2126 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-016">
+<h2>ch26-016</h2>
+<img src="img/ch26-012.png" alt="pA = p′A′," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-012">ch26-012</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>pA = p′A′,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase8a/keynes_F2</dd>
+<dt>Reprint of</dt><dd><a href="#ch26-012">ch26-012</a></dd>
+<dt>Anchor words</dt><dd><code>if</code> (2 回目、<code>;</code> の後)</dd>
+<dt>Remarks</dt><dd>F26.11 (F2) 第 1 条件。仮定 hE : <code>p * A = p′ * A′</code> (そのまま)。phase8a2/th_26_fn2_F2 も同形</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2088&ndash;2126 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-017">
+<h2>ch26-017</h2>
+<img src="img/ch26-012.png" alt="w = w′," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-012">ch26-012</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>w = w′,</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>and</code> (行末、脚注 1 行目末)</dd>
+<dt>Remarks</dt><dd>F26.11 第 2 条件。未の理由: phase8a/keynes_F2, phase8a2/th_26_fn2_F2 は w′ を w に置換して表し、この関係は定理文に現れない (補則 8 既知の裁定)</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2088&ndash;2126 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-018">
+<h2>ch26-018</h2>
+<img src="img/ch26-018.png" alt="q &lt; q′," loading="lazy">
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>q &lt; q′,</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase8a/keynes_F2</dd>
+<dt>Anchor words</dt><dd><code>then</code> (直後、脚注 2 行目頭)</dd>
+<dt>Remarks</dt><dd>F26.11 第 3 条件。≈ の理由: 仮定 hpp : <code>p′ &lt; p</code> は q = 1 − p, q′ = 1 − p′ を代入して同値変形した不等式 (定義の代入)。phase8a2/th_26_fn2_F2 も同形</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2126&ndash;2160 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-019">
+<h2>ch26-019</h2>
+<img src="img/ch26-018.png" alt="cA &gt; c′A′ ;" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-018">ch26-018</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>cA &gt; c′A′ ;</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase8a/keynes_F2</dd>
+<dt>Reprint of</dt><dd><a href="#ch26-015">ch26-015</a></dd>
+<dt>Anchor words</dt><dd><code>then</code> (2 回目)</dd>
+<dt>Remarks</dt><dd>F26.11 結論。≈ の理由: 結論 <code>c p′ w * A′ &lt; c p w * A</code> は c′ = c(p′, w′) の w′ を w に同一視した形 (ch26-017 の吸収)。phase8a2/th_26_fn2_F2 も同形</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2126&ndash;2160 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-020">
+<h2>ch26-020</h2>
+<img src="img/ch26-018.png" alt="pA = p′A′," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-018">ch26-018</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>pA = p′A′,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase8a/keynes_F3</dd>
+<dt>Reprint of</dt><dd><a href="#ch26-012">ch26-012</a></dd>
+<dt>Anchor words</dt><dd><code>if</code> (3 回目)</dd>
+<dt>Remarks</dt><dd>F26.12 (F3) 第 1 条件。仮定 hE : <code>p * A = p′ * A′</code> (そのまま)</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2126&ndash;2160 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-021">
+<h2>ch26-021</h2>
+<img src="img/ch26-018.png" alt="w &gt; w′," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-018">ch26-018</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>w &gt; w′,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase8a/keynes_F3</dd>
+<dt>Reprint of</dt><dd><a href="#ch26-013">ch26-013</a></dd>
+<dt>Anchor words</dt><dd><code>and</code></dd>
+<dt>Remarks</dt><dd>F26.12 第 2 条件。仮定 hww : <code>w′ &lt; w</code></dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2126&ndash;2160 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-022">
+<h2>ch26-022</h2>
+<img src="img/ch26-018.png" alt="q &lt; q′," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-018">ch26-018</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>q &lt; q′,</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase8a/keynes_F3</dd>
+<dt>Reprint of</dt><dd><a href="#ch26-018">ch26-018</a></dd>
+<dt>Anchor words</dt><dd><code>and</code> / <code>then</code> (直後)</dd>
+<dt>Remarks</dt><dd>F26.12 第 3 条件。≈ の理由: 仮定 hpp : <code>p′ &lt; p</code> (ch26-018 と同じ同値変形)</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2126&ndash;2160 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-023">
+<h2>ch26-023</h2>
+<img src="img/ch26-018.png" alt="cA &gt; c′A′ ;" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-018">ch26-018</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>cA &gt; c′A′ ;</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase8a/keynes_F3</dd>
+<dt>Reprint of</dt><dd><a href="#ch26-015">ch26-015</a></dd>
+<dt>Anchor words</dt><dd><code>then</code> (3 回目) / <code>but if</code> (直後)</dd>
+<dt>Remarks</dt><dd>F26.12 結論。結論 <code>c p′ w′ * A′ &lt; c p w * A</code> は c = c(p, w), c′ = c(p′, w′) の関数適用の記法で、変数の同一視なし</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2126&ndash;2160 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-024">
+<h2>ch26-024</h2>
+<img src="img/ch26-024.png" alt="pA = p′A′," loading="lazy">
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>pA = p′A′,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase8a/keynes_F4_printed_determinate</dd>
+<dt>Reprint of</dt><dd><a href="#ch26-012">ch26-012</a></dd>
+<dt>Anchor words</dt><dd><code>but if</code></dd>
+<dt>Remarks</dt><dd>F26.13 (F4) 第 1 条件 (脚注 3 行目頭)。仮定 hE : <code>p * A = p′ * A′</code> (そのまま)。phase8a2/th_26_fn2_F4_printed_determinate も同形</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2160&ndash;2201 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-025">
+<h2>ch26-025</h2>
+<img src="img/ch26-024.png" alt="w = w′," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-024">ch26-024</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>w = w′,</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch26-017">ch26-017</a></dd>
+<dt>Anchor words</dt><dd><code>and</code></dd>
+<dt>Remarks</dt><dd>F26.13 第 2 条件。原寸で <code>w = w′</code> を再確認。未の理由: phase8a/keynes_F4_printed_determinate, phase8a2/th_26_fn2_F4_printed_determinate は w′ を w に置換して表す (補則 8 既知の裁定)</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2160&ndash;2201 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-026">
+<h2>ch26-026</h2>
+<img src="img/ch26-024.png" alt="q &gt; q′," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-024">ch26-024</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>q &gt; q′,</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase8a/keynes_F4_printed_determinate</dd>
+<dt>Anchor words</dt><dd><code>and</code> / <code>we cannot in general compare</code> (直後)</dd>
+<dt>Remarks</dt><dd>F26.13 第 3 条件。≈ の理由: 仮定 hpp : <code>p &lt; p′</code> (q = 1 − p の代入による同値変形)。phase8a2/th_26_fn2_F4_printed_determinate も同形。この行は条件であり、本文の主張 &quot;we cannot in general compare&quot; は語なので式行にない。印刷どおりの条件 (w = w′, q &gt; q′) では F2 の記号交換で cA &lt; c′A′ が確定し「比較できない」と両立しない (原著側の不整合、8a 正誤候補 #3)。修正案 (w &gt; w′, q &gt; q′) の非比較性は phase8a/keynes_F4_amended_witness_lt, keynes_F4_amended_witness_gt; phase8a2/th_26_fn2_F4_amended_witness_lt, th_26_fn2_F4_amended_witness_gt</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2160&ndash;2201 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-027">
+<h2>ch26-027</h2>
+<img src="img/ch26-024.png" alt="cA" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-024">ch26-024</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>cA</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase8a/keynes_F4_printed_determinate</dd>
+<dt>Anchor words</dt><dd><code>we cannot in general compare</code></dd>
+<dt>Remarks</dt><dd>F26.13 結論部。定理文の <code>c p w * A</code></dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2160&ndash;2201 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-028">
+<h2>ch26-028</h2>
+<img src="img/ch26-024.png" alt="c′A′." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-024">ch26-024</a>.</div>
+<div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>c′A′.</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase8a/keynes_F4_printed_determinate</dd>
+<dt>Anchor words</dt><dd><code>and</code> (脚注末)</dd>
+<dt>Remarks</dt><dd>F26.13 結論部。定理文の <code>c p′ w * A′</code> (w′ を w に置換)</dd>
+<dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2160&ndash;2201 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-029">
+<h2>ch26-029</h2>
+<img src="img/ch26-029.png" alt="2^{r−1}" loading="lazy">
+<div class="meta">folio 316 (PDF p. 336) &middot; &sect;9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>2^{r−1}</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase8a2/th_26_petersburg_term</dd>
+<dt>Anchor words</dt><dd><code>and, in general,</code></dd>
+<dt>Remarks</dt><dd>F26.14。Petersburg の利得規則。定理文の <code>2 ^ (r − 1)</code>。直後の <code>r^{th}</code> は序数 (裸記号)。phase8a2/th_26_first_head は確率側の補助</dd>
+<dt>Crop</dt><dd>folio 316, x 125&ndash;1335, y 1855&ndash;1905 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-030">
+<h2>ch26-030</h2>
+<img src="img/ch26-030.png" alt="Σ_{1}^{n} (½)^r 2^{r−1}," loading="lazy">
+<div class="meta">folio 317 (PDF p. 337) &middot; &sect;9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>Σ_{1}^{n} (½)^r 2^{r−1},</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase8a2/th_26_petersburg_finite</dd>
+<dt>Anchor words</dt><dd><code>The mathematical answer is</code></dd>
+<dt>Remarks</dt><dd>F26.15。和記号の上に n、下に 1; 括弧内は小活字の ½ (原寸で確認)。関係記号なし。定理文の <code>∑ r ∈ Icc 1 n, (1/2)^r * 2^(r − 1)</code></dd>
+<dt>Crop</dt><dd>folio 317, x 125&ndash;1335, y 180&ndash;282 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-031">
+<h2>ch26-031</h2>
+<img src="img/ch26-031.png" alt="Σ_{1}^{∞} (½)^r 2^{r−1}" loading="lazy">
+<div class="meta">folio 317 (PDF p. 337) &middot; &sect;9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>Σ_{1}^{∞} (½)^r 2^{r−1}</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase8a2/th_26_petersburg_unbounded</dd>
+<dt>Anchor words</dt><dd><code>in all, and</code></dd>
+<dt>Remarks</dt><dd>F26.16。和記号の上に ∞、下に 1。部分和の非有界 (th_26_petersburg_unbounded)、極限 (th_26_petersburg_tendsto)、総和不能 (th_26_petersburg_not_summable) の 3 形</dd>
+<dt>Crop</dt><dd>folio 317, x 125&ndash;1335, y 284&ndash;390 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-032">
+<h2>ch26-032</h2>
+<img src="img/ch26-032.png" alt="n/2" loading="lazy">
+<div class="meta">folio 317 (PDF p. 337) &middot; &sect;9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>n/2</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase8a2/th_26_petersburg_finite</dd>
+<dt>Anchor words</dt><dd><code>Paul should pay</code></dd>
+<dt>Remarks</dt><dd>F26.17。横線分数。定理文の右辺 <code>n / 2</code></dd>
+<dt>Crop</dt><dd>folio 317, x 125&ndash;1335, y 400&ndash;500 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-033">
+<h2>ch26-033</h2>
+<img src="img/ch26-033.png" alt="dy = k dx/x," loading="lazy">
+<div class="meta">folio 317 (PDF p. 337) &middot; &sect;9 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>dy = k dx/x,</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase8a2/th_26_bernoulli_deriv</dd>
+<dt>Quoted from</dt><dd>D. Bernoulli</dd>
+<dt>Anchor words</dt><dd><code>and y the &#x27;moral&#x27; fortune,</code></dd>
+<dt>Remarks</dt><dd>F26.18。横線分数 dx/x、末尾コンマ。≈ の理由: 定理文 <code>HasDerivAt (fun x =&gt; k * Real.log (x / a)) (k / x) x</code> は y に ch26-034 の定義を代入し、微分方程式を導関数 k/x の形 (dx を払った形) に書き直したもの (定義の代入 + 分母を払った形)。y を一般の関数とする微分方程式そのものではない (裁定事項、読み手役 参考 1)</dd>
+<dt>Crop</dt><dd>folio 317, x 125&ndash;1335, y 1895&ndash;2002 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-034">
+<h2>ch26-034</h2>
+<img src="img/ch26-034.png" alt="y = k log x/a," loading="lazy">
+<div class="meta">folio 317 (PDF p. 337) &middot; &sect;9 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>y = k log x/a,</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>D. Bernoulli</dd>
+<dt>Anchor words</dt><dd><code>or</code> / <code>where k and a are constants.</code> (直後)</dd>
+<dt>Remarks</dt><dd>F26.19。横線分数 x/a。未の理由: y の def も y = … の文もなく、phase8a2/th_26_bernoulli_deriv の被微分関数 <code>fun x =&gt; k * Real.log (x / a)</code> に置換で吸収されている (補則 8 既知の裁定)。積分定数の補助は phase8a2/th_26_bernoulli_initial</dd>
+<dt>Crop</dt><dd>folio 317, x 125&ndash;1335, y 2010&ndash;2112 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-035">
+<h2>ch26-035</h2>
+<img src="img/ch26-035.png" alt="x = (a + x₁)p₁(a + x₂)p₂ . . .," loading="lazy">
+<div class="meta">folio 318 (PDF p. 338) &middot; &sect;9 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>x = (a + x₁)p₁(a + x₂)p₂ . . .,</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>D. Bernoulli / Laplace</dd>
+<dt>Anchor words</dt><dd><code>the further formula—</code></dd>
+<dt>Remarks</dt><dd>F26.20。本文 &quot;built up both by Bernoulli himself and by Laplace. It leads easily to the further formula&quot;。F 候補: p₁, p₂ が指数でなくベースラインに下付き数字で組まれている (既存台帳の原寸 3 倍で確認)。未の理由 (第 4 回、司令塔裁定): 定理文に x = … の関係が現れず x の def もない (置換で吸収)。phase8a2/th_26_moral_expectation と phase8a2/th_26_laplace_printed_refuted は右辺に置換した形。前者は指数形の右辺 Π(a + x_i)^{p_i} について <code>k * log(Π (a + x i) ^ (p i) / a) = Σ p i * (k * log((a + x i) / a))</code>、後者は文字どおり積と読んだ右辺が a = 1, x₁ = x₂ = 1, p₁ = p₂ = ½ で道徳的期待の等式を満たさないことを示す</dd>
+<dt>Crop</dt><dd>folio 318, x 125&ndash;1335, y 310&ndash;395 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-036">
+<h2>ch26-036</h2>
+<img src="img/ch26-036.png" alt="2^{24}" loading="lazy">
+<div class="meta">folio 318 (PDF p. 338) &middot; &sect;9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>2^{24}</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase8a2/th_26_two_pow_24</dd>
+<dt>Quoted from</dt><dd>Cramer</dd>
+<dt>Anchor words</dt><dd><code>all sums greater than</code></dd>
+<dt>Remarks</dt><dd>F26.22。定理文の <code>(2:ℕ) ^ 24</code>; cramerCapped の上限 <code>2 ^ 24</code> (th_26_cramer_cap)。直後の括弧内 <code>(16,777,116)</code> は参考行 ch26-043 (F 候補)</dd>
+<dt>Crop</dt><dd>folio 318, x 125&ndash;1335, y 812&ndash;865 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-037">
+<h2>ch26-037</h2>
+<img src="img/ch26-037.png" alt="R/E" loading="lazy">
+<div class="meta">folio 319 (PDF p. 339) &middot; &sect;9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>R/E</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase8a2/th_26_relative_risk</dd>
+<dt>Anchor words</dt><dd><code>and the relative risk</code> / <code>will be almost unity.</code> (直後)</dd>
+<dt>Remarks</dt><dd>F26.24。横線分数 (R 上、E 下)。定理文の <code>petersburgRisk n / (n / 2)</code> (解釈つき: R は単一利得についてしか定義されていない; petersburgRisk は多結果への拡張)。極限は th_26_relative_risk_tendsto、R の非有界は th_26_petersburg_risk_unbounded</dd>
+<dt>Crop</dt><dd>folio 319, x 125&ndash;1335, y 631&ndash;736 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-038">
+<h2>ch26-038</h2>
+<img src="img/ch26-038.png" alt="f(a)" loading="lazy">
+<div class="meta">folio 319 (PDF p. 339) &middot; &sect;10 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>f(a)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Laurent</dd>
+<dt>Anchor words</dt><dd><code>francs respectively.</code> / <code>is the chance that</code> (直後)</dd>
+<dt>Remarks</dt><dd>F26.25 の導入 (A が破産する確率)。f の def はない</dd>
+<dt>Crop</dt><dd>folio 319, x 125&ndash;1335, y 1140&ndash;1191 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-039">
+<h2>ch26-039</h2>
+<img src="img/ch26-039.png" alt="f(a) = b/(a + b)," loading="lazy">
+<div class="meta">folio 319 (PDF p. 339) &middot; &sect;10 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>f(a) = b/(a + b),</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Laurent</dd>
+<dt>Anchor words</dt><dd><code>Thus</code></dd>
+<dt>Remarks</dt><dd>F26.25。横線分数 (分子 b、分母 a + b)、脚注番号 2 が続く。式自体は Laurent, *Calcul des probabilités* p. 129 の引用で導出なし。未の理由: f の def がなく、phase8a2/th_26_laurent_poorer は右辺を代入した帰結 (単調性 <code>b / (a′ + b) &lt; b / (a + b)</code>) だけで、この等式は定理文に現れない (ch26-034 と同じ吸収)</dd>
+<dt>Crop</dt><dd>folio 319, x 125&ndash;1335, y 1190&ndash;1292 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-040">
+<h2>ch26-040</h2>
+<img src="img/ch26-040.png" alt="b = ∞ ," loading="lazy">
+<div class="meta">folio 319 (PDF p. 339) &middot; &sect;10 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b = ∞ ,</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Laurent</dd>
+<dt>Anchor words</dt><dd><code>But further, if</code></dd>
+<dt>Remarks</dt><dd>F26.26 前半。∞ の前後に空き。未の理由: phase8a2/th_26_laurent_limit は b → ∞ の極限 <code>Tendsto (fun b =&gt; b / (a + b)) atTop (𝓝 1)</code> で、<code>b = ∞</code> という関係は定理文に現れない。極限形を ✎ (導けない印刷形の修正形) に数えるかは裁定事項</dd>
+<dt>Crop</dt><dd>folio 319, x 125&ndash;1335, y 1345&ndash;1394 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-041">
+<h2>ch26-041</h2>
+<img src="img/ch26-040.png" alt="f(a) = 1," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-040">ch26-040</a>.</div>
+<div class="meta">folio 319 (PDF p. 339) &middot; &sect;10 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>f(a) = 1,</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Laurent</dd>
+<dt>Anchor words</dt><dd><code>i.e. ruin is certain.</code> (直後)</dd>
+<dt>Remarks</dt><dd>F26.26 後半。未の理由: f の def がなく、phase8a2/th_26_laurent_limit の極限値 1 としてしか現れない (ch26-040 と同じ裁定事項)</dd>
+<dt>Crop</dt><dd>folio 319, x 125&ndash;1335, y 1345&ndash;1394 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-042">
+<h2>ch26-042</h2>
+<img src="img/ch26-042.png" alt="1/10,000" loading="lazy">
+<div class="meta">folio 322 (PDF p. 342) &middot; &sect;12 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>1/10,000</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Buffon</dd>
+<dt>Anchor words</dt><dd><code>when he names</code></dd>
+<dt>Remarks</dt><dd>F26.27。小活字の横線分数。経験的定数 (8a2 では対象外と明記)。数値分数を記法に数えるかは裁定事項 (ch24-001 と同じ)</dd>
+<dt>Crop</dt><dd>folio 322, x 125&ndash;1335, y 815&ndash;875 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch26-043">
+<h2>ch26-043</h2>
+<img src="img/ch26-036.png" alt="(16,777,116)" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch26-036">ch26-036</a>.</div>
+<div class="meta">folio 318 (PDF p. 338) &middot; &sect;9 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>(16,777,116)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>phase8a2/th_26_printed_16777116_refuted</dd>
+<dt>Quoted from</dt><dd>Cramer</dd>
+<dt>Anchor words</dt><dd><code>than 2^{24}</code> / <code>are regarded as</code> (直後)</dd>
+<dt>Remarks</dt><dd>F26.22 の括弧内数値。2^24 = 16,777,216 (th_26_two_pow_24) なので 1 桁の誤植 (F 候補)。数値語なので式にも記法にも数えない</dd>
+<dt>Crop</dt><dd>folio 318, x 125&ndash;1335, y 812&ndash;865 (full-size scan pixels)</dd>
+</dl></section>
+<footer>Generated by tools/atlas/gen.py from the ledger ch26.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
+</main></body></html>

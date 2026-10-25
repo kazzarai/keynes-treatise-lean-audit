@@ -1,0 +1,2612 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula atlas, Chapter 17</title>
+<style>
+body{background:#fff;color:#111;font-family:Georgia,'Times New Roman',serif;margin:0;padding:24px 12px}
+main{max-width:900px;margin:0 auto}
+h1{font-size:1.5em;margin:0 0 .2em}
+.sub{color:#444;margin:0 0 1em}
+table.sum{border-collapse:collapse;margin:.5em 0 1em;font-size:.95em}
+table.sum th,table.sum td{border:1px solid #bbb;padding:3px 10px;text-align:left}
+.rules{font-size:.92em;line-height:1.45;color:#222;border-left:3px solid #ccc;padding-left:12px}
+.card{border:1px solid #ccc;border-radius:4px;margin:18px 0;padding:10px 12px}
+.card img{display:block;width:100%;height:auto;border:1px solid #eee;margin:4px 0 8px}
+.card h2{font-size:1.05em;margin:0 0 4px;font-family:Menlo,Consolas,monospace}
+.meta{font-size:.9em;color:#333;margin-bottom:4px}
+.shared{font-size:.82em;color:#666;margin:-4px 0 6px}
+dl{display:grid;grid-template-columns:8.5em 1fr;gap:3px 10px;margin:0;font-size:.92em}
+dt{color:#555}
+dd{margin:0;word-break:break-word}
+code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;padding:0 2px}
+.mark{display:inline-block;min-width:1.6em;text-align:center;border-radius:3px;padding:0 4px;margin-right:6px;font-weight:bold}
+.printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
+.notation{background:#f3eaf6}
+footer{font-size:.85em;color:#666;margin-top:2em}
+</style></head><body><main>
+<h1>Chapter XVII. Some Problems in Inverse Probability, including Averages</h1>
+<p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 186&ndash;214 (Cornell copy, PDF pp. 206&ndash;234). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
+<table class="sum"><tr><th>Ledger rows</th><td>230</td></tr>
+<tr><th>Formulas</th><td>202 (display 98, inline 104; items 54, numbered 129)</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>19 &nbsp; <span class="mark equiv">&asymp;</span>75 &nbsp; <span class="mark corrected">&#9998;</span>7 &nbsp; <span class="mark none">&#26410;</span>101</td></tr>
+<tr><th>Notation</th><td>20 (with a Lean counterpart 17)</td></tr>
+<tr><th>Reference rows</th><td>0</td></tr>
+<tr><th>Bare-symbol rows (not counted)</th><td>8</td></tr>
+</table>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
+<section class="card" id="ch17-001">
+<h2>ch17-001</h2>
+<img src="img/ch17-001.png" alt="A₁, A₂ ; c₁, c₂ ; p₁ ; p₂" loading="lazy">
+<div class="meta">folio 186 (PDF p. 206) &middot; &sect;2 &middot; Text &middot; Inline &middot; Bare symbol (not counted)</div>
+<dl>
+<dt>Transcription</dt><dd>A₁, A₂ ; c₁, c₂ ; p₁ ; p₂</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Bare symbol (not counted)">B</span>5/th_17_56 (記号)</dd>
+<dt>Anchor words</dt><dd>(56) The à priori probabilities of two causes A₁ and A₂ are c₁ and c₂ respectively.</dd>
+<dt>Remarks</dt><dd>問題の言明 (式なし; 187 上段まで)。裸記号の並び (補則 1、数えない)</dd>
+<dt>Crop</dt><dd>folio 186, x 125&ndash;1335, y 1920&ndash;2016 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-002">
+<h2>ch17-002</h2>
+<img src="img/ch17-002.png" alt="[1 − c₁(1 − p₁) − u][1 − c₂(1 − p₂) − u] ÷ (1 − u) = (u − c₁p₁)(u − c₂p₂) ÷ (c₁p₁ + c₂p₂ − u)" loading="lazy">
+<div class="meta">folio 187 (PDF p. 207) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>[1 − c₁(1 − p₁) − u][1 − c₂(1 − p₂) − u] ÷ (1 − u) = (u − c₁p₁)(u − c₂p₂) ÷ (c₁p₁ + c₂p₂ − u)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(引用)</dd>
+<dt>Quoted from</dt><dd>Boole</dd>
+<dt>Anchor words</dt><dd>u is that root of the equation</dd>
+<dt>Remarks</dt><dd>Boole の方程式 (分数 2 つ)</dd>
+<dt>Crop</dt><dd>folio 187, x 125&ndash;1335, y 1075&ndash;1212 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-003">
+<h2>ch17-003</h2>
+<img src="img/ch17-003.png" alt="not less than c₁p₁ and c₂p₂ and not greater than 1 − c₁(1 − p₁), 1 − c₂(1 − p₂), or c₁p₁ + c₂p₂." loading="lazy">
+<div class="meta">folio 187 (PDF p. 207) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>not less than c₁p₁ and c₂p₂ and not greater than 1 − c₁(1 − p₁), 1 − c₂(1 − p₂), or c₁p₁ + c₂p₂.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Boole</dd>
+<dt>Anchor words</dt><dd>which is not less than c₁p₁ and c₂p₂ and not greater than</dd>
+<dt>Remarks</dt><dd>関係は語</dd>
+<dt>Crop</dt><dd>folio 187, x 125&ndash;1335, y 1211&ndash;1328 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-004">
+<h2>ch17-004</h2>
+<img src="img/ch17-004.png" alt="u = c₁p₁ + c₂p₂ ;" loading="lazy">
+<div class="meta">folio 187 (PDF p. 207) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>u = c₁p₁ + c₂p₂ ;</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>the solution is u = c₁p₁ + c₂p₂ ; whereas Boole’s equations do not reduce to</dd>
+<dt>Remarks</dt><dd>排反の場合</dd>
+<dt>Crop</dt><dd>folio 187, x 125&ndash;1335, y 1428&ndash;1491 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-005">
+<h2>ch17-005</h2>
+<img src="img/ch17-005.png" alt="u = c₁p₁ + c₂p₂ − z," loading="lazy">
+<div class="meta">folio 187 (PDF p. 207) &middot; &sect;2 &middot; Footnote 3 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>u = c₁p₁ + c₂p₂ − z,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(引用)</dd>
+<dt>Quoted from</dt><dd>Wilbraham</dd>
+<dt>Anchor words</dt><dd>Wilbraham gave as the solution u = c₁p₁ + c₂p₂ − z, where z is necessarily less than either c₁p₁ or c₂p₂.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 187, x 125&ndash;1335, y 1754&ndash;1792 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-006">
+<h2>ch17-006</h2>
+<img src="img/ch17-006.png" alt="a₁/h = c₁," loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a₁/h = c₁,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 c₁; 5/th_17_56 は a₁/h を直接書く)</dd>
+<dt>Anchor words</dt><dd>Then we have a₁/h = c₁,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 508&ndash;559 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-007">
+<h2>ch17-007</h2>
+<img src="img/ch17-006.png" alt="a₂/h = c₂," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-006">ch17-006</a>.</div>
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a₂/h = c₂,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 c₂)</dd>
+<dt>Anchor words</dt><dd>a₂/h = c₂,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 508&ndash;559 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-008">
+<h2>ch17-008</h2>
+<img src="img/ch17-006.png" alt="e/a₁h = p₁," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-006">ch17-006</a>.</div>
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/a₁h = p₁,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 p₁)</dd>
+<dt>Anchor words</dt><dd>e/a₁h = p₁,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 508&ndash;559 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-009">
+<h2>ch17-009</h2>
+<img src="img/ch17-006.png" alt="e/a₂h = p₂ :" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-006">ch17-006</a>.</div>
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/a₂h = p₂ :</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 p₂)</dd>
+<dt>Anchor words</dt><dd>e/a₂h = p₂ : we require e/h.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 508&ndash;559 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-010">
+<h2>ch17-010</h2>
+<img src="img/ch17-010.png" alt="e/h" loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>e/h</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>5/th_17_56 (Pr E h)</dd>
+<dt>Anchor words</dt><dd>we require e/h.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 559&ndash;610 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-011">
+<h2>ch17-011</h2>
+<img src="img/ch17-010.png" alt="e/h = u," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-010">ch17-010</a>.</div>
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/h = u,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 u = e/h)</dd>
+<dt>Anchor words</dt><dd>Let e/h = u, and</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 559&ndash;610 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-012">
+<h2>ch17-012</h2>
+<img src="img/ch17-010.png" alt="a₁a₂/eh = z." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-010">ch17-010</a>.</div>
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a₁a₂/eh = z.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 z = a₁a₂/eh)</dd>
+<dt>Anchor words</dt><dd>and let a₁a₂/eh = z.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 559&ndash;610 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-013">
+<h2>ch17-013</h2>
+<img src="img/ch17-013.png" alt="e/ā₁ā₂h = 0." loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/ā₁ā₂h = 0.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(前提は (a₁ + a₂)/eh = 1 の形 (ch17-016) で 5/th_17_56 に入る)</dd>
+<dt>Anchor words</dt><dd>Since the event cannot occur in the absence of both the causes,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 665&ndash;739 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-014">
+<h2>ch17-014</h2>
+<img src="img/ch17-014.png" alt="ā₁ā₂/eh = 0," loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ā₁ā₂/eh = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((56) の証明内)</dd>
+<dt>Anchor words</dt><dd>It follows from this that ā₁ā₂/eh = 0, unless</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 739&ndash;812 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-015">
+<h2>ch17-015</h2>
+<img src="img/ch17-014.png" alt="e/h = 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-014">ch17-014</a>.</div>
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/h = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((56) の証明内)</dd>
+<dt>Anchor words</dt><dd>unless e/h = 0,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 739&ndash;812 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-016">
+<h2>ch17-016</h2>
+<img src="img/ch17-016.png" alt="(a₁ + a₂)/eh = 1," loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(a₁ + a₂)/eh = 1,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>5/th_17_56 (前提 hexh)</dd>
+<dt>Anchor words</dt><dd>i.e.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 812&ndash;894 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-017">
+<h2>ch17-017</h2>
+<img src="img/ch17-017.png" alt="a₁/eh + a₂/eh = 1 + a₁a₂/eh" loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a₁/eh + a₂/eh = 1 + a₁a₂/eh</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((56) の証明内)</dd>
+<dt>Anchor words</dt><dd>whence … by (24).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 893&ndash;985 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-018">
+<h2>ch17-018</h2>
+<img src="img/ch17-018.png" alt="a₁/eh = c₁p₁/u and a₂/eh = c₂p₂/u," loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a₁/eh = c₁p₁/u and a₂/eh = c₂p₂/u,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((56) の証明内)</dd>
+<dt>Anchor words</dt><dd>Now</dd>
+<dt>Remarks</dt><dd>関係 2 (分数)</dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 984&ndash;1109 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-019">
+<h2>ch17-019</h2>
+<img src="img/ch17-019.png" alt="∴ u = (c₁p₁ + c₂p₂)/(1 + z)," loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ u = (c₁p₁ + c₂p₂)/(1 + z),</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56 (分母払い形 u = p₁c₁ + p₂c₂ − zu; u, c, p, z を Pr で)</dd>
+<dt>Anchor words</dt><dd>∴</dd>
+<dt>Remarks</dt><dd>分数。(56) の結論</dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1109&ndash;1231 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-020">
+<h2>ch17-020</h2>
+<img src="img/ch17-020.png" alt="ea₁a₂/h = y," loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ea₁a₂/h = y,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 y = ea₁a₂/h)</dd>
+<dt>Anchor words</dt><dd>If we write ea₁a₂/h = y,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1346&ndash;1408 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-021">
+<h2>ch17-021</h2>
+<img src="img/ch17-021.png" alt="y = a₁a₂/eh . e/h = uz," loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>y = a₁a₂/eh . e/h = uz,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((56) の証明内)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>連鎖</dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1407&ndash;1477 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-022">
+<h2>ch17-022</h2>
+<img src="img/ch17-022.png" alt="u = (c₁p₁ + c₂p₂) − y." loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>u = (c₁p₁ + c₂p₂) − y.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_raw (c₁p₁ を Def. X で ea₁/h、y を ea₁a₂/h に代入)</dd>
+<dt>Anchor words</dt><dd>so that</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1477&ndash;1554 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-023">
+<h2>ch17-023</h2>
+<img src="img/ch17-023.png" alt="y ⩾ 0," loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>y ⩾ 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((56.1) の証明内; y ⩾ 0 は範囲公理)</dd>
+<dt>Anchor words</dt><dd>then, since y ⩾ 0,</dd>
+<dt>Remarks</dt><dd>活字は &gt; の下に横線</dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1715&ndash;1773 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-024">
+<h2>ch17-024</h2>
+<img src="img/ch17-024.png" alt="u ⩽ c₁p₁ + c₂p₂." loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>u ⩽ c₁p₁ + c₂p₂.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_1 (第 3 成分; c, p を Pr で、積の順序 p₁c₁)</dd>
+<dt>Anchor words</dt><dd>u ⩽ c₁p₁ + c₂p₂. Again</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1772&ndash;1816 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-025">
+<h2>ch17-025</h2>
+<img src="img/ch17-025.png" alt="e/h = eā₁/h + ea₁/h ⩽ ā₁/h + ea₁/h ⩽ 1 − c₁ + c₁p₁" loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/h = eā₁/h + ea₁/h ⩽ ā₁/h + ea₁/h ⩽ 1 − c₁ + c₁p₁</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(連鎖の一部: 5/th_17_56_1 第 4 成分は両端 e/h ⩽ 1 − c₁ + c₁p₁ のみで、中間項 eā₁/h + ea₁/h, ā₁/h + ea₁/h は定理文に無い)</dd>
+<dt>Anchor words</dt><dd>by (24.2) and (4).</dd>
+<dt>Remarks</dt><dd>関係 3 (= ⩽ ⩽)</dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1874&ndash;1950 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-026">
+<h2>ch17-026</h2>
+<img src="img/ch17-026.png" alt="e/h ⩽ 1 − c₂ + c₂p₂." loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/h ⩽ 1 − c₂ + c₂p₂.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_1 (第 5 成分; c, p を Pr で)</dd>
+<dt>Anchor words</dt><dd>Similarly e/h ⩽ 1 − c₂ + c₂p₂.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1949&ndash;2014 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-027">
+<h2>ch17-027</h2>
+<img src="img/ch17-027.png" alt="e/h ⩾ c₁p₁" loading="lazy">
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/h ⩾ c₁p₁</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_1 (第 1 成分; c, p を Pr で)</dd>
+<dt>Anchor words</dt><dd>From the same equations it appears that e/h ⩾ c₁p₁ and</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 2014&ndash;2082 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-028">
+<h2>ch17-028</h2>
+<img src="img/ch17-027.png" alt="⩾ c₂p₂." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-027">ch17-027</a>.</div>
+<div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>⩾ c₂p₂.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_1 (第 2 成分; c, p を Pr で)</dd>
+<dt>Anchor words</dt><dd>and ⩾ c₂p₂.</dd>
+<dt>Remarks</dt><dd>左辺省略</dd>
+<dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 2014&ndash;2082 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-029">
+<h2>ch17-029</h2>
+<img src="img/ch17-029.png" alt="∴ u lies between the greatest of {c₁p₁, c₂p₂} and the least of {c₁p₁ + c₂p₂, 1 − c₁(1 − p₁), 1 − c₂(1 − p₂)}." loading="lazy">
+<div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ u lies between the greatest of {c₁p₁, c₂p₂} and the least of {c₁p₁ + c₂p₂, 1 − c₁(1 − p₁), 1 − c₂(1 − p₂)}.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_1 (語の between を 5 不等式の連言で)</dd>
+<dt>Anchor words</dt><dd>∴ u lies between</dd>
+<dt>Remarks</dt><dd>波括弧で縦に並ぶ (印刷 3 行) を 1 本に数える (裁定事項)</dd>
+<dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 170&ndash;407 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-030">
+<h2>ch17-030</h2>
+<img src="img/ch17-030.png" alt="u &lt; p₁ + p₂." loading="lazy">
+<div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>u &lt; p₁ + p₂.</dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>5/th_17_56_2 (修正形 ≤; 印刷の狭義 &lt; は S 判定、反駁の定理は無い)</dd>
+<dt>Anchor words</dt><dd>The only limit we then have is u &lt; p₁ + p₂.</dd>
+<dt>Remarks</dt><dd>狭義の &lt; (切り出しで確認)</dd>
+<dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 622&ndash;667 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-031">
+<h2>ch17-031</h2>
+<img src="img/ch17-031.png" alt="c₁p₁ ⩽ u ⩽ 1 − c₁ + c₁p₁." loading="lazy">
+<div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>c₁p₁ ⩽ u ⩽ 1 − c₁ + c₁p₁.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_3 (c, p を Pr で)</dd>
+<dt>Anchor words</dt><dd>We then have limits c₁p₁ ⩽ u ⩽ 1 − c₁ + c₁p₁.</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 717&ndash;768 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-032">
+<h2>ch17-032</h2>
+<img src="img/ch17-032.png" alt="c₁p₁ ⩽ u ⩽ c₁p₁ + c₂" loading="lazy">
+<div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>c₁p₁ ⩽ u ⩽ c₁p₁ + c₂</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7i/th_17_56_4_src (第 1・2 成分; c, p を Pr で); 5/th_17_56_4</dd>
+<dt>Anchor words</dt><dd>We then have</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 882&ndash;939 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-033">
+<h2>ch17-033</h2>
+<img src="img/ch17-033.png" alt="⩽ c₁p₁ + 1 − c₁." loading="lazy">
+<div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>⩽ c₁p₁ + 1 − c₁.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7i/th_17_56_4_src (第 3 成分; c, p を Pr で)</dd>
+<dt>Anchor words</dt><dd>⩽ c₁p₁ + 1 − c₁.</dd>
+<dt>Remarks</dt><dd>連鎖の 2 行目</dd>
+<dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 938&ndash;1000 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-034">
+<h2>ch17-034</h2>
+<img src="img/ch17-034.png" alt="a₁/a₂h = a₁/h," loading="lazy">
+<div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a₁/a₂h = a₁/h,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>5/th_17_56_5 (前提 hindep)</dd>
+<dt>Anchor words</dt><dd>(56.5) If a₁/a₂h = a₁/h, i.e. if our knowledge of each of the causes is independent,</dd>
+<dt>Remarks</dt><dd>言明 前件</dd>
+<dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 1113&ndash;1163 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-035">
+<h2>ch17-035</h2>
+<img src="img/ch17-035.png" alt="y = ea₁a₂/h = e/a₁a₂h . a₁/a₂h . a₂/h = e/a₁a₂h . c₁c₂," loading="lazy">
+<div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>y = ea₁a₂/h = e/a₁a₂h . a₁/a₂h . a₂/h = e/a₁a₂h . c₁c₂,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((56.5) の証明内)</dd>
+<dt>Anchor words</dt><dd>For</dd>
+<dt>Remarks</dt><dd>連鎖 (= 3 つ)</dd>
+<dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 1223&ndash;1295 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-036">
+<h2>ch17-036</h2>
+<img src="img/ch17-036.png" alt="∴ u = c₁p₁ + c₂p₂ − c₁c₂ . e/a₁a₂h," loading="lazy">
+<div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ u = c₁p₁ + c₂p₂ − c₁c₂ . e/a₁a₂h,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((56.5) の証明内)</dd>
+<dt>Anchor words</dt><dd>∴</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 1295&ndash;1339 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-037">
+<h2>ch17-037</h2>
+<img src="img/ch17-037.png" alt="∴ u &gt; c₁p₁ + c₂p₂ − c₁c₂." loading="lazy">
+<div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ u &gt; c₁p₁ + c₂p₂ − c₁c₂.</dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>5/th_17_56_5 (修正形 ≥; 印刷の狭義 &gt; は S 判定、反駁の定理は無い)</dd>
+<dt>Anchor words</dt><dd>∴</dd>
+<dt>Remarks</dt><dd>狭義の &gt; (切り出しで確認)</dd>
+<dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 1338&ndash;1395 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-038">
+<h2>ch17-038</h2>
+<img src="img/ch17-038.png" alt="A₁, A₂, … Aₙ ; c₁ ; p₁ ; E" loading="lazy">
+<div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Inline &middot; Bare symbol (not counted)</div>
+<dl>
+<dt>Transcription</dt><dd>A₁, A₂, … Aₙ ; c₁ ; p₁ ; E</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Bare symbol (not counted)">B</span>5,6a/th_17_57</dd>
+<dt>Anchor words</dt><dd>or more of certain causes A₁, A₂, … Aₙ, and if c₁ is the à priori probability</dd>
+<dt>Remarks</dt><dd>問題の言明 (式なし)。裸記号の並び (補則 1、数えない)</dd>
+<dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 1508&ndash;1662 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-039">
+<h2>ch17-039</h2>
+<img src="img/ch17-039.png" alt="e/h = eā₁/h + ea₁/h = eā₁/h + e/a₁h . a₁/h = eā₁/h + c₁p₁" loading="lazy">
+<div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/h = eā₁/h + ea₁/h = eā₁/h + e/a₁h . a₁/h = eā₁/h + c₁p₁</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(連鎖の各項は定理文に無い: 7i/th_17_57_i_src は一般の再帰形 booleDecomp、7h/th_17_57_step は一段の分解式)</dd>
+<dt>Anchor words</dt><dd>The solution is as follows :</dd>
+<dt>Remarks</dt><dd>連鎖 (= 3 つ)。番号 (i.) は行末</dd>
+<dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 1972&ndash;2031 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-040">
+<h2>ch17-040</h2>
+<img src="img/ch17-040.png" alt="eā₁/h = eā₁ā₂/h + eā₁/a₂h . a₂/h = eā₁ā₂/h + c₂ . eā₁/a₂h," loading="lazy">
+<div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>eā₁/h = eā₁ā₂/h + eā₁/a₂h . a₂/h = eā₁ā₂/h + c₂ . eā₁/a₂h,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57) の証明内)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>連鎖</dd>
+<dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 2031&ndash;2093 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-041">
+<h2>ch17-041</h2>
+<img src="img/ch17-041.png" alt="eā₁/a₂h = e/a₂h − ea₁/a₂h = p₂ − (1/c₂) . ea₁a₂/h," loading="lazy">
+<div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>eā₁/a₂h = e/a₂h − ea₁/a₂h = p₂ − (1/c₂) . ea₁a₂/h,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57) の証明内)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>連鎖 (分数 1/c₂)</dd>
+<dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 2092&ndash;2226 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-042">
+<h2>ch17-042</h2>
+<img src="img/ch17-042.png" alt="∴ e/h = eā₁ā₂/h + c₁p₁ + c₂p₂ − ea₁a₂/h," loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ e/h = eā₁ā₂/h + c₁p₁ + c₂p₂ − ea₁a₂/h,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57) の証明内; 7h/th_17_57_ii_n2 が同内容)</dd>
+<dt>Anchor words</dt><dd>∴</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 166&ndash;243 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-043">
+<h2>ch17-043</h2>
+<img src="img/ch17-043.png" alt="eā₁ā₂/h = eā₁ā₂ā₃/h + eā₁ā₂a₃/h," loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>eā₁ā₂/h = eā₁ā₂ā₃/h + eā₁ā₂a₃/h,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57) の証明内)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 242&ndash;299 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-044">
+<h2>ch17-044</h2>
+<img src="img/ch17-044.png" alt="eā₁ā₂a₃/h = eā₁ā₂/a₃h . c₃ = c₃{e/a₃h − eā₁ā₂ (上にバー)/a₃h}" loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>eā₁ā₂a₃/h = eā₁ā₂/a₃h . c₃ = c₃{e/a₃h − eā₁ā₂ (上にバー)/a₃h}</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57) の証明内)</dd>
+<dt>Anchor words</dt><dd>and</dd>
+<dt>Remarks</dt><dd>連鎖。波括弧内の第 2 項は ā₁ā₂ の上にさらにバー (二重バー)</dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 299&ndash;365 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-045">
+<h2>ch17-045</h2>
+<img src="img/ch17-045.png" alt="= c₃p₃ − eā₁ā₂a₃ (上にバー)/h," loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= c₃p₃ − eā₁ā₂a₃ (上にバー)/h,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57) の証明内)</dd>
+<dt>Anchor words</dt><dd>= c₃p₃ −</dd>
+<dt>Remarks</dt><dd>連鎖の 2 行目</dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 365&ndash;430 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-046">
+<h2>ch17-046</h2>
+<img src="img/ch17-046.png" alt="∴ e/h = eā₁ā₂ā₃/h + c₁p₁ + c₂p₂ + c₃p₃ − eā₁a₂ (上にバー)/h − eā₁ā₂a₃ (上にバー)/h." loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ e/h = eā₁ā₂ā₃/h + c₁p₁ + c₂p₂ + c₃p₃ − eā₁a₂ (上にバー)/h − eā₁ā₂a₃ (上にバー)/h.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57) の証明内)</dd>
+<dt>Anchor words</dt><dd>∴</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 430&ndash;503 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-047">
+<h2>ch17-047</h2>
+<img src="img/ch17-047.png" alt="eā₁ā₂ … ā_{r−1}/h = eā₁ā₂ … ā_{r−1}āᵣ/h + eā₁ā₂ … ā_{r−1}aᵣ/h" loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>eā₁ā₂ … ā_{r−1}/h = eā₁ā₂ … ā_{r−1}āᵣ/h + eā₁ā₂ … ā_{r−1}aᵣ/h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57) の証明内; 7h,7i/th_17_57_step が同内容)</dd>
+<dt>Anchor words</dt><dd>In general</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 565&ndash;631 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-048">
+<h2>ch17-048</h2>
+<img src="img/ch17-048.png" alt="= eā₁ … āᵣ/h + eā₁ … ā_{r−1}/aᵣh . cᵣ" loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= eā₁ … āᵣ/h + eā₁ … ā_{r−1}/aᵣh . cᵣ</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57) の証明内)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>連鎖の 2 行目</dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 630&ndash;691 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-049">
+<h2>ch17-049</h2>
+<img src="img/ch17-049.png" alt="= eā₁ … āᵣ/h + cᵣ{e/aᵣh − eā₁ … ā_{r−1} (上にバー)/aᵣh}" loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= eā₁ … āᵣ/h + cᵣ{e/aᵣh − eā₁ … ā_{r−1} (上にバー)/aᵣh}</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57) の証明内)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>3 行目</dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 691&ndash;757 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-050">
+<h2>ch17-050</h2>
+<img src="img/ch17-050.png" alt="= eā₁ … āᵣ/h + cᵣpᵣ − eā₁ … ā_{r−1}aᵣ (上にバー)/h," loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= eā₁ … āᵣ/h + cᵣpᵣ − eā₁ … ā_{r−1}aᵣ (上にバー)/h,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57) の証明内)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>4 行目</dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 756&ndash;823 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-051">
+<h2>ch17-051</h2>
+<img src="img/ch17-051.png" alt="∴ finally we have e/h = eā₁ … āₙ/h + Σ₁ⁿ cᵣpᵣ − Σ₂ⁿ eā … ā_{r−1}aᵣ (上にバー)/h." loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ finally we have e/h = eā₁ … āₙ/h + Σ₁ⁿ cᵣpᵣ − Σ₂ⁿ eā … ā_{r−1}aᵣ (上にバー)/h.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57) の証明内; 7i/th_17_57_i_src (booleDecomp) が同内容)</dd>
+<dt>Anchor words</dt><dd>∴ finally we have</dd>
+<dt>Remarks</dt><dd>Σ の上下に n, 1 / n, 2</dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 823&ndash;934 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-052">
+<h2>ch17-052</h2>
+<img src="img/ch17-052.png" alt="eā₁ … āₙ/h = 0," loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>eā₁ … āₙ/h = 0,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7i/th_17_57_1_src (前提 hexh; negChain は頭に ⊤ を付けた連言)</dd>
+<dt>Anchor words</dt><dd>But since the n causes are supposed to be exhaustive</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 1002&ndash;1070 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-053">
+<h2>ch17-053</h2>
+<img src="img/ch17-053.png" alt="∴ e/h = Σ₁ⁿ cᵣpᵣ − Σ₂ⁿ eā₁ … ā_{r−1}aᵣ (上にバー)/h" loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ e/h = Σ₁ⁿ cᵣpᵣ − Σ₂ⁿ eā₁ … ā_{r−1}aᵣ (上にバー)/h</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5,6a/th_17_57 (cᵣpᵣ を Def. X で aᵣe/h、補正項を順序型の overlapSum で)</dd>
+<dt>Anchor words</dt><dd>∴</dd>
+<dt>Remarks</dt><dd>番号 (ii.) は行末</dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 1069&ndash;1181 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-054">
+<h2>ch17-054</h2>
+<img src="img/ch17-054.png" alt="eā₁ … ā_{r−1}aᵣ (上にバー)/h = nᵣ ;" loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>eā₁ … ā_{r−1}aᵣ (上にバー)/h = nᵣ ;</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 nᵣ)</dd>
+<dt>Anchor words</dt><dd>Let</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 1181&ndash;1255 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-055">
+<h2>ch17-055</h2>
+<img src="img/ch17-055.png" alt="e/h = Σ₁ⁿ cᵣpᵣ − Σ₂ⁿ nᵣ." loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/h = Σ₁ⁿ cᵣpᵣ − Σ₂ⁿ nᵣ.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5,6a/th_17_57 (nᵣ の代入; 補正項は overlapSum)</dd>
+<dt>Anchor words</dt><dd>then</dd>
+<dt>Remarks</dt><dd>番号 (iii.) は行末</dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 1255&ndash;1373 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-056">
+<h2>ch17-056</h2>
+<img src="img/ch17-056.png" alt="aᵣ/a_sh = aᵣ/h = cᵣ," loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>aᵣ/a_sh = aᵣ/h = cᵣ,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6a/th_17_57_1 (前提 hind: 積の形 aᵣa_s/h = aᵣ/h . a_s/h); 7i/th_17_57_1_src の IndepChain は否定連言の別条件</dd>
+<dt>Anchor words</dt><dd>so that aᵣ/a_sh = aᵣ/h = cᵣ, then</dd>
+<dt>Remarks</dt><dd>言明 前件 (連鎖)</dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 1532&ndash;1592 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-057">
+<h2>ch17-057</h2>
+<img src="img/ch17-057.png" alt="eā₁ … ā_{r−1}aᵣ (上にバー)/h = eā₁ … ā_{r−1} (上にバー)/aᵣh . cᵣ" loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>eā₁ … ā_{r−1}aᵣ (上にバー)/h = eā₁ … ā_{r−1} (上にバー)/aᵣh . cᵣ</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57.1) の証明内; 7h/th_17_57_1_mr, 7i/th_17_57_1_term が同内容)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 1592&ndash;1662 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-058">
+<h2>ch17-058</h2>
+<img src="img/ch17-058.png" alt="= cᵣ . e/ā₁ … ā_{r−1}aᵣh{1 − ā₁ … ā_{r−1}/aᵣh}" loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= cᵣ . e/ā₁ … ā_{r−1}aᵣh{1 − ā₁ … ā_{r−1}/aᵣh}</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57.1) の証明内)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>連鎖の 2 行目。印刷は e/ā₁ … (上のバーは ā₁ … ā_{r−1} の上; 判読は原寸で確認)</dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 1661&ndash;1728 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-059">
+<h2>ch17-059</h2>
+<img src="img/ch17-059.png" alt="= cᵣ[1 − Π₁^{r−1}(1 − c₁) … (1 − c_{r−1})]e/ā₁ … ā_{r−1}aᵣh." loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= cᵣ[1 − Π₁^{r−1}(1 − c₁) … (1 − c_{r−1})]e/ā₁ … ā_{r−1}aᵣh.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57.1) の証明内; 7i/th_17_57_1_general が同内容)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>Π の上に r − 1、下に 1。「Π(1 − c₁) … (1 − c_{r−1})」と Π の後に積の各因子も書いてある (印刷どおり)</dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 1728&ndash;1843 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-060">
+<h2>ch17-060</h2>
+<img src="img/ch17-060.png" alt="e/ā₁ … ā_{r−1}aᵣh = mᵣ," loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/ā₁ … ā_{r−1}aᵣh = mᵣ,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 mᵣ; 7h/th_17_57_1_mr)</dd>
+<dt>Anchor words</dt><dd>Let</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 1842&ndash;1915 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-061">
+<h2>ch17-061</h2>
+<img src="img/ch17-061.png" alt="e/h = Σ_{r=1}^{r=n} cᵣpᵣ − Σ_{r=2}^{r=n} cᵣ[1 − Π_{s=1}^{s=r−1}(1 − c_s)]mᵣ." loading="lazy">
+<div class="meta">folio 190 (PDF p. 210) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/h = Σ_{r=1}^{r=n} cᵣpᵣ − Σ_{r=2}^{r=n} cᵣ[1 − Π_{s=1}^{s=r−1}(1 − c_s)]mᵣ.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7i/th_17_57_1_src (keynes57_1 は項ごとに cᵣpᵣ − cᵣ(1 − P)mᵣ を足す再帰形; c, p, m を Pr で); 6a/th_17_57_1 は ≤ の別命題</dd>
+<dt>Anchor words</dt><dd>then</dd>
+<dt>Remarks</dt><dd>COLLATION: 7i で印刷形を再定理化</dd>
+<dt>Crop</dt><dd>folio 190, x 125&ndash;1335, y 1914&ndash;2031 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-062">
+<h2>ch17-062</h2>
+<img src="img/ch17-062.png" alt="e/h ⩾ c₁p₁" loading="lazy">
+<div class="meta">folio 191 (PDF p. 211) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/h ⩾ c₁p₁</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7i/th_17_57_2_src (第 1 成分; c, p を Pr で); 5/th_17_57_2</dd>
+<dt>Anchor words</dt><dd>(57.2) From equation (i.) it follows that e/h ⩾ c₁p₁ and</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 191, x 125&ndash;1335, y 166&ndash;244 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-063">
+<h2>ch17-063</h2>
+<img src="img/ch17-063.png" alt="e/h ⩽ 1 − c₁(1 − p₁) ;" loading="lazy">
+<div class="meta">folio 191 (PDF p. 211) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/h ⩽ 1 − c₁(1 − p₁) ;</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7i/th_17_57_2_src (第 1 成分の右; c, p を Pr で)</dd>
+<dt>Anchor words</dt><dd>e/h ⩽ 1 − c₁(1 − p₁) ; and from equation (ii.) that</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 191, x 125&ndash;1335, y 243&ndash;343 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-064">
+<h2>ch17-064</h2>
+<img src="img/ch17-063.png" alt="e/h ⩽ Σ₁ⁿ cᵣpᵣ ;" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-063">ch17-063</a>.</div>
+<div class="meta">folio 191 (PDF p. 211) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/h ⩽ Σ₁ⁿ cᵣpᵣ ;</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7i/th_17_57_2_src (第 2 成分; c, p を Pr で)</dd>
+<dt>Anchor words</dt><dd>and from equation (ii.) that e/h ⩽ Σcᵣpᵣ ;</dd>
+<dt>Remarks</dt><dd>Σ の上に n、下に 1</dd>
+<dt>Crop</dt><dd>folio 191, x 125&ndash;1335, y 243&ndash;343 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-065">
+<h2>ch17-065</h2>
+<img src="img/ch17-065.png" alt="∴ e/h lies between the greatest of {c₁p₁, ⋮, cₙpₙ} and the least of {Σ₁ⁿ cᵣpᵣ, 1 − c₁(1 − p₁), ⋮, 1 − cₙ(1 − pₙ)}." loading="lazy">
+<div class="meta">folio 191 (PDF p. 211) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ e/h lies between the greatest of {c₁p₁, ⋮, cₙpₙ} and the least of {Σ₁ⁿ cᵣpᵣ, 1 − c₁(1 − p₁), ⋮, 1 − cₙ(1 − pₙ)}.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7i/th_17_57_2_src (語の between を連言で)</dd>
+<dt>Anchor words</dt><dd>∴ e/h lies between</dd>
+<dt>Remarks</dt><dd>波括弧 (印刷 4 行) を 1 本</dd>
+<dt>Crop</dt><dd>folio 191, x 125&ndash;1335, y 343&ndash;627 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-066">
+<h2>ch17-066</h2>
+<img src="img/ch17-066.png" alt="e/h ⩾ Σ₁ⁿ cᵣpᵣ − Σ₂ⁿ cᵣ[1 − Π₁^{r−1}(1 − c_s)]," loading="lazy">
+<div class="meta">folio 191 (PDF p. 211) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/h ⩾ Σ₁ⁿ cᵣpᵣ − Σ₂ⁿ cᵣ[1 − Π₁^{r−1}(1 − c_s)],</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7i/th_17_57_3_src (keynes57_3 は再帰形; c を Pr で); 6a/th_17_57_3 は別の下界</dd>
+<dt>Anchor words</dt><dd>Further, if the causes are independent it follows from (57.1) that</dd>
+<dt>Remarks</dt><dd>活字は ⩾ (切り出しで確認)</dd>
+<dt>Crop</dt><dd>folio 191, x 125&ndash;1335, y 682&ndash;813 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-067">
+<h2>ch17-067</h2>
+<img src="img/ch17-067.png" alt="e/h lies between the greatest of {Σ₁ⁿ cᵣpᵣ − Σ₂ⁿ cᵣ[1 − Π₁^{r−1}(1 − c_s)], c₁p₁, ⋮, cₙpₙ} and the least of {Σ₁ⁿ cᵣpᵣ, 1 − c₁(1 − p₁), ⋮, 1 − cₙ(1 − pₙ)}." loading="lazy">
+<div class="meta">folio 191 (PDF p. 211) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/h lies between the greatest of {Σ₁ⁿ cᵣpᵣ − Σ₂ⁿ cᵣ[1 − Π₁^{r−1}(1 − c_s)], c₁p₁, ⋮, cₙpₙ} and the least of {Σ₁ⁿ cᵣpᵣ, 1 − c₁(1 − p₁), ⋮, 1 − cₙ(1 − pₙ)}.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(部分: 新しい下界は 7i/th_17_57_3_src、他の端は 7i/th_17_57_2_src にあり、一つの定理文には無い; 6a/th_17_57_3 の下界は別の式)</dd>
+<dt>Anchor words</dt><dd>so that e/h lies between</dd>
+<dt>Remarks</dt><dd>波括弧 (印刷 4 行) を 1 本</dd>
+<dt>Crop</dt><dd>folio 191, x 125&ndash;1335, y 812&ndash;1148 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-068">
+<h2>ch17-068</h2>
+<img src="img/ch17-068.png" alt="p₁ = p₂ = … = pₙ = 1," loading="lazy">
+<div class="meta">folio 191 (PDF p. 211) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>p₁ = p₂ = … = pₙ = 1,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(前提は e/(a₁ + … + aₙ)h = 1 の形 (hsuff) で 6a/th_17_57_4 に; 各 pᵣ = 1 は定理文に無い)</dd>
+<dt>Anchor words</dt><dd>Now consider the case in which p₁ = p₂ = … = pₙ = 1,</dd>
+<dt>Remarks</dt><dd>連鎖</dd>
+<dt>Crop</dt><dd>folio 191, x 125&ndash;1335, y 1148&ndash;1206 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-069">
+<h2>ch17-069</h2>
+<img src="img/ch17-069.png" alt="mᵣ = 1 ;" loading="lazy">
+<div class="meta">folio 191 (PDF p. 211) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>mᵣ = 1 ;</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57.4) の証明内)</dd>
+<dt>Anchor words</dt><dd>Then mᵣ = 1 ; so that</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 191, x 125&ndash;1335, y 1254&ndash;1311 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-070">
+<h2>ch17-070</h2>
+<img src="img/ch17-070.png" alt="e/h = Σ_{r=1}^{r=n} cᵣ − Σ_{r=2}^{r=n} cᵣ[1 − Π_{s=1}^{s=r−1}(1 − c_s)]" loading="lazy">
+<div class="meta">folio 191 (PDF p. 211) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/h = Σ_{r=1}^{r=n} cᵣ − Σ_{r=2}^{r=n} cᵣ[1 − Π_{s=1}^{s=r−1}(1 − c_s)]</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((57.4) の証明内; 第 2 行 ch17-071 が定理の形)</dd>
+<dt>Anchor words</dt><dd>so that</dd>
+<dt>Remarks</dt><dd>第 1 行</dd>
+<dt>Crop</dt><dd>folio 191, x 125&ndash;1335, y 1310&ndash;1420 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-071">
+<h2>ch17-071</h2>
+<img src="img/ch17-071.png" alt="= 1 − (1 − c₁)(1 − c₂) … (1 − cₙ)." loading="lazy">
+<div class="meta">folio 191 (PDF p. 211) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= 1 − (1 − c₁)(1 − c₂) … (1 − cₙ).</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6a/th_17_57_4 (prodComplement は Π(1 − cᵣ) の再帰形; 連鎖の頭 e/h = …)</dd>
+<dt>Anchor words</dt><dd>= 1 −</dd>
+<dt>Remarks</dt><dd>第 2 行</dd>
+<dt>Crop</dt><dd>folio 191, x 125&ndash;1335, y 1420&ndash;1477 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-072">
+<h2>ch17-072</h2>
+<img src="img/ch17-072.png" alt="e/h = Σcᵣpᵣ," loading="lazy">
+<div class="meta">folio 191 (PDF p. 211) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e/h = Σcᵣpᵣ,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(近似の言明; 6a/th_17_57_5 は区間評価)</dd>
+<dt>Anchor words</dt><dd>Then</dd>
+<dt>Remarks</dt><dd>「squares and products may be neglected」の近似</dd>
+<dt>Crop</dt><dd>folio 191, x 125&ndash;1335, y 1580&ndash;1650 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-073">
+<h2>ch17-073</h2>
+<img src="img/ch17-073.png" alt="aᵣ/eh = e/aᵣh . aᵣ/h ÷ e/h" loading="lazy">
+<div class="meta">folio 191 (PDF p. 211) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>aᵣ/eh = e/aᵣh . aᵣ/h ÷ e/h</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>5/th_17_57_6</dd>
+<dt>Anchor words</dt><dd>after the event has been observed is</dd>
+<dt>Remarks</dt><dd>分数</dd>
+<dt>Crop</dt><dd>folio 191, x 125&ndash;1335, y 1857&ndash;1973 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-074">
+<h2>ch17-074</h2>
+<img src="img/ch17-074.png" alt="= pᵣcᵣ ÷ e/h." loading="lazy">
+<div class="meta">folio 191 (PDF p. 211) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= pᵣcᵣ ÷ e/h.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_57_6 (pᵣ, cᵣ の代入)</dd>
+<dt>Anchor words</dt><dd>= pᵣcᵣ/(e/h).</dd>
+<dt>Remarks</dt><dd>連鎖の 2 行目 (分数)。「Boole’s problem IX.」</dd>
+<dt>Crop</dt><dd>folio 191, x 125&ndash;1335, y 1972&ndash;2081 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-075">
+<h2>ch17-075</h2>
+<img src="img/ch17-075.png" alt="p ; a ; n + 1ᵗʰ" loading="lazy">
+<div class="meta">folio 192 (PDF p. 212) &middot; &sect;2 &middot; Text &middot; Inline &middot; Bare symbol (not counted)</div>
+<dl>
+<dt>Transcription</dt><dd>p ; a ; n + 1ᵗʰ</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Bare symbol (not counted)">B</span>5/th_17_58; 7h/th_17_58_closed</dd>
+<dt>Anchor words</dt><dd>The probability of the occurrence of a certain natural phenomenon under given circumstances is p.</dd>
+<dt>Remarks</dt><dd>問題の言明 (式なし)。裸記号 (補則 1、数えない)</dd>
+<dt>Crop</dt><dd>folio 192, x 125&ndash;1335, y 175&ndash;504 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-076">
+<h2>ch17-076</h2>
+<img src="img/ch17-076.png" alt="xᵣ/h = p, t/h = a, xᵣ/th = 1," loading="lazy">
+<div class="meta">folio 192 (PDF p. 212) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>xᵣ/h = p, t/h = a, xᵣ/th = 1,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7h/q_value (前提 hxh, hta, hxt); 7h/th_17_58_closed (hta, hcert)</dd>
+<dt>Anchor words</dt><dd>we have</dd>
+<dt>Remarks</dt><dd>関係 3</dd>
+<dt>Crop</dt><dd>folio 192, x 125&ndash;1335, y 764&ndash;828 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-077">
+<h2>ch17-077</h2>
+<img src="img/ch17-077.png" alt="x_{n+1}/x₁ … xₙh = y_{n+1}." loading="lazy">
+<div class="meta">folio 192 (PDF p. 212) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>x_{n+1}/x₁ … xₙh = y_{n+1}.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 y_{n+1}; 7h は連鎖確率で表す)</dd>
+<dt>Anchor words</dt><dd>and we require</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 192, x 125&ndash;1335, y 828&ndash;895 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-078">
+<h2>ch17-078</h2>
+<img src="img/ch17-078.png" alt="x_s/xᵣ … x_t t̄h = x_s/t̄h,¹" loading="lazy">
+<div class="meta">folio 192 (PDF p. 212) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>x_s/xᵣ … x_t t̄h = x_s/t̄h,¹</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7h/th_17_58_closed (前提 hnegind: 右辺 x_s/t̄h を定数 q で)</dd>
+<dt>Anchor words</dt><dd>i.e.</dd>
+<dt>Remarks</dt><dd>脚注 1 (Boole の暗黙の仮定; 純粋帰納で扱う)</dd>
+<dt>Crop</dt><dd>folio 192, x 125&ndash;1335, y 1016&ndash;1086 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-079">
+<h2>ch17-079</h2>
+<img src="img/ch17-079.png" alt="x_s/t̄h = x_s t̄/h ÷ t̄/h = (x_s/h − x_s t/h) ÷ t̄/h = (p − a)/(1 − a)," loading="lazy">
+<div class="meta">folio 192 (PDF p. 212) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>x_s/t̄h = x_s t̄/h ÷ t̄/h = (x_s/h − x_s t/h) ÷ t̄/h = (p − a)/(1 − a),</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(連鎖の一部: 7h/q_value は両端 x_s/t̄h . (1 − a) = p − a の分母払い形のみで、中間項 x_s t̄/h ÷ t̄/h, (x_s/h − x_s t/h) ÷ t̄/h は定理文に無い)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>連鎖 (分数 3 つ)</dd>
+<dt>Crop</dt><dd>folio 192, x 125&ndash;1335, y 1085&ndash;1212 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-080">
+<h2>ch17-080</h2>
+<img src="img/ch17-080.png" alt="xᵣ/x₁ … x_{r−1}h = xᵣt/x₁ … x_{r−1}h + xᵣt̄/x₁ … x_{r−1}h" loading="lazy">
+<div class="meta">folio 192 (PDF p. 212) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>xᵣ/x₁ … x_{r−1}h = xᵣt/x₁ … x_{r−1}h + xᵣt̄/x₁ … x_{r−1}h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((58) の証明内)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>第 1 行</dd>
+<dt>Crop</dt><dd>folio 192, x 125&ndash;1335, y 1211&ndash;1278 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-081">
+<h2>ch17-081</h2>
+<img src="img/ch17-081.png" alt="= t/x₁ … x_{r−1}h + xᵣ/t̄x₁ … x_{r−1}h . t̄/x₁ … x_{r−1}h" loading="lazy">
+<div class="meta">folio 192 (PDF p. 212) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= t/x₁ … x_{r−1}h + xᵣ/t̄x₁ … x_{r−1}h . t̄/x₁ … x_{r−1}h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((58) の証明内)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>第 2 行</dd>
+<dt>Crop</dt><dd>folio 192, x 125&ndash;1335, y 1278&ndash;1345 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-082">
+<h2>ch17-082</h2>
+<img src="img/ch17-082.png" alt="= x₁ … x_{r−1}t/h ÷ x₁ … x_{r−1}/h + ((p − a)/(1 − a)) . (x₁ … x_{r−1}/t̄h . t̄/h ÷ x₁ … x_{r−1}/h)" loading="lazy">
+<div class="meta">folio 192 (PDF p. 212) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= x₁ … x_{r−1}t/h ÷ x₁ … x_{r−1}/h + ((p − a)/(1 − a)) . (x₁ … x_{r−1}/t̄h . t̄/h ÷ x₁ … x_{r−1}/h)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((58) の証明内)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>第 3 行 (分数)</dd>
+<dt>Crop</dt><dd>folio 192, x 125&ndash;1335, y 1344&ndash;1475 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-083">
+<h2>ch17-083</h2>
+<img src="img/ch17-083.png" alt="= a ÷ (y₁y₂ … y_{r−1}) + ((p − a)/(1 − a)) . (((p − a)/(1 − a))^{r−1}(1 − a) ÷ (y₁y₂ … y_{r−1}))," loading="lazy">
+<div class="meta">folio 192 (PDF p. 212) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= a ÷ (y₁y₂ … y_{r−1}) + ((p − a)/(1 − a)) . (((p − a)/(1 − a))^{r−1}(1 − a) ÷ (y₁y₂ … y_{r−1})),</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((58) の証明内)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>第 4 行 (分数)</dd>
+<dt>Crop</dt><dd>folio 192, x 125&ndash;1335, y 1474&ndash;1663 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-084">
+<h2>ch17-084</h2>
+<img src="img/ch17-084.png" alt="yᵣ = (a + (p − a)((p − a)/(1 − a))^{r−1}) ÷ (y₁y₂ … y_{r−1})." loading="lazy">
+<div class="meta">folio 192 (PDF p. 212) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>yᵣ = (a + (p − a)((p − a)/(1 − a))^{r−1}) ÷ (y₁y₂ … y_{r−1}).</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((58) の証明内; 閉形式は 7h/th_17_58_closed)</dd>
+<dt>Anchor words</dt><dd>i.e.</dd>
+<dt>Remarks</dt><dd>分数</dd>
+<dt>Crop</dt><dd>folio 192, x 125&ndash;1335, y 1662&ndash;1849 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-085">
+<h2>ch17-085</h2>
+<img src="img/ch17-085.png" alt="y₁ = p and y₂ = (a + (p − a)((p − a)/(1 − a))) ÷ y₁," loading="lazy">
+<div class="meta">folio 192 (PDF p. 212) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>y₁ = p and y₂ = (a + (p − a)((p − a)/(1 − a))) ÷ y₁,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((58) の証明内)</dd>
+<dt>Anchor words</dt><dd>Also</dd>
+<dt>Remarks</dt><dd>関係 2 (分数)</dd>
+<dt>Crop</dt><dd>folio 192, x 125&ndash;1335, y 1848&ndash;2015 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-086">
+<h2>ch17-086</h2>
+<img src="img/ch17-086.png" alt="y_{n+1} = (a + (p − a)((p − a)/(1 − a))ⁿ) ÷ (a + (p − a)((p − a)/(1 − a))^{n−1})." loading="lazy">
+<div class="meta">folio 193 (PDF p. 213) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>y_{n+1} = (a + (p − a)((p − a)/(1 − a))ⁿ) ÷ (a + (p − a)((p − a)/(1 − a))^{n−1}).</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7h/th_17_58_closed (閉形式 a + (1 − a)qⁿ から def_X_left 一段で比 y_{n+1} が出る; p − a = (1 − a)q の置換) — 補則 8 の既知の裁定 (一行で出る場合)</dd>
+<dt>Anchor words</dt><dd>so that</dd>
+<dt>Remarks</dt><dd>分数 (2 段)</dd>
+<dt>Crop</dt><dd>folio 193, x 125&ndash;1335, y 201&ndash;446 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-087">
+<h2>ch17-087</h2>
+<img src="img/ch17-087.png" alt="p = a," loading="lazy">
+<div class="meta">folio 193 (PDF p. 213) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>p = a,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7h/th_17_58_1_src (前提 hnegind: p = a を q = 0 の形で); 5/th_17_58_1 は別命題</dd>
+<dt>Anchor words</dt><dd>(58.1) If p = a, yₙ = 1 ;</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 193, x 125&ndash;1335, y 445&ndash;506 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-088">
+<h2>ch17-088</h2>
+<img src="img/ch17-087.png" alt="yₙ = 1 ;" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-087">ch17-087</a>.</div>
+<div class="meta">folio 193 (PDF p. 213) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>yₙ = 1 ;</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7h/th_17_58_1_src (結論: yₙ = 1 を連鎖確率の一致で、除算なし)</dd>
+<dt>Anchor words</dt><dd>yₙ = 1 ; for if an event can only occur</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 193, x 125&ndash;1335, y 445&ndash;506 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-089">
+<h2>ch17-089</h2>
+<img src="img/ch17-089.png" alt="y_{n+1} − yₙ = a(p − a)((p − a)/(1 − a))^{n−2}(1 − (p − a)/(1 − a)) ÷ ([a + (p − a)((p − a)/(1 − a))^{n−1}][a + (p − a)((p − a)/(1 − a))^{n−2}])," loading="lazy">
+<div class="meta">folio 193 (PDF p. 213) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>y_{n+1} − yₙ = a(p − a)((p − a)/(1 − a))^{n−2}(1 − (p − a)/(1 − a)) ÷ ([a + (p − a)((p − a)/(1 − a))^{n−1}][a + (p − a)((p − a)/(1 − a))^{n−2}]),</dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>7i/th_17_58_2_numerator, Erratum58.corrected_58_2_holds (修正形 (1 − q)²); 反駁 7i/Erratum58.printed_58_2_false</dd>
+<dt>Anchor words</dt><dd>(58.2) … (by easy algebra) ;</dd>
+<dt>Remarks</dt><dd>分数 (3 段)</dd>
+<dt>Crop</dt><dd>folio 193, x 125&ndash;1335, y 610&ndash;908 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-090">
+<h2>ch17-090</h2>
+<img src="img/ch17-090.png" alt="p is always &gt; a and &lt; 1." loading="lazy">
+<div class="meta">folio 193 (PDF p. 213) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>p is always &gt; a and &lt; 1.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7h/th_17_58_2_src (前提 ha, ha1, hq0, hq1: p &gt; a, p &lt; 1 を 0 &lt; q &lt; 1 に置換) — 補則 8 の既知の裁定</dd>
+<dt>Anchor words</dt><dd>and p is always &gt; a and &lt; 1.</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 193, x 125&ndash;1335, y 967&ndash;1024 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-091">
+<h2>ch17-091</h2>
+<img src="img/ch17-091.png" alt="(p − a)((p − a)/(1 − a))ʳ is positive and decreases as r increases," loading="lazy">
+<div class="meta">folio 193 (PDF p. 213) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>(p − a)((p − a)/(1 − a))ʳ is positive and decreases as r increases,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>So that (p − a)((p − a)/(1 − a))ʳ is positive and decreases as r increases,</dd>
+<dt>Remarks</dt><dd>関係は語</dd>
+<dt>Crop</dt><dd>folio 193, x 125&ndash;1335, y 1023&ndash;1139 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-092">
+<h2>ch17-092</h2>
+<img src="img/ch17-092.png" alt="∴ y_{n+1} &gt; yₙ." loading="lazy">
+<div class="meta">folio 193 (PDF p. 213) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ y_{n+1} &gt; yₙ.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7h/th_17_58_2_src (除算なし形 f(n+2) f(n) &gt; f(n+1)²)</dd>
+<dt>Anchor words</dt><dd>∴</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 193, x 125&ndash;1335, y 1139&ndash;1195 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-093">
+<h2>ch17-093</h2>
+<img src="img/ch17-093.png" alt="yₙ = 1 − ε," loading="lazy">
+<div class="meta">folio 193 (PDF p. 213) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>yₙ = 1 − ε,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 ε)</dd>
+<dt>Anchor words</dt><dd>As n increases yₙ = 1 − ε, where</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 193, x 125&ndash;1335, y 1195&ndash;1253 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-094">
+<h2>ch17-094</h2>
+<img src="img/ch17-094.png" alt="ε = (p − a)[1 − ((p − a)/(1 − a))] ((p − a)/(1 − a))^{n−2} ÷ (a + (p − a)((p − a)/(1 − a))^{n−2})," loading="lazy">
+<div class="meta">folio 193 (PDF p. 213) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ε = (p − a)[1 − ((p − a)/(1 − a))] ((p − a)/(1 − a))^{n−2} ÷ (a + (p − a)((p − a)/(1 − a))^{n−2}),</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((58.2) の証明内)</dd>
+<dt>Anchor words</dt><dd>where</dd>
+<dt>Remarks</dt><dd>分数 (2 段)</dd>
+<dt>Crop</dt><dd>folio 193, x 125&ndash;1335, y 1252&ndash;1482 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-095">
+<h2>ch17-095</h2>
+<img src="img/ch17-095.png" alt="ε &lt; η" loading="lazy">
+<div class="meta">folio 193 (PDF p. 213) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ε &lt; η</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(極限の言明; 7h は注記のみ)</dd>
+<dt>Anchor words</dt><dd>a value of n can be found such that ε &lt; η so long as a is not zero.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 193, x 125&ndash;1335, y 1546&ndash;1597 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-096">
+<h2>ch17-096</h2>
+<img src="img/ch17-096.png" alt="t/x₁ … xₙh = x₁ … xₙ/th . t/h ÷ x₁ … xₙ/h = a ÷ (y₁y₂ … yₙ)," loading="lazy">
+<div class="meta">folio 193 (PDF p. 213) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>t/x₁ … xₙh = x₁ … xₙ/th . t/h ÷ x₁ … xₙ/h = a ÷ (y₁y₂ … yₙ),</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(連鎖の一部: 7h/th_17_58_3_src は両端 t/x₁…xₙh . x₁…xₙ/h = a の分母払い形のみで、中間項 x₁…xₙ/th . t/h ÷ x₁…xₙ/h は定理文に無い)</dd>
+<dt>Anchor words</dt><dd>after n successful observations is</dd>
+<dt>Remarks</dt><dd>連鎖 (分数 2 つ)</dd>
+<dt>Crop</dt><dd>folio 193, x 125&ndash;1335, y 1703&ndash;1841 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-097">
+<h2>ch17-097</h2>
+<img src="img/ch17-097.png" alt="tₙ = a ÷ (a + (p − a)((p − a)/(1 − a))ⁿ)," loading="lazy">
+<div class="meta">folio 193 (PDF p. 213) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>tₙ = a ÷ (a + (p − a)((p − a)/(1 − a))ⁿ),</dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>7h/th_17_58_3_src と th_17_58_closed (修正形: 指数 n − 1); 反駁 7i/Erratum58.printed_58_3_false</dd>
+<dt>Anchor words</dt><dd>i.e.</dd>
+<dt>Remarks</dt><dd>分数 (2 段)</dd>
+<dt>Crop</dt><dd>folio 193, x 125&ndash;1335, y 1840&ndash;2009 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-098">
+<h2>ch17-098</h2>
+<img src="img/ch17-098.png" alt="tₙ = 1 − ε′, where ε′ = (p − a)((p − a)/(1 − a))ⁿ ÷ (a + (p − a)((p − a)/(1 − a))ⁿ)." loading="lazy">
+<div class="meta">folio 193 (PDF p. 213) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>tₙ = 1 − ε′, where ε′ = (p − a)((p − a)/(1 − a))ⁿ ÷ (a + (p − a)((p − a)/(1 − a))ⁿ).</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 ε′)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>関係 2 (分数 2 段)。folio 194 上段「So that tₙ approaches the limit unity as n increases」</dd>
+<dt>Crop</dt><dd>folio 193, x 125&ndash;1335, y 2008&ndash;2249 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-099">
+<h2>ch17-099</h2>
+<img src="img/ch17-099.png" alt="b₁, … bᵣ … bₙ ; aᵣ ; xᵣ ; yᵣ" loading="lazy">
+<div class="meta">folio 194 (PDF p. 214) &middot; &sect;4 &middot; Text &middot; Inline &middot; Bare symbol (not counted)</div>
+<dl>
+<dt>Transcription</dt><dd>b₁, … bᵣ … bₙ ; aᵣ ; xᵣ ; yᵣ</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Bare symbol (not counted)">B</span>9x/IProp (a, x), ℝ (y)</dd>
+<dt>Anchor words</dt><dd>Let us assume that the real value of the quantity is either b₁, … bᵣ … bₙ, and let aᵣ represent the conclusion</dd>
+<dt>Remarks</dt><dd>記号の導入。裸記号の並び (補則 1、数えない)</dd>
+<dt>Crop</dt><dd>folio 194, x 125&ndash;1335, y 1418&ndash;1619 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-100">
+<h2>ch17-100</h2>
+<img src="img/ch17-100.png" alt="a_s/x_ph = x_p/a_sh . a_s/h ÷ Σ_{r=1}^{r=n} x_p/aᵣh . aᵣ/h" loading="lazy">
+<div class="meta">folio 194 (PDF p. 214) &middot; &sect;4 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a_s/x_ph = x_p/a_sh . a_s/h ÷ Σ_{r=1}^{r=n} x_p/aᵣh . aᵣ/h</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>9x/th_17_1911_U1_src</dd>
+<dt>Anchor words</dt><dd>The application of the theorem of inverse probability yields the following result :</dd>
+<dt>Remarks</dt><dd>分数。Σ の上下に r = n, r = 1</dd>
+<dt>Crop</dt><dd>folio 194, x 125&ndash;1335, y 1771&ndash;1937 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-101">
+<h2>ch17-101</h2>
+<img src="img/ch17-101.png" alt="y₁ … y_m" loading="lazy">
+<div class="meta">folio 194 (PDF p. 214) &middot; &sect;4 &middot; Text &middot; Inline &middot; Bare symbol (not counted)</div>
+<dl>
+<dt>Transcription</dt><dd>y₁ … y_m</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Bare symbol (not counted)">B</span>9x/ℝ (y)</dd>
+<dt>Anchor words</dt><dd>Next, let us suppose that a number of measurements y₁ … y_m</dd>
+<dt>Remarks</dt><dd>裸記号の並び (補則 1、数えない)</dd>
+<dt>Crop</dt><dd>folio 194, x 125&ndash;1335, y 2095&ndash;2148 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-102">
+<h2>ch17-102</h2>
+<img src="img/ch17-102.png" alt="a_s/x₁x₂ … x_mh." loading="lazy">
+<div class="meta">folio 195 (PDF p. 215) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>a_s/x₁x₂ … x_mh.</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/th_17_1911_U2_src (左辺 PrI (a s) (iand (iconj m x) h))</dd>
+<dt>Anchor words</dt><dd>We require the value of a_s/x₁x₂ … x_mh. As before,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 195, x 125&ndash;1335, y 262&ndash;321 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-103">
+<h2>ch17-103</h2>
+<img src="img/ch17-103.png" alt="a_s/x₁x₂ … x_mh = x₁ … x_m/a_sh . a_s/h ÷ Σ_{r=1}^{r=x} x₁ … x_m/aᵣh . aᵣ/h." loading="lazy">
+<div class="meta">folio 195 (PDF p. 215) &middot; &sect;4 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a_s/x₁x₂ … x_mh = x₁ … x_m/a_sh . a_s/h ÷ Σ_{r=1}^{r=x} x₁ … x_m/aᵣh . aᵣ/h.</dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>9x/th_17_1911_U2_corrected (修正形: 上限 r = n); 9x/th_17_1911_U2_src は印刷の上限 r = x の形が部分和 = 全和のときに限ることを示す</dd>
+<dt>Anchor words</dt><dd>As before,</dd>
+<dt>Remarks</dt><dd>Σ の上限が「r = x」(r = n の誤植; 9x ヘッダ F195 U2) — 所見候補 (1911 からの継承)</dd>
+<dt>Crop</dt><dd>folio 195, x 125&ndash;1335, y 321&ndash;494 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-104">
+<h2>ch17-104</h2>
+<img src="img/ch17-104.png" alt="xᵣ/x_p … x_saᵣh = xᵣ/aᵣh." loading="lazy">
+<div class="meta">folio 195 (PDF p. 215) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>xᵣ/x_p … x_saᵣh = xᵣ/aᵣh.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/IndepGiven (def は先頭と残りの連言の連鎖形); 定理 9x/th_17_1911_U4_src の前提 hind</dd>
+<dt>Anchor words</dt><dd>We assume, in fact, that xᵣ/x_p … x_saᵣh = xᵣ/aᵣh.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 195, x 125&ndash;1335, y 803&ndash;852 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-105">
+<h2>ch17-105</h2>
+<img src="img/ch17-105.png" alt="x₁ … x_m/a_sh = Π_{q=1}^{q=m} x_q/a_sh." loading="lazy">
+<div class="meta">folio 195 (PDF p. 215) &middot; &sect;4 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>x₁ … x_m/a_sh = Π_{q=1}^{q=m} x_q/a_sh.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_U4_src (一般の前提 H に a_s ∧ h を代入; iconj と ∏ は連言と Π の記法)</dd>
+<dt>Anchor words</dt><dd>it follows from the ordinary rule for the multiplication of independent probabilities that</dd>
+<dt>Remarks</dt><dd>Π の上下に q = m, q = 1</dd>
+<dt>Crop</dt><dd>folio 195, x 125&ndash;1335, y 1905&ndash;2021 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-106">
+<h2>ch17-106</h2>
+<img src="img/ch17-106.png" alt="a_s/x₁x₂ … x_mh = a_s/h . Π_{q=1}^{q=m} x_q/a_sh ÷ Σ_{r=1}^{r=n}[Π_{q=1}^{q=m} x_q/aᵣh . aᵣ/h]." loading="lazy">
+<div class="meta">folio 195 (PDF p. 215) &middot; &sect;4 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a_s/x₁x₂ … x_mh = a_s/h . Π_{q=1}^{q=m} x_q/a_sh ÷ Σ_{r=1}^{r=n}[Π_{q=1}^{q=m} x_q/aᵣh . aᵣ/h].</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>9x/th_17_1911_U5_src</dd>
+<dt>Anchor words</dt><dd>Hence</dd>
+<dt>Remarks</dt><dd>分数</dd>
+<dt>Crop</dt><dd>folio 195, x 125&ndash;1335, y 2021&ndash;2251 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-107">
+<h2>ch17-107</h2>
+<img src="img/ch17-107.png" alt="a₁/h = a₂/h = … = aₙ/h." loading="lazy">
+<div class="meta">folio 196 (PDF p. 216) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a₁/h = a₂/h = … = aₙ/h.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_U6_src (前提 hU6: 各 aᵣ/h が共通値 c に等しい形)</dd>
+<dt>Anchor words</dt><dd>Let us assume that a₁/h = a₂/h = … = aₙ/h.</dd>
+<dt>Remarks</dt><dd>連鎖</dd>
+<dt>Crop</dt><dd>folio 196, x 125&ndash;1335, y 463&ndash;519 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-108">
+<h2>ch17-108</h2>
+<img src="img/ch17-108.png" alt="Π_{q=1}^{q=m} x_q/a_sh" loading="lazy">
+<div class="meta">folio 196 (PDF p. 216) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>Π_{q=1}^{q=m} x_q/a_sh</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/th_17_1911_U7_src (argmax)</dd>
+<dt>Anchor words</dt><dd>We require, therefore, the value of b_s, which makes the expression Π x_q/a_sh a maximum.</dd>
+<dt>Remarks</dt><dd>「a maximum」は語</dd>
+<dt>Crop</dt><dd>folio 196, x 125&ndash;1335, y 670&ndash;771 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-109">
+<h2>ch17-109</h2>
+<img src="img/ch17-109.png" alt="x_q/a_sh = f(y_q, b_s)," loading="lazy">
+<div class="meta">folio 196 (PDF p. 216) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>x_q/a_sh = f(y_q, b_s),</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(U8 は 9x の境界記録に「仮定 hf」として文章で記されるだけで、定理文に現れない)</dd>
+<dt>Anchor words</dt><dd>We assume, that is to say, x_q/a_sh = f(y_q, b_s), and we have to find the value of b_s, namely y,</dd>
+<dt>Remarks</dt><dd>9x の境界記録 (hf) と実際の定理文の食い違い — 所見候補</dd>
+<dt>Crop</dt><dd>folio 196, x 125&ndash;1335, y 1069&ndash;1123 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-110">
+<h2>ch17-110</h2>
+<img src="img/ch17-110.png" alt="Π_{q=1}^{q=m} f(y_q, y)" loading="lazy">
+<div class="meta">folio 196 (PDF p. 216) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>Π_{q=1}^{q=m} f(y_q, y)</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/IsMostProbable</dd>
+<dt>Anchor words</dt><dd>which makes Π f(y_q, y) a maximum.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 196, x 125&ndash;1335, y 1123&ndash;1222 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-111">
+<h2>ch17-111</h2>
+<img src="img/ch17-111.png" alt="Σ_{q=1}^{q=m} f′(y_q, y) ÷ f(y_q, y) = 0,²" loading="lazy">
+<div class="meta">folio 196 (PDF p. 216) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Σ_{q=1}^{q=m} f′(y_q, y) ÷ f(y_q, y) = 0,²</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>9x/th_17_1911_U9_src (結論)</dd>
+<dt>Anchor words</dt><dd>we have Σ f′(y_q,y)/f(y_q,y) = 0,² where</dd>
+<dt>Remarks</dt><dd>脚注 2 (f(y_q, y) は 0 にならない)</dd>
+<dt>Crop</dt><dd>folio 196, x 125&ndash;1335, y 1269&ndash;1378 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-112">
+<h2>ch17-112</h2>
+<img src="img/ch17-111.png" alt="f′ = df/dy." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-111">ch17-111</a>.</div>
+<div class="meta">folio 196 (PDF p. 216) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f′ = df/dy.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_U9_src (前提 hder: f′ = df/dy を HasDerivAt で)</dd>
+<dt>Anchor words</dt><dd>where f′ = df/dy.</dd>
+<dt>Remarks</dt><dd>分数</dd>
+<dt>Crop</dt><dd>folio 196, x 125&ndash;1335, y 1269&ndash;1378 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-113">
+<h2>ch17-113</h2>
+<img src="img/ch17-113.png" alt="Σ f′_q/f_q = 0." loading="lazy">
+<div class="meta">folio 196 (PDF p. 216) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Σ f′_q/f_q = 0.</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>9x/th_17_1911_U9_src (結論の略記)</dd>
+<dt>Anchor words</dt><dd>written for brevity in the form Σ f′_q/f_q = 0.</dd>
+<dt>Remarks</dt><dd>分数</dd>
+<dt>Crop</dt><dd>folio 196, x 125&ndash;1335, y 1377&ndash;1483 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-114">
+<h2>ch17-114</h2>
+<img src="img/ch17-114.png" alt="e_q = b_s − y_q." loading="lazy">
+<div class="meta">folio 196 (PDF p. 216) &middot; &sect;4 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>e_q = b_s − y_q.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(9x は N1 を文言加筆として形式化対象外とし、脚注の式は定理文に無い)</dd>
+<dt>Quoted from</dt><dd>Gauss</dd>
+<dt>Anchor words</dt><dd>where e_q is the error and e_q = b_s − y_q.</dd>
+<dt>Remarks</dt><dd>Gauss の仮定 (誤差のみの関数)</dd>
+<dt>Crop</dt><dd>folio 196, x 125&ndash;1335, y 1969&ndash;2005 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-115">
+<h2>ch17-115</h2>
+<img src="img/ch17-115.png" alt="f(y_q, y)" loading="lazy">
+<div class="meta">folio 196 (PDF p. 216) &middot; &sect;4 &middot; Footnote 2 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>f(y_q, y)</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/th_17_1911_U9_src (前提 hpos: f ≠ 0)</dd>
+<dt>Anchor words</dt><dd>none of the expressions f(y_q,y) can vanish.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 196, x 125&ndash;1335, y 2180&ndash;2241 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-116">
+<h2>ch17-116</h2>
+<img src="img/ch17-116.png" alt="f(y_q, y)" loading="lazy">
+<div class="meta">folio 197 (PDF p. 217) &middot; &sect;5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>f(y_q, y)</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/th_17_1911_U9_src (実関数 f)</dd>
+<dt>Anchor words</dt><dd>For the law of error determines the form of f(y_q,y).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 197, x 125&ndash;1335, y 383&ndash;434 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-117">
+<h2>ch17-117</h2>
+<img src="img/ch17-117.png" alt="Σ f′_q/f_q = 0" loading="lazy">
+<div class="meta">folio 197 (PDF p. 217) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Σ f′_q/f_q = 0</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>9x/th_17_1911_U9_src (結論の略記)</dd>
+<dt>Reprint of</dt><dd><a href="#ch17-113">ch17-113</a></dd>
+<dt>Anchor words</dt><dd>And the form of f(y_q,y) determines the algebraic relation Σ f′_q/f_q = 0 between the measurements</dd>
+<dt>Remarks</dt><dd>再掲</dd>
+<dt>Crop</dt><dd>folio 197, x 125&ndash;1335, y 434&ndash;541 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-118">
+<h2>ch17-118</h2>
+<img src="img/ch17-118.png" alt="f(y_q, y) ; y_q ; y" loading="lazy">
+<div class="meta">folio 197 (PDF p. 217) &middot; &sect;5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>f(y_q, y) ; y_q ; y</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/th_17_1911_U9_src (実関数 f)</dd>
+<dt>Anchor words</dt><dd>It may be well to repeat that f(y_q,y) denotes the probability</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 197, x 125&ndash;1335, y 591&ndash;741 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-119">
+<h2>ch17-119</h2>
+<img src="img/ch17-119.png" alt="Σ f′_q/f_q = 0 must be equivalent to Σ(y − y_q) = 0," loading="lazy">
+<div class="meta">folio 197 (PDF p. 217) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Σ f′_q/f_q = 0 must be equivalent to Σ(y − y_q) = 0,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_5_src (f_q に (5) を代入、Σ f′_q/f_q を Σ log f_q の微分で); 9x/th_17_1911_i_2_src は m = 2, 3 の場合を前提に置く</dd>
+<dt>Anchor words</dt><dd>(i.) …</dd>
+<dt>Remarks</dt><dd>関係 2 (「must be equivalent to」は語だが両辺が式; 2 本に分けず 1 本 — 裁定事項)</dd>
+<dt>Crop</dt><dd>folio 197, x 125&ndash;1335, y 998&ndash;1114 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-120">
+<h2>ch17-120</h2>
+<img src="img/ch17-120.png" alt="y must equal (1/m) Σ_{q=1}^{q=m} y_q." loading="lazy">
+<div class="meta">folio 197 (PDF p. 217) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>y must equal (1/m) Σ_{q=1}^{q=m} y_q.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_i_1_src (def amean は (Σ y_q)/m の形)</dd>
+<dt>Anchor words</dt><dd>since the most probable value y must equal</dd>
+<dt>Remarks</dt><dd>「must equal」は語 (= の語形)</dd>
+<dt>Crop</dt><dd>folio 197, x 125&ndash;1335, y 1113&ndash;1216 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-121">
+<h2>ch17-121</h2>
+<img src="img/ch17-121.png" alt="∴ f′_q/f_q = φ″(y)(y − y_q)" loading="lazy">
+<div class="meta">folio 197 (PDF p. 217) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ f′_q/f_q = φ″(y)(y − y_q)</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_i_2_src (φ″(y) を t ごとの定数 c で)</dd>
+<dt>Anchor words</dt><dd>∴ … where φ″(y) is some function which is not zero and is independent of y_q.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 197, x 125&ndash;1335, y 1216&ndash;1326 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-122">
+<h2>ch17-122</h2>
+<img src="img/ch17-122.png" alt="log f_q = ∫φ″(y)(y − y_q)dy + ψ(y_q)" loading="lazy">
+<div class="meta">folio 197 (PDF p. 217) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>log f_q = ∫φ″(y)(y − y_q)dy + ψ(y_q)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(log f_q の積分の行は定理文に無い; 9x/th_17_1911_i_3_src は次行 ch17-123 の原始関数の検算)</dd>
+<dt>Anchor words</dt><dd>Integrating,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 197, x 125&ndash;1335, y 1443&ndash;1502 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-123">
+<h2>ch17-123</h2>
+<img src="img/ch17-123.png" alt="= φ′(y)(y − y_q) − φ(y) + ψ(y_q)." loading="lazy">
+<div class="meta">folio 197 (PDF p. 217) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= φ′(y)(y − y_q) − φ(y) + ψ(y_q).</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_i_3_src (∫φ″(y)(y − y_q)dy = φ′(y)(y − y_q) − φ(y) を HasDerivAt で)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>連鎖の 2 行目</dd>
+<dt>Crop</dt><dd>folio 197, x 125&ndash;1335, y 1559&ndash;1631 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-124">
+<h2>ch17-124</h2>
+<img src="img/ch17-124.png" alt="f_q = e^{φ′(y)(y − y_q) − φ(y) + ψ(y_q)}." loading="lazy">
+<div class="meta">folio 197 (PDF p. 217) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = e^{φ′(y)(y − y_q) − φ(y) + ψ(y_q)}.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_5_src (定理文の中の法則の式; A を外に出し ψ に吸収)</dd>
+<dt>Anchor words</dt><dd>So that</dd>
+<dt>Remarks</dt><dd>A なしで印刷 ((5) F204 は A あり; 9x ヘッダ F197 (i)-4)</dd>
+<dt>Crop</dt><dd>folio 197, x 125&ndash;1335, y 1631&ndash;1717 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-125">
+<h2>ch17-125</h2>
+<img src="img/ch17-125.png" alt="φ(y) = − k²y²" loading="lazy">
+<div class="meta">folio 197 (PDF p. 217) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>φ(y) = − k²y²</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: 9x/th_17_1911_i_5_src は φ を −k²t² に置いた恒等式で、φ(y) = −k²y² は定理文に現れない)</dd>
+<dt>Anchor words</dt><dd>If we put φ(y) = − k²y² and</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 197, x 125&ndash;1335, y 1889&ndash;1939 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-126">
+<h2>ch17-126</h2>
+<img src="img/ch17-125.png" alt="ψ(y_q) = − k²y_q² + log A," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-125">ch17-125</a>.</div>
+<div class="meta">folio 197 (PDF p. 217) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ψ(y_q) = − k²y_q² + log A,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: 9x/th_17_1911_i_5_src は ψ を −k²y_q² に置き log A を外に出す)</dd>
+<dt>Anchor words</dt><dd>and ψ(y_q) = − k²y_q² + log A, we obtain</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 197, x 125&ndash;1335, y 1889&ndash;1939 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-127">
+<h2>ch17-127</h2>
+<img src="img/ch17-127.png" alt="f_q = Ae^{−k²(y − y_q)²}," loading="lazy">
+<div class="meta">folio 197 (PDF p. 217) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{−k²(y − y_q)²},</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_i_5_src (f_q = e^{(5) の指数} に φ, ψ を代入した指数の恒等式)</dd>
+<dt>Anchor words</dt><dd>we obtain f_q = Ae^{−k²(y−y_q)²}, the form normally assumed.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 197, x 125&ndash;1335, y 1939&ndash;1988 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-128">
+<h2>ch17-128</h2>
+<img src="img/ch17-128.png" alt="= Ae^{−k²z_q²}," loading="lazy">
+<div class="meta">folio 197 (PDF p. 217) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= Ae^{−k²z_q²},</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_i_5_law (z_q を ∣y − y_q∣ で)</dd>
+<dt>Anchor words</dt><dd>= Ae^{−k²z_q²}, where z_q is the absolute magnitude of the error</dd>
+<dt>Remarks</dt><dd>連鎖の続き (行頭)</dd>
+<dt>Crop</dt><dd>folio 197, x 125&ndash;1335, y 1988&ndash;2037 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-129">
+<h2>ch17-129</h2>
+<img src="img/ch17-129.png" alt="Be^{θ(y − y_q)²}," loading="lazy">
+<div class="meta">folio 198 (PDF p. 218) &middot; &sect;5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>Be^{θ(y − y_q)²},</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/th_17_1911_i_6_src ((i)-6)</dd>
+<dt>Anchor words</dt><dd>In this case f_q must be of the form Be^{θ(y−y_q)²},</dd>
+<dt>Remarks</dt><dd>「must be of the form」は語</dd>
+<dt>Crop</dt><dd>folio 198, x 125&ndash;1335, y 332&ndash;393 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-130">
+<h2>ch17-130</h2>
+<img src="img/ch17-130.png" alt="∴ φ′(y)(y − y_q) − φ(y) + ψ(y_q) = θ(y − y_q)²." loading="lazy">
+<div class="meta">folio 198 (PDF p. 218) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ φ′(y)(y − y_q) − φ(y) + ψ(y_q) = θ(y − y_q)².</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>9x/th_17_1911_i_6_src (前提 hid)</dd>
+<dt>Anchor words</dt><dd>∴</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 198, x 125&ndash;1335, y 393&ndash;456 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-131">
+<h2>ch17-131</h2>
+<img src="img/ch17-131.png" alt="φ″(y) = 2 (d/d(y − y_q)²) θ(y − y_q)²." loading="lazy">
+<div class="meta">folio 198 (PDF p. 218) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>φ″(y) = 2 (d/d(y − y_q)²) θ(y − y_q)².</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>9x/th_17_1911_i_6_src (結論 第 1 成分; θ′ は d/d(y − y_q)² の記法、y ≠ y_q を補う)</dd>
+<dt>Anchor words</dt><dd>Differentiating with respect to y,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 198, x 125&ndash;1335, y 515&ndash;632 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-132">
+<h2>ch17-132</h2>
+<img src="img/ch17-132.png" alt="∴ (d/d(y − y_q)²) θ(y − y_q)² = − k²" loading="lazy">
+<div class="meta">folio 198 (PDF p. 218) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ (d/d(y − y_q)²) θ(y − y_q)² = − k²</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(9x/th_17_1911_i_6_src 第 2 成分は θ′ が定数であることのみで、値 −k² は定理文に無い)</dd>
+<dt>Anchor words</dt><dd>∴ … = − k² where k is constant ; integrating,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 198, x 125&ndash;1335, y 685&ndash;797 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-133">
+<h2>ch17-133</h2>
+<img src="img/ch17-133.png" alt="θ(y − y_q)² = − k²(y − y_q)² + log C" loading="lazy">
+<div class="meta">folio 198 (PDF p. 218) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>θ(y − y_q)² = − k²(y − y_q)² + log C</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_i_6_integrate (−k² を c、log C を θ 0 で)</dd>
+<dt>Anchor words</dt><dd>integrating, θ(y−y_q)² = − k²(y−y_q)² + log C and we have</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 198, x 125&ndash;1335, y 796&ndash;855 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-134">
+<h2>ch17-134</h2>
+<img src="img/ch17-133.png" alt="f_q = Ae^{−k²(y − y_q)²}" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-133">ch17-133</a>.</div>
+<div class="meta">folio 198 (PDF p. 218) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{−k²(y − y_q)²}</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_i_5_src (ch17-127 と同じ関係; 9x/th_17_1911_i_6_integrate は θ の一次式まで)</dd>
+<dt>Reprint of</dt><dd><a href="#ch17-127">ch17-127</a></dd>
+<dt>Anchor words</dt><dd>and we have f_q = Ae^{−k²(y−y_q)²} (where A = BC).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 198, x 125&ndash;1335, y 796&ndash;855 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-135">
+<h2>ch17-135</h2>
+<img src="img/ch17-135.png" alt="A = BC" loading="lazy">
+<div class="meta">folio 198 (PDF p. 218) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>A = BC</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 A = BC)</dd>
+<dt>Anchor words</dt><dd>(where A = BC).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 198, x 125&ndash;1335, y 855&ndash;898 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-136">
+<h2>ch17-136</h2>
+<img src="img/ch17-136.png" alt="Σ f′_q/f_q = 0 must be equivalent to Π_{q=1}^{q=m} y_q = yᵐ," loading="lazy">
+<div class="meta">folio 198 (PDF p. 218) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Σ f′_q/f_q = 0 must be equivalent to Π_{q=1}^{q=m} y_q = yᵐ,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(一つの定理文には無い: 9x/th_17_1911_7_src は Σ log (y_q/y) = 0 との同値、ii_1_src は Σ log と Π y_q = yᵐ の同値で、二つを合わせて出る)</dd>
+<dt>Anchor words</dt><dd>In this case Σ f′_q/f_q = 0 must be equivalent to Π y_q = yᵐ, i.e. to</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 198, x 125&ndash;1335, y 1004&ndash;1118 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-137">
+<h2>ch17-137</h2>
+<img src="img/ch17-137.png" alt="Σ log (y_q/y) = 0." loading="lazy">
+<div class="meta">folio 198 (PDF p. 218) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Σ log (y_q/y) = 0.</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>9x/th_17_1911_ii_1_src</dd>
+<dt>Anchor words</dt><dd>i.e. to</dd>
+<dt>Remarks</dt><dd>分数</dd>
+<dt>Crop</dt><dd>folio 198, x 125&ndash;1335, y 1118&ndash;1216 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-138">
+<h2>ch17-138</h2>
+<img src="img/ch17-138.png" alt="f_q = A e^{φ′(y) log (y_q/y) + ∫(φ′(y)/y)dy + ψ(y_q)}." loading="lazy">
+<div class="meta">folio 198 (PDF p. 218) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = A e^{φ′(y) log (y_q/y) + ∫(φ′(y)/y)dy + ψ(y_q)}.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_7_src (定理文の中の法則の式; ∫(φ′(y)/y)dy を原始関数 Φ で)</dd>
+<dt>Anchor words</dt><dd>Proceeding as before, we find that the law of error is</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 198, x 125&ndash;1335, y 1267&ndash;1340 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-139">
+<h2>ch17-139</h2>
+<img src="img/ch17-139.png" alt="φ′(y) log (y_q/y) + ∫(φ′(y)/y) dy + ψ(y_q) = φ(y − y_q)²" loading="lazy">
+<div class="meta">folio 198 (PDF p. 218) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>φ′(y) log (y_q/y) + ∫(φ′(y)/y) dy + ψ(y_q) = φ(y − y_q)²</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_ii_3_src (前提 hid; ∫ を Φ、右辺の φ を θ で — T)</dd>
+<dt>Anchor words</dt><dd>For we must have</dd>
+<dt>Remarks</dt><dd>右辺の φ は左辺の φ と別物 (記号の使い回し; 9x ヘッダ F198 (ii)-3)</dd>
+<dt>Crop</dt><dd>folio 198, x 125&ndash;1335, y 1494&ndash;1607 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-140">
+<h2>ch17-140</h2>
+<img src="img/ch17-140.png" alt="or φ″(y) log (y_q/y) = (d/dy) φ(y − y_q)²," loading="lazy">
+<div class="meta">folio 198 (PDF p. 218) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>or φ″(y) log (y_q/y) = (d/dy) φ(y − y_q)²,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_ii_3_src (結論: d/dy を θ′ と連鎖律で展開); ii_3_impossible は「which is impossible」</dd>
+<dt>Anchor words</dt><dd>or … which is impossible.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 198, x 125&ndash;1335, y 1606&ndash;1716 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-141">
+<h2>ch17-141</h2>
+<img src="img/ch17-141.png" alt="φ′(y) = − ky," loading="lazy">
+<div class="meta">folio 198 (PDF p. 218) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>φ′(y) = − ky,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: 9x/th_17_1911_ii_4_src は φ′ を −kt に置いた形)</dd>
+<dt>Anchor words</dt><dd>seems to be obtained by putting φ′(y) = − ky, ψ(y_q) = 0.</dd>
+<dt>Remarks</dt><dd>k の 1 乗 ((8) F205 と F200 は k²; 9x ヘッダ F198 (ii)-4) — 所見候補 (1921 内部の不整合)</dd>
+<dt>Crop</dt><dd>folio 198, x 125&ndash;1335, y 1815&ndash;1868 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-142">
+<h2>ch17-142</h2>
+<img src="img/ch17-141.png" alt="ψ(y_q) = 0." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-141">ch17-141</a>.</div>
+<div class="meta">folio 198 (PDF p. 218) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ψ(y_q) = 0.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: 9x/th_17_1911_ii_4_src は ψ を 0 に置いた形)</dd>
+<dt>Anchor words</dt><dd>ψ(y_q) = 0. This gives</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 198, x 125&ndash;1335, y 1815&ndash;1868 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-143">
+<h2>ch17-143</h2>
+<img src="img/ch17-143.png" alt="f_q = A(y/y_q)^{ky} e^{−ky}." loading="lazy">
+<div class="meta">folio 198 (PDF p. 218) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = A(y/y_q)^{ky} e^{−ky}.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_ii_4_src ((7) に代入した指数形 = 印刷の冪の形)</dd>
+<dt>Anchor words</dt><dd>This gives f_q = A(y/y_q)^{ky} e^{−ky}.</dd>
+<dt>Remarks</dt><dd>分数</dd>
+<dt>Crop</dt><dd>folio 198, x 125&ndash;1335, y 1868&ndash;1977 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-144">
+<h2>ch17-144</h2>
+<img src="img/ch17-144.png" alt="f(l_q, l) = Ae^{−k²(l_q − l)²}." loading="lazy">
+<div class="meta">folio 199 (PDF p. 219) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f(l_q, l) = Ae^{−k²(l_q − l)²}.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: l = log y; 定理文は ch17-145・146 の形)</dd>
+<dt>Anchor words</dt><dd>Then, if l_q, etc., obey the normal law of error, f(l_q,l) = Ae^{−k²(l_q−l)²}.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 199, x 125&ndash;1335, y 758&ndash;813 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-145">
+<h2>ch17-145</h2>
+<img src="img/ch17-145.png" alt="f(y_q, y) = Ae^{−k²(log y_q − log y)²}" loading="lazy">
+<div class="meta">folio 199 (PDF p. 219) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f(y_q, y) = Ae^{−k²(log y_q − log y)²}</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_9_src (定理文の左辺の法則の式)</dd>
+<dt>Anchor words</dt><dd>Hence the law of error for y_q, etc., is determined by</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 199, x 125&ndash;1335, y 868&ndash;926 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-146">
+<h2>ch17-146</h2>
+<img src="img/ch17-146.png" alt="= Ae^{−k²(log (y_q/y))²}," loading="lazy">
+<div class="meta">folio 199 (PDF p. 219) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= Ae^{−k²(log (y_q/y))²},</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>9x/th_17_1911_9_src (連鎖の等号)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>連鎖の 2 行目</dd>
+<dt>Crop</dt><dd>folio 199, x 125&ndash;1335, y 925&ndash;992 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-147">
+<h2>ch17-147</h2>
+<img src="img/ch17-147.png" alt="ψ(y_q) = − k²(log y_q)²," loading="lazy">
+<div class="meta">folio 199 (PDF p. 219) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ψ(y_q) = − k²(log y_q)²,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: 9x/th_17_1911_ii_6_src は ψ を −k²(log y_q)² に置いた形)</dd>
+<dt>Anchor words</dt><dd>For if we put ψ(y_q) = − k²(log y_q)², and</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 199, x 125&ndash;1335, y 1250&ndash;1301 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-148">
+<h2>ch17-148</h2>
+<img src="img/ch17-148.png" alt="φ′(y) = 2k² log y," loading="lazy">
+<div class="meta">folio 199 (PDF p. 219) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>φ′(y) = 2k² log y,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: 9x/th_17_1911_ii_6_src は φ′ を 2k² log y に置いた形)</dd>
+<dt>Anchor words</dt><dd>and φ′(y) = 2k² log y, we have</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 199, x 125&ndash;1335, y 1301&ndash;1357 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-149">
+<h2>ch17-149</h2>
+<img src="img/ch17-149.png" alt="f_q = Ae^{2k² log y log (y_q/y) + ∫2k² (log y/y) dy − k²(log y_q)²}" loading="lazy">
+<div class="meta">folio 199 (PDF p. 219) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{2k² log y log (y_q/y) + ∫2k² (log y/y) dy − k²(log y_q)²}</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_ii_6_src, th_17_1911_ii_6_int (∫ を HasDerivAt で評価した形)</dd>
+<dt>Anchor words</dt><dd>we have</dd>
+<dt>Remarks</dt><dd>第 1 行</dd>
+<dt>Crop</dt><dd>folio 199, x 125&ndash;1335, y 1357&ndash;1431 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-150">
+<h2>ch17-150</h2>
+<img src="img/ch17-150.png" alt="= Ae^{2k² log y log y_q − 2k²(log y)² + k²(log y)² − k²(log y_q)²}" loading="lazy">
+<div class="meta">folio 199 (PDF p. 219) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= Ae^{2k² log y log y_q − 2k²(log y)² + k²(log y)² − k²(log y_q)²}</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(連鎖の中間項: 9x/th_17_1911_ii_6_src は第 1 行から第 3 行への等式のみ)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>第 2 行</dd>
+<dt>Crop</dt><dd>folio 199, x 125&ndash;1335, y 1430&ndash;1481 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-151">
+<h2>ch17-151</h2>
+<img src="img/ch17-151.png" alt="= Ae^{−k²(log (y_q/y))²}." loading="lazy">
+<div class="meta">folio 199 (PDF p. 219) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>= Ae^{−k²(log (y_q/y))²}.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_ii_6_src (連鎖の頭 = 第 3 行; ∫ を評価済み)</dd>
+<dt>Reprint of</dt><dd><a href="#ch17-146">ch17-146</a></dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>第 3 行</dd>
+<dt>Crop</dt><dd>folio 199, x 125&ndash;1335, y 1480&ndash;1558 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-152">
+<h2>ch17-152</h2>
+<img src="img/ch17-152.png" alt="z = F(y)," loading="lazy">
+<div class="meta">folio 199 (PDF p. 219) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>z = F(y),</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(9x は (ii)-7 を形式化対象外とする)</dd>
+<dt>Quoted from</dt><dd>Kapteyn</dd>
+<dt>Anchor words</dt><dd>which are given by z = F(y), and that the frequency curve of these quantities z is normal.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 199, x 125&ndash;1335, y 1920&ndash;1970 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-153">
+<h2>ch17-153</h2>
+<img src="img/ch17-153.png" alt="f_q = A(y/y_q)^{k²y} e^{−k²y}," loading="lazy">
+<div class="meta">folio 200 (PDF p. 220) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = A(y/y_q)^{k²y} e^{−k²y},</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_ii_8_src (左辺の法則の式)</dd>
+<dt>Anchor words</dt><dd>Similarly if we start from the simplest geometric law of error, namely, f_q = A(y/y_q)^{k²y} e^{−k²y},</dd>
+<dt>Remarks</dt><dd>k² (F198 の k と不整合)</dd>
+<dt>Crop</dt><dd>folio 200, x 125&ndash;1335, y 803&ndash;913 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-154">
+<h2>ch17-154</h2>
+<img src="img/ch17-154.png" alt="log y = l" loading="lazy">
+<div class="meta">folio 200 (PDF p. 220) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>log y = l</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: 9x/th_17_1911_ii_8_src は l を log y で書く)</dd>
+<dt>Anchor words</dt><dd>by writing log y = l and log y_q = l_q,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 200, x 125&ndash;1335, y 913&ndash;959 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-155">
+<h2>ch17-155</h2>
+<img src="img/ch17-154.png" alt="log y_q = l_q," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-154">ch17-154</a>.</div>
+<div class="meta">folio 200 (PDF p. 220) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>log y_q = l_q,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: l_q を log y_q で書く)</dd>
+<dt>Anchor words</dt><dd>and log y_q = l_q, the corresponding arithmetic law,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 200, x 125&ndash;1335, y 913&ndash;959 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-156">
+<h2>ch17-156</h2>
+<img src="img/ch17-156.png" alt="f_q = Ae^{k²eˡ(l − l_q) − k²eˡ}," loading="lazy">
+<div class="meta">folio 200 (PDF p. 220) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{k²eˡ(l − l_q) − k²eˡ},</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_ii_8_src (右辺; l を log y で)</dd>
+<dt>Anchor words</dt><dd>the corresponding arithmetic law, namely, f_q = Ae^{k²eˡ(l−l_q)−k²eˡ},</dd>
+<dt>Remarks</dt><dd>印刷は eˡ (Gutenberg の el 崩れは画像で否定; 9x ヘッダ F200 (ii)-8)</dd>
+<dt>Crop</dt><dd>folio 200, x 125&ndash;1335, y 958&ndash;1009 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-157">
+<h2>ch17-157</h2>
+<img src="img/ch17-157.png" alt="φ(l) = k²eˡ" loading="lazy">
+<div class="meta">folio 200 (PDF p. 220) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>φ(l) = k²eˡ</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: 9x/th_17_1911_ii_8_phi は φ を k²eˡ の関数として直接書く)</dd>
+<dt>Anchor words</dt><dd>by putting φ(l) = k²eˡ and ψ(l_q) = 0.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 200, x 125&ndash;1335, y 1009&ndash;1064 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-158">
+<h2>ch17-158</h2>
+<img src="img/ch17-157.png" alt="ψ(l_q) = 0." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-157">ch17-157</a>.</div>
+<div class="meta">folio 200 (PDF p. 220) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ψ(l_q) = 0.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収)</dd>
+<dt>Anchor words</dt><dd>and ψ(l_q) = 0.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 200, x 125&ndash;1335, y 1009&ndash;1064 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-159">
+<h2>ch17-159</h2>
+<img src="img/ch17-159.png" alt="f_q = Ae^{φ′(y)(y − y_q) − φ(y) + ψ(y_q)}," loading="lazy">
+<div class="meta">folio 200 (PDF p. 220) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{φ′(y)(y − y_q) − φ(y) + ψ(y_q)},</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_5_src (定理文の中の法則の式 (5))</dd>
+<dt>Anchor words</dt><dd>And, in general, corresponding to the arithmetic law</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 200, x 125&ndash;1335, y 1119&ndash;1196 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-160">
+<h2>ch17-160</h2>
+<img src="img/ch17-160.png" alt="f_q = Ae^{φ′₁(z) log (z_q/z) + ∫(φ₁(z)/z) dz + ψ₁(z_q)}," loading="lazy">
+<div class="meta">folio 200 (PDF p. 220) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{φ′₁(z) log (z_q/z) + ∫(φ₁(z)/z) dz + ψ₁(z_q)},</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(9x/th_17_1911_ii_9_src の結論は φ₁′ と φ′ の関係のみで、z の法則の式は定理文に無い)</dd>
+<dt>Anchor words</dt><dd>we have the geometric law</dd>
+<dt>Remarks</dt><dd>9x ヘッダ F200 (ii)-9 T-3</dd>
+<dt>Crop</dt><dd>folio 200, x 125&ndash;1335, y 1257&ndash;1326 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-161">
+<h2>ch17-161</h2>
+<img src="img/ch17-161.png" alt="y = log z, y_q = log z_q, ∫(φ₁′(z)/z) dz = φ(log z) and ψ₁(z_q) = ψ(log z_q)." loading="lazy">
+<div class="meta">folio 200 (PDF p. 220) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>y = log z, y_q = log z_q, ∫(φ₁′(z)/z) dz = φ(log z) and ψ₁(z_q) = ψ(log z_q).</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(y = log z, y_q = log z_q, ψ₁ の式は置換で吸収; ∫ の関係は 9x/th_17_1911_ii_9_src の前提 hprinted、∫ の符号の反駁は th_17_1911_ii_9_printed_fails)</dd>
+<dt>Anchor words</dt><dd>where</dd>
+<dt>Remarks</dt><dd>関係 4</dd>
+<dt>Crop</dt><dd>folio 200, x 125&ndash;1335, y 1369&ndash;1475 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-162">
+<h2>ch17-162</h2>
+<img src="img/ch17-162.png" alt="Σ f′_q/f_q = 0 must be equivalent to Σ(1/y_q − 1/y) = 0." loading="lazy">
+<div class="meta">folio 200 (PDF p. 220) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Σ f′_q/f_q = 0 must be equivalent to Σ(1/y_q − 1/y) = 0.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_10_src (f_q に (10) を代入、Σ f′_q/f_q を Σ log f_q の微分で)</dd>
+<dt>Anchor words</dt><dd>In this case, Σ f′_q/f_q = 0 must be equivalent to Σ(1/y_q − 1/y) = 0.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 200, x 125&ndash;1335, y 1529&ndash;1637 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-163">
+<h2>ch17-163</h2>
+<img src="img/ch17-163.png" alt="f_q = Ae^{φ′(y)[1/y_q − 1/y] − ∫(φ′(y)/y²) dy + ψ(y_q)}." loading="lazy">
+<div class="meta">folio 200 (PDF p. 220) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{φ′(y)[1/y_q − 1/y] − ∫(φ′(y)/y²) dy + ψ(y_q)}.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_10_src (定理文の中の法則の式; ∫ を Φ で)</dd>
+<dt>Anchor words</dt><dd>Proceeding as before, we find that f_q = Ae^{…}.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 200, x 125&ndash;1335, y 1636&ndash;1707 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-164">
+<h2>ch17-164</h2>
+<img src="img/ch17-164.png" alt="φ′(y) = − k²y²" loading="lazy">
+<div class="meta">folio 200 (PDF p. 220) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>φ′(y) = − k²y²</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: 9x/th_17_1911_11_src は φ′ を −k²t² に置いた形)</dd>
+<dt>Anchor words</dt><dd>A simple form of this is obtained by putting φ′(y) = − k²y² and</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 200, x 125&ndash;1335, y 1707&ndash;1761 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-165">
+<h2>ch17-165</h2>
+<img src="img/ch17-165.png" alt="ψ(y_q) = − k²y_q." loading="lazy">
+<div class="meta">folio 200 (PDF p. 220) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ψ(y_q) = − k²y_q.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: ψ を −k²y_q に置いた形)</dd>
+<dt>Anchor words</dt><dd>and ψ(y_q) = − k²y_q. Then</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 200, x 125&ndash;1335, y 1760&ndash;1826 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-166">
+<h2>ch17-166</h2>
+<img src="img/ch17-165.png" alt="f_q = Ae^{(k²/y_q)(y − y_q)²} = Ae^{−k²z_q²/y_q}." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-165">ch17-165</a>.</div>
+<div class="meta">folio 200 (PDF p. 220) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{(k²/y_q)(y − y_q)²} = Ae^{−k²z_q²/y_q}.</dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>9x/th_17_1911_11_src (修正形: 第 1 の指数に負号); 反駁 9x/th_17_1911_iii_3_printed_fails</dd>
+<dt>Anchor words</dt><dd>Then f_q = Ae^{(k²/y_q)(y−y_q)²} = Ae^{−k²z_q²/y_q}.</dd>
+<dt>Remarks</dt><dd>連鎖。第 1 の指数に負号が無い (9x ヘッダ F200 (iii)-3; 1911 は負号あり) — 所見候補 F</dd>
+<dt>Crop</dt><dd>folio 200, x 125&ndash;1335, y 1760&ndash;1826 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-167">
+<h2>ch17-167</h2>
+<img src="img/ch17-167.png" alt="(m + 1)/2 th ; m/2 th ; (m/2 + 1) th" loading="lazy">
+<div class="meta">folio 201 (PDF p. 221) &middot; &sect;5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>(m + 1)/2 th ; m/2 th ; (m/2 + 1) th</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/IsMedian ((iv)-1)</dd>
+<dt>Anchor words</dt><dd>the most probable value of the quantity is the (m+1)/2 th, and, if the number is even, all values between the m/2 th and the (m/2 + 1) th</dd>
+<dt>Remarks</dt><dd>分数</dd>
+<dt>Crop</dt><dd>folio 201, x 125&ndash;1335, y 313&ndash;520 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-168">
+<h2>ch17-168</h2>
+<img src="img/ch17-168.png" alt="Σ₁ᵐ ∣y_q − y∣ a minimum" loading="lazy">
+<div class="meta">folio 201 (PDF p. 221) &middot; &sect;5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>Σ₁ᵐ ∣y_q − y∣ a minimum</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/th_17_1911_iv_2_src ((iv)-2; Fechner)</dd>
+<dt>Anchor words</dt><dd>found, that is to say, by making Σ∣y_q − y∣ a minimum where</dd>
+<dt>Remarks</dt><dd>「a minimum」は語</dd>
+<dt>Crop</dt><dd>folio 201, x 125&ndash;1335, y 928&ndash;1026 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-169">
+<h2>ch17-169</h2>
+<img src="img/ch17-169.png" alt="∣y_q − y∣" loading="lazy">
+<div class="meta">folio 201 (PDF p. 221) &middot; &sect;5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>∣y_q − y∣</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/th_17_1911_iv_2_src ((iv)-2; Fechner)</dd>
+<dt>Anchor words</dt><dd>∣y_q − y∣ is the difference always reckoned positive between y_q and y.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 201, x 125&ndash;1335, y 1025&ndash;1074 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-170">
+<h2>ch17-170</h2>
+<img src="img/ch17-170.png" alt="∣y − y_q∣ = z_q." loading="lazy">
+<div class="meta">folio 201 (PDF p. 221) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∣y − y_q∣ = z_q.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 z_q)</dd>
+<dt>Anchor words</dt><dd>Write ∣y − y_q∣ = z_q.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 201, x 125&ndash;1335, y 1226&ndash;1326 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-171">
+<h2>ch17-171</h2>
+<img src="img/ch17-170.png" alt="Σ₁ᵐ z_q is to be a minimum" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-170">ch17-170</a>.</div>
+<div class="meta">folio 201 (PDF p. 221) &middot; &sect;5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>Σ₁ᵐ z_q is to be a minimum</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 z_q)</dd>
+<dt>Anchor words</dt><dd>Then since Σz_q is to be a minimum we must have</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 201, x 125&ndash;1335, y 1226&ndash;1326 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-172">
+<h2>ch17-172</h2>
+<img src="img/ch17-172.png" alt="Σ₁ᵐ (y − y_q)/z_q = 0." loading="lazy">
+<div class="meta">folio 201 (PDF p. 221) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Σ₁ᵐ (y − y_q)/z_q = 0.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_iv_3_src (z_q を ∣y − y_q∣ で)</dd>
+<dt>Anchor words</dt><dd>we must have Σ (y − y_q)/z_q = 0.</dd>
+<dt>Remarks</dt><dd>分数</dd>
+<dt>Crop</dt><dd>folio 201, x 125&ndash;1335, y 1326&ndash;1435 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-173">
+<h2>ch17-173</h2>
+<img src="img/ch17-173.png" alt="f_q = Ae^{∫((y − y_q)/z_q) φ″(y)dy + ψ(y_q)}." loading="lazy">
+<div class="meta">folio 201 (PDF p. 221) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{∫((y − y_q)/z_q) φ″(y)dy + ψ(y_q)}.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(積分形 ∫((y − y_q)/z_q)φ″dy は定理文に無い; 9x/th_17_1911_12_src は (12) の φ′ 形)</dd>
+<dt>Anchor words</dt><dd>Whence, proceeding as before, we have</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 201, x 125&ndash;1335, y 1435&ndash;1509 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-174">
+<h2>ch17-174</h2>
+<img src="img/ch17-174.png" alt="φ″(y) = − k²," loading="lazy">
+<div class="meta">folio 201 (PDF p. 221) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>φ″(y) = − k²,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: 9x/th_17_1911_iv_5_src は φ′ を −k²t に置いた形)</dd>
+<dt>Anchor words</dt><dd>The simplest case of this is obtained by putting</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 201, x 125&ndash;1335, y 1573&ndash;1633 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-175">
+<h2>ch17-175</h2>
+<img src="img/ch17-175.png" alt="ψ(y_q) = ((y − y_q)/z_q) k²y_q," loading="lazy">
+<div class="meta">folio 201 (PDF p. 221) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ψ(y_q) = ((y − y_q)/z_q) k²y_q,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: ψ の式を代入した形)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>分数</dd>
+<dt>Crop</dt><dd>folio 201, x 125&ndash;1335, y 1632&ndash;1743 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-176">
+<h2>ch17-176</h2>
+<img src="img/ch17-176.png" alt="f_q = Ae^{−k²∣y − y_q∣} = Ae^{−k²z_q}." loading="lazy">
+<div class="meta">folio 201 (PDF p. 221) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{−k²∣y − y_q∣} = Ae^{−k²z_q}.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_iv_5_src ((12) に代入した指数の恒等式; z_q を ∣y − y_q∣ で)</dd>
+<dt>Anchor words</dt><dd>whence</dd>
+<dt>Remarks</dt><dd>連鎖</dd>
+<dt>Crop</dt><dd>folio 201, x 125&ndash;1335, y 1743&ndash;1814 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-177">
+<h2>ch17-177</h2>
+<img src="img/ch17-177.png" alt="f_q = Ae^{−k²z_q}," loading="lazy">
+<div class="meta">folio 201 (PDF p. 221) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{−k²z_q},</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_iv_5_src (同前の再掲)</dd>
+<dt>Reprint of</dt><dd><a href="#ch17-176">ch17-176</a></dd>
+<dt>Anchor words</dt><dd>The median law of error, f_q = Ae^{−k²z_q}, where z_q is the absolute amount of the error</dd>
+<dt>Remarks</dt><dd>再掲</dd>
+<dt>Crop</dt><dd>folio 201, x 125&ndash;1335, y 2111&ndash;2170 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-178">
+<h2>ch17-178</h2>
+<img src="img/ch17-178.png" alt="z = φ(y)," loading="lazy">
+<div class="meta">folio 202 (PDF p. 222) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>z = φ(y),</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 z = φ(y); Laplace の仮定)</dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd>He begins by assuming a law of error z = φ(y), where z is the probability of an error y ;</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 202, x 125&ndash;1335, y 1563&ndash;1613 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-179">
+<h2>ch17-179</h2>
+<img src="img/ch17-179.png" alt="φ(z) = (m/2)e^{−my}." loading="lazy">
+<div class="meta">folio 202 (PDF p. 222) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>φ(z) = (m/2)e^{−my}.</dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>9x/th_17_1911_iv_6_corrected (修正形); 反駁 9x/th_17_1911_iv_6_src (印刷の φ(z) の読み)</dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd>arrives at the result φ(z) = (m/2)e^{−my}.</dd>
+<dt>Remarks</dt><dd>印刷は φ(z) (z = φ(y) と定義した直後; 9x ヘッダ F202 (iv)-6) — 所見候補</dd>
+<dt>Crop</dt><dd>folio 202, x 125&ndash;1335, y 1667&ndash;1763 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-180">
+<h2>ch17-180</h2>
+<img src="img/ch17-180.png" alt="Σθ(y_q, y) = 0" loading="lazy">
+<div class="meta">folio 203 (PDF p. 223) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Σθ(y_q, y) = 0</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>9x/th_17_1911_1_src (θ q は θ(y_q, y) の記法)</dd>
+<dt>Anchor words</dt><dd>(v.) If Σθ(y_q,y) = 0 is the law of relation between the measurements and the most probable value</dd>
+<dt>Remarks</dt><dd>印刷に「= 0」あり (Gutenberg の欠落は画像で否定)</dd>
+<dt>Crop</dt><dd>folio 203, x 125&ndash;1335, y 565&ndash;613 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-181">
+<h2>ch17-181</h2>
+<img src="img/ch17-181.png" alt="f_q = Ae^{∫θ(y_q y)φ″(y)dy + ψ(y_q)}." loading="lazy">
+<div class="meta">folio 203 (PDF p. 223) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{∫θ(y_q y)φ″(y)dy + ψ(y_q)}.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_1_src (定理文の中の法則の式; ∫θφ″dy を HasDerivAt と定数 c で)</dd>
+<dt>Anchor words</dt><dd>then the law of error f_q(y_q,y) is given by f_q = Ae^{…}.</dd>
+<dt>Remarks</dt><dd>指数内の θ(y_q y) はコンマなし (活字)</dd>
+<dt>Crop</dt><dd>folio 203, x 125&ndash;1335, y 667&ndash;721 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-182">
+<h2>ch17-182</h2>
+<img src="img/ch17-182.png" alt="f_q lies between 0 and 1," loading="lazy">
+<div class="meta">folio 203 (PDF p. 223) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q lies between 0 and 1,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_v_2_src (前提 hA, hlt: 0 &lt; A と A e^E &lt; 1 の形)</dd>
+<dt>Anchor words</dt><dd>Since f_q lies between 0 and 1,</dd>
+<dt>Remarks</dt><dd>語による範囲</dd>
+<dt>Crop</dt><dd>folio 203, x 125&ndash;1335, y 667&ndash;768 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-183">
+<h2>ch17-183</h2>
+<img src="img/ch17-183.png" alt="∫θ(y_q y)φ″(y)dy + ψ(y_q) + log A must be negative" loading="lazy">
+<div class="meta">folio 203 (PDF p. 223) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∫θ(y_q y)φ″(y)dy + ψ(y_q) + log A must be negative</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_v_2_src (結論 E + log A &lt; 0; ∫ の項を E で)</dd>
+<dt>Anchor words</dt><dd>∫θ(y_q y)φ″(y)dy + ψ(y_q) + log A must be negative for all values of y_q and y that are physically possible ;</dd>
+<dt>Remarks</dt><dd>「must be negative」は &lt; 0 の語形</dd>
+<dt>Crop</dt><dd>folio 203, x 125&ndash;1335, y 720&ndash;768 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-184">
+<h2>ch17-184</h2>
+<img src="img/ch17-184.png" alt="ΣAe^{∫θ(y_q y)φ″(y)dy + ψ(y_q)} = 1," loading="lazy">
+<div class="meta">folio 203 (PDF p. 223) &middot; &sect;6 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ΣAe^{∫θ(y_q y)φ″(y)dy + ψ(y_q)} = 1,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_v_3_src (前提 hnorm; 指数を E で)</dd>
+<dt>Anchor words</dt><dd>and, since the values of y_q are between them exhaustive,</dd>
+<dt>Remarks</dt><dd>正規化条件</dd>
+<dt>Crop</dt><dd>folio 203, x 125&ndash;1335, y 877&ndash;941 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-185">
+<h2>ch17-185</h2>
+<img src="img/ch17-185.png" alt="Ae^{−k²f(y − y_q)²}," loading="lazy">
+<div class="meta">folio 203 (PDF p. 223) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>Ae^{−k²f(y − y_q)²},</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/th_17_1911_2_src ((vi)-1 = (2))</dd>
+<dt>Anchor words</dt><dd>The most general form of the law of error, when it is assumed that positive and negative errors of the same magnitude are equally probable, is Ae^{−k²f(y−y_q)²},</dd>
+<dt>Remarks</dt><dd>「is」は語 (式の名付けではない) → 記法 (裁定事項)</dd>
+<dt>Crop</dt><dd>folio 203, x 125&ndash;1335, y 1154&ndash;1206 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-186">
+<h2>ch17-186</h2>
+<img src="img/ch17-186.png" alt="Σ(y − y_q)f′(y − y_q)² = 0, where f′(y − y_q)² = (d/d(y − y_q)²) f(y − y_q)²." loading="lazy">
+<div class="meta">folio 203 (PDF p. 223) &middot; &sect;6 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Σ(y − y_q)f′(y − y_q)² = 0, where f′(y − y_q)² = (d/d(y − y_q)²) f(y − y_q)².</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_2_src (第 1 の関係は結論、where の関係は前提 hF の HasDerivAt; f を F で)</dd>
+<dt>Anchor words</dt><dd>is given by the equation</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 203, x 125&ndash;1335, y 1262&ndash;1386 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-187">
+<h2>ch17-187</h2>
+<img src="img/ch17-187.png" alt="f(y − y_q)² = (y − y_q)² ;" loading="lazy">
+<div class="meta">folio 203 (PDF p. 223) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f(y − y_q)² = (y − y_q)² ;</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: 9x/th_17_1911_vi_2_src は f(u) = u を代入した後の法則のみ)</dd>
+<dt>Anchor words</dt><dd>The arithmetic mean is a special case of this obtained by putting f(y−y_q)² = (y−y_q)² ;</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 203, x 125&ndash;1335, y 1443&ndash;1498 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-188">
+<h2>ch17-188</h2>
+<img src="img/ch17-188.png" alt="f(y − y_q)² = + √((y − y_q)²)." loading="lazy">
+<div class="meta">folio 203 (PDF p. 223) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f(y − y_q)² = + √((y − y_q)²).</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: 9x/th_17_1911_vi_2_src は f(u) = √u を代入した後の法則のみ)</dd>
+<dt>Anchor words</dt><dd>and the median is a special case obtained by putting f(y−y_q)² = + √(y−y_q)².</dd>
+<dt>Remarks</dt><dd>根号は (y − y_q)² 全体</dd>
+<dt>Crop</dt><dd>folio 203, x 125&ndash;1335, y 1497&ndash;1559 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-189">
+<h2>ch17-189</h2>
+<img src="img/ch17-189.png" alt="f(y − y_q)² = (y − y_q)⁴," loading="lazy">
+<div class="meta">folio 203 (PDF p. 223) &middot; &sect;6 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f(y − y_q)² = (y − y_q)⁴,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: 9x/th_17_1911_vi_3_law は代入した後の法則のみ)</dd>
+<dt>Anchor words</dt><dd>We can obtain other special cases by putting</dd>
+<dt>Remarks</dt><dd>印刷は 4 乗 (Gutenberg の 2 は画像で否定)</dd>
+<dt>Crop</dt><dd>folio 203, x 125&ndash;1335, y 1616&ndash;1691 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-190">
+<h2>ch17-190</h2>
+<img src="img/ch17-190.png" alt="Ae^{−k²(y − y_q)⁴}" loading="lazy">
+<div class="meta">folio 203 (PDF p. 223) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>Ae^{−k²(y − y_q)⁴}</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/th_17_1911_vi_3_law ((vi)-3)</dd>
+<dt>Anchor words</dt><dd>when the law of error is Ae^{−k²(y−y_q)⁴} and the most probable values are the roots of</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 203, x 125&ndash;1335, y 1690&ndash;1744 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-191">
+<h2>ch17-191</h2>
+<img src="img/ch17-191.png" alt="my³ − 3y²Σy_q + 3yΣy_q² − Σy_q³ = 0 ;" loading="lazy">
+<div class="meta">folio 203 (PDF p. 223) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>my³ − 3y²Σy_q + 3yΣy_q² − Σy_q³ = 0 ;</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>9x/th_17_1911_vi_3_src (同値の右辺); th_17_1911_vi_3_stationary</dd>
+<dt>Anchor words</dt><dd>and the most probable values are the roots of my³ − 3y²Σy_q + 3yΣy_q² − Σy_q³ = 0 ;</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 203, x 125&ndash;1335, y 1743&ndash;1809 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-192">
+<h2>ch17-192</h2>
+<img src="img/ch17-192.png" alt="f(y − y_q)² = log (y − y_q)²," loading="lazy">
+<div class="meta">folio 203 (PDF p. 223) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f(y − y_q)² = log (y − y_q)²,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: 9x/th_17_1911_vi_4_law は代入した後の法則のみ)</dd>
+<dt>Anchor words</dt><dd>and by putting f(y−y_q)² = log (y−y_q)², when the law of error is</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 203, x 125&ndash;1335, y 1809&ndash;1913 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-193">
+<h2>ch17-193</h2>
+<img src="img/ch17-192.png" alt="A ÷ (y − y_q)^{2k²}" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-192">ch17-192</a>.</div>
+<div class="meta">folio 203 (PDF p. 223) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>A ÷ (y − y_q)^{2k²}</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/th_17_1911_vi_4_law ((vi)-4) (th_17_1911_vi_4_exceeds_one)</dd>
+<dt>Anchor words</dt><dd>when the law of error is A/(y−y_q)^{2k²} and</dd>
+<dt>Remarks</dt><dd>分数 (印刷は 2k²; Gutenberg の崩れは画像で否定)</dd>
+<dt>Crop</dt><dd>folio 203, x 125&ndash;1335, y 1809&ndash;1913 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-194">
+<h2>ch17-194</h2>
+<img src="img/ch17-194.png" alt="Σ 1/(y − y_q) = 0." loading="lazy">
+<div class="meta">folio 203 (PDF p. 223) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Σ 1/(y − y_q) = 0.</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>9x/th_17_1911_vi_4_src (同値の右辺)</dd>
+<dt>Anchor words</dt><dd>the most probable values the roots of Σ 1/(y−y_q) = 0.</dd>
+<dt>Remarks</dt><dd>分数</dd>
+<dt>Crop</dt><dd>folio 203, x 125&ndash;1335, y 1912&ndash;2019 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-195">
+<h2>ch17-195</h2>
+<img src="img/ch17-195.png" alt="f_q = Ae^{∫φ″(y) θ(y_q y)dy + ψ(y_q)}," loading="lazy">
+<div class="meta">folio 204 (PDF p. 224) &middot; &sect;7 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{∫φ″(y) θ(y_q y)dy + ψ(y_q)},</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_1_src (定理文の中の法則の式; ∫ を HasDerivAt と定数 c で)</dd>
+<dt>Anchor words</dt><dd>(1) The most general form of the law of error is</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 204, x 125&ndash;1335, y 1183&ndash;1286 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-196">
+<h2>ch17-196</h2>
+<img src="img/ch17-196.png" alt="Σθ(y_q y) = 0," loading="lazy">
+<div class="meta">folio 204 (PDF p. 224) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Σθ(y_q y) = 0,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>9x/th_17_1911_1_src (同値の右辺)</dd>
+<dt>Reprint of</dt><dd><a href="#ch17-180">ch17-180</a></dd>
+<dt>Anchor words</dt><dd>leading to the equation Σθ(y_q y) = 0, connecting the most probable value and the actual measurements,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 204, x 125&ndash;1335, y 1285&ndash;1352 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-197">
+<h2>ch17-197</h2>
+<img src="img/ch17-197.png" alt="f_q = Ae^{−k²f(y − y_q)²}," loading="lazy">
+<div class="meta">folio 204 (PDF p. 224) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{−k²f(y − y_q)²},</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_2_src (定理文の中の法則の式; f を F で)</dd>
+<dt>Anchor words</dt><dd>the most general form is f_q = Ae^{−k²f(y−y_q)²}, leading to the equation</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 204, x 125&ndash;1335, y 1548&ndash;1610 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-198">
+<h2>ch17-198</h2>
+<img src="img/ch17-197.png" alt="Σ(y − y_q)f′(y − y_q)² = 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-197">ch17-197</a>.</div>
+<div class="meta">folio 204 (PDF p. 224) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Σ(y − y_q)f′(y − y_q)² = 0,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>9x/th_17_1911_2_src (同値の右辺; f を F と書く束縛変数名の違い)</dd>
+<dt>Reprint of</dt><dd><a href="#ch17-186">ch17-186</a></dd>
+<dt>Anchor words</dt><dd>leading to the equation Σ(y−y_q)f′(y−y_q)² = 0, where</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 204, x 125&ndash;1335, y 1548&ndash;1610 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-199">
+<h2>ch17-199</h2>
+<img src="img/ch17-199.png" alt="f′z = (d/dz) fz." loading="lazy">
+<div class="meta">folio 204 (PDF p. 224) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f′z = (d/dz) fz.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_2_src (前提 hF: f′ を HasDerivAt で)</dd>
+<dt>Anchor words</dt><dd>where f′z = (d/dz) fz.</dd>
+<dt>Remarks</dt><dd>分数</dd>
+<dt>Crop</dt><dd>folio 204, x 125&ndash;1335, y 1610&ndash;1699 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-200">
+<h2>ch17-200</h2>
+<img src="img/ch17-200.png" alt="f_q = Ae^{−k²(y − y_q)²} = Ae^{−k²z_q²}," loading="lazy">
+<div class="meta">folio 204 (PDF p. 224) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{−k²(y − y_q)²} = Ae^{−k²z_q²},</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_3_abs (logLik_normal の本体と ∣·∣ の形の一致; z_q を ∣y − y_q∣ で); 9x/th_17_1911_3_src</dd>
+<dt>Reprint of</dt><dd><a href="#ch17-127">ch17-127</a></dd>
+<dt>Anchor words</dt><dd>(3) f_q = Ae^{−k²(y−y_q)²} = Ae^{−k²z_q²}, where</dd>
+<dt>Remarks</dt><dd>連鎖</dd>
+<dt>Crop</dt><dd>folio 204, x 125&ndash;1335, y 1752&ndash;1807 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-201">
+<h2>ch17-201</h2>
+<img src="img/ch17-200.png" alt="z_q = ∣y − y_q∣," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-200">ch17-200</a>.</div>
+<div class="meta">folio 204 (PDF p. 224) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>z_q = ∣y − y_q∣,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(置換で吸収: z_q は定理文で ∣s − y q∣ と直接書かれる)</dd>
+<dt>Reprint of</dt><dd><a href="#ch17-170">ch17-170</a></dd>
+<dt>Anchor words</dt><dd>where z_q = ∣y − y_q∣, leading to the arithmetic mean</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 204, x 125&ndash;1335, y 1752&ndash;1807 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-202">
+<h2>ch17-202</h2>
+<img src="img/ch17-202.png" alt="f_q = Ae^{−k²z_q}," loading="lazy">
+<div class="meta">folio 204 (PDF p. 224) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{−k²z_q},</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_4_src (logLik_median の本体; z_q を ∣y − y_q∣ で)</dd>
+<dt>Reprint of</dt><dd><a href="#ch17-176">ch17-176</a></dd>
+<dt>Anchor words</dt><dd>(4) f_q = Ae^{−k²z_q}, leading to the median.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 204, x 125&ndash;1335, y 1902&ndash;1956 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-203">
+<h2>ch17-203</h2>
+<img src="img/ch17-203.png" alt="f_q = Ae^{φ′(y)(y − y_q) − φ(y) + ψ(y_q)}," loading="lazy">
+<div class="meta">folio 204 (PDF p. 224) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{φ′(y)(y − y_q) − φ(y) + ψ(y_q)},</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_5_src (定理文の中の法則の式)</dd>
+<dt>Reprint of</dt><dd><a href="#ch17-159">ch17-159</a></dd>
+<dt>Anchor words</dt><dd>(5) The most general form leading to the arithmetic mean is f_q = Ae^{…}, with the special cases (3), and</dd>
+<dt>Remarks</dt><dd>印刷は φ′(y)(y − y_q) (Gutenberg の (y) 欠落は画像で否定)</dd>
+<dt>Crop</dt><dd>folio 204, x 125&ndash;1335, y 2002&ndash;2053 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-204">
+<h2>ch17-204</h2>
+<img src="img/ch17-204.png" alt="f_q = Ae^{k²eʸ(y − y_q) − k²eʸ}." loading="lazy">
+<div class="meta">folio 204 (PDF p. 224) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{k²eʸ(y − y_q) − k²eʸ}.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_6_src (定理文の中の法則の式)</dd>
+<dt>Anchor words</dt><dd>(6) f_q = Ae^{k²eʸ(y−y_q)−k²eʸ}.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 204, x 125&ndash;1335, y 2053&ndash;2105 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-205">
+<h2>ch17-205</h2>
+<img src="img/ch17-205.png" alt="f_q = Ae^{φ′(y) log (y_q/y) + ∫(φ′(y)/y) dy + ψ(y_q)}," loading="lazy">
+<div class="meta">folio 204 (PDF p. 224) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{φ′(y) log (y_q/y) + ∫(φ′(y)/y) dy + ψ(y_q)},</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_7_src (定理文の中の法則の式; ∫ を Φ で)</dd>
+<dt>Reprint of</dt><dd><a href="#ch17-138">ch17-138</a></dd>
+<dt>Anchor words</dt><dd>(7) The most general form leading to the geometric mean is f_q = Ae^{…}, with the special cases :</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 204, x 125&ndash;1335, y 2152&ndash;2239 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-206">
+<h2>ch17-206</h2>
+<img src="img/ch17-206.png" alt="f_q = A(y/y_q)^{k²y} e^{−k²y}," loading="lazy">
+<div class="meta">folio 205 (PDF p. 225) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = A(y/y_q)^{k²y} e^{−k²y},</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_8_src (右辺の法則の式); th_17_1911_8_leads_gmean</dd>
+<dt>Reprint of</dt><dd><a href="#ch17-153">ch17-153</a></dd>
+<dt>Anchor words</dt><dd>(8) f_q = A(y/y_q)^{k²y} e^{−k²y}, and</dd>
+<dt>Remarks</dt><dd>k² (F198 の (ii.) は k)</dd>
+<dt>Crop</dt><dd>folio 205, x 125&ndash;1335, y 176&ndash;307 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-207">
+<h2>ch17-207</h2>
+<img src="img/ch17-207.png" alt="f_q = Ae^{−k²(log (y_q/y))²}." loading="lazy">
+<div class="meta">folio 205 (PDF p. 225) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{−k²(log (y_q/y))²}.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_9_src (右辺の法則の式); th_17_1911_9_leads_gmean (logLik_mcal の本体)</dd>
+<dt>Reprint of</dt><dd><a href="#ch17-146">ch17-146</a></dd>
+<dt>Anchor words</dt><dd>(9) f_q = Ae^{−k²(log y_q/y)²}.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 205, x 125&ndash;1335, y 306&ndash;373 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-208">
+<h2>ch17-208</h2>
+<img src="img/ch17-208.png" alt="f_q = A e^{φ′(y)[1/y_q − 1/y] − ∫(φ′(y)/y²) + ψ(y_q)}," loading="lazy">
+<div class="meta">folio 205 (PDF p. 225) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = A e^{φ′(y)[1/y_q − 1/y] − ∫(φ′(y)/y²) + ψ(y_q)},</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_10_src (定理文の中の法則の式; ∫ を Φ で)</dd>
+<dt>Reprint of</dt><dd><a href="#ch17-163">ch17-163</a></dd>
+<dt>Anchor words</dt><dd>(10) The most general form leading to the harmonic mean is f_q = A e^{…}, with the special case</dd>
+<dt>Remarks</dt><dd>積分に dy なし (印刷どおり; 9x ヘッダ F205 (10))</dd>
+<dt>Crop</dt><dd>folio 205, x 125&ndash;1335, y 432&ndash;511 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-209">
+<h2>ch17-209</h2>
+<img src="img/ch17-209.png" alt="f_q = Ae^{−k²(y − y_q)²/y_q} = Ae^{−k²z_q²/y_q}." loading="lazy">
+<div class="meta">folio 205 (PDF p. 225) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{−k²(y − y_q)²/y_q} = Ae^{−k²z_q²/y_q}.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_11_src (第 2 成分が連鎖の等号、z_q を ∣y − y_q∣ で); th_17_1911_11_leads_hmean</dd>
+<dt>Reprint of</dt><dd><a href="#ch17-166">ch17-166</a></dd>
+<dt>Anchor words</dt><dd>(11) f_q = Ae^{…} = Ae^{…}.</dd>
+<dt>Remarks</dt><dd>連鎖。ここでは両方の指数に負号あり (F200 (iii.) の第 1 の指数と不整合)</dd>
+<dt>Crop</dt><dd>folio 205, x 125&ndash;1335, y 511&ndash;608 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-210">
+<h2>ch17-210</h2>
+<img src="img/ch17-210.png" alt="f_q = Ae^{φ′(y)((y − y_q)/z_q) + ψ(y_q)}," loading="lazy">
+<div class="meta">folio 205 (PDF p. 225) &middot; &sect;7 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>f_q = Ae^{φ′(y)((y − y_q)/z_q) + ψ(y_q)},</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/th_17_1911_12_src (定理文の中の法則の式; z_q を ∣y − y_q∣ で)</dd>
+<dt>Anchor words</dt><dd>(12) The most general form leading to the median is</dd>
+<dt>Remarks</dt><dd>「with the special case (4)」</dd>
+<dt>Crop</dt><dd>folio 205, x 125&ndash;1335, y 668&ndash;756 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-211">
+<h2>ch17-211</h2>
+<img src="img/ch17-211.png" alt="f_q ; y_q ; y" loading="lazy">
+<div class="meta">folio 205 (PDF p. 225) &middot; &sect;7 &middot; Text &middot; Inline &middot; Bare symbol (not counted)</div>
+<dl>
+<dt>Transcription</dt><dd>f_q ; y_q ; y</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Bare symbol (not counted)">B</span>9x</dd>
+<dt>Anchor words</dt><dd>In each of these expressions, f_q is the probability of a measurement y_q, given that the true value is y.</dd>
+<dt>Remarks</dt><dd>裸記号の並び (補則 1、数えない)</dd>
+<dt>Crop</dt><dd>folio 205, x 125&ndash;1335, y 811&ndash;913 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-212">
+<h2>ch17-212</h2>
+<img src="img/ch17-212.png" alt="φ(x) = φ(0) + zφ′(0) + (z²/2!)φ″(0) + (z³/3!)φ‴(o) + …" loading="lazy">
+<div class="meta">folio 207 (PDF p. 227) &middot; &sect;9 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>φ(x) = φ(0) + zφ′(0) + (z²/2!)φ″(0) + (z³/3!)φ‴(o) + …</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(9x は N2 の Maclaurin 展開を形式化対象外とする)</dd>
+<dt>Anchor words</dt><dd>Then φ(x) = φ(0) + zφ′(0) + …</dd>
+<dt>Remarks</dt><dd>左辺が φ(x) (右辺は z; 9x ヘッダ F207 N2) — 所見候補。φ‴(o) の o は小文字 (活字)</dd>
+<dt>Crop</dt><dd>folio 207, x 125&ndash;1335, y 706&ndash;929 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-213">
+<h2>ch17-213</h2>
+<img src="img/ch17-213.png" alt="φ(z) = φ(− z)," loading="lazy">
+<div class="meta">folio 207 (PDF p. 227) &middot; &sect;9 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>φ(z) = φ(− z),</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>9x/th_17_1921_N3_src (前提 heven)</dd>
+<dt>Anchor words</dt><dd>i.e. φ(z) = φ(−z), so that φ′(0) and φ‴(0) vanish.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 207, x 125&ndash;1335, y 928&ndash;987 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-214">
+<h2>ch17-214</h2>
+<img src="img/ch17-214.png" alt="φ′(0) and φ‴(0) vanish" loading="lazy">
+<div class="meta">folio 207 (PDF p. 227) &middot; &sect;9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>φ′(0) and φ‴(0) vanish</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/th_17_1921_N3_src (φ′(0) = φ‴(0) = 0)</dd>
+<dt>Anchor words</dt><dd>so that φ′(0) and φ‴(0) vanish.</dd>
+<dt>Remarks</dt><dd>「vanish」は語 (= 0 の語形だが記法とした; 裁定事項)</dd>
+<dt>Crop</dt><dd>folio 207, x 125&ndash;1335, y 928&ndash;1037 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-215">
+<h2>ch17-215</h2>
+<img src="img/ch17-215.png" alt="φ(z) = φ(0) + ½z²φ″(0)." loading="lazy">
+<div class="meta">folio 207 (PDF p. 227) &middot; &sect;9 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>φ(z) = φ(0) + ½z²φ″(0).</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(z⁴ を無視した近似; 9x に無い)</dd>
+<dt>Anchor words</dt><dd>Since we may neglect z⁴ in comparison with z², φ(z) = φ(0) + ½z²φ″(0).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 207, x 125&ndash;1335, y 1037&ndash;1094 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-216">
+<h2>ch17-216</h2>
+<img src="img/ch17-216.png" alt="a + bz² = ae^{bz²/a}," loading="lazy">
+<div class="meta">folio 207 (PDF p. 227) &middot; &sect;9 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a + bz² = ae^{bz²/a},</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(9x/th_17_1921_N4_order は z⁴ の次の誤差評価、th_17_1921_N4_src は下界 ≤ で、印刷の = (近似の意味) は定理文に無い; 印刷形の反駁も S/F の記録も無いので ✎ にしない — 裁定事項)</dd>
+<dt>Anchor words</dt><dd>But (neglecting z⁴ and higher powers) a + bz² = ae^{bz²/a}, so that</dd>
+<dt>Remarks</dt><dd>指数は分数 bz²/a</dd>
+<dt>Crop</dt><dd>folio 207, x 125&ndash;1335, y 1094&ndash;1177 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-217">
+<h2>ch17-217</h2>
+<img src="img/ch17-216.png" alt="φ(z) = ae^{bz²/a}." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-216">ch17-216</a>.</div>
+<div class="meta">folio 207 (PDF p. 227) &middot; &sect;9 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>φ(z) = ae^{bz²/a}.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(φ(z) = ae^{bz²/a} は定理文に無い; 9x/th_17_1921_N4_order は a + bz² と ae^{bz²/a} の差の評価のみ)</dd>
+<dt>Anchor words</dt><dd>so that φ(z) = ae^{bz²/a}.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 207, x 125&ndash;1335, y 1094&ndash;1177 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-218">
+<h2>ch17-218</h2>
+<img src="img/ch17-218.png" alt="ae^{bz²/a} ; a + bz²" loading="lazy">
+<div class="meta">folio 207 (PDF p. 227) &middot; &sect;9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>ae^{bz²/a} ; a + bz²</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/th_17_1921_N4_order (同前)</dd>
+<dt>Anchor words</dt><dd>obtains the form ae^{bz²/a} by neglecting higher powers of z, so that this expression is really equivalent to a + bz².</dd>
+<dt>Remarks</dt><dd>「equivalent to」は語</dd>
+<dt>Crop</dt><dd>folio 207, x 125&ndash;1335, y 1235&ndash;1359 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-219">
+<h2>ch17-219</h2>
+<img src="img/ch17-219.png" alt="x₁x₂ … xₙ" loading="lazy">
+<div class="meta">folio 208 (PDF p. 228) &middot; &sect;9 &middot; Text &middot; Inline &middot; Bare symbol (not counted)</div>
+<dl>
+<dt>Transcription</dt><dd>x₁x₂ … xₙ</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Bare symbol (not counted)">B</span>9x/th_17_1921_N5_src</dd>
+<dt>Anchor words</dt><dd>For suppose that x₁x₂ … xₙ are a set of observations of an unknown quantity x.</dd>
+<dt>Remarks</dt><dd>裸記号の並び (補則 1、数えない)</dd>
+<dt>Crop</dt><dd>folio 208, x 125&ndash;1335, y 308&ndash;363 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-220">
+<h2>ch17-220</h2>
+<img src="img/ch17-220.png" alt="x = (1/n)Σxᵣ" loading="lazy">
+<div class="meta">folio 208 (PDF p. 228) &middot; &sect;9 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>x = (1/n)Σxᵣ</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>9x/amean (def は (Σxᵣ)/n の形); 定理 9x/th_17_1911_i_1_src (t = amean y)</dd>
+<dt>Anchor words</dt><dd>Then, by this principle, x = (1/n)Σxᵣ gives the most probable value of x.</dd>
+<dt>Remarks</dt><dd>分数</dd>
+<dt>Crop</dt><dd>folio 208, x 125&ndash;1335, y 415&ndash;516 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-221">
+<h2>ch17-221</h2>
+<img src="img/ch17-221.png" alt="x₁², x₂² … xₙ²," loading="lazy">
+<div class="meta">folio 208 (PDF p. 228) &middot; &sect;9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd>x₁², x₂² … xₙ²,</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>9x/amean (定義); th_17_1921_N5_src</dd>
+<dt>Anchor words</dt><dd>our observations, assuming that we can multiply correctly, would be x₁², x₂² … xₙ²,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 208, x 125&ndash;1335, y 572&ndash;624 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-222">
+<h2>ch17-222</h2>
+<img src="img/ch17-222.png" alt="x² = (1/n)Σxᵣ²." loading="lazy">
+<div class="meta">folio 208 (PDF p. 228) &middot; &sect;9 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>x² = (1/n)Σxᵣ².</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(9x/th_17_1921_N5_src は具体例 (0, 2) の ≠ のみで、x² = (1/n)Σxᵣ² の関係は定理文に無い)</dd>
+<dt>Anchor words</dt><dd>and the most probable value of x² = (1/n)Σxᵣ².</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 208, x 125&ndash;1335, y 623&ndash;725 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-223">
+<h2>ch17-223</h2>
+<img src="img/ch17-222.png" alt="((1/n)Σxᵣ)² ≠ (1/n)Σxᵣ²." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch17-222">ch17-222</a>.</div>
+<div class="meta">folio 208 (PDF p. 228) &middot; &sect;9 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>((1/n)Σxᵣ)² ≠ (1/n)Σxᵣ².</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(証人だけ: 9x/th_17_1921_N5_src は具体例 (0, 2)、th_17_1921_N5_identity は n = 2 の恒等式; 補則 8 の ch06-020 と同じ扱い)</dd>
+<dt>Anchor words</dt><dd>But ((1/n)Σxᵣ)² ≠ (1/n)Σxᵣ².</dd>
+<dt>Remarks</dt><dd>印刷は ≠ (Gutenberg の = は画像で否定; 9x ヘッダ F208 N5)</dd>
+<dt>Crop</dt><dd>folio 208, x 125&ndash;1335, y 623&ndash;725 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-224">
+<h2>ch17-224</h2>
+<img src="img/ch17-224.png" alt="(1/n)Σf(xᵣ) ≠ f((1/n)Σxᵣ)." loading="lazy">
+<div class="meta">folio 208 (PDF p. 228) &middot; &sect;9 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(1/n)Σf(xᵣ) ≠ f((1/n)Σxᵣ).</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(証人だけ: 9x/th_17_1921_N5_general は ∃ f x の存在のみ)</dd>
+<dt>Anchor words</dt><dd>And in general, (1/n)Σf(xᵣ) ≠ f((1/n)Σxᵣ).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 208, x 125&ndash;1335, y 725&ndash;832 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-225">
+<h2>ch17-225</h2>
+<img src="img/ch17-225.png" alt="x₁, x₂, x₃ … xᵣ" loading="lazy">
+<div class="meta">folio 210 (PDF p. 230) &middot; &sect;10 &middot; Text &middot; Inline &middot; Bare symbol (not counted)</div>
+<dl>
+<dt>Transcription</dt><dd>x₁, x₂, x₃ … xᵣ</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Bare symbol (not counted)">B</span>9x (N6: 形式化対象外)</dd>
+<dt>Anchor words</dt><dd>the most probable values of a set of unknowns x₁, x₂, x₃ … xᵣ,</dd>
+<dt>Remarks</dt><dd>裸記号の並び (補則 1、数えない)</dd>
+<dt>Crop</dt><dd>folio 210, x 125&ndash;1335, y 271&ndash;322 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-226">
+<h2>ch17-226</h2>
+<img src="img/ch17-226.png" alt="a₁x₁ + a₂x₂ + … + aᵣxᵣ = V₁," loading="lazy">
+<div class="meta">folio 210 (PDF p. 230) &middot; &sect;10 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a₁x₁ + a₂x₂ + … + aᵣxᵣ = V₁,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(9x は N6 を形式化対象外とする)</dd>
+<dt>Anchor words</dt><dd>equations of observation of the following type :</dd>
+<dt>Remarks</dt><dd>観測方程式 1</dd>
+<dt>Crop</dt><dd>folio 210, x 125&ndash;1335, y 432&ndash;492 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-227">
+<h2>ch17-227</h2>
+<img src="img/ch17-227.png" alt="b₁x₁ + b₂x₂ + … + bᵣxᵣ = V₂," loading="lazy">
+<div class="meta">folio 210 (PDF p. 230) &middot; &sect;10 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b₁x₁ + b₂x₂ + … + bᵣxᵣ = V₂,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(9x は N6 を形式化対象外とする)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>観測方程式 2</dd>
+<dt>Crop</dt><dd>folio 210, x 125&ndash;1335, y 492&ndash;556 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-228">
+<h2>ch17-228</h2>
+<img src="img/ch17-228.png" alt="k₁x₁ + k₂x₂ + … + kᵣxᵣ = Vₙ," loading="lazy">
+<div class="meta">folio 210 (PDF p. 230) &middot; &sect;10 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>k₁x₁ + k₂x₂ + … + kᵣxᵣ = Vₙ,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(9x は N6 を形式化対象外とする)</dd>
+<dt>Anchor words</dt><dd></dd>
+<dt>Remarks</dt><dd>観測方程式 n (間に点線 1 行)</dd>
+<dt>Crop</dt><dd>folio 210, x 125&ndash;1335, y 555&ndash;655 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-229">
+<h2>ch17-229</h2>
+<img src="img/ch17-229.png" alt="(n &gt; r)." loading="lazy">
+<div class="meta">folio 210 (PDF p. 230) &middot; &sect;10 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(n &gt; r).</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(9x は N6 を形式化対象外とする)</dd>
+<dt>Anchor words</dt><dd>and the a’s, b’s, etc., are supposed known (n &gt; r).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 210, x 125&ndash;1335, y 719&ndash;769 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch17-230">
+<h2>ch17-230</h2>
+<img src="img/ch17-230.png" alt="y = ke^{−h²x²}," loading="lazy">
+<div class="meta">folio 210 (PDF p. 230) &middot; &sect;10 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>y = ke^{−h²x²},</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(9x/th_17_1921_N7_src は印刷の h² を k² と書いて係数 k と同じ文字にした別の恒等式で、y = ke^{−h²x²} は定理文に無い)</dd>
+<dt>Anchor words</dt><dd>these proofs involve the normal law of error y = ke^{−h²x²},</dd>
+<dt>Remarks</dt><dd>指数は h²x² (台帳_1911番号.md の N7 は k²x² と転記; 画像は h²) — 所見候補 (台帳側の転記)</dd>
+<dt>Crop</dt><dd>folio 210, x 125&ndash;1335, y 1864&ndash;1917 (full-size scan pixels)</dd>
+</dl></section>
+<footer>Generated by tools/atlas/gen.py from the ledger ch17.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
+</main></body></html>
