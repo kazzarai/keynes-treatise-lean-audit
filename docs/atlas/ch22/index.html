@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula atlas, Chapter 22</title>
+<style>
+body{background:#fff;color:#111;font-family:Georgia,'Times New Roman',serif;margin:0;padding:24px 12px}
+main{max-width:900px;margin:0 auto}
+h1{font-size:1.5em;margin:0 0 .2em}
+.sub{color:#444;margin:0 0 1em}
+table.sum{border-collapse:collapse;margin:.5em 0 1em;font-size:.95em}
+table.sum th,table.sum td{border:1px solid #bbb;padding:3px 10px;text-align:left}
+.rules{font-size:.92em;line-height:1.45;color:#222;border-left:3px solid #ccc;padding-left:12px}
+.card{border:1px solid #ccc;border-radius:4px;margin:18px 0;padding:10px 12px}
+.card img{display:block;width:100%;height:auto;border:1px solid #eee;margin:4px 0 8px}
+.card h2{font-size:1.05em;margin:0 0 4px;font-family:Menlo,Consolas,monospace}
+.meta{font-size:.9em;color:#333;margin-bottom:4px}
+.shared{font-size:.82em;color:#666;margin:-4px 0 6px}
+dl{display:grid;grid-template-columns:8.5em 1fr;gap:3px 10px;margin:0;font-size:.92em}
+dt{color:#555}
+dd{margin:0;word-break:break-word}
+code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;padding:0 2px}
+.mark{display:inline-block;min-width:1.6em;text-align:center;border-radius:3px;padding:0 4px;margin-right:6px;font-weight:bold}
+.printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
+.notation{background:#f3eaf6}
+footer{font-size:.85em;color:#666;margin-top:2em}
+</style></head><body><main>
+<h1>Chapter XXII. The Justification of these Methods</h1>
+<p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 251&ndash;264 (Cornell copy, PDF pp. 271&ndash;284). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
+<table class="sum"><tr><th>Ledger rows</th><td>32</td></tr>
+<tr><th>Formulas</th><td>3 (display 3, inline 0; items 3, numbered 0)</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>3 &nbsp; <span class="mark equiv">&asymp;</span>0 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>0</td></tr>
+<tr><th>Notation</th><td>25 (with a Lean counterpart 16)</td></tr>
+<tr><th>Reference rows</th><td>4</td></tr>
+</table>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
+<section class="card" id="ch22-001">
+<h2>ch22-001</h2>
+<img src="img/ch22-001.png" alt="a₁a₂ . . . a_r" loading="lazy">
+<div class="meta">folio 252 (PDF p. 272) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a₁a₂ . . . a_r</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/posAnalogy, phase9c/th_22_1</dd>
+<dt>Anchor words</dt><dd><code>which have r known qualities,</code> / <code>in common</code></dd>
+<dt>Remarks</dt><dd>F22.1</dd>
+<dt>Crop</dt><dd>folio 252, x 125&ndash;1335, y 808&ndash;859 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-002">
+<h2>ch22-002</h2>
+<img src="img/ch22-002.png" alt="a₁, a₂, a₃," loading="lazy">
+<div class="meta">folio 252 (PDF p. 272) &middot; &sect;2 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>a₁, a₂, a₃,</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>phase9c/prem_22_2</dd>
+<dt>Anchor words</dt><dd><code>are picked out, namely,</code></dd>
+<dt>Remarks</dt><dd>補則 1 の裸記号 — 参考行 (第 1 回は行内・記法として数えていた; 数えない)。F22.2</dd>
+<dt>Crop</dt><dd>folio 252, x 125&ndash;1335, y 908&ndash;959 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-003">
+<h2>ch22-003</h2>
+<img src="img/ch22-003.png" alt="a_{r−1}, a_r." loading="lazy">
+<div class="meta">folio 252 (PDF p. 272) &middot; &sect;2 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>a_{r−1}, a_r.</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>phase9c/concl_22_2</dd>
+<dt>Anchor words</dt><dd><code>we have picked out, namely,</code></dd>
+<dt>Remarks</dt><dd>補則 1 の裸記号 — 参考行 (第 1 回は行内・記法として数えていた; 数えない)。F22.2</dd>
+<dt>Crop</dt><dd>folio 252, x 125&ndash;1335, y 1059&ndash;1109 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-004">
+<h2>ch22-004</h2>
+<img src="img/ch22-004.png" alt="a_{r−1}, a_r" loading="lazy">
+<div class="meta">folio 252 (PDF p. 272) &middot; &sect;2 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>a_{r−1}, a_r</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>phase9c/concl_22_2, phase9c/BoundUp, phase9c/th_22_2</dd>
+<dt>Reprint of</dt><dd><a href="#ch22-003">ch22-003</a></dd>
+<dt>Anchor words</dt><dd><code>whether the qualities</code> / <code>are bound up with</code></dd>
+<dt>Remarks</dt><dd>補則 1 の裸記号 — 参考行 (第 1 回は行内・記法として数えていた; 数えない)。F22.2</dd>
+<dt>Crop</dt><dd>folio 252, x 125&ndash;1335, y 1108&ndash;1160 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-005">
+<h2>ch22-005</h2>
+<img src="img/ch22-005.png" alt="a₁, a₂, a₃." loading="lazy">
+<div class="meta">folio 252 (PDF p. 272) &middot; &sect;2 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>a₁, a₂, a₃.</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>phase9c/prem_22_2</dd>
+<dt>Reprint of</dt><dd><a href="#ch22-002">ch22-002</a></dd>
+<dt>Anchor words</dt><dd><code>bound up with the qualities</code></dd>
+<dt>Remarks</dt><dd>補則 1 の裸記号 — 参考行 (第 1 回は行内・記法として数えていた; 数えない)。F22.2</dd>
+<dt>Crop</dt><dd>folio 252, x 125&ndash;1335, y 1159&ndash;1210 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-006">
+<h2>ch22-006</h2>
+<img src="img/ch22-006.png" alt="a₁a₂a₃" loading="lazy">
+<div class="meta">folio 252 (PDF p. 272) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a₁a₂a₃</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/prem_22_2</dd>
+<dt>Anchor words</dt><dd><code>or (2) that</code> / <code>do not belong to the same groups as</code></dd>
+<dt>Remarks</dt><dd>F22.3 (2)。(1) の <code>a_{r−1} or a_r</code> は裸記号</dd>
+<dt>Crop</dt><dd>folio 252, x 125&ndash;1335, y 1608&ndash;1659 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-007">
+<h2>ch22-007</h2>
+<img src="img/ch22-006.png" alt="a_{r−1}a_r ;" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch22-006">ch22-006</a>.</div>
+<div class="meta">folio 252 (PDF p. 272) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a_{r−1}a_r ;</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/concl_22_2</dd>
+<dt>Anchor words</dt><dd><code>the same groups as</code></dd>
+<dt>Remarks</dt><dd>F22.3 (2)</dd>
+<dt>Crop</dt><dd>folio 252, x 125&ndash;1335, y 1608&ndash;1659 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-008">
+<h2>ch22-008</h2>
+<img src="img/ch22-008.png" alt="a₁a₂a₃," loading="lazy">
+<div class="meta">folio 252 (PDF p. 272) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a₁a₂a₃,</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/prem_22_2</dd>
+<dt>Reprint of</dt><dd><a href="#ch22-006">ch22-006</a></dd>
+<dt>Anchor words</dt><dd><code>or (3) that</code> / <code>, while they belong</code></dd>
+<dt>Remarks</dt><dd>F22.3 (3)</dd>
+<dt>Crop</dt><dd>folio 252, x 125&ndash;1335, y 1658&ndash;1709 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-009">
+<h2>ch22-009</h2>
+<img src="img/ch22-008.png" alt="a_{r−1}a_r," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch22-008">ch22-008</a>.</div>
+<div class="meta">folio 252 (PDF p. 272) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a_{r−1}a_r,</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/concl_22_2</dd>
+<dt>Reprint of</dt><dd><a href="#ch22-007">ch22-007</a></dd>
+<dt>Anchor words</dt><dd><code>the same group as</code> / <code>, are not sufficient</code></dd>
+<dt>Remarks</dt><dd>F22.3 (3)。後続の <code>a_{r−1} and a_r</code> は裸記号</dd>
+<dt>Crop</dt><dd>folio 252, x 125&ndash;1335, y 1658&ndash;1709 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-010">
+<h2>ch22-010</h2>
+<img src="img/ch22-010.png" alt="a_{r−1}a_r" loading="lazy">
+<div class="meta">folio 252 (PDF p. 272) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a_{r−1}a_r</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/th_22_4 (結論側の包括性の部分のみ)</dd>
+<dt>Reprint of</dt><dd><a href="#ch22-007">ch22-007</a></dd>
+<dt>Anchor words</dt><dd><code>the terms typified by</code> / <code>are numerous and comprehensive</code></dd>
+<dt>Remarks</dt><dd>F22.4 前半</dd>
+<dt>Crop</dt><dd>folio 252, x 125&ndash;1335, y 1907&ndash;1958 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-011">
+<h2>ch22-011</h2>
+<img src="img/ch22-011.png" alt="a₁a₂a₃" loading="lazy">
+<div class="meta">folio 252 (PDF p. 272) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a₁a₂a₃</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(群構造の仮定を要する; phase9c/th_22_4 の対象外)</dd>
+<dt>Reprint of</dt><dd><a href="#ch22-006">ch22-006</a></dd>
+<dt>Anchor words</dt><dd><code>the terms typified by</code> / <code>are numerous and comprehensive, because this decreases</code></dd>
+<dt>Remarks</dt><dd>F22.4 後半</dd>
+<dt>Crop</dt><dd>folio 252, x 125&ndash;1335, y 2106&ndash;2158 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-012">
+<h2>ch22-012</h2>
+<img src="img/ch22-012.png" alt="a₁a₂a₃a_{r−1}a_r" loading="lazy">
+<div class="meta">folio 253 (PDF p. 273) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a₁a₂a₃a_{r−1}a_r</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>agrees with the former instances in</code> / <code>but not in a₄</code></dd>
+<dt>Remarks</dt><dd>F22.5。添字間にコンマなし</dd>
+<dt>Crop</dt><dd>folio 253, x 125&ndash;1335, y 253&ndash;304 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-013">
+<h2>ch22-013</h2>
+<img src="img/ch22-013.png" alt="a_{r−1}a_r." loading="lazy">
+<div class="meta">folio 253 (PDF p. 273) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a_{r−1}a_r.</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch22-007">ch22-007</a></dd>
+<dt>Anchor words</dt><dd><code>that is bound up with</code></dd>
+<dt>Remarks</dt><dd>F22.5</dd>
+<dt>Crop</dt><dd>folio 253, x 125&ndash;1335, y 352&ndash;405 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-014">
+<h2>ch22-014</h2>
+<img src="img/ch22-014.png" alt="φ₁φ₂φ₃. . . ." loading="lazy">
+<div class="meta">folio 253 (PDF p. 273) &middot; &sect;3 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>φ₁φ₂φ₃. . . .</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/ax_22_limited_independent_variety (生成子有限の仮定を追加公理として)</dd>
+<dt>Anchor words</dt><dd><code>which we may call</code></dd>
+<dt>Remarks</dt><dd>F22.6。ピリオド 1 個+省略点 3 個</dd>
+<dt>Crop</dt><dd>folio 253, x 125&ndash;1335, y 1911&ndash;1962 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-015">
+<h2>ch22-015</h2>
+<img src="img/ch22-015.png" alt="φ₁φ₂" loading="lazy">
+<div class="meta">folio 253 (PDF p. 273) &middot; &sect;3 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>φ₁φ₂</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>those which arise out of</code> / <code>in conjunction form another group</code></dd>
+<dt>Remarks</dt><dd>F22.6</dd>
+<dt>Crop</dt><dd>folio 253, x 125&ndash;1335, y 2061&ndash;2114 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-016">
+<h2>ch22-016</h2>
+<img src="img/ch22-016.png" alt="φ₁φ₂φ₃," loading="lazy">
+<div class="meta">folio 254 (PDF p. 274) &middot; &sect;3 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>φ₁φ₂φ₃,</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>out of three generator properties</code></dd>
+<dt>Remarks</dt><dd>F22.7</dd>
+<dt>Crop</dt><dd>folio 254, x 125&ndash;1335, y 178&ndash;255 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-017">
+<h2>ch22-017</h2>
+<img src="img/ch22-017.png" alt="φ₁φ₂φ₃." loading="lazy">
+<div class="meta">folio 254 (PDF p. 274) &middot; &sect;3 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>φ₁φ₂φ₃.</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch22-016">ch22-016</a></dd>
+<dt>Anchor words</dt><dd><code>may be said to specify the group</code></dd>
+<dt>Remarks</dt><dd>F22.7</dd>
+<dt>Crop</dt><dd>folio 254, x 125&ndash;1335, y 303&ndash;356 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-018">
+<h2>ch22-018</h2>
+<img src="img/ch22-018.png" alt="g(φf)" loading="lazy">
+<div class="meta">folio 254 (PDF p. 274) &middot; &sect;3 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φf)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/gen, phase9c/g_</dd>
+<dt>Anchor words</dt><dd><code>i.e. if the generalisation</code> / <code>is valid</code></dd>
+<dt>Remarks</dt><dd>F22.8。コンマなし (第19章は <code>g(φ, f)</code>; 既存台帳 T2)</dd>
+<dt>Crop</dt><dd>folio 254, x 125&ndash;1335, y 1159&ndash;1210 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-019">
+<h2>ch22-019</h2>
+<img src="img/ch22-019.png" alt="g/h = p₀, where p₀ is finite," loading="lazy">
+<div class="meta">folio 254 (PDF p. 274) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>g/h = p₀, where p₀ is finite,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/p_0 (def 本体), phase9c/th_22_9_src (0 &lt; p_0)</dd>
+<dt>Anchor words</dt><dd><code>If x_r, etc., are the instances,</code></dd>
+<dt>Remarks</dt><dd>F22.9。第 1 行。「where p₀ is finite」は th_22_9_src の 0 &lt; p_0。帰結は phase9c/th_22_9</dd>
+<dt>Crop</dt><dd>folio 254, x 125&ndash;1335, y 1456&ndash;1513 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-020">
+<h2>ch22-020</h2>
+<img src="img/ch22-020.png" alt="x_r/gh = 1, etc.," loading="lazy">
+<div class="meta">folio 254 (PDF p. 274) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>x_r/gh = 1, etc.,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/ax_22_10_instances_certain (公理の文)</dd>
+<dt>Reprint of</dt><dd><a href="../ch20/index.html#ch20-002">ch20-002</a></dd>
+<dt>Anchor words</dt><dd><code>g/h = p₀, where p₀ is finite,</code> (直前)</dd>
+<dt>Remarks</dt><dd>F22.10。第 2 行。第20章 F20.1 の再掲。帰結 x₁…xₙ/gh = 1 は phase9c/th_22_10</dd>
+<dt>Crop</dt><dd>folio 254, x 125&ndash;1335, y 1512&ndash;1574 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-021">
+<h2>ch22-021</h2>
+<img src="img/ch22-021.png" alt="x_r/x₁x₂ . . . x_{r−1}ḡh = 1 − ε, where ε is finite." loading="lazy">
+<div class="meta">folio 254 (PDF p. 274) &middot; &sect;3 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>x_r/x₁x₂ . . . x_{r−1}ḡh = 1 − ε, where ε is finite.</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/ax_22_11_eps_finite (公理の文)</dd>
+<dt>Anchor words</dt><dd><code>and</code></dd>
+<dt>Remarks</dt><dd>F22.11。第 3 行、左端に <code>and</code>。等号 (第20章 folio 237 は <code>&lt;</code>; 索引 E-III-2、E または T)。公理文は左辺を Lean 側の略名 y_ で書く (細則 6 裁定事項 A′; 添字のずらし)。phase9a/th_22_254_eq_src の仮定 hq も同形。等号形と不等号形の関係は phase9c/th_22_11_src, phase9a/th_E_III_2_not_lt, th_E_III_2_refutes_F20_16, th_22_254_eq_exact, th_E_III_2_eq_imp_le</dd>
+<dt>Crop</dt><dd>folio 254, x 125&ndash;1335, y 1573&ndash;1647 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-022">
+<h2>ch22-022</h2>
+<img src="img/ch22-022.png" alt="a₁a₂ . . . aₙ." loading="lazy">
+<div class="meta">folio 255 (PDF p. 275) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a₁a₂ . . . aₙ.</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/qualSet</dd>
+<dt>Anchor words</dt><dd><code>may be represented by</code></dd>
+<dt>Remarks</dt><dd>F22.13。<code>a_r</code>, <code>a_s</code> (集合) は裸記号</dd>
+<dt>Crop</dt><dd>folio 255, x 125&ndash;1335, y 814&ndash;865 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-023">
+<h2>ch22-023</h2>
+<img src="img/ch22-023.png" alt="a_{r+1} . . . a_{s−1}." loading="lazy">
+<div class="meta">folio 255 (PDF p. 275) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a_{r+1} . . . a_{s−1}.</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>may be represented by</code></dd>
+<dt>Remarks</dt><dd>F22.14</dd>
+<dt>Crop</dt><dd>folio 255, x 125&ndash;1335, y 1315&ndash;1368 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-024">
+<h2>ch22-024</h2>
+<img src="img/ch22-024.png" alt="a_{r+1} . . . a_{s−1}" loading="lazy">
+<div class="meta">folio 255 (PDF p. 275) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a_{r+1} . . . a_{s−1}</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch22-023">ch22-023</a></dd>
+<dt>Anchor words</dt><dd><code>that some of</code> / <code>are necessary as well as a_r</code></dd>
+<dt>Remarks</dt><dd>F22.14</dd>
+<dt>Crop</dt><dd>folio 255, x 125&ndash;1335, y 1467&ndash;1517 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-025">
+<h2>ch22-025</h2>
+<img src="img/ch22-025.png" alt="a_{r+1} . . . a_{s−1}" loading="lazy">
+<div class="meta">folio 255 (PDF p. 275) &middot; &sect;5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a_{r+1} . . . a_{s−1}</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch22-023">ch22-023</a></dd>
+<dt>Anchor words</dt><dd><code>neglecting certain of the characters</code> / <code>by direct judgments of irrelevance</code></dd>
+<dt>Remarks</dt><dd>F22.14</dd>
+<dt>Crop</dt><dd>folio 255, x 125&ndash;1335, y 1667&ndash;1718 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-026">
+<h2>ch22-026</h2>
+<img src="img/ch22-026.png" alt="C/H," loading="lazy">
+<div class="meta">folio 259 (PDF p. 279) &middot; &sect;11 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>C/H,</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/ax_22_17_CH_finite, phase9c/th_22_17</dd>
+<dt>Anchor words</dt><dd><code>a general hypothesis H such that</code></dd>
+<dt>Remarks</dt><dd>F22.17。頁末; 「the à priori probability of our conclusion, has a finite value」は 260 冒頭</dd>
+<dt>Crop</dt><dd>folio 259, x 125&ndash;1335, y 2147&ndash;2200 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-027">
+<h2>ch22-027</h2>
+<img src="img/ch22-027.png" alt="C/HE" loading="lazy">
+<div class="meta">folio 260 (PDF p. 280) &middot; &sect;11 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>C/HE</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/th_22_18, phase9c/inductive_method, phase9c/F22_18_needs_premisses</dd>
+<dt>Anchor words</dt><dd><code>à priori value,</code> / <code>being greater than C/H.</code></dd>
+<dt>Remarks</dt><dd>F22.18。「being greater than」は語 (関係記号なし)。索引 T 候補 (前提 E/CH = 1, E/H &lt; 1 の補充)</dd>
+<dt>Crop</dt><dd>folio 260, x 125&ndash;1335, y 301&ndash;352 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-028">
+<h2>ch22-028</h2>
+<img src="img/ch22-027.png" alt="C/H." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch22-027">ch22-027</a>.</div>
+<div class="meta">folio 260 (PDF p. 280) &middot; &sect;11 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>C/H.</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/th_22_18</dd>
+<dt>Reprint of</dt><dd><a href="#ch22-026">ch22-026</a></dd>
+<dt>Anchor words</dt><dd><code>being greater than</code></dd>
+<dt>Remarks</dt><dd>F22.18</dd>
+<dt>Crop</dt><dd>folio 260, x 125&ndash;1335, y 301&ndash;352 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-029">
+<h2>ch22-029</h2>
+<img src="img/ch22-029.png" alt="C/H" loading="lazy">
+<div class="meta">folio 260 (PDF p. 280) &middot; &sect;11 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>C/H</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/inductive_method</dd>
+<dt>Reprint of</dt><dd><a href="#ch22-026">ch22-026</a></dd>
+<dt>Anchor words</dt><dd><code>the method of strengthening</code> / <code>by the addition of evidence E</code></dd>
+<dt>Remarks</dt><dd>F22.18</dd>
+<dt>Crop</dt><dd>folio 260, x 125&ndash;1335, y 351&ndash;402 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-030">
+<h2>ch22-030</h2>
+<img src="img/ch22-030.png" alt="H/H′" loading="lazy">
+<div class="meta">folio 260 (PDF p. 280) &middot; &sect;11 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>H/H′</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/ax_22_19_HH&#x27;_finite</dd>
+<dt>Anchor words</dt><dd><code>such that</code> / <code>has a finite value</code></dd>
+<dt>Remarks</dt><dd>F22.19</dd>
+<dt>Crop</dt><dd>folio 260, x 125&ndash;1335, y 500&ndash;552 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-031">
+<h2>ch22-031</h2>
+<img src="img/ch22-031.png" alt="H/H′." loading="lazy">
+<div class="meta">folio 260 (PDF p. 280) &middot; &sect;11 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>H/H′.</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/th_22_19</dd>
+<dt>Reprint of</dt><dd><a href="#ch22-030">ch22-030</a></dd>
+<dt>Anchor words</dt><dd><code>to strengthen the probability</code></dd>
+<dt>Remarks</dt><dd>F22.19。索引 T 候補 (前提 E′/HH′ = 1, E′/H′ &lt; 1 の補充)</dd>
+<dt>Crop</dt><dd>folio 260, x 125&ndash;1335, y 601&ndash;654 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch22-032">
+<h2>ch22-032</h2>
+<img src="img/ch22-032.png" alt="C/H" loading="lazy">
+<div class="meta">folio 260 (PDF p. 280) &middot; &sect;11 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>C/H</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/inductive_method</dd>
+<dt>Reprint of</dt><dd><a href="#ch22-026">ch22-026</a></dd>
+<dt>Anchor words</dt><dd><code>the process of strengthening</code> / <code>by the addition E</code></dd>
+<dt>Remarks</dt><dd>F22.19 (inductive method の定義文)</dd>
+<dt>Crop</dt><dd>folio 260, x 125&ndash;1335, y 754&ndash;805 (full-size scan pixels)</dd>
+</dl></section>
+<footer>Generated by tools/atlas/gen.py from the ledger ch22.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
+</main></body></html>

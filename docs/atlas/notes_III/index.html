@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula atlas, Notes on Part III</title>
+<style>
+body{background:#fff;color:#111;font-family:Georgia,'Times New Roman',serif;margin:0;padding:24px 12px}
+main{max-width:900px;margin:0 auto}
+h1{font-size:1.5em;margin:0 0 .2em}
+.sub{color:#444;margin:0 0 1em}
+table.sum{border-collapse:collapse;margin:.5em 0 1em;font-size:.95em}
+table.sum th,table.sum td{border:1px solid #bbb;padding:3px 10px;text-align:left}
+.rules{font-size:.92em;line-height:1.45;color:#222;border-left:3px solid #ccc;padding-left:12px}
+.card{border:1px solid #ccc;border-radius:4px;margin:18px 0;padding:10px 12px}
+.card img{display:block;width:100%;height:auto;border:1px solid #eee;margin:4px 0 8px}
+.card h2{font-size:1.05em;margin:0 0 4px;font-family:Menlo,Consolas,monospace}
+.meta{font-size:.9em;color:#333;margin-bottom:4px}
+.shared{font-size:.82em;color:#666;margin:-4px 0 6px}
+dl{display:grid;grid-template-columns:8.5em 1fr;gap:3px 10px;margin:0;font-size:.92em}
+dt{color:#555}
+dd{margin:0;word-break:break-word}
+code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;padding:0 2px}
+.mark{display:inline-block;min-width:1.6em;text-align:center;border-radius:3px;padding:0 4px;margin-right:6px;font-weight:bold}
+.printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
+.notation{background:#f3eaf6}
+footer{font-size:.85em;color:#666;margin-top:2em}
+</style></head><body><main>
+<h1>Notes on Part III: (i.) On the Use of the Term *Induction* / (ii.) On the Use of the Term *Cause*</h1>
+<p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 274&ndash;280 (Cornell copy, PDF pp. 294&ndash;300). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
+<table class="sum"><tr><th>Ledger rows</th><td>22</td></tr>
+<tr><th>Formulas</th><td>20 (display 0, inline 20; items 10, numbered 0)</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>20 &nbsp; <span class="mark equiv">&asymp;</span>0 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>0</td></tr>
+<tr><th>Notation</th><td>2 (with a Lean counterpart 2)</td></tr>
+<tr><th>Reference rows</th><td>0</td></tr>
+</table>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
+<section class="card" id="notes-001">
+<h2>notes-001</h2>
+<img src="img/notes-001.png" alt="b/ak = 1," loading="lazy">
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/ak = 1,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.SuffCause (def 本体)</dd>
+<dt>Anchor words</dt><dd><code>(i.) If</code> / <code>, A is a sufficient cause of B.</code></dd>
+<dt>Remarks</dt><dd>十分原因</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 1035&ndash;1081 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-002">
+<h2>notes-002</h2>
+<img src="img/notes-002.png" alt="b/āk = 0," loading="lazy">
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/āk = 0,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.NecCause (def 本体)</dd>
+<dt>Anchor words</dt><dd><code>(ii.) If</code> / <code>, A is a necessary cause of B.</code></dd>
+<dt>Remarks</dt><dd>必要原因</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 1168&ndash;1211 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-003">
+<h2>notes-003</h2>
+<img src="img/notes-003.png" alt="b/ak = 1." loading="lazy">
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/ak = 1.</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.Def_iii (def 本体)</dd>
+<dt>Reprint of</dt><dd><a href="#notes-001">notes-001</a></dd>
+<dt>Anchor words</dt><dd><code>a sufficient cause of B unless</code></dd>
+<dt>Remarks</dt><dd>k が全法則を含む場合</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 1251&ndash;1298 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-004">
+<h2>notes-004</h2>
+<img src="img/notes-004.png" alt="b/ak = 1." loading="lazy">
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/ak = 1.</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.LawOfCausation (def 本体)</dd>
+<dt>Reprint of</dt><dd><a href="#notes-001">notes-001</a></dd>
+<dt>Anchor words</dt><dd><code>prior to B, such that</code> / <code>No use has been made</code></dd>
+<dt>Remarks</dt><dd>因果律の言い換え</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 1469&ndash;1515 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-005">
+<h2>notes-005</h2>
+<img src="img/notes-005.png" alt="b/akl = 1" loading="lazy">
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/akl = 1</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.SuffCauseUnder (def 本体)</dd>
+<dt>Anchor words</dt><dd><code>(iv.) If</code> / <code>and</code></dd>
+<dt>Remarks</dt><dd>条件 l 下の十分原因、第 1 条件</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 1600&ndash;1647 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-006">
+<h2>notes-006</h2>
+<img src="img/notes-005.png" alt="b/kl ≠ 1," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#notes-005">notes-005</a>.</div>
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/kl ≠ 1,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.SuffCauseUnder (def 本体)</dd>
+<dt>Anchor words</dt><dd><code>and</code> / <code>, A is a sufficient cause of B under conditions l.</code></dd>
+<dt>Remarks</dt><dd>第 2 条件</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 1600&ndash;1647 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-007">
+<h2>notes-007</h2>
+<img src="img/notes-007.png" alt="b/ākl = 0" loading="lazy">
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/ākl = 0</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.NecCauseUnder (def 本体)</dd>
+<dt>Anchor words</dt><dd><code>(v.) If</code> / <code>and</code></dd>
+<dt>Remarks</dt><dd>条件 l 下の必要原因、第 1 条件</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 1684&ndash;1733 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-008">
+<h2>notes-008</h2>
+<img src="img/notes-007.png" alt="b/kl ≠ 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#notes-007">notes-007</a>.</div>
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/kl ≠ 0,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.NecCauseUnder (def 本体)</dd>
+<dt>Anchor words</dt><dd><code>and</code> / <code>, A is a necessary cause of B under</code></dd>
+<dt>Remarks</dt><dd>第 2 条件</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 1684&ndash;1733 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-009">
+<h2>notes-009</h2>
+<img src="img/notes-009.png" alt="b/ahk = 1" loading="lazy">
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/ahk = 1</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.PossSuffCause (def 本体)</dd>
+<dt>Anchor words</dt><dd><code>existential proposition h such that</code></dd>
+<dt>Remarks</dt><dd>可能的十分原因、第 1 条件</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 1772&ndash;1819 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-010">
+<h2>notes-010</h2>
+<img src="img/notes-010.png" alt="b/hk ≠ 1," loading="lazy">
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/hk ≠ 1,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.PossSuffCause (def 本体)</dd>
+<dt>Anchor words</dt><dd><code>and</code> / <code>, A is, relative to k, a possible sufficient cause</code></dd>
+<dt>Remarks</dt><dd>第 2 条件</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 1818&ndash;1864 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-011">
+<h2>notes-011</h2>
+<img src="img/notes-011.png" alt="b/āhk = 0" loading="lazy">
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/āhk = 0</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.PossNecCause (def 本体)</dd>
+<dt>Anchor words</dt><dd><code>existential proposition h such that</code></dd>
+<dt>Remarks</dt><dd>可能的必要原因、第 1 条件</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 1864&ndash;1906 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-012">
+<h2>notes-012</h2>
+<img src="img/notes-012.png" alt="b/hk ≠ 0," loading="lazy">
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/hk ≠ 0,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.PossNecCause (def 本体)</dd>
+<dt>Anchor words</dt><dd><code>and</code> / <code>, A is, relative to k, a possible necessary cause</code></dd>
+<dt>Remarks</dt><dd>第 2 条件</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 1906&ndash;1941 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-013">
+<h2>notes-013</h2>
+<img src="img/notes-013.png" alt="b/ahkl = 1," loading="lazy">
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/ahkl = 1,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.PossSuffCauseUnder_src (def 本体), phase9c/def_viii_src</dd>
+<dt>Anchor words</dt><dd><code>(viii.) If</code></dd>
+<dt>Remarks</dt><dd>条件 l 下の可能的十分原因、第 1 条件。(viii.)(ix.) は (vi.)(vii.) と異なり「there is an existential proposition h」を書かない (索引注記)</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 1940&ndash;1990 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-014">
+<h2>notes-014</h2>
+<img src="img/notes-013.png" alt="b/hk ≠ 1," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#notes-013">notes-013</a>.</div>
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/hk ≠ 1,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.PossSuffCauseUnder_src (def 本体、印刷形), phase9c/def_viii_src</dd>
+<dt>Anchor words</dt><dd><code>b/ahkl = 1,</code> (直前) / <code>and h/akl ≠ 0</code></dd>
+<dt>Remarks</dt><dd>第 2 条件に <code>l</code> が無い ((iv.) は <code>b/kl</code>、(ix.) は <code>b/hkl</code>; 索引 E-III-4、S 疑義)。印刷形がそのまま def 本体にあるので ✓。l を補った形は phase9c/Notes_ii.PossSuffCauseUnder_l, phase9c/def_viii_l、関係は phase9c/def_viii_l_imp_src, phase9c/E_III_4_countermodel, phase9c/E_III_4_corrected_imp_printed</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 1940&ndash;1990 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-015">
+<h2>notes-015</h2>
+<img src="img/notes-013.png" alt="h/akl ≠ 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#notes-013">notes-013</a>.</div>
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>h/akl ≠ 0,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.PossSuffCauseUnder_src (def 本体), phase9c/def_viii_src</dd>
+<dt>Anchor words</dt><dd><code>and</code> / <code>, A is, relative to k,</code></dd>
+<dt>Remarks</dt><dd>第 3 条件</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 1940&ndash;1990 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-016">
+<h2>notes-016</h2>
+<img src="img/notes-016.png" alt="b/āhkl = 0," loading="lazy">
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/āhkl = 0,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.PossNecCauseUnder (def 本体), phase9c/def_ix</dd>
+<dt>Anchor words</dt><dd><code>(ix.) If</code></dd>
+<dt>Remarks</dt><dd>条件 l 下の可能的必要原因、第 1 条件</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 2026&ndash;2082 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-017">
+<h2>notes-017</h2>
+<img src="img/notes-016.png" alt="b/hkl ≠ 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#notes-016">notes-016</a>.</div>
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/hkl ≠ 0,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.PossNecCauseUnder (def 本体), phase9c/def_ix</dd>
+<dt>Anchor words</dt><dd><code>b/āhkl = 0,</code> (直前)</dd>
+<dt>Remarks</dt><dd>第 2 条件 (l あり)</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 2026&ndash;2082 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-018">
+<h2>notes-018</h2>
+<img src="img/notes-016.png" alt="h/ākl ≠ 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#notes-016">notes-016</a>.</div>
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>h/ākl ≠ 0,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.PossNecCauseUnder (def 本体), phase9c/def_ix</dd>
+<dt>Anchor words</dt><dd><code>b/hkl ≠ 0,</code> (直前) / <code>and</code></dd>
+<dt>Remarks</dt><dd>第 3 条件</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 2026&ndash;2082 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-019">
+<h2>notes-019</h2>
+<img src="img/notes-016.png" alt="h/akl ≠ 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#notes-016">notes-016</a>.</div>
+<div class="meta">folio 276 (PDF p. 296) &middot; &sect;(ii.) 3 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>h/akl ≠ 0,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.PossNecCauseUnder (def 本体), phase9c/def_ix</dd>
+<dt>Reprint of</dt><dd><a href="#notes-015">notes-015</a></dd>
+<dt>Anchor words</dt><dd><code>and</code> / <code>, A is, relative to k, a possible necessary cause</code></dd>
+<dt>Remarks</dt><dd>第 4 条件。頁末「relative to k, a possible necessary cause of B under conditions l.」</dd>
+<dt>Crop</dt><dd>folio 276, x 125&ndash;1335, y 2026&ndash;2082 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-020">
+<h2>notes-020</h2>
+<img src="img/notes-020.png" alt="b/ahkl ≠ b/āhkl," loading="lazy">
+<div class="meta">folio 277 (PDF p. 297) &middot; &sect;(ii.) 4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/ahkl ≠ b/āhkl,</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9c/Notes_ii.DepForProb (def 本体), phase9c/dep_for_prob</dd>
+<dt>Anchor words</dt><dd><code>causa essendi and causa cognoscendi. If</code> / <code>where a and b may be any propositions</code></dd>
+<dt>Remarks</dt><dd>「確率上の依存」(causa cognoscendi) の定義。帰結は phase9c/def_viii_l_dep, phase9c/def_ix_dep。(x.) 因果的独立の定義 (277) は語のみ (phase9c/Notes_ii.CausallyIndependent, phase9c/def_x_src)</dd>
+<dt>Crop</dt><dd>folio 277, x 125&ndash;1335, y 741&ndash;776 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-021">
+<h2>notes-021</h2>
+<img src="img/notes-021.png" alt="kl." loading="lazy">
+<div class="meta">folio 277 (PDF p. 297) &middot; &sect;(ii.) 4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>kl.</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/Notes_ii.DepForProb (前提 R.conj k l), phase9c/dep_for_prob</dd>
+<dt>Anchor words</dt><dd><code>causa cognoscendi for b, relative to data</code> / <code>If a and b are causally dependent</code></dd>
+<dt>Remarks</dt><dd>「確率上の依存」の文末。名詞的資料 k と存在的資料 l の連言 (並置; ch18-001 <code>AB</code> と同じ基準で記法)。ピリオドは文末の句点</dd>
+<dt>Crop</dt><dd>folio 277, x 125&ndash;1335, y 872&ndash;918 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="notes-022">
+<h2>notes-022</h2>
+<img src="img/notes-022.png" alt="kl." loading="lazy">
+<div class="meta">folio 277 (PDF p. 297) &middot; &sect;(ii.) 4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>kl.</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9c/def_x_src (引数 k l)</dd>
+<dt>Reprint of</dt><dd><a href="#notes-021">notes-021</a></dd>
+<dt>Anchor words</dt><dd><code>possible causa essendi, relative to data</code> / <code>But, after all, the essential</code></dd>
+<dt>Remarks</dt><dd>定義 (x.) を適用した文の文末。ピリオドは文末の句点</dd>
+<dt>Crop</dt><dd>folio 277, x 125&ndash;1335, y 960&ndash;1001 (full-size scan pixels)</dd>
+</dl></section>
+<footer>Generated by tools/atlas/gen.py from the ledger notes_III.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
+</main></body></html>

@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula atlas, Chapter 19</title>
+<style>
+body{background:#fff;color:#111;font-family:Georgia,'Times New Roman',serif;margin:0;padding:24px 12px}
+main{max-width:900px;margin:0 auto}
+h1{font-size:1.5em;margin:0 0 .2em}
+.sub{color:#444;margin:0 0 1em}
+table.sum{border-collapse:collapse;margin:.5em 0 1em;font-size:.95em}
+table.sum th,table.sum td{border:1px solid #bbb;padding:3px 10px;text-align:left}
+.rules{font-size:.92em;line-height:1.45;color:#222;border-left:3px solid #ccc;padding-left:12px}
+.card{border:1px solid #ccc;border-radius:4px;margin:18px 0;padding:10px 12px}
+.card img{display:block;width:100%;height:auto;border:1px solid #eee;margin:4px 0 8px}
+.card h2{font-size:1.05em;margin:0 0 4px;font-family:Menlo,Consolas,monospace}
+.meta{font-size:.9em;color:#333;margin-bottom:4px}
+.shared{font-size:.82em;color:#666;margin:-4px 0 6px}
+dl{display:grid;grid-template-columns:8.5em 1fr;gap:3px 10px;margin:0;font-size:.92em}
+dt{color:#555}
+dd{margin:0;word-break:break-word}
+code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;padding:0 2px}
+.mark{display:inline-block;min-width:1.6em;text-align:center;border-radius:3px;padding:0 4px;margin-right:6px;font-weight:bold}
+.printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
+.notation{background:#f3eaf6}
+footer{font-size:.85em;color:#666;margin-top:2em}
+</style></head><body><main>
+<h1>Chapter XIX. The Nature of Argument by Analogy</h1>
+<p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 222&ndash;232 (Cornell copy, PDF pp. 242&ndash;252). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
+<table class="sum"><tr><th>Ledger rows</th><td>75</td></tr>
+<tr><th>Formulas</th><td>16 (display 8, inline 8; items 16, numbered 0)</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>3 &nbsp; <span class="mark equiv">&asymp;</span>2 &nbsp; <span class="mark corrected">&#9998;</span>2 &nbsp; <span class="mark none">&#26410;</span>9</td></tr>
+<tr><th>Notation</th><td>49 (with a Lean counterpart 40)</td></tr>
+<tr><th>Reference rows</th><td>10</td></tr>
+</table>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
+<section class="card" id="ch19-001">
+<h2>ch19-001</h2>
+<img src="img/ch19-001.png" alt="f(x)" loading="lazy">
+<div class="meta">folio 222 (PDF p. 242) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>f(x)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/PFun (命題関数)</dd>
+<dt>Anchor words</dt><dd><code>in the following way. If</code></dd>
+<dt>Remarks</dt><dd>既存 #1</dd>
+<dt>Crop</dt><dd>folio 222, x 125&ndash;1335, y 1716&ndash;1767 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-002">
+<h2>ch19-002</h2>
+<img src="img/ch19-002.png" alt="φ(x)" loading="lazy">
+<div class="meta">folio 222 (PDF p. 242) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>φ(x)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/PFun</dd>
+<dt>Anchor words</dt><dd><code>values of x for which</code></dd>
+<dt>Remarks</dt><dd>既存 #1</dd>
+<dt>Crop</dt><dd>folio 222, x 125&ndash;1335, y 1766&ndash;1818 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-003">
+<h2>ch19-003</h2>
+<img src="img/ch19-003.png" alt="g(φ, f)" loading="lazy">
+<div class="meta">folio 222 (PDF p. 242) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/g</dd>
+<dt>Anchor words</dt><dd><code>which we may write</code></dd>
+<dt>Remarks</dt><dd>既存 #2</dd>
+<dt>Crop</dt><dd>folio 222, x 125&ndash;1335, y 1817&ndash;1867 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-004">
+<h2>ch19-004</h2>
+<img src="img/ch19-004.png" alt="φ(a) . f(a)" loading="lazy">
+<div class="meta">folio 222 (PDF p. 242) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>φ(a) . f(a)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>is true.&quot; The proposition</code></dd>
+<dt>Remarks</dt><dd>既存 #3。一般化の事例 (instance)</dd>
+<dt>Crop</dt><dd>folio 222, x 125&ndash;1335, y 1965&ndash;2017 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-005">
+<h2>ch19-005</h2>
+<img src="img/ch19-005.png" alt="g(φ, f)" loading="lazy">
+<div class="meta">folio 222 (PDF p. 242) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/g</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-003">ch19-003</a></dd>
+<dt>Anchor words</dt><dd><code>instance of the generalisation</code></dd>
+<dt>Remarks</dt><dd>既存 #3</dd>
+<dt>Crop</dt><dd>folio 222, x 125&ndash;1335, y 2016&ndash;2067 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-006">
+<h2>ch19-006</h2>
+<img src="img/ch19-006.png" alt="g(φ, f)" loading="lazy">
+<div class="meta">folio 223 (PDF p. 243) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/g</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-003">ch19-003</a></dd>
+<dt>Anchor words</dt><dd><code>Every generalisation</code></dd>
+<dt>Remarks</dt><dd>既存 #4 の文脈</dd>
+<dt>Crop</dt><dd>folio 223, x 125&ndash;1335, y 477&ndash;529 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-007">
+<h2>ch19-007</h2>
+<img src="img/ch19-007.png" alt="A_{a₁…aₙ}(φ)." loading="lazy">
+<div class="meta">folio 223 (PDF p. 243) &middot; &sect;2 &middot; Text &middot; Display &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>A_{a₁…aₙ}(φ).</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/A</dd>
+<dt>Anchor words</dt><dd><code>let us write this—</code></dd>
+<dt>Remarks</dt><dd>既存 #7。右肩に脚注番号 1</dd>
+<dt>Crop</dt><dd>folio 223, x 125&ndash;1335, y 1987&ndash;2087 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-008">
+<h2>ch19-008</h2>
+<img src="img/ch19-008.png" alt="A_{a₁…aₙ}(φ) ≡ φ(a₁) . φ(a₂) . . . φ(aₙ) ≡ Π_{x=a₁}^{x=aₙ} φ(x)." loading="lazy">
+<div class="meta">folio 223 (PDF p. 243) &middot; &sect;2 &middot; Footnote 1 &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>A_{a₁…aₙ}(φ) ≡ φ(a₁) . φ(a₂) . . . φ(aₙ) ≡ Π_{x=a₁}^{x=aₙ} φ(x).</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9b/A (def 本体; n = 3 の rfl は phase9b/A_three)</dd>
+<dt>Anchor words</dt><dd><code>Hence</code></dd>
+<dt>Remarks</dt><dd>既存 #8。1 行に ≡ が 2 個 (印刷 1 行なので 1 本)。Π の上に <code>x=aₙ</code>、下に <code>x=a₁</code>。補則 8: 印刷の定義行が def A の本体 (事例の連言 φ(a₁) . φ(a₂) . . . φ(aₙ); 省略点は List の再帰) にそのまま現れるので ✓ (細則 6)。記法 ch19-007 の対応は別勘定</dd>
+<dt>Crop</dt><dd>folio 223, x 125&ndash;1335, y 2125&ndash;2230 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-009">
+<h2>ch19-009</h2>
+<img src="img/ch19-009.png" alt="Ā_{a₁…aₙ}(φ′)." loading="lazy">
+<div class="meta">folio 224 (PDF p. 244) &middot; &sect;2 &middot; Text &middot; Display &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>Ā_{a₁…aₙ}(φ′).</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/Abar</dd>
+<dt>Anchor words</dt><dd><code>let us write this—</code></dd>
+<dt>Remarks</dt><dd>既存 #9。右肩に脚注番号 1</dd>
+<dt>Crop</dt><dd>folio 224, x 125&ndash;1335, y 280&ndash;364 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-010">
+<h2>ch19-010</h2>
+<img src="img/ch19-010.png" alt="A_{a₁…aₙ}(φ)" loading="lazy">
+<div class="meta">folio 224 (PDF p. 244) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>A_{a₁…aₙ}(φ)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/A</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-007">ch19-007</a></dd>
+<dt>Anchor words</dt><dd><code>Thus</code> / <code>expresses the fact that</code></dd>
+<dt>Remarks</dt><dd>既存 #9 の文脈。行内でも A の直下に添字</dd>
+<dt>Crop</dt><dd>folio 224, x 125&ndash;1335, y 364&ndash;441 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-011">
+<h2>ch19-011</h2>
+<img src="img/ch19-011.png" alt="Ā_{a₁…aₙ}(φ′)" loading="lazy">
+<div class="meta">folio 224 (PDF p. 244) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>Ā_{a₁…aₙ}(φ′)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/Abar</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-009">ch19-009</a></dd>
+<dt>Anchor words</dt><dd><code>common to all the instances, and</code></dd>
+<dt>Remarks</dt><dd>既存 #9 の文脈</dd>
+<dt>Crop</dt><dd>folio 224, x 125&ndash;1335, y 488&ndash;567 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-012">
+<h2>ch19-012</h2>
+<img src="img/ch19-012.png" alt="g(φ, f)" loading="lazy">
+<div class="meta">folio 224 (PDF p. 244) &middot; &sect;3 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/g</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-003">ch19-003</a></dd>
+<dt>Anchor words</dt><dd><code>establish the generalisation</code></dd>
+<dt>Remarks</dt><dd>既存 #11</dd>
+<dt>Crop</dt><dd>folio 224, x 125&ndash;1335, y 1117&ndash;1169 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-013">
+<h2>ch19-013</h2>
+<img src="img/ch19-013.png" alt="g(φ, f)" loading="lazy">
+<div class="meta">folio 224 (PDF p. 244) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/g</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-003">ch19-003</a></dd>
+<dt>Anchor words</dt><dd><code>scope of the generalisation</code></dd>
+<dt>Remarks</dt><dd>既存 #12</dd>
+<dt>Crop</dt><dd>folio 224, x 125&ndash;1335, y 1765&ndash;1817 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-014">
+<h2>ch19-014</h2>
+<img src="img/ch19-014.png" alt="Ā_{a₁…aₙ}(φ′) ≡ Σ_{x=a_r}^{x=a_s} φ′(x) . Σ_{x=a_r′}^{x=a_s′} \overline{φ′(x)}." loading="lazy">
+<div class="meta">folio 224 (PDF p. 244) &middot; &sect;2 &middot; Footnote 1 &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>Ā_{a₁…aₙ}(φ′) ≡ Σ_{x=a_r}^{x=a_s} φ′(x) . Σ_{x=a_r′}^{x=a_s′} \overline{φ′(x)}.</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9b/Abar (def 本体; 範囲 [a₁, a₂], [a₂, a₃] の rfl は phase9b/Abar_example)</dd>
+<dt>Anchor words</dt><dd><code>Hence</code></dd>
+<dt>Remarks</dt><dd>既存 #10。第 2 の Σ の被加項 <code>φ′(x)</code> 全体に上バー。補則 8: def Abar の本体 <code>iand (Sig rs φ&#x27;) (Sig rs&#x27; (¬ₚ φ&#x27;))</code> が印刷の右辺そのもの (Σ は phase9b/Sig) なので ✓。記法 ch19-009 の対応は別勘定</dd>
+<dt>Crop</dt><dd>folio 224, x 125&ndash;1335, y 2119&ndash;2224 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-015">
+<h2>ch19-015</h2>
+<img src="img/ch19-015.png" alt="φ( ≡ φ₁φ₂)" loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>φ( ≡ φ₁φ₂)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(略記の約定; 置換で吸収)</dd>
+<dt>Anchor words</dt><dd><code>The condition</code></dd>
+<dt>Remarks</dt><dd>既存 #13。phase9b/th_19_18_src は φ を φ₁ ∧ₚ φ₂ に展開して述べ、約定そのものは定理文に現れない。有限モデルでは phase9b/Erratum19_17Countermodel.φB (Bool 版 pand) として置かれる</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 184&ndash;261 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-016">
+<h2>ch19-016</h2>
+<img src="img/ch19-016.png" alt="g(φ₁, φ₂)/h ≠ 1" loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ₁, φ₂)/h ≠ 1</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(有限モデルの値だけ)</dd>
+<dt>Anchor words</dt><dd><code>being independent of φ₁, if</code></dd>
+<dt>Remarks</dt><dd>既存 #13。≠ は <code>=</code> に斜線の活字。この前提が現れるのは有限モデル内の定理 phase9b/Erratum19_17Countermodel.hypotheses_of_17_hold, phase9b/StrictnessCountermodel.independence_premises_hold だけで、th_19_16_src・th_19_17・th_19_18_src はこれを仮定に取らない (前提なしで成立)。補則 8 の既知の裁定 ch06-020 (有限モデルの証人だけ = 未) と同じ扱い</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 361&ndash;413 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-017">
+<h2>ch19-017</h2>
+<img src="img/ch19-017.png" alt="f( ≡ f₁f₂)" loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>f( ≡ f₁f₂)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(略記の約定; 置換で吸収)</dd>
+<dt>Anchor words</dt><dd><code>Similarly the conclusion</code></dd>
+<dt>Remarks</dt><dd>既存 #14。phase9b/th_19_18_src は f を f₁ ∧ₚ f₂ に展開して述べる。有限モデルでは phase9b/StrictnessCountermodel.fB</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 463&ndash;513 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-018">
+<h2>ch19-018</h2>
+<img src="img/ch19-018.png" alt="g(f₁, f₂)/h ≠ 1" loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(f₁, f₂)/h ≠ 1</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(有限モデルの値だけ)</dd>
+<dt>Anchor words</dt><dd><code>relative to h, i.e. if</code></dd>
+<dt>Remarks</dt><dd>既存 #14。現れるのは有限モデル内の定理 hypotheses_of_17_hold, independence_premises_hold だけ (ch19-016 と同じ扱い)</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 563&ndash;614 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-019">
+<h2>ch19-019</h2>
+<img src="img/ch19-019.png" alt="φ ≡ φ₁φ₂" loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>φ ≡ φ₁φ₂</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(略記の約定; 置換で吸収)</dd>
+<dt>Anchor words</dt><dd><code>If</code> / <code>and f ≡ f₁f₂, where</code></dd>
+<dt>Remarks</dt><dd>既存 #15。phase9b/th_19_18_src は φ を φ₁ ∧ₚ φ₂ に展開して述べる</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 613&ndash;664 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-020">
+<h2>ch19-020</h2>
+<img src="img/ch19-019.png" alt="f ≡ f₁f₂" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch19-019">ch19-019</a>.</div>
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>f ≡ f₁f₂</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(略記の約定; 置換で吸収)</dd>
+<dt>Anchor words</dt><dd><code>, where φ₁ and φ₂ are independent</code></dd>
+<dt>Remarks</dt><dd>既存 #15。phase9b/th_19_18_src は f を f₁ ∧ₚ f₂ に展開して述べる</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 613&ndash;664 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-021">
+<h2>ch19-021</h2>
+<img src="img/ch19-021.png" alt="g(φ₁, f)/h = g(φ₁φ₂, f) . g(φ₁φ̄₂, f)/h" loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ₁, f)/h = g(φ₁φ₂, f) . g(φ₁φ̄₂, f)/h</code></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase9b/th_19_16_src (第 1 連言肢)</dd>
+<dt>Anchor words</dt><dd><code>we have—</code></dd>
+<dt>Remarks</dt><dd>既存 #16 第 1 行。右辺の <code>.</code> は連言の点で、<code>/h</code> は連言 <code>g(φ₁φ₂, f) . g(φ₁φ̄₂, f)</code> 全体の確率 (th_19_16_src も <code>PrI (iand … …) h</code> と読む)。第 2 ブロック (ch19-024) の <code>g(…)/h . g(…)/h</code> は確率の積で別の形。第 1 回に挙げた「右辺第 1 因子に /h なし (T 候補)」は読み違いにつき取り下げ</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 716&ndash;773 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-022">
+<h2>ch19-022</h2>
+<img src="img/ch19-022.png" alt="≤ g(φ, f)/h," loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>≤ g(φ, f)/h,</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase9b/th_19_16_src (第 2 連言肢; 略記 φ ≡ φ₁φ₂ の代入)</dd>
+<dt>Anchor words</dt><dd><code>we have—</code> (ブロック 2 行目)</dd>
+<dt>Remarks</dt><dd>既存 #16 第 2 行。≤ は <code>&lt;</code> の下に横線の活字。定理文は φ を φ₁ ∧ₚ φ₂ と展開して書く。Keynes の略記の代入は補則 8 の「定義の代入」に当たるので ≈ (細則 6、司令塔裁定 2026-10-25; 第 3 回は ✓)</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 772&ndash;823 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-023">
+<h2>ch19-023</h2>
+<img src="img/ch19-023.png" alt="g(φ, f)/h = g(φ, f₁f₂)/h" loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f)/h = g(φ, f₁f₂)/h</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(略記 f ≡ f₁f₂ による書換え; 置換で吸収)</dd>
+<dt>Anchor words</dt><dd><code>and</code></dd>
+<dt>Remarks</dt><dd>既存 #17 第 1 行。phase9b/pr_g_concl_split は g(φ, f₁f₂)/h = (g(φf₁, f₂) . g(φ, f₁))/h を述べ、この行の等号 (約定による書換え) は定理文に現れない</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 822&ndash;875 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-024">
+<h2>ch19-024</h2>
+<img src="img/ch19-024.png" alt="= g(φf₁, f₂)/h . g(φ, f₁)/h" loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>= g(φf₁, f₂)/h . g(φ, f₁)/h</code></dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>phase9b/th_19_17 (第 1 連言肢); 反駁 phase9b/Erratum19_17Countermodel.printed_form_fails</dd>
+<dt>Anchor words</dt><dd><code>and</code> (ブロック 2 行目)</dd>
+<dt>Remarks</dt><dd>既存 #17 第 2 行。第 1 因子の条件に g(φ,f₁) が欠ける (索引 #17 F)。修正形 g(φf₁,f₂)/g(φ,f₁)h . g(φ,f₁)/h が th_19_17 第 1 連言肢。印刷形が成り立つ条件は phase9b/th_19_17_src_iff。<code>g(φ, .f₁)</code> の <code>,</code> の後に小さな点状の汚れ (原寸で確認、活字ではない)</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 874&ndash;925 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-025">
+<h2>ch19-025</h2>
+<img src="img/ch19-025.png" alt="≤ g(φ, f₁)/h," loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>≤ g(φ, f₁)/h,</code></dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>phase9b/th_19_17 (第 2 連言肢); 反駁 phase9b/Erratum19_17Countermodel.printed_form_fails</dd>
+<dt>Anchor words</dt><dd><code>and</code> (ブロック 3 行目)</dd>
+<dt>Remarks</dt><dd>既存 #17 第 3 行。補則 8 の既知の裁定 (ch19-025 = ✎)。この行の左項は誤った第 2 行 (ch19-024) の右辺で、th_19_17 第 2 連言肢は左項を修正形に替えて述べる。有限モデルでは不等式そのものは成立 (phase9b/Erratum19_17Countermodel.inequality_holds)</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 924&ndash;974 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-026">
+<h2>ch19-026</h2>
+<img src="img/ch19-026.png" alt="g(φ, f₁)/h ≥ g(φ, f)/h ≥ g(φ₁, f)/h." loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f₁)/h ≥ g(φ, f)/h ≥ g(φ₁, f)/h.</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase9b/th_19_18_src (略記 φ ≡ φ₁φ₂, f ≡ f₁f₂ の代入)</dd>
+<dt>Anchor words</dt><dd><code>so that</code></dd>
+<dt>Remarks</dt><dd>既存 #18 (索引 #18 E)。散文は狭義 (increases/diminish) だが印刷は ≥。定理文は φ, f を φ₁ ∧ₚ φ₂, f₁ ∧ₚ f₂ と展開し (Keynes の略記の代入 = 補則 8 の「定義の代入」なので ≈: 細則 6、司令塔裁定 2026-10-25; 第 3 回は ✓)、≥ の連鎖 2 個を連言 2 個に分けて書く。狭義の反例は phase9b/StrictnessCountermodel.chain_is_equality</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 973&ndash;1028 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-027">
+<h2>ch19-027</h2>
+<img src="img/ch19-027.png" alt="f₁f₂" loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>f₁f₂</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/pand</dd>
+<dt>Anchor words</dt><dd><code>resolvable into the form</code></dd>
+<dt>Remarks</dt><dd>既存 #20</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 1632&ndash;1684 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-028">
+<h2>ch19-028</h2>
+<img src="img/ch19-027.png" alt="g(f₁, f₂)/h ≠ 1" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch19-027">ch19-027</a>.</div>
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(f₁, f₂)/h ≠ 1</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(有限モデルの値だけ)</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-018">ch19-018</a></dd>
+<dt>Anchor words</dt><dd><code>where</code> / <code>, we can express</code></dd>
+<dt>Remarks</dt><dd>既存 #20。ch19-018 の再掲。現れるのは有限モデル内の定理 hypotheses_of_17_hold, independence_premises_hold だけ (ch19-016 と同じ扱い)</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 1632&ndash;1684 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-029">
+<h2>ch19-029</h2>
+<img src="img/ch19-029.png" alt="g(φ, f)" loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/g</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-003">ch19-003</a></dd>
+<dt>Anchor words</dt><dd><code>probability of the generalisation</code></dd>
+<dt>Remarks</dt><dd>既存 #20</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 1683&ndash;1734 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-030">
+<h2>ch19-030</h2>
+<img src="img/ch19-030.png" alt="g(φf₁, f₂)" loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φf₁, f₂)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/g, phase9b/pand</dd>
+<dt>Anchor words</dt><dd><code>the two generalisations</code></dd>
+<dt>Remarks</dt><dd>既存 #20</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 1733&ndash;1784 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-031">
+<h2>ch19-031</h2>
+<img src="img/ch19-030.png" alt="g(φ, f₁)" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch19-030">ch19-030</a>.</div>
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f₁)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/g</dd>
+<dt>Anchor words</dt><dd><code>and</code> / <code>, we may assume</code></dd>
+<dt>Remarks</dt><dd>既存 #20</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 1733&ndash;1784 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-032">
+<h2>ch19-032</h2>
+<img src="img/ch19-032.png" alt="ψ(a)" loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;5 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>ψ(a)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>If</code> / <code>is a proposition and</code></dd>
+<dt>Remarks</dt><dd>既存 #21</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 2137&ndash;2181 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-033">
+<h2>ch19-033</h2>
+<img src="img/ch19-032.png" alt="ψ(a) = h . θ(a)" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch19-032">ch19-032</a>.</div>
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;5 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>ψ(a) = h . θ(a)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(対応なし: 脚注の一般化記法)</dd>
+<dt>Anchor words</dt><dd><code>is a proposition and</code></dd>
+<dt>Remarks</dt><dd>既存 #21。「a についての言明」の関係は phase9b で形式化の境界に記録</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 2137&ndash;2181 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-034">
+<h2>ch19-034</h2>
+<img src="img/ch19-034.png" alt="θ(a)" loading="lazy">
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;5 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>θ(a)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>then we must regard</code></dd>
+<dt>Remarks</dt><dd>既存 #21</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 2180&ndash;2228 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-035">
+<h2>ch19-035</h2>
+<img src="img/ch19-034.png" alt="ψ(a)" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch19-034">ch19-034</a>.</div>
+<div class="meta">folio 225 (PDF p. 245) &middot; &sect;5 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>ψ(a)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch19-032">ch19-032</a></dd>
+<dt>Anchor words</dt><dd><code>, not</code> / <code>as the statement about a.</code></dd>
+<dt>Remarks</dt><dd>既存 #21</dd>
+<dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 2180&ndash;2228 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-036">
+<h2>ch19-036</h2>
+<img src="img/ch19-036.png" alt="φf" loading="lazy">
+<div class="meta">folio 226 (PDF p. 246) &middot; &sect;5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>φf</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/pand</dd>
+<dt>Anchor words</dt><dd><code>co-extensive with the analogy</code></dd>
+<dt>Remarks</dt><dd>既存 #22</dd>
+<dt>Crop</dt><dd>folio 226, x 125&ndash;1335, y 469&ndash;522 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-037">
+<h2>ch19-037</h2>
+<img src="img/ch19-037.png" alt="g(φ, f) / A_{a₁…aₙ}(φφ₁f)." loading="lazy">
+<div class="meta">folio 227 (PDF p. 247) &middot; &sect;6 &middot; Text &middot; Display &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f) / A_{a₁…aₙ}(φφ₁f).</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/p_sec6</dd>
+<dt>Anchor words</dt><dd><code>can be written—</code></dd>
+<dt>Remarks</dt><dd>既存 #26。斜線は大きな分数線</dd>
+<dt>Crop</dt><dd>folio 227, x 125&ndash;1335, y 872&ndash;987 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-038">
+<h2>ch19-038</h2>
+<img src="img/ch19-038.png" alt="Ā_{a₁…aₙ}(φ′)" loading="lazy">
+<div class="meta">folio 227 (PDF p. 247) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>Ā_{a₁…aₙ}(φ′)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/Abar</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-009">ch19-009</a></dd>
+<dt>Anchor words</dt><dd><code>mention of the negative analogy</code></dd>
+<dt>Remarks</dt><dd>既存 #27</dd>
+<dt>Crop</dt><dd>folio 227, x 125&ndash;1335, y 1554&ndash;1634 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-039">
+<h2>ch19-039</h2>
+<img src="img/ch19-039.png" alt="φφ₁f" loading="lazy">
+<div class="meta">folio 227 (PDF p. 247) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>φφ₁f</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/pand</dd>
+<dt>Anchor words</dt><dd><code>which are not included in</code></dd>
+<dt>Remarks</dt><dd>既存 #27</dd>
+<dt>Crop</dt><dd>folio 227, x 125&ndash;1335, y 1682&ndash;1733 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-040">
+<h2>ch19-040</h2>
+<img src="img/ch19-040.png" alt="A_{a₁…aₙ}(φφ₁f)" loading="lazy">
+<div class="meta">folio 227 (PDF p. 247) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>A_{a₁…aₙ}(φφ₁f)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/A</dd>
+<dt>Anchor words</dt><dd><code>so that in stating</code></dd>
+<dt>Remarks</dt><dd>既存 #27</dd>
+<dt>Crop</dt><dd>folio 227, x 125&ndash;1335, y 1734&ndash;1807 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-041">
+<h2>ch19-041</h2>
+<img src="img/ch19-041.png" alt="Ā_{a₁…aₙ}(φ′)" loading="lazy">
+<div class="meta">folio 227 (PDF p. 247) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>Ā_{a₁…aₙ}(φ′)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/Abar</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-009">ch19-009</a></dd>
+<dt>Anchor words</dt><dd><code>state by implication</code> / <code>also.</code></dd>
+<dt>Remarks</dt><dd>既存 #27</dd>
+<dt>Crop</dt><dd>folio 227, x 125&ndash;1335, y 1808&ndash;1886 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-042">
+<h2>ch19-042</h2>
+<img src="img/ch19-042.png" alt="g(φ, f)" loading="lazy">
+<div class="meta">folio 227 (PDF p. 247) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/g</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-003">ch19-003</a></dd>
+<dt>Anchor words</dt><dd><code>of the generalisation</code> / <code>by the accumulation</code></dd>
+<dt>Remarks</dt><dd>既存 #28 の文脈</dd>
+<dt>Crop</dt><dd>folio 227, x 125&ndash;1335, y 1934&ndash;1986 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-043">
+<h2>ch19-043</h2>
+<img src="img/ch19-043.png" alt="φ₁φ′" loading="lazy">
+<div class="meta">folio 228 (PDF p. 248) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>φ₁φ′</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/pand</dd>
+<dt>Anchor words</dt><dd><code>analogy φ′, since</code> / <code>comprise between them</code></dd>
+<dt>Remarks</dt><dd>既存 #28</dd>
+<dt>Crop</dt><dd>folio 228, x 125&ndash;1335, y 364&ndash;417 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-044">
+<h2>ch19-044</h2>
+<img src="img/ch19-044.png" alt="φf" loading="lazy">
+<div class="meta">folio 228 (PDF p. 248) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>φf</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/pand</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-036">ch19-036</a></dd>
+<dt>Anchor words</dt><dd><code>whatever is not covered by</code></dd>
+<dt>Remarks</dt><dd>既存 #28</dd>
+<dt>Crop</dt><dd>folio 228, x 125&ndash;1335, y 416&ndash;467 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-045">
+<h2>ch19-045</h2>
+<img src="img/ch19-045.png" alt="g(φ, f) / A_{a₁…aₙ}(φφ₁f) Ā_{a₁…aₙ}(φ′)," loading="lazy">
+<div class="meta">folio 228 (PDF p. 248) &middot; &sect;7 &middot; Text &middot; Display &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f) / A_{a₁…aₙ}(φφ₁f) Ā_{a₁…aₙ}(φ′),</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/p_sec7</dd>
+<dt>Anchor words</dt><dd><code>written—</code></dd>
+<dt>Remarks</dt><dd>既存 #29</dd>
+<dt>Crop</dt><dd>folio 228, x 125&ndash;1335, y 1362&ndash;1459 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-046">
+<h2>ch19-046</h2>
+<img src="img/ch19-046.png" alt="φφ₁f" loading="lazy">
+<div class="meta">folio 228 (PDF p. 248) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>φφ₁f</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/pand</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-039">ch19-039</a></dd>
+<dt>Anchor words</dt><dd><code>where</code> / <code>stands for the characteristics</code></dd>
+<dt>Remarks</dt><dd>既存 #29</dd>
+<dt>Crop</dt><dd>folio 228, x 125&ndash;1335, y 1458&ndash;1512 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-047">
+<h2>ch19-047</h2>
+<img src="img/ch19-047.png" alt="a₁ . . . aₙ" loading="lazy">
+<div class="meta">folio 228 (PDF p. 248) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a₁ . . . aₙ</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/A (引数 l : List Inst)</dd>
+<dt>Anchor words</dt><dd><code>in which all n instances</code> / <code>are known to be alike</code></dd>
+<dt>Remarks</dt><dd>既存 #29</dd>
+<dt>Crop</dt><dd>folio 228, x 125&ndash;1335, y 1511&ndash;1563 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-048">
+<h2>ch19-048</h2>
+<img src="img/ch19-048.png" alt="a_r . . . a_s" loading="lazy">
+<div class="meta">folio 229 (PDF p. 249) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a_r . . . a_s</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/PiA (各項の引数 List Inst)</dd>
+<dt>Anchor words</dt><dd><code>kind between the instances</code> / <code>may be written</code></dd>
+<dt>Remarks</dt><dd>既存 #31</dd>
+<dt>Crop</dt><dd>folio 229, x 125&ndash;1335, y 923&ndash;1000 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-049">
+<h2>ch19-049</h2>
+<img src="img/ch19-048.png" alt="A_{a_r…a_s}(ψ_k)" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch19-048">ch19-048</a>.</div>
+<div class="meta">folio 229 (PDF p. 249) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>A_{a_r…a_s}(ψ_k)</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/A, phase9b/PiA</dd>
+<dt>Anchor words</dt><dd><code>may be written</code> / <code>; and the formula</code></dd>
+<dt>Remarks</dt><dd>既存 #31</dd>
+<dt>Crop</dt><dd>folio 229, x 125&ndash;1335, y 923&ndash;1000 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-050">
+<h2>ch19-050</h2>
+<img src="img/ch19-050.png" alt="g(φ, f) / A_{a₁…aₙ}(φφ₁f) Ā_{a₁…aₙ}(φ′) Π{ A_{a_r…a_s}(ψ_k) }," loading="lazy">
+<div class="meta">folio 229 (PDF p. 249) &middot; &sect;8 &middot; Text &middot; Display &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f) / A_{a₁…aₙ}(φφ₁f) Ā_{a₁…aₙ}(φ′) Π{ A_{a_r…a_s}(ψ_k) },</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/p_sec8, phase9b/PiA</dd>
+<dt>Anchor words</dt><dd><code>fore, to be written—</code></dd>
+<dt>Remarks</dt><dd>既存 #32</dd>
+<dt>Crop</dt><dd>folio 229, x 125&ndash;1335, y 1109&ndash;1229 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-051">
+<h2>ch19-051</h2>
+<img src="img/ch19-051.png" alt="Π{ A_{a_r…a_s}(ψ_k) }" loading="lazy">
+<div class="meta">folio 229 (PDF p. 249) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>Π{ A_{a_r…a_s}(ψ_k) }</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/PiA</dd>
+<dt>Anchor words</dt><dd><code>where the terms of</code> / <code>stand for the various sub-</code></dd>
+<dt>Remarks</dt><dd>既存 #32。行内でも波括弧 2 行分の高さ</dd>
+<dt>Crop</dt><dd>folio 229, x 125&ndash;1335, y 1228&ndash;1343 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-052">
+<h2>ch19-052</h2>
+<img src="img/ch19-052.png" alt="φφ₁f" loading="lazy">
+<div class="meta">folio 229 (PDF p. 249) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>φφ₁f</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/pand</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-039">ch19-039</a></dd>
+<dt>Anchor words</dt><dd><code>which are not included in</code> / <code>or in φ′.</code></dd>
+<dt>Remarks</dt><dd>既存 #32</dd>
+<dt>Crop</dt><dd>folio 229, x 125&ndash;1335, y 1410&ndash;1462 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-053">
+<h2>ch19-053</h2>
+<img src="img/ch19-053.png" alt="_bφ` and `_bf" loading="lazy">
+<div class="meta">folio 229 (PDF p. 249) &middot; &sect;9 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>_bφ</code> and <code>_bf</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>phase9b/ev_partial (引数 bφ, bf)</dd>
+<dt>Anchor words</dt><dd><code>Suppose that</code> / <code>are part of φ and f</code></dd>
+<dt>Remarks</dt><dd>補則 1 の裸記号 — 参考行 (第 1 回は行内・記法として数えていた; 数えない)。既存 #33。左下添字 b</dd>
+<dt>Crop</dt><dd>folio 229, x 125&ndash;1335, y 1810&ndash;1864 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-054">
+<h2>ch19-054</h2>
+<img src="img/ch19-054.png" alt="b₁ . . . b_m" loading="lazy">
+<div class="meta">folio 229 (PDF p. 249) &middot; &sect;9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>b₁ . . . b_m</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/ev_partial (引数 lb)</dd>
+<dt>Anchor words</dt><dd><code>a set of instances</code> / <code>which show the following</code></dd>
+<dt>Remarks</dt><dd>既存 #33</dd>
+<dt>Crop</dt><dd>folio 229, x 125&ndash;1335, y 1863&ndash;1916 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-055">
+<h2>ch19-055</h2>
+<img src="img/ch19-055.png" alt="A_{b₁…b_m}(_bφ _bφ₁ _bf) Ā_{b₁…b_m}(_bφ′) Π{ A_{b_r…b_s}(_bψ_k) }," loading="lazy">
+<div class="meta">folio 229 (PDF p. 249) &middot; &sect;9 &middot; Text &middot; Display &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>A_{b₁…b_m}(_bφ _bφ₁ _bf) Ā_{b₁…b_m}(_bφ′) Π{ A_{b_r…b_s}(_bψ_k) },</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/ev_partial</dd>
+<dt>Anchor words</dt><dd><code>show the following analogies :</code></dd>
+<dt>Remarks</dt><dd>既存 #34。印刷は <code>(bφbφ1bf)</code> と各 b が左下添字、<code>φ₁</code> の添字 1 の直後に b</dd>
+<dt>Crop</dt><dd>folio 229, x 125&ndash;1335, y 1980&ndash;2103 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-056">
+<h2>ch19-056</h2>
+<img src="img/ch19-056.png" alt="_bφ₁" loading="lazy">
+<div class="meta">folio 229 (PDF p. 249) &middot; &sect;9 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>_bφ₁</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>phase9b/ev_partial (引数 bφ₁)</dd>
+<dt>Anchor words</dt><dd><code>where</code> / <code>is the analogy not covered</code></dd>
+<dt>Remarks</dt><dd>補則 1 の裸記号 — 参考行 (第 1 回は行内・記法として数えていた; 数えない)。既存 #34</dd>
+<dt>Crop</dt><dd>folio 229, x 125&ndash;1335, y 2102&ndash;2178 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-057">
+<h2>ch19-057</h2>
+<img src="img/ch19-057.png" alt="g(φ, f) / Π_{a,b…}{ A_{a₁…aₙ}(_aφ _aφ₁ _af) Ā_{a₁…aₙ}(_aφ¹) } Π{ A_{a_r b_s…}(ψ_k) }." loading="lazy">
+<div class="meta">folio 230 (PDF p. 250) &middot; &sect;9 &middot; Text &middot; Display &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f) / Π_{a,b…}{ A_{a₁…aₙ}(_aφ _aφ₁ _af) Ā_{a₁…aₙ}(_aφ¹) } Π{ A_{a_r b_s…}(ψ_k) }.</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/p_sec9, phase9b/PiSets, phase9b/InstSet</dd>
+<dt>Anchor words</dt><dd><code>is now as follows :</code></dd>
+<dt>Remarks</dt><dd>既存 #35。負の類推の項は上付き <code>¹</code> で組まれている (他頁は <code>φ′</code>; 索引 T、原寸 3 倍で確認)。第 2 の Π の添字は <code>a_r b_s . . .</code></dd>
+<dt>Crop</dt><dd>folio 230, x 125&ndash;1335, y 270&ndash;393 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-058">
+<h2>ch19-058</h2>
+<img src="img/ch19-058.png" alt="_aφ, _af" loading="lazy">
+<div class="meta">folio 230 (PDF p. 250) &middot; &sect;9 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>_aφ, _af</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>phase9b/InstSet.φa, phase9b/InstSet.fa</dd>
+<dt>Anchor words</dt><dd><code>In this expression</code> / <code>are the whole or part of φ, f</code></dd>
+<dt>Remarks</dt><dd>補則 1 の裸記号 — 参考行 (第 1 回は行内・記法として数えていた; 数えない)。既存 #35</dd>
+<dt>Crop</dt><dd>folio 230, x 125&ndash;1335, y 392&ndash;462 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-059">
+<h2>ch19-059</h2>
+<img src="img/ch19-059.png" alt="Π_{a,b…}" loading="lazy">
+<div class="meta">folio 230 (PDF p. 250) &middot; &sect;9 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>Π_{a,b…}</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>phase9b/PiSets</dd>
+<dt>Anchor words</dt><dd><code>the product</code> / <code>is composed of the positive</code></dd>
+<dt>Remarks</dt><dd>補則 1 の裸記号 — 参考行 (第 1 回は行内・記法として数えていた; 数えない)。既存 #35。行内で Π の直下に <code>a, b, . .</code>。総乗の記号 Π に添字 a, b, . . を付けただけの 1 記号</dd>
+<dt>Crop</dt><dd>folio 230, x 125&ndash;1335, y 461&ndash;538 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-060">
+<h2>ch19-060</h2>
+<img src="img/ch19-060.png" alt="a₁ . . . aₙ, b₁ . . . b_m" loading="lazy">
+<div class="meta">folio 230 (PDF p. 250) &middot; &sect;9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a₁ . . . aₙ, b₁ . . . b_m</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/InstSet.l</dd>
+<dt>Anchor words</dt><dd><code>of the sets of instances</code> / <code>, etc. ; and the</code></dd>
+<dt>Remarks</dt><dd>既存 #35</dd>
+<dt>Crop</dt><dd>folio 230, x 125&ndash;1335, y 537&ndash;587 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-061">
+<h2>ch19-061</h2>
+<img src="img/ch19-061.png" alt="a₁ . . . aₙ, b₁ . . . b_m" loading="lazy">
+<div class="meta">folio 230 (PDF p. 250) &middot; &sect;9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a₁ . . . aₙ, b₁ . . . b_m</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/InstSet.l</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-060">ch19-060</a></dd>
+<dt>Anchor words</dt><dd><code>classes of all the instances</code> / <code>, etc., regarded as</code></dd>
+<dt>Remarks</dt><dd>既存 #35</dd>
+<dt>Crop</dt><dd>folio 230, x 125&ndash;1335, y 636&ndash;688 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-062">
+<h2>ch19-062</h2>
+<img src="img/ch19-062.png" alt="A_{a₁′…a′_{n′}}(_{a′}φ _{a′}f̄)," loading="lazy">
+<div class="meta">folio 230 (PDF p. 250) &middot; &sect;10 &middot; Text &middot; Display &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>A_{a₁′…a′_{n′}}(_{a′}φ _{a′}f̄),</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/ev_negative</dd>
+<dt>Anchor words</dt><dd><code>take account, therefore, of analogies</code></dd>
+<dt>Remarks</dt><dd>既存 #38。添字は <code>a₁′ . . . a′_{n′}</code>、f の上にバー</dd>
+<dt>Crop</dt><dd>folio 230, x 125&ndash;1335, y 1355&ndash;1474 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-063">
+<h2>ch19-063</h2>
+<img src="img/ch19-063.png" alt="_{a′}φ" loading="lazy">
+<div class="meta">folio 230 (PDF p. 250) &middot; &sect;10 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>_{a′}φ</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>phase9b/ev_negative (引数 φa′)</dd>
+<dt>Anchor words</dt><dd><code>where</code> / <code>, part of φ, is true of all the set</code></dd>
+<dt>Remarks</dt><dd>補則 1 の裸記号 — 参考行 (第 1 回は行内・記法として数えていた; 数えない)。既存 #38</dd>
+<dt>Crop</dt><dd>folio 230, x 125&ndash;1335, y 1473&ndash;1541 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-064">
+<h2>ch19-064</h2>
+<img src="img/ch19-063.png" alt="_{a′}f" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch19-063">ch19-063</a>.</div>
+<div class="meta">folio 230 (PDF p. 250) &middot; &sect;10 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>_{a′}f</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>phase9b/ev_negative (引数 fa′)</dd>
+<dt>Anchor words</dt><dd><code>and</code> / <code>, part of f, is false of all the set</code></dd>
+<dt>Remarks</dt><dd>補則 1 の裸記号 — 参考行 (第 1 回は行内・記法として数えていた; 数えない)。既存 #38</dd>
+<dt>Crop</dt><dd>folio 230, x 125&ndash;1335, y 1473&ndash;1541 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-065">
+<h2>ch19-065</h2>
+<img src="img/ch19-065.png" alt="_aφ_af" loading="lazy">
+<div class="meta">folio 230 (PDF p. 250) &middot; &sect;10 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>_aφ_af</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(phase9b 形式化の境界 §10)</dd>
+<dt>Anchor words</dt><dd><code>which show analogies</code> / <code>, where</code></dd>
+<dt>Remarks</dt><dd>既存 #39</dd>
+<dt>Crop</dt><dd>folio 230, x 125&ndash;1335, y 1840&ndash;1899 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-066">
+<h2>ch19-066</h2>
+<img src="img/ch19-065.png" alt="_aφ` and `_af" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch19-065">ch19-065</a>.</div>
+<div class="meta">folio 230 (PDF p. 250) &middot; &sect;10 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>_aφ</code> and <code>_af</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>未</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-058">ch19-058</a></dd>
+<dt>Anchor words</dt><dd><code>where</code> / <code>are parts of φ and f</code></dd>
+<dt>Remarks</dt><dd>補則 1 の裸記号 — 参考行 (第 1 回は行内・記法として数えていた; 数えない)。既存 #39</dd>
+<dt>Crop</dt><dd>folio 230, x 125&ndash;1335, y 1840&ndash;1899 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-067">
+<h2>ch19-067</h2>
+<img src="img/ch19-067.png" alt="_aφ̄_af," loading="lazy">
+<div class="meta">folio 230 (PDF p. 250) &middot; &sect;10 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>_aφ̄_af,</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(phase9b 形式化の境界 §10)</dd>
+<dt>Anchor words</dt><dd><code>sets which show analogies</code></dd>
+<dt>Remarks</dt><dd>既存 #39。頁末。φ の上にバー</dd>
+<dt>Crop</dt><dd>folio 230, x 125&ndash;1335, y 1898&ndash;1975 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-068">
+<h2>ch19-068</h2>
+<img src="img/ch19-068.png" alt="_aφ̄_af̄" loading="lazy">
+<div class="meta">folio 231 (PDF p. 251) &middot; &sect;10 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>_aφ̄_af̄</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(phase9b 形式化の境界 §10)</dd>
+<dt>Anchor words</dt><dd><code>or analogies</code> / <code>, where</code></dd>
+<dt>Remarks</dt><dd>既存 #39。φ, f の両方に上バー</dd>
+<dt>Crop</dt><dd>folio 231, x 125&ndash;1335, y 173&ndash;263 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-069">
+<h2>ch19-069</h2>
+<img src="img/ch19-068.png" alt="_aφ` and `_af" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch19-068">ch19-068</a>.</div>
+<div class="meta">folio 231 (PDF p. 251) &middot; &sect;10 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>_aφ</code> and <code>_af</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>未</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-058">ch19-058</a></dd>
+<dt>Anchor words</dt><dd><code>where</code> / <code>are the whole or part of φ</code></dd>
+<dt>Remarks</dt><dd>補則 1 の裸記号 — 参考行 (第 1 回は行内・記法として数えていた; 数えない)。既存 #39</dd>
+<dt>Crop</dt><dd>folio 231, x 125&ndash;1335, y 173&ndash;263 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-070">
+<h2>ch19-070</h2>
+<img src="img/ch19-070.png" alt="φ̄ f̄" loading="lazy">
+<div class="meta">folio 231 (PDF p. 251) &middot; &sect;10 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>φ̄ f̄</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>未</dd>
+<dt>Anchor words</dt><dd><code>and</code> / <code>are the contradictories of φ and f.</code></dd>
+<dt>Remarks</dt><dd>補則 1 の裸記号 — 参考行 (第 1 回は行内・記法として数えていた; 数えない)。既存 #39。右肩に脚注番号 1。φ̄ と f̄ の間に空白があり、複数形 are で受ける 2 記号の並び</dd>
+<dt>Crop</dt><dd>folio 231, x 125&ndash;1335, y 262&ndash;324 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-071">
+<h2>ch19-071</h2>
+<img src="img/ch19-071.png" alt="g(φ, f) / A_{a₁…aₙ}(φφ₁f) Ā_{a₁…aₙ}(φ′) Π{ A_{a_r…a_s}(ψ_k) }," loading="lazy">
+<div class="meta">folio 231 (PDF p. 251) &middot; &sect;11 &middot; Text &middot; Display &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>g(φ, f) / A_{a₁…aₙ}(φφ₁f) Ā_{a₁…aₙ}(φ′) Π{ A_{a_r…a_s}(ψ_k) },</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/p_sec8</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-050">ch19-050</a></dd>
+<dt>Anchor words</dt><dd><code>generality, namely—</code></dd>
+<dt>Remarks</dt><dd>既存 #42。229 の式の再掲 (第三段階の一般性)</dd>
+<dt>Crop</dt><dd>folio 231, x 125&ndash;1335, y 942&ndash;1062 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-072">
+<h2>ch19-072</h2>
+<img src="img/ch19-072.png" alt="φφ₁fφ′" loading="lazy">
+<div class="meta">folio 231 (PDF p. 251) &middot; &sect;11 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>φφ₁fφ′</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>recognised in that</code> / <code>are not between them</code></dd>
+<dt>Remarks</dt><dd>既存 #42</dd>
+<dt>Crop</dt><dd>folio 231, x 125&ndash;1335, y 1425&ndash;1479 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-073">
+<h2>ch19-073</h2>
+<img src="img/ch19-073.png" alt="_aφ̄_af, _aφ_af̄, or _aφ̄_af̄" loading="lazy">
+<div class="meta">folio 231 (PDF p. 251) &middot; &sect;11 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>_aφ̄_af, _aφ_af̄, or _aφ̄_af̄</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(phase9b 形式化の境界 §11)</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-067">ch19-067</a>, <a href="#ch19-068">ch19-068</a></dd>
+<dt>Anchor words</dt><dd><code>junctions</code> / <code>, where</code></dd>
+<dt>Remarks</dt><dd>既存 #43</dd>
+<dt>Crop</dt><dd>folio 231, x 125&ndash;1335, y 1629&ndash;1693 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-074">
+<h2>ch19-074</h2>
+<img src="img/ch19-073.png" alt="_aφ` and `_af" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch19-073">ch19-073</a>.</div>
+<div class="meta">folio 231 (PDF p. 251) &middot; &sect;11 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>_aφ</code> and <code>_af</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>未</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-058">ch19-058</a></dd>
+<dt>Anchor words</dt><dd><code>where</code> / <code>are part of φ and f.</code></dd>
+<dt>Remarks</dt><dd>補則 1 の裸記号 — 参考行 (第 1 回は行内・記法として数えていた; 数えない)。既存 #43</dd>
+<dt>Crop</dt><dd>folio 231, x 125&ndash;1335, y 1629&ndash;1693 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch19-075">
+<h2>ch19-075</h2>
+<img src="img/ch19-075.png" alt="φφ₁f" loading="lazy">
+<div class="meta">folio 232 (PDF p. 252) &middot; &sect;11 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>φφ₁f</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase9b/pand</dd>
+<dt>Reprint of</dt><dd><a href="#ch19-039">ch19-039</a></dd>
+<dt>Anchor words</dt><dd><code>known value. When</code> / <code>is the total positive analogy</code></dd>
+<dt>Remarks</dt><dd>既存 #46</dd>
+<dt>Crop</dt><dd>folio 232, x 125&ndash;1335, y 854&ndash;906 (full-size scan pixels)</dd>
+</dl></section>
+<footer>Generated by tools/atlas/gen.py from the ledger ch19.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
+</main></body></html>
