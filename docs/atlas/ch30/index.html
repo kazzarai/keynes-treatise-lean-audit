@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula atlas, Chapter 30</title>
+<style>
+body{background:#fff;color:#111;font-family:Georgia,'Times New Roman',serif;margin:0;padding:24px 12px}
+main{max-width:900px;margin:0 auto}
+h1{font-size:1.5em;margin:0 0 .2em}
+.sub{color:#444;margin:0 0 1em}
+table.sum{border-collapse:collapse;margin:.5em 0 1em;font-size:.95em}
+table.sum th,table.sum td{border:1px solid #bbb;padding:3px 10px;text-align:left}
+.rules{font-size:.92em;line-height:1.45;color:#222;border-left:3px solid #ccc;padding-left:12px}
+.card{border:1px solid #ccc;border-radius:4px;margin:18px 0;padding:10px 12px}
+.card img{display:block;width:100%;height:auto;border:1px solid #eee;margin:4px 0 8px}
+.card h2{font-size:1.05em;margin:0 0 4px;font-family:Menlo,Consolas,monospace}
+.meta{font-size:.9em;color:#333;margin-bottom:4px}
+.shared{font-size:.82em;color:#666;margin:-4px 0 6px}
+dl{display:grid;grid-template-columns:8.5em 1fr;gap:3px 10px;margin:0;font-size:.92em}
+dt{color:#555}
+dd{margin:0;word-break:break-word}
+code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;padding:0 2px}
+.mark{display:inline-block;min-width:1.6em;text-align:center;border-radius:3px;padding:0 4px;margin-right:6px;font-weight:bold}
+.printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
+.notation{background:#f3eaf6}
+footer{font-size:.85em;color:#666;margin-top:2em}
+</style></head><body><main>
+<h1>Chapter XXX. The Mathematical Use of Statistical Frequencies for the Determination of Probability à posteriori — the Methods of Laplace</h1>
+<p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 367&ndash;383 (Cornell copy, PDF pp. 387&ndash;403). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
+<table class="sum"><tr><th>Ledger rows</th><td>65</td></tr>
+<tr><th>Formulas</th><td>12 (display 4, inline 8; items 12, numbered 0)</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>0 &nbsp; <span class="mark equiv">&asymp;</span>0 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>12</td></tr>
+<tr><th>Notation</th><td>52 (with a Lean counterpart 0)</td></tr>
+<tr><th>Reference rows</th><td>1</td></tr>
+</table>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
+<section class="card" id="ch30-001">
+<h2>ch30-001</h2>
+<img src="img/f369_402.png" alt="2 : 1" loading="lazy">
+<div class="meta">folio 369 (PDF p. 389) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>2 : 1</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Bernoulli (書簡)</dd>
+<dt>Anchor words</dt><dd><code>If the true proportion were</code></dd>
+<dt>Remarks</dt><dd>数値の比 (裁定事項)</dd>
+<dt>Crop</dt><dd>folio 369, x 125&ndash;1335, y 402&ndash;455 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-002">
+<h2>ch30-002</h2>
+<img src="img/f369_453.png" alt="201 : 100" loading="lazy">
+<div class="meta">folio 369 (PDF p. 389) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>201 : 100</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Bernoulli (書簡)</dd>
+<dt>Anchor words</dt><dd><code>as lying between</code></dd>
+<dt>Remarks</dt><dd>数値の比</dd>
+<dt>Crop</dt><dd>folio 369, x 125&ndash;1335, y 453&ndash;502 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-003">
+<h2>ch30-003</h2>
+<img src="img/f369_453.png" alt="199 : 100" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch30-002">ch30-002</a>.</div>
+<div class="meta">folio 369 (PDF p. 389) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>199 : 100</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Bernoulli (書簡)</dd>
+<dt>Anchor words</dt><dd><code>and</code></dd>
+<dt>Remarks</dt><dd>数値の比</dd>
+<dt>Crop</dt><dd>folio 369, x 125&ndash;1335, y 453&ndash;502 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-004">
+<h2>ch30-004</h2>
+<img src="img/f370_661.png" alt="m/(m+n)" loading="lazy">
+<div class="meta">folio 370 (PDF p. 390) &middot; &sect;§4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>m/(m+n)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd><code>the proportion of times</code></dd>
+<dt>Remarks</dt><dd>分数組み</dd>
+<dt>Crop</dt><dd>folio 370, x 125&ndash;1335, y 661&ndash;746 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-005">
+<h2>ch30-005</h2>
+<img src="img/f370_759.png" alt="μ (= m + n)" loading="lazy">
+<div class="meta">folio 370 (PDF p. 390) &middot; &sect;§4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>μ (= m + n)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>of the event&#x27;s occurrence in</code></dd>
+<dt>Remarks</dt><dd>括弧内の定義等式</dd>
+<dt>Crop</dt><dd>folio 370, x 125&ndash;1335, y 759&ndash;808 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-006">
+<h2>ch30-006</h2>
+<img src="img/f370_831.png" alt="p ± γ√(2pq/μ)" loading="lazy">
+<div class="meta">folio 370 (PDF p. 390) &middot; &sect;§4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>p ± γ√(2pq/μ)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd><code>trials will lie between</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 370, x 125&ndash;1335, y 831&ndash;952 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-007">
+<h2>ch30-007</h2>
+<img src="img/f370_831.png" alt="P = (2/√π)∫₀^γ e^{−t²}dt + (1/√(2πμpq)) e^{−γ²}" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch30-006">ch30-006</a>.</div>
+<div class="meta">folio 370 (PDF p. 390) &middot; &sect;§4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>P = (2/√π)∫₀^γ e^{−t²}dt + (1/√(2πμpq)) e^{−γ²}</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd><code>where</code></dd>
+<dt>Remarks</dt><dd>Bernoulli 定理の直接形</dd>
+<dt>Crop</dt><dd>folio 370, x 125&ndash;1335, y 831&ndash;952 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-008">
+<h2>ch30-008</h2>
+<img src="img/f370_1117.png" alt="m/μ ± γ√(2mn/μ³)" loading="lazy">
+<div class="meta">folio 370 (PDF p. 390) &middot; &sect;§4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>m/μ ± γ√(2mn/μ³)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd><code>p will lie between</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 370, x 125&ndash;1335, y 1117&ndash;1229 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-009">
+<h2>ch30-009</h2>
+<img src="img/f370_1241.png" alt="P = (2/√π)∫₀^γ e^{−t²}dt + (1/√(2πμ (m/μ²))) e^{−γ²}" loading="lazy">
+<div class="meta">folio 370 (PDF p. 390) &middot; &sect;§4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>P = (2/√π)∫₀^γ e^{−t²}dt + (1/√(2πμ (m/μ²))) e^{−γ²}</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd><code>The same result is also given</code></dd>
+<dt>Remarks</dt><dd>根号内は 2πμ の右に m/μ² を上下に組んだ分数で、間に点はない (hires で確認; 第 1 回の「·」を除いた); 直接形 007 の pq = mn/μ² に対応するなら n が欠落 (所見候補 F30.1)</dd>
+<dt>Crop</dt><dd>folio 370, x 125&ndash;1335, y 1241&ndash;1416 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-010">
+<h2>ch30-010</h2>
+<img src="img/f371_419.png" alt="m/(m+n)" loading="lazy">
+<div class="meta">folio 371 (PDF p. 391) &middot; &sect;§4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>m/(m+n)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-004">ch30-004</a></dd>
+<dt>Anchor words</dt><dd><code>by the inversion of the theorem, if</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 371, x 125&ndash;1335, y 419&ndash;503 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-011">
+<h2>ch30-011</h2>
+<img src="img/f371_526.png" alt="m/(m+n)" loading="lazy">
+<div class="meta">folio 371 (PDF p. 391) &middot; &sect;§4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>m/(m+n)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-004">ch30-004</a></dd>
+<dt>Anchor words</dt><dd><code>measures the frequency,</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 371, x 125&ndash;1335, y 526&ndash;610 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-012">
+<h2>ch30-012</h2>
+<img src="img/f372_421.png" alt="(m+1)/(m+n+2)" loading="lazy">
+<div class="meta">folio 372 (PDF p. 392) &middot; &sect;§5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>(m+1)/(m+n+2)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Laplace (Venn の呼称 Rule of Succession)</dd>
+<dt>Anchor words</dt><dd><code>conditions are next fulfilled is</code></dd>
+<dt>Remarks</dt><dd>継承則</dd>
+<dt>Crop</dt><dd>folio 372, x 125&ndash;1335, y 421&ndash;514 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-013">
+<h2>ch30-013</h2>
+<img src="img/f372_1486.png" alt="1/r" loading="lazy">
+<div class="meta">folio 372 (PDF p. 392) &middot; &sect;§5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>1/r</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd><code>à priori was</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 372, x 125&ndash;1335, y 1486&ndash;1575 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-014">
+<h2>ch30-014</h2>
+<img src="img/f372_1575.png" alt="1/r" loading="lazy">
+<div class="meta">folio 372 (PDF p. 392) &middot; &sect;§5 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>1/r</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-013">ch30-013</a></dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd><code>by a fraction of which</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 372, x 125&ndash;1335, y 1575&ndash;1656 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-015">
+<h2>ch30-015</h2>
+<img src="img/f374_1273.png" alt="1/2" loading="lazy">
+<div class="meta">folio 374 (PDF p. 394) &middot; &sect;§7 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>1/2</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>equal and each is</code></dd>
+<dt>Remarks</dt><dd>数値分数; 1 と 2 を上下に組んだ分数 (第 1 回の ½ を 1/2 に統一)</dd>
+<dt>Crop</dt><dd>folio 374, x 125&ndash;1335, y 1273&ndash;1364 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-016">
+<h2>ch30-016</h2>
+<img src="img/f375_1961.png" alt="x^m(1 − x)^n" loading="lazy">
+<div class="meta">folio 375 (PDF p. 395) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>x^m(1 − x)^n</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd><code>n times in these conditions is</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 375, x 125&ndash;1335, y 1961&ndash;2008 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-017">
+<h2>ch30-017</h2>
+<img src="img/f376_350.png" alt="x + dx" loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>x + dx</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>x lies between x and</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 350&ndash;403 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-018">
+<h2>ch30-018</h2>
+<img src="img/f376_300.png" alt="m + n" loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>m + n</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>occur m times out of</code></dd>
+<dt>Remarks</dt><dd>演算子を含む字句</dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 300&ndash;352 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-019">
+<h2>ch30-019</h2>
+<img src="img/f376_350.png" alt="x^m(1 − x)^n dx" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch30-017">ch30-017</a>.</div>
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>x^m(1 − x)^n dx</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>is proportional to</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 350&ndash;403 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-020">
+<h2>ch30-020</h2>
+<img src="img/f376_402.png" alt="Ax^m(1 − x)^n dx" loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>Ax^m(1 − x)^n dx</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>and is equal, therefore, to</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 402&ndash;454 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-021">
+<h2>ch30-021</h2>
+<img src="img/f376_574.png" alt="∫₀ Ax^m(1 − x)^n dx = 1 ∴ A = Γ(m + n + 2)/(Γ(m + 1)Γ(n + 1))." loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>∫₀ Ax^m(1 − x)^n dx = 1 ∴ A = Γ(m + n + 2)/(Γ(m + 1)Γ(n + 1)).</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd><code>is determined by the equation</code></dd>
+<dt>Remarks</dt><dd>1 印刷行に ∴ で 2 等式が並ぶが、補則 2 (1 印刷行 = 1 本) により 1 本 (第 1 回は 021・022 の 2 本; 裁定事項 2); 積分の上限 1 が印刷されていない (下限 0 のみ; hires で確認、所見候補 F30.2)</dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 574&ndash;680 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-022">
+<h2>ch30-022</h2>
+<img src="img/f376_574.png" alt="∴ A = Γ(m + n + 2)/(Γ(m + 1)Γ(n + 1))" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch30-021">ch30-021</a>.</div>
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Text &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>∴ A = Γ(m + n + 2)/(Γ(m + 1)Γ(n + 1))</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>未</dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd><code>Hence the probability that</code></dd>
+<dt>Remarks</dt><dd>021 と同一印刷行の後半 (図鑑の検索用に残す参考行; 補則 2・3 により数えない)</dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 574&ndash;680 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-023">
+<h2>ch30-023</h2>
+<img src="img/f376_701.png" alt="m + n + 1" loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>m + n + 1</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>will occur at the</code></dd>
+<dt>Remarks</dt><dd>「(m+n+1)th trial」</dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 701&ndash;753 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-024">
+<h2>ch30-024</h2>
+<img src="img/f376_752.png" alt="m + n" loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>m + n</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-018">ch30-018</a></dd>
+<dt>Anchor words</dt><dd><code>occurred m times in</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 752&ndash;799 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-025">
+<h2>ch30-025</h2>
+<img src="img/f376_851.png" alt="A∫₀¹ x^{m+1}(1 − x)^n dx." loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Text &middot; Display &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>A∫₀¹ x^{m+1}(1 − x)^n dx.</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd><code>trials, is</code></dd>
+<dt>Remarks</dt><dd>関係記号なし</dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 851&ndash;952 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-026">
+<h2>ch30-026</h2>
+<img src="img/f376_1020.png" alt="(m + 1)/(m + n + 2)" loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Text &middot; Display &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>(m + 1)/(m + n + 2)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-012">ch30-012</a></dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd><code>this is equal to</code></dd>
+<dt>Remarks</dt><dd>行頭に単独で組まれ脚注符 1 が付く</dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 1020&ndash;1114 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-027">
+<h2>ch30-027</h2>
+<img src="img/f376_1274.png" alt="m + n" loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>m + n</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-018">ch30-018</a></dd>
+<dt>Anchor words</dt><dd><code>on m out of</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 1274&ndash;1323 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-028">
+<h2>ch30-028</h2>
+<img src="img/f376_1475.png" alt="(m + 1)/(m + n + 2)" loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>(m + 1)/(m + n + 2)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-012">ch30-012</a></dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd><code>answer to all such problems is</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 1475&ndash;1569 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-029">
+<h2>ch30-029</h2>
+<img src="img/f376_1579.png" alt="n = 0" loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>n = 0</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>In the cases where</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 1579&ndash;1628 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-030">
+<h2>ch30-030</h2>
+<img src="img/f376_1805.png" alt="ω̂(y)dy" loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>ω̂(y)dy</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Bachelier</dd>
+<dt>Anchor words</dt><dd><code>writes</code></dd>
+<dt>Remarks</dt><dd>山形符号付きのギリシャ文字 ω (hires で確認; 第 1 回は ŵ と転記していた)</dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 1805&ndash;1843 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-031">
+<h2>ch30-031</h2>
+<img src="img/f376_1841.png" alt="m + n" loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>m + n</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-018">ch30-018</a></dd>
+<dt>Quoted from</dt><dd>Bachelier</dd>
+<dt>Anchor words</dt><dd><code>after m occurrences is</code></dd>
+<dt>Remarks</dt><dd>印刷は「after m occurrences is m+n trials」(in の誤植か; 所見候補 F30.5、語の誤りで式の誤りではない)</dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 1841&ndash;1879 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-032">
+<h2>ch30-032</h2>
+<img src="img/f376_1877.png" alt="y + dy" loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>y + dy</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Bachelier</dd>
+<dt>Anchor words</dt><dd><code>lies between y and</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 1877&ndash;1950 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-033">
+<h2>ch30-033</h2>
+<img src="img/f376_1877.png" alt="y^m(1 − y)^n ω̂(y)dy / ∫y^m(1 − y)^n ω̂(y)dy" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch30-032">ch30-032</a>.</div>
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>y^m(1 − y)^n ω̂(y)dy / ∫y^m(1 − y)^n ω̂(y)dy</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Bachelier</dd>
+<dt>Anchor words</dt><dd><code>and y + dy is</code></dd>
+<dt>Remarks</dt><dd>積分に上下限なし</dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 1877&ndash;1950 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-034">
+<h2>ch30-034</h2>
+<img src="img/f376_1950.png" alt="ω̂ = 1" loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>ω̂ = 1</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Bachelier</dd>
+<dt>Anchor words</dt><dd><code>hypothesis is to put</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 1950&ndash;1985 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-035">
+<h2>ch30-035</h2>
+<img src="img/f376_2019.png" alt="ω̂(y) = a + a₁y + a₂y² + . . ." loading="lazy">
+<div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>ω̂(y) = a + a₁y + a₂y² + . . .</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Bachelier</dd>
+<dt>Anchor words</dt><dd><code>proposes the hypothesis</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 2019&ndash;2057 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-036">
+<h2>ch30-036</h2>
+<img src="img/f377_210.png" alt="(m + 1)/(m + 2)" loading="lazy">
+<div class="meta">folio 377 (PDF p. 397) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>(m + 1)/(m + 2)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Laplace</dd>
+<dt>Anchor words</dt><dd><code>yields the result</code></dd>
+<dt>Remarks</dt><dd>n = 0 の継承則</dd>
+<dt>Crop</dt><dd>folio 377, x 125&ndash;1335, y 210&ndash;305 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-037">
+<h2>ch30-037</h2>
+<img src="img/f377_369.png" alt="2/3" loading="lazy">
+<div class="meta">folio 377 (PDF p. 397) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>2/3</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>occasion, the result is</code></dd>
+<dt>Remarks</dt><dd>数値分数</dd>
+<dt>Crop</dt><dd>folio 377, x 125&ndash;1335, y 369&ndash;465 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-038">
+<h2>ch30-038</h2>
+<img src="img/f377_465.png" alt="1/2" loading="lazy">
+<div class="meta">folio 377 (PDF p. 397) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>1/2</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>probability of the event is</code></dd>
+<dt>Remarks</dt><dd>数値分数</dd>
+<dt>Crop</dt><dd>folio 377, x 125&ndash;1335, y 465&ndash;544 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-039">
+<h2>ch30-039</h2>
+<img src="img/f377_608.png" alt="1/3" loading="lazy">
+<div class="meta">folio 377 (PDF p. 397) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>1/3</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>the probability is</code></dd>
+<dt>Remarks</dt><dd>数値分数</dd>
+<dt>Crop</dt><dd>folio 377, x 125&ndash;1335, y 608&ndash;701 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-040">
+<h2>ch30-040</h2>
+<img src="img/f377_864.png" alt="x^n" loading="lazy">
+<div class="meta">folio 377 (PDF p. 397) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>x^n</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>once, then</code></dd>
+<dt>Remarks</dt><dd>冪 (演算子) として数えた</dd>
+<dt>Crop</dt><dd>folio 377, x 125&ndash;1335, y 864&ndash;914 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-041">
+<h2>ch30-041</h2>
+<img src="img/f377_1117.png" alt="1/2" loading="lazy">
+<div class="meta">folio 377 (PDF p. 397) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>1/2</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-038">ch30-038</a></dd>
+<dt>Anchor words</dt><dd><code>event is</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 377, x 125&ndash;1335, y 1117&ndash;1195 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-042">
+<h2>ch30-042</h2>
+<img src="img/f377_1195.png" alt="2/3" loading="lazy">
+<div class="meta">folio 377 (PDF p. 397) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>2/3</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-037">ch30-037</a></dd>
+<dt>Anchor words</dt><dd><code>second time is</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 377, x 125&ndash;1335, y 1195&ndash;1275 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-043">
+<h2>ch30-043</h2>
+<img src="img/f377_1275.png" alt="1/2 × 1/2" loading="lazy">
+<div class="meta">folio 377 (PDF p. 397) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>1/2 × 1/2</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>twice is not</code></dd>
+<dt>Remarks</dt><dd>分数は上下に組まれる</dd>
+<dt>Crop</dt><dd>folio 377, x 125&ndash;1335, y 1275&ndash;1380 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-044">
+<h2>ch30-044</h2>
+<img src="img/f377_1275.png" alt="1/2 × 2/3" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch30-043">ch30-043</a>.</div>
+<div class="meta">folio 377 (PDF p. 397) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>1/2 × 2/3</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>but</code></dd>
+<dt>Remarks</dt><dd>分数は上下に組まれる</dd>
+<dt>Crop</dt><dd>folio 377, x 125&ndash;1335, y 1275&ndash;1380 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-045">
+<h2>ch30-045</h2>
+<img src="img/f377_1380.png" alt="1/3" loading="lazy">
+<div class="meta">folio 377 (PDF p. 397) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>1/3</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-039">ch30-039</a></dd>
+<dt>Anchor words</dt><dd><code>i.e.</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 377, x 125&ndash;1335, y 1380&ndash;1444 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-046">
+<h2>ch30-046</h2>
+<img src="img/f377_1444.png" alt="(1/2)^n" loading="lazy">
+<div class="meta">folio 377 (PDF p. 397) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>(1/2)^n</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>in succession is not</code></dd>
+<dt>Remarks</dt><dd>分数は上下に組まれる</dd>
+<dt>Crop</dt><dd>folio 377, x 125&ndash;1335, y 1444&ndash;1549 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-047">
+<h2>ch30-047</h2>
+<img src="img/f377_1444.png" alt="1/(n + 1)" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch30-046">ch30-046</a>.</div>
+<div class="meta">folio 377 (PDF p. 397) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>1/(n + 1)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>but</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 377, x 125&ndash;1335, y 1444&ndash;1549 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-048">
+<h2>ch30-048</h2>
+<img src="img/f377_1860.png" alt="1/2" loading="lazy">
+<div class="meta">folio 377 (PDF p. 397) &middot; &sect;§10 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>1/2</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-038">ch30-038</a></dd>
+<dt>Anchor words</dt><dd><code>such an event is</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 377, x 125&ndash;1335, y 1860&ndash;1954 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-049">
+<h2>ch30-049</h2>
+<img src="img/f378_359.png" alt="1/3" loading="lazy">
+<div class="meta">folio 378 (PDF p. 398) &middot; &sect;§10 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>1/3</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-039">ch30-039</a></dd>
+<dt>Anchor words</dt><dd><code>is no less than</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 378, x 125&ndash;1335, y 359&ndash;453 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-050">
+<h2>ch30-050</h2>
+<img src="img/f378_1777.png" alt="(1/n)(s_{p+1}/s_p)" loading="lazy">
+<div class="meta">folio 378 (PDF p. 398) &middot; &sect;§11 &middot; Footnote 2 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>(1/n)(s_{p+1}/s_p)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>replaced p times, is</code></dd>
+<dt>Remarks</dt><dd>有限個の球の場合</dd>
+<dt>Crop</dt><dd>folio 378, x 125&ndash;1335, y 1777&ndash;1847 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-051">
+<h2>ch30-051</h2>
+<img src="img/f378_1882.png" alt="(p + 1)/(p + 2)" loading="lazy">
+<div class="meta">folio 378 (PDF p. 398) &middot; &sect;§11 &middot; Footnote 2 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>(p + 1)/(p + 2)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>This reduces to</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 378, x 125&ndash;1335, y 1882&ndash;1956 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-052">
+<h2>ch30-052</h2>
+<img src="img/f378_2003.png" alt="(1/n) Σ_{r=0}^{r=n} r^{p+1}(n − r)^b / Σ_{r=0}^{r=n} r^p(n − r)^b" loading="lazy">
+<div class="meta">folio 378 (PDF p. 398) &middot; &sect;§11 &middot; Footnote 2 &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>(1/n) Σ_{r=0}^{r=n} r^{p+1}(n − r)^b / Σ_{r=0}^{r=n} r^p(n − r)^b</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>next ball will be black is</code></dd>
+<dt>Remarks</dt><dd>指数が b と印刷 (白球 q 個なので q の誤植か、所見候補 F30.3); 本文行に大きく組まれるが行内</dd>
+<dt>Crop</dt><dd>folio 378, x 125&ndash;1335, y 2003&ndash;2169 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-053">
+<h2>ch30-053</h2>
+<img src="img/f379_1310.png" alt="x + dx" loading="lazy">
+<div class="meta">folio 379 (PDF p. 399) &middot; &sect;§12 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>x + dx</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-017">ch30-017</a></dd>
+<dt>Quoted from</dt><dd>Pearson</dd>
+<dt>Anchor words</dt><dd><code>to lie between x and</code></dd>
+<dt>Remarks</dt><dd>Pearson 引用</dd>
+<dt>Crop</dt><dd>folio 379, x 125&ndash;1335, y 1310&ndash;1361 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-054">
+<h2>ch30-054</h2>
+<img src="img/f379_1310.png" alt="n = p + q" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch30-053">ch30-053</a>.</div>
+<div class="meta">folio 379 (PDF p. 399) &middot; &sect;§12 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>n = p + q</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Pearson</dd>
+<dt>Anchor words</dt><dd><code>then if on</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 379, x 125&ndash;1335, y 1310&ndash;1361 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-055">
+<h2>ch30-055</h2>
+<img src="img/f379_1411.png" alt="x + dx" loading="lazy">
+<div class="meta">folio 379 (PDF p. 399) &middot; &sect;§12 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>x + dx</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-017">ch30-017</a></dd>
+<dt>Quoted from</dt><dd>Pearson</dd>
+<dt>Anchor words</dt><dd><code>lies between x and</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 379, x 125&ndash;1335, y 1411&ndash;1464 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-056">
+<h2>ch30-056</h2>
+<img src="img/f379_1514.png" alt="P_x = x^p(1 − x)^q dx / ∫₀¹ x^p(1 − x)^q dx ." loading="lazy">
+<div class="meta">folio 379 (PDF p. 399) &middot; &sect;§12 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>P_x = x^p(1 − x)^q dx / ∫₀¹ x^p(1 − x)^q dx .</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Pearson</dd>
+<dt>Anchor words</dt><dd><code>distribution of our ignorance,</code></dd>
+<dt>Remarks</dt><dd>Pearson が「Bayes&#x27; Theorem」と呼ぶ式 (脚注 4)</dd>
+<dt>Crop</dt><dd>folio 379, x 125&ndash;1335, y 1514&ndash;1668 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-057">
+<h2>ch30-057</h2>
+<img src="img/f380_205.png" alt="m = r + s" loading="lazy">
+<div class="meta">folio 380 (PDF p. 400) &middot; &sect;§12 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>m = r + s</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Pearson</dd>
+<dt>Anchor words</dt><dd><code>a second trial of</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 380, x 125&ndash;1335, y 205&ndash;259 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-058">
+<h2>ch30-058</h2>
+<img src="img/f380_307.png" alt="x + dx" loading="lazy">
+<div class="meta">folio 380 (PDF p. 400) &middot; &sect;§12 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>x + dx</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-017">ch30-017</a></dd>
+<dt>Quoted from</dt><dd>Pearson</dd>
+<dt>Anchor words</dt><dd><code>between x and</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 380, x 125&ndash;1335, y 307&ndash;361 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-059">
+<h2>ch30-059</h2>
+<img src="img/f380_376.png" alt="= P_x (Γm/(ΓrΓs)) n^r(1 − x)^s," loading="lazy">
+<div class="meta">folio 380 (PDF p. 400) &middot; &sect;§12 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>= P_x (Γm/(ΓrΓs)) n^r(1 − x)^s,</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Pearson</dd>
+<dt>Anchor words</dt><dd><code>and accordingly the total chance</code></dd>
+<dt>Remarks</dt><dd>左辺なし (前行の文に続く); x^r が n^r と印刷 (hires で確認、所見候補 F30.4)</dd>
+<dt>Crop</dt><dd>folio 380, x 125&ndash;1335, y 376&ndash;469 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-060">
+<h2>ch30-060</h2>
+<img src="img/f380_608.png" alt="C_r = (Γm/(ΓrΓs)) ∫₀¹ x^{p+r}(1 − x)^{q+s}dx / ∫₀¹ x^p(1 − x)^q dx ." loading="lazy">
+<div class="meta">folio 380 (PDF p. 400) &middot; &sect;§12 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>C_r = (Γm/(ΓrΓs)) ∫₀¹ x^{p+r}(1 − x)^{q+s}dx / ∫₀¹ x^p(1 − x)^q dx .</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Pearson</dd>
+<dt>Anchor words</dt><dd><code>r times in the second series, is</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 380, x 125&ndash;1335, y 608&ndash;823 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-061">
+<h2>ch30-061</h2>
+<img src="img/f380_993.png" alt="φ(x)" loading="lazy">
+<div class="meta">folio 380 (PDF p. 400) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>φ(x)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>objects which satisfy</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 380, x 125&ndash;1335, y 993&ndash;1043 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-062">
+<h2>ch30-062</h2>
+<img src="img/f380_1042.png" alt="f(x)" loading="lazy">
+<div class="meta">folio 380 (PDF p. 400) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>f(x)</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>also satisfy</code></dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 380, x 125&ndash;1335, y 1042&ndash;1092 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-063">
+<h2>ch30-063</h2>
+<img src="img/f381_1954.png" alt="xy" loading="lazy">
+<div class="meta">folio 381 (PDF p. 401) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>xy</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd><code>z of c is equal to</code></dd>
+<dt>Remarks</dt><dd>関係は語で書かれる</dd>
+<dt>Crop</dt><dd>folio 381, x 125&ndash;1335, y 1954&ndash;2007 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-064">
+<h2>ch30-064</h2>
+<img src="img/f381_2056.png" alt="1/2" loading="lazy">
+<div class="meta">folio 381 (PDF p. 401) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>1/2</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-015">ch30-015</a></dd>
+<dt>Anchor words</dt><dd><code>For the value</code></dd>
+<dt>Remarks</dt><dd>1 と 2 を上下に組んだ分数 (第 1 回の ½ を 1/2 に統一)</dd>
+<dt>Crop</dt><dd>folio 381, x 125&ndash;1335, y 2056&ndash;2149 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch30-065">
+<h2>ch30-065</h2>
+<img src="img/f382_255.png" alt="1/2" loading="lazy">
+<div class="meta">folio 382 (PDF p. 402) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>1/2</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Reprint of</dt><dd><a href="#ch30-015">ch30-015</a></dd>
+<dt>Anchor words</dt><dd><code>widely from</code></dd>
+<dt>Remarks</dt><dd>1 と 2 を上下に組んだ分数 (第 1 回の ½ を 1/2 に統一)</dd>
+<dt>Crop</dt><dd>folio 382, x 125&ndash;1335, y 255&ndash;348 (full-size scan pixels)</dd>
+</dl></section>
+<footer>Generated by tools/atlas/gen.py from the ledger ch30.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
+</main></body></html>
