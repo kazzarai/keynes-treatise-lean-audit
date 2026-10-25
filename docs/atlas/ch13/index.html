@@ -1,0 +1,1966 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula atlas, Chapter 13</title>
+<style>
+body{background:#fff;color:#111;font-family:Georgia,'Times New Roman',serif;margin:0;padding:24px 12px}
+main{max-width:900px;margin:0 auto}
+h1{font-size:1.5em;margin:0 0 .2em}
+.sub{color:#444;margin:0 0 1em}
+table.sum{border-collapse:collapse;margin:.5em 0 1em;font-size:.95em}
+table.sum th,table.sum td{border:1px solid #bbb;padding:3px 10px;text-align:left}
+.rules{font-size:.92em;line-height:1.45;color:#222;border-left:3px solid #ccc;padding-left:12px}
+.card{border:1px solid #ccc;border-radius:4px;margin:18px 0;padding:10px 12px}
+.card img{display:block;width:100%;height:auto;border:1px solid #eee;margin:4px 0 8px}
+.card h2{font-size:1.05em;margin:0 0 4px;font-family:Menlo,Consolas,monospace}
+.meta{font-size:.9em;color:#333;margin-bottom:4px}
+.shared{font-size:.82em;color:#666;margin:-4px 0 6px}
+dl{display:grid;grid-template-columns:8.5em 1fr;gap:3px 10px;margin:0;font-size:.92em}
+dt{color:#555}
+dd{margin:0;word-break:break-word}
+code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;padding:0 2px}
+.mark{display:inline-block;min-width:1.6em;text-align:center;border-radius:3px;padding:0 4px;margin-right:6px;font-weight:bold}
+.printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
+.notation{background:#f3eaf6}
+footer{font-size:.85em;color:#666;margin-top:2em}
+</style></head><body><main>
+<h1>Chapter XIII. The Fundamental Theorems of Necessary Inference</h1>
+<p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 139&ndash;143 (Cornell copy, PDF pp. 159&ndash;163). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
+<table class="sum"><tr><th>Ledger rows</th><td>170</td></tr>
+<tr><th>Formulas</th><td>169 (display 81, inline 88; items 36, numbered 167)</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>32 &nbsp; <span class="mark equiv">&asymp;</span>26 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>111</td></tr>
+<tr><th>Notation</th><td>0 (with a Lean counterpart 0)</td></tr>
+<tr><th>Reference rows</th><td>0</td></tr>
+<tr><th>Bare-symbol rows (not counted)</th><td>1</td></tr>
+</table>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
+<section class="card" id="ch13-001">
+<h2>ch13-001</h2>
+<img src="img/ch13-001.png" alt="a/h + ā/h = 1." loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h + ā/h = 1.</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>P2/th_13_1 (3a/6a/6b/7a/7b/7c/7g/7h/7i にも); 6c/th_13_1_i (Cons h 付き)</dd>
+<dt>Anchor words</dt><dd>2. (1)</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1281&ndash;1325 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-002">
+<h2>ch13-002</h2>
+<img src="img/ch13-002.png" alt="ab/h + āb/h = b/h" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ab/h + āb/h = b/h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((1) の証明内)</dd>
+<dt>Anchor words</dt><dd>For … by IX.,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1330&ndash;1375 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-003">
+<h2>ch13-003</h2>
+<img src="img/ch13-003.png" alt="a/bh . b/h + ā/bh . b/h = b/h" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/bh . b/h + ā/bh . b/h = b/h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((1) の証明内)</dd>
+<dt>Anchor words</dt><dd>by X.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1380&ndash;1427 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-004">
+<h2>ch13-004</h2>
+<img src="img/ch13-004.png" alt="b/h = 1, then a/bh + ā/bh = 1" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b/h = 1, then a/bh + ā/bh = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((1) の証明内)</dd>
+<dt>Anchor words</dt><dd>Put … by (iv. b),</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1430&ndash;1476 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-005">
+<h2>ch13-005</h2>
+<img src="img/ch13-005.png" alt="b/h = 1, bh≡h" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b/h = 1, bh≡h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((1) の証明内)</dd>
+<dt>Anchor words</dt><dd>since … by (iii.).</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1480&ndash;1525 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-006">
+<h2>ch13-006</h2>
+<img src="img/ch13-006.png" alt="a/h + ā/h = 1" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h + ā/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((1) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-001">ch13-001</a></dd>
+<dt>Anchor words</dt><dd>Thus … by (ii.).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1531&ndash;1576 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-007">
+<h2>ch13-007</h2>
+<img src="img/ch13-007.png" alt="a/h = 1" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(台帳 100 項目外; 6b 等の証明内で補題的に使われるが個別定理なし)</dd>
+<dt>Anchor words</dt><dd>(1.1) If a/h = 1,</dd>
+<dt>Remarks</dt><dd>言明 前件</dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1583&ndash;1627 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-008">
+<h2>ch13-008</h2>
+<img src="img/ch13-007.png" alt="ā/h = 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-007">ch13-007</a>.</div>
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ā/h = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>If a/h = 1, ā/h = 0,</dd>
+<dt>Remarks</dt><dd>言明 後件</dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1583&ndash;1627 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-009">
+<h2>ch13-009</h2>
+<img src="img/ch13-009.png" alt="a/h + ā/h = 1" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h + ā/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((1.1) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-001">ch13-001</a></dd>
+<dt>Anchor words</dt><dd>by (1),</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1632&ndash;1677 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-010">
+<h2>ch13-010</h2>
+<img src="img/ch13-010.png" alt="∴ a/h + ā/h = a/h = a/h + 0" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ a/h + ā/h = a/h = a/h + 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((1.1) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (iv. b),</dd>
+<dt>Remarks</dt><dd>連鎖 (= 2 つ)</dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1682&ndash;1727 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-011">
+<h2>ch13-011</h2>
+<img src="img/ch13-011.png" alt="∴ ā/h = 0" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ ā/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((1.1) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (iv. c).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1732&ndash;1776 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-012">
+<h2>ch13-012</h2>
+<img src="img/ch13-012.png" alt="ā/h = 1" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ā/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>(1.2) Similarly, if ā/h = 1,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1784&ndash;1829 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-013">
+<h2>ch13-013</h2>
+<img src="img/ch13-012.png" alt="a/h = 0." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-012">ch13-012</a>.</div>
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h = 0.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>if ā/h = 1, a/h = 0.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1784&ndash;1829 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-014">
+<h2>ch13-014</h2>
+<img src="img/ch13-014.png" alt="a/h = 0" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>(1.3) If a/h = 0,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1836&ndash;1879 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-015">
+<h2>ch13-015</h2>
+<img src="img/ch13-014.png" alt="ā/h = 1," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-014">ch13-014</a>.</div>
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ā/h = 1,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>If a/h = 0, ā/h = 1,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1836&ndash;1879 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-016">
+<h2>ch13-016</h2>
+<img src="img/ch13-016.png" alt="a/h + ā/h = 1" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h + ā/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((1.3) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-001">ch13-001</a></dd>
+<dt>Anchor words</dt><dd>by (1),</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1883&ndash;1929 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-017">
+<h2>ch13-017</h2>
+<img src="img/ch13-017.png" alt="∴ 0 + ā/h = 0 + 1" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ 0 + ā/h = 0 + 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((1.3) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (iv. b),</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1933&ndash;1978 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-018">
+<h2>ch13-018</h2>
+<img src="img/ch13-018.png" alt="∴ ā/h = 1" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ ā/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((1.3) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (iv. c).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 1984&ndash;2029 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-019">
+<h2>ch13-019</h2>
+<img src="img/ch13-019.png" alt="ā/h = 0" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ā/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>(1.4) Similarly, if ā/h = 0,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 2036&ndash;2082 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-020">
+<h2>ch13-020</h2>
+<img src="img/ch13-019.png" alt="a/h = 1." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-019">ch13-019</a>.</div>
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h = 1.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>if ā/h = 0, a/h = 1.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 2036&ndash;2082 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-021">
+<h2>ch13-021</h2>
+<img src="img/ch13-021.png" alt="a/h &lt; 1 or a/h = 1" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h &lt; 1 or a/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7i/th_13_2_src</dd>
+<dt>Anchor words</dt><dd>(2) … by IV.</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 2084&ndash;2133 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-022">
+<h2>ch13-022</h2>
+<img src="img/ch13-022.png" alt="a/h &gt; 0 or a/h = 0" loading="lazy">
+<div class="meta">folio 139 (PDF p. 159) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h &gt; 0 or a/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7i/th_13_3_src (0 &lt; Pr α h は a/h &gt; 0 の Lean 記法)</dd>
+<dt>Anchor words</dt><dd>(3) … by V.,</dd>
+<dt>Remarks</dt><dd>関係 2。直後「there are no negative probabilities」</dd>
+<dt>Crop</dt><dd>folio 139, x 125&ndash;1335, y 2135&ndash;2183 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-023">
+<h2>ch13-023</h2>
+<img src="img/ch13-023.png" alt="ab/h &lt; b/h or ab/h = b/h" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ab/h &lt; b/h or ab/h = b/h</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_4 (≤ で「&lt; or =」を表す)</dd>
+<dt>Anchor words</dt><dd>(4) … by X. and (iv. b).</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 226&ndash;272 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-024">
+<h2>ch13-024</h2>
+<img src="img/ch13-024.png" alt="P + Q = 0," loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>P + Q = 0,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_5 (前提; P, Q を Pr α h, Pr β k で)</dd>
+<dt>Anchor words</dt><dd>relations of probability and P + Q = 0,</dd>
+<dt>Remarks</dt><dd>言明 前件</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 277&ndash;322 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-025">
+<h2>ch13-025</h2>
+<img src="img/ch13-025.png" alt="P = 0" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>P = 0</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_5 (結論 第 1 成分; P を Pr α h で)</dd>
+<dt>Anchor words</dt><dd>then P = 0 and Q = 0.</dd>
+<dt>Remarks</dt><dd>言明 後件 1</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 327&ndash;367 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-026">
+<h2>ch13-026</h2>
+<img src="img/ch13-025.png" alt="Q = 0." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-025">ch13-025</a>.</div>
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Q = 0.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_5 (結論 第 2 成分; Q を Pr β k で)</dd>
+<dt>Anchor words</dt><dd>then P = 0 and Q = 0.</dd>
+<dt>Remarks</dt><dd>言明 後件 2</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 327&ndash;367 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-027">
+<h2>ch13-027</h2>
+<img src="img/ch13-027.png" alt="P + Q &gt; P unless Q = 0" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>P + Q &gt; P unless Q = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((5) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (iv. b),</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 380&ndash;423 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-028">
+<h2>ch13-028</h2>
+<img src="img/ch13-028.png" alt="P &gt; 0 unless P = 0" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>P &gt; 0 unless P = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((5) の証明内)</dd>
+<dt>Anchor words</dt><dd>and … by V.</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 429&ndash;474 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-029">
+<h2>ch13-029</h2>
+<img src="img/ch13-029.png" alt="∴ P + Q &gt; 0 unless Q = 0." loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ P + Q &gt; 0 unless Q = 0.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((5) の証明内)</dd>
+<dt>Anchor words</dt><dd>∴ P + Q &gt; 0 unless</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 480&ndash;519 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-030">
+<h2>ch13-030</h2>
+<img src="img/ch13-030.png" alt="P + Q = 0," loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>P + Q = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((5) の証明内)</dd>
+<dt>Anchor words</dt><dd>Hence, if P + Q = 0,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 529&ndash;574 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-031">
+<h2>ch13-031</h2>
+<img src="img/ch13-030.png" alt="Q = 0" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-030">ch13-030</a>.</div>
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Q = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((5) の証明内)</dd>
+<dt>Anchor words</dt><dd>if P + Q = 0, Q = 0 and similarly</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 529&ndash;574 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-032">
+<h2>ch13-032</h2>
+<img src="img/ch13-030.png" alt="P = 0." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-030">ch13-030</a>.</div>
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>P = 0.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((5) の証明内)</dd>
+<dt>Anchor words</dt><dd>and similarly P = 0.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 529&ndash;574 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-033">
+<h2>ch13-033</h2>
+<img src="img/ch13-033.png" alt="PQ = 0," loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>PQ = 0,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_6 (前提; P, Q を Pr で)</dd>
+<dt>Anchor words</dt><dd>(6) If PQ = 0,</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 580&ndash;622 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-034">
+<h2>ch13-034</h2>
+<img src="img/ch13-033.png" alt="P = 0" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-033">ch13-033</a>.</div>
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>P = 0</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_6 (結論の左; P を Pr で)</dd>
+<dt>Anchor words</dt><dd>PQ = 0, P = 0 or Q = 0,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 580&ndash;622 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-035">
+<h2>ch13-035</h2>
+<img src="img/ch13-033.png" alt="Q = 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-033">ch13-033</a>.</div>
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Q = 0,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_6 (結論の右; Q を Pr で)</dd>
+<dt>Anchor words</dt><dd>P = 0 or Q = 0,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 580&ndash;622 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-036">
+<h2>ch13-036</h2>
+<img src="img/ch13-036.png" alt="Q &gt; 0 unless Q = 0" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Q &gt; 0 unless Q = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((6) の証明内)</dd>
+<dt>Anchor words</dt><dd>by V.</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 632&ndash;676 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-037">
+<h2>ch13-037</h2>
+<img src="img/ch13-037.png" alt="PQ &gt; P . 0 unless Q = 0 or P = 0" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>PQ &gt; P . 0 unless Q = 0 or P = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((6) の証明内)</dd>
+<dt>Anchor words</dt><dd>Hence … by (iv. c),</dd>
+<dt>Remarks</dt><dd>関係 3</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 681&ndash;726 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-038">
+<h2>ch13-038</h2>
+<img src="img/ch13-038.png" alt="PQ &gt; 0 unless Q = 0 or P = 0" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>PQ &gt; 0 unless Q = 0 or P = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((6) の証明内)</dd>
+<dt>Anchor words</dt><dd>i.e. … by (iv. b).</dd>
+<dt>Remarks</dt><dd>関係 3</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 732&ndash;776 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-039">
+<h2>ch13-039</h2>
+<img src="img/ch13-039.png" alt="PQ = 0," loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>PQ = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((6) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-033">ch13-033</a></dd>
+<dt>Anchor words</dt><dd>Whence, if PQ = 0, the result follows.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 782&ndash;822 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-040">
+<h2>ch13-040</h2>
+<img src="img/ch13-040.png" alt="PQ = 1," loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>PQ = 1,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_7 (前提; P, Q を Pr で; 7i にも)</dd>
+<dt>Anchor words</dt><dd>(7) If PQ = 1,</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 833&ndash;874 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-041">
+<h2>ch13-041</h2>
+<img src="img/ch13-040.png" alt="P = 1" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-040">ch13-040</a>.</div>
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>P = 1</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_7 (結論 第 1 成分; 7i にも)</dd>
+<dt>Anchor words</dt><dd>PQ = 1, P = 1 and Q = 1,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 833&ndash;874 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-042">
+<h2>ch13-042</h2>
+<img src="img/ch13-040.png" alt="Q = 1," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-040">ch13-040</a>.</div>
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Q = 1,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_7 (結論 第 2 成分; 7i にも)</dd>
+<dt>Anchor words</dt><dd>P = 1 and Q = 1,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 833&ndash;874 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-043">
+<h2>ch13-043</h2>
+<img src="img/ch13-043.png" alt="PQ &lt; P unless P = 0 or Q = 1" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>PQ &lt; P unless P = 0 or Q = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((7) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (iv. b),</dd>
+<dt>Remarks</dt><dd>関係 3</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 884&ndash;927 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-044">
+<h2>ch13-044</h2>
+<img src="img/ch13-044.png" alt="PQ = P if P = 0 or Q = 1" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>PQ = P if P = 0 or Q = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((7) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (iv. b),</dd>
+<dt>Remarks</dt><dd>関係 3</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 934&ndash;977 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-045">
+<h2>ch13-045</h2>
+<img src="img/ch13-045.png" alt="P &lt; 1 unless P = 1" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>P &lt; 1 unless P = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((7) の証明内)</dd>
+<dt>Anchor words</dt><dd>and … by IV.,</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 984&ndash;1027 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-046">
+<h2>ch13-046</h2>
+<img src="img/ch13-046.png" alt="∴ PQ &lt; 1 unless P = 1." loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ PQ &lt; 1 unless P = 1.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((7) の証明内)</dd>
+<dt>Anchor words</dt><dd>∴ PQ &lt; 1 unless P = 1.</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1035&ndash;1073 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-047">
+<h2>ch13-047</h2>
+<img src="img/ch13-047.png" alt="P = 1 ;" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>P = 1 ;</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((7) の証明内)</dd>
+<dt>Anchor words</dt><dd>Hence P = 1 ; similarly</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1084&ndash;1127 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-048">
+<h2>ch13-048</h2>
+<img src="img/ch13-047.png" alt="Q = 1." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-047">ch13-047</a>.</div>
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>Q = 1.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((7) の証明内)</dd>
+<dt>Anchor words</dt><dd>similarly Q = 1.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1084&ndash;1127 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-049">
+<h2>ch13-049</h2>
+<img src="img/ch13-049.png" alt="a/h = 0," loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h = 0,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>6b/th_13_8, th_13_8_conj (前提 h0; 7c にも)</dd>
+<dt>Anchor words</dt><dd>(8) If a/h = 0,</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1134&ndash;1178 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-050">
+<h2>ch13-050</h2>
+<img src="img/ch13-049.png" alt="ab/h = 0" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-049">ch13-049</a>.</div>
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ab/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>6b/th_13_8_conj (結論)</dd>
+<dt>Anchor words</dt><dd>ab/h = 0 and a/bh = 0 if bh</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1134&ndash;1178 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-051">
+<h2>ch13-051</h2>
+<img src="img/ch13-049.png" alt="a/bh = 0" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-049">ch13-049</a>.</div>
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/bh = 0</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>6b/th_13_8 (結論; 前提 b/h ≠ 0)</dd>
+<dt>Anchor words</dt><dd>a/bh = 0 if bh is not inconsistent.</dd>
+<dt>Remarks</dt><dd>但し書き「bh が不整合でなければ」</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1134&ndash;1178 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-052">
+<h2>ch13-052</h2>
+<img src="img/ch13-052.png" alt="ab/h = b/ah . a/h = a/bh . b/h" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ab/h = b/ah . a/h = a/bh . b/h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((8) の証明内)</dd>
+<dt>Anchor words</dt><dd>For … by X.,</dd>
+<dt>Remarks</dt><dd>連鎖</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1235&ndash;1280 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-053">
+<h2>ch13-053</h2>
+<img src="img/ch13-053.png" alt="a/h = 0, b/ah . a/h = 0" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h = 0, b/ah . a/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((8) の証明内)</dd>
+<dt>Anchor words</dt><dd>and since … by (iv. b),</dd>
+<dt>Remarks</dt><dd>関係 2 (「and since a/h = 0,」は行内に続く)</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1285&ndash;1329 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-054">
+<h2>ch13-054</h2>
+<img src="img/ch13-054.png" alt="∴ ab/h = 0 and a/bh . b/h = 0," loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ ab/h = 0 and a/bh . b/h = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((8) の証明内)</dd>
+<dt>Anchor words</dt><dd>∴ ab/h = 0 and</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1336&ndash;1380 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-055">
+<h2>ch13-055</h2>
+<img src="img/ch13-055.png" alt="∴ unless b/h = 0, a/bh = 0" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ unless b/h = 0, a/bh = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((8) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (5),</dd>
+<dt>Remarks</dt><dd>関係 2。「whence the result by VI.」</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1387&ndash;1430 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-056">
+<h2>ch13-056</h2>
+<img src="img/ch13-056.png" alt="a/h = 1," loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h = 1,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>6b/th_13_9 (前提; 7c にも)</dd>
+<dt>Anchor words</dt><dd>(9) If a/h = 1,</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1636&ndash;1680 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-057">
+<h2>ch13-057</h2>
+<img src="img/ch13-056.png" alt="a/bh = 1" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-056">ch13-056</a>.</div>
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/bh = 1</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>6b/th_13_9 (結論; 7c にも)</dd>
+<dt>Anchor words</dt><dd>a/bh = 1 if bh is not inconsistent.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1636&ndash;1680 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-058">
+<h2>ch13-058</h2>
+<img src="img/ch13-058.png" alt="a/h = 1, ā/h = 0" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h = 1, ā/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((9) の証明内)</dd>
+<dt>Anchor words</dt><dd>Since … by (1.1),</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1686&ndash;1729 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-059">
+<h2>ch13-059</h2>
+<img src="img/ch13-059.png" alt="∴ ā/bh = 0" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ ā/bh = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((9) の証明内)</dd>
+<dt>Anchor words</dt><dd>∴ ā/bh = 0 by (8) if bh</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1736&ndash;1779 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-060">
+<h2>ch13-060</h2>
+<img src="img/ch13-060.png" alt="a/bh = 1" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/bh = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((9) の証明内)</dd>
+<dt>Anchor words</dt><dd>whence … by (1.4).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1787&ndash;1830 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-061">
+<h2>ch13-061</h2>
+<img src="img/ch13-061.png" alt="a/h = 1," loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h = 1,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7i/th_13_10_src (前提 hcert)</dd>
+<dt>Anchor words</dt><dd>(10) If a/h = 1,</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1986&ndash;2030 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-062">
+<h2>ch13-062</h2>
+<img src="img/ch13-061.png" alt="ab/h = b/ah = b/h," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-061">ch13-061</a>.</div>
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ab/h = b/ah = b/h,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7i/th_13_10_src (連鎖の二つの等号を連言で)</dd>
+<dt>Anchor words</dt><dd>ab/h = b/ah = b/h,</dd>
+<dt>Remarks</dt><dd>連鎖</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 1986&ndash;2030 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-063">
+<h2>ch13-063</h2>
+<img src="img/ch13-063.png" alt="ab/h = b/ah . a/h = a/bh . b/h" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ab/h = b/ah . a/h = a/bh . b/h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((10) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-052">ch13-052</a></dd>
+<dt>Anchor words</dt><dd>by X.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 2036&ndash;2080 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-064">
+<h2>ch13-064</h2>
+<img src="img/ch13-064.png" alt="a/h = 1," loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h = 1,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((10) の証明内)</dd>
+<dt>Anchor words</dt><dd>Since a/h = 1, a/bh = 1 by (9)</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 2087&ndash;2130 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-065">
+<h2>ch13-065</h2>
+<img src="img/ch13-064.png" alt="a/bh = 1" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-064">ch13-064</a>.</div>
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/bh = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((10) の証明内)</dd>
+<dt>Anchor words</dt><dd>a/bh = 1 by (9) unless</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 2087&ndash;2130 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-066">
+<h2>ch13-066</h2>
+<img src="img/ch13-064.png" alt="b/h = 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-064">ch13-064</a>.</div>
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b/h = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((10) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (9) unless b/h = 0,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 2087&ndash;2130 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-067">
+<h2>ch13-067</h2>
+<img src="img/ch13-067.png" alt="∴ b/ah . a/h = b/ah and a/bh . b/h = b/h" loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ b/ah . a/h = b/ah and a/bh . b/h = b/h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((10) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (iv. b),</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 2136&ndash;2180 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-068">
+<h2>ch13-068</h2>
+<img src="img/ch13-068.png" alt="b/h = 0." loading="lazy">
+<div class="meta">folio 140 (PDF p. 160) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b/h = 0.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((10) の証明内)</dd>
+<dt>Anchor words</dt><dd>whence the result, unless b/h = 0.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 140, x 125&ndash;1335, y 2188&ndash;2230 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-069">
+<h2>ch13-069</h2>
+<img src="img/ch13-069.png" alt="b/h = 0," loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b/h = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((10) の証明内)</dd>
+<dt>Anchor words</dt><dd>If b/h = 0, the result follows from (8).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 196&ndash;239 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-070">
+<h2>ch13-070</h2>
+<img src="img/ch13-070.png" alt="ab/h = 1," loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ab/h = 1,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7i/th_13_11_src (前提 h1)</dd>
+<dt>Anchor words</dt><dd>(11) If ab/h = 1,</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 247&ndash;292 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-071">
+<h2>ch13-071</h2>
+<img src="img/ch13-070.png" alt="a/h = 1." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-070">ch13-070</a>.</div>
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h = 1.</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7i/th_13_11_src (結論 第 1 成分)</dd>
+<dt>Anchor words</dt><dd>ab/h = 1, a/h = 1.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 247&ndash;292 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-072">
+<h2>ch13-072</h2>
+<img src="img/ch13-072.png" alt="ab/h = b/ah . a/h" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ab/h = b/ah . a/h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((11) の証明内)</dd>
+<dt>Anchor words</dt><dd>For … by X.,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 297&ndash;343 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-073">
+<h2>ch13-073</h2>
+<img src="img/ch13-073.png" alt="∴ a/h = 1" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ a/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((11) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (7).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 348&ndash;396 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-074">
+<h2>ch13-074</h2>
+<img src="img/ch13-074.png" alt="(a≡b)/h = 1," loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(a≡b)/h = 1,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>6b/th_13_12 (前提; 7c にも); 6c/th_12_i, th_12_i_short (Cons h 付き)</dd>
+<dt>Anchor words</dt><dd>(12) If (a≡b)/h = 1,</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 399&ndash;442 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-075">
+<h2>ch13-075</h2>
+<img src="img/ch13-074.png" alt="a/h = b/h," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-074">ch13-074</a>.</div>
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h = b/h,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>6b/th_13_12 (結論; 7c にも); 6c/th_12_i, th_12_i_short</dd>
+<dt>Anchor words</dt><dd>(a≡b)/h = 1, a/h = b/h,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 399&ndash;442 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-076">
+<h2>ch13-076</h2>
+<img src="img/ch13-076.png" alt="b/ah . a/h = a/bh . b/h" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b/ah . a/h = a/bh . b/h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((12) の証明内)</dd>
+<dt>Anchor words</dt><dd>by X.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 449&ndash;494 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-077">
+<h2>ch13-077</h2>
+<img src="img/ch13-077.png" alt="b/ah = 1, a/bh = 1" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b/ah = 1, a/bh = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((12) の証明内)</dd>
+<dt>Anchor words</dt><dd>and … by VIII.,</dd>
+<dt>Remarks</dt><dd>関係 2。Def. VIII を逆向き (⇐) に使う箇所</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 499&ndash;544 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-078">
+<h2>ch13-078</h2>
+<img src="img/ch13-078.png" alt="∴ a/h = b/h" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ a/h = b/h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((12) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (iv. b).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 551&ndash;595 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-079">
+<h2>ch13-079</h2>
+<img src="img/ch13-079.png" alt="(a≡b)/h = 1" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(a≡b)/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7c/th_13_12_1 (前提 hcert)</dd>
+<dt>Anchor words</dt><dd>(12.1) If (a≡b)/h = 1 and hx is</dd>
+<dt>Remarks</dt><dd>言明 前件</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 600&ndash;643 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-080">
+<h2>ch13-080</h2>
+<img src="img/ch13-080.png" alt="a/hx = b/hx." loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/hx = b/hx.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7c/th_13_12_1 (結論; 連言の順序 x ∧ h)</dd>
+<dt>Anchor words</dt><dd>a/hx = b/hx.</dd>
+<dt>Remarks</dt><dd>言明 後件 (表示)</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 652&ndash;695 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-081">
+<h2>ch13-081</h2>
+<img src="img/ch13-081.png" alt="a/hx . x/h = x/ah . a/h," loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/hx . x/h = x/ah . a/h,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((12.1) の証明内)</dd>
+<dt>Anchor words</dt><dd>a/hx . x/h = x/ah . a/h,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 703&ndash;746 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-082">
+<h2>ch13-082</h2>
+<img src="img/ch13-082.png" alt="b/hx . x/h = x/bh . b/h" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b/hx . x/h = x/bh . b/h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((12.1) の証明内)</dd>
+<dt>Anchor words</dt><dd>and … by X.,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 752&ndash;796 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-083">
+<h2>ch13-083</h2>
+<img src="img/ch13-083.png" alt="x/ah = x/bh" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>x/ah = x/bh</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((12.1) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (ii.),</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 803&ndash;847 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-084">
+<h2>ch13-084</h2>
+<img src="img/ch13-084.png" alt="a/h = b/h" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h = b/h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((12.1) の証明内)</dd>
+<dt>Anchor words</dt><dd>and … by (12),</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 853&ndash;897 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-085">
+<h2>ch13-085</h2>
+<img src="img/ch13-085.png" alt="∴ a/hx = b/hx unless x/h = 0." loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ a/hx = b/hx unless x/h = 0.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((12.1) の証明内)</dd>
+<dt>Anchor words</dt><dd>∴ a/hx = b/hx unless</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 903&ndash;948 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-086">
+<h2>ch13-086</h2>
+<img src="img/ch13-086.png" alt="(a≡b)/h = 1," loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(a≡b)/h = 1,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>axiom (ii.), if (a≡b)/h = 1, we can substitute</dd>
+<dt>Remarks</dt><dd>「principle of equivalence」の説明文</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1003&ndash;1047 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-087">
+<h2>ch13-087</h2>
+<img src="img/ch13-087.png" alt="a/a = 1," loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/a = 1,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_13 (前提に h を足した a/ah の形); 6c/th_13_13_conj_i</dd>
+<dt>Anchor words</dt><dd>(13) a/a = 1, unless a is inconsistent.</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1104&ndash;1148 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-088">
+<h2>ch13-088</h2>
+<img src="img/ch13-088.png" alt="a/a = aa/a = a/aa . a/a" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/a = aa/a = a/aa . a/a</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((13) の証明内)</dd>
+<dt>Anchor words</dt><dd>For … by (iii.), (12), and X.,</dd>
+<dt>Remarks</dt><dd>連鎖</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1155&ndash;1199 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-089">
+<h2>ch13-089</h2>
+<img src="img/ch13-089.png" alt="a/aa = 1" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/aa = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((13) の証明内)</dd>
+<dt>Anchor words</dt><dd>whence a/aa = 1 by (ii.), unless</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1206&ndash;1250 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-090">
+<h2>ch13-090</h2>
+<img src="img/ch13-089.png" alt="a/a = 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-089">ch13-089</a>.</div>
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/a = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((13) の証明内)</dd>
+<dt>Anchor words</dt><dd>unless a/a = 0,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1206&ndash;1250 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-091">
+<h2>ch13-091</h2>
+<img src="img/ch13-091.png" alt="a/a = 1," loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/a = 1,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((13) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-087">ch13-087</a></dd>
+<dt>Anchor words</dt><dd>i.e. a/a = 1, unless a is inconsistent by (iii.), (12), and VI.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1256&ndash;1300 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-092">
+<h2>ch13-092</h2>
+<img src="img/ch13-092.png" alt="ā/a = 0," loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ā/a = 0,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_13_1 (h を足した ā/ah の形)</dd>
+<dt>Anchor words</dt><dd>(13.1) ā/a = 0, unless a is inconsistent.</dd>
+<dt>Remarks</dt><dd>「This follows from (13) and (1.1)」</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1306&ndash;1349 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-093">
+<h2>ch13-093</h2>
+<img src="img/ch13-093.png" alt="a/ā = 0," loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/ā = 0,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_13_2 (h を足した a/āh の形)</dd>
+<dt>Anchor words</dt><dd>(13.2) a/ā = 0, unless ā is inconsistent.</dd>
+<dt>Remarks</dt><dd>「by writing ā for a in (13.1)」</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1407&ndash;1451 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-094">
+<h2>ch13-094</h2>
+<img src="img/ch13-094.png" alt="a/b = 0" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/b = 0</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_14 (前提; h を足した a/bh の形)</dd>
+<dt>Anchor words</dt><dd>(14) If a/b = 0 and a is not inconsistent,</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1507&ndash;1552 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-095">
+<h2>ch13-095</h2>
+<img src="img/ch13-094.png" alt="b/a = 0." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-094">ch13-094</a>.</div>
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b/a = 0.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_14 (結論; h を足した b/ah の形)</dd>
+<dt>Anchor words</dt><dd>not inconsistent, b/a = 0.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1507&ndash;1552 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-096">
+<h2>ch13-096</h2>
+<img src="img/ch13-096.png" alt="a/b = a/bf and b/a = b/af" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/b = a/bf and b/a = b/af</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((14) の証明内)</dd>
+<dt>Anchor words</dt><dd>then … by (iii.) and (12),</dd>
+<dt>Remarks</dt><dd>関係 2。f = 共通の仮定の群</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1658&ndash;1703 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-097">
+<h2>ch13-097</h2>
+<img src="img/ch13-097.png" alt="a/bf . b/f = b/af . a/f" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/bf . b/f = b/af . a/f</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((14) の証明内)</dd>
+<dt>Anchor words</dt><dd>and … by X.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1709&ndash;1753 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-098">
+<h2>ch13-098</h2>
+<img src="img/ch13-098.png" alt="a/bf = 0" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/bf = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((14) の証明内)</dd>
+<dt>Anchor words</dt><dd>Since … by hypothesis,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1760&ndash;1804 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-099">
+<h2>ch13-099</h2>
+<img src="img/ch13-099.png" alt="a/f ≠ 0," loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/f ≠ 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((14) の証明内)</dd>
+<dt>Anchor words</dt><dd>and … since a is not inconsistent,</dd>
+<dt>Remarks</dt><dd>≠ の活字</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1810&ndash;1854 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-100">
+<h2>ch13-100</h2>
+<img src="img/ch13-100.png" alt="∴ b/af = 0," loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ b/af = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((14) の証明内)</dd>
+<dt>Anchor words</dt><dd>∴ b/af = 0,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1860&ndash;1903 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-101">
+<h2>ch13-101</h2>
+<img src="img/ch13-101.png" alt="b/a = 0." loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b/a = 0.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((14) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-095">ch13-095</a></dd>
+<dt>Anchor words</dt><dd>whence b/a = 0.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 1910&ndash;1953 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-102">
+<h2>ch13-102</h2>
+<img src="img/ch13-102.png" alt="h₁/h₂ = 0," loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁/h₂ = 0,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_15 (前提; h を足した h₁/h₂h の形)</dd>
+<dt>Anchor words</dt><dd>(15) If h₁/h₂ = 0,</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 2011&ndash;2057 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-103">
+<h2>ch13-103</h2>
+<img src="img/ch13-102.png" alt="h₁h₂/h = 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-102">ch13-102</a>.</div>
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁h₂/h = 0,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>6b/th_13_15 (結論)</dd>
+<dt>Anchor words</dt><dd>h₁/h₂ = 0, h₁h₂/h = 0,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 2011&ndash;2057 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-104">
+<h2>ch13-104</h2>
+<img src="img/ch13-104.png" alt="h₁h₂/h = h₁/h₂h . h₂/h" loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁h₂/h = h₁/h₂h . h₂/h</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((15) の証明内)</dd>
+<dt>Anchor words</dt><dd>by II.,</dd>
+<dt>Remarks</dt><dd>印刷の引用は「by II.」(Def. II は確実性の定義; 内容は Def. X の乗法)。所見候補 (引用番号の誤り)。COLLATION は Gutenberg 側の崩れと記すが、初版画像も「II.」</dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 2060&ndash;2105 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-105">
+<h2>ch13-105</h2>
+<img src="img/ch13-105.png" alt="h₁/h₂ = 0," loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁/h₂ = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((15) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-102">ch13-102</a></dd>
+<dt>Anchor words</dt><dd>and since h₁/h₂ = 0,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 2109&ndash;2156 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-106">
+<h2>ch13-106</h2>
+<img src="img/ch13-105.png" alt="h₁/h₂h = 0" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-105">ch13-105</a>.</div>
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁/h₂h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((15) の証明内)</dd>
+<dt>Anchor words</dt><dd>h₁/h₂h = 0 by (8), unless</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 2109&ndash;2156 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-107">
+<h2>ch13-107</h2>
+<img src="img/ch13-105.png" alt="h/h₂ = 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-105">ch13-105</a>.</div>
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h/h₂ = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((15) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (8), unless h/h₂ = 0, whence</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 2109&ndash;2156 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-108">
+<h2>ch13-108</h2>
+<img src="img/ch13-108.png" alt="h/h₂ = 0." loading="lazy">
+<div class="meta">folio 141 (PDF p. 161) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h/h₂ = 0.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((15) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (iv. b), unless h/h₂ = 0.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 141, x 125&ndash;1335, y 2161&ndash;2206 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-109">
+<h2>ch13-109</h2>
+<img src="img/ch13-109.png" alt="h/h₂ = 0, h₂/h = 0" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h/h₂ = 0, h₂/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((15) の証明内)</dd>
+<dt>Anchor words</dt><dd>If … by (14),</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 196&ndash;242 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-110">
+<h2>ch13-110</h2>
+<img src="img/ch13-110.png" alt="h₁h₂/h = 0" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁h₂/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((15) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-103">ch13-103</a></dd>
+<dt>Anchor words</dt><dd>by (8).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 299&ndash;342 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-111">
+<h2>ch13-111</h2>
+<img src="img/ch13-111.png" alt="h₁h₂/h = 0" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁h₂/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7c/th_13_15_1 (前提 h0)</dd>
+<dt>Anchor words</dt><dd>(15.1) If h₁h₂/h = 0 and h₂h is not</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 449&ndash;494 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-112">
+<h2>ch13-112</h2>
+<img src="img/ch13-111.png" alt="h₁/h₂h = 0." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-111">ch13-111</a>.</div>
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁/h₂h = 0.</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7c/th_13_15_1 (結論)</dd>
+<dt>Anchor words</dt><dd>not inconsistent, h₁/h₂h = 0.</dd>
+<dt>Remarks</dt><dd>「converse of (15), follows from X. and (6)」</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 449&ndash;494 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-113">
+<h2>ch13-113</h2>
+<img src="img/ch13-113.png" alt="h₁/h₂ = 1," loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁/h₂ = 1,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7c/th_13_16 (前提; h を足した h₁/h₂h の形)</dd>
+<dt>Anchor words</dt><dd>(16) If h₁/h₂ = 1,</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 547&ndash;595 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-114">
+<h2>ch13-114</h2>
+<img src="img/ch13-113.png" alt="(h₁ + h̄₂)/h = 1," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-113">ch13-113</a>.</div>
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(h₁ + h̄₂)/h = 1,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7c/th_13_16 (結論)</dd>
+<dt>Anchor words</dt><dd>(h₁ + h̄₂)/h = 1,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 547&ndash;595 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-115">
+<h2>ch13-115</h2>
+<img src="img/ch13-115.png" alt="h̄₁/h₂ = 0" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h̄₁/h₂ = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((16) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (1),</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 598&ndash;645 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-116">
+<h2>ch13-116</h2>
+<img src="img/ch13-116.png" alt="∴ h̄₁h₂/h = 0" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ h̄₁h₂/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((16) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (15),</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 648&ndash;696 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-117">
+<h2>ch13-117</h2>
+<img src="img/ch13-117.png" alt="∴ (h̄₁h₂ の上にバー)/h = 1" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ (h̄₁h₂ の上にバー)/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((16) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (1.3),</dd>
+<dt>Remarks</dt><dd>h̄₁h₂ 全体の上に 1 本のバー (内側の h₁ のバーと二重)</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 700&ndash;753 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-118">
+<h2>ch13-118</h2>
+<img src="img/ch13-118.png" alt="∴ (h₁ + h̄₂)/h = 1" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ (h₁ + h̄₂)/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((16) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-114">ch13-114</a></dd>
+<dt>Anchor words</dt><dd>by (12) and (iii.).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 756&ndash;803 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-119">
+<h2>ch13-119</h2>
+<img src="img/ch13-119.png" alt="h₁/h₂ = 1," loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁/h₂ = 1,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7a/th_13_16_1 (前提; h を足した h₁/h₂h の形)</dd>
+<dt>Anchor words</dt><dd>(16.1) We may write (16) : If h₁/h₂ = 1,</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 859&ndash;903 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-120">
+<h2>ch13-120</h2>
+<img src="img/ch13-119.png" alt="(h₂ ⊃ h₁)/h = 1," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-119">ch13-119</a>.</div>
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(h₂ ⊃ h₁)/h = 1,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7a/th_13_16_1 (結論; ⊃ を →)</dd>
+<dt>Anchor words</dt><dd>(h₂ ⊃ h₁)/h = 1, where</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 859&ndash;903 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-121">
+<h2>ch13-121</h2>
+<img src="img/ch13-119.png" alt="⊃" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-119">ch13-119</a>.</div>
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Bare symbol (not counted)</div>
+<dl>
+<dt>Transcription</dt><dd>⊃</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Bare symbol (not counted)">B</span>全 phase/→</dd>
+<dt>Anchor words</dt><dd>where ‘ ⊃ ’ symbolises ‘ implies.’</dd>
+<dt>Remarks</dt><dd>含意記号の導入。裸記号 (補則 1、数えない)</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 859&ndash;903 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-122">
+<h2>ch13-122</h2>
+<img src="img/ch13-122.png" alt="(h₁ + h̄₂)/h = 1" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(h₁ + h̄₂)/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7c/th_13_16_2 (前提 hcert)</dd>
+<dt>Anchor words</dt><dd>(16.2) If (h₁ + h̄₂)/h = 1 and h₂h is</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1007&ndash;1054 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-123">
+<h2>ch13-123</h2>
+<img src="img/ch13-123.png" alt="h₁/h₂h = 1." loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁/h₂h = 1.</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7c/th_13_16_2 (結論)</dd>
+<dt>Anchor words</dt><dd>not inconsistent, h₁/h₂h = 1.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1060&ndash;1104 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-124">
+<h2>ch13-124</h2>
+<img src="img/ch13-124.png" alt="h̄₁h₂/h = 0," loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h̄₁h₂/h = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((16.2) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-116">ch13-116</a></dd>
+<dt>Anchor words</dt><dd>as in (16),</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1106&ndash;1154 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-125">
+<h2>ch13-125</h2>
+<img src="img/ch13-125.png" alt="∴ h̄₁/h₂h = 0" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ h̄₁/h₂h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((16.2) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (15.1), since h₂h is not inconsistent,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1157&ndash;1205 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-126">
+<h2>ch13-126</h2>
+<img src="img/ch13-126.png" alt="∴ h₁/h₂h = 1" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ h₁/h₂h = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((16.2) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-123">ch13-123</a></dd>
+<dt>Anchor words</dt><dd>by (1.4).</dd>
+<dt>Remarks</dt><dd>「converse of (14)」</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1211&ndash;1254 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-127">
+<h2>ch13-127</h2>
+<img src="img/ch13-127.png" alt="(h₂ ⊃ h₁)/h = 1" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(h₂ ⊃ h₁)/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7a,7c/th_13_16_3 (前提 hcert)</dd>
+<dt>Anchor words</dt><dd>(16.3) We may write (16.2) : If (h₂ ⊃ h₁)/h = 1</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1360&ndash;1404 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-128">
+<h2>ch13-128</h2>
+<img src="img/ch13-127.png" alt="h₁/h₂h = 1." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-127">ch13-127</a>.</div>
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁/h₂h = 1.</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7a,7c/th_13_16_3 (結論)</dd>
+<dt>Anchor words</dt><dd>not inconsistent, h₁/h₂h = 1.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1360&ndash;1404 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-129">
+<h2>ch13-129</h2>
+<img src="img/ch13-129.png" alt="h₂ ⊃ h₁" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₂ ⊃ h₁</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Anchor words</dt><dd>proves that, if h₂ ⊃ h₁ and h₂ belong to a group h₂h</dd>
+<dt>Remarks</dt><dd>⊃ を関係記号として数える (裁定事項)</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1510&ndash;1554 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-130">
+<h2>ch13-130</h2>
+<img src="img/ch13-130.png" alt="(h₁ ⊃ : a≡b)/h = 1" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(h₁ ⊃ : a≡b)/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7c/th_13_17 (前提 hcert)</dd>
+<dt>Anchor words</dt><dd>(17) If (h₁ ⊃ : a≡b)/h = 1 and h₁h is</dd>
+<dt>Remarks</dt><dd>言明。「⊃ :」(ドット記法)</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1611&ndash;1654 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-131">
+<h2>ch13-131</h2>
+<img src="img/ch13-131.png" alt="a/h₁h = b/h₁h." loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h₁h = b/h₁h.</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>7c/th_13_17 (結論)</dd>
+<dt>Anchor words</dt><dd>not inconsistent, a/h₁h = b/h₁h.</dd>
+<dt>Remarks</dt><dd>行末で = b/h₁h が次行へ。「follows from (16.3) and (12)」</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1611&ndash;1704 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-132">
+<h2>ch13-132</h2>
+<img src="img/ch13-132.png" alt="a/a = 1" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/a = 1</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_18 (h を足した a/ah の形; 印刷の「or」どおり選言)</dd>
+<dt>Anchor words</dt><dd>(18) a/a = 1 or ā/ā = 1.</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1711&ndash;1754 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-133">
+<h2>ch13-133</h2>
+<img src="img/ch13-132.png" alt="ā/ā = 1." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-132">ch13-132</a>.</div>
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ā/ā = 1.</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_18 (h を足した ā/āh の形)</dd>
+<dt>Anchor words</dt><dd>a/a = 1 or ā/ā = 1.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1711&ndash;1754 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-134">
+<h2>ch13-134</h2>
+<img src="img/ch13-134.png" alt="a/a = 1, unless a is inconsistent," loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/a = 1, unless a is inconsistent,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((18) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-087">ch13-087</a></dd>
+<dt>Anchor words</dt><dd>by (13).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1760&ndash;1804 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-135">
+<h2>ch13-135</h2>
+<img src="img/ch13-135.png" alt="a/h = 0," loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((18) の証明内)</dd>
+<dt>Anchor words</dt><dd>If a is inconsistent, a/h = 0, where h</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1810&ndash;1854 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-136">
+<h2>ch13-136</h2>
+<img src="img/ch13-136.png" alt="ā/h = 1" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ā/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((18) の証明内)</dd>
+<dt>Anchor words</dt><dd>therefore … by (1.3).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1861&ndash;1904 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-137">
+<h2>ch13-137</h2>
+<img src="img/ch13-137.png" alt="ā/ā = 1" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ā/ā = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((18) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-133">ch13-133</a></dd>
+<dt>Anchor words</dt><dd>and therefore … by (13).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 1961&ndash;2004 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-138">
+<h2>ch13-138</h2>
+<img src="img/ch13-138.png" alt="aā/h = 0," loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>aā/h = 0,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>P2/th_13_19 (3a にも)</dd>
+<dt>Anchor words</dt><dd>(19) aā/h = 0,</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 2012&ndash;2054 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-139">
+<h2>ch13-139</h2>
+<img src="img/ch13-139.png" alt="ā/ā = 1 or a/a = 1" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ā/ā = 1 or a/a = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((19) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (18),</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 2062&ndash;2105 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-140">
+<h2>ch13-140</h2>
+<img src="img/ch13-140.png" alt="∴ a/ā = 0 or ā/a = 0" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ a/ā = 0 or ā/a = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((19) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (1.1) and (1.2).</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 2111&ndash;2155 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-141">
+<h2>ch13-141</h2>
+<img src="img/ch13-141.png" alt="aā/h = 0" loading="lazy">
+<div class="meta">folio 142 (PDF p. 162) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>aā/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((19) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-138">ch13-138</a></dd>
+<dt>Anchor words</dt><dd>In either case aā/h = 0 by (15).</dd>
+<dt>Remarks</dt><dd>「Law of Contradiction」</dd>
+<dt>Crop</dt><dd>folio 142, x 125&ndash;1335, y 2161&ndash;2203 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-142">
+<h2>ch13-142</h2>
+<img src="img/ch13-142.png" alt="(a + ā)/h = 1." loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(a + ā)/h = 1.</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>P2/th_13_20 (3a にも)</dd>
+<dt>Anchor words</dt><dd>(20) (a + ā)/h = 1.</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 288&ndash;332 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-143">
+<h2>ch13-143</h2>
+<img src="img/ch13-143.png" alt="(aā ≡ (a + ā の上にバー))/h = 1" loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(aā ≡ (a + ā の上にバー))/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((20) の証明内)</dd>
+<dt>Anchor words</dt><dd>Since … by (iii.),</dd>
+<dt>Remarks</dt><dd>a + ā 全体の上にバー</dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 354&ndash;404 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-144">
+<h2>ch13-144</h2>
+<img src="img/ch13-144.png" alt="(a + ā の上にバー)/h = 0" loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>(a + ā の上にバー)/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((20) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (19) and (12),</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 418&ndash;474 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-145">
+<h2>ch13-145</h2>
+<img src="img/ch13-145.png" alt="∴ (a + ā)/h = 1" loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ (a + ā)/h = 1</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((20) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-142">ch13-142</a></dd>
+<dt>Anchor words</dt><dd>by (1.3).</dd>
+<dt>Remarks</dt><dd>「Law of Excluded Middle」</dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 480&ndash;524 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-146">
+<h2>ch13-146</h2>
+<img src="img/ch13-146.png" alt="a/h₁ = 1" loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h₁ = 1</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_21 (前提 hc1; h を足した a/h₁h の形)</dd>
+<dt>Anchor words</dt><dd>(21) If a/h₁ = 1 and</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 627&ndash;673 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-147">
+<h2>ch13-147</h2>
+<img src="img/ch13-146.png" alt="a/h₂ = 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-146">ch13-146</a>.</div>
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h₂ = 0,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_21 (前提 hc2; h を足した a/h₂h の形)</dd>
+<dt>Anchor words</dt><dd>and a/h₂ = 0, h₁h₂/h = 0.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 627&ndash;673 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-148">
+<h2>ch13-148</h2>
+<img src="img/ch13-146.png" alt="h₁h₂/h = 0." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-146">ch13-146</a>.</div>
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁h₂/h = 0.</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>6b/th_13_21 (結論)</dd>
+<dt>Anchor words</dt><dd>a/h₂ = 0, h₁h₂/h = 0.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 627&ndash;673 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-149">
+<h2>ch13-149</h2>
+<img src="img/ch13-149.png" alt="a/h₁h₂ . h₁/h₂ = h₁/ah₂ . a/h₂," loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h₁h₂ . h₁/h₂ = h₁/ah₂ . a/h₂,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((21) の証明内)</dd>
+<dt>Anchor words</dt><dd>For</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 678&ndash;724 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-150">
+<h2>ch13-150</h2>
+<img src="img/ch13-150.png" alt="ā/h₁h₂ . h₂/h₁ = h₂/āh₁ . ā/h₁" loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ā/h₁h₂ . h₂/h₁ = h₂/āh₁ . ā/h₁</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((21) の証明内)</dd>
+<dt>Anchor words</dt><dd>and … by X.,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 730&ndash;775 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-151">
+<h2>ch13-151</h2>
+<img src="img/ch13-151.png" alt="∴ a/h₁h₂ . h₁/h₂ = 0 and ā/h₁h₂ . h₂/h₁ = 0," loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ a/h₁h₂ . h₁/h₂ = 0 and ā/h₁h₂ . h₂/h₁ = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((21) の証明内)</dd>
+<dt>Anchor words</dt><dd>∴ a/h₁h₂ . h₁/h₂ = 0 and</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 780&ndash;826 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-152">
+<h2>ch13-152</h2>
+<img src="img/ch13-152.png" alt="ā/h₁ = 0" loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ā/h₁ = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((21) の証明内)</dd>
+<dt>Anchor words</dt><dd>since, by hypothesis and (1), ā/h₁ = 0 and</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 831&ndash;875 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-153">
+<h2>ch13-153</h2>
+<img src="img/ch13-152.png" alt="a/h₂ = 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-152">ch13-152</a>.</div>
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h₂ = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((21) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-147">ch13-147</a></dd>
+<dt>Anchor words</dt><dd>ā/h₁ = 0 and a/h₂ = 0,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 831&ndash;875 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-154">
+<h2>ch13-154</h2>
+<img src="img/ch13-154.png" alt="∴ a/h₁h₂ = 0 or h₁/h₂ = 0," loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ a/h₁h₂ = 0 or h₁/h₂ = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((21) の証明内)</dd>
+<dt>Anchor words</dt><dd>∴ a/h₁h₂ = 0 or h₁/h₂ = 0,</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 881&ndash;925 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-155">
+<h2>ch13-155</h2>
+<img src="img/ch13-155.png" alt="a/h₁h₂ = 1 or h₂/h₁ = 0," loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h₁h₂ = 1 or h₂/h₁ = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((21) の証明内)</dd>
+<dt>Anchor words</dt><dd>and a/h₁h₂ = 1 or h₂/h₁ = 0,</dd>
+<dt>Remarks</dt><dd>関係 2。COLLATION 注記「(21) a/h₂」は Gutenberg 側の崩れ; 画像は a/h₁h₂ = 1</dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 932&ndash;976 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-156">
+<h2>ch13-156</h2>
+<img src="img/ch13-156.png" alt="∴ h₁/h₂ = 0 or h₂/h₁ = 0." loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ h₁/h₂ = 0 or h₂/h₁ = 0.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((21) の証明内)</dd>
+<dt>Anchor words</dt><dd>∴ h₁/h₂ = 0 or h₂/h₁ = 0.</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 982&ndash;1026 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-157">
+<h2>ch13-157</h2>
+<img src="img/ch13-157.png" alt="h₁h₂/h = 0" loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁h₂/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((21) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-148">ch13-148</a></dd>
+<dt>Anchor words</dt><dd>In either case h₁h₂/h = 0 by (15).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 1032&ndash;1076 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-158">
+<h2>ch13-158</h2>
+<img src="img/ch13-158.png" alt="a/h₁ = 0" loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h₁ = 0</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_22 (前提 h0; h を足した a/h₁h の形)</dd>
+<dt>Anchor words</dt><dd>(22) If a/h₁ = 0 and</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 1233&ndash;1277 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-159">
+<h2>ch13-159</h2>
+<img src="img/ch13-158.png" alt="h₁/h = 1," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-158">ch13-158</a>.</div>
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁/h = 1,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>6b/th_13_22 (前提 hc)</dd>
+<dt>Anchor words</dt><dd>and h₁/h = 1, a/h = 0,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 1233&ndash;1277 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-160">
+<h2>ch13-160</h2>
+<img src="img/ch13-158.png" alt="a/h = 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-158">ch13-158</a>.</div>
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>a/h = 0,</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>6b/th_13_22 (結論)</dd>
+<dt>Anchor words</dt><dd>h₁/h = 1, a/h = 0,</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 1233&ndash;1277 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-161">
+<h2>ch13-161</h2>
+<img src="img/ch13-161.png" alt="ah₁/h = 0 by (15), ∴ h₁/ah . a/h = 0," loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ah₁/h = 0 by (15), ∴ h₁/ah . a/h = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((22) の証明内)</dd>
+<dt>Anchor words</dt><dd>ah₁/h = 0 by (15),</dd>
+<dt>Remarks</dt><dd>関係 2 (1 行に「by (15), ∴」を挟む)</dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 1281&ndash;1327 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-162">
+<h2>ch13-162</h2>
+<img src="img/ch13-162.png" alt="h₁/ah = 1 by (9), unless a/h = 0." loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>h₁/ah = 1 by (9), unless a/h = 0.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((22) の証明内)</dd>
+<dt>Anchor words</dt><dd>h₁/ah = 1 by (9), unless</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 1332&ndash;1377 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-163">
+<h2>ch13-163</h2>
+<img src="img/ch13-163.png" alt="∴ in any case a/h = 0." loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ in any case a/h = 0.</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((22) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-160">ch13-160</a></dd>
+<dt>Anchor words</dt><dd>∴ in any case a/h = 0.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 1382&ndash;1425 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-164">
+<h2>ch13-164</h2>
+<img src="img/ch13-164.png" alt="b/a = 0" loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b/a = 0</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_23 (前提 h1; h を足した b/ah の形)</dd>
+<dt>Anchor words</dt><dd>(23) If b/a = 0 and</dd>
+<dt>Remarks</dt><dd>言明</dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 1433&ndash;1479 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-165">
+<h2>ch13-165</h2>
+<img src="img/ch13-164.png" alt="b/ā = 0," loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-164">ch13-164</a>.</div>
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b/ā = 0,</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>6b/th_13_23 (前提 h2; h を足した b/āh の形)</dd>
+<dt>Anchor words</dt><dd>and b/ā = 0, b/h = 0.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 1433&ndash;1479 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-166">
+<h2>ch13-166</h2>
+<img src="img/ch13-164.png" alt="b/h = 0." loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch13-164">ch13-164</a>.</div>
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b/h = 0.</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>6b/th_13_23 (結論)</dd>
+<dt>Anchor words</dt><dd>b/ā = 0, b/h = 0.</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 1433&ndash;1479 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-167">
+<h2>ch13-167</h2>
+<img src="img/ch13-167.png" alt="ab/h = 0 and āb/h = 0" loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ab/h = 0 and āb/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((23) の証明内)</dd>
+<dt>Anchor words</dt><dd>by (15),</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 1483&ndash;1527 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-168">
+<h2>ch13-168</h2>
+<img src="img/ch13-168.png" alt="∴ a/bh = 0 or b/h = 0," loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>∴ a/bh = 0 or b/h = 0,</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((23) の証明内)</dd>
+<dt>Anchor words</dt><dd>∴ a/bh = 0 or b/h = 0,</dd>
+<dt>Remarks</dt><dd>関係 2</dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 1533&ndash;1577 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-169">
+<h2>ch13-169</h2>
+<img src="img/ch13-169.png" alt="ā/bh = 0 or b/h = 0" loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>ā/bh = 0 or b/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((23) の証明内)</dd>
+<dt>Anchor words</dt><dd>and … by II. and (iv.),</dd>
+<dt>Remarks</dt><dd>関係 2。引用「by II. and (iv.)」も Def. II では説明がつかない (所見候補、ch13-104 と同種)</dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 1582&ndash;1628 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch13-170">
+<h2>ch13-170</h2>
+<img src="img/ch13-170.png" alt="b/h = 0" loading="lazy">
+<div class="meta">folio 143 (PDF p. 163) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd>b/h = 0</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>((23) の証明内)</dd>
+<dt>Reprint of</dt><dd><a href="#ch13-166">ch13-166</a></dd>
+<dt>Anchor words</dt><dd>whence … by (1.4).</dd>
+<dt>Remarks</dt><dd></dd>
+<dt>Crop</dt><dd>folio 143, x 125&ndash;1335, y 1633&ndash;1676 (full-size scan pixels)</dd>
+</dl></section>
+<footer>Generated by tools/atlas/gen.py from the ledger ch13.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
+</main></body></html>
