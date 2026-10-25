@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula atlas, Chapter 25</title>
+<style>
+body{background:#fff;color:#111;font-family:Georgia,'Times New Roman',serif;margin:0;padding:24px 12px}
+main{max-width:900px;margin:0 auto}
+h1{font-size:1.5em;margin:0 0 .2em}
+.sub{color:#444;margin:0 0 1em}
+table.sum{border-collapse:collapse;margin:.5em 0 1em;font-size:.95em}
+table.sum th,table.sum td{border:1px solid #bbb;padding:3px 10px;text-align:left}
+.rules{font-size:.92em;line-height:1.45;color:#222;border-left:3px solid #ccc;padding-left:12px}
+.card{border:1px solid #ccc;border-radius:4px;margin:18px 0;padding:10px 12px}
+.card img{display:block;width:100%;height:auto;border:1px solid #eee;margin:4px 0 8px}
+.card h2{font-size:1.05em;margin:0 0 4px;font-family:Menlo,Consolas,monospace}
+.meta{font-size:.9em;color:#333;margin-bottom:4px}
+.shared{font-size:.82em;color:#666;margin:-4px 0 6px}
+dl{display:grid;grid-template-columns:8.5em 1fr;gap:3px 10px;margin:0;font-size:.92em}
+dt{color:#555}
+dd{margin:0;word-break:break-word}
+code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;padding:0 2px}
+.mark{display:inline-block;min-width:1.6em;text-align:center;border-radius:3px;padding:0 4px;margin-right:6px;font-weight:bold}
+.printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
+.notation{background:#f3eaf6}
+footer{font-size:.85em;color:#666;margin-top:2em}
+</style></head><body><main>
+<h1>Chapter XXV. Some Problems Arising out of the Discussion of Chance</h1>
+<p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 293&ndash;306 (Cornell copy, PDF pp. 313&ndash;326). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
+<table class="sum"><tr><th>Ledger rows</th><td>11</td></tr>
+<tr><th>Formulas</th><td>4 (display 3, inline 1; items 4, numbered 0)</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>0 &nbsp; <span class="mark equiv">&asymp;</span>1 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>3</td></tr>
+<tr><th>Notation</th><td>6 (with a Lean counterpart 6)</td></tr>
+<tr><th>Reference rows</th><td>1</td></tr>
+</table>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
+<section class="card" id="ch25-001">
+<h2>ch25-001</h2>
+<img src="img/ch25-001.png" alt="a/h" loading="lazy">
+<div class="meta">folio 298 (PDF p. 318) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a/h</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase3c/th_14_38_full</dd>
+<dt>Anchor words</dt><dd><code>Then</code></dd>
+<dt>Remarks</dt><dd>事象の先験的確率。定理文 (α := b, β := a) の分母 <code>Pr a h</code> (第 3 回で対応に数えた、裁定事項)</dd>
+<dt>Crop</dt><dd>folio 298, x 125&ndash;1335, y 290&ndash;340 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch25-002">
+<h2>ch25-002</h2>
+<img src="img/ch25-001.png" alt="a/bh ;" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch25-001">ch25-001</a>.</div>
+<div class="meta">folio 298 (PDF p. 318) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a/bh ;</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase3c/th_14_38_full</dd>
+<dt>Anchor words</dt><dd><code>very small in comparison with</code></dd>
+<dt>Remarks</dt><dd>定理文の <code>Pr a (b ∧ h)</code></dd>
+<dt>Crop</dt><dd>folio 298, x 125&ndash;1335, y 290&ndash;340 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch25-003">
+<h2>ch25-003</h2>
+<img src="img/ch25-003.png" alt="b/ah," loading="lazy">
+<div class="meta">folio 298 (PDF p. 318) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/ah,</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase3c/th_14_38_full</dd>
+<dt>Anchor words</dt><dd><code>we require</code></dd>
+<dt>Remarks</dt><dd>求める確率 (事象の後の行為者の存在)。定理文の左辺 <code>Pr b (a ∧ h)</code></dd>
+<dt>Crop</dt><dd>folio 298, x 125&ndash;1335, y 340&ndash;391 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch25-004">
+<h2>ch25-004</h2>
+<img src="img/ch25-004.png" alt="b/ah = a/bh . (b/h)/(a/h)," loading="lazy">
+<div class="meta">folio 298 (PDF p. 318) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/ah = a/bh . (b/h)/(a/h),</code></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase3c/th_14_38_full</dd>
+<dt>Anchor words</dt><dd><code>already demonstrated shows that</code></dd>
+<dt>Remarks</dt><dd>逆確率原理 (第14章 (38))。α := b, β := a で <code>Pr b (a ∧ h) = Pr a (b ∧ h) * Pr b h / Pr a h</code> (束縛変数の名前の差は許す)。≈ の理由: 印刷は右端の横線分数 (分子 <code>b/h</code>、分母 <code>a/h</code>) を一つの因子として <code>X . (Y/Z)</code> と組むが、定理文は <code>(X * Y) / Z</code> で結合が違う (裁定事項)。同名の写し phase3d, phase5, phase6a, phase7b; 内包担体版 phase6c/th_14_38_full_i (同形); 基本形 phase3a/th_14_38_b。ドットは積。行内だが分数のため行間が広い</dd>
+<dt>Crop</dt><dd>folio 298, x 125&ndash;1335, y 441&ndash;548 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch25-005">
+<h2>ch25-005</h2>
+<img src="img/ch25-004.png" alt="b/ah" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch25-004">ch25-004</a>.</div>
+<div class="meta">folio 298 (PDF p. 318) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>b/ah</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase3c/th_14_38_full</dd>
+<dt>Reprint of</dt><dd><a href="#ch25-003">ch25-003</a></dd>
+<dt>Anchor words</dt><dd><code>is therefore not determinate</code></dd>
+<dt>Remarks</dt><dd>定理文の <code>Pr b (a ∧ h)</code></dd>
+<dt>Crop</dt><dd>folio 298, x 125&ndash;1335, y 441&ndash;548 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch25-006">
+<h2>ch25-006</h2>
+<img src="img/ch25-006.png" alt="a/bh" loading="lazy">
+<div class="meta">folio 298 (PDF p. 318) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a/bh</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase3c/th_14_38_full</dd>
+<dt>Reprint of</dt><dd><a href="#ch25-002">ch25-002</a></dd>
+<dt>Anchor words</dt><dd><code>determinate in terms of</code></dd>
+<dt>Remarks</dt><dd>定理文の <code>Pr a (b ∧ h)</code></dd>
+<dt>Crop</dt><dd>folio 298, x 125&ndash;1335, y 548&ndash;599 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch25-007">
+<h2>ch25-007</h2>
+<img src="img/ch25-006.png" alt="a/h" loading="lazy">
+<div class="shared">Same printed line or block as <a href="#ch25-006">ch25-006</a>.</div>
+<div class="meta">folio 298 (PDF p. 318) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
+<dl>
+<dt>Transcription</dt><dd><code>a/h</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase3c/th_14_38_full</dd>
+<dt>Reprint of</dt><dd><a href="#ch25-001">ch25-001</a></dd>
+<dt>Anchor words</dt><dd><code>alone. Thus we cannot</code> (直後)</dd>
+<dt>Remarks</dt><dd>定理文の <code>Pr a h</code></dd>
+<dt>Crop</dt><dd>folio 298, x 125&ndash;1335, y 548&ndash;599 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch25-008">
+<h2>ch25-008</h2>
+<img src="img/ch25-008.png" alt="3·48 = ²√12" loading="lazy">
+<div class="meta">folio 305 (PDF p. 325) &middot; &sect;7 &middot; Table &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>3·48 = ²√12</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Playfair</dd>
+<dt>Anchor words</dt><dd><code>Diamond</code></dd>
+<dt>Remarks</dt><dd>Lyon Playfair の比重の表 1 行目。小数点は中点、根号指数 2 は √ の左上に小字 (原寸で確認)。「approximately」と続く。近似等式を式に数える (裁定事項)。既存の Lean に対応なし</dd>
+<dt>Crop</dt><dd>folio 305, x 125&ndash;1335, y 330&ndash;397 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch25-009">
+<h2>ch25-009</h2>
+<img src="img/ch25-009.png" alt="2·29 = ³√12" loading="lazy">
+<div class="meta">folio 305 (PDF p. 325) &middot; &sect;7 &middot; Table &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>2·29 = ³√12</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Playfair</dd>
+<dt>Anchor words</dt><dd><code>Graphite</code></dd>
+<dt>Remarks</dt><dd>同表 2 行目。既存の Lean に対応なし</dd>
+<dt>Crop</dt><dd>folio 305, x 125&ndash;1335, y 397&ndash;463 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch25-010">
+<h2>ch25-010</h2>
+<img src="img/ch25-010.png" alt="1·88 = ⁴√12" loading="lazy">
+<div class="meta">folio 305 (PDF p. 325) &middot; &sect;7 &middot; Table &middot; Display &middot; Formula</div>
+<dl>
+<dt>Transcription</dt><dd><code>1·88 = ⁴√12</code></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Quoted from</dt><dd>Playfair</dd>
+<dt>Anchor words</dt><dd><code>Charcoal</code></dd>
+<dt>Remarks</dt><dd>同表 3 行目。直後 <code>approximately, the atomic weight of carbon being 12.</code>。既存の Lean に対応なし</dd>
+<dt>Crop</dt><dd>folio 305, x 125&ndash;1335, y 463&ndash;530 (full-size scan pixels)</dd>
+</dl></section>
+<section class="card" id="ch25-011">
+<h2>ch25-011</h2>
+<img src="img/ch25-011.png" alt="Aagard . . . 48 / Abeille . . . 76 / Abulola . . . 84 ‖ Abunowas . . . 48 / Accords . . . 45" loading="lazy">
+<div class="meta">folio 304 (PDF p. 324) &middot; &sect;7 &middot; Table &middot; Reference &middot; Reference</div>
+<dl>
+<dt>Transcription</dt><dd><code>Aagard . . . 48 / Abeille . . . 76 / Abulola . . . 84 ‖ Abunowas . . . 48 / Accords . . . 45</code></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>未</dd>
+<dt>Quoted from</dt><dd>Peirce</dd>
+<dt>Anchor words</dt><dd><code>with their ages at death :</code></dd>
+<dt>Remarks</dt><dd>Peirce の詩人 5 人の享年表 (2 段組、印刷 3 行、縦罫で区切る)。数値のみで演算子・関係記号なし。式にも記法にも数えない (数えるなら記法 5 本、裁定事項)。出典 Peirce, *A Theory of Probable Inference* (脚注 1)</dd>
+<dt>Crop</dt><dd>folio 304, x 125&ndash;1335, y 1440&ndash;1602 (full-size scan pixels)</dd>
+</dl></section>
+<footer>Generated by tools/atlas/gen.py from the ledger ch25.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
+</main></body></html>
