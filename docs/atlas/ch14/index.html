@@ -9,6 +9,10 @@ h1{font-size:1.5em;margin:0 0 .2em}
 .sub{color:#444;margin:0 0 1em}
 table.sum{border-collapse:collapse;margin:.5em 0 1em;font-size:.95em}
 table.sum th,table.sum td{border:1px solid #bbb;padding:3px 10px;text-align:left}
+.wide{overflow-x:auto}
+.wide table.sum{max-width:none}
+table.sum td,table.sum th{white-space:nowrap}
+table.sum td{font-variant-numeric:tabular-nums}
 .rules{font-size:.92em;line-height:1.45;color:#222;border-left:3px solid #ccc;padding-left:12px}
 .card{border:1px solid #ccc;border-radius:4px;margin:18px 0;padding:10px 12px}
 .card img{display:block;width:100%;height:auto;border:1px solid #eee;margin:4px 0 8px}
@@ -23,15 +27,24 @@ code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;pad
 .printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
 .notation{background:#f3eaf6}
 footer{font-size:.85em;color:#666;margin-top:2em}
+nav.nav{font-size:.92em;margin:0 0 1em}
+nav.nav a{white-space:nowrap}
+nav.nav.end{margin:2em 0 0}
+.filter{font-size:.92em;margin:0 0 1em}
+.filter button{font-family:inherit;font-size:1em;border:1px solid #bbb;background:#fff;color:#111;border-radius:3px;padding:2px 8px;margin:0 4px 4px 0;cursor:pointer}
+.filter button.on{background:#333;color:#fff;border-color:#333}
 </style></head><body><main>
+<nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch13/index.html">&larr; Ch. 13</a> | <a href="../ch15/index.html">Ch. 15 &rarr;</a></nav>
 <h1>Chapter XIV. The Fundamental Theorems of Probable Inference</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 144&ndash;157 (Cornell copy, PDF pp. 164&ndash;177). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<table class="sum"><tr><th>Ledger rows</th><td>231</td></tr>
+<div class="wide"><table class="sum"><tr><th>Formulas in Lean</th><td><b>67 / 188 formulas (&#10003;40 &asymp;26 &#9998;1), not yet 121 &mdash; 35.6%</b></td></tr>
+<tr><th>Ledger rows</th><td>231</td></tr>
 <tr><th>Formulas</th><td>188 (display 110, inline 78; items 70, numbered 173)</td></tr>
 <tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>40 &nbsp; <span class="mark equiv">&asymp;</span>26 &nbsp; <span class="mark corrected">&#9998;</span>1 &nbsp; <span class="mark none">&#26410;</span>121</td></tr>
 <tr><th>Notation</th><td>37 (with a Lean counterpart 10)</td></tr>
 <tr><th>Reference rows</th><td>6</td></tr>
-</table>
+</table></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (231)</button><button type="button" data-k="printed">&#10003; (40)</button><button type="button" data-k="equiv">&asymp; (26)</button><button type="button" data-k="corrected">&#9998; (1)</button><button type="button" data-k="none">not yet (121)</button><button type="button" data-k="notation">notation (37)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
 <section class="card" id="ch14-001">
 <h2>ch14-001</h2>
@@ -2654,5 +2667,14 @@ footer{font-size:.85em;color:#666;margin-top:2em}
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 157, x 125&ndash;1335, y 348&ndash;392 (full-size scan pixels)</dd>
 </dl></section>
+<nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch13/index.html">&larr; Ch. 13</a> | <a href="../ch15/index.html">Ch. 15 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch14.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
+<script>(function(){
+var K={"ch14-001":"printed","ch14-002":"none","ch14-003":"none","ch14-004":"none","ch14-005":"none","ch14-006":"none","ch14-007":"notation","ch14-008":"notation","ch14-009":"printed","ch14-010":"printed","ch14-011":"printed","ch14-012":"none","ch14-013":"none","ch14-014":"equiv","ch14-015":"none","ch14-016":"equiv","ch14-017":"equiv","ch14-018":"printed","ch14-019":"printed","ch14-020":"printed","ch14-021":"printed","ch14-022":"printed","ch14-023":"printed","ch14-024":"none","ch14-025":"none","ch14-026":"none","ch14-027":"none","ch14-028":"none","ch14-029":"none","ch14-030":"none","ch14-031":"none","ch14-032":"none","ch14-033":"none","ch14-034":"none","ch14-035":"equiv","ch14-036":"printed","ch14-037":"none","ch14-038":"none","ch14-039":"printed","ch14-040":"printed","ch14-041":"printed","ch14-042":"none","ch14-043":"none","ch14-044":"printed","ch14-045":"printed","ch14-046":"printed","ch14-047":"printed","ch14-048":"printed","ch14-049":"none","ch14-050":"none","ch14-051":"printed","ch14-052":"printed","ch14-053":"equiv","ch14-054":"equiv","ch14-055":"none","ch14-056":"none","ch14-057":"none","ch14-058":"none","ch14-059":"none","ch14-060":"none","ch14-061":"none","ch14-062":"none","ch14-063":"none","ch14-064":"none","ch14-065":"none","ch14-066":"none","ch14-067":"none","ch14-068":"equiv","ch14-069":"equiv","ch14-070":"none","ch14-071":"none","ch14-072":"none","ch14-073":"none","ch14-074":"none","ch14-075":"none","ch14-076":"printed","ch14-077":"printed","ch14-078":"none","ch14-079":"notation","ch14-080":"equiv","ch14-081":"printed","ch14-082":"none","ch14-083":"none","ch14-084":"none","ch14-085":"none","ch14-086":"none","ch14-087":"","ch14-088":"none","ch14-089":"","ch14-090":"","ch14-091":"none","ch14-092":"","ch14-093":"none","ch14-094":"notation","ch14-095":"printed","ch14-096":"none","ch14-097":"none","ch14-098":"none","ch14-099":"equiv","ch14-100":"equiv","ch14-101":"none","ch14-102":"equiv","ch14-103":"none","ch14-104":"none","ch14-105":"none","ch14-106":"printed","ch14-107":"printed","ch14-108":"printed","ch14-109":"printed","ch14-110":"printed","ch14-111":"printed","ch14-112":"printed","ch14-113":"none","ch14-114":"none","ch14-115":"none","ch14-116":"none","ch14-117":"notation","ch14-118":"notation","ch14-119":"notation","ch14-120":"none","ch14-121":"equiv","ch14-122":"none","ch14-123":"equiv","ch14-124":"none","ch14-125":"none","ch14-126":"equiv","ch14-127":"equiv","ch14-128":"notation","ch14-129":"equiv","ch14-130":"notation","ch14-131":"none","ch14-132":"equiv","ch14-133":"printed","ch14-134":"none","ch14-135":"","ch14-136":"notation","ch14-137":"printed","ch14-138":"none","ch14-139":"none","ch14-140":"printed","ch14-141":"printed","ch14-142":"none","ch14-143":"printed","ch14-144":"none","ch14-145":"equiv","ch14-146":"equiv","ch14-147":"printed","ch14-148":"none","ch14-149":"none","ch14-150":"none","ch14-151":"equiv","ch14-152":"none","ch14-153":"none","ch14-154":"none","ch14-155":"printed","ch14-156":"notation","ch14-157":"printed","ch14-158":"none","ch14-159":"notation","ch14-160":"none","ch14-161":"notation","ch14-162":"none","ch14-163":"notation","ch14-164":"notation","ch14-165":"none","ch14-166":"notation","ch14-167":"none","ch14-168":"none","ch14-169":"notation","ch14-170":"none","ch14-171":"none","ch14-172":"notation","ch14-173":"none","ch14-174":"none","ch14-175":"none","ch14-176":"equiv","ch14-177":"corrected","ch14-178":"none","ch14-179":"none","ch14-180":"none","ch14-181":"equiv","ch14-182":"notation","ch14-183":"none","ch14-184":"none","ch14-185":"notation","ch14-186":"none","ch14-187":"equiv","ch14-188":"equiv","ch14-189":"notation","ch14-190":"none","ch14-191":"","ch14-192":"notation","ch14-193":"equiv","ch14-194":"notation","ch14-195":"none","ch14-196":"none","ch14-197":"none","ch14-198":"none","ch14-199":"none","ch14-200":"notation","ch14-201":"notation","ch14-202":"notation","ch14-203":"none","ch14-204":"none","ch14-205":"none","ch14-206":"notation","ch14-207":"none","ch14-208":"none","ch14-209":"notation","ch14-210":"none","ch14-211":"notation","ch14-212":"notation","ch14-213":"none","ch14-214":"notation","ch14-215":"notation","ch14-216":"notation","ch14-217":"notation","ch14-218":"none","ch14-219":"none","ch14-220":"notation","ch14-221":"notation","ch14-222":"none","ch14-223":"none","ch14-224":"none","ch14-225":"none","ch14-226":"none","ch14-227":"none","ch14-228":"none","ch14-229":"notation","ch14-230":"none","ch14-231":"none"};
+var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
+function show(k){
+ for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';
+ for(var j=0;j<bs.length;j++)bs[j].className=(bs[j].getAttribute('data-k')===k)?'on':'';}
+for(var j=0;j<bs.length;j++)bs[j].onclick=function(){show(this.getAttribute('data-k'));};
+f.hidden=false;})();</script>
 </main></body></html>

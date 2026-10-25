@@ -9,6 +9,10 @@ h1{font-size:1.5em;margin:0 0 .2em}
 .sub{color:#444;margin:0 0 1em}
 table.sum{border-collapse:collapse;margin:.5em 0 1em;font-size:.95em}
 table.sum th,table.sum td{border:1px solid #bbb;padding:3px 10px;text-align:left}
+.wide{overflow-x:auto}
+.wide table.sum{max-width:none}
+table.sum td,table.sum th{white-space:nowrap}
+table.sum td{font-variant-numeric:tabular-nums}
 .rules{font-size:.92em;line-height:1.45;color:#222;border-left:3px solid #ccc;padding-left:12px}
 .card{border:1px solid #ccc;border-radius:4px;margin:18px 0;padding:10px 12px}
 .card img{display:block;width:100%;height:auto;border:1px solid #eee;margin:4px 0 8px}
@@ -23,15 +27,24 @@ code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;pad
 .printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
 .notation{background:#f3eaf6}
 footer{font-size:.85em;color:#666;margin-top:2em}
+nav.nav{font-size:.92em;margin:0 0 1em}
+nav.nav a{white-space:nowrap}
+nav.nav.end{margin:2em 0 0}
+.filter{font-size:.92em;margin:0 0 1em}
+.filter button{font-family:inherit;font-size:1em;border:1px solid #bbb;background:#fff;color:#111;border-radius:3px;padding:2px 8px;margin:0 4px 4px 0;cursor:pointer}
+.filter button.on{background:#333;color:#fff;border-color:#333}
 </style></head><body><main>
+<nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch28/index.html">&larr; Ch. 28</a> | <a href="../ch30/index.html">Ch. 30 &rarr;</a></nav>
 <h1>Chapter XXIX. The Use of à priori Probabilities for the Prediction of Statistical Frequency — the Theorems of Bernoulli, Poisson, and Tchebycheff</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 337&ndash;366 (Cornell copy, PDF pp. 357&ndash;386). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<table class="sum"><tr><th>Ledger rows</th><td>190</td></tr>
+<div class="wide"><table class="sum"><tr><th>Formulas in Lean</th><td><b>0 / 83 formulas (&#10003;0 &asymp;0 &#9998;0), not yet 83 &mdash; 0.0%</b></td></tr>
+<tr><th>Ledger rows</th><td>190</td></tr>
 <tr><th>Formulas</th><td>83 (display 28, inline 55; items 83, numbered 0)</td></tr>
 <tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>0 &nbsp; <span class="mark equiv">&asymp;</span>0 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>83</td></tr>
 <tr><th>Notation</th><td>106 (with a Lean counterpart 0)</td></tr>
 <tr><th>Reference rows</th><td>1</td></tr>
-</table>
+</table></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (190)</button><button type="button" data-k="printed">&#10003; (0)</button><button type="button" data-k="equiv">&asymp; (0)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (83)</button><button type="button" data-k="notation">notation (106)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
 <section class="card" id="ch29-001">
 <h2>ch29-001</h2>
@@ -2270,5 +2283,14 @@ footer{font-size:.85em;color:#666;margin-top:2em}
 <dt>Remarks</dt><dd>数 26, 34 は裸の数</dd>
 <dt>Crop</dt><dd>folio 360, x 125&ndash;1335, y 2005&ndash;2096 (full-size scan pixels)</dd>
 </dl></section>
+<nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch28/index.html">&larr; Ch. 28</a> | <a href="../ch30/index.html">Ch. 30 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch29.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
+<script>(function(){
+var K={"ch29-001":"notation","ch29-002":"none","ch29-003":"notation","ch29-004":"notation","ch29-005":"notation","ch29-006":"none","ch29-007":"notation","ch29-008":"none","ch29-009":"none","ch29-010":"notation","ch29-011":"notation","ch29-012":"notation","ch29-013":"none","ch29-014":"none","ch29-015":"none","ch29-016":"notation","ch29-017":"notation","ch29-018":"notation","ch29-019":"notation","ch29-020":"notation","ch29-021":"notation","ch29-022":"notation","ch29-023":"none","ch29-024":"notation","ch29-025":"none","ch29-026":"notation","ch29-027":"notation","ch29-028":"notation","ch29-029":"notation","ch29-030":"notation","ch29-031":"none","ch29-032":"notation","ch29-033":"notation","ch29-034":"notation","ch29-035":"notation","ch29-036":"notation","ch29-037":"notation","ch29-038":"notation","ch29-039":"notation","ch29-040":"notation","ch29-041":"","ch29-042":"none","ch29-043":"none","ch29-044":"notation","ch29-045":"none","ch29-046":"none","ch29-047":"none","ch29-048":"none","ch29-049":"notation","ch29-050":"none","ch29-051":"notation","ch29-052":"none","ch29-053":"none","ch29-054":"notation","ch29-055":"none","ch29-056":"none","ch29-057":"notation","ch29-058":"none","ch29-059":"none","ch29-060":"none","ch29-061":"none","ch29-062":"notation","ch29-063":"none","ch29-064":"notation","ch29-065":"notation","ch29-066":"notation","ch29-067":"none","ch29-068":"notation","ch29-069":"notation","ch29-070":"none","ch29-071":"notation","ch29-072":"notation","ch29-073":"notation","ch29-074":"notation","ch29-075":"none","ch29-076":"none","ch29-077":"none","ch29-078":"none","ch29-079":"none","ch29-080":"notation","ch29-081":"notation","ch29-082":"notation","ch29-083":"notation","ch29-084":"notation","ch29-085":"notation","ch29-086":"none","ch29-087":"notation","ch29-088":"notation","ch29-089":"none","ch29-090":"none","ch29-091":"none","ch29-092":"none","ch29-093":"none","ch29-094":"none","ch29-095":"none","ch29-096":"notation","ch29-097":"notation","ch29-098":"notation","ch29-099":"notation","ch29-100":"notation","ch29-101":"notation","ch29-102":"none","ch29-103":"none","ch29-104":"none","ch29-105":"notation","ch29-106":"notation","ch29-107":"notation","ch29-108":"notation","ch29-109":"notation","ch29-110":"notation","ch29-111":"none","ch29-112":"none","ch29-113":"none","ch29-114":"none","ch29-115":"none","ch29-116":"none","ch29-117":"none","ch29-118":"none","ch29-119":"none","ch29-120":"none","ch29-121":"none","ch29-122":"none","ch29-123":"notation","ch29-124":"none","ch29-125":"none","ch29-126":"notation","ch29-127":"notation","ch29-128":"notation","ch29-129":"notation","ch29-130":"none","ch29-131":"notation","ch29-132":"notation","ch29-133":"notation","ch29-134":"none","ch29-135":"notation","ch29-136":"notation","ch29-137":"notation","ch29-138":"none","ch29-139":"none","ch29-140":"none","ch29-141":"none","ch29-142":"none","ch29-143":"none","ch29-144":"notation","ch29-145":"notation","ch29-146":"none","ch29-147":"none","ch29-148":"none","ch29-149":"none","ch29-150":"notation","ch29-151":"notation","ch29-152":"notation","ch29-153":"notation","ch29-154":"none","ch29-155":"none","ch29-156":"none","ch29-157":"none","ch29-158":"notation","ch29-159":"notation","ch29-160":"notation","ch29-161":"notation","ch29-162":"notation","ch29-163":"notation","ch29-164":"none","ch29-165":"notation","ch29-166":"none","ch29-167":"notation","ch29-168":"notation","ch29-169":"none","ch29-170":"none","ch29-171":"notation","ch29-172":"notation","ch29-173":"notation","ch29-174":"notation","ch29-175":"notation","ch29-176":"notation","ch29-177":"notation","ch29-178":"none","ch29-179":"notation","ch29-180":"notation","ch29-181":"notation","ch29-182":"notation","ch29-183":"notation","ch29-184":"notation","ch29-185":"notation","ch29-186":"none","ch29-187":"none","ch29-188":"notation","ch29-189":"none","ch29-190":"none"};
+var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
+function show(k){
+ for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';
+ for(var j=0;j<bs.length;j++)bs[j].className=(bs[j].getAttribute('data-k')===k)?'on':'';}
+for(var j=0;j<bs.length;j++)bs[j].onclick=function(){show(this.getAttribute('data-k'));};
+f.hidden=false;})();</script>
 </main></body></html>

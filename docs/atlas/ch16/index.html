@@ -9,6 +9,10 @@ h1{font-size:1.5em;margin:0 0 .2em}
 .sub{color:#444;margin:0 0 1em}
 table.sum{border-collapse:collapse;margin:.5em 0 1em;font-size:.95em}
 table.sum th,table.sum td{border:1px solid #bbb;padding:3px 10px;text-align:left}
+.wide{overflow-x:auto}
+.wide table.sum{max-width:none}
+table.sum td,table.sum th{white-space:nowrap}
+table.sum td{font-variant-numeric:tabular-nums}
 .rules{font-size:.92em;line-height:1.45;color:#222;border-left:3px solid #ccc;padding-left:12px}
 .card{border:1px solid #ccc;border-radius:4px;margin:18px 0;padding:10px 12px}
 .card img{display:block;width:100%;height:auto;border:1px solid #eee;margin:4px 0 8px}
@@ -23,16 +27,25 @@ code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;pad
 .printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
 .notation{background:#f3eaf6}
 footer{font-size:.85em;color:#666;margin-top:2em}
+nav.nav{font-size:.92em;margin:0 0 1em}
+nav.nav a{white-space:nowrap}
+nav.nav.end{margin:2em 0 0}
+.filter{font-size:.92em;margin:0 0 1em}
+.filter button{font-family:inherit;font-size:1em;border:1px solid #bbb;background:#fff;color:#111;border-radius:3px;padding:2px 8px;margin:0 4px 4px 0;cursor:pointer}
+.filter button.on{background:#333;color:#fff;border-color:#333}
 </style></head><body><main>
+<nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch15/index.html">&larr; Ch. 15</a> | <a href="../ch17/index.html">Ch. 17 &rarr;</a></nav>
 <h1>Chapter XVI. Observations on the Theorems of Chapter XIV. and their Developments, including Testimony</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 164&ndash;185 (Cornell copy, PDF pp. 184&ndash;205). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<table class="sum"><tr><th>Ledger rows</th><td>134</td></tr>
+<div class="wide"><table class="sum"><tr><th>Formulas in Lean</th><td><b>1 / 89 formulas (&#10003;1 &asymp;0 &#9998;0), not yet 88 &mdash; 1.1%</b></td></tr>
+<tr><th>Ledger rows</th><td>134</td></tr>
 <tr><th>Formulas</th><td>89 (display 21, inline 68; items 89, numbered 0)</td></tr>
 <tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>1 &nbsp; <span class="mark equiv">&asymp;</span>0 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>88</td></tr>
 <tr><th>Notation</th><td>41 (with a Lean counterpart 1)</td></tr>
 <tr><th>Reference rows</th><td>0</td></tr>
 <tr><th>Bare-symbol rows (not counted)</th><td>4</td></tr>
-</table>
+</table></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (134)</button><button type="button" data-k="printed">&#10003; (1)</button><button type="button" data-k="equiv">&asymp; (0)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (88)</button><button type="button" data-k="notation">notation (41)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
 <section class="card" id="ch16-001">
 <h2>ch16-001</h2>
@@ -1568,5 +1581,14 @@ footer{font-size:.85em;color:#666;margin-top:2em}
 <dt>Remarks</dt><dd>裸記号の並び (補則 1、数えない)</dd>
 <dt>Crop</dt><dd>folio 185, x 125&ndash;1335, y 1210&ndash;1262 (full-size scan pixels)</dd>
 </dl></section>
+<nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch15/index.html">&larr; Ch. 15</a> | <a href="../ch17/index.html">Ch. 17 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch16.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
+<script>(function(){
+var K={"ch16-001":"notation","ch16-002":"printed","ch16-003":"none","ch16-004":"notation","ch16-005":"notation","ch16-006":"notation","ch16-007":"notation","ch16-008":"notation","ch16-009":"none","ch16-010":"none","ch16-011":"none","ch16-012":"none","ch16-013":"none","ch16-014":"none","ch16-015":"notation","ch16-016":"notation","ch16-017":"","ch16-018":"none","ch16-019":"notation","ch16-020":"none","ch16-021":"none","ch16-022":"none","ch16-023":"none","ch16-024":"none","ch16-025":"none","ch16-026":"none","ch16-027":"none","ch16-028":"none","ch16-029":"none","ch16-030":"none","ch16-031":"none","ch16-032":"none","ch16-033":"none","ch16-034":"none","ch16-035":"notation","ch16-036":"none","ch16-037":"notation","ch16-038":"notation","ch16-039":"notation","ch16-040":"notation","ch16-041":"notation","ch16-042":"notation","ch16-043":"notation","ch16-044":"notation","ch16-045":"none","ch16-046":"none","ch16-047":"notation","ch16-048":"notation","ch16-049":"notation","ch16-050":"none","ch16-051":"none","ch16-052":"none","ch16-053":"none","ch16-054":"none","ch16-055":"none","ch16-056":"none","ch16-057":"none","ch16-058":"notation","ch16-059":"none","ch16-060":"none","ch16-061":"notation","ch16-062":"notation","ch16-063":"none","ch16-064":"none","ch16-065":"none","ch16-066":"none","ch16-067":"none","ch16-068":"","ch16-069":"","ch16-070":"none","ch16-071":"none","ch16-072":"none","ch16-073":"none","ch16-074":"none","ch16-075":"none","ch16-076":"notation","ch16-077":"notation","ch16-078":"notation","ch16-079":"notation","ch16-080":"notation","ch16-081":"notation","ch16-082":"none","ch16-083":"none","ch16-084":"none","ch16-085":"none","ch16-086":"none","ch16-087":"none","ch16-088":"notation","ch16-089":"notation","ch16-090":"notation","ch16-091":"none","ch16-092":"none","ch16-093":"none","ch16-094":"none","ch16-095":"notation","ch16-096":"none","ch16-097":"none","ch16-098":"none","ch16-099":"none","ch16-100":"none","ch16-101":"none","ch16-102":"none","ch16-103":"none","ch16-104":"none","ch16-105":"none","ch16-106":"none","ch16-107":"none","ch16-108":"none","ch16-109":"none","ch16-110":"none","ch16-111":"none","ch16-112":"notation","ch16-113":"none","ch16-114":"none","ch16-115":"none","ch16-116":"none","ch16-117":"none","ch16-118":"notation","ch16-119":"none","ch16-120":"none","ch16-121":"none","ch16-122":"none","ch16-123":"notation","ch16-124":"none","ch16-125":"none","ch16-126":"none","ch16-127":"none","ch16-128":"none","ch16-129":"none","ch16-130":"notation","ch16-131":"notation","ch16-132":"notation","ch16-133":"notation","ch16-134":""};
+var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
+function show(k){
+ for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';
+ for(var j=0;j<bs.length;j++)bs[j].className=(bs[j].getAttribute('data-k')===k)?'on':'';}
+for(var j=0;j<bs.length;j++)bs[j].onclick=function(){show(this.getAttribute('data-k'));};
+f.hidden=false;})();</script>
 </main></body></html>
