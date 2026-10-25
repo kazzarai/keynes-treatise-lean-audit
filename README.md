@@ -7,6 +7,14 @@ measurements for every verified theorem, extended (v1.5) to Chapter VI
 (weight of arguments), Part III (Chapters 19, 20, 22 and the Notes on
 Chapter 22) and the whole of Chapter 26.**
 
+- **v1.7 (October 2026): formula atlas.** [`docs/atlas/`](docs/atlas/)
+  sets each row of the census ledger beside a crop of the corresponding line
+  of the 1921 first edition (Cornell copy scan, English), the ledger's
+  transcription and its Lean status (✓ / ≈ / ✎ / not yet): 34 pages, 1,956
+  cards (1,175 formula lines, 731 notations, 50 reference and other rows).
+  Rerunning `tools/atlas/crops.py` (JSON coordinate tables) and `gen.py`
+  reproduces the pages byte for byte. Lean unchanged: 610 verdicts, 34 files.
+  Guide: [`docs/atlas/README.md`](docs/atlas/README.md).
 - **v1.6 (October 2026): 610 kernel-checked verdicts across 34 files, zero
   `sorry`; and a complete formula census of the 1921 first edition.**
   (a) `phase6c_necessity` (29 verdicts) closes the question left open in
@@ -353,7 +361,7 @@ directions:
   (see the file headers for verbatim attribution, including the first
   formulation of W in Murata 2010).
 
-## Roadmap (v1.6)
+## Roadmap (v1.7)
 
 1. ~~**Full source-collation pass** (7f, July 2026)~~ superseded by the
    ~~**1921 first-edition image pass** (7i, September 2026)~~ — **done**.
@@ -384,7 +392,7 @@ directions:
 ```
 Arai, K. (2026). Keynes's Treatise on Probability, Part II: a Lean 4 kernel
 audit. https://github.com/kazzarai/keynes-treatise-lean-audit
-(release v1.6; canonical run v10 + phase6c_necessity, 2026-10-24, Lean 4 v4.29.1)
+(release v1.7; canonical run v10 + phase6c_necessity; Lean unchanged since v1.6; 2026-10-25, Lean 4 v4.29.1)
 ```
 
 ## License
