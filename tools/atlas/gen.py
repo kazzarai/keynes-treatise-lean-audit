@@ -2,6 +2,9 @@
 # 行 ID ごとに 1 カード: 切り抜き画像 / 行 ID・folio・§・位置・種別 / 転記 / Lean 欄 / 照合語 / 備考。
 # 集計は台帳の表から数える (手で書かない)。CSS は埋め込み、外部読み込みなし。画像パスは HTML からの相対 (img/<名>)。
 # 出力は入力だけで決まる (日時などを埋めない) ので、同じ入力から再生成すれば差分は出ない。
+# 列の順序は台帳の見出し行から決める (第I部の台帳は 項目ID が 2 列目、第III部以降は 7 列目)。
+# 空欄の印は "—" と "–" の両方を受ける。行が 1 本もない章は 1 行の断り書きだけを出す。
+# 見出しの「第N章」は英語の「Chapter <ローマ数字>」に直す。
 # 使い方: python3 -I gen.py <ledger.md> <coords.json> <out.html>
 import html
 import json
@@ -9,20 +12,27 @@ import os
 import re
 import sys
 
-# 台帳の列 (順序どおり)
+# 台帳の列 (既定の順序; 見出し行があればそれに従う)
 COLS = ["id", "folio", "sec", "pos", "kind", "num", "item", "trans", "type",
         "source", "repeat", "lean", "words", "note"]
+# 見出し行の語 (前方一致) → 列名
+HEAD = [("行ID", "id"), ("項目ID", "item"), ("folio", "folio"), ("§", "sec"), ("位置", "pos"),
+        ("種別", "kind"), ("番号", "num"), ("転記", "trans"), ("式/記法", "type"), ("引用元", "source"),
+        ("再掲", "repeat"), ("Lean", "lean"), ("既存の Lean", "lean"), ("照合語", "words"), ("備考", "note")]
+BLANK = ("—", "–", "")
+# 番号欄の箇条記号 ((i.), (iv.), (a) など) は式番号ではない
+ENUM = re.compile(r"^\((?:[ivx]+|[a-z])\.?\)$")
 
 POS = {"本文": "Text", "図": "Figure", "表": "Table"}
-KIND = {"表示": "Display", "行内": "Inline", "参考": "Reference"}
-TYPE = {"式": "Formula", "記法": "Notation", "参考": "Reference"}
+KIND = {"表示": "Display", "行内": "Inline", "参考": "Reference", "表": "Table"}
+TYPE = {"式": "Formula", "記法": "Notation", "参考": "Reference", "裸記号": "Bare symbol (not counted)"}
 MARK = {"✓": ("printed", "Printed form"), "≈": ("equiv", "Equivalent form"),
         "✎": ("corrected", "Corrected form"), "未": ("none", "Not in Lean")}
 
 RULES = (
     "Every count on this page is computed from the census ledger, which is built from the page images "
     "of the 1921 first edition only (no translation, OCR or e-text is used to count). "
-    "A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv; "
+    "A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, "
     "&sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities "
     "set over three lines counts three, and an inline formula counts one per expression. "
     "A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or "
@@ -61,19 +71,67 @@ footer{font-size:.85em;color:#666;margin-top:2em}
 """
 
 
+def roman(n):
+    out = ""
+    for v, s in ((40, "XL"), (10, "X"), (9, "IX"), (5, "V"), (4, "IV"), (1, "I")):
+        while n >= v:
+            out += s
+            n -= v
+    return out
+
+
+def title_en(title):
+    # 台帳の見出しは部ごとに書式が違う (「第2章 Title」「第 X 章 Title」「Chapter XX "Title"」「Chapter XXIX. Title」)。
+    # 図鑑では一律に「Chapter <ローマ数字>. Title」にそろえる。Notes on Part III はそのまま。
+    title = title.strip()
+    m = re.match(r"第\s*(\d+)\s*章\s+(.*)$", title)
+    if m:
+        return f"Chapter {roman(int(m.group(1)))}. {m.group(2).strip()}"
+    m = re.match(r"第\s*([IVX]+)\s*章\s+(.*)$", title)
+    if m:
+        return f"Chapter {m.group(1)}. {m.group(2).strip()}"
+    m = re.match(r'Chapter\s+([IVX]+)\.?\s+"?(.*?)"?\s*(\(Part [IVX]+\))?$', title)
+    if m:
+        tail = f" {m.group(3)}" if m.group(3) else ""
+        return f"Chapter {m.group(1)}. {m.group(2).strip()}{tail}"
+    m = re.match(r'"?(Notes on Part III)"?\s*(.*)$', title)
+    if m:
+        return f"{m.group(1)}: {m.group(2).strip()}" if m.group(2) else m.group(1)
+    return title
+
+
+def head_cols(cells):
+    # 見出し行のセルを列名に置き換える (長い語を先に照合)
+    out = []
+    for c in cells:
+        key = max((k for k in HEAD if c.startswith(k[0])), key=lambda k: len(k[0]))
+        out.append(key[1])
+    return out
+
+
 def read_ledger(path):
     text = open(path, encoding="utf-8").read()
     lines = text.splitlines()
     m = re.match(r"#\s*\S+\s+(ch\d+|notes_III)\s+—\s+(.*)$", lines[0])
-    chap, title = m.group(1), m.group(2).strip()
+    chap, title = m.group(1), title_en(m.group(2).strip())
     fm = re.search(r"^- folio (\d+)–(\d+) \(PDF 頁 (\d+)–(\d+)\)", text, re.M)
+    if not fm:
+        fm = re.search(r"^- folio: (\d+)–(\d+)\b.*? / PDF 頁: (\d+)–(\d+)", text, re.M)
+    if not fm:
+        fm = re.search(r"^- folio 範囲: \*\*(\d+)–(\d+)\*\* \(PDF 頁 (\d+)–(\d+)、", text, re.M)
+    assert fm, ("folio header not found", path)
+    cols = COLS
     rows = []
     for ln in lines:
+        if ln.startswith("| 行ID |"):
+            cols = head_cols([c.strip() for c in ln.strip().strip("|").split("|")])
+            assert sorted(cols) == sorted(COLS), cols
+            continue
         if not ln.startswith(f"| {'notes' if chap == 'notes_III' else chap}-"):
             continue
         cells = [c.strip() for c in ln.strip().strip("|").split("|")]
-        assert len(cells) == len(COLS), (ln[:40], len(cells))
-        rows.append(dict(zip(COLS, cells)))
+        assert len(cells) == len(cols), (ln[:40], len(cells))
+        rows.append(dict(zip(cols, cells)))
     return chap, title, fm.groups(), rows
 
 
@@ -91,8 +149,23 @@ def strip_ticks(s):
 
 
 def pos_en(s):
+    m = re.match(r"脚注\s*(\d+)\s*\((\d+) からの続き\)$", s)
+    if m:
+        return f"Footnote {m.group(1)} (continued from folio {m.group(2)})"
     m = re.match(r"脚注\s*(\d+)", s)
     return f"Footnote {m.group(1)}" if m else POS.get(s, s)
+
+
+def reprint_links(chap, s):
+    # 再掲欄: 先頭の行ID (章名なしの「001」や「ch05-005 (弱形)」の注記付きも受ける) をリンクに、残りは文字のまま
+    prefix = "notes" if chap == "notes_III" else chap
+    def one(m):
+        tok = m.group(0)
+        full = tok if "-" in tok else f"{prefix}-{tok}"
+        c = full.split("-")[0]
+        href = f"#{full}" if c == prefix else f"../{'notes_III' if c == 'notes' else c}/index.html#{full}"
+        return f'<a href="{href}">{html.escape(full)}</a>'
+    return re.sub(r"(?:ch\d+|notes)-\d{3}[a-z]?|(?<![\w-])\d{3}(?![\w-])", one, html.escape(s))
 
 
 def lean_mark(r):
@@ -103,6 +176,8 @@ def lean_mark(r):
         return c
     if r["type"] == "参考":
         return "R"
+    if r["type"] == "裸記号":
+        return "B"
     return "未" if r["lean"].startswith("未") or not r["lean"] else "N"
 
 
@@ -116,7 +191,8 @@ def summary(rows):
         "f_display": sum(1 for r in f if r["kind"] == "表示"),
         "f_inline": sum(1 for r in f if r["kind"] == "行内"),
         "items": len({r["item"] for r in f}),
-        "numbered": sum(1 for r in f if r["num"] not in ("—", "")),
+        "numbered": sum(1 for r in f if r["num"] not in BLANK and not ENUM.match(r["num"])),
+        "bare": sum(1 for r in rows if r["type"] == "裸記号"),
         "marks": marks,
         "n_lean": sum(1 for r in n if lean_mark(r) == "N"),
     }
@@ -145,17 +221,23 @@ def main():
     o.append(f'<p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), '
              f"first edition, pp. {fa}&ndash;{fb} (Cornell copy, PDF pp. {pa}&ndash;{pb}). "
              f"Formula atlas: every ledger row of the chapter beside the printed line it records.</p>")
-    o.append('<table class="sum"><tr><th>Ledger rows</th><td>' + str(s["rows"]) + "</td></tr>")
-    o.append(f'<tr><th>Formulas</th><td>{s["formula"]} (display {s["f_display"]}, inline {s["f_inline"]}; '
-             f'items {s["items"]}, numbered {s["numbered"]})</td></tr>')
-    o.append(f'<tr><th>Formulas by Lean status</th><td>'
-             f'<span class="mark printed">&#10003;</span>{mk["✓"]} &nbsp; '
-             f'<span class="mark equiv">&asymp;</span>{mk["≈"]} &nbsp; '
-             f'<span class="mark corrected">&#9998;</span>{mk["✎"]} &nbsp; '
-             f'<span class="mark none">&#26410;</span>{mk["未"]}</td></tr>')
-    o.append(f'<tr><th>Notation</th><td>{s["notation"]} (with a Lean counterpart {s["n_lean"]})</td></tr>')
-    o.append(f'<tr><th>Reference rows</th><td>{s["reference"]}</td></tr></table>')
-    o.append(f'<p class="rules">{RULES}</p>')
+    if not rows:
+        o.append("<p>No printed formula or notation.</p>")
+    else:
+        o.append('<table class="sum"><tr><th>Ledger rows</th><td>' + str(s["rows"]) + "</td></tr>")
+        o.append(f'<tr><th>Formulas</th><td>{s["formula"]} (display {s["f_display"]}, inline {s["f_inline"]}; '
+                 f'items {s["items"]}, numbered {s["numbered"]})</td></tr>')
+        o.append(f'<tr><th>Formulas by Lean status</th><td>'
+                 f'<span class="mark printed">&#10003;</span>{mk["✓"]} &nbsp; '
+                 f'<span class="mark equiv">&asymp;</span>{mk["≈"]} &nbsp; '
+                 f'<span class="mark corrected">&#9998;</span>{mk["✎"]} &nbsp; '
+                 f'<span class="mark none">&#26410;</span>{mk["未"]}</td></tr>')
+        o.append(f'<tr><th>Notation</th><td>{s["notation"]} (with a Lean counterpart {s["n_lean"]})</td></tr>')
+        o.append(f'<tr><th>Reference rows</th><td>{s["reference"]}</td></tr>')
+        if s["bare"]:
+            o.append(f'<tr><th>Bare-symbol rows (not counted)</th><td>{s["bare"]}</td></tr>')
+        o.append("</table>")
+        o.append(f'<p class="rules">{RULES}</p>')
 
     for r in rows:
         e = co[r["id"]]
@@ -177,15 +259,17 @@ def main():
             badge = f'<span class="mark {cls}" title="{label}">{html.escape(m)}</span>'
         elif m == "R":
             badge = '<span class="mark notation" title="Reference line (not counted)">R</span>'
+        elif m == "B":
+            badge = '<span class="mark notation" title="Bare symbol (not counted)">B</span>'
         else:
             badge = '<span class="mark notation" title="Notation">N</span>'
         lean = r["lean"]
         if m in MARK and lean.startswith(m):
             lean = lean[len(m):].strip()
         o.append(f"<dt>Lean</dt><dd>{badge}{inline(lean)}</dd>")
-        if r["repeat"] not in ("—", ""):
-            o.append(f'<dt>Reprint of</dt><dd><a href="#{r["repeat"]}">{r["repeat"]}</a></dd>')
-        if r["source"] not in ("—", ""):
+        if r["repeat"] not in BLANK:
+            o.append(f'<dt>Reprint of</dt><dd>{reprint_links(chap, r["repeat"])}</dd>')
+        if r["source"] not in BLANK:
             o.append(f'<dt>Quoted from</dt><dd>{inline(r["source"])}</dd>')
         o.append(f'<dt>Anchor words</dt><dd>{inline(r["words"])}</dd>')
         o.append(f'<dt>Remarks</dt><dd>{inline(r["note"])}</dd>')
