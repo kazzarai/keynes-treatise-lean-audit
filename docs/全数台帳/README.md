@@ -24,7 +24,7 @@ The per-chapter figures below are computed from the ledger files by `summary.csv
 | I | 7 | Historical Retrospect | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 | 5 |
 | I | 8 | The Frequency Theory of Probability | 14 | 14 | 3 | 0/0 | 2 / 1 / 0 / 11 | 14 |
 | I | 9 | The Constructive Theory of Part I Summarised | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 | 1 |
-| II | 10 | Introductory | 29 | 26 | 20 | 5/9 | 17 / 6 / 0 / 6 | 13 |
+| II | 10 | Introductory | 29 | 26 | 26 | 9/9 | 23 / 6 / 0 / 0 | 13 |
 | II | 11 | The Theory of Groups | 30 | 30 | 0 | 0/0 | 0 / 0 / 0 / 30 | 2 |
 | II | 12 | The Definitions and Axioms of Inference and Probability | 56 | 30 | 24 | 17/21 | 40 / 10 / 0 / 6 | 16 |
 | II | 11 | The Theory of Groups | 30 | 30 | 29 | 0/0 | 25 / 4 / 0 / 1 | 2 |
