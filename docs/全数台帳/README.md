@@ -26,7 +26,7 @@ The per-chapter figures below are computed from the ledger files by `summary.csv
 | I | 9 | The Constructive Theory of Part I Summarised | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 | 1 |
 | II | 10 | Introductory | 29 | 26 | 20 | 5/9 | 17 / 6 / 0 / 6 | 13 |
 | II | 11 | The Theory of Groups | 30 | 30 | 0 | 0/0 | 0 / 0 / 0 / 30 | 2 |
-| II | 12 | The Definitions and Axioms of Inference and Probability | 56 | 30 | 13 | 13/21 | 14 / 9 / 0 / 33 | 16 |
+| II | 12 | The Definitions and Axioms of Inference and Probability | 56 | 30 | 24 | 17/21 | 40 / 10 / 0 / 6 | 16 |
 | II | 13 | The Fundamental Theorems of Necessary Inference | 169 | 36 | 30 | 30/34 | 32 / 26 / 0 / 111 | 0 |
 | II | 14 | The Fundamental Theorems of Probable Inference | 188 | 70 | 43 | 43/55 | 40 / 26 / 1 / 121 | 37 |
 | II | 15 | Numerical Measurement and Approximation of Probabilities | 62 | 23 | 6 | 6/10 | 7 / 3 / 3 / 49 | 6 |

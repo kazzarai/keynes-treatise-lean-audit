@@ -37,15 +37,15 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch11/index.html">&larr; Ch. 11</a> | <a href="../ch13/index.html">Ch. 13 &rarr;</a></nav>
 <h1>Chapter XII. The Definitions and Axioms of Inference and Probability</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 133&ndash;138 (Cornell copy, PDF pp. 153&ndash;158). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>Formulas in Lean</th><td><b>23 / 56 formulas (&#10003;14 &asymp;9 &#9998;0), not yet 33 &mdash; 41.1%</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>Formulas in Lean</th><td><b>50 / 56 formulas (&#10003;40 &asymp;10 &#9998;0), not yet 6 &mdash; 89.3%</b></td></tr>
 <tr><th>Ledger rows</th><td>74</td></tr>
 <tr><th>Formulas</th><td>56 (display 13, inline 43; items 30, numbered 36)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>14 &nbsp; <span class="mark equiv">&asymp;</span>9 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>33</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>40 &nbsp; <span class="mark equiv">&asymp;</span>10 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>6</td></tr>
 <tr><th>Notation</th><td>16 (with a Lean counterpart 7)</td></tr>
 <tr><th>Reference rows</th><td>0</td></tr>
 <tr><th>Bare-symbol rows (not counted)</th><td>2</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (74)</button><button type="button" data-k="printed">&#10003; (14)</button><button type="button" data-k="equiv">&asymp; (9)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (33)</button><button type="button" data-k="notation">notation (16)</button></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (74)</button><button type="button" data-k="printed">&#10003; (40)</button><button type="button" data-k="equiv">&asymp; (10)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (6)</button><button type="button" data-k="notation">notation (16)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
 <section class="card" id="ch12-001">
 <h2>ch12-001</h2>
@@ -100,7 +100,7 @@ nav.nav.end{margin:2em 0 0}
 <dt>Transcription</dt><dd>a/h = P</dd>
 <dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(Def. I は Pr/PrI 関数そのもので定理文なし; 関係の存在は 6c/Cons)</dd>
 <dt>Anchor words</dt><dd>between the proposition a and the premiss h</dd>
-<dt>Remarks</dt><dd>Def. I</dd>
+<dt>Remarks</dt><dd>Def. I。定義のみ (名付け)</dd>
 <dt>Crop</dt><dd>folio 134, x 125&ndash;1335, y 1380&ndash;1429 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch12-006">
@@ -111,7 +111,7 @@ nav.nav.end{margin:2em 0 0}
 <dt>Transcription</dt><dd>P = 1</dd>
 <dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(値 1 を直接書く)</dd>
 <dt>Anchor words</dt><dd>If P is the relation of certainty</dd>
-<dt>Remarks</dt><dd>Def. II。脚注 1 (Leibnitz)</dd>
+<dt>Remarks</dt><dd>Def. II。脚注 1 (Leibnitz)。定義のみ (名付け)</dd>
 <dt>Crop</dt><dd>folio 134, x 125&ndash;1335, y 1481&ndash;1525 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch12-007">
@@ -122,7 +122,7 @@ nav.nav.end{margin:2em 0 0}
 <dt>Transcription</dt><dd>P = 0</dd>
 <dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(値 0 を直接書く)</dd>
 <dt>Anchor words</dt><dd>If P is the relation of impossibility</dd>
-<dt>Remarks</dt><dd>Def. III</dd>
+<dt>Remarks</dt><dd>Def. III。定義のみ (名付け)</dd>
 <dt>Crop</dt><dd>folio 134, x 125&ndash;1335, y 1580&ndash;1625 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch12-008">
@@ -166,7 +166,7 @@ nav.nav.end{margin:2em 0 0}
 <dt>Transcription</dt><dd>a/h = 1</dd>
 <dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(群は Lean に無い)</dd>
 <dt>Anchor words</dt><dd>propositions a such that a/h = 1 is the group</dd>
-<dt>Remarks</dt><dd>Def. VII</dd>
+<dt>Remarks</dt><dd>Def. VII。定義のみ (名付け)</dd>
 <dt>Crop</dt><dd>folio 134, x 125&ndash;1335, y 1878&ndash;1930 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch12-012">
@@ -291,7 +291,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 135 (PDF p. 155) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/h = 1</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(6a,6b/ax_iii_ev は証拠側の同値の公理で、印刷の「a/h = 1 ⇒ ah≡h」は定理文に無い)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_iii_last (前提 a/h = 1; 公理 (i) の但し書き Cons h 付き)</dd>
 <dt>Anchor words</dt><dd>If a/h = 1, ah≡h.</dd>
 <dt>Remarks</dt><dd>前件</dd>
 <dt>Crop</dt><dd>folio 135, x 125&ndash;1335, y 1016&ndash;1065 (full-size scan pixels)</dd>
@@ -303,7 +303,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 135 (PDF p. 155) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>ah≡h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(同前; 6b/th_14_26 は αh/h = α/h の形で別命題)</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>10a/th_12_iii_last (後件 ah≡h を前提 h の下の等値 (ah≡h)/h = 1 として書く; Def. VIII 後の「equivalence is relative to a premiss h」)</dd>
 <dt>Anchor words</dt><dd>If a/h = 1, ah≡h. That is to say</dd>
 <dt>Remarks</dt><dd>後件。≡ は関係記号として数える</dd>
 <dt>Crop</dt><dd>folio 135, x 125&ndash;1335, y 1016&ndash;1065 (full-size scan pixels)</dd>
@@ -462,7 +462,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 136 (PDF p. 156) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>PQ &lt; P</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_ivb_mul_lt (結論), th_12_ivb_mul_lt_unless (選言形)</dd>
 <dt>Anchor words</dt><dd>(iv. b) PQ &lt; P unless</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 136, x 125&ndash;1335, y 1964&ndash;2016 (full-size scan pixels)</dd>
@@ -474,7 +474,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 136 (PDF p. 156) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>Q = 1</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_ivb_mul_lt (但し書きを前提 Q ≠ 1 に), th_12_ivb_mul_lt_unless (選言の成分 Q = 1)</dd>
 <dt>Anchor words</dt><dd>PQ &lt; P unless Q = 1 or</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 136, x 125&ndash;1335, y 1964&ndash;2016 (full-size scan pixels)</dd>
@@ -486,7 +486,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 136 (PDF p. 156) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>P = 0</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_ivb_mul_lt (但し書きを前提 P ≠ 0 に), th_12_ivb_mul_lt_unless (選言の成分 P = 0)</dd>
 <dt>Anchor words</dt><dd>Q = 1 or P = 0 ;</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 136, x 125&ndash;1335, y 1964&ndash;2016 (full-size scan pixels)</dd>
@@ -498,7 +498,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 136 (PDF p. 156) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>P + Q &gt; P</dd>
-<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>P2,3a,3b,3c/ax_ivb (結論 P &lt; P + Q は P + Q &gt; P の Lean 記法)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>P2,3a,3b,3c/ax_ivb (結論 P &lt; P + Q は P + Q &gt; P の Lean 記法); 10a/th_12_ivb_add_gt (印刷どおり P + Q &gt; P)</dd>
 <dt>Anchor words</dt><dd>P + Q &gt; P unless Q = 0.</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 136, x 125&ndash;1335, y 1964&ndash;2016 (full-size scan pixels)</dd>
@@ -510,9 +510,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 136 (PDF p. 156) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>Q = 0.</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(P2,3a,3b,3c/ax_ivb は但し書き unless Q = 0 を前提 0 &lt; Q に替えた形; 実数では Q ≠ 0 と 0 &lt; Q は同値でなく、印刷形の反駁も無い — 裁定事項)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_ivb_add_gt (但し書きを前提 Q ≠ 0 として印刷どおり; 値域の公理 0 ≤ Q で 0 &lt; Q), th_12_ivb_add_gt_unless (選言の成分 Q = 0)</dd>
 <dt>Anchor words</dt><dd>P + Q &gt; P unless Q = 0.</dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B28a: 第 3 回の裁定事項 (f) は、値域の公理 ax_range_lo_i の下で Q ≠ 0 と 0 &lt; Q が同値になるので解消</dd>
 <dt>Crop</dt><dd>folio 136, x 125&ndash;1335, y 1964&ndash;2016 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch12-042">
@@ -521,7 +521,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 136 (PDF p. 156) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>PQ = P</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_ivb_mul_eq (結論)</dd>
 <dt>Anchor words</dt><dd>PQ = P if Q = 1 or</dd>
 <dt>Remarks</dt><dd>第 2 行</dd>
 <dt>Crop</dt><dd>folio 136, x 125&ndash;1335, y 2016&ndash;2064 (full-size scan pixels)</dd>
@@ -533,7 +533,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 136 (PDF p. 156) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>Q = 1</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_ivb_mul_eq (前提の選言の成分 Q = 1)</dd>
 <dt>Anchor words</dt><dd>PQ = P if Q = 1</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 136, x 125&ndash;1335, y 2016&ndash;2064 (full-size scan pixels)</dd>
@@ -545,7 +545,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 136 (PDF p. 156) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>P = 0</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_ivb_mul_eq (前提の選言の成分 P = 0)</dd>
 <dt>Anchor words</dt><dd>Q = 1 or P = 0 ; P + Q = P</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 136, x 125&ndash;1335, y 2016&ndash;2064 (full-size scan pixels)</dd>
@@ -557,7 +557,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 136 (PDF p. 156) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>P + Q = P</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_ivb_add_eq (結論)</dd>
 <dt>Anchor words</dt><dd>P + Q = P if Q = 0.</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 136, x 125&ndash;1335, y 2016&ndash;2064 (full-size scan pixels)</dd>
@@ -569,7 +569,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 136 (PDF p. 156) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>Q = 0.</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_ivb_add_eq (前提 Q = 0)</dd>
 <dt>Anchor words</dt><dd>P + Q = P if Q = 0.</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 136, x 125&ndash;1335, y 2016&ndash;2064 (full-size scan pixels)</dd>
@@ -580,7 +580,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 136 (PDF p. 156) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>PQ ⋛ PR</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(等号の場合のみ ax_ivc の形に近いが積は未)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_ivc_mul_lt, th_12_ivc_mul_eq, th_12_ivc_mul_gt (⋛ を &lt; = &gt; の 3 本に; 前提)</dd>
 <dt>Anchor words</dt><dd>(iv. c) If PQ ⋛ PR, then</dd>
 <dt>Remarks</dt><dd>⋛ は = の上下に &lt; &gt; を重ねた活字</dd>
 <dt>Crop</dt><dd>folio 136, x 125&ndash;1335, y 2064&ndash;2118 (full-size scan pixels)</dd>
@@ -592,7 +592,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 136 (PDF p. 156) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>Q ⋛ R</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_ivc_mul_lt, th_12_ivc_mul_eq, th_12_ivc_mul_gt (結論)</dd>
 <dt>Anchor words</dt><dd>then Q ⋛ R unless P = 0.</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 136, x 125&ndash;1335, y 2064&ndash;2118 (full-size scan pixels)</dd>
@@ -604,7 +604,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 136 (PDF p. 156) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>P = 0.</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_ivc_mul_lt, th_12_ivc_mul_eq, th_12_ivc_mul_gt (但し書きを前提 P ≠ 0 に)</dd>
 <dt>Anchor words</dt><dd>Q ⋛ R unless P = 0.</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 136, x 125&ndash;1335, y 2064&ndash;2118 (full-size scan pixels)</dd>
@@ -616,7 +616,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 136 (PDF p. 156) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>P + Q ⋛ P + R</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(部分: 等号の場合 P + Q = P + R → Q = R のみ P2,3a,3b,3c/ax_ivc; &lt; と &gt; は無い)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_ivc_add_lt, th_12_ivc_add_eq, th_12_ivc_add_gt (⋛ を 3 本に; conversely を ↔ に)</dd>
 <dt>Anchor words</dt><dd>If P + Q ⋛ P + R,</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 136, x 125&ndash;1335, y 2064&ndash;2118 (full-size scan pixels)</dd>
@@ -627,7 +627,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 136 (PDF p. 156) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>Q ⋛ R</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(部分: 等号の場合のみ P2,3a,3b,3c/ax_ivc)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_ivc_add_lt, th_12_ivc_add_eq, th_12_ivc_add_gt (↔ の右辺)</dd>
 <dt>Anchor words</dt><dd>then Q ⋛ R and conversely.</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 136, x 125&ndash;1335, y 2118&ndash;2170 (full-size scan pixels)</dd>
@@ -649,7 +649,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 137 (PDF p. 157) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>P + Q = R</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_6_bracketed (前提; th_12_6_sum_exists も同じ前提)</dd>
 <dt>Anchor words</dt><dd>Furthermore, if P + Q = R and</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 137, x 125&ndash;1335, y 467&ndash;516 (full-size scan pixels)</dd>
@@ -661,7 +661,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 137 (PDF p. 157) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>Q = S + T</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_6_bracketed (前提; 同上)</dd>
 <dt>Anchor words</dt><dd>and Q = S + T, it does not follow</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 137, x 125&ndash;1335, y 467&ndash;516 (full-size scan pixels)</dd>
@@ -672,9 +672,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 137 (PDF p. 157) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>P + S + T = R</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(形式化の境界の記録)</dd>
 <dt>Anchor words</dt><dd>it does not follow that P + S + T = R,</dd>
-<dt>Remarks</dt><dd>「従わない」と言われる式も数える</dd>
+<dt>Remarks</dt><dd>「従わない」と言われる式も数える。Keynes の代数では従わない (結合律を仮定しない)。ℝ 担体では従う —— 担体の強さの差 (F12.1)</dd>
 <dt>Crop</dt><dd>folio 137, x 125&ndash;1335, y 516&ndash;568 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch12-056">
@@ -694,7 +694,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 137 (PDF p. 157) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>P + (S + T) = R</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_6_bracketed (結論)</dd>
 <dt>Anchor words</dt><dd>The equation must be written</dd>
 <dt>Remarks</dt><dd>行末で = R が次行へ</dd>
 <dt>Crop</dt><dd>folio 137, x 125&ndash;1335, y 568&ndash;668 (full-size scan pixels)</dd>
@@ -705,9 +705,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 137 (PDF p. 157) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>(P + S) + T = R</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(形式化の境界の記録)</dd>
 <dt>Anchor words</dt><dd>from the foregoing axioms that</dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>Keynes の代数では従わない (結合律を仮定しない)。ℝ 担体では従う —— 担体の強さの差 (F12.1)</dd>
 <dt>Crop</dt><dd>folio 137, x 125&ndash;1335, y 668&ndash;718 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch12-059">
@@ -727,7 +727,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 137 (PDF p. 157) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>P + S = A</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_6_sum_exists (前提 P + S = A; A は確率関係 a/g)</dd>
 <dt>Anchor words</dt><dd>i.e. when P + S = A and A is</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 137, x 125&ndash;1335, y 768&ndash;820 (full-size scan pixels)</dd>
@@ -738,9 +738,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 137 (PDF p. 157) &middot; &sect;6 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>[±P±Q] + [±R±S] = [±P±R] − [∓Q∓S] = [±P±R] +</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(部分: 符号が全て + の場合 (P + Q) + (R + S) = (P + R) + (Q + S) のみ P2,3a,3b,3c/ax_v)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_v_1, th_12_v_2, th_12_v (± を文字ごとの符号 sgn、∓ を −sgn で)</dd>
 <dt>Anchor words</dt><dd>(v.)</dd>
-<dt>Remarks</dt><dd>第 1 行 (行末の + で次行へ続く)</dd>
+<dt>Remarks</dt><dd>第 1 行 (行末の + で次行へ続く)。形式化の境界: 和・積の存在条件 (散文) は PrI の値が実数なので前提にならない</dd>
 <dt>Crop</dt><dd>folio 137, x 125&ndash;1335, y 820&ndash;921 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch12-062">
@@ -750,9 +750,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 137 (PDF p. 157) &middot; &sect;6 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>[±Q±S] = [±P±Q] − [∓R∓S]</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(部分: 符号が全て + の場合のみ P2,3a,3b,3c/ax_v)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_v_2, th_12_v_3, th_12_v (同上)</dd>
 <dt>Anchor words</dt><dd>(v.)</dd>
-<dt>Remarks</dt><dd>第 2 行</dd>
+<dt>Remarks</dt><dd>第 2 行。形式化の境界: 和・積の存在条件 (散文) は PrI の値が実数なので前提にならない</dd>
 <dt>Crop</dt><dd>folio 137, x 125&ndash;1335, y 820&ndash;921 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch12-063">
@@ -772,9 +772,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 137 (PDF p. 157) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>P(R±S) = PR±PS</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(部分: + の場合 P(R + S) = PR + PS のみ P2,3a,3b,3c/ax_vi)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_vi (± を符号 sgn で); + の場合は P2,3a,3b,3c/ax_vi も</dd>
 <dt>Anchor words</dt><dd>(vi.) P(R±S) = PR±PS, if the sum</dd>
-<dt>Remarks</dt><dd>分配律</dd>
+<dt>Remarks</dt><dd>分配律。形式化の境界: 和・積の存在条件 (散文) は PrI の値が実数なので前提にならない</dd>
 <dt>Crop</dt><dd>folio 137, x 125&ndash;1335, y 1115&ndash;1171 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch12-065">
@@ -794,7 +794,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 137 (PDF p. 157) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>P + Q = R + S</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_7_sub (前提)</dd>
 <dt>Anchor words</dt><dd>that if P + Q = R + S then</dd>
 <dt>Remarks</dt><dd>派生命題の例</dd>
 <dt>Crop</dt><dd>folio 137, x 125&ndash;1335, y 1322&ndash;1422 (full-size scan pixels)</dd>
@@ -805,9 +805,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 137 (PDF p. 157) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>P − R = S − Q</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_7_sub (結論)</dd>
 <dt>Anchor words</dt><dd>then P − R = S − Q, provided</dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>形式化の境界: 「provided that the differences P − R and S − Q exist」は実数では前提にならない</dd>
 <dt>Crop</dt><dd>folio 137, x 125&ndash;1335, y 1371&ndash;1422 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch12-068">
@@ -827,7 +827,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 137 (PDF p. 157) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>(P + Q)(R + S) = (P + Q)R + (P + Q)S = [PR + QR] + [PS + QS] = [PR + QS] + [QR + PS]</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_7_distrib (3 つの等号を連言の 3 成分に)</dd>
 <dt>Anchor words</dt><dd>and that (P + Q) (R + S) =</dd>
 <dt>Remarks</dt><dd>行内の連鎖等式 (= 3 つ、印刷 2 行にまたがる) を 1 本と数える (裁定事項)</dd>
 <dt>Crop</dt><dd>folio 137, x 125&ndash;1335, y 1422&ndash;1523 (full-size scan pixels)</dd>
@@ -875,7 +875,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 138 (PDF p. 158) &middot; &sect;8 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a₁/a₂h = a₁/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(def P2/Irrelevant の本体は同形だが、これを使う定理が無い)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10a/th_12_XIV_symm (前提 a₁/a₂h = a₁/h を証明で使う; 対称形: a₁/h ≠ 0 なら a₂/a₁h = a₂/h), th_12_XIV_indep (Def. XIII の独立へ)</dd>
 <dt>Reprint of</dt><dd><a href="../ch10/index.html#ch10-021">ch10-021</a></dd>
 <dt>Anchor words</dt><dd>XIV. If a₁/a₂h = a₁/h, a₂ is</dd>
 <dt>Remarks</dt><dd>Def. XIV。脚注 1 (第 IV 章 §14 からの再掲)</dd>
@@ -896,7 +896,7 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch11/index.html">&larr; Ch. 11</a> | <a href="../ch13/index.html">Ch. 13 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch12.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch12-001":"notation","ch12-002":"notation","ch12-003":"notation","ch12-004":"","ch12-005":"none","ch12-006":"none","ch12-007":"none","ch12-008":"equiv","ch12-009":"equiv","ch12-010":"equiv","ch12-011":"none","ch12-012":"printed","ch12-013":"printed","ch12-014":"printed","ch12-015":"","ch12-016":"equiv","ch12-017":"printed","ch12-018":"equiv","ch12-019":"equiv","ch12-020":"equiv","ch12-021":"equiv","ch12-022":"none","ch12-023":"none","ch12-024":"notation","ch12-025":"notation","ch12-026":"equiv","ch12-027":"printed","ch12-028":"printed","ch12-029":"printed","ch12-030":"printed","ch12-031":"printed","ch12-032":"notation","ch12-033":"notation","ch12-034":"printed","ch12-035":"notation","ch12-036":"printed","ch12-037":"none","ch12-038":"none","ch12-039":"none","ch12-040":"printed","ch12-041":"none","ch12-042":"none","ch12-043":"none","ch12-044":"none","ch12-045":"none","ch12-046":"none","ch12-047":"none","ch12-048":"none","ch12-049":"none","ch12-050":"none","ch12-051":"none","ch12-052":"notation","ch12-053":"none","ch12-054":"none","ch12-055":"none","ch12-056":"notation","ch12-057":"none","ch12-058":"none","ch12-059":"notation","ch12-060":"none","ch12-061":"none","ch12-062":"none","ch12-063":"notation","ch12-064":"none","ch12-065":"notation","ch12-066":"none","ch12-067":"none","ch12-068":"notation","ch12-069":"none","ch12-070":"printed","ch12-071":"printed","ch12-072":"notation","ch12-073":"none","ch12-074":"notation"};
+var K={"ch12-001":"notation","ch12-002":"notation","ch12-003":"notation","ch12-004":"","ch12-005":"none","ch12-006":"none","ch12-007":"none","ch12-008":"equiv","ch12-009":"equiv","ch12-010":"equiv","ch12-011":"none","ch12-012":"printed","ch12-013":"printed","ch12-014":"printed","ch12-015":"","ch12-016":"equiv","ch12-017":"printed","ch12-018":"equiv","ch12-019":"equiv","ch12-020":"equiv","ch12-021":"equiv","ch12-022":"printed","ch12-023":"equiv","ch12-024":"notation","ch12-025":"notation","ch12-026":"equiv","ch12-027":"printed","ch12-028":"printed","ch12-029":"printed","ch12-030":"printed","ch12-031":"printed","ch12-032":"notation","ch12-033":"notation","ch12-034":"printed","ch12-035":"notation","ch12-036":"printed","ch12-037":"printed","ch12-038":"printed","ch12-039":"printed","ch12-040":"printed","ch12-041":"printed","ch12-042":"printed","ch12-043":"printed","ch12-044":"printed","ch12-045":"printed","ch12-046":"printed","ch12-047":"printed","ch12-048":"printed","ch12-049":"printed","ch12-050":"printed","ch12-051":"printed","ch12-052":"notation","ch12-053":"printed","ch12-054":"printed","ch12-055":"none","ch12-056":"notation","ch12-057":"printed","ch12-058":"none","ch12-059":"notation","ch12-060":"printed","ch12-061":"printed","ch12-062":"printed","ch12-063":"notation","ch12-064":"printed","ch12-065":"notation","ch12-066":"printed","ch12-067":"printed","ch12-068":"notation","ch12-069":"printed","ch12-070":"printed","ch12-071":"printed","ch12-072":"notation","ch12-073":"printed","ch12-074":"notation"};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';
