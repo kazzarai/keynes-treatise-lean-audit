@@ -38,6 +38,8 @@ The per-chapter figures below are computed from the ledger files by `summary.csv
 | II | 15 | Numerical Measurement and Approximation of Probabilities | 62 | 23 | 23 | 10/10 | 49 / 8 / 5 / 0 | 6 |
 | II | 16 | Observations on the Theorems of Chapter XIV | 89 | 89 | 1 | 0/0 | 1 / 0 / 0 / 88 | 41 |
 | II | 17 | Some Problems in Inverse Probability, including Averages | 202 | 54 | 53 | 49/49 | 80 / 87 / 16 / 19 | 20 |
+| II | 16 | Observations on the Theorems of Chapter XIV | 89 | 89 | 76 | 0/0 | 59 / 16 / 1 / 13 | 41 |
+| II | 17 | Some Problems in Inverse Probability, including Averages | 202 | 54 | 44 | 43/49 | 19 / 75 / 7 / 101 | 20 |
 | III | 18 | Introduction | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 | 1 |
 | III | 19 | The Nature of Argument by Analogy | 16 | 16 | 7 | 0/0 | 3 / 2 / 2 / 9 | 49 |
 | III | 20 | The Value of Multiplication of Instances, or Pure Induction | 30 | 30 | 24 | 0/0 | 15 / 7 / 2 / 6 | 10 |
