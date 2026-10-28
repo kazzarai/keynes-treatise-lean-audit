@@ -24,13 +24,21 @@ The per-chapter figures below are computed from the ledger files by `summary.csv
 | I | 7 | Historical Retrospect | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 | 5 |
 | I | 8 | The Frequency Theory of Probability | 14 | 14 | 3 | 0/0 | 2 / 1 / 0 / 11 | 14 |
 | I | 9 | The Constructive Theory of Part I Summarised | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 | 1 |
-| II | 10 | Introductory | 29 | 26 | 20 | 5/9 | 17 / 6 / 0 / 6 | 13 |
+| II | 10 | Introductory | 29 | 26 | 26 | 9/9 | 23 / 6 / 0 / 0 | 13 |
 | II | 11 | The Theory of Groups | 30 | 30 | 0 | 0/0 | 0 / 0 / 0 / 30 | 2 |
+| II | 12 | The Definitions and Axioms of Inference and Probability | 56 | 30 | 24 | 17/21 | 40 / 10 / 0 / 6 | 16 |
+| II | 11 | The Theory of Groups | 30 | 30 | 29 | 0/0 | 25 / 4 / 0 / 1 | 2 |
 | II | 12 | The Definitions and Axioms of Inference and Probability | 56 | 30 | 13 | 13/21 | 14 / 9 / 0 / 33 | 16 |
 | II | 13 | The Fundamental Theorems of Necessary Inference | 169 | 36 | 30 | 30/34 | 32 / 26 / 0 / 111 | 0 |
+| II | 12 | The Definitions and Axioms of Inference and Probability | 56 | 30 | 13 | 13/21 | 14 / 9 / 0 / 33 | 16 |
+| II | 13 | The Fundamental Theorems of Necessary Inference | 169 | 36 | 36 | 34/34 | 90 / 79 / 0 / 0 | 0 |
 | II | 14 | The Fundamental Theorems of Probable Inference | 188 | 70 | 43 | 43/55 | 40 / 26 / 1 / 121 | 37 |
+| II | 14 | The Fundamental Theorems of Probable Inference | 188 | 70 | 66 | 55/55 | 111 / 60 / 6 / 11 | 37 |
 | II | 15 | Numerical Measurement and Approximation of Probabilities | 62 | 23 | 6 | 6/10 | 7 / 3 / 3 / 49 | 6 |
+| II | 15 | Numerical Measurement and Approximation of Probabilities | 62 | 23 | 23 | 10/10 | 49 / 8 / 5 / 0 | 6 |
 | II | 16 | Observations on the Theorems of Chapter XIV | 89 | 89 | 1 | 0/0 | 1 / 0 / 0 / 88 | 41 |
+| II | 17 | Some Problems in Inverse Probability, including Averages | 202 | 54 | 53 | 49/49 | 80 / 87 / 16 / 19 | 20 |
+| II | 16 | Observations on the Theorems of Chapter XIV | 89 | 89 | 76 | 0/0 | 59 / 16 / 1 / 13 | 41 |
 | II | 17 | Some Problems in Inverse Probability, including Averages | 202 | 54 | 44 | 43/49 | 19 / 75 / 7 / 101 | 20 |
 | III | 18 | Introduction | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 | 1 |
 | III | 19 | The Nature of Argument by Analogy | 16 | 16 | 7 | 0/0 | 3 / 2 / 2 / 9 | 49 |

@@ -187,10 +187,14 @@ def main():
         for c in cs:
             x, m = st[c], meta[c]
             no = html.escape(t["ix_notes"]) if c == "notes_III" else str(int(c[2:]))
+            # 題の列: 英語版は summary.csv の原題、日本語版は邦題 (title 属性に原題)
+            ja_t = t["ch_title"].get(c)
+            name = html.escape(ja_t or m["題"])
+            tip = f' title="{html.escape(m["題"], quote=True)}"' if ja_t else ""
             if x["built"]:
-                ttl = f'<a href="{c}/index.html">{html.escape(m["題"])}</a>'
+                ttl = f'<a href="{c}/index.html"{tip}>{name}</a>'
             else:
-                ttl = f'{html.escape(m["題"])} ({html.escape(t["missing"])})'
+                ttl = f'<span{tip}>{name}</span> ({html.escape(t["missing"])})' if tip else f'{name} ({html.escape(t["missing"])})'
             cells = [f'<td class="n">{no}</td>',
                      f'<td class="t">{ttl}</td>',
                      f'<td class="n">{m["folio_from"]}&ndash;{m["folio_to"]}</td>',
