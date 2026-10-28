@@ -34,7 +34,7 @@ The per-chapter figures below are computed from the ledger files by `summary.csv
 | II | 14 | The Fundamental Theorems of Probable Inference | 188 | 70 | 66 | 55/55 | 111 / 60 / 6 / 11 | 37 |
 | II | 15 | Numerical Measurement and Approximation of Probabilities | 62 | 23 | 6 | 6/10 | 7 / 3 / 3 / 49 | 6 |
 | II | 16 | Observations on the Theorems of Chapter XIV | 89 | 89 | 1 | 0/0 | 1 / 0 / 0 / 88 | 41 |
-| II | 17 | Some Problems in Inverse Probability, including Averages | 202 | 54 | 44 | 43/49 | 19 / 75 / 7 / 101 | 20 |
+| II | 17 | Some Problems in Inverse Probability, including Averages | 202 | 54 | 53 | 49/49 | 80 / 87 / 16 / 19 | 20 |
 | III | 18 | Introduction | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 | 1 |
 | III | 19 | The Nature of Argument by Analogy | 16 | 16 | 7 | 0/0 | 3 / 2 / 2 / 9 | 49 |
 | III | 20 | The Value of Multiplication of Instances, or Pure Induction | 30 | 30 | 24 | 0/0 | 15 / 7 / 2 / 6 | 10 |
