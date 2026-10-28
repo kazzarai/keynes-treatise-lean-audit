@@ -124,6 +124,8 @@ L = {
                "Formula atlas: every ledger row of the chapter beside the printed line it records.",
         "no_rows": "No printed formula or notation.",
         "pages": "", "pages_none": "",
+        # 章題の邦題 (英語版は使わない) と、章頁の副題に添える原題の文言
+        "ch_title": {}, "sub_orig": "",
         # 章頁: 集計表
         "lean_th": "Formulas in Lean",
         "lean_td": "{m} / {n} formulas (&#10003;{a} &asymp;{b} &#9998;{c}), not yet {k} &mdash; {p}",
@@ -205,6 +207,20 @@ L = {
                "台帳の各行に、それに当たる訳書の箇所を並べる。手元での照合用で、公開しない。",
         "no_rows": "印刷された式・記法はない。",
         "pages": "訳書 pp. {p0}&ndash;{p1} の切り抜き", "pages_none": "訳書の該当章 (切り抜きなし)",
+        # 章題の邦題 (訳書の章題ではなく自前の短い題; 鍵は ORDER の章名) と、副題に添える原題
+        "ch_title": {
+            "ch01": "確率とは何か", "ch02": "確率と知識", "ch03": "確率の測定", "ch04": "無差別原理",
+            "ch05": "確率を決める他の方法", "ch06": "推論の重み", "ch07": "歴史的回顧", "ch08": "頻度説",
+            "ch09": "第I部の要約", "ch10": "序論", "ch11": "群の理論", "ch12": "定義と公理",
+            "ch13": "必然的推論の基本定理", "ch14": "蓋然的推論の基本定理", "ch15": "数値測定と近似",
+            "ch16": "第14章の定理の考察・証言", "ch17": "逆確率・平均", "ch18": "第III部 序論",
+            "ch19": "類推による議論", "ch20": "純粋帰納", "ch21": "帰納的議論 続", "ch22": "方法の正当化",
+            "ch23": "帰納の歴史", "notes_III": "第III部への注", "ch24": "客観的偶然と無作為",
+            "ch25": "偶然をめぐる諸問題", "ch26": "確率の行為への適用", "ch27": "統計的推論の本性",
+            "ch28": "大数の法則", "ch29": "事前確率による頻度予測", "ch30": "Laplace の方法",
+            "ch31": "Bernoulli の定理の逆", "ch32": "Lexis の方法", "ch33": "構成的理論の素描",
+        },
+        "sub_orig": "原題: <i>{orig}</i>。",
         # 章頁: 集計表
         "lean_th": "Lean 済",
         "lean_td": "{m} / {n} 式 (&#10003;{a} &asymp;{b} &#9998;{c})、未 {k} &mdash; {p}",
@@ -275,6 +291,7 @@ L = {
     },
 }
 assert L["en"].keys() == L["ja"].keys(), set(L["en"]) ^ set(L["ja"])
+assert set(L["ja"]["ch_title"]) == set(ORDER), set(L["ja"]["ch_title"]) ^ set(ORDER)
 
 
 def pct(m, n):
@@ -453,9 +470,13 @@ def main():
     s = summary(rows)
     mk = s["marks"]
     chno = t["notes"] if chap == "notes_III" else t["chno"].format(n=int(chap[2:]))
-    if ja and chap != "notes_III":
-        # 見出しは「第 N 章 <英語の題>」(ローマ数字の章番号を外す)
-        title = chno + " " + re.sub(r"^Chapter [IVXL]+\. ", "", title)
+    sub_orig = ""
+    if ja:
+        # 見出しと <title> は「第 N 章　邦題」(第III部の注は邦題だけ)。原題は副題の頭に添える
+        sub_orig = t["sub_orig"].format(orig=html.escape(title)) + " "
+        jt = t["ch_title"][chap]
+        title = jt if chap == "notes_III" else chno + "　" + jt
+        chno = title
     pages = sorted({e["page"] for e in co.values()}) if ja else []
     span = t["pages"].format(p0=pages[0], p1=pages[-1]) if pages else t["pages_none"]
 
@@ -467,7 +488,7 @@ def main():
     o.append(f"<style>{CSS}</style></head><body><main>")
     o.append(nav(chap, t))
     o.append(f"<h1>{html.escape(title)}</h1>")
-    o.append(f'<p class="sub">{t["sub"].format(fa=fa, fb=fb, pa=pa, pb=pb, pages=span)}</p>')
+    o.append(f'<p class="sub">{sub_orig}{t["sub"].format(fa=fa, fb=fb, pa=pa, pb=pb, pages=span)}</p>')
     if not rows:
         o.append(f"<p>{t['no_rows']}</p>")
     else:
