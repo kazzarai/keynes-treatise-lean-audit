@@ -27,6 +27,8 @@ The per-chapter figures below are computed from the ledger files by `summary.csv
 | II | 10 | Introductory | 29 | 26 | 20 | 5/9 | 17 / 6 / 0 / 6 | 13 |
 | II | 11 | The Theory of Groups | 30 | 30 | 0 | 0/0 | 0 / 0 / 0 / 30 | 2 |
 | II | 12 | The Definitions and Axioms of Inference and Probability | 56 | 30 | 24 | 17/21 | 40 / 10 / 0 / 6 | 16 |
+| II | 11 | The Theory of Groups | 30 | 30 | 29 | 0/0 | 25 / 4 / 0 / 1 | 2 |
+| II | 12 | The Definitions and Axioms of Inference and Probability | 56 | 30 | 13 | 13/21 | 14 / 9 / 0 / 33 | 16 |
 | II | 13 | The Fundamental Theorems of Necessary Inference | 169 | 36 | 30 | 30/34 | 32 / 26 / 0 / 111 | 0 |
 | II | 12 | The Definitions and Axioms of Inference and Probability | 56 | 30 | 13 | 13/21 | 14 / 9 / 0 / 33 | 16 |
 | II | 13 | The Fundamental Theorems of Necessary Inference | 169 | 36 | 36 | 34/34 | 90 / 79 / 0 / 0 | 0 |
