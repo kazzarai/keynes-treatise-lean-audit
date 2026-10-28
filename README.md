@@ -7,6 +7,12 @@ measurements for every verified theorem, extended (v1.5) to Chapter VI
 (weight of arguments), Part III (Chapters 19, 20, 22 and the Notes on
 Chapter 22) and the whole of Chapter 26.**
 
+- **v1.9 (October 2026): Part II formulas, line by line.** All 825 printed
+  formula lines of Chapters X–XVII are now treated one by one and fall into
+  three kinds: theorems (✓ 477 / ≈ 270 / ✎ 28), definition-only (naming) lines
+  (38), and recorded boundaries of the formalisation or lines left without a
+  theorem (12). Whole census: 1,175 formula lines, ✓ 542 / ≈ 293 / ✎ 33 / not
+  yet 307. Verdicts and files: 1,148 across 42 files (`logs/progress.json`).
 - **v1.7 (October 2026): formula atlas.** [`docs/atlas/`](docs/atlas/)
   sets each row of the census ledger beside a crop of the corresponding line
   of the 1921 first edition (Cornell copy scan, English), the ledger's
@@ -361,7 +367,7 @@ directions:
   (see the file headers for verbatim attribution, including the first
   formulation of W in Murata 2010).
 
-## Roadmap (v1.7)
+## Roadmap (v1.9)
 
 1. ~~**Full source-collation pass** (7f, July 2026)~~ superseded by the
    ~~**1921 first-edition image pass** (7i, September 2026)~~ — **done**.
@@ -392,7 +398,7 @@ directions:
 ```
 Arai, K. (2026). Keynes's Treatise on Probability, Part II: a Lean 4 kernel
 audit. https://github.com/kazzarai/keynes-treatise-lean-audit
-(release v1.7; canonical run v10 + phase6c_necessity; Lean unchanged since v1.6; 2026-10-25, Lean 4 v4.29.1)
+(release v1.9; canonical run v10 (33 files) + phase6c_necessity; gate: 1,148 verdicts in 42 files per logs/progress.json; 2026-10-28, Lean 4 v4.29.1)
 ```
 
 ## License

@@ -7,10 +7,10 @@
 - Columns: row id (`chNN-NNN`), folio, §, position (text / footnote n / figure / table), kind (display / inline), number, item id, transcription as printed (subscripts, bars, dashes, the inequality glyphs of the period), formula/notation, source author if quoted, re-statement link, **Lean status**, anchor words (3–6 printed words next to the formula, for locating it on the page image), remarks.
 - Lean status, decided mechanically by one rule: **✓** the printed relation appears in a theorem statement (only bound-variable names, Lean notation and subscript layout may differ); **≈** the theorem states an algebraically equivalent form (denominators cleared, a definition substituted, hypotheses re-parametrised); **✎** the printed form is refuted and a corrected form is the theorem; **not yet** — nothing in the statement of any theorem (lines inside a proof, values absorbed by substitution, sums only). At item level, an item counts as covered if any of its lines is ✓/≈/✎.
 
-## Totals (v1.6)
-Formula lines **1,175**; notations 731; items 698 (numbered 202). Lines whose relation appears in a theorem statement: ✓ 195 / ≈ 168 / ✎ 16; not yet 796 (dominated by proof-interior lines of items whose statement is verified, Chapter 16, and Part V). Items covered by at least one theorem: 240 / 698; numbered items 151 / 202. By part: I 21/102 items, II 157/358, III 44/62, IV 18/35, V 0/141.
+## Totals (v1.9)
+Formula lines **1,175**; notations 731; items 698 (numbered 202). Lines whose relation appears in a theorem statement: ✓ 542 / ≈ 293 / ✎ 33; not yet 307 (Part V 141, Part I 81, Part II 50, Part III 18, Part IV 17 = 307; the 50 of Part II include Chapter 11 1 and Chapter 12 6, of which 2 are records of the boundary of the formalisation, besides the definition-only, restatement and quoted-author lines of Chapters 14, 16 and 17). Of the 307, 38 are definition-only (naming) lines, all in Part II. Items covered by at least one theorem: 416 / 698; numbered items 185 / 202. By part: I 21/102 items, II 333/358, III 44/62, IV 18/35, V 0/141. Part II (Chapters X–XVII) has 825 formula lines: ✓ 477 / ≈ 270 / ✎ 28 / not yet 50, of which 38 are definition-only.
 
-The per-chapter figures below are computed from the ledger files by `summary.csv`'s generator; `summary.csv` itself is the workers' hand-filled chapter summary and its 'numbered' column is not uniform across parts (some chapters count numbered lines, some numbered items) — the table below is the one to cite.
+The per-chapter figures below are the counts of the ledger rows (`chNN.md`, formula rows by Lean status) and agree with each chapter's own 集計 table; `summary.csv` is regenerated from the same rows for Part II, and its 'numbered' column is not uniform across parts (some chapters count numbered lines, some numbered items) — the table below is the one to cite.
 
 ## Per chapter
 | Part | Ch. | Title | Formula lines | Items | Items covered | Numbered (covered/total) | ✓ / ≈ / ✎ / not yet (lines) | Notations |
@@ -25,21 +25,13 @@ The per-chapter figures below are computed from the ledger files by `summary.csv
 | I | 8 | The Frequency Theory of Probability | 14 | 14 | 3 | 0/0 | 2 / 1 / 0 / 11 | 14 |
 | I | 9 | The Constructive Theory of Part I Summarised | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 | 1 |
 | II | 10 | Introductory | 29 | 26 | 26 | 9/9 | 23 / 6 / 0 / 0 | 13 |
-| II | 11 | The Theory of Groups | 30 | 30 | 0 | 0/0 | 0 / 0 / 0 / 30 | 2 |
-| II | 12 | The Definitions and Axioms of Inference and Probability | 56 | 30 | 24 | 17/21 | 40 / 10 / 0 / 6 | 16 |
 | II | 11 | The Theory of Groups | 30 | 30 | 29 | 0/0 | 25 / 4 / 0 / 1 | 2 |
-| II | 12 | The Definitions and Axioms of Inference and Probability | 56 | 30 | 13 | 13/21 | 14 / 9 / 0 / 33 | 16 |
-| II | 13 | The Fundamental Theorems of Necessary Inference | 169 | 36 | 30 | 30/34 | 32 / 26 / 0 / 111 | 0 |
-| II | 12 | The Definitions and Axioms of Inference and Probability | 56 | 30 | 13 | 13/21 | 14 / 9 / 0 / 33 | 16 |
+| II | 12 | The Definitions and Axioms of Inference and Probability | 56 | 30 | 24 | 17/21 | 40 / 10 / 0 / 6 | 16 |
 | II | 13 | The Fundamental Theorems of Necessary Inference | 169 | 36 | 36 | 34/34 | 90 / 79 / 0 / 0 | 0 |
-| II | 14 | The Fundamental Theorems of Probable Inference | 188 | 70 | 43 | 43/55 | 40 / 26 / 1 / 121 | 37 |
 | II | 14 | The Fundamental Theorems of Probable Inference | 188 | 70 | 66 | 55/55 | 111 / 60 / 6 / 11 | 37 |
-| II | 15 | Numerical Measurement and Approximation of Probabilities | 62 | 23 | 6 | 6/10 | 7 / 3 / 3 / 49 | 6 |
 | II | 15 | Numerical Measurement and Approximation of Probabilities | 62 | 23 | 23 | 10/10 | 49 / 8 / 5 / 0 | 6 |
-| II | 16 | Observations on the Theorems of Chapter XIV | 89 | 89 | 1 | 0/0 | 1 / 0 / 0 / 88 | 41 |
-| II | 17 | Some Problems in Inverse Probability, including Averages | 202 | 54 | 53 | 49/49 | 80 / 87 / 16 / 19 | 20 |
 | II | 16 | Observations on the Theorems of Chapter XIV | 89 | 89 | 76 | 0/0 | 59 / 16 / 1 / 13 | 41 |
-| II | 17 | Some Problems in Inverse Probability, including Averages | 202 | 54 | 44 | 43/49 | 19 / 75 / 7 / 101 | 20 |
+| II | 17 | Some Problems in Inverse Probability, including Averages | 202 | 54 | 53 | 49/49 | 80 / 87 / 16 / 19 | 20 |
 | III | 18 | Introduction | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 | 1 |
 | III | 19 | The Nature of Argument by Analogy | 16 | 16 | 7 | 0/0 | 3 / 2 / 2 / 9 | 49 |
 | III | 20 | The Value of Multiplication of Instances, or Pure Induction | 30 | 30 | 24 | 0/0 | 15 / 7 / 2 / 6 | 10 |
@@ -57,4 +49,4 @@ The per-chapter figures below are computed from the ledger files by `summary.csv
 | V | 32 | The Inductive Use of Statistical Frequencies | 26 | 26 | 0 | 0/0 | 0 / 0 / 0 / 26 | 7 |
 | V | 33 | Outline of a Constructive Theory | 18 | 18 | 0 | 0/0 | 0 / 0 / 0 / 18 | 79 |
 | III | N3 | Notes on Part III | 20 | 10 | 10 | 9/9 | 20 / 0 / 0 / 0 | 2 |
-| **all** | | | **1,175** | **698** | **240** | **151/202** | **195 / 168 / 16 / 796** | **731** |
+| **all** | | | **1,175** | **698** | **416** | **185/202** | **542 / 293 / 33 / 307** | **731** |
