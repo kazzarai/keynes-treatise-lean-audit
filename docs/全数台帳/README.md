@@ -33,6 +33,7 @@ The per-chapter figures below are computed from the ledger files by `summary.csv
 | II | 14 | The Fundamental Theorems of Probable Inference | 188 | 70 | 43 | 43/55 | 40 / 26 / 1 / 121 | 37 |
 | II | 14 | The Fundamental Theorems of Probable Inference | 188 | 70 | 66 | 55/55 | 111 / 60 / 6 / 11 | 37 |
 | II | 15 | Numerical Measurement and Approximation of Probabilities | 62 | 23 | 6 | 6/10 | 7 / 3 / 3 / 49 | 6 |
+| II | 15 | Numerical Measurement and Approximation of Probabilities | 62 | 23 | 23 | 10/10 | 49 / 8 / 5 / 0 | 6 |
 | II | 16 | Observations on the Theorems of Chapter XIV | 89 | 89 | 1 | 0/0 | 1 / 0 / 0 / 88 | 41 |
 | II | 17 | Some Problems in Inverse Probability, including Averages | 202 | 54 | 53 | 49/49 | 80 / 87 / 16 / 19 | 20 |
 | III | 18 | Introduction | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 | 1 |
