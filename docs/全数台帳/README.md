@@ -18,7 +18,7 @@ The per-chapter figures below are the counts of the ledger rows (`chNN.md`, form
 |---|---|---|---|---|---|---|---|---|
 | I | 1 | The Meaning of Probability | 1 | 1 | 0 | 0/0 | 0 / 0 / 0 / 1 | 0 |
 | I | 2 | Probability in Relation to the Theory of Knowledge | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 | 0 |
-| I | 3 | The Measurement of Probabilities | 8 | 8 | 0 | 0/2 | 0 / 0 / 0 / 8 | 19 |
+| I | 3 | The Measurement of Probabilities | 8 | 8 | 4 | 1/2 | 0 / 3 / 1 / 4 | 19 |
 | I | 4 | The Principle of Indifference | 31 | 31 | 5 | 0/3 | 5 / 0 / 0 / 26 | 95 |
 | I | 5 | Other Methods of Determining Probabilities | 16 | 16 | 0 | 0/3 | 0 / 0 / 0 / 16 | 22 |
 | I | 6 | The Weight of Arguments | 32 | 32 | 13 | 2/5 | 11 / 2 / 0 / 19 | 26 |
