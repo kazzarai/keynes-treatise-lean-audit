@@ -350,11 +350,11 @@ def title_en(title):
 
 
 def head_cols(cells):
-    # 見出し行のセルを列名に置き換える (長い語を先に照合)
+    # 見出し行のセルを列名に置き換える (長い語を先に照合)。既知の列に当たらない見出しは None (その列は読み飛ばす)
     out = []
     for c in cells:
-        key = max((k for k in HEAD if c.startswith(k[0])), key=lambda k: len(k[0]))
-        out.append(key[1])
+        key = max((k for k in HEAD if c.startswith(k[0])), key=lambda k: len(k[0]), default=None)
+        out.append(key[1] if key else None)
     return out
 
 
@@ -374,13 +374,13 @@ def read_ledger(path):
     for ln in lines:
         if ln.startswith("| 行ID |"):
             cols = head_cols([c.strip() for c in ln.strip().strip("|").split("|")])
-            assert sorted(cols) == sorted(COLS), cols
+            assert sorted(c for c in cols if c) == sorted(COLS), cols  # 既知の列は過不足なく各 1 回、未知の列 (None) だけ許す
             continue
         if not ln.startswith(f"| {'notes' if chap == 'notes_III' else chap}-"):
             continue
         cells = [c.strip() for c in ln.strip().strip("|").split("|")]
         assert len(cells) == len(cols), (ln[:40], len(cells))
-        rows.append(dict(zip(cols, cells)))
+        rows.append({k: v for k, v in zip(cols, cells) if k})
     return chap, title, fm.groups(), rows
 
 
@@ -457,6 +457,13 @@ def main():
         del args[i:i + 2]
     t = L[lang]
     ja = lang == "ja"  # 訳書の切り抜きの頁 (座標表に訳書の頁 page・pdf_page・note がある)
+    if "--check" in args:  # 台帳の読み込みと列照合だけ (HTML は書かない)
+        ledgers = args[args.index("--check") + 1:]
+        if not ledgers:
+            sys.exit("--check: 台帳が 1 本も渡されていない")
+        for ledger in ledgers:
+            read_ledger(ledger)
+        return
     ledger, coords, out = args[0], args[1], args[2]
     chap, title, (fa, fb, pa, pb), rows = read_ledger(ledger)
     co = {e["id"]: e for e in json.load(open(coords, encoding="utf-8"))}
