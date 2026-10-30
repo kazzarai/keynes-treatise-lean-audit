@@ -17,6 +17,8 @@ python3 -I tools/atlas/gen.py docs/全数台帳/ch20.md docs/atlas/ch20/coords.j
 ```
 `<hires_dir>` holds the full-size `folio_<N>.png` renderings. `coords.json` gives, for each ledger row, the folio, the pixel band `[y0, y1)` and `[x0, x1)`, and the image name; rows on the same printed line, or in the same display block, share one image. Within the band, ink is split into 8-connected components and a component is kept only if most of its pixels lie inside the band, so ascenders and descenders of neighbouring lines are not drawn. Counts on the page are computed from the ledger, never typed. Both scripts are deterministic: rerunning them gives byte-identical output.
 
+When a column is added to a ledger, run `gen.py` on it to check (columns the generator does not know are skipped); gate [9] of `tools/check_all.sh` does this by machine (`gen.py --check` on every ledger, then `gen_index.py --missing-ok`).
+
 After any chapter page is rebuilt, rebuild the index (it reads the ledger files, `summary.csv` and the chapter pages, and reports any disagreement between `summary.csv` and the ledger):
 ```
 python3 -I tools/atlas/gen_index.py docs/全数台帳 docs/atlas docs/atlas/index.html
