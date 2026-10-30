@@ -51,3 +51,15 @@ The per-chapter figures below are the counts of the ledger rows (`chNN.md`, form
 | V | 33 | Outline of a Constructive Theory | 18 | 18 | 0 | 0/0 | 0 / 0 / 0 / 18 | 79 |
 | III | N3 | Notes on Part III | 20 | 10 | 10 | 9/9 | 20 / 0 / 0 / 0 | 2 |
 | **all** | | | **1,175** | **698** | **416** | **185/202** | **542 / 293 / 33 / 307** | **731** |
+
+## ℝ 依存 A〜E の本数 (第II部)
+
+`tools/real_dependence.py` が `phases/keynes_part_ii_*.lean` の theorem・lemma・example 1,258 本を分類した値 (洗い出しのみ、判定ではない)。複数に当たるときは C > D > E > A′ > B > A (A′ = 順序付き環、比較可能性は不要)。台帳 ch12–ch17 の各行の「ℝ 依存」列は、その行の Lean 欄が指す定理・公理の class_trans (呼び先と公理の使用まで辿った最強値) で、定義のみ・境界の記録・数えない行・未対応は「—」。定義と内訳は `real_dependence.md`・`real_dependence.csv`。
+
+表の数字は `python3 -I tools/real_dependence.py --write-ledger --write-readme` の出力を写したもの (手で直さない)。
+
+| 単位 | A 順序のみ | A′ 順序付き環 | B 加法・乗法 | C 線形順序 | D 体の構造 | E 数値 | — | 計 |
+|---|---|---|---|---|---|---|---|---|
+| 定理・例 (第II部 38 ファイル、class: 字面のみ) | 419 | 12 | 142 | 490 | 84 | 111 | — | 1,258 |
+| 定理・例 (同、class_trans: 呼び先・公理まで) | 176 | 14 | 163 | 700 | 105 | 100 | — | 1,258 |
+| 台帳の行 (ch12–ch17、class_trans) | 50 | 8 | 129 | 456 | 65 | 37 | 162 | 907 |
