@@ -1,6 +1,6 @@
 file,theorem,class,tactics,line,class_trans
 keynes_part_ii_phase10a.lean,itrue_certain,A,,143,A
-keynes_part_ii_phase10a.lean,true_conj,B,mul_*,146,B
+keynes_part_ii_phase10a.lean,true_conj,B,ring mul_*,146,B
 keynes_part_ii_phase10a.lean,th_13_1_i,C,linarith,156,C
 keynes_part_ii_phase10a.lean,taut_neg_zero,C,linarith,161,C
 keynes_part_ii_phase10a.lean,conj_neg_cert_zero,C,linarith mul_*,167,C
@@ -11,10 +11,10 @@ keynes_part_ii_phase10a.lean,th_12_ivb_mul_lt,C,nlinarith,243,C
 keynes_part_ii_phase10a.lean,th_12_ivb_mul_lt_unless,A,,252,C
 keynes_part_ii_phase10a.lean,th_12_ivb_add_gt,C,linarith,263,C
 keynes_part_ii_phase10a.lean,th_12_ivb_add_gt_unless,A,,270,C
-keynes_part_ii_phase10a.lean,th_12_ivb_mul_eq,B,mul_*,278,B
+keynes_part_ii_phase10a.lean,th_12_ivb_mul_eq,B,ring mul_*,278,B
 keynes_part_ii_phase10a.lean,th_12_ivb_add_eq,B,add_*,286,B
 keynes_part_ii_phase10a.lean,th_12_ivc_mul_lt,A′,順序付き環の補題,293,A′
-keynes_part_ii_phase10a.lean,th_12_ivc_mul_eq,B,mul_*,300,B
+keynes_part_ii_phase10a.lean,th_12_ivc_mul_eq,D,零因子なし・簡約 mul_*,300,D
 keynes_part_ii_phase10a.lean,th_12_ivc_mul_gt,A,,306,A′
 keynes_part_ii_phase10a.lean,th_12_ivc_add_lt,A′,順序付き環の補題,314,A′
 keynes_part_ii_phase10a.lean,th_12_ivc_add_eq,B,add_*,319,B
@@ -33,10 +33,10 @@ keynes_part_ii_phase10a.lean,nec_12_6_rebracketed,C,linarith,427,C
 keynes_part_ii_phase10a.lean,th_12_6_sum_exists,C,linarith,435,C
 keynes_part_ii_phase10a.lean,th_12_7_sub,C,linarith,444,C
 keynes_part_ii_phase10a.lean,th_12_7_distrib,B,ring,451,B
-keynes_part_ii_phase10a.lean,th_12_XIV_symm,B,mul_*×3,476,B
-keynes_part_ii_phase10a.lean,th_12_XIV_indep,A,,488,B
+keynes_part_ii_phase10a.lean,th_12_XIV_symm,D,零因子なし・簡約 mul_*×3,476,D
+keynes_part_ii_phase10a.lean,th_12_XIV_indep,A,,488,D
 keynes_part_ii_phase10b.lean,itrue_certain,A,,111,A
-keynes_part_ii_phase10b.lean,true_conj,B,mul_*,114,B
+keynes_part_ii_phase10b.lean,true_conj,B,ring mul_*,114,B
 keynes_part_ii_phase10b.lean,th_13_1_i,C,linarith,124,C
 keynes_part_ii_phase10b.lean,taut_neg_zero,C,linarith,129,C
 keynes_part_ii_phase10b.lean,conj_neg_cert_zero,C,linarith mul_*,135,C
@@ -47,7 +47,7 @@ keynes_part_ii_phase10b.lean,conj_le_left_i,C,linarith,184,C
 keynes_part_ii_phase10b.lean,conj_le_right_i,A,,190,C
 keynes_part_ii_phase10b.lean,le_of_taut,C,linarith,195,C
 keynes_part_ii_phase10b.lean,prem_drop_cert,C,linarith×2 mul_*,206,C
-keynes_part_ii_phase10b.lean,self_cert,C,linarith mul_*,217,C
+keynes_part_ii_phase10b.lean,self_cert,C,linarith 零因子なし・簡約 mul_*,217,C
 keynes_part_ii_phase10b.lean,conj_cert,C,linarith×2,229,C
 keynes_part_ii_phase10b.lean,interp_slotA,A,,272,A
 keynes_part_ii_phase10b.lean,interp_slotB,A,,283,A
@@ -55,7 +55,7 @@ keynes_part_ii_phase10b.lean,eval_slot,A,,294,A
 keynes_part_ii_phase10b.lean,taut_slot,A,,307,A
 keynes_part_ii_phase10b.lean,cert_ctx,A,le_antisymm,316,C
 keynes_part_ii_phase10b.lean,subst_ctx,A,,328,C
-keynes_part_ii_phase10b.lean,prem_subst,B,mul_*,335,C
+keynes_part_ii_phase10b.lean,prem_subst,D,零因子なし・簡約 mul_*,335,C
 keynes_part_ii_phase10b.lean,th_13_1_r002,C,linarith,347,C
 keynes_part_ii_phase10b.lean,th_13_1_r003,A,,354,C
 keynes_part_ii_phase10b.lean,th_13_1_r004,B,mul_*,360,C
@@ -81,7 +81,7 @@ keynes_part_ii_phase10b.lean,th_13_6_r037,A′,順序付き環の補題 mul_*,48
 keynes_part_ii_phase10b.lean,th_13_6_r038,B,mul_*,493,A′
 keynes_part_ii_phase10b.lean,th_13_6_r039,C,linarith,499,C
 keynes_part_ii_phase10b.lean,th_13_7_r043,C,nlinarith 順序付き環の補題×2,507,C
-keynes_part_ii_phase10b.lean,th_13_7_r044,B,mul_*,516,B
+keynes_part_ii_phase10b.lean,th_13_7_r044,B,ring mul_*,516,B
 keynes_part_ii_phase10b.lean,th_13_7_r045,A,,523,A
 keynes_part_ii_phase10b.lean,th_13_7_r046,C,nlinarith 順序付き環の補題,527,C
 keynes_part_ii_phase10b.lean,th_13_7_r047,C,linarith,534,C
@@ -89,47 +89,47 @@ keynes_part_ii_phase10b.lean,th_13_7_r048,B,mul_*,540,C
 keynes_part_ii_phase10b.lean,th_13_8_r052,A,,547,B
 keynes_part_ii_phase10b.lean,th_13_8_r053,B,mul_*,553,B
 keynes_part_ii_phase10b.lean,th_13_8_r054,A,,558,B
-keynes_part_ii_phase10b.lean,th_13_8_r055,B,mul_*,567,B
+keynes_part_ii_phase10b.lean,th_13_8_r055,D,零因子なし・簡約 mul_*,567,D
 keynes_part_ii_phase10b.lean,th_13_9_r058,A,,572,C
-keynes_part_ii_phase10b.lean,th_13_9_r059,C,linarith mul_*,576,C
+keynes_part_ii_phase10b.lean,th_13_9_r059,C,linarith 零因子なし・簡約 mul_*,576,C
 keynes_part_ii_phase10b.lean,th_13_9_r060,A,,590,C
 keynes_part_ii_phase10b.lean,th_13_10_r063,A,,595,B
 keynes_part_ii_phase10b.lean,th_13_10_r065,A,,602,C
-keynes_part_ii_phase10b.lean,th_13_10_r067,B,mul_*×2,610,C
+keynes_part_ii_phase10b.lean,th_13_10_r067,B,ring mul_*×2,610,C
 keynes_part_ii_phase10b.lean,th_13_10_r068,A,,620,C
 keynes_part_ii_phase10b.lean,th_13_10_r069,B,mul_*×2,630,B
 keynes_part_ii_phase10b.lean,th_13_11_r072,A,,641,B
 keynes_part_ii_phase10b.lean,th_13_11_r073,A,,646,C
 keynes_part_ii_phase10b.lean,th_13_12_r076,A,,653,B
 keynes_part_ii_phase10b.lean,th_13_12_r077,A,,659,A
-keynes_part_ii_phase10b.lean,th_13_12_r078,C,linarith×4 mul_*×2,667,C
+keynes_part_ii_phase10b.lean,th_13_12_r078,C,linarith×4 ring×2 mul_*×2,667,C
 keynes_part_ii_phase10b.lean,th_13_12_1_r081,A,,707,B
 keynes_part_ii_phase10b.lean,th_13_12_1_r082,A,,712,B
 keynes_part_ii_phase10b.lean,th_13_12_1_r083,A,,718,C
 keynes_part_ii_phase10b.lean,th_13_12_1_r084,A,,723,C
-keynes_part_ii_phase10b.lean,th_13_12_1_r085,B,mul_*,728,C
+keynes_part_ii_phase10b.lean,th_13_12_1_r085,D,零因子なし・簡約 mul_*,728,C
 keynes_part_ii_phase10b.lean,th_13_r086,A,,742,C
 keynes_part_ii_phase10b.lean,th_13_13_r088,A,,754,C
-keynes_part_ii_phase10b.lean,th_13_13_r089,C,linarith mul_*,761,C
+keynes_part_ii_phase10b.lean,th_13_13_r089,C,linarith 零因子なし・簡約 mul_*,761,C
 keynes_part_ii_phase10b.lean,th_13_13_r090,A,,772,A
 keynes_part_ii_phase10b.lean,th_13_13_r091,A,,782,C
 keynes_part_ii_phase10b.lean,th_13_14_r096,A,,794,C
 keynes_part_ii_phase10b.lean,th_13_14_r097,A,,800,B
 keynes_part_ii_phase10b.lean,th_13_14_r098,A,,805,C
 keynes_part_ii_phase10b.lean,th_13_14_r099,A,,811,A
-keynes_part_ii_phase10b.lean,th_13_14_r100,B,mul_*,815,B
+keynes_part_ii_phase10b.lean,th_13_14_r100,D,零因子なし・簡約 ring mul_*,815,D
 keynes_part_ii_phase10b.lean,th_13_14_r101,A,,824,C
 keynes_part_ii_phase10b.lean,th_13_15_r104,A,,835,B
-keynes_part_ii_phase10b.lean,th_13_15_r106,C,linarith mul_* le_antisymm,841,C
-keynes_part_ii_phase10b.lean,th_13_15_r108,A,,850,B
-keynes_part_ii_phase10b.lean,th_13_15_r109,B,mul_*,859,B
+keynes_part_ii_phase10b.lean,th_13_15_r106,C,linarith 零因子なし・簡約 mul_* le_antisymm,841,C
+keynes_part_ii_phase10b.lean,th_13_15_r108,B,ring,850,B
+keynes_part_ii_phase10b.lean,th_13_15_r109,D,零因子なし・簡約 ring mul_*,859,D
 keynes_part_ii_phase10b.lean,th_13_15_r110,B,mul_*,870,B
 keynes_part_ii_phase10b.lean,th_13_16_r115,A,,879,C
-keynes_part_ii_phase10b.lean,th_13_16_r116,A,,884,B
+keynes_part_ii_phase10b.lean,th_13_16_r116,B,ring,884,B
 keynes_part_ii_phase10b.lean,th_13_16_r117,A,,889,C
 keynes_part_ii_phase10b.lean,th_13_16_r118,A,,894,C
 keynes_part_ii_phase10b.lean,th_13_16_2_r124,C,linarith,905,C
-keynes_part_ii_phase10b.lean,th_13_16_2_r125,B,mul_*,916,B
+keynes_part_ii_phase10b.lean,th_13_16_2_r125,D,零因子なし・簡約 mul_*,916,D
 keynes_part_ii_phase10b.lean,th_13_16_2_r126,A,,924,C
 keynes_part_ii_phase10b.lean,th_13_r129,C,linarith le_antisymm,931,C
 keynes_part_ii_phase10b.lean,th_13_18_r134,A,,946,C
@@ -138,7 +138,7 @@ keynes_part_ii_phase10b.lean,th_13_18_r136,A,,957,C
 keynes_part_ii_phase10b.lean,th_13_18_r137,E,norm_num,962,C
 keynes_part_ii_phase10b.lean,th_13_19_r139,A,,969,C
 keynes_part_ii_phase10b.lean,th_13_19_r140,E,norm_num,976,C
-keynes_part_ii_phase10b.lean,th_13_19_r141,A,,987,C
+keynes_part_ii_phase10b.lean,th_13_19_r141,B,ring×2,987,C
 keynes_part_ii_phase10b.lean,th_13_20_r143,A,,993,A
 keynes_part_ii_phase10b.lean,th_13_20_r144,A,,1001,C
 keynes_part_ii_phase10b.lean,th_13_20_r145,C,linarith,1006,C
@@ -146,19 +146,19 @@ keynes_part_ii_phase10b.lean,th_13_21_r149,A,,1019,B
 keynes_part_ii_phase10b.lean,th_13_21_r150,A,,1025,B
 keynes_part_ii_phase10b.lean,th_13_21_r151,B,mul_*×2,1032,B
 keynes_part_ii_phase10b.lean,th_13_21_r152,A,,1041,C
-keynes_part_ii_phase10b.lean,th_13_21_r154,B,mul_*×2,1046,B
-keynes_part_ii_phase10b.lean,th_13_21_r155,B,mul_*×2,1054,C
-keynes_part_ii_phase10b.lean,th_13_21_r157,C,linarith mul_*,1069,C
-keynes_part_ii_phase10b.lean,th_13_21_r156,B,mul_*,1097,C
-keynes_part_ii_phase10b.lean,th_13_22_r161,A,,1112,B
+keynes_part_ii_phase10b.lean,th_13_21_r154,D,零因子なし・簡約 mul_*×2,1046,D
+keynes_part_ii_phase10b.lean,th_13_21_r155,D,零因子なし・簡約 mul_*×2,1054,C
+keynes_part_ii_phase10b.lean,th_13_21_r157,C,linarith ring×2 mul_*,1069,C
+keynes_part_ii_phase10b.lean,th_13_21_r156,D,零因子なし・簡約 mul_*,1097,C
+keynes_part_ii_phase10b.lean,th_13_22_r161,B,ring,1112,B
 keynes_part_ii_phase10b.lean,th_13_22_r162,A,,1118,C
-keynes_part_ii_phase10b.lean,th_13_22_r163,A,,1123,C
-keynes_part_ii_phase10b.lean,th_13_23_r167,A,,1131,C
-keynes_part_ii_phase10b.lean,th_13_23_r168,B,mul_*,1139,B
-keynes_part_ii_phase10b.lean,th_13_23_r169,A,,1145,B
+keynes_part_ii_phase10b.lean,th_13_22_r163,B,ring,1123,C
+keynes_part_ii_phase10b.lean,th_13_23_r167,B,ring×2,1131,C
+keynes_part_ii_phase10b.lean,th_13_23_r168,D,零因子なし・簡約 mul_*,1139,D
+keynes_part_ii_phase10b.lean,th_13_23_r169,A,,1145,D
 keynes_part_ii_phase10b.lean,th_13_23_r170,C,linarith,1150,C
 keynes_part_ii_phase10c.lean,itrue_certain,A,,112,A
-keynes_part_ii_phase10c.lean,true_conj,B,mul_*,115,B
+keynes_part_ii_phase10c.lean,true_conj,B,ring mul_*,115,B
 keynes_part_ii_phase10c.lean,th_13_1_i,C,linarith,125,C
 keynes_part_ii_phase10c.lean,taut_neg_zero,C,linarith,130,C
 keynes_part_ii_phase10c.lean,conj_neg_cert_zero,C,linarith mul_*,136,C
@@ -170,7 +170,7 @@ keynes_part_ii_phase10c.lean,pr_not,C,linarith,207,C
 keynes_part_ii_phase10c.lean,pr_comm,A,,211,C
 keynes_part_ii_phase10c.lean,conj_le_left,C,linarith,218,C
 keynes_part_ii_phase10c.lean,conj_le_right,A,,222,C
-keynes_part_ii_phase10c.lean,th_8_i,C,linarith mul_*,226,C
+keynes_part_ii_phase10c.lean,th_8_i,C,linarith 零因子なし・簡約 mul_*,226,C
 keynes_part_ii_phase10c.lean,th_9_i,C,linarith×2,239,C
 keynes_part_ii_phase10c.lean,bayes_mul,A,,247,B
 keynes_part_ii_phase10c.lean,zero_of_disj_zero,C,linarith,258,C
@@ -191,7 +191,7 @@ keynes_part_ii_phase10c.lean,list_sum_mul_right,B,add_*,426,B
 keynes_part_ii_phase10c.lean,list_sum_zero,A,,431,A
 keynes_part_ii_phase10c.lean,exclExh_premiss,A,,438,C
 keynes_part_ii_phase10c.lean,exclExh_sum,A,,443,C
-keynes_part_ii_phase10c.lean,th_25_i,C,linarith,448,C
+keynes_part_ii_phase10c.lean,th_25_i,C,linarith ring,448,C
 keynes_part_ii_phase10c.lean,th_14_r025,A,,469,C
 keynes_part_ii_phase10c.lean,th_14_r027,A,,475,C
 keynes_part_ii_phase10c.lean,th_14_r028,A,,480,C
@@ -208,22 +208,22 @@ keynes_part_ii_phase10c.lean,th_14_r043,C,linarith,555,C
 keynes_part_ii_phase10c.lean,th_14_r049,C,linarith,563,C
 keynes_part_ii_phase10c.lean,th_14_r050,C,linarith×2,571,C
 keynes_part_ii_phase10c.lean,th_14_r055,C,linarith,583,C
-keynes_part_ii_phase10c.lean,conj_disj_zero_base,A,,588,C
+keynes_part_ii_phase10c.lean,conj_disj_zero_base,B,ring,588,C
 keynes_part_ii_phase10c.lean,th_14_r056,A,,593,C
 keynes_part_ii_phase10c.lean,th_14_r057,A,,599,C
 keynes_part_ii_phase10c.lean,conj_disj_distrib,A,,613,C
-keynes_part_ii_phase10c.lean,th_29_i,C,linarith mul_*,622,C
-keynes_part_ii_phase10c.lean,not_conj_zero_of_cert,C,linarith×2,637,C
-keynes_part_ii_phase10c.lean,th_14_r061,B,mul_*×2,649,C
+keynes_part_ii_phase10c.lean,th_29_i,C,linarith 零因子なし・簡約 mul_*,622,C
+keynes_part_ii_phase10c.lean,not_conj_zero_of_cert,C,linarith×2 ring,637,C
+keynes_part_ii_phase10c.lean,th_14_r061,D,零因子なし・簡約×2 mul_*×2,649,C
 keynes_part_ii_phase10c.lean,th_14_r062,A,,675,C
-keynes_part_ii_phase10c.lean,th_14_r060,C,linarith mul_*,684,C
+keynes_part_ii_phase10c.lean,th_14_r060,C,linarith 零因子なし・簡約 mul_*,684,C
 keynes_part_ii_phase10c.lean,th_14_r064,C,linarith×2,701,C
 keynes_part_ii_phase10c.lean,th_14_r067,C,linarith×3,711,C
 keynes_part_ii_phase10c.lean,th_14_r070,C,linarith,727,C
 keynes_part_ii_phase10c.lean,th_14_r071,A,,733,C
 keynes_part_ii_phase10c.lean,th_14_r072,A,,739,C
 keynes_part_ii_phase10c.lean,th_14_r073,C,linarith,744,C
-keynes_part_ii_phase10c.lean,th_14_r074,B,mul_*,752,C
+keynes_part_ii_phase10c.lean,th_14_r074,D,零因子なし・簡約 mul_*,752,C
 keynes_part_ii_phase10c.lean,th_14_r075,A,,759,A
 keynes_part_ii_phase10c.lean,th_14_r078,A,,764,B
 keynes_part_ii_phase10c.lean,th_14_r082,A,,772,C
@@ -233,9 +233,9 @@ keynes_part_ii_phase10c.lean,th_14_r085,C,linarith 順序付き環の補題,792,
 keynes_part_ii_phase10c.lean,ratio_eq_coef2,D,div_* mul_*,804,D
 keynes_part_ii_phase10c.lean,th_14_r086,A,,812,D
 keynes_part_ii_phase10c.lean,th_14_r088,D,field_simp,820,D
-keynes_part_ii_phase10c.lean,th_14_r091_rhs_one,D,div_*×2 mul_*×2,829,D
+keynes_part_ii_phase10c.lean,th_14_r091_rhs_one,D,div_*×2 零因子なし・簡約 mul_*×2,829,D
 keynes_part_ii_phase10c.lean,th_14_r091_printed_iff,D,field_simp div_*,839,D
-keynes_part_ii_phase10c.lean,th_14_r091_cor,C,linarith×2 field_simp×3 mul_*,856,C
+keynes_part_ii_phase10c.lean,th_14_r091_cor,C,linarith×2 field_simp×3 零因子なし・簡約 ring mul_*,856,C
 keynes_part_ii_phase10c.lean,th_14_r093,D,field_simp,876,D
 keynes_part_ii_phase10c.lean,th_14_r096,A,,890,B
 keynes_part_ii_phase10c.lean,th_14_r098,A,,899,B
@@ -243,26 +243,26 @@ keynes_part_ii_phase10c.lean,th_14_r101,B,ring,911,B
 keynes_part_ii_phase10c.lean,th_14_r103,A,,921,B
 keynes_part_ii_phase10c.lean,th_14_r104,A,,925,B
 keynes_part_ii_phase10c.lean,th_14_r105,A,,929,A
-keynes_part_ii_phase10c.lean,th_14_r114,C,linarith×2 mul_*×2,934,C
+keynes_part_ii_phase10c.lean,th_14_r114,C,linarith×2 零因子なし・簡約×2 eq_div_*×2 ring×4 mul_*×2,934,C
 keynes_part_ii_phase10c.lean,th_14_r116,A,,963,A
 keynes_part_ii_phase10c.lean,pr_split,C,linarith,969,C
 keynes_part_ii_phase10c.lean,th_14_r120,D,div_* mul_*,977,C
 keynes_part_ii_phase10c.lean,th_14_r122,D,div_* mul_*,990,C
 keynes_part_ii_phase10c.lean,th_14_r124,A,,1005,C
 keynes_part_ii_phase10c.lean,th_14_r131,C,linarith div_*×2 ring mul_*,1027,C
-keynes_part_ii_phase10c.lean,coef2_joint,C,linarith×2 div_* mul_*×2,1041,C
+keynes_part_ii_phase10c.lean,coef2_joint,C,linarith×2 div_* 零因子なし・簡約 mul_*×2,1041,C
 keynes_part_ii_phase10c.lean,th_14_r134,A,,1056,B
 keynes_part_ii_phase10c.lean,th_14_r138,A,,1060,C
 keynes_part_ii_phase10c.lean,th_14_r139,B,ring,1065,C
 keynes_part_ii_phase10c.lean,th_14_r142,A,,1071,B
 keynes_part_ii_phase10c.lean,th_14_r144,B,ring,1075,B
-keynes_part_ii_phase10c.lean,coef3_joint,C,linarith×2 div_* mul_*×5,1079,C
-keynes_part_ii_phase10c.lean,coef4_joint,C,linarith×3 div_* ring mul_*×3,1096,C
+keynes_part_ii_phase10c.lean,coef3_joint,C,linarith×2 div_* 零因子なし・簡約×2 mul_*×5,1079,C
+keynes_part_ii_phase10c.lean,coef4_joint,C,linarith×3 div_* 零因子なし・簡約×3 ring mul_*×3,1096,C
 keynes_part_ii_phase10c.lean,th_14_r148,A,,1123,C
 keynes_part_ii_phase10c.lean,th_14_r149,B,ring,1130,C
 keynes_part_ii_phase10c.lean,th_14_r150,A,,1137,C
 keynes_part_ii_phase10c.lean,th_14_r152,D,div_* mul_*,1143,D
-keynes_part_ii_phase10c.lean,th_14_r153,D,div_*,1150,D
+keynes_part_ii_phase10c.lean,th_14_r153,D,div_* ring,1150,D
 keynes_part_ii_phase10c.lean,th_14_r154,D,div_*,1157,D
 keynes_part_ii_phase10c.lean,th_14_r158,A,,1162,C
 keynes_part_ii_phase10c.lean,prodL_nil,A,,1185,A
@@ -271,7 +271,7 @@ keynes_part_ii_phase10c.lean,prodL_mul,B,ring,1189,B
 keynes_part_ii_phase10c.lean,prodL_div,D,div_*,1194,D
 keynes_part_ii_phase10c.lean,prodL_const,B,ring sq_*,1199,B
 keynes_part_ii_phase10c.lean,prodL_congr,A,,1203,A
-keynes_part_ii_phase10c.lean,prodL_ne_zero,B,mul_*,1210,B
+keynes_part_ii_phase10c.lean,prodL_ne_zero,D,零因子なし・簡約 mul_*,1210,D
 keynes_part_ii_phase10c.lean,prodL_nonneg,A′,順序付き環の補題,1217,A′
 keynes_part_ii_phase10c.lean,prodL_pos,A′,順序付き環の補題,1224,A′
 keynes_part_ii_phase10c.lean,prodL_ge_one,A′,順序付き環の補題,1231,A′
@@ -279,26 +279,26 @@ keynes_part_ii_phase10c.lean,prodL_le_one,C,nlinarith,1239,C
 keynes_part_ii_phase10c.lean,prodL_gt_one,C,nlinarith,1249,C
 keynes_part_ii_phase10c.lean,prodL_lt_one,C,nlinarith,1258,C
 keynes_part_ii_phase10c.lean,conjL_le,A,le_trans,1270,C
-keynes_part_ii_phase10c.lean,coefL_joint,C,linarith div_*×2,1282,C
+keynes_part_ii_phase10c.lean,coefL_joint,C,linarith div_*×2 ring,1282,C
 keynes_part_ii_phase10c.lean,prod_inverse,B,ring×2 sq_*,1295,B
-keynes_part_ii_phase10c.lean,cum_point,C,linarith field_simp×2,1314,C
+keynes_part_ii_phase10c.lean,cum_point,C,linarith field_simp×2 ring,1314,C
 keynes_part_ii_phase10c.lean,th_14_r160,C,linarith field_simp inv_*,1335,C
 keynes_part_ii_phase10c.lean,th_14_r162_cor,C,linarith field_simp inv_*,1347,C
-keynes_part_ii_phase10c.lean,th_14_r162_printed_iff,B,mul_*×2,1373,C
+keynes_part_ii_phase10c.lean,th_14_r162_printed_iff,D,零因子なし・簡約 mul_*×2,1373,C
 keynes_part_ii_phase10c.lean,th_14_r165,A,,1402,C
 keynes_part_ii_phase10c.lean,th_14_r167,A,,1410,C
 keynes_part_ii_phase10c.lean,th_14_r168,A,,1417,C
 keynes_part_ii_phase10c.lean,th_14_r170,D,div_*,1423,C
 keynes_part_ii_phase10c.lean,th_14_r171,A,,1435,C
-keynes_part_ii_phase10c.lean,th_14_r174,A,,1444,C
-keynes_part_ii_phase10c.lean,th_14_r175,C,linarith field_simp div_* sq_*,1459,C
+keynes_part_ii_phase10c.lean,th_14_r174,B,ring,1444,C
+keynes_part_ii_phase10c.lean,th_14_r175,C,linarith field_simp div_* 零因子なし・簡約 sq_*,1459,C
 keynes_part_ii_phase10c.lean,th_14_r180,A,,1476,C
-keynes_part_ii_phase10c.lean,th_14_r179_cor,D,field_simp,1483,C
-keynes_part_ii_phase10c.lean,th_14_r178_cor,C,linarith field_simp div_* ring,1503,C
+keynes_part_ii_phase10c.lean,th_14_r179_cor,D,field_simp ring,1483,C
+keynes_part_ii_phase10c.lean,th_14_r178_cor,C,linarith field_simp div_* eq_div_* ring×3,1503,C
 keynes_part_ii_phase10c.lean,th_14_r183,B,mul_*,1541,B
 keynes_part_ii_phase10c.lean,th_14_r184,D,field_simp div_* mul_*×2,1548,D
 keynes_part_ii_phase10c.lean,th_14_r186,C,linarith div_*,1565,C
-keynes_part_ii_phase10c.lean,th_14_r190,C,linarith×2 field_simp,1576,C
+keynes_part_ii_phase10c.lean,th_14_r190,C,linarith×2 field_simp eq_div_*×6,1576,C
 keynes_part_ii_phase10c.lean,th_14_r195,A,,1616,C
 keynes_part_ii_phase10c.lean,th_14_r196,B,ring,1621,C
 keynes_part_ii_phase10c.lean,joint_ge_prod,C,nlinarith not_lt/not_le,1627,C
@@ -306,7 +306,7 @@ keynes_part_ii_phase10c.lean,th_14_r197,C,nlinarith,1638,C
 keynes_part_ii_phase10c.lean,th_14_r198,D,div_*×2 mul_*×2,1652,C
 keynes_part_ii_phase10c.lean,prod_d_xh,C,linarith field_simp,1668,C
 keynes_part_ii_phase10c.lean,th_14_r199_cor,C,linarith 順序付き環の補題(除算),1680,C
-keynes_part_ii_phase10c.lean,th_14_r203,C,linarith×2 div_*×2 順序付き環の補題(除算)×3,1698,C
+keynes_part_ii_phase10c.lean,th_14_r203,C,linarith×2 div_*×2 順序付き環の補題(除算)×3 ring×2,1698,C
 keynes_part_ii_phase10c.lean,th_14_r205,C,linarith,1718,C
 keynes_part_ii_phase10c.lean,th_14_r207,C,linarith 順序付き環の補題 ring,1723,C
 keynes_part_ii_phase10c.lean,th_14_r208,C,nlinarith,1732,C
@@ -322,10 +322,10 @@ keynes_part_ii_phase10c.lean,th_14_r222,C,linarith,1883,C
 keynes_part_ii_phase10c.lean,th_14_r223,B,ring×2 mul_*,1887,B
 keynes_part_ii_phase10c.lean,th_14_r224,A,,1894,C
 keynes_part_ii_phase10c.lean,th_14_r225,C,linarith field_simp,1900,C
-keynes_part_ii_phase10c.lean,th_14_r227,B,ring×2,1912,C
-keynes_part_ii_phase10c.lean,th_14_r228,C,linarith ring,1926,C
-keynes_part_ii_phase10c.lean,th_14_r230,C,linarith×3 mul_*,1943,C
-keynes_part_ii_phase10c.lean,th_14_r231,C,linarith×3 ring mul_*,1961,C
+keynes_part_ii_phase10c.lean,th_14_r227,D,eq_div_* ring×3,1912,C
+keynes_part_ii_phase10c.lean,th_14_r228,C,linarith eq_div_* ring,1926,C
+keynes_part_ii_phase10c.lean,th_14_r230,C,linarith×3 零因子なし・簡約 mul_*,1943,C
+keynes_part_ii_phase10c.lean,th_14_r231,C,linarith×3 零因子なし・簡約 ring mul_*,1961,C
 keynes_part_ii_phase10c.lean,printed_34_false,E,norm_num,2019,E
 keynes_part_ii_phase10c.lean,corrected_34_holds,E,norm_num,2025,E
 keynes_part_ii_phase10c.lean,hyp_49_hold,E,norm_num,2045,E
@@ -340,7 +340,7 @@ keynes_part_ii_phase10c.lean,printed_46_line2_false,C,linarith norm_num,2127,C
 keynes_part_ii_phase10c.lean,corrected_46_line2_holds,E,norm_num×3,2137,E
 keynes_part_ii_phase10c.lean,coefficients_unrelated,E,norm_num,2155,E
 keynes_part_ii_phase10d.lean,itrue_certain,A,,128,A
-keynes_part_ii_phase10d.lean,true_conj,B,mul_*,131,B
+keynes_part_ii_phase10d.lean,true_conj,B,ring mul_*,131,B
 keynes_part_ii_phase10d.lean,th_13_1_i,C,linarith,141,C
 keynes_part_ii_phase10d.lean,taut_neg_zero,C,linarith,146,C
 keynes_part_ii_phase10d.lean,conj_neg_cert_zero,C,linarith mul_*,152,C
@@ -350,13 +350,13 @@ keynes_part_ii_phase10d.lean,th_24_i,C,linarith,194,C
 keynes_part_ii_phase10d.lean,conj_assoc_i,A,,215,C
 keynes_part_ii_phase10d.lean,conj_swap_i,A,,223,C
 keynes_part_ii_phase10d.lean,conj_dneg_i,A,,231,C
-keynes_part_ii_phase10d.lean,th_17_56_raw_i,C,linarith,242,C
-keynes_part_ii_phase10d.lean,th_17_56_l002,A,,274,A
+keynes_part_ii_phase10d.lean,th_17_56_raw_i,C,linarith ring,242,C
+keynes_part_ii_phase10d.lean,th_17_56_l002,B,ring×2,274,B
 keynes_part_ii_phase10d.lean,th_17_56_l004,C,linarith mul_*,285,C
 keynes_part_ii_phase10d.lean,th_17_56_l005,C,linarith×3,304,C
-keynes_part_ii_phase10d.lean,th_17_56_l014,B,mul_*,329,B
+keynes_part_ii_phase10d.lean,th_17_56_l014,D,零因子なし・簡約 ring mul_*,329,D
 keynes_part_ii_phase10d.lean,th_17_56_l017,C,linarith,340,C
-keynes_part_ii_phase10d.lean,th_17_56_l018,C,linarith×2,348,C
+keynes_part_ii_phase10d.lean,th_17_56_l018,C,linarith×2 eq_div_*×2,348,C
 keynes_part_ii_phase10d.lean,th_17_56_l021,B,mul_*,365,B
 keynes_part_ii_phase10d.lean,th_17_56_l023,A,,373,A
 keynes_part_ii_phase10d.lean,th_17_56_l025,C,linarith×3 順序付き環の補題,379,C
@@ -365,46 +365,46 @@ keynes_part_ii_phase10d.lean,th_17_56_l036,C,linarith,413,C
 keynes_part_ii_phase10d.lean,th_17_57_l039,C,linarith mul_*,436,C
 keynes_part_ii_phase10d.lean,th_17_57_l040,C,linarith mul_*,448,C
 keynes_part_ii_phase10d.lean,th_17_57_l041,C,linarith field_simp,462,C
-keynes_part_ii_phase10d.lean,th_17_57_l042,C,linarith,474,C
+keynes_part_ii_phase10d.lean,th_17_57_l042,C,linarith ring,474,C
 keynes_part_ii_phase10d.lean,th_17_57_l043,C,linarith,491,C
-keynes_part_ii_phase10d.lean,th_17_57_l044,A,,500,B
+keynes_part_ii_phase10d.lean,th_17_57_l044,B,ring,500,B
 keynes_part_ii_phase10d.lean,th_17_57_l045,B,ring,511,B
 keynes_part_ii_phase10d.lean,th_17_57_l046,C,linarith,523,C
 keynes_part_ii_phase10d.lean,nb_succ,A,,547,A
 keynes_part_ii_phase10d.lean,th_17_57_l047,C,linarith,553,C
 keynes_part_ii_phase10d.lean,th_17_57_l048,A,,563,C
-keynes_part_ii_phase10d.lean,th_17_57_l049,A,,570,C
+keynes_part_ii_phase10d.lean,th_17_57_l049,B,ring,570,C
 keynes_part_ii_phase10d.lean,th_17_57_l050,B,ring,581,C
 keynes_part_ii_phase10d.lean,th_17_57_l051,C,linarith×2,592,C
-keynes_part_ii_phase10d.lean,th_17_57_l054,A,,611,C
+keynes_part_ii_phase10d.lean,th_17_57_l054,B,ring,611,C
 keynes_part_ii_phase10d.lean,th_17_57_l057,A,,622,B
 keynes_part_ii_phase10d.lean,term57_i,C,linarith ring×2,630,C
 keynes_part_ii_phase10d.lean,th_17_57_l058,A,,642,C
 keynes_part_ii_phase10d.lean,th_17_57_l059,B,ring,653,C
 keynes_part_ii_phase10d.lean,one_sub_prod_le_sum,C,linarith nlinarith×2 順序付き環の補題,665,C
 keynes_part_ii_phase10d.lean,nterm_bounds,C,linarith 順序付き環の補題×3,681,C
-keynes_part_ii_phase10d.lean,th_17_57_l067,C,linarith×4 順序付き環の補題,699,C
+keynes_part_ii_phase10d.lean,th_17_57_l067,C,linarith×4 順序付き環の補題 ring,699,C
 keynes_part_ii_phase10d.lean,term57_4_i,C,linarith×2 ring×2 mul_*,739,C
-keynes_part_ii_phase10d.lean,th_17_57_l069,C,linarith×3 mul_*×2,762,C
-keynes_part_ii_phase10d.lean,th_17_57_l070,B,mul_*,784,C
-keynes_part_ii_phase10d.lean,th_17_57_l072,C,linarith×2 順序付き環の補題 le_trans,807,C
+keynes_part_ii_phase10d.lean,th_17_57_l069,C,linarith×3 零因子なし・簡約 mul_*×2,762,C
+keynes_part_ii_phase10d.lean,th_17_57_l070,B,ring mul_*,784,C
+keynes_part_ii_phase10d.lean,th_17_57_l072,C,linarith×2 順序付き環の補題 ring le_trans,807,C
 keynes_part_ii_phase10d.lean,xc_succ,A,,842,A
-keynes_part_ii_phase10d.lean,th_17_58_l079,C,linarith×3,866,C
+keynes_part_ii_phase10d.lean,th_17_58_l079,C,linarith×3 eq_div_* ring,866,C
 keynes_part_ii_phase10d.lean,q58,A,,884,C
 keynes_part_ii_phase10d.lean,chain_pos58,B,mul_*,889,B
 keynes_part_ii_phase10d.lean,chain_neg58,B,ring sq_*×2,901,C
-keynes_part_ii_phase10d.lean,closed58,C,linarith×3 field_simp sq_*,912,C
+keynes_part_ii_phase10d.lean,closed58,C,linarith×3 field_simp ring sq_*,912,C
 keynes_part_ii_phase10d.lean,th_17_58_l080,C,linarith,931,C
-keynes_part_ii_phase10d.lean,th_17_58_l081,A,,940,C
+keynes_part_ii_phase10d.lean,th_17_58_l081,B,ring,940,C
 keynes_part_ii_phase10d.lean,th_17_58_l082,D,field_simp,951,C
-keynes_part_ii_phase10d.lean,th_17_58_l083,C,linarith,966,C
+keynes_part_ii_phase10d.lean,th_17_58_l083,C,linarith ring,966,C
 keynes_part_ii_phase10d.lean,th_17_58_l084,C,linarith field_simp sq_*,983,C
 keynes_part_ii_phase10d.lean,th_17_58_l085,A,,995,C
-keynes_part_ii_phase10d.lean,y_ratio58,A,,1008,B
+keynes_part_ii_phase10d.lean,y_ratio58,D,eq_div_*,1008,D
 keynes_part_ii_phase10d.lean,th_17_58_l093,C,linarith×3 field_simp div_* 順序付き環の補題×3 順序付き環の補題(除算) ring sq_*,1022,C
 keynes_part_ii_phase10d.lean,th_17_58_l095,C,linarith×4 nlinarith×4 div_*×3 順序付き環の補題×2 順序付き環の補題(除算)×3,1045,C
-keynes_part_ii_phase10d.lean,th_17_58_l096,A,,1065,B
-keynes_part_ii_phase10d.lean,th_17_58_l098,C,linarith×4 field_simp div_* 順序付き環の補題×3 順序付き環の補題(除算) ring,1079,C
+keynes_part_ii_phase10d.lean,th_17_58_l096,D,eq_div_* ring,1065,D
+keynes_part_ii_phase10d.lean,th_17_58_l098,C,linarith×4 field_simp div_* eq_div_* 順序付き環の補題×3 順序付き環の補題(除算) ring×2,1079,C
 keynes_part_ii_phase10d.lean,th_17_58_l098_printed_fails,E,norm_num×4,1102,C
 keynes_part_ii_phase10d.lean,cards,A,,1135,A
 keynes_part_ii_phase10d.lean,th_17_57_pairwise_only,E,norm_num,1148,E
@@ -412,54 +412,54 @@ keynes_part_ii_phase10d.lean,th_17_57_l059_printed_fails,E,norm_num,1159,E
 keynes_part_ii_phase10d.lean,th_17_57_l070_printed_fails,E,norm_num,1170,E
 keynes_part_ii_phase10d.lean,th_17_57_l072_printed_fails,E,norm_num,1184,E
 keynes_part_ii_phase10d.lean,th_17_U8_l109,A,,1202,A
-keynes_part_ii_phase10d.lean,stationary_general,E,Real.*×11 mul_*×2 Finset.sum_*×2,1222,E
+keynes_part_ii_phase10d.lean,stationary_general,D,零因子なし・簡約 Real.*×11 ring mul_*×2 Finset.sum_*×2,1222,D
 keynes_part_ii_phase10d.lean,const_on_pos,A′,順序付き環の補題,1248,A′
 keynes_part_ii_phase10d.lean,hasDerivAt_abs_sub,C,abs_*×4 div_*×3 norm_num×2 順序付き環の補題×4 sub_*×2,1258,C
-keynes_part_ii_phase10d.lean,i6_deriv,C,linarith×5 Real.*×8 ring×2 mul_* sub_*×3,1271,C
+keynes_part_ii_phase10d.lean,i6_deriv,C,linarith×5 零因子なし・簡約 Real.*×8 ring×4 mul_* sub_*×3,1271,C
 keynes_part_ii_phase10d.lean,i6_integrate,C,linarith×2 div_* ring×2,1311,C
 keynes_part_ii_phase10d.lean,i6_sign,C,linarith positivity×2 le_or_lt abs_*×4 field_simp Real.*×12,1335,C
-keynes_part_ii_phase10d.lean,th_17_N1_l114,C,linarith Finset.sum_*×2,1356,C
+keynes_part_ii_phase10d.lean,th_17_N1_l114,C,linarith eq_div_* 型変換 Finset.sum_*×2,1356,C
 keynes_part_ii_phase10d.lean,th_17_i_l122,C,linarith Real.*×3 ring,1368,C
 keynes_part_ii_phase10d.lean,th_17_i_l125,E,Real.*×6 ring×2 mul_*,1388,E
-keynes_part_ii_phase10d.lean,th_17_i_l132,C,linarith Real.*×3 順序付き環の補題×2 sub_* sq_*,1408,C
+keynes_part_ii_phase10d.lean,th_17_i_l132,C,linarith 零因子なし・簡約 Real.*×3 順序付き環の補題×2 sub_* sq_*,1408,C
 keynes_part_ii_phase10d.lean,th_17_i_l135,E,Real.*×5 ring,1425,E
 keynes_part_ii_phase10d.lean,th_17_ii_l136,D,field_simp Real.*×21 順序付き環の補題 ring×2 sub_* Finset.sum_*×2,1433,D
 keynes_part_ii_phase10d.lean,th_17_ii_l141,C,linarith field_simp div_* Real.*×9 順序付き環の補題(除算) ring×2 mul_*,1468,C
 keynes_part_ii_phase10d.lean,th_17_ii_l144,E,Real.*×11,1492,E
 keynes_part_ii_phase10d.lean,th_17_ii_l147,C,linarith field_simp Real.*×14 ring×2 mul_*,1501,C
 keynes_part_ii_phase10d.lean,th_17_ii_l150,E,Real.*×20 ring,1525,E
-keynes_part_ii_phase10d.lean,th_17_ii_l152,E,Real.*×2 ring mul_*×2 sq_*,1538,E
+keynes_part_ii_phase10d.lean,th_17_ii_l152,D,零因子なし・簡約×3 Real.*×2 ring mul_*×2 sq_*,1538,D
 keynes_part_ii_phase10d.lean,th_17_ii_l154,D,div_* Real.*×10 順序付き環の補題(除算) ring mul_*,1554,D
 keynes_part_ii_phase10d.lean,th_17_ii_l157,E,Real.*×8 add_*,1567,E
 keynes_part_ii_phase10d.lean,th_17_ii_l160,D,field_simp Real.*×16 ring,1583,D
 keynes_part_ii_phase10d.lean,ii9_identify,C,linarith field_simp Real.*×9,1603,C
-keynes_part_ii_phase10d.lean,th_17_ii_l161_printed_fails,C,linarith div_* norm_num Real.*×23 順序付き環の補題×4 mul_* sq_*,1621,C
+keynes_part_ii_phase10d.lean,th_17_ii_l161_printed_fails,C,linarith div_* 零因子なし・簡約 norm_num Real.*×23 順序付き環の補題×4 mul_* sq_*,1621,C
 keynes_part_ii_phase10d.lean,th_17_ii_l161,E,Real.*×9 ring,1642,D
 keynes_part_ii_phase10d.lean,th_17_iii_l164,C,linarith field_simp×2 Real.*×4 ring×2 mul_*,1659,C
 keynes_part_ii_phase10d.lean,th_17_iv_l170,C,abs_*×5 Finset.sum_*,1681,C
 keynes_part_ii_phase10d.lean,th_17_iv_l173,C,abs_*×3 Real.*×2 ring,1697,C
-keynes_part_ii_phase10d.lean,th_17_iv_l174,C,linarith abs_*×3 field_simp Real.*×2 ring sub_* sq_*,1711,C
+keynes_part_ii_phase10d.lean,th_17_iv_l174,C,linarith abs_*×3 sq_abs field_simp Real.*×2 ring×2 sub_* sq_*,1711,C
 keynes_part_ii_phase10d.lean,th_17_iv_l178,C,abs_*×2 Real.*×2,1735,C
-keynes_part_ii_phase10d.lean,th_17_vi_l187,E,norm_num Real.*×4 ring mul_* sq_*×2,1744,E
-keynes_part_ii_phase10d.lean,th_17_vi_l188,C,abs_*×4 Real.*×6 sq_*,1761,C
-keynes_part_ii_phase10d.lean,th_17_vi_l189,E,norm_num Real.*×4 ring mul_* sq_*,1775,E
-keynes_part_ii_phase10d.lean,th_17_vi_l192,C,abs_*×3 div_* Real.*×5 ring sub_* sq_*,1790,C
-keynes_part_ii_phase10d.lean,th_17_3_l201,C,abs_* norm_num Real.*×2 ring mul_* sq_*×2,1802,C
+keynes_part_ii_phase10d.lean,th_17_vi_l187,C,sq_abs 零因子なし・簡約×2 norm_num Real.*×4 ring mul_* sq_*×2,1744,C
+keynes_part_ii_phase10d.lean,th_17_vi_l188,C,abs_*×4 零因子なし・簡約 Real.*×6 sq_*,1761,C
+keynes_part_ii_phase10d.lean,th_17_vi_l189,D,零因子なし・簡約×2 norm_num Real.*×4 ring mul_* sq_*,1775,D
+keynes_part_ii_phase10d.lean,th_17_vi_l192,C,abs_*×3 sq_abs div_* 型変換 Real.*×5 ring sub_* sq_*,1790,C
+keynes_part_ii_phase10d.lean,th_17_3_l201,C,abs_* sq_abs 零因子なし・簡約×2 norm_num Real.*×2 ring mul_* sq_*×2,1802,C
 keynes_part_ii_phase10d.lean,th_17_N2_l212_printed_fails,E,norm_num,1815,E
-keynes_part_ii_phase10d.lean,th_17_N2_l212,D,field_simp,1831,D
+keynes_part_ii_phase10d.lean,th_17_N2_l212,D,field_simp ring,1831,D
 keynes_part_ii_phase10d.lean,th_17_N3_l215_printed_fails,E,norm_num ring×2,1844,E
 keynes_part_ii_phase10d.lean,th_17_N3_l215,C,linarith sub_*×2 Finset.sum_*×2,1857,C
 keynes_part_ii_phase10d.lean,th_17_N4_l216_printed_fails,C,linarith×2 norm_num Real.*×3 順序付き環の補題,1883,C
 keynes_part_ii_phase10d.lean,th_17_N4_l216,C,abs_*×5 field_simp×2 Real.*×5 順序付き環の補題 ring,1892,C
 keynes_part_ii_phase10d.lean,th_17_N4_l217_printed_fails,C,linarith×2 norm_num Real.*×3 ring×3,1907,C
 keynes_part_ii_phase10d.lean,th_17_N4_l217,C,linarith abs_*×5 Real.*×2,1926,C
-keynes_part_ii_phase10d.lean,th_17_N5_l222,C,linarith field_simp×2 ring Finset.sum_*×2,1935,C
-keynes_part_ii_phase10d.lean,th_17_N5_l223,C,linarith×2 field_simp×3 順序付き環の補題 ring×3 mul_*×2 sub_* sq_* Finset.sum_*×7,1946,C
-keynes_part_ii_phase10d.lean,th_17_N5_l224,D,field_simp Finset.sum_*×4,1993,C
+keynes_part_ii_phase10d.lean,th_17_N5_l222,C,linarith field_simp×2 型変換 ring Finset.sum_*×2,1935,C
+keynes_part_ii_phase10d.lean,th_17_N5_l223,C,linarith×2 field_simp×3 零因子なし・簡約×2 型変換 順序付き環の補題×2 ring×3 mul_*×2 sub_* sq_* Finset.sum_*×6,1946,C
+keynes_part_ii_phase10d.lean,th_17_N5_l224,D,field_simp 型変換 Finset.sum_*×4,1993,C
 keynes_part_ii_phase10d.lean,th_17_N6_l226,A,,2018,A
-keynes_part_ii_phase10d.lean,th_17_N7_l230,E,norm_num Real.*×2 ring mul_* sq_*,2036,E
+keynes_part_ii_phase10d.lean,th_17_N7_l230,D,零因子なし・簡約×2 norm_num Real.*×2 ring mul_* sq_*,2036,D
 keynes_part_ii_phase10e.lean,itrue_certain,A,,135,A
-keynes_part_ii_phase10e.lean,true_conj,B,mul_*,138,B
+keynes_part_ii_phase10e.lean,true_conj,B,ring mul_*,138,B
 keynes_part_ii_phase10e.lean,th_13_1_i,C,linarith,148,C
 keynes_part_ii_phase10e.lean,taut_neg_zero,C,linarith,153,C
 keynes_part_ii_phase10e.lean,conj_neg_cert_zero,C,linarith mul_*,159,C
@@ -470,27 +470,27 @@ keynes_part_ii_phase10e.lean,conj_le_left_i,C,linarith,209,C
 keynes_part_ii_phase10e.lean,conj_le_right_i,A,,215,C
 keynes_part_ii_phase10e.lean,th_24_i,C,linarith,220,C
 keynes_part_ii_phase10e.lean,conj_lower_i,C,linarith,239,C
-keynes_part_ii_phase10e.lean,addTimes_eq,B,ring,255,B
+keynes_part_ii_phase10e.lean,addTimes_eq,E,型変換 ring,255,E
 keynes_part_ii_phase10e.lean,th_15_def_XVIII,D,field_simp,265,D
 keynes_part_ii_phase10e.lean,th_15_def_XIX,B,ring,273,B
-keynes_part_ii_phase10e.lean,th_15_r006,A,,281,B
+keynes_part_ii_phase10e.lean,th_15_r006,A,,281,E
 keynes_part_ii_phase10e.lean,th_15_r009,B,ring,287,C
 keynes_part_ii_phase10e.lean,th_15_r011,C,linarith,295,C
 keynes_part_ii_phase10e.lean,th_15_vii_le,D,div_*,305,D
 keynes_part_ii_phase10e.lean,th_15_vii_int_reading_fails,E,norm_num×2,315,E
 keynes_part_ii_phase10e.lean,th_15_50,D,field_simp ring,327,D
-keynes_part_ii_phase10e.lean,th_15_50_r017,B,ring,338,D
+keynes_part_ii_phase10e.lean,th_15_50_r017,E,型変換 ring,338,D
 keynes_part_ii_phase10e.lean,th_15_50_r018,D,field_simp,347,D
 keynes_part_ii_phase10e.lean,th_15_50_r019,D,field_simp,356,D
 keynes_part_ii_phase10e.lean,th_15_50_r020,A,,365,D
 keynes_part_ii_phase10e.lean,th_15_50_r021,A,,374,D
-keynes_part_ii_phase10e.lean,th_15_50_r022,B,ring,384,D
-keynes_part_ii_phase10e.lean,th_15_50_r023,B,ring×2,396,D
-keynes_part_ii_phase10e.lean,th_15_50_exists,B,ring,414,D
+keynes_part_ii_phase10e.lean,th_15_50_r022,E,型変換 ring,384,D
+keynes_part_ii_phase10e.lean,th_15_50_r023,E,型変換 ring×2,396,D
+keynes_part_ii_phase10e.lean,th_15_50_exists,E,型変換 ring,414,D
 keynes_part_ii_phase10e.lean,th_15_r027,C,linarith field_simp ring Finset.sum_*×2,424,C
-keynes_part_ii_phase10e.lean,th_15_r027_nec,D,field_simp ring Finset.sum_*×2,448,D
+keynes_part_ii_phase10e.lean,th_15_r027_nec,D,field_simp 型変換×2 ring Finset.sum_*×2,448,D
 keynes_part_ii_phase10e.lean,th_15_r030,B,ring,469,B
-keynes_part_ii_phase10e.lean,th_15_r030_only_if,B,ring mul_*×3,479,B
+keynes_part_ii_phase10e.lean,th_15_r030_only_if,D,零因子なし・簡約×2 ring mul_*×3,479,D
 keynes_part_ii_phase10e.lean,th_15_51_r033,C,linarith,498,C
 keynes_part_ii_phase10e.lean,th_15_51_r034,B,mul_*,505,C
 keynes_part_ii_phase10e.lean,th_15_51_r035,A,,514,A
@@ -518,16 +518,16 @@ keynes_part_ii_phase10e.lean,th_15_55_r064,C,linarith,707,C
 keynes_part_ii_phase10e.lean,th_15_55_r065,C,linarith,712,C
 keynes_part_ii_phase10e.lean,th_15_55_r066,C,linarith,717,C
 keynes_part_ii_phase10f.lean,itrue_certain,A,,121,A
-keynes_part_ii_phase10f.lean,true_conj,B,mul_*,124,B
+keynes_part_ii_phase10f.lean,true_conj,B,ring mul_*,124,B
 keynes_part_ii_phase10f.lean,th_13_1_i,C,linarith,134,C
 keynes_part_ii_phase10f.lean,taut_neg_zero,C,linarith,139,C
 keynes_part_ii_phase10f.lean,conj_neg_cert_zero,C,linarith mul_*,145,C
 keynes_part_ii_phase10f.lean,conj_certain,C,linarith,153,C
 keynes_part_ii_phase10f.lean,cons_iff_pos,A,,160,A
-keynes_part_ii_phase10f.lean,th_11_001,C,linarith mul_*,173,C
-keynes_part_ii_phase10f.lean,th_11_003,B,mul_*,192,B
+keynes_part_ii_phase10f.lean,th_11_001,C,linarith 零因子なし・簡約 mul_*,173,C
+keynes_part_ii_phase10f.lean,th_11_003,B,ring mul_*,192,B
 keynes_part_ii_phase10f.lean,th_11_004,C,linarith,200,C
-keynes_part_ii_phase10f.lean,th_11_006,B,mul_*,206,B
+keynes_part_ii_phase10f.lean,th_11_006,B,ring mul_*,206,B
 keynes_part_ii_phase10f.lean,th_11_007,B,add_*×2,213,B
 keynes_part_ii_phase10f.lean,th_11_008,C,linarith×2,223,C
 keynes_part_ii_phase10f.lean,th_11_009,A,,230,A
@@ -539,15 +539,15 @@ keynes_part_ii_phase10f.lean,requires_refl,A,,280,A
 keynes_part_ii_phase10f.lean,requires_trans,A,,285,A
 keynes_part_ii_phase10f.lean,th_11_014,A,,293,A
 keynes_part_ii_phase10f.lean,th_11_015,A,,304,A
-keynes_part_ii_phase10f.lean,th_11_016,A,,311,C
-keynes_part_ii_phase10f.lean,th_11_018,A,,333,B
+keynes_part_ii_phase10f.lean,th_11_016,B,ring,311,C
+keynes_part_ii_phase10f.lean,th_11_018,B,ring,333,B
 keynes_part_ii_phase10f.lean,th_11_019,C,linarith,339,C
 keynes_part_ii_phase10f.lean,th_11_020,A,,350,A
 keynes_part_ii_phase10f.lean,th_11_022,B,mul_*,360,B
 keynes_part_ii_phase10f.lean,th_11_023,A,,366,C
 keynes_part_ii_phase10f.lean,th_11_024,A,,377,C
 keynes_part_ii_phase10f.lean,th_11_025,A,,383,A
-keynes_part_ii_phase10f.lean,group_cond_ii_form,C,linarith,402,C
+keynes_part_ii_phase10f.lean,group_cond_ii_form,C,linarith ring,402,C
 keynes_part_ii_phase10f.lean,th_11_027,C,linarith,425,C
 keynes_part_ii_phase10f.lean,th_11_028,A,,438,A
 keynes_part_ii_phase10f.lean,th_11_030,C,linarith,449,C
@@ -557,12 +557,12 @@ keynes_part_ii_phase10f.lean,th_11_034,A,,479,A
 keynes_part_ii_phase10f.lean,th_11_035,A,,493,A
 keynes_part_ii_phase10f.lean,mem_mInterp,A,,549,A
 keynes_part_ii_phase10f.lean,mdiv,D,div_*×2 mul_*×2,563,D
-keynes_part_ii_phase10f.lean,mPr_one,D,div_*,568,D
-keynes_part_ii_phase10f.lean,m_def_X,A,,573,D
-keynes_part_ii_phase10f.lean,nec_11_035_hh,D,div_*×3 順序付き環の補題(除算)×2 add_*,589,D
+keynes_part_ii_phase10f.lean,mPr_one,D,div_* 型変換,568,D
+keynes_part_ii_phase10f.lean,m_def_X,E,型変換×2,573,D
+keynes_part_ii_phase10f.lean,nec_11_035_hh,D,div_*×3 型変換×4 順序付き環の補題(除算)×2 add_*,589,D
 keynes_part_ii_phase10f.lean,nec_11_033_hh,A,,671,D
 keynes_part_ii_phase10g.lean,itrue_certain,A,,128,A
-keynes_part_ii_phase10g.lean,true_conj,B,mul_*,131,B
+keynes_part_ii_phase10g.lean,true_conj,B,ring mul_*,131,B
 keynes_part_ii_phase10g.lean,th_13_1_i,C,linarith,141,C
 keynes_part_ii_phase10g.lean,conj_neg_cert_zero,C,linarith mul_*,146,C
 keynes_part_ii_phase10g.lean,th_10_II,A,,159,A
@@ -577,11 +577,11 @@ keynes_part_ii_phase10g.lean,th_10_VII_true,A,,219,A
 keynes_part_ii_phase10g.lean,th_10_VII_conj,A,,223,C
 keynes_part_ii_phase10g.lean,th_10_VII_not,C,linarith,228,C
 keynes_part_ii_phase10g.lean,th_10_XII,A,,250,A
-keynes_part_ii_phase10g.lean,th_10_XII_symm,B,mul_*×3,258,B
-keynes_part_ii_phase10g.lean,th_10_XII_indep,A,,270,B
-keynes_part_ii_phase10g.lean,th_10_48_equal,C,linarith ring×3 mul_*×2 add_*,284,C
+keynes_part_ii_phase10g.lean,th_10_XII_symm,D,零因子なし・簡約 mul_*×3,258,D
+keynes_part_ii_phase10g.lean,th_10_XII_indep,A,,270,D
+keynes_part_ii_phase10g.lean,th_10_48_equal,C,linarith 零因子なし・簡約 eq_div_* ring×5 mul_*×2 add_*,284,C
 keynes_part_ii_phase10h.lean,itrue_certain,A,,116,A
-keynes_part_ii_phase10h.lean,true_conj,B,mul_*,119,B
+keynes_part_ii_phase10h.lean,true_conj,B,ring mul_*,119,B
 keynes_part_ii_phase10h.lean,th_13_1_i,C,linarith,129,C
 keynes_part_ii_phase10h.lean,taut_neg_zero,C,linarith,134,C
 keynes_part_ii_phase10h.lean,conj_neg_cert_zero,C,linarith mul_*,140,C
@@ -590,11 +590,11 @@ keynes_part_ii_phase10h.lean,subst_taut,A,,177,C
 keynes_part_ii_phase10h.lean,conj_comm_i,A,,183,C
 keynes_part_ii_phase10h.lean,conj_le_left_i,C,linarith,190,C
 keynes_part_ii_phase10h.lean,th_24_i,C,linarith,196,C
-keynes_part_ii_phase10h.lean,self_certain,B,mul_*,217,C
-keynes_part_ii_phase10h.lean,neg_premiss_zero,B,mul_*,228,C
-keynes_part_ii_phase10h.lean,follows_both,C,linarith,239,C
-keynes_part_ii_phase10h.lean,zero_transfer,C,linarith mul_*,248,C
-keynes_part_ii_phase10h.lean,conj_subst_mutual,C,linarith×3,259,C
+keynes_part_ii_phase10h.lean,self_certain,D,零因子なし・簡約 ring mul_*,217,C
+keynes_part_ii_phase10h.lean,neg_premiss_zero,D,零因子なし・簡約 mul_*,228,C
+keynes_part_ii_phase10h.lean,follows_both,C,linarith ring×2,239,C
+keynes_part_ii_phase10h.lean,zero_transfer,C,linarith 零因子なし・簡約 mul_*,248,C
+keynes_part_ii_phase10h.lean,conj_subst_mutual,C,linarith×3 ring×2,259,C
 keynes_part_ii_phase10h.lean,half_of_indiff,C,linarith,297,C
 keynes_part_ii_phase10h.lean,th_16_r003_premissless_fails,C,linarith,309,C
 keynes_part_ii_phase10h.lean,th_16_r003,A,,321,C
@@ -622,43 +622,43 @@ keynes_part_ii_phase10h.lean,th_16_r051,A,,582,A
 keynes_part_ii_phase10h.lean,th_16_r052,A,,588,A
 keynes_part_ii_phase10h.lean,th_16_r053,B,ring,596,B
 keynes_part_ii_phase10h.lean,th_16_r045,A,,608,B
-keynes_part_ii_phase10h.lean,th_16_r056_iff,C,linarith,620,C
-keynes_part_ii_phase10h.lean,th_16_r056_le,C,linarith,631,C
+keynes_part_ii_phase10h.lean,th_16_r056_iff,C,linarith ring,620,C
+keynes_part_ii_phase10h.lean,th_16_r056_le,C,linarith ring,631,C
 keynes_part_ii_phase10h.lean,th_16_r056_fails,C,linarith,643,C
-keynes_part_ii_phase10h.lean,th_16_r059,C,linarith,653,C
+keynes_part_ii_phase10h.lean,th_16_r059,C,linarith ring,653,C
 keynes_part_ii_phase10h.lean,th_16_r060,A,,665,C
 keynes_part_ii_phase10h.lean,th_16_r063,A,,678,B
-keynes_part_ii_phase10h.lean,th_16_r064,A,,682,B
+keynes_part_ii_phase10h.lean,th_16_r064,D,eq_div_*,682,D
 keynes_part_ii_phase10h.lean,th_16_r067,D,field_simp div_*,689,D
-keynes_part_ii_phase10h.lean,th_16_r072,A,,708,B
+keynes_part_ii_phase10h.lean,th_16_r072,D,eq_div_*,708,D
 keynes_part_ii_phase10h.lean,th_16_r073,D,field_simp,719,D
-keynes_part_ii_phase10h.lean,th_16_r075,C,linarith mul_*×3 add_*,735,C
-keynes_part_ii_phase10h.lean,th_16_r084,C,linarith mul_*×2,777,C
+keynes_part_ii_phase10h.lean,th_16_r075,C,linarith 零因子なし・簡約×2 eq_div_*×2 ring×3 mul_*×3 add_*,735,C
+keynes_part_ii_phase10h.lean,th_16_r084,C,linarith 零因子なし・簡約×2 ring mul_*×2,777,C
 keynes_part_ii_phase10h.lean,th_16_r084_fails,E,norm_num,808,C
 keynes_part_ii_phase10h.lean,th_16_r093,A,,822,B
 keynes_part_ii_phase10h.lean,th_16_r094,A,,834,B
 keynes_part_ii_phase10h.lean,th_16_r098,A,,841,C
 keynes_part_ii_phase10h.lean,th_16_r100,A,,850,A
 keynes_part_ii_phase10h.lean,th_16_r101,A,,857,A
-keynes_part_ii_phase10h.lean,th_16_r105,A,,881,B
+keynes_part_ii_phase10h.lean,th_16_r105,B,ring×2,881,B
 keynes_part_ii_phase10h.lean,th_16_r106,A,,894,C
-keynes_part_ii_phase10h.lean,th_16_r110,A,,901,C
+keynes_part_ii_phase10h.lean,th_16_r110,D,eq_div_*,901,C
 keynes_part_ii_phase10h.lean,th_16_r111,C,linarith×2,915,C
 keynes_part_ii_phase10h.lean,testimony_den,C,linarith ring,958,C
-keynes_part_ii_phase10h.lean,th_16_r111_printed_iff,C,linarith div_*×3 mul_*×2,973,C
+keynes_part_ii_phase10h.lean,th_16_r111_printed_iff,C,linarith div_*×3 零因子なし・簡約×2 ring mul_*×2,973,C
 keynes_part_ii_phase10h.lean,th_16_r111_model,E,norm_num,1038,E
-keynes_part_ii_phase10h.lean,th_16_r113,C,linarith×6 positivity×3 div_*×2 ring mul_*×2,1066,C
+keynes_part_ii_phase10h.lean,th_16_r113,C,linarith×6 positivity×3 div_*×2 零因子なし・簡約 ring mul_*×2,1066,C
 keynes_part_ii_phase10h.lean,th_16_r114,A,,1099,A
 keynes_part_ii_phase10h.lean,th_16_r115,D,field_simp×2,1108,D
 keynes_part_ii_phase10h.lean,th_16_r116,C,linarith,1123,C
-keynes_part_ii_phase10h.lean,th_16_r117,C,linarith×2 positivity div_* norm_num mul_*×2,1148,C
+keynes_part_ii_phase10h.lean,th_16_r117,C,linarith×2 positivity div_* 零因子なし・簡約 norm_num mul_*×2,1148,C
 keynes_part_ii_phase10h.lean,th_16_r121,C,linarith field_simp,1173,C
-keynes_part_ii_phase10h.lean,th_16_r122,D,div_* mul_*,1185,C
-keynes_part_ii_phase10h.lean,th_16_r125,C,linarith,1200,C
+keynes_part_ii_phase10h.lean,th_16_r122,D,div_* 零因子なし・簡約 ring mul_*,1185,C
+keynes_part_ii_phase10h.lean,th_16_r125,C,linarith eq_div_*,1200,C
 keynes_part_ii_phase10h.lean,th_16_r126,C,linarith,1216,C
-keynes_part_ii_phase10h.lean,th_16_r129,C,linarith×2 div_* Real.*×4 順序付き環の補題 ring,1248,C
-keynes_part_ii_phase12b_underdetermination.lean,mu_nonneg,B,Finset.sum_*,144,B
-keynes_part_ii_phase12b_underdetermination.lean,mu_pos,B,Finset.sum_*,148,B
+keynes_part_ii_phase10h.lean,th_16_r129,C,linarith×2 div_* eq_div_* Real.*×4 順序付き環の補題 ring,1248,C
+keynes_part_ii_phase12b_underdetermination.lean,mu_nonneg,A′,順序付き環の補題,144,A′
+keynes_part_ii_phase12b_underdetermination.lean,mu_pos,A′,順序付き環の補題,148,A′
 keynes_part_ii_phase12b_underdetermination.lean,prw_of_empty,A,,151,A
 keynes_part_ii_phase12b_underdetermination.lean,prw_of_ne,A,,154,A
 keynes_part_ii_phase12b_underdetermination.lean,ne_empty_of_cons,A,,157,A
@@ -667,11 +667,11 @@ keynes_part_ii_phase12b_underdetermination.lean,prw_eq_one_iff,C,linarith div_* 
 keynes_part_ii_phase12b_underdetermination.lean,ne_empty_of_prw_eq_one,A,,185,A
 keynes_part_ii_phase12b_underdetermination.lean,subset_miff_iff,A,,191,A
 keynes_part_ii_phase12b_underdetermination.lean,model_def_IX_i,B,add_*×2 Finset.sum_*,211,B
-keynes_part_ii_phase12b_underdetermination.lean,model_def_X_left_i,D,field_simp,226,D
+keynes_part_ii_phase12b_underdetermination.lean,model_def_X_left_i,D,field_simp ring,226,D
 keynes_part_ii_phase12b_underdetermination.lean,model_def_X_right_i,A,,247,D
-keynes_part_ii_phase12b_underdetermination.lean,model_def_XI_i,A,,254,A
+keynes_part_ii_phase12b_underdetermination.lean,model_def_XI_i,D,eq_div_*,254,D
 keynes_part_ii_phase12b_underdetermination.lean,model_ax_range_lo_i,D,div_* 順序付き環の補題(除算) le_refl,259,D
-keynes_part_ii_phase12b_underdetermination.lean,model_ax_range_hi_i,D,div_* 順序付き環の補題(除算) Finset.sum_*,267,D
+keynes_part_ii_phase12b_underdetermination.lean,model_ax_range_hi_i,D,div_* 順序付き環の補題 順序付き環の補題(除算),267,D
 keynes_part_ii_phase12b_underdetermination.lean,model_def_VIII_i,A,,277,C
 keynes_part_ii_phase12b_underdetermination.lean,model_def_VIII_i_src,A,,287,C
 keynes_part_ii_phase12b_underdetermination.lean,wOps_interp,A,,321,A
@@ -712,32 +712,32 @@ keynes_part_ii_phase3a.lean,th_14_36,A,,173,B
 keynes_part_ii_phase3a.lean,th_14_38_b,A,,196,D
 keynes_part_ii_phase3b.lean,th_24,C,linarith,83,C
 keynes_part_ii_phase3b.lean,th_14_36,A,,94,B
-keynes_part_ii_phase3b.lean,th_14_41_b,D,field_simp mul_*,128,D
+keynes_part_ii_phase3b.lean,th_14_41_b,D,field_simp 零因子なし・簡約 mul_*,128,D
 keynes_part_ii_phase3b.lean,th_14_42,B,mul_*,148,B
-keynes_part_ii_phase3b.lean,th_14_44,D,div_* mul_*,166,D
+keynes_part_ii_phase3b.lean,th_14_44,D,div_* 零因子なし・簡約 mul_*,166,D
 keynes_part_ii_phase3b.lean,th_14_44_1,C,linarith,178,C
-keynes_part_ii_phase3b.lean,infl_eq_one_iff_indep_product,D,div_* mul_*,187,C
+keynes_part_ii_phase3b.lean,infl_eq_one_iff_indep_product,D,div_* 零因子なし・簡約 mul_*,187,C
 keynes_part_ii_phase3c.lean,th_14_36,A,,82,B
 keynes_part_ii_phase3c.lean,th_14_42,B,mul_*,88,B
 keynes_part_ii_phase3c.lean,th_14_45_b,A,,118,A
-keynes_part_ii_phase3c.lean,th_14_41_c,D,field_simp mul_*×2,144,D
+keynes_part_ii_phase3c.lean,th_14_41_c,D,field_simp 零因子なし・簡約×2 mul_*×2,144,D
 keynes_part_ii_phase3c.lean,th_14_42_c,B,ring,164,B
 keynes_part_ii_phase3c.lean,th_14_43,A,,188,B
 keynes_part_ii_phase3c.lean,th_14_38_full,A,,216,D
 keynes_part_ii_phase3d.lean,th_14_38_full,A,,51,D
 keynes_part_ii_phase3d.lean,th_14_46_seq,A,,79,D
-keynes_part_ii_phase3d.lean,th_14_47_odds,D,field_simp×2 ring mul_*,106,D
+keynes_part_ii_phase3d.lean,th_14_47_odds,D,field_simp×2 零因子なし・簡約 ring mul_*,106,D
 keynes_part_ii_phase3d.lean,th_14_48_binary,B,ring×3,145,D
 keynes_part_ii_phase4.lean,th_13_1,C,linarith,97,C
 keynes_part_ii_phase4.lean,th_24,C,linarith,105,C
 keynes_part_ii_phase4.lean,pr_false,C,linarith,120,C
 keynes_part_ii_phase4.lean,th_15_degeneracy,A,,138,C
 keynes_part_ii_phase4.lean,collapse,E,norm_num×5,159,C
-keynes_part_ii_phase4.lean,th_ax_xviii_absorbed,B,ring,182,B
-keynes_part_ii_phase4.lean,th_ax_xix_absorbed,B,mul_*,194,B
-keynes_part_ii_phase4.lean,th_15_50,B,ring,229,D
+keynes_part_ii_phase4.lean,th_ax_xviii_absorbed,E,型変換 ring,182,E
+keynes_part_ii_phase4.lean,th_ax_xix_absorbed,D,eq_div_* mul_*,194,D
+keynes_part_ii_phase4.lean,th_15_50,E,型変換 ring,229,D
 keynes_part_ii_phase4.lean,th_15_51,C,linarith×3,257,C
-keynes_part_ii_phase4.lean,th_15_52,C,linarith norm_num,305,C
+keynes_part_ii_phase4.lean,th_15_52,C,linarith norm_num 型変換,305,C
 keynes_part_ii_phase4.lean,th_15_53,C,linarith,327,C
 keynes_part_ii_phase4.lean,th_15_54,C,linarith,352,C
 keynes_part_ii_phase4.lean,th_15_55,C,linarith nlinarith 順序付き環の補題×3,375,C
@@ -748,7 +748,7 @@ keynes_part_ii_phase5.lean,pr_conj_le_left,C,linarith,105,C
 keynes_part_ii_phase5.lean,pr_conj_le_right,C,linarith,111,C
 keynes_part_ii_phase5.lean,th_14_49,C,nlinarith,141,C
 keynes_part_ii_phase5.lean,th_14_49_infl,A′,順序付き環の補題 順序付き環の補題(除算),154,C
-keynes_part_ii_phase5.lean,th_17_56_raw,C,linarith,175,C
+keynes_part_ii_phase5.lean,th_17_56_raw,C,linarith ring,175,C
 keynes_part_ii_phase5.lean,th_17_56,C,linarith,196,C
 keynes_part_ii_phase5.lean,th_17_56_1,C,linarith×5,213,C
 keynes_part_ii_phase5.lean,th_17_56_2,C,linarith 順序付き環の補題×2,253,C
@@ -758,8 +758,8 @@ keynes_part_ii_phase5.lean,th_17_56_5,C,linarith,288,C
 keynes_part_ii_phase5.lean,incl_excl,C,linarith norm_num,328,C
 keynes_part_ii_phase5.lean,bigOr_map_and,A,,341,A
 keynes_part_ii_phase5.lean,pr_le_bigOr,C,linarith×2,353,C
-keynes_part_ii_phase5.lean,th_17_57,A,,384,C
-keynes_part_ii_phase5.lean,th_17_57_2,A,,400,C
+keynes_part_ii_phase5.lean,th_17_57,B,ring,384,C
+keynes_part_ii_phase5.lean,th_17_57_2,B,ring,400,C
 keynes_part_ii_phase5.lean,th_17_57_6,A,,422,D
 keynes_part_ii_phase5.lean,th_17_58,A,,445,B
 keynes_part_ii_phase5.lean,th_17_58_1,E,norm_num×2,457,E
@@ -774,7 +774,7 @@ keynes_part_ii_phase6a.lean,pr_conj_le_right,C,linarith,116,C
 keynes_part_ii_phase6a.lean,th_14_38_full,A,,123,D
 keynes_part_ii_phase6a.lean,incl_excl,C,linarith norm_num,143,C
 keynes_part_ii_phase6a.lean,bigOr_map_and,A,,155,A
-keynes_part_ii_phase6a.lean,th_17_57,A,,166,C
+keynes_part_ii_phase6a.lean,th_17_57,B,ring,166,C
 keynes_part_ii_phase6a.lean,sumPr_zero_of_all_zero,E,norm_num,206,E
 keynes_part_ii_phase6a.lean,sumPr_map_and_head,B,ring×2,218,B
 keynes_part_ii_phase6a.lean,pr_conj_bigOr_le,C,linarith norm_num,231,C
@@ -792,7 +792,7 @@ keynes_part_ii_phase6a.lean,th_14_47_1,D,field_simp,427,C
 keynes_part_ii_phase6a.lean,th_14_49_1,C,linarith nlinarith field_simp×2 div_* 順序付き環の補題×2 順序付き環の補題(除算) ring,441,C
 keynes_part_ii_phase6a.lean,th_17_57_1,C,linarith,468,C
 keynes_part_ii_phase6a.lean,th_17_57_3,C,linarith,481,C
-keynes_part_ii_phase6a.lean,th_17_57_4,C,linarith,506,C
+keynes_part_ii_phase6a.lean,th_17_57_4,C,linarith ring×2,506,C
 keynes_part_ii_phase6a.lean,th_17_57_5,C,linarith,527,C
 keynes_part_ii_phase6b.lean,th_13_1,C,linarith,74,C
 keynes_part_ii_phase6b.lean,th_24,C,linarith,81,C
@@ -801,23 +801,23 @@ keynes_part_ii_phase6b.lean,pr_conj_le_left,C,linarith,99,C
 keynes_part_ii_phase6b.lean,pr_conj_le_right,C,linarith,104,C
 keynes_part_ii_phase6b.lean,th_13_4,A,,115,C
 keynes_part_ii_phase6b.lean,th_13_5,C,linarith,119,C
-keynes_part_ii_phase6b.lean,th_13_6,B,mul_*,126,B
+keynes_part_ii_phase6b.lean,th_13_6,D,零因子なし・簡約 mul_*,126,D
 keynes_part_ii_phase6b.lean,th_13_7,C,linarith nlinarith×2 順序付き環の補題×4,131,C
 keynes_part_ii_phase6b.lean,th_13_8_conj,C,linarith,144,C
-keynes_part_ii_phase6b.lean,th_13_8,B,mul_*,150,C
+keynes_part_ii_phase6b.lean,th_13_8,D,零因子なし・簡約 mul_*,150,C
 keynes_part_ii_phase6b.lean,th_13_9,C,linarith×2,160,C
 keynes_part_ii_phase6b.lean,th_13_10,C,linarith×3,169,C
 keynes_part_ii_phase6b.lean,th_13_11,A,,183,C
 keynes_part_ii_phase6b.lean,th_13_12,C,linarith×4,198,C
-keynes_part_ii_phase6b.lean,th_13_13,C,linarith nlinarith mul_*,219,C
+keynes_part_ii_phase6b.lean,th_13_13,C,linarith nlinarith 零因子なし・簡約 ring mul_*,219,C
 keynes_part_ii_phase6b.lean,th_13_13_1,C,linarith,232,C
 keynes_part_ii_phase6b.lean,th_13_13_2,C,linarith,238,C
-keynes_part_ii_phase6b.lean,th_13_14,B,mul_*,244,B
-keynes_part_ii_phase6b.lean,th_13_15,A,,255,B
+keynes_part_ii_phase6b.lean,th_13_14,D,零因子なし・簡約 ring mul_*,244,D
+keynes_part_ii_phase6b.lean,th_13_15,B,ring,255,B
 keynes_part_ii_phase6b.lean,th_13_18,C,linarith norm_num,263,C
-keynes_part_ii_phase6b.lean,th_13_21,E,norm_num,276,C
-keynes_part_ii_phase6b.lean,th_13_22,C,linarith×3,295,C
-keynes_part_ii_phase6b.lean,th_13_23,C,linarith,311,C
+keynes_part_ii_phase6b.lean,th_13_21,E,norm_num ring×2,276,C
+keynes_part_ii_phase6b.lean,th_13_22,C,linarith×3 ring,295,C
+keynes_part_ii_phase6b.lean,th_13_23,C,linarith ring×2,311,C
 keynes_part_ii_phase6b.lean,incl_excl,C,linarith norm_num,354,C
 keynes_part_ii_phase6b.lean,sumPr_zero_of_all_zero,E,norm_num,366,E
 keynes_part_ii_phase6b.lean,pr_conj_bigOr_le,C,linarith norm_num,377,C
@@ -835,24 +835,24 @@ keynes_part_ii_phase6b.lean,th_14_27_1,C,linarith,496,C
 keynes_part_ii_phase6b.lean,th_14_28,C,linarith,504,C
 keynes_part_ii_phase6b.lean,th_14_28_1,C,linarith,511,C
 keynes_part_ii_phase6b.lean,th_14_29,A,,520,C
-keynes_part_ii_phase6b.lean,th_14_31,C,linarith nlinarith mul_*,536,C
+keynes_part_ii_phase6b.lean,th_14_31,C,linarith nlinarith 零因子なし・簡約 ring mul_*,536,C
 keynes_part_ii_phase6b.lean,th_14_32,C,nlinarith×2 順序付き環の補題,552,C
 keynes_part_ii_phase6b.lean,th_14_37,B,ring sq_*,565,B
 keynes_part_ii_phase6b.lean,th_14_37_full,A,,578,B
 keynes_part_ii_phase6b.lean,th_14_41_2,D,field_simp,586,D
 keynes_part_ii_phase6c.lean,itrue_certain,A,,220,A
-keynes_part_ii_phase6c.lean,true_conj,B,mul_*,227,B
+keynes_part_ii_phase6c.lean,true_conj,B,ring mul_*,227,B
 keynes_part_ii_phase6c.lean,th_13_1_i,C,linarith,241,C
 keynes_part_ii_phase6c.lean,taut_neg_zero,C,linarith,248,C
 keynes_part_ii_phase6c.lean,conj_neg_cert_zero,C,linarith mul_*,256,C
-keynes_part_ii_phase6c.lean,th_12_i,C,linarith×5 mul_*×2,279,C
+keynes_part_ii_phase6c.lean,th_12_i,C,linarith×5 ring×2 mul_*×2,279,C
 keynes_part_ii_phase6c.lean,th_12_i_short,C,linarith×3,332,C
 keynes_part_ii_phase6c.lean,subst_taut,A,,365,C
 keynes_part_ii_phase6c.lean,th_24_i,C,linarith,377,C
 keynes_part_ii_phase6c.lean,th_14_36_i,A,,397,B
 keynes_part_ii_phase6c.lean,th_14_38_full_i,A,,405,D
 keynes_part_ii_phase6c.lean,th_13_13_conj_i,A,,427,A
-keynes_part_ii_phase6c_inconsistency.lean,th_12_i,C,linarith,104,C
+keynes_part_ii_phase6c_inconsistency.lean,th_12_i,C,linarith ring×2,104,C
 keynes_part_ii_phase6c_inconsistency.lean,subst_taut,A,,113,C
 keynes_part_ii_phase6c_inconsistency.lean,itrue_certain,A,,118,A
 keynes_part_ii_phase6c_inconsistency.lean,th_13_1_i,C,linarith,121,C
@@ -861,23 +861,23 @@ keynes_part_ii_phase6c_inconsistency.lean,th_6c_old_inconsistent,C,linarith,144,
 keynes_part_ii_phase6c_model.lean,pr_of_card_zero,A,,128,A
 keynes_part_ii_phase6c_model.lean,pr_of_card_ne_zero,A,,131,A
 keynes_part_ii_phase6c_model.lean,cons_iff_card,A,,135,A
-keynes_part_ii_phase6c_model.lean,pr_eq_one_iff,D,div_*,139,D
+keynes_part_ii_phase6c_model.lean,pr_eq_one_iff,D,div_* 型変換×2,139,D
 keynes_part_ii_phase6c_model.lean,card_ne_zero_of_pr_eq_one,A,,151,A
 keynes_part_ii_phase6c_model.lean,card_ne_zero_of_inter,A,,156,A
 keynes_part_ii_phase6c_model.lean,subset_miff_iff,A,,162,A
-keynes_part_ii_phase6c_model.lean,model_def_IX_i,B,add_*×2,182,B
-keynes_part_ii_phase6c_model.lean,model_def_X_left_i,D,field_simp,200,D
+keynes_part_ii_phase6c_model.lean,model_def_IX_i,E,型変換 add_*×2,182,E
+keynes_part_ii_phase6c_model.lean,model_def_X_left_i,D,field_simp 型変換×2,200,D
 keynes_part_ii_phase6c_model.lean,model_def_X_right_i,A,,222,D
-keynes_part_ii_phase6c_model.lean,model_def_XI_i,A,,229,A
+keynes_part_ii_phase6c_model.lean,model_def_XI_i,D,eq_div_*,229,D
 keynes_part_ii_phase6c_model.lean,model_ax_range_lo_i,C,positivity le_refl,233,C
-keynes_part_ii_phase6c_model.lean,model_ax_range_hi_i,D,div_* 順序付き環の補題(除算),240,D
+keynes_part_ii_phase6c_model.lean,model_ax_range_hi_i,D,div_* 型変換×2 順序付き環の補題(除算),240,D
 keynes_part_ii_phase6c_model.lean,model_def_VIII_i,A,,248,D
 keynes_part_ii_phase6c_model.lean,model_def_VIII_i_src,A,,257,D
 keynes_part_ii_phase6c_model.lean,finOps_interp,A,,289,A
 keynes_part_ii_phase6c_model.lean,mem_finInterp,A,,300,A
 keynes_part_ii_phase6c_model.lean,model_ax_iii_taut,A,,316,D
 keynes_part_ii_phase6c_model.lean,model_cons_true,A,,324,A
-keynes_part_ii_phase6c_model.lean,model_cons_of_pos_src,D,div_* 順序付き環の補題(除算),327,D
+keynes_part_ii_phase6c_model.lean,model_cons_of_pos_src,D,div_* 型変換×2 順序付き環の補題(除算),327,D
 keynes_part_ii_phase6c_model.lean,model_cons_of_pos,A,,338,A
 keynes_part_ii_phase6c_model.lean,model_cons_iff_taut,A,,350,A
 keynes_part_ii_phase6c_model.lean,finSys,A,,361,C
@@ -887,26 +887,26 @@ keynes_part_ii_phase6c_model.lean,model_old_ax_iii_taut_fails,A,,404,A
 keynes_part_ii_phase6c_model.lean,not_self_evidence,A,,410,C
 keynes_part_ii_phase6c_model.lean,model_intermediate_value,A,,418,A
 keynes_part_ii_phase6c_necessity.lean,itrue_certain₀,A,,148,A
-keynes_part_ii_phase6c_necessity.lean,true_conj₀,A,,152,A
+keynes_part_ii_phase6c_necessity.lean,true_conj₀,B,ring,152,B
 keynes_part_ii_phase6c_necessity.lean,compl₀,C,linarith,159,C
 keynes_part_ii_phase6c_necessity.lean,taut_neg_zero₀,C,linarith,165,C
 keynes_part_ii_phase6c_necessity.lean,conj_neg_cert_zero₀,C,linarith mul_*,172,C
 keynes_part_ii_phase6c_necessity.lean,th_12₀,C,linarith×3,181,C
 keynes_part_ii_phase6c_necessity.lean,subst_taut₀,A,,210,C
-keynes_part_ii_phase6c_necessity.lean,two_valued_of_absorbing,C,linarith×2 mul_*×3,220,C
+keynes_part_ii_phase6c_necessity.lean,two_valued_of_absorbing,C,linarith×2 零因子なし・簡約 mul_*×3,220,C
 keynes_part_ii_phase6c_necessity.lean,pr₀_of_card_zero,A,,262,A
 keynes_part_ii_phase6c_necessity.lean,pr₀_of_card_ne_zero,A,,266,A
 keynes_part_ii_phase6c_necessity.lean,pr₀_empty_eq_one_iff,A,,271,A
 keynes_part_ii_phase6c_necessity.lean,pr₀_empty_two_valued,A,,278,A
-keynes_part_ii_phase6c_necessity.lean,pr₀_eq_one_iff,D,div_*,285,D
+keynes_part_ii_phase6c_necessity.lean,pr₀_eq_one_iff,D,div_* 型変換×2,285,D
 keynes_part_ii_phase6c_necessity.lean,card_le_of_inter_left,A,,296,A
 keynes_part_ii_phase6c_necessity.lean,subset_miff_iff,A,,300,A
 keynes_part_ii_phase6c_necessity.lean,mem_miff_iff,A,,318,A
-keynes_part_ii_phase6c_necessity.lean,model_def_IX_i,B,add_*×2,325,B
-keynes_part_ii_phase6c_necessity.lean,model_def_X_left_i,D,field_simp mul_*,344,D
+keynes_part_ii_phase6c_necessity.lean,model_def_IX_i,E,型変換 add_*×2,325,E
+keynes_part_ii_phase6c_necessity.lean,model_def_X_left_i,D,field_simp 型変換×2 mul_*,344,D
 keynes_part_ii_phase6c_necessity.lean,model_def_X_right_i,A,,375,D
 keynes_part_ii_phase6c_necessity.lean,model_ax_range_lo_i,C,positivity 順序付き環の補題 le_refl,382,C
-keynes_part_ii_phase6c_necessity.lean,model_ax_range_hi_i,D,div_* 順序付き環の補題 順序付き環の補題(除算) le_refl,390,D
+keynes_part_ii_phase6c_necessity.lean,model_ax_range_hi_i,D,div_* 型変換×2 順序付き環の補題 順序付き環の補題(除算) le_refl,390,D
 keynes_part_ii_phase6c_necessity.lean,model_def_VIII_i_src,A,,403,D
 keynes_part_ii_phase6c_necessity.lean,finOps₀_interp,A,,459,A
 keynes_part_ii_phase6c_necessity.lean,mem_finInterp,A,,470,A
@@ -926,7 +926,7 @@ keynes_part_ii_phase6c_necessity.lean,cons_iff_card,A,,601,A
 keynes_part_ii_phase6c_necessity.lean,card_ne_zero_of_inter,A,,604,A
 keynes_part_ii_phase6c_necessity.lean,model_def_VIII_i,A,,610,D
 keynes_part_ii_phase6c_necessity.lean,model_cons_true,A,,618,A
-keynes_part_ii_phase6c_necessity.lean,model_cons_of_pos_src,D,div_* 順序付き環の補題(除算),620,D
+keynes_part_ii_phase6c_necessity.lean,model_cons_of_pos_src,D,div_* 型変換×2 順序付き環の補題(除算),620,D
 keynes_part_ii_phase6c_necessity.lean,model_cons_of_pos,A,,630,A
 keynes_part_ii_phase6c_necessity.lean,model_cons_iff_taut,A,,639,A
 keynes_part_ii_phase6c_necessity.lean,finSysC,A,,655,D
@@ -938,11 +938,11 @@ keynes_part_ii_phase6c_skeleton.lean,smoke_comm,A,,100,A
 keynes_part_ii_phase6c_skeleton.lean,smoke_idem,A,,104,A
 keynes_part_ii_phase6c_skeleton.lean,smoke_compl,A,,108,B
 keynes_part_ii_phase7a.lean,th_13_1,C,linarith,45,C
-keynes_part_ii_phase7a.lean,th_13_16_1,C,linarith×2,67,C
-keynes_part_ii_phase7a.lean,th_13_16_3,C,linarith×2 mul_*,88,C
+keynes_part_ii_phase7a.lean,th_13_16_1,C,linarith×2 ring,67,C
+keynes_part_ii_phase7a.lean,th_13_16_3,C,linarith×2 零因子なし・簡約 mul_*,88,C
 keynes_part_ii_phase7b.lean,th_13_1,C,linarith,70,C
 keynes_part_ii_phase7b.lean,th_14_38_full,A,,77,D
-keynes_part_ii_phase7b.lean,th_14_30,C,linarith nlinarith mul_*,93,C
+keynes_part_ii_phase7b.lean,th_14_30,C,linarith nlinarith 零因子なし・簡約 ring mul_*,93,C
 keynes_part_ii_phase7b.lean,th_14_33,C,linarith nlinarith,120,C
 keynes_part_ii_phase7b.lean,th_14_33_1,C,linarith,133,C
 keynes_part_ii_phase7b.lean,th_14_35,C,nlinarith×2 順序付き環の補題×2,149,C
@@ -951,13 +951,13 @@ keynes_part_ii_phase7b.lean,th_14_40,C,linarith ring,184,C
 keynes_part_ii_phase7c.lean,th_13_1,C,linarith,62,C
 keynes_part_ii_phase7c.lean,pr_conj_le_right,C,linarith,69,C
 keynes_part_ii_phase7c.lean,th_13_8_conj,C,linarith,76,C
-keynes_part_ii_phase7c.lean,th_13_8,B,mul_*,82,C
+keynes_part_ii_phase7c.lean,th_13_8,D,零因子なし・簡約 mul_*,82,C
 keynes_part_ii_phase7c.lean,th_13_9,C,linarith×2,91,C
 keynes_part_ii_phase7c.lean,th_13_12,C,linarith×4,99,C
-keynes_part_ii_phase7c.lean,th_13_16_3,C,linarith×2 mul_*,117,C
-keynes_part_ii_phase7c.lean,th_13_15_1,B,mul_*,137,B
+keynes_part_ii_phase7c.lean,th_13_16_3,C,linarith×2 零因子なし・簡約 mul_*,117,C
+keynes_part_ii_phase7c.lean,th_13_15_1,D,零因子なし・簡約 mul_*,137,D
 keynes_part_ii_phase7c.lean,th_13_12_1,A,,155,C
-keynes_part_ii_phase7c.lean,th_13_16,C,linarith×2,165,C
+keynes_part_ii_phase7c.lean,th_13_16,C,linarith×2 ring,165,C
 keynes_part_ii_phase7c.lean,th_13_16_2,C,linarith×2,182,C
 keynes_part_ii_phase7c.lean,th_13_17,A,,197,C
 keynes_part_ii_phase7d.lean,th_34_printed_rhs_trivial,D,div_* 順序付き環の補題 ring,72,D
@@ -983,15 +983,15 @@ keynes_part_ii_phase7g.lean,th_14_24_5_src,A,,181,C
 keynes_part_ii_phase7g.lean,th_14_24_4_src,C,linarith,187,C
 keynes_part_ii_phase7g.lean,th_14_24_6_src,B,ring,209,C
 keynes_part_ii_phase7g.lean,th_14_24_7_src,A,,222,C
-keynes_part_ii_phase7g.lean,th_14_25_src,A,,232,C
+keynes_part_ii_phase7g.lean,th_14_25_src,B,ring,232,C
 keynes_part_ii_phase7g.lean,th_14_25_1_src,C,linarith,249,C
 keynes_part_ii_phase7g.lean,th_14_26_src,C,linarith ring le_antisymm,262,C
 keynes_part_ii_phase7g.lean,th_14_26_1_src,A,,272,C
 keynes_part_ii_phase7g.lean,th_14_28_src,C,linarith,280,C
 keynes_part_ii_phase7g.lean,th_14_28_1_src,C,linarith×2,288,C
 keynes_part_ii_phase7g.lean,th_14_40_1_src,C,linarith×6 ring×2,302,C
-keynes_part_ii_phase7g.lean,addTimes_eq,B,ring,350,B
-keynes_part_ii_phase7g.lean,th_15_50_src,D,field_simp ring,359,D
+keynes_part_ii_phase7g.lean,addTimes_eq,E,型変換 ring,350,E
+keynes_part_ii_phase7g.lean,th_15_50_src,D,field_simp 型変換 ring,359,D
 keynes_part_ii_phase7g.lean,th_15_50_xix_step,D,field_simp,374,D
 keynes_part_ii_phase7g.lean,th_15_55_worked,C,linarith,390,C
 keynes_part_ii_phase7h.lean,th_13_1,C,linarith,57,C
@@ -999,25 +999,25 @@ keynes_part_ii_phase7h.lean,pr_false,C,linarith,64,C
 keynes_part_ii_phase7h.lean,pr_swap,A,,73,B
 keynes_part_ii_phase7h.lean,prodSwap,B,ring sq_*,89,B
 keynes_part_ii_phase7h.lean,prodConj,B,ring sq_*,108,B
-keynes_part_ii_phase7h.lean,th_14_46_1_src,A,,127,B
+keynes_part_ii_phase7h.lean,th_14_46_1_src,B,ring,127,B
 keynes_part_ii_phase7h.lean,th_14_47_1_src,B,ring,147,B
 keynes_part_ii_phase7h.lean,th_14_48_src,B,ring,160,B
 keynes_part_ii_phase7h.lean,chain_extend,A,,173,B
 keynes_part_ii_phase7h.lean,th_14_48_1_src,B,ring,181,B
-keynes_part_ii_phase7h.lean,th_14_49_step_src,C,linarith×3 順序付き環の補題,194,C
+keynes_part_ii_phase7h.lean,th_14_49_step_src,C,linarith×3 順序付き環の補題 ring,194,C
 keynes_part_ii_phase7h.lean,th_14_49_1_src,C,linarith,207,C
 keynes_part_ii_phase7h.lean,th_17_57_step,C,linarith,220,C
 keynes_part_ii_phase7h.lean,th_17_57_i_src,A,,239,C
 keynes_part_ii_phase7h.lean,th_17_57_ii_n2,C,linarith,253,C
 keynes_part_ii_phase7h.lean,th_17_57_1_mr,A,,269,B
 keynes_part_ii_phase7h.lean,q_value,C,linarith×2,284,C
-keynes_part_ii_phase7h.lean,chain_cert,A,,300,B
+keynes_part_ii_phase7h.lean,chain_cert,B,ring,300,B
 keynes_part_ii_phase7h.lean,chain_neg,B,ring sq_*,313,B
-keynes_part_ii_phase7h.lean,th_17_58_closed,C,linarith×2,329,C
+keynes_part_ii_phase7h.lean,th_17_58_closed,C,linarith×2 ring,329,C
 keynes_part_ii_phase7h.lean,th_17_58_1_src,E,norm_num,349,C
 keynes_part_ii_phase7h.lean,th_17_58_2_core,C,linarith×2 順序付き環の補題×4 ring,363,C
 keynes_part_ii_phase7h.lean,th_17_58_2_src,C,linarith nlinarith 順序付き環の補題 ring×2,379,C
-keynes_part_ii_phase7h.lean,th_17_58_3_src,C,linarith,401,C
+keynes_part_ii_phase7h.lean,th_17_58_3_src,C,linarith ring,401,C
 keynes_part_ii_phase7i.lean,list_sum_div,B,add_*,70,B
 keynes_part_ii_phase7i.lean,list_sum_congr,A,,79,A
 keynes_part_ii_phase7i.lean,list_sum_le,C,linarith,90,C
@@ -1034,13 +1034,13 @@ keynes_part_ii_phase7i.lean,th_13_3_src,A,,194,A
 keynes_part_ii_phase7i.lean,th_13_10_src,C,linarith×3 mul_*,202,C
 keynes_part_ii_phase7i.lean,th_13_11_src,A,,221,C
 keynes_part_ii_phase7i.lean,th_14_37_src,B,ring sq_*,240,B
-keynes_part_ii_phase7i.lean,th_14_38_1_src,B,ring×2 add_*,260,B
+keynes_part_ii_phase7i.lean,th_14_38_1_src,D,eq_div_*×2 ring×3 add_*,260,D
 keynes_part_ii_phase7i.lean,th_14_43_src,D,field_simp ring,303,D
 keynes_part_ii_phase7i.lean,th_14_43_src_2,D,field_simp ring,314,D
-keynes_part_ii_phase7i.lean,th_14_46_2_src2,D,field_simp ring mul_*×4,333,D
+keynes_part_ii_phase7i.lean,th_14_46_2_src2,D,field_simp 零因子なし・簡約×4 eq_div_*×11 ring mul_*×4,333,D
 keynes_part_ii_phase7i.lean,th_14_49_1_src2,D,field_simp ring,386,D
 keynes_part_ii_phase7i.lean,th_14_49_1_cor2,C,linarith field_simp×2 div_*×4 順序付き環の補題×6 順序付き環の補題(除算)×2 ring×3,413,C
-keynes_part_ii_phase7i.lean,th_17_56_raw,C,linarith,485,C
+keynes_part_ii_phase7i.lean,th_17_56_raw,C,linarith ring,485,C
 keynes_part_ii_phase7i.lean,th_17_56_4_src,C,linarith×3,501,C
 keynes_part_ii_phase7i.lean,th_17_57_step,C,linarith,526,C
 keynes_part_ii_phase7i.lean,th_17_57_i_src,A,,547,C
@@ -1082,9 +1082,9 @@ keynes_part_ii_phase7i_model.lean,m_ax_ivb,A′,順序付き環の補題,161,A�
 keynes_part_ii_phase7i_model.lean,m_ax_ivc,B,add_*,164,B
 keynes_part_ii_phase7i_model.lean,m_ax_v,B,ring,167,B
 keynes_part_ii_phase7i_model.lean,m_ax_vi,B,mul_*,170,B
-keynes_part_ii_phase7i_model.lean,m_def_XI,A,,173,A
-keynes_part_ii_phase7i_model.lean,m_def_XII,A,,177,A
-keynes_part_ii_phase7i_model.lean,ext2_consistent,A,,182,A′
+keynes_part_ii_phase7i_model.lean,m_def_XI,D,eq_div_*,173,D
+keynes_part_ii_phase7i_model.lean,m_def_XII,B,ring,177,B
+keynes_part_ii_phase7i_model.lean,ext2_consistent,A,,182,D
 keynes_part_ii_phase7i_model.lean,m_ax_iii_ev,A,,206,A
 keynes_part_ii_phase7i_model.lean,m_ax_vi_mono,A,le_refl,214,A
 keynes_part_ii_phase7i_model.lean,m_ax_vi_compl,A,,217,A
@@ -1102,7 +1102,7 @@ keynes_part_ii_phase7i_model.lean,d_def_X_right,A,,330,A
 keynes_part_ii_phase7i_model.lean,d_ax_range_lo,E,norm_num,336,E
 keynes_part_ii_phase7i_model.lean,PrD_not_ax_iii_true,A,,342,A
 keynes_part_ii_phase7i_model.lean,ext7d_premiss_matters,A,,349,E
-keynes_part_ii_phase7i_model.lean,ext_all_consistent,A,,364,E
+keynes_part_ii_phase7i_model.lean,ext_all_consistent,A,,364,D
 keynes_part_ii_phase8a.lean,risk_identities,B,ring,43,B
 keynes_part_ii_phase8a.lean,czuber_partial,B,ring×3,56,B
 keynes_part_ii_phase8a.lean,czuber_remainder,B,ring,70,B
@@ -1114,7 +1114,7 @@ keynes_part_ii_phase8a.lean,c_zero_p,A,,104,A
 keynes_part_ii_phase8a.lean,c_zero_w,A,,106,A
 keynes_part_ii_phase8a.lean,c_nonneg,C,nlinarith div_* 順序付き環の補題(除算),108,C
 keynes_part_ii_phase8a.lean,c_le_one,C,nlinarith div_*×2 順序付き環の補題(除算)×2,115,C
-keynes_part_ii_phase8a.lean,keynes_F1,C,linarith×2 nlinarith 順序付き環の補題×4 mul_*,130,C
+keynes_part_ii_phase8a.lean,keynes_F1,C,linarith×2 nlinarith 零因子なし・簡約 順序付き環の補題×4 mul_*,130,C
 keynes_part_ii_phase8a.lean,c_pos,C,nlinarith div_* 順序付き環の補題(除算),148,C
 keynes_part_ii_phase8a.lean,cA_spec,B,ring×2,156,C
 keynes_part_ii_phase8a.lean,keynes_F2,C,linarith nlinarith 順序付き環の補題×3,165,C
@@ -1143,13 +1143,13 @@ keynes_part_ii_phase8b.lean,D_mono,C,linarith×5 nlinarith×2 div_* inv_*×2 Rea
 keynes_part_ii_phase8b.lean,subadd_small_prob,C,linarith×6 nlinarith div_*×2 Real.*×3 順序付き環の補題×2 順序付き環の補題(除算)×2 add_*,202,C
 keynes_part_ii_phase8b.lean,subadd_up_to_073,C,nlinarith Real.*×2 順序付き環の補題,228,C
 keynes_part_ii_phase8b.lean,subcert_at_half,C,linarith,237,C
-keynes_part_ii_phase8b.lean,log_hundred_lt,C,nlinarith positivity norm_num×3 Real.*×6,242,C
+keynes_part_ii_phase8b.lean,log_hundred_lt,C,nlinarith positivity norm_num×3 型変換 Real.*×6,242,C
 keynes_part_ii_phase8b.lean,H_hundredth_pos,E,norm_num×2,251,C
 keynes_part_ii_phase8b.lean,H_hundredth_lt,C,nlinarith one_div norm_num×4 Real.*×10,255,C
 keynes_part_ii_phase8b.lean,supercert_at_edge,C,nlinarith×3 div_* norm_num 順序付き環の補題×2 順序付き環の補題(除算),274,C
 keynes_part_ii_phase8b.lean,overweight_at_edge,C,nlinarith×3 順序付き環の補題(除算),297,C
 keynes_part_ii_phase8b.lean,inverse_S_certified,A,,311,C
-keynes_part_ii_phase8b.lean,log_500_le,C,linarith positivity norm_num×4 Real.*×6,322,C
+keynes_part_ii_phase8b.lean,log_500_le,C,linarith positivity norm_num×4 型変換 Real.*×6,322,C
 keynes_part_ii_phase8b.lean,H_0998_ub,C,linarith nlinarith one_div norm_num×5 Real.*×11,331,C
 keynes_part_ii_phase8b.lean,H_0499_lb,C,linarith×2 nlinarith norm_num×11 Real.*×21,349,C
 keynes_part_ii_phase8b.lean,subadd_fails_interior,C,nlinarith div_* norm_num×7 順序付き環の補題 順序付き環の補題(除算) add_*,374,C
@@ -1175,72 +1175,72 @@ keynes_part_ii_phase8d.lean,th_vi_6_urn_unknown_half,E,norm_num,122,E
 keynes_part_ii_phase8d.lean,th_vi_1_brady_holds,C,linarith×2 nlinarith div_* 順序付き環の補題 順序付き環の補題(除算),132,C
 keynes_part_ii_phase8d.lean,th_vi_1_brady_exits,E,norm_num×5,141,E
 keynes_part_ii_phase8d.lean,V_collapse,A,,165,A
-keynes_part_ii_phase9x.lean,th_17_1911_U1_src,B,Finset.sum_*,108,B
+keynes_part_ii_phase9x.lean,th_17_1911_U1_src,D,eq_div_* Finset.sum_*,108,D
 keynes_part_ii_phase9x.lean,th_17_1911_U1_needs_X_right,E,norm_num×5,144,E
 keynes_part_ii_phase9x.lean,th_17_1911_U4_src,A,lt_irrefl,182,B
-keynes_part_ii_phase9x.lean,th_17_1911_U2_corrected,A,,196,B
-keynes_part_ii_phase9x.lean,th_17_1911_U2_src,D,div_* mul_*,210,D
-keynes_part_ii_phase9x.lean,th_17_1911_U5_src,B,ring,233,B
+keynes_part_ii_phase9x.lean,th_17_1911_U2_corrected,A,,196,D
+keynes_part_ii_phase9x.lean,th_17_1911_U2_src,D,div_* 零因子なし・簡約 mul_*,210,D
+keynes_part_ii_phase9x.lean,th_17_1911_U5_src,B,ring,233,D
 keynes_part_ii_phase9x.lean,th_17_1911_U7_src,D,div_* 順序付き環の補題×2 順序付き環の補題(除算),253,D
-keynes_part_ii_phase9x.lean,th_17_1911_U6_src,A,,268,B
+keynes_part_ii_phase9x.lean,th_17_1911_U6_src,A,,268,D
 keynes_part_ii_phase9x.lean,th_17_1911_U9_src,E,Real.*×8 Finset.sum_*,320,E
-keynes_part_ii_phase9x.lean,th_17_1911_1_src,E,Real.*×11 mul_*×2 Finset.sum_*×2,354,E
-keynes_part_ii_phase9x.lean,th_17_1911_i_1_src,C,linarith×2 Finset.sum_*×2,382,C
+keynes_part_ii_phase9x.lean,th_17_1911_1_src,D,零因子なし・簡約 Real.*×11 ring mul_*×2 Finset.sum_*×2,354,D
+keynes_part_ii_phase9x.lean,th_17_1911_i_1_src,C,linarith×2 eq_div_* 型変換 Finset.sum_*×2,382,C
 keynes_part_ii_phase9x.lean,th_17_1911_i_2_src,C,linarith×2 norm_num ring×4,403,C
 keynes_part_ii_phase9x.lean,th_17_1911_i_3_src,B,ring,442,B
-keynes_part_ii_phase9x.lean,th_17_1911_5_src,E,Real.*×2,459,E
+keynes_part_ii_phase9x.lean,th_17_1911_5_src,E,Real.*×2,459,D
 keynes_part_ii_phase9x.lean,th_17_1911_i_5_src,B,ring,470,B
-keynes_part_ii_phase9x.lean,th_17_1911_i_5_law,E,Real.*×2 sq_*,475,E
-keynes_part_ii_phase9x.lean,th_17_1911_i_6_src,C,linarith×5 Real.*×8 ring mul_* sub_*×3,486,C
+keynes_part_ii_phase9x.lean,th_17_1911_i_5_law,C,sq_abs Real.*×2 sq_*,475,C
+keynes_part_ii_phase9x.lean,th_17_1911_i_6_src,C,linarith×5 零因子なし・簡約 Real.*×8 ring×3 mul_* sub_*×3,486,C
 keynes_part_ii_phase9x.lean,th_17_1911_i_6_integrate,C,linarith×2 div_* ring×2,527,C
 keynes_part_ii_phase9x.lean,th_17_1911_i_6_sign,C,linarith positivity×2 le_or_lt abs_*×4 field_simp Real.*×12,553,C
-keynes_part_ii_phase9x.lean,th_17_1911_ii_1_src,C,linarith×2 field_simp×2 Real.*×19 順序付き環の補題 ring×3 Finset.sum_*×2,574,C
+keynes_part_ii_phase9x.lean,th_17_1911_ii_1_src,C,linarith×2 field_simp×2 型変換 Real.*×19 順序付き環の補題 ring×3 Finset.sum_*×2,574,C
 keynes_part_ii_phase9x.lean,th_17_1911_7_src,D,field_simp Real.*×15 ring×2,612,D
 keynes_part_ii_phase9x.lean,th_17_1911_ii_3_src,D,field_simp Real.*×14 ring×2,641,D
-keynes_part_ii_phase9x.lean,th_17_1911_ii_3_impossible,C,linarith×10 field_simp×2 div_*×3 one_div norm_num×3 Real.*×33 順序付き環の補題×3 ring×5 mul_*×4 sub_*,681,C
+keynes_part_ii_phase9x.lean,th_17_1911_ii_3_impossible,C,linarith×10 field_simp×2 div_*×3 one_div 零因子なし・簡約×2 norm_num×3 Real.*×33 順序付き環の補題×3 ring×10 mul_*×4 sub_*,681,C
 keynes_part_ii_phase9x.lean,th_17_1911_ii_4_src,D,div_* Real.*×7 順序付き環の補題(除算) ring mul_*,803,D
 keynes_part_ii_phase9x.lean,th_17_1911_8_src,E,Real.*×3,815,D
-keynes_part_ii_phase9x.lean,th_17_1911_8_leads_gmean,D,field_simp norm_num Real.*×15 ring sq_*,822,D
+keynes_part_ii_phase9x.lean,th_17_1911_8_leads_gmean,D,field_simp 零因子なし・簡約 norm_num Real.*×15 ring sq_*,822,D
 keynes_part_ii_phase9x.lean,th_17_1911_9_src,E,Real.*×6,846,E
 keynes_part_ii_phase9x.lean,th_17_1911_ii_6_src,E,Real.*×6 ring,854,E
 keynes_part_ii_phase9x.lean,th_17_1911_ii_6_int,D,field_simp Real.*×3 ring,861,D
 keynes_part_ii_phase9x.lean,th_17_1911_ii_8_src,D,div_* Real.*×12 順序付き環の補題(除算) ring mul_*,871,D
 keynes_part_ii_phase9x.lean,th_17_1911_ii_8_phi,E,Real.*×7,883,E
 keynes_part_ii_phase9x.lean,th_17_1911_ii_9_src,C,linarith field_simp Real.*×9,896,C
-keynes_part_ii_phase9x.lean,th_17_1911_ii_9_printed_fails,C,linarith div_* norm_num Real.*×23 順序付き環の補題×4 mul_* sq_*,917,C
+keynes_part_ii_phase9x.lean,th_17_1911_ii_9_printed_fails,C,linarith div_* 零因子なし・簡約 norm_num Real.*×23 順序付き環の補題×4 mul_* sq_*,917,C
 keynes_part_ii_phase9x.lean,th_17_1911_ii_9_corrected,E,Real.*×10 ring,938,E
 keynes_part_ii_phase9x.lean,th_17_1911_ii_9_corrected_int,D,field_simp Real.*×5,945,D
-keynes_part_ii_phase9x.lean,th_17_1911_iii_1_src,C,linarith field_simp×2 inv_* 順序付き環の補題(除算) ring Finset.sum_*×3,955,C
+keynes_part_ii_phase9x.lean,th_17_1911_iii_1_src,C,linarith field_simp×2 eq_div_* inv_* 型変換 順序付き環の補題 順序付き環の補題(除算) ring Finset.sum_*×2,955,C
 keynes_part_ii_phase9x.lean,th_17_1911_10_src,D,field_simp Real.*×2 ring,982,D
-keynes_part_ii_phase9x.lean,th_17_1911_11_src,D,field_simp ring sq_*,999,D
+keynes_part_ii_phase9x.lean,th_17_1911_11_src,C,sq_abs field_simp ring sq_*,999,C
 keynes_part_ii_phase9x.lean,th_17_1911_iii_3_printed_fails,E,norm_num Real.*×3,1011,E
-keynes_part_ii_phase9x.lean,th_17_1911_11_leads_hmean,D,field_simp norm_num Real.*×2 ring mul_*×2 sq_*,1020,D
-keynes_part_ii_phase9x.lean,median_aux_right,C,linarith×6 nlinarith abs_*×9 順序付き環の補題 ring Finset.sum_*×5,1043,C
+keynes_part_ii_phase9x.lean,th_17_1911_11_leads_hmean,D,field_simp 零因子なし・簡約×3 norm_num Real.*×2 ring mul_*×2 sq_*,1020,D
+keynes_part_ii_phase9x.lean,median_aux_right,C,linarith×6 nlinarith abs_*×9 型変換×2 順序付き環の補題×2 ring Finset.sum_*×4,1043,C
 keynes_part_ii_phase9x.lean,th_17_1911_iv_2_src,C,linarith le_total abs_*×5,1071,C
 keynes_part_ii_phase9x.lean,th_17_1911_iv_3_src,C,abs_*×10 div_*×3 norm_num×2 順序付き環の補題×4 sub_*×2 Finset.sum_*,1086,C
 keynes_part_ii_phase9x.lean,th_17_1911_12_src,C,abs_*×9 div_*×3 Real.*×2 順序付き環の補題×2 ring sub_*×2,1114,C
-keynes_part_ii_phase9x.lean,th_17_1911_iv_5_src,C,abs_*×5 field_simp sub_* sq_*,1138,C
+keynes_part_ii_phase9x.lean,th_17_1911_iv_5_src,C,abs_*×5 sq_abs field_simp ring sub_* sq_*,1138,C
 keynes_part_ii_phase9x.lean,th_17_1911_iv_6_src,E,norm_num×2 Real.*×3,1152,E
 keynes_part_ii_phase9x.lean,th_17_1911_iv_6_corrected,C,abs_*×2 Real.*×4,1162,C
 keynes_part_ii_phase9x.lean,th_17_1911_v_2_src,C,linarith positivity Real.*×7,1170,C
 keynes_part_ii_phase9x.lean,th_17_1911_v_3_src,C,positivity Real.*×3,1182,C
-keynes_part_ii_phase9x.lean,th_17_1911_2_src,E,norm_num×2 Real.*×2 ring×2 mul_* sq_*,1193,E
-keynes_part_ii_phase9x.lean,th_17_1911_vi_2_src,C,abs_* Real.*×6 sq_*,1214,C
-keynes_part_ii_phase9x.lean,th_17_1911_vi_2_arith,E,Real.*×2 mul_*,1222,E
+keynes_part_ii_phase9x.lean,th_17_1911_2_src,D,零因子なし・簡約×2 norm_num×2 Real.*×2 ring×2 mul_* sq_*,1193,D
+keynes_part_ii_phase9x.lean,th_17_1911_vi_2_src,C,abs_* sq_abs Real.*×6 sq_*,1214,C
+keynes_part_ii_phase9x.lean,th_17_1911_vi_2_arith,E,Real.*×2 mul_*,1222,D
 keynes_part_ii_phase9x.lean,th_17_1911_vi_3_law,E,Real.*×2 ring,1229,E
 keynes_part_ii_phase9x.lean,th_17_1911_vi_3_src,B,ring Finset.sum_*×4,1234,B
-keynes_part_ii_phase9x.lean,th_17_1911_vi_3_stationary,E,norm_num Real.*×2 ring×2 mul_*×2 Finset.sum_*,1248,E
-keynes_part_ii_phase9x.lean,th_17_1911_vi_4_law,C,abs_*×3 div_* Real.*×5 ring sub_* sq_*,1274,C
-keynes_part_ii_phase9x.lean,th_17_1911_vi_4_src,D,field_simp Real.*×5 sub_*×2 sq_*,1284,D
-keynes_part_ii_phase9x.lean,th_17_1911_vi_4_exceeds_one,C,linarith×2 positivity×2 abs_*×9 field_simp inv_* norm_num Real.*×33 順序付き環の補題 ring×2 mul_* add_*,1299,C
-keynes_part_ii_phase9x.lean,sum_sq_decomp,B,ring Finset.sum_*×5,1328,B
+keynes_part_ii_phase9x.lean,th_17_1911_vi_3_stationary,D,零因子なし・簡約 norm_num Real.*×2 ring×2 mul_*×2 Finset.sum_*,1248,D
+keynes_part_ii_phase9x.lean,th_17_1911_vi_4_law,C,abs_*×3 sq_abs div_* 型変換 Real.*×5 ring sub_* sq_*,1274,C
+keynes_part_ii_phase9x.lean,th_17_1911_vi_4_src,D,field_simp 零因子なし・簡約 Real.*×5 sub_*×2 sq_*,1284,D
+keynes_part_ii_phase9x.lean,th_17_1911_vi_4_exceeds_one,C,linarith×2 positivity×2 abs_*×9 field_simp inv_* norm_num 型変換 Real.*×33 順序付き環の補題 ring×2 mul_* add_*,1299,C
+keynes_part_ii_phase9x.lean,sum_sq_decomp,B,ring×2 Finset.sum_*×5,1328,B
 keynes_part_ii_phase9x.lean,logLik_normal_eq,E,Real.*×7 ring Finset.sum_*×2,1342,E
-keynes_part_ii_phase9x.lean,th_17_1911_3_src,C,linarith×3 positivity×2 field_simp norm_num 順序付き環の補題×2 ring mul_* sq_*,1356,C
-keynes_part_ii_phase9x.lean,th_17_1911_3_abs,E,Real.*×2 sq_*,1384,E
+keynes_part_ii_phase9x.lean,th_17_1911_3_src,C,linarith×3 positivity×2 field_simp 零因子なし・簡約×2 norm_num 型変換×2 順序付き環の補題×2 ring mul_* sq_*,1356,C
+keynes_part_ii_phase9x.lean,th_17_1911_3_abs,C,sq_abs Real.*×2 sq_*,1384,C
 keynes_part_ii_phase9x.lean,logLik_median_eq,C,abs_*×3 Real.*×7 ring Finset.sum_*×2,1393,C
 keynes_part_ii_phase9x.lean,th_17_1911_4_src,C,linarith abs_* 順序付き環の補題×2,1406,C
 keynes_part_ii_phase9x.lean,logLik_mcal_eq,E,Real.*×13 ring×2 Finset.sum_*×2,1420,E
-keynes_part_ii_phase9x.lean,th_17_1911_9_leads_gmean,C,linarith×3 positivity×2 field_simp norm_num Real.*×12 順序付き環の補題×2 ring×2 mul_* sq_*,1436,C
+keynes_part_ii_phase9x.lean,th_17_1911_9_leads_gmean,C,linarith×3 positivity×2 field_simp 零因子なし・簡約×2 norm_num 型変換×2 Real.*×12 順序付き環の補題×2 ring×2 mul_* sq_*,1436,C
 keynes_part_ii_phase9x.lean,th_17_1911_6_src,C,positivity Real.*×10 ring,1478,C
 keynes_part_ii_phase9x.lean,y₀_amean,A,,1498,A
 keynes_part_ii_phase9x.lean,y₀_median,A,,1503,A
@@ -1254,6 +1254,6 @@ keynes_part_ii_phase9x.lean,th_17_1921_N4_order,C,abs_*×5 field_simp×2 Real.*�
 keynes_part_ii_phase9x.lean,th_17_1921_N5_src,E,norm_num,1615,E
 keynes_part_ii_phase9x.lean,th_17_1921_N5_identity,B,ring,1622,B
 keynes_part_ii_phase9x.lean,th_17_1921_N5_general,A,,1627,E
-keynes_part_ii_phase9x.lean,th_17_1921_N7_src,E,Real.*×2 sub_* sq_*,1633,E
+keynes_part_ii_phase9x.lean,th_17_1921_N7_src,C,sq_abs Real.*×2 sub_* sq_*,1633,C
 keynes_part_ii_pilot.lean,th_24,C,linarith,142,C
 keynes_part_ii_pilot.lean,th_24_1,C,linarith,167,C

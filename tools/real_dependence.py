@@ -44,12 +44,27 @@ def words(*ws):
 # 消さずに残す (D の方が強いので D になる)。ORD_ERASE は B・C の語彙に取られる前に消す。
 ORD_KEEP = words(r"div_nonneg", r"div_pos", r"div_le_\w+", r"div_lt_\w+", r"le_div_iff\w*", r"lt_div_iff\w*",
                  r"one_lt_div", r"inv_pos", r"inv_nonneg")
+# 振り分けで迷う語は上位のクラスに置く (裁定 F32.13 以降の一般則)。AMBIGUOUS が .md の「振り分け表」の元。
+# (語, 迷った候補, 置いたクラス, 理由)。語は正規表現。
+AMBIGUOUS = [
+    (r"Finset\.sum_le_sum\w*", "B/A′", "P", "和と順序の両方 (単調性)"),
+    (r"Finset\.sum_nonneg|Finset\.sum_pos|Finset\.sum_eq_zero_iff_of_nonneg", "B/A′", "P", "和と順序の両方 (非負・正)"),
+    (r"mul_eq_zero|mul_ne_zero|pow_ne_zero|pow_eq_zero_iff|eq_zero_or_eq_zero_of_mul_eq_zero", "B/D", "D", "零因子が無いこと (整域の性質)。環では成り立たない"),
+    (r"mul_left_cancel₀|mul_right_cancel₀", "B/D", "D", "0 でない元での簡約 (逆元か整域が要る)"),
+    (r"eq_div_iff|eq_div_of_mul_eq|div_eq_iff", "A/D", "D", "除算を含む (旧版は語に当たらず A になっていた)"),
+    (r"sq_abs", "B/C", "C", "絶対値を含む"),
+    (r"exact_mod_cast|norm_cast|push_cast", "A/E", "E", "ℕ → ℝ の型変換 (旧版は語に当たらず A になっていた)"),
+    (r"one_mul|zero_add|zero_mul|eq_sub_of_add_eq|linear_combination", "A/B", "B", "加法・乗法 (旧版は語に当たらず A になっていた)"),
+]
+AMB_CLASS = {"P": "A′"}
+
 ORD_ERASE = words(r"mul_pos\w*", r"mul_nonneg\w*", r"mul_neg_of_\w+", r"mul_le_mul\w*", r"mul_lt_mul\w*",
                   r"mul_le_of_\w+", r"le_mul_of_\w+", r"one_le_mul_of_\w+", r"lt_of_mul_lt_mul_\w+",
                   r"le_of_mul_le_mul_\w+", r"mul_self_nonneg",
                   r"sub_nonneg", r"sub_pos", r"sub_neg", r"sub_nonpos", r"sub_le_sub\w*", r"sub_lt_sub\w*",
                   r"add_pos\w*", r"add_nonneg\w*", r"add_neg\w*", r"add_le_add\w*", r"add_lt_add\w*",
                   r"lt_add_of_\w+", r"neg_nonneg", r"neg_pos",
+                  r"Finset\.sum_le_sum\w*", r"Finset\.sum_nonneg", r"Finset\.sum_pos", r"Finset\.sum_eq_zero_iff_of_nonneg",
                   r"sq_nonneg", r"sq_pos\w*", r"pow_pos", r"pow_nonneg", r"abs_nonneg", r"one_pos", r"zero_le_one")
 
 TOK = [
@@ -63,15 +78,19 @@ TOK = [
     ("C", "lt_trichotomy", words("lt_trichotomy")),
     ("C", "not_lt/not_le", words("not_lt", "not_le", "lt_of_not_ge", "lt_of_not_le", "le_of_not_lt", "le_of_not_gt", "not_lt_of_ge")),
     ("C", "abs_*", re.compile(r"(?<![\w.'])abs_\w+|(?<=[\s(\[,=<≤+\-*/])\|(?=[^\s|])[^|\n]*?(?<=[^\s|])\|(?=[\s)\],=<≤+\-*/]|$)")),
+    ("C", "sq_abs", words("sq_abs")),
     ("C", "max/min", words(r"max", "min", r"max_\w+", r"min_\w+", r"le_max_\w+", r"min_le_\w+")),
     ("D", "field_simp", words("field_simp")),
     ("D", "div_*", words(r"div_\w+", r"mul_div\w*", r"div_mul\w*")),
     ("D", "one_div", words("one_div")),
+    ("D", "零因子なし・簡約", words("mul_eq_zero", "mul_ne_zero", "pow_ne_zero", "pow_eq_zero_iff", "eq_zero_or_eq_zero_of_mul_eq_zero", "mul_left_cancel₀", "mul_right_cancel₀")),
+    ("D", "eq_div_*", words("eq_div_iff", "eq_div_of_mul_eq", "div_eq_iff")),
     ("D", "inv_*", words(r"inv_\w+", r"mul_inv\w*", "inv_eq_one_div")),
     ("E", "norm_num", words("norm_num")),
+    ("E", "型変換", words("exact_mod_cast", "norm_cast", "push_cast")),
     ("E", "Real.*", re.compile(r"(?<![\w'])Real\.\w+")),
     ("P", "順序付き環の補題(除算)", ORD_KEEP),
-    ("B", "ring", words("ring", "ring_nf", "noncomm_ring", "abel", "group")),
+    ("B", "ring", words("ring", "ring_nf", "noncomm_ring", "abel", "group", "linear_combination", "one_mul", "zero_add", "zero_mul", "eq_sub_of_add_eq")),
     ("B", "mul_*", words(r"mul_\w+", "mul_comm", "mul_assoc")),
     ("B", "add_*", words(r"add_\w+", "add_comm", "add_assoc")),
     ("B", "sub_*", words(r"sub_\w+")),
@@ -140,11 +159,12 @@ AXIOM_RULES = [
     (r"def_X_(left|right)(_i)?", "B", "積 (ab/h = a/bh · b/h)"),
     (r"def_XII", "B", "和と差 (P + Q = R ならば P = R − Q)"),
     (r"ax_iva_(mul|add)", "B", "和・積の交換律"),
-    (r"ax_ivb|ax_ivc", "B", "和 (P < P + Q、和の簡約。< は前提 0 < Q の形で使う)"),
+    (r"ax_ivb", "P", "順序付き環 (0 < Q ならば P < P + Q。裁定 F32.7: B ではなく A′)"),
+    (r"ax_ivc", "B", "和の簡約"),
     (r"ax_v", "B", "和の結合・交換"),
     (r"ax_vi", "B", "積の分配律"),
     (r"def_XI(_i)?", "D", "除算 (PQ = R ならば P = R/Q、Q ≠ 0)"),
-    (r"ax_mae(_prop)?|ax_vii(_i)?", "D", "p/n の値 (自然数の除算を含む存在)"),
+    (r"ax_mae(_prop)?|ax_vii(_i)?", "D", "p/n の値 (自然数の除算を含む存在。裁定 F32.8: D のまま)"),
     (r"ax_ii|ax_iii_\w+|def_VIII_i(_src)?", "A", "値の等式 (= 1 の前件・後件の移し替え)"),
     (r"cons_of_pos(_src)?|cons_iff_taut|cons_true", "A", "値 ≠ 0 と Cons の関係"),
     (r"ax_range_(lo|hi)(_i)?", "A", "値域 0 ≤ P ≤ 1 (順序のみ)"),
@@ -264,6 +284,7 @@ REF = re.compile(r"(?<![\w/])(全 phase|\w+(?:,\w+)*)/(" + IDENT + r")((?:\s*[�
 
 
 def strip_parens(s):
+    """括弧の中を消す。台帳の判定には使わない (括弧の中の定理名も拾う、裁定 F32.11)。旧版との差を出すためだけに残す。"""
     out, depth = [], 0
     for ch in s:
         if ch in "(（":
@@ -339,19 +360,25 @@ def ledger_pass(rows, axioms, write):
                 continue
             d = dict(zip(hdr, cells[:len(hdr)]))
             lean = d.get("既存の Lean", "")
-            items = []
+            items, items_out = [], []  # items = 括弧の中も含めて拾った参照、items_out = 括弧の外だけ (旧版の拾い方)
             if d.get("式/記法") not in NOT_COUNTED:
-                for m in REF.finditer(strip_parens(lean)):
-                    files = set()
-                    for ab in m.group(1).split(","):
-                        files |= file_of_abbrev(ab)
-                    if not files:
-                        continue
-                    names = [m.group(2)] + [n for n in re.split(r"\s*[・,、]\s*", m.group(3)) if n]
-                    for n in names:
-                        for (f, c, is_ax, full) in idx.get(n, []):
-                            if f in files and (c, is_ax, full) not in [(x[1], x[2], x[3]) for x in items]:
-                                items.append((f, c, is_ax, full))
+                for text, acc in ((lean, items), (strip_parens(lean), items_out)):
+                    for m in REF.finditer(text):
+                        files = set()
+                        for ab in m.group(1).split(","):
+                            files |= file_of_abbrev(ab)
+                        if not files:
+                            continue
+                        names = [m.group(2)] + [n for n in re.split(r"\s*[・,、]\s*", m.group(3)) if n]
+                        for n in names:
+                            for (f, c, is_ax, full) in idx.get(n, []):
+                                if f in files and (c, is_ax, full) not in [(x[1], x[2], x[3]) for x in acc]:
+                                    acc.append((f, c, is_ax, full))
+            paren_only = [it for it in items if it[3] not in {x[3] for x in items_out}]
+            best_out = None
+            for it in items_out:
+                if best_out is None or ORDER.index(it[1]) < ORDER.index(best_out):
+                    best_out = it[1]
             best = None
             for it in items:
                 if best is None or ORDER.index(it[1]) < ORDER.index(best):
@@ -368,7 +395,8 @@ def ledger_pass(rows, axioms, write):
                 why = ""
             by_ch.setdefault(f"ch{ch}", {}).setdefault(val, 0)
             by_ch[f"ch{ch}"][val] += 1
-            infos.append({"id": cells[0], "item": d.get("項目ID", ""), "val": val, "items": items, "why": why})
+            infos.append({"id": cells[0], "item": d.get("項目ID", ""), "val": val, "items": items, "why": why,
+                          "paren_only": paren_only, "val_out": SHOW.get(best_out, best_out) if best_out else "—"})
             out.append("| " + " | ".join(cells[:len(hdr)] + [val]) + " |")
         if write:
             with open(path, "w", encoding="utf-8") as fh:
@@ -386,6 +414,7 @@ def ranges(ids):
     return ", ".join(out)
 
 
+NOTE_EX = "✎ 行は反例 (数値模型) の E を含むため強めに出る。"
 README_HEAD = "## ℝ 依存 A〜E の本数 (第II部)"
 
 
@@ -407,7 +436,7 @@ def readme_section(n_files, n_rows, tot, tot_t, by_ch):
         f"| 定理・例 (第II部 {n_files} ファイル、class: 字面のみ) | " + " | ".join(f"{tot[c if c != 'A′' else 'P']:,}" for c in cols) + f" | — | {n_rows:,} |",
         f"| 定理・例 (同、class_trans: 呼び先・公理まで) | " + " | ".join(f"{tot_t[c if c != 'A′' else 'P']:,}" for c in cols) + f" | — | {n_rows:,} |",
         f"| 台帳の行 (ch12–ch17、class_trans) | " + " | ".join(f"{gt[c]:,}" for c in cols) + f" | {gt['—']:,} | {sum(gt.values()):,} |",
-        "",
+        "", NOTE_EX, "",
     ]
     return "\n".join(lines)
 
@@ -468,8 +497,8 @@ def main():
               "- **D 体の構造**: `field_simp`・`div_*`・`inv_*`・`one_div`\n"
               "- **E 数値**: `norm_num`・`Real.*`\n")
     md.append("class は宣言の字面に現れる語だけで決める。`class_trans` は、本文で使う同じファイルの別定理と公理まで辿った最強の分類 "
-              "(公理は下の表で分類し、`def_IX*`・`def_X_*`・`def_XII`・`ax_iva_*`・`ax_ivb`・`ax_ivc`・`ax_v`・`ax_vi` を B、"
-              "`def_XI*` を D とする)。台帳の列は `class_trans` で付ける。\n")
+              "(公理は下の表で分類し、`def_IX*`・`def_X_*`・`def_XII`・`ax_iva_*`・`ax_ivc`・`ax_v`・`ax_vi` を B、"
+              "`ax_ivb` を A′、`def_XI*`・`ax_mae*`・`ax_vii*` を D とする)。台帳の列は `class_trans` で付ける。\n")
     md.append("## ファイル別 (class)\n")
     md.append(f"| ファイル | 宣言数 | grep 本数 | 一致 | {HD} |")
     md.append("|---|---|---|---|---|---|---|---|---|---|")
@@ -484,11 +513,16 @@ def main():
     md.append(f"| | {HD} | 計 |\n|---|---|---|---|---|---|---|---|")
     md.append("| 直接 (class) | " + " | ".join(str(tot[c]) for c in SEQ) + f" | {sum(tot.values())} |")
     md.append("| 呼び先と公理の使用まで (class_trans) | " + " | ".join(str(tot_t[c]) for c in SEQ) + f" | {sum(tot_t.values())} |\n")
+    md.append(NOTE_EX + "\n")
+    md.append("原則: 迷ったら強い側 (上位のクラス) に置く。少なめに分類して見落とす方が危険だから (人の裁定、2026-10-30)。"
+              "迷った語は下の「振り分け表」に挙げる。\n")
 
     md.append("## 公理の分類 (使うと呼び側の class_trans が上がる)\n")
     md.append("| 公理名 (規則) | クラス | 根拠の演算 |\n|---|---|---|")
     for rx, cls, basis in AXIOM_RULES:
         md.append(f"| `{rx.replace('|', ' / ')}` | {SHOW.get(cls, cls)} | {basis} |")
+    md.append("\n`ax_mae`・`ax_mae_prop`・`ax_vii`・`ax_vii_i` は D のまま (自然数 n での除算 p/n を含む存在の主張なので、B にはしない。裁定 F32.8)。"
+              "`ax_ivb` は 0 < Q ならば P < P + Q で、加法と順序の両方を使うので B ではなく A′ (裁定 F32.7)。")
     md.append("\n原始概念 (`Pr`・`PrI`・`Cons`・`IProp`・`iand` など) と命題論理の `ktaut_*` は ℝ の演算を使わないので分類しない。\n")
 
     md.append("## 台帳 ch12 の公理の行\n")
@@ -522,6 +556,7 @@ def main():
             gt[k] += c.get(k, 0)
         md.append(f"| {ch} | {n} | " + " | ".join(str(c.get(k, 0)) for k in keys) + " |")
     md.append(f"| **合計** | **{gn}** | " + " | ".join(f"**{gt[k]}**" for k in keys) + " |\n")
+    md.append(NOTE_EX + "\n")
 
     md.append("## 「—」の行\n")
     dash = {}
@@ -530,6 +565,54 @@ def main():
             dash.setdefault(x["why"], []).append(x["id"])
     for why, ids in dash.items():
         md.append(f"- **{why}** ({len(ids)}): {ranges(ids)}")
+    md.append("")
+
+    md.append("## Π への移植の見積り\n")
+    n_ct = tot_t["C"]
+    md.append(f"Π への移植で比較可能性を作り直す要作業は、C {n_ct} 本 (class_trans、呼び先と公理まで辿った値) を上限とする。"
+              "下の「比較可能性を直接使う定理」は、`le_total`・`lt_trichotomy`・`le_or_lt`・`le_or_gt` と、同じ働きの `lt_or_le`・`lt_or_ge`・`lt_or_gt_of_ne` を本文で直接使う定理で、"
+              "比較可能性が本質的に要る箇所の下限の参考値である (`linarith` 等は比較可能性を暗に使うだけで数えない。"
+              "`lt_or_eq_of_le`・`eq_or_lt_of_le` は半順序でも成り立つので数えない)。\n")
+    cmp_rx = words("le_total", "lt_trichotomy", "le_or_lt", "le_or_gt", "lt_or_le", "lt_or_ge", "lt_or_gt", "lt_or_gt_of_ne", "lt_by_cases", "ne_iff_lt_or_gt")
+    direct = []
+    for r in rows:
+        blines = r["body"].split("\n")
+        for off, ln in enumerate(blines):
+            for m in cmp_rx.finditer(ln):
+                direct.append((r["file"], r["theorem"], r["line"] + off, m.group(0)))
+    seen, uniq = set(), []
+    for f, t, ln, w in direct:
+        if (f, t) in seen:
+            continue
+        seen.add((f, t))
+        uniq.append((f, t, ln, w))
+    md.append(f"### 比較可能性を直接使う定理 ({len(uniq)} 本)\n")
+    md.append("| ファイル | 定理 | 行 (最初の使用) | 使う語 |\n|---|---|---|---|")
+    for f, t, ln, w in uniq:
+        md.append(f"| {f[:-5]} | `{t}` | {ln} | `{w}` |")
+    md.append("")
+
+    md.append("## 振り分け表 (迷った語は上位に置く)\n")
+    md.append("語の振り分けで A か A′ か、B か D か迷うときは上位のクラスに置いた (裁定 2026-10-30)。"
+              "旧版で語に当たらず A になっていたものは、迷う語として挙げて上げた。"
+              "整域の性質 (`mul_eq_zero`・`mul_ne_zero`・`eq_zero_or_eq_zero_of_mul_eq_zero` など零因子が無いこと) は D 扱い (強い側、裁定 F32.14)。\n")
+    md.append("| 語 (正規表現) | 迷った候補 | 置いたクラス | 理由 | 使う定理の本数 (class の字面) |\n|---|---|---|---|---|")
+    for rx, cands, cl, why in AMBIGUOUS:
+        crx = re.compile(r"(?<![\w.'])(?:" + rx + r")(?![\w'])")
+        k = sum(1 for r in rows if crx.search(r["body"]))
+        md.append(f"| `{rx.replace(chr(124), ' / ')}` | {cands} | {AMB_CLASS.get(cl, cl)} | {why} | {k} |")
+    md.append("")
+
+    md.append("## 括弧の中の定理名から拾った台帳の行\n")
+    md.append("台帳の Lean 欄は括弧の中の定理名も拾う (括弧を消さない、裁定 F32.11)。括弧の外だけで拾った旧版と比べて、"
+              "拾う参照が増えた行を挙げる (値が変わった行は → で示す)。"
+              "Lean 欄が「未」でも括弧内に定理名があれば拾って値を付ける (強い側に倒す裁定、2026-10-30。例: ch14-156・ch17-134)。\n")
+    pr = [x for x in infos if x["paren_only"]]
+    md.append(f"{len(pr)} 行。\n")
+    md.append("| 行ID | 項目ID | 括弧の中から拾った定理・公理 | 旧版の値 → 新しい値 |\n|---|---|---|---|")
+    for x in pr:
+        md.append(f"| {x['id']} | {x['item']} | " + "・".join(f"`{it[3]}` ({it[0][len('keynes_part_ii_'):-5]}, {SHOW.get(it[1], it[1])})" for it in x["paren_only"])
+                  + f" | {x['val_out']} → {x['val']} |")
     md.append("")
 
     md.append("## クラス C の定理 (Π への移植で比較可能性が要る箇所)\n")
