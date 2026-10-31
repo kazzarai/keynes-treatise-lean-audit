@@ -37,14 +37,14 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch04/index.html">&larr; Ch. 4</a> | <a href="../ch06/index.html">Ch. 6 &rarr;</a></nav>
 <h1>Chapter V. Other Methods of Determining Probabilities</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 65&ndash;70 (Cornell copy, PDF pp. 85&ndash;90). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>Formulas in Lean</th><td><b>0 / 16 formulas (&#10003;0 &asymp;0 &#9998;0), not yet 16 &mdash; 0.0%</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>Formulas in Lean</th><td><b>4 / 16 formulas (&#10003;1 &asymp;3 &#9998;0), not yet 12 &mdash; 25.0%</b></td></tr>
 <tr><th>Ledger rows</th><td>38</td></tr>
 <tr><th>Formulas</th><td>16 (display 1, inline 15; items 16, numbered 0)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>0 &nbsp; <span class="mark equiv">&asymp;</span>0 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>16</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>1 &nbsp; <span class="mark equiv">&asymp;</span>3 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>12</td></tr>
 <tr><th>Notation</th><td>22 (with a Lean counterpart 0)</td></tr>
 <tr><th>Reference rows</th><td>0</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (38)</button><button type="button" data-k="printed">&#10003; (0)</button><button type="button" data-k="equiv">&asymp; (0)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (16)</button><button type="button" data-k="notation">notation (22)</button></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (38)</button><button type="button" data-k="printed">&#10003; (1)</button><button type="button" data-k="equiv">&asymp; (3)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (12)</button><button type="button" data-k="notation">notation (22)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
 <section class="card" id="ch05-001">
 <h2>ch05-001</h2>
@@ -98,9 +98,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 66 (PDF p. 86) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>ab/h &lt; a/h unless b/ah = 1 ;</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(弱形 ≤ のみ)</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase13a_irrelevance/th_5_r005・th_5_r005_iff (前提 Cons (a ∧ h) を追加)</dd>
 <dt>Anchor words</dt><dd>will enable us to prove that</dd>
-<dt>Remarks</dt><dd>1 行に 2 関係 (規則: 表示は行ごとに 1 本)。hires で確認。弱形のみ (phase6b/th_13_4: Pr (α ∧ b) h ≤ Pr b h)。ch06-007 (≤ の場合分け th_vi_2_dichotomy を ≈ とした) と扱いを揃えるかは裁定事項 (読み手役 F-B00a-11)。印刷の狭義 &lt; と但し書き b/ah = 1 の Lean はない (所見候補)。向きも異なる: th_13_4 は「連言 ≤ 二つ目の項」で、印刷の「連言 ≤ 一つ目の項」に合わせるには α := b, b := a と置き b ∧ a を a ∧ b に入れ替える (and_comm) 必要がある</dd>
+<dt>Remarks</dt><dd>1 行に 2 関係 (規則: 表示は行ごとに 1 本)。hires で確認。弱形のみ (phase6b/th_13_4: Pr (α ∧ b) h ≤ Pr b h)。ch06-007 (≤ の場合分け th_vi_2_dichotomy を ≈ とした) と扱いを揃えるかは裁定事項 (読み手役 F-B00a-11)。印刷の狭義 &lt; と但し書き b/ah = 1 の Lean はない (所見候補)。向きも異なる: th_13_4 は「連言 ≤ 二つ目の項」で、印刷の「連言 ≤ 一つ目の項」に合わせるには α := b, b := a と置き b ∧ a を a ∧ b に入れ替える (and_comm) 必要がある。B34: 狭義形を Def. X 右形と値域から証明。unless を「b/ah ≠ 1 ならば」と読み、b/ah が存在する範囲 Cons (a ∧ h) を足した (a/h ≠ 0 は Def. VI の印刷の向きから出る)。別形 th_5_r005_pos は a/h ≠ 0 を前提、th_5_r005_iff は a/h ≠ 0 の下の双条件、th_5_r005_unless は b/ah = 1 なら等号。但し書きも a/h ≠ 0 も無い形は全公理を満たす有限模型で偽 (phase13a_irrelevance/model_r005_needs_cons; Ax. (iv. b) folio 136 の第 2 の例外 P = 0)</dd>
 <dt>Crop</dt><dd>folio 66, x 125&ndash;1335, y 283&ndash;331 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch05-006">
@@ -371,9 +371,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 68 (PDF p. 88) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/hh̄₁ = 0</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase13a_irrelevance/th_5_r029 (前提の連言の順序 hh̄₁ を h̄₁h)</dd>
 <dt>Anchor words</dt><dd>(a) if</dd>
-<dt>Remarks</dt><dd>好意的関連の十分条件 (a)。上線を補正（F-B15-1）</dd>
+<dt>Remarks</dt><dd>好意的関連の十分条件 (a)。上線を補正（F-B15-1）。B34: 前提 NewEvidence h₁ h・Doubtful a h は本文の new・doubtful (脚注 1・2)。結論 FavourablyRelevant は a/h₁h &gt; a/h。Cons を用いない。前提の連言の可換は本公理系に無いので順序違いで ≈</dd>
 <dt>Crop</dt><dd>folio 68, x 125&ndash;1335, y 1064&ndash;1117 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch05-030">
@@ -383,9 +383,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 68 (PDF p. 88) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/hh₁ = 1</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase13a_irrelevance/th_5_r030 (前提の連言の順序 hh₁ を h₁h)</dd>
 <dt>Anchor words</dt><dd>(b) if</dd>
-<dt>Remarks</dt><dd>同 (b)</dd>
+<dt>Remarks</dt><dd>同 (b)。B34: a/h ≠ 1 と値域だけで出る (新しい証拠の前提は要らない; 逆に Cons h の下で h₁ が新しいことが出る: th_5_r030_new)。(a)(b) をまとめた形は th_5_favourable</dd>
 <dt>Crop</dt><dd>folio 68, x 125&ndash;1335, y 1064&ndash;1117 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch05-031">
@@ -462,9 +462,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 68 (PDF p. 88) &middot; &sect;4 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>h₁/h ≠ 1</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase13a_irrelevance/NewEvidence・th_5_r037</dd>
 <dt>Anchor words</dt><dd>new evidence so long as</dd>
-<dt>Remarks</dt><dd>「h₁ is new evidence so long as h₁/h ≠ 1」</dd>
+<dt>Remarks</dt><dd>「h₁ is new evidence so long as h₁/h ≠ 1」。B34: 定義 NewEvidence の本体が h₁/h ≠ 1。th_5_r037: 関連する証拠は新しい証拠 (Cons h)</dd>
 <dt>Crop</dt><dd>folio 68, x 125&ndash;1335, y 2141&ndash;2180 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch05-038">
@@ -481,7 +481,7 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch04/index.html">&larr; Ch. 4</a> | <a href="../ch06/index.html">Ch. 6 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch05.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch05-001":"notation","ch05-002":"notation","ch05-003":"notation","ch05-004":"notation","ch05-005":"none","ch05-006":"notation","ch05-007":"notation","ch05-008":"notation","ch05-009":"none","ch05-010":"notation","ch05-011":"none","ch05-012":"notation","ch05-013":"notation","ch05-014":"none","ch05-015":"none","ch05-016":"none","ch05-017":"none","ch05-018":"notation","ch05-019":"notation","ch05-020":"notation","ch05-021":"notation","ch05-022":"none","ch05-023":"none","ch05-024":"none","ch05-025":"none","ch05-026":"none","ch05-027":"none","ch05-028":"notation","ch05-029":"none","ch05-030":"none","ch05-031":"notation","ch05-032":"notation","ch05-033":"notation","ch05-034":"notation","ch05-035":"notation","ch05-036":"notation","ch05-037":"none","ch05-038":"notation"};
+var K={"ch05-001":"notation","ch05-002":"notation","ch05-003":"notation","ch05-004":"notation","ch05-005":"equiv","ch05-006":"notation","ch05-007":"notation","ch05-008":"notation","ch05-009":"none","ch05-010":"notation","ch05-011":"none","ch05-012":"notation","ch05-013":"notation","ch05-014":"none","ch05-015":"none","ch05-016":"none","ch05-017":"none","ch05-018":"notation","ch05-019":"notation","ch05-020":"notation","ch05-021":"notation","ch05-022":"none","ch05-023":"none","ch05-024":"none","ch05-025":"none","ch05-026":"none","ch05-027":"none","ch05-028":"notation","ch05-029":"equiv","ch05-030":"equiv","ch05-031":"notation","ch05-032":"notation","ch05-033":"notation","ch05-034":"notation","ch05-035":"notation","ch05-036":"notation","ch05-037":"printed","ch05-038":"notation"};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';

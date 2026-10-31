@@ -37,14 +37,14 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch03/index.html">&larr; Ch. 3</a> | <a href="../ch05/index.html">Ch. 5 &rarr;</a></nav>
 <h1>Chapter IV. The Principle of Indifference</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 41&ndash;64 (Cornell copy, PDF pp. 61&ndash;84). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>Formulas in Lean</th><td><b>5 / 31 formulas (&#10003;5 &asymp;0 &#9998;0), not yet 26 &mdash; 16.1%</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>Formulas in Lean</th><td><b>16 / 31 formulas (&#10003;15 &asymp;1 &#9998;0), not yet 15 &mdash; 51.6%</b></td></tr>
 <tr><th>Ledger rows</th><td>129</td></tr>
 <tr><th>Formulas</th><td>31 (display 3, inline 28; items 31, numbered 0)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>5 &nbsp; <span class="mark equiv">&asymp;</span>0 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>26</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>15 &nbsp; <span class="mark equiv">&asymp;</span>1 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>15</td></tr>
 <tr><th>Notation</th><td>95 (with a Lean counterpart 0)</td></tr>
 <tr><th>Reference rows</th><td>3</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (129)</button><button type="button" data-k="printed">&#10003; (5)</button><button type="button" data-k="equiv">&asymp; (0)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (26)</button><button type="button" data-k="notation">notation (95)</button></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (129)</button><button type="button" data-k="printed">&#10003; (15)</button><button type="button" data-k="equiv">&asymp; (1)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (15)</button><button type="button" data-k="notation">notation (95)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
 <section class="card" id="ch04-001">
 <h2>ch04-001</h2>
@@ -677,9 +677,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 55 (PDF p. 75) &middot; &sect;14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>x/h̄₁h = x/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase13a_irrelevance/th_4_r054・th_4_r054_of_new (前提 Cons h と Cons (h̄₁ ∧ h) を追加)</dd>
 <dt>Anchor words</dt><dd>then</dd>
-<dt>Remarks</dt><dd>「the contradictory of irrelevant evidence is also irrelevant」。第II部で証明予定と明記 (hires で h̄₁ の上線を確認)</dd>
+<dt>Remarks</dt><dd>「the contradictory of irrelevant evidence is also irrelevant」。第II部で証明予定と明記 (hires で h̄₁ の上線を確認)。B34: 第II部の Def. IX・X、(1)、Def. VI の印刷の向き (cons_of_pos_src) で示した (Def. VIII は不要)。前提は公理 (i) の但し書き (x/h・x/h̄₁h が存在する範囲)。別形は Cons (h̄₁ ∧ h) の代わりに h₁/h ≠ 1。但し書きを落とした形は全公理を満たす有限模型で偽 (phase13a_irrelevance/model_r054_needs_cons)</dd>
 <dt>Crop</dt><dd>folio 55, x 125&ndash;1335, y 1443&ndash;1492 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch04-055">
@@ -746,9 +746,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 55 (PDF p. 75) &middot; &sect;14 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>h′₁/h₁h = 1</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase13a_irrelevance/StrictlyIrrelevant・th_4_r060</dd>
 <dt>Anchor words</dt><dd>no proposition h′₁ such that</dd>
-<dt>Remarks</dt><dd>厳密な無関連の定義 (hires で確認)</dd>
+<dt>Remarks</dt><dd>厳密な無関連の定義 (hires で確認)。B34: 定義 StrictlyIrrelevant の本体に h′₁/h₁h = 1 が印刷どおり現れる。th_4_r060 は定義 ↔ 全称形</dd>
 <dt>Crop</dt><dd>folio 55, x 125&ndash;1335, y 2029&ndash;2063 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch04-061">
@@ -758,9 +758,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 55 (PDF p. 75) &middot; &sect;14 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>h′₁/h ≠ 1</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase13a_irrelevance/StrictlyIrrelevant・th_4_r061</dd>
 <dt>Anchor words</dt><dd>h′₁/h₁h = 1,</dd>
-<dt>Remarks</dt><dd>不等号の活字は ≠ (斜線つき =)</dd>
+<dt>Remarks</dt><dd>不等号の活字は ≠ (斜線つき =)。B34: 定義の本体に h′₁/h ≠ 1 が現れる。th_4_r061: Cons h の下ではこの条件を外しても定義は同値 (h から推論できる h′₁ は無関連)</dd>
 <dt>Crop</dt><dd>folio 55, x 125&ndash;1335, y 2029&ndash;2063 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch04-062">
@@ -770,9 +770,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 55 (PDF p. 75) &middot; &sect;14 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>x/h′₁h ≠ x/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase13a_irrelevance/StrictlyIrrelevant・th_4_r062</dd>
 <dt>Anchor words</dt><dd>and</dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B34: 定義の本体に x/h′₁h ≠ x/h が現れる。th_4_r062: 厳密な無関連 ⇒ 単純な無関連 (本文「of course」; Cons h・Cons (h₁ ∧ h) 付き)</dd>
 <dt>Crop</dt><dd>folio 55, x 125&ndash;1335, y 2029&ndash;2063 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch04-063">
@@ -781,9 +781,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 55 (PDF p. 75) &middot; &sect;14 &middot; Footnote 4 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>h₁h₂ = h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase13a_irrelevance/IndependentComplementary・th_4_r063</dd>
 <dt>Anchor words</dt><dd>complementary parts of h if</dd>
-<dt>Remarks</dt><dd>独立・相補な部分の定義</dd>
+<dt>Remarks</dt><dd>独立・相補な部分の定義。B34: h₁h₂ = h は IProp の等号 (Lean の =) と読んだ (弱い読み; (h₁h₂ ≡ h)/… = 1 と読む読みは置かない)。th_4_r063 は定義 ↔ 印刷の 3 条件</dd>
 <dt>Crop</dt><dd>folio 55, x 125&ndash;1335, y 2171&ndash;2210 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch04-064">
@@ -793,9 +793,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 55 (PDF p. 75) &middot; &sect;14 &middot; Footnote 4 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>h₁/h₂ ≠ 1</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase13a_irrelevance/IndependentComplementary・th_4_r064</dd>
 <dt>Anchor words</dt><dd>h₁h₂ = h,</dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B34: 定義の本体に h₁/h₂ ≠ 1。th_4_r064: Cons h₂ の下で h̄₁h₂ は整合</dd>
 <dt>Crop</dt><dd>folio 55, x 125&ndash;1335, y 2171&ndash;2210 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch04-065">
@@ -805,9 +805,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 55 (PDF p. 75) &middot; &sect;14 &middot; Footnote 4 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>h₂/h₁ ≠ 1</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase13a_irrelevance/IndependentComplementary・th_4_r065</dd>
 <dt>Anchor words</dt><dd>and</dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B34: 定義の本体に h₂/h₁ ≠ 1。th_4_r065: Cons h₁ の下で h̄₂h₁ は整合</dd>
 <dt>Crop</dt><dd>folio 55, x 125&ndash;1335, y 2171&ndash;2210 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch04-066">
@@ -817,9 +817,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 55 (PDF p. 75) &middot; &sect;14 &middot; Footnote 4 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>x/h ≠ x/h₂</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase13a_irrelevance/RelevantPart・th_4_r066</dd>
 <dt>Anchor words</dt><dd>Also h₁ is relevant if</dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B34: 定義 RelevantPart の本体に x/h ≠ x/h₂。th_4_r066: h₁h₂ = h の下で本文の x/h₁h₂ ≠ x/h₂ と同じ。系 th_4_r066_new: 関連する部分は h₂ に対して新しい証拠</dd>
 <dt>Crop</dt><dd>folio 55, x 125&ndash;1335, y 2171&ndash;2210 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch04-067">
@@ -1304,9 +1304,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 60 (PDF p. 80) &middot; &sect;21 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>[φ(a_r) ≡ φ(a_r′) + φ(a_r″)]/h = 1</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase13a_irrelevance/DivisibleBy・th_4_r109</dd>
 <dt>Anchor words</dt><dd>is divisible if</dd>
-<dt>Remarks</dt><dd>可分な選択肢の条件 (i)。hires で角括弧と ≡ を確認。番号欄は箇条番号。右辺の「1」は全高の活字</dd>
+<dt>Remarks</dt><dd>可分な選択肢の条件 (i)。hires で角括弧と ≡ を確認。番号欄は箇条番号。右辺の「1」は全高の活字。B34: 定義 DivisibleBy の第 1 成分 (+ は ior)。th_4_r109: (12) により φ(a_r)/h = (φ(a_r′) + φ(a_r″))/h。3 条件の同時成立の証人は phase13a_irrelevance/model_divisible_witness (全公理を満たす重み (1,1,1) の模型)</dd>
 <dt>Crop</dt><dd>folio 60, x 125&ndash;1335, y 1115&ndash;1172 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch04-110">
@@ -1315,9 +1315,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 60 (PDF p. 80) &middot; &sect;21 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a_r′) . φ(a_r″)/h = 0</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase13a_irrelevance/DivisibleBy・th_4_r110</dd>
 <dt>Anchor words</dt><dd>(i.) [φ(a_r) ≡ …</dd>
-<dt>Remarks</dt><dd>排反条件。ピリオドは連言。右辺の「0」は (iii.) と同じく小文字 o に見える x 高さの活字 (旧体数字の 0; hires 2 倍拡大で確認、読み手役 F-B00a-4)</dd>
+<dt>Remarks</dt><dd>排反条件。ピリオドは連言。右辺の「0」は (iii.) と同じく小文字 o に見える x 高さの活字 (旧体数字の 0; hires 2 倍拡大で確認、読み手役 F-B00a-4)。B34: 定義の第 2 成分 (ピリオドは iand)。th_4_r110: (i.)(ii.) と (24) で φ(a_r)/h = φ(a_r′)/h + φ(a_r″)/h</dd>
 <dt>Crop</dt><dd>folio 60, x 125&ndash;1335, y 1172&ndash;1223 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch04-111">
@@ -1326,9 +1326,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 60 (PDF p. 80) &middot; &sect;21 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a_r′)/h ≠ 0 and φ(a_r″)/h ≠ 0</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase13a_irrelevance/DivisibleBy・th_4_r111</dd>
 <dt>Anchor words</dt><dd>(ii.) φ(a_r′) . φ(a_r″)/h = 0</dd>
-<dt>Remarks</dt><dd>1 行に 2 つの関係 (規則: 表示式は印刷の行ごとに 1 本)。「0」は小文字 o に見える活字 (hires)。≠ の活字は = に縦棒</dd>
+<dt>Remarks</dt><dd>1 行に 2 つの関係 (規則: 表示式は印刷の行ごとに 1 本)。「0」は小文字 o に見える活字 (hires)。≠ の活字は = に縦棒。B34: 定義の第 3 成分 (2 関係の連言)。th_4_r111: 3 条件の下で部分選択肢の確率はどちらも元の選択肢より小さい</dd>
 <dt>Crop</dt><dd>folio 60, x 125&ndash;1335, y 1223&ndash;1280 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch04-112">
@@ -1537,7 +1537,7 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch03/index.html">&larr; Ch. 3</a> | <a href="../ch05/index.html">Ch. 5 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch04.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch04-001":"notation","ch04-002":"notation","ch04-003":"notation","ch04-004":"notation","ch04-005":"notation","ch04-006":"notation","ch04-007":"none","ch04-008":"none","ch04-009":"notation","ch04-010":"notation","ch04-011":"notation","ch04-012":"notation","ch04-013":"notation","ch04-014":"notation","ch04-015":"notation","ch04-016":"notation","ch04-017":"notation","ch04-018":"notation","ch04-019":"notation","ch04-020":"notation","ch04-021":"notation","ch04-022":"notation","ch04-023":"notation","ch04-024":"notation","ch04-025":"notation","ch04-026":"notation","ch04-027":"notation","ch04-028":"notation","ch04-029":"notation","ch04-030":"notation","ch04-031":"notation","ch04-032":"none","ch04-033":"notation","ch04-034":"notation","ch04-035":"notation","ch04-036":"notation","ch04-037":"notation","ch04-038":"notation","ch04-039":"notation","ch04-040":"notation","ch04-041":"notation","ch04-042":"notation","ch04-043":"notation","ch04-044":"notation","ch04-045":"notation","ch04-046":"notation","ch04-047":"notation","ch04-048":"notation","ch04-049":"notation","ch04-050":"notation","ch04-051":"notation","ch04-052":"printed","ch04-053":"printed","ch04-054":"none","ch04-055":"printed","ch04-056":"printed","ch04-057":"notation","ch04-058":"printed","ch04-059":"notation","ch04-060":"none","ch04-061":"none","ch04-062":"none","ch04-063":"none","ch04-064":"none","ch04-065":"none","ch04-066":"none","ch04-067":"notation","ch04-068":"notation","ch04-069":"notation","ch04-070":"notation","ch04-071":"notation","ch04-072":"notation","ch04-073":"notation","ch04-074":"notation","ch04-075":"notation","ch04-076":"notation","ch04-077":"notation","ch04-078":"notation","ch04-079":"notation","ch04-080":"notation","ch04-081":"notation","ch04-082":"notation","ch04-083":"notation","ch04-084":"notation","ch04-085":"none","ch04-086":"none","ch04-087":"none","ch04-088":"notation","ch04-089":"notation","ch04-090":"none","ch04-091":"none","ch04-092":"","ch04-093":"notation","ch04-094":"none","ch04-095":"notation","ch04-096":"notation","ch04-097":"notation","ch04-098":"none","ch04-099":"none","ch04-100":"notation","ch04-101":"notation","ch04-102":"notation","ch04-103":"notation","ch04-104":"notation","ch04-105":"notation","ch04-106":"notation","ch04-107":"notation","ch04-108":"notation","ch04-109":"none","ch04-110":"none","ch04-111":"none","ch04-112":"notation","ch04-113":"none","ch04-114":"notation","ch04-115":"","ch04-116":"notation","ch04-117":"notation","ch04-118":"notation","ch04-119":"notation","ch04-120":"","ch04-121":"notation","ch04-122":"notation","ch04-123":"none","ch04-124":"none","ch04-125":"notation","ch04-126":"none","ch04-127":"notation","ch04-128":"notation","ch04-129":"notation"};
+var K={"ch04-001":"notation","ch04-002":"notation","ch04-003":"notation","ch04-004":"notation","ch04-005":"notation","ch04-006":"notation","ch04-007":"none","ch04-008":"none","ch04-009":"notation","ch04-010":"notation","ch04-011":"notation","ch04-012":"notation","ch04-013":"notation","ch04-014":"notation","ch04-015":"notation","ch04-016":"notation","ch04-017":"notation","ch04-018":"notation","ch04-019":"notation","ch04-020":"notation","ch04-021":"notation","ch04-022":"notation","ch04-023":"notation","ch04-024":"notation","ch04-025":"notation","ch04-026":"notation","ch04-027":"notation","ch04-028":"notation","ch04-029":"notation","ch04-030":"notation","ch04-031":"notation","ch04-032":"none","ch04-033":"notation","ch04-034":"notation","ch04-035":"notation","ch04-036":"notation","ch04-037":"notation","ch04-038":"notation","ch04-039":"notation","ch04-040":"notation","ch04-041":"notation","ch04-042":"notation","ch04-043":"notation","ch04-044":"notation","ch04-045":"notation","ch04-046":"notation","ch04-047":"notation","ch04-048":"notation","ch04-049":"notation","ch04-050":"notation","ch04-051":"notation","ch04-052":"printed","ch04-053":"printed","ch04-054":"equiv","ch04-055":"printed","ch04-056":"printed","ch04-057":"notation","ch04-058":"printed","ch04-059":"notation","ch04-060":"printed","ch04-061":"printed","ch04-062":"printed","ch04-063":"printed","ch04-064":"printed","ch04-065":"printed","ch04-066":"printed","ch04-067":"notation","ch04-068":"notation","ch04-069":"notation","ch04-070":"notation","ch04-071":"notation","ch04-072":"notation","ch04-073":"notation","ch04-074":"notation","ch04-075":"notation","ch04-076":"notation","ch04-077":"notation","ch04-078":"notation","ch04-079":"notation","ch04-080":"notation","ch04-081":"notation","ch04-082":"notation","ch04-083":"notation","ch04-084":"notation","ch04-085":"none","ch04-086":"none","ch04-087":"none","ch04-088":"notation","ch04-089":"notation","ch04-090":"none","ch04-091":"none","ch04-092":"","ch04-093":"notation","ch04-094":"none","ch04-095":"notation","ch04-096":"notation","ch04-097":"notation","ch04-098":"none","ch04-099":"none","ch04-100":"notation","ch04-101":"notation","ch04-102":"notation","ch04-103":"notation","ch04-104":"notation","ch04-105":"notation","ch04-106":"notation","ch04-107":"notation","ch04-108":"notation","ch04-109":"printed","ch04-110":"printed","ch04-111":"printed","ch04-112":"notation","ch04-113":"none","ch04-114":"notation","ch04-115":"","ch04-116":"notation","ch04-117":"notation","ch04-118":"notation","ch04-119":"notation","ch04-120":"","ch04-121":"notation","ch04-122":"notation","ch04-123":"none","ch04-124":"none","ch04-125":"notation","ch04-126":"none","ch04-127":"notation","ch04-128":"notation","ch04-129":"notation"};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';
