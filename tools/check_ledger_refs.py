@@ -2,7 +2,7 @@
 """check_ledger_refs — 台帳の Lean 欄が指す名前が phases/ に実在するかを確かめる。
 
 使い方: python3 -I tools/check_ledger_refs.py docs/全数台帳 phases
-対象: 台帳 chNN.md・notes_III.md の表のうち、式行で ✓/≈/✎ のもの、記法行で 未 以外のもの。
+対象: 台帳 chNN.md・notes_III.md の表のうち、式行で ✓/≈/✎/外部公理依存 のもの、記法行で 未 以外のもの。
 抽出: Lean 欄から括弧書きを除き、`ファイル略号/名前` の「名前」(「・」で並べたものも) を取る。
 照合: phases/*.lean の theorem・lemma・def・abbrev・structure・instance・axiom 等の宣言名
       (namespace 付きなら末尾一致も可) と突き合わせる。
@@ -120,7 +120,7 @@ def ledger_refs(ledger_dir, abbrevs):
                     continue
                 kind, cell = d.get("式/記法", ""), d[col]
                 if kind == "式":
-                    if not cell.startswith(("✓", "≈", "✎")):
+                    if not cell.startswith(("✓", "≈", "✎", "外部公理依存")):
                         continue
                 elif kind == "記法":
                     if cell.startswith("未"):
