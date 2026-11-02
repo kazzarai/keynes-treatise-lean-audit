@@ -36,7 +36,10 @@ POS = {"本文": "Text", "図": "Figure", "表": "Table"}
 KIND = {"表示": "Display", "行内": "Inline", "参考": "Reference", "表": "Table"}
 TYPE = {"式": "Formula", "記法": "Notation", "参考": "Reference", "裸記号": "Bare symbol (not counted)"}
 MARK = {"✓": ("printed", "Printed form"), "≈": ("equiv", "Equivalent form"),
-        "✎": ("corrected", "Corrected form"), "未": ("none", "Not in Lean")}
+        "✎": ("corrected", "Corrected form"), "未": ("none", "Not in Lean"),
+        "外": ("external", "Depends on a named external axiom")}
+# 第五の判定 (方針 2026-11-02): Lean 欄が「外部公理依存」で始まる式行。件数 0 の章では出力に現れない
+EXT = "外部公理依存"
 
 RULES = (
     "Every count on this page is computed from the census ledger, which is built from the page images "
@@ -129,6 +132,7 @@ L = {
         # 章頁: 集計表
         "lean_th": "Formulas in Lean",
         "lean_td": "{m} / {n} formulas (&#10003;{a} &asymp;{b} &#9998;{c}), not yet {k} &mdash; {p}",
+        "lean_td_ext": "; depending on a named external axiom {e}", "ext": "external axiom",
         "s_rows": "Ledger rows", "s_formula": "Formulas",
         "s_formula_td": "{f} (display {d}, inline {i}; items {it}, numbered {nb})",
         "s_marks": "Formulas by Lean status", "s_notation": "Notation",
@@ -224,6 +228,7 @@ L = {
         # 章頁: 集計表
         "lean_th": "Lean 済",
         "lean_td": "{m} / {n} 式 (&#10003;{a} &asymp;{b} &#9998;{c})、未 {k} &mdash; {p}",
+        "lean_td_ext": "、外部公理依存 {e}", "ext": "外部公理依存",
         "s_rows": "台帳の行", "s_formula": "式",
         "s_formula_td": "{f} (表示 {d}、行内 {i}; 項目 {it}、番号付き {nb})",
         "s_marks": "式の Lean 状況", "s_notation": "記法",
@@ -240,7 +245,7 @@ L = {
         "unident": "訳書で未同定 (切り抜きなし)。", "meta_unident": "訳書 未同定 (初版 folio {folio})",
         "pos": {}, "kind": {}, "type": {"裸記号": "裸記号 (数えない)"},
         "fn": "{s} (初版の番号)", "fn_cont": "{s} (初版の番号)",
-        "mark": {"✓": "印刷どおり", "≈": "同値な形", "✎": "修正形", "未": "Lean になし"},
+        "mark": {"✓": "印刷どおり", "≈": "同値な形", "✎": "修正形", "未": "Lean になし", "外": "外部公理依存"},
         "mark_r": "参考行 (数えない)", "mark_b": "裸記号 (数えない)", "mark_n": "記法",
         "d_trans": "転記 (初版)", "d_lean": "Lean", "d_repeat": "再掲元", "d_source": "引用元",
         "d_words": "照合語 (初版)", "d_note": "備考 (初版台帳)", "d_tnote": "訳書の備考", "d_crop": "切り抜き",
@@ -421,6 +426,8 @@ def reprint_links(chap, s):
 def lean_mark(r):
     # 式行は Lean 欄の先頭の記号 (✓ ≈ ✎ 未)、記法行は対応の有無
     if r["type"] == "式":
+        if r["lean"].startswith(EXT):
+            return "外"
         c = r["lean"][:1]
         assert c in MARK, (r["id"], r["lean"][:10])
         return c
@@ -503,6 +510,8 @@ def main():
         if s["formula"]:
             lean_td = t["lean_td"].format(m=done, n=s["formula"], a=mk["✓"], b=mk["≈"], c=mk["✎"],
                                           k=mk["未"], p=pct(done, s["formula"]))
+            if mk["外"]:
+                lean_td += t["lean_td_ext"].format(e=mk["外"])
         else:
             lean_td = html.escape(t["no_formula"])
         o.append(f'<div class="wide"><table class="sum"><tr><th>{html.escape(t["lean_th"])}</th>'
@@ -515,7 +524,9 @@ def main():
                  f'<span class="mark printed">&#10003;</span>{mk["✓"]} &nbsp; '
                  f'<span class="mark equiv">&asymp;</span>{mk["≈"]} &nbsp; '
                  f'<span class="mark corrected">&#9998;</span>{mk["✎"]} &nbsp; '
-                 f'<span class="mark none">&#26410;</span>{mk["未"]}</td></tr>')
+                 f'<span class="mark none">&#26410;</span>{mk["未"]}'
+                 + (f' &nbsp; <span class="mark external">&#22806;</span>{mk["外"]}' if mk["外"] else "")
+                 + '</td></tr>')
         o.append(f'<tr><th>{t["s_notation"]}</th><td>'
                  + t["s_notation_td"].format(n=s["notation"], k=s["n_lean"]) + "</td></tr>")
         o.append(f'<tr><th>{t["s_ref"]}</th><td>{s["reference"]}</td></tr>')
@@ -527,6 +538,8 @@ def main():
                 ("equiv", "&asymp;", cats.count("equiv")), ("corrected", "&#9998;", cats.count("corrected")),
                 ("none", html.escape(t["notyet"]), cats.count("none")),
                 ("notation", html.escape(t["notation"]), cats.count("notation"))]
+        if cats.count("external"):
+            btns.insert(5, ("external", html.escape(t["ext"]), cats.count("external")))
         on = ' class="on"'
         o.append(f'<div class="filter" hidden>{html.escape(t["show"])} '
                  + "".join(f'<button type="button" data-k="{k}"{on if k == "all" else ""}>'
@@ -566,7 +579,7 @@ def main():
         else:
             badge = f'<span class="mark notation" title="{t["mark_n"]}">N</span>'
         lean = r["lean"]
-        if m in MARK and lean.startswith(m):
+        if m in MARK and m != "外" and lean.startswith(m):
             lean = lean[len(m):].strip()
         o.append(f'<dt>{t["d_lean"]}</dt><dd>{badge}{inline(lean)}</dd>')
         if r["repeat"] not in BLANK:
@@ -599,7 +612,8 @@ def main():
     o.append("</main></body></html>")
     open(out, "w", encoding="utf-8").write("\n".join(o) + "\n")
     print(f"{chap}{' (ja)' if ja else ''}: {s['rows']} cards, formulas {s['formula']} "
-          f"(✓{mk['✓']} ≈{mk['≈']} ✎{mk['✎']} 未{mk['未']}), notation {s['notation']}"
+          f"(✓{mk['✓']} ≈{mk['≈']} ✎{mk['✎']} 未{mk['未']}"
+          + (f" 外{mk['外']}" if mk["外"] else "") + f"), notation {s['notation']}"
           + (f", translator notes {sum(1 for r in rows if co.get(r['id'], {}).get('note'))}, "
              f"unidentified {len(missing)}" if ja else ""))
 
