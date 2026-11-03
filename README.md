@@ -7,6 +7,15 @@ measurements for every verified theorem, extended (v1.5) to Chapter VI
 (weight of arguments), Part III (Chapters 19, 20, 22 and the Notes on
 Chapter 22) and the whole of Chapter 26.**
 
+- **v1.16 (November 2026): a fifth Lean status in the ledger and the atlas.**
+  Besides ✓ / ≈ / ✎ / not yet, a formula line can now carry 外 (external): it
+  depends on a named external axiom (e.g. independence, equal chance) that
+  Keynes's own axioms do not yield; the theorem is proved, the premise is not.
+  Such a line counts as "in Lean" but not as proved. `summary.csv` is
+  recomputed from the ledger rows by `tools/atlas/gen_summary.py`, and the atlas
+  index shows lines in Lean (✓+≈+✎+外) and the 外 count per chapter. Rule and
+  per-chapter table: [`docs/全数台帳/`](docs/全数台帳/); atlas guide:
+  [`docs/atlas/README.md`](docs/atlas/README.md).
 - **v1.9 (October 2026): Part II formulas, line by line.** All 825 printed
   formula lines of Chapters X–XVII are now treated one by one and fall into
   three kinds: theorems (✓ 477 / ≈ 270 / ✎ 28), definition-only (naming) lines
