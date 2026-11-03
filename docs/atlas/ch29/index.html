@@ -25,6 +25,7 @@ dd{margin:0;word-break:break-word}
 code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;padding:0 2px}
 .mark{display:inline-block;min-width:1.6em;text-align:center;border-radius:3px;padding:0 4px;margin-right:6px;font-weight:bold}
 .printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
+.external{background:#e4e0d4}
 .notation{background:#f3eaf6}
 footer{font-size:.85em;color:#666;margin-top:2em}
 nav.nav{font-size:.92em;margin:0 0 1em}
@@ -37,22 +38,22 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch28/index.html">&larr; Ch. 28</a> | <a href="../ch30/index.html">Ch. 30 &rarr;</a></nav>
 <h1>Chapter XXIX. The Use of à priori Probabilities for the Prediction of Statistical Frequency — the Theorems of Bernoulli, Poisson, and Tchebycheff</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 337&ndash;366 (Cornell copy, PDF pp. 357&ndash;386). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>Formulas in Lean</th><td><b>4 / 83 formulas (&#10003;2 &asymp;2 &#9998;0), not yet 75 &mdash; 4.8%; depending on a named external axiom 4</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;)</th><td><b>13 / 83 formulas, 15.7% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 9: &#10003;7 &asymp;2 &#9998;0; depending on a named external axiom (&#22806;) 4; not yet 70</b></td></tr>
 <tr><th>Ledger rows</th><td>190</td></tr>
 <tr><th>Formulas</th><td>83 (display 28, inline 55; items 83, numbered 0)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>2 &nbsp; <span class="mark equiv">&asymp;</span>2 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>75 &nbsp; <span class="mark external">&#22806;</span>4</td></tr>
-<tr><th>Notation</th><td>106 (with a Lean counterpart 3)</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>7 &nbsp; <span class="mark equiv">&asymp;</span>2 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>70 &nbsp; <span class="mark external">&#22806;</span>4</td></tr>
+<tr><th>Notation</th><td>106 (with a Lean counterpart 29)</td></tr>
 <tr><th>Reference rows</th><td>1</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (190)</button><button type="button" data-k="printed">&#10003; (2)</button><button type="button" data-k="equiv">&asymp; (2)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (75)</button><button type="button" data-k="external">external axiom (4)</button><button type="button" data-k="notation">notation (106)</button></div>
-<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of four values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart).</p>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (190)</button><button type="button" data-k="printed">&#10003; (7)</button><button type="button" data-k="equiv">&asymp; (2)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (70)</button><button type="button" data-k="external">external axiom (4)</button><button type="button" data-k="notation">notation (106)</button></div>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of five values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not.</p>
 <section class="card" id="ch29-001">
 <h2>ch29-001</h2>
 <img src="img/ch29-001.png" alt="mp" loading="lazy">
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>mp</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ (mp が整数の場合); 括弧内は 010 で ✎ (F29.12) phase14b_bernoulli_analytic/th_29_009 (mp が整数のとき最確出現数は mp)</dd>
 <dt>Quoted from</dt><dd>Bernoulli</dd>
 <dt>Anchor words</dt><dd><code>occurrences is mp (or the nearest</code></dd>
 <dt>Remarks</dt><dd>最確出現数</dd>
@@ -64,7 +65,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>p + q = 1</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(定義のみ: q := 1 − p の名付け、q・th_29_002)</dd>
 <dt>Anchor words</dt><dd><code>where p+q=1. If</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 338, x 125&ndash;1335, y 963&ndash;1011 (full-size scan pixels)</dd>
@@ -75,7 +76,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>m − n</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定義のみ (名付け) phase14b_bernoulli_analytic/bterm (指数 m − n)</dd>
 <dt>Anchor words</dt><dd><code>and failing m−n times</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 338, x 125&ndash;1335, y 864&ndash;911 (full-size scan pixels)</dd>
@@ -86,7 +87,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>p^n q^{m−n}</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定義のみ (名付け) phase14b_bernoulli_analytic/bterm (因子 p^n q^{m−n}; 「subject to certain conditions to be elucidated later」の条件は §6 の phase14a 側)</dd>
 <dt>Anchor words</dt><dd><code>later) p^n q^{m−n} multiplied</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 338, x 125&ndash;1335, y 914&ndash;962 (full-size scan pixels)</dd>
@@ -98,7 +99,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(p + q)^m</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase14b_bernoulli_analytic/th_29_005・th_29_005_one・th_29_005_pmf (Mathlib add_pow・PMF.binomial_apply を借用)</dd>
 <dt>Anchor words</dt><dd><code>expansion of (p+q)^m, where</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 338, x 125&ndash;1335, y 963&ndash;1011 (full-size scan pixels)</dd>
@@ -109,7 +110,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>n = mp − h</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(定義のみ: h := mp − n の名付け hdev; mq + h = m − n は th_29_007)</dd>
 <dt>Anchor words</dt><dd><code>we write n=mp−h, this term is</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 338, x 125&ndash;1335, y 1019&ndash;1118 (full-size scan pixels)</dd>
@@ -121,7 +122,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>m! / ((mp − h)! (mq + h)!) · p^n q^{m−n}</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase14b_bernoulli_analytic/th_29_007 (n ≤ m; mp − h = n、mq + h = m − n を示して階乗の式を Nat.choose に写す、Mathlib Nat.cast_choose)</dd>
 <dt>Anchor words</dt><dd><code>this term is … It is easily shown</code></dd>
 <dt>Remarks</dt><dd>行内に組まれた分数</dd>
 <dt>Crop</dt><dd>folio 338, x 125&ndash;1335, y 1019&ndash;1118 (full-size scan pixels)</dd>
@@ -132,7 +133,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>h = 0</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase14b_bernoulli_analytic/th_29_008・th_29_mode・bterm_ratio (0 ≤ p ≤ 1; h := mp − N = 0 となる整数 N で項は最大; 「easily shown」の比の議論を補った)</dd>
 <dt>Anchor words</dt><dd><code>a maximum when h=0, i.e. when</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 338, x 125&ndash;1335, y 1119&ndash;1169 (full-size scan pixels)</dd>
@@ -144,7 +145,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>n = mp</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>(mp が整数の場合); 括弧内は 010 で ✎ (F29.12) phase14b_bernoulli_analytic/th_29_009 (0 ≤ p ≤ 1、mp が整数)</dd>
 <dt>Anchor words</dt><dd><code>i.e. when n=mp (or the nearest</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 338, x 125&ndash;1335, y 1119&ndash;1169 (full-size scan pixels)</dd>
@@ -155,10 +156,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>mp</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✎ (mp が整数でない場合、括弧内; F29.12; mp が整数の場合は 001・009 で ✓) phase14b_bernoulli_analytic/nec_29_010・nec_29_010_small・th_29_010_fix・nearest (反例と修正形: 「the nearest integer」は一般に偽、m = 6、p = 9/10 で mp = 5.4、最も近い整数は 5 だが T(6) &gt; T(5)、p = 1/10 でも同様; 修正形は 0 ≤ p &lt; 1 で N = ⌊(m+1)p⌋ が最大、abs(N − mp) &lt; 1)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-001">ch29-001</a></dd>
 <dt>Anchor words</dt><dd><code>where mp is not integral</code></dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B38 所見候補 F29.12 (F 候補): 「or the nearest integer to this」は p が大きいと偽 (nec_29_010)。最確出現数は mp − q ≤ N ≤ mp + p を満たす整数で、mp に隣り合う二整数の一方だが最も近い方とは限らない (th_29_010_fix)。</dd>
 <dt>Crop</dt><dd>folio 338, x 125&ndash;1335, y 1170&ndash;1219 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-011">
@@ -167,7 +168,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>m! / ((mp − h)! (mq + h)!) · p^n q^{m−n}</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>≈ 借用 (Mathlib Stirling.factorial_isEquivalent_stirling; 印刷の式は th_29_012_h0 で) phase14b_bernoulli_analytic/th_29_011・th_29_012_h0 (th_29_011 は n! ∼ √(2πn)(n/e)^n の付け替えで印刷の式を扱わない; 印刷の式を Stirling で簡約するのは th_29_012_h0、h = 0・mp が整数の場合だけ)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-007">ch29-007</a></dd>
 <dt>Anchor words</dt><dd><code>the expression … by means of Stirling&#x27;s</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -179,10 +180,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>1/√(2πmpq) · e^{−h²/2mpq}.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>外部公理依存 phase14b_bernoulli_analytic/ax_stirling_approx・th_29_012 (一般の h は局所 de Moivre–Laplace 定理を外部公理に置く: p ∈ (0, 1)、abs h ≤ C√m で一様に比 → 1); h = 0 の場合は ≈ phase14b_bernoulli_analytic/th_29_012_h0 (p = a/b、m = bN で T(aN) ∼ 1/√(2πmpq)、Mathlib の Stirling だけ)</dd>
 <dt>Quoted from</dt><dd>Stirling</dd>
 <dt>Anchor words</dt><dd><code>obtain as its approximate value</code></dd>
-<dt>Remarks</dt><dd>指数は分数 h² / 2mpq</dd>
+<dt>Remarks</dt><dd>指数は分数 h² / 2mpq。B38: 一般の h は外部公理 (局所 de Moivre–Laplace) に依る。h = 0 の場合は Stirling だけで ≈。</dd>
 <dt>Crop</dt><dd>folio 338, x 125&ndash;1335, y 1529&ndash;1648 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-013">
@@ -191,7 +192,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>h = 0</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase14b_bernoulli_analytic/th_29_013・th_29_013_strict (mpq ≥ 0; mpq &gt; 0 かつ h ≠ 0 なら狭義)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-008">ch29-008</a></dd>
 <dt>Anchor words</dt><dd><code>a maximum when h=0, i.e. when n=mp.</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -204,7 +205,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>n = mp</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase14b_bernoulli_analytic/th_29_014 (n を実数として n = mp で最大)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-009">ch29-009</a></dd>
 <dt>Anchor words</dt><dd><code>i.e. when n=mp. It is possible</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -216,7 +217,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>h = 0</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase14b_bernoulli_analytic/th_29_015・th_29_015_asym (近似式は h の符号によらない; 近似される式は対称でない: m = 3、p = 1/3 で T(0) = 8/27 ≠ 6/27 = T(2))</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-008">ch29-008</a></dd>
 <dt>Anchor words</dt><dd><code>the value for h=0; while</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -228,7 +229,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>mpq</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>≈ phase14b_bernoulli_analytic/mpq・th_29_016・th_29_016_lim (「It is easily seen」を h = 1 だけ補う: k = mp が整数なら T(k+1)(mpq + q) = T(k−1)(mpq + p)、比 (mpq + p)/(mpq + q) は mpq → ∞ で 1; 一般の h は補っていない)</dd>
 <dt>Anchor words</dt><dd><code>appreciable unless mpq is large</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 339, x 125&ndash;1335, y 303&ndash;353 (full-size scan pixels)</dd>
@@ -239,7 +240,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>mpq</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法、016 の再掲; 条件「mpq must be large」は外部公理 2 本の p ∈ (0, 1) 固定・m → ∞ に含まれる)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-016">ch29-016</a></dd>
 <dt>Anchor words</dt><dd><code>also that mpq must be large</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -251,7 +252,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>mp</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法、001 の再掲)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-001">ch29-001</a></dd>
 <dt>Anchor words</dt><dd><code>most probable value mp will lie between</code></dd>
 <dt>Remarks</dt><dd>第 2 回で追加 (読み手役の指摘): 「divergence from the most probable value mp will lie between z and z+dz」</dd>
@@ -264,7 +265,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>z + dz</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法; 整数 h を連続変数 z に置き換える「fiction」は形式化しない。密度は 020)</dd>
 <dt>Quoted from</dt><dd>Bertrand</dd>
 <dt>Anchor words</dt><dd><code>between z and z+dz, is</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -276,7 +277,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>1/√(2πmpq) · e^{−z²/2mpq} dz.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase14b_bernoulli_analytic/th_29_020・th_29_020_one (mpq &gt; 0 で Mathlib の正規密度 gaussianPDFReal 0 mpq に一致、全積分 1; dz の確率としての読みは 022 の外部公理)</dd>
 <dt>Quoted from</dt><dd>Bertrand</dd>
 <dt>Anchor words</dt><dd><code>will lie between z and z+dz, is</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -288,7 +289,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>mp</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法、001 の再掲)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-001">ch29-001</a></dd>
 <dt>Anchor words</dt><dd><code>most probable value mp will be less</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -300,7 +301,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>1/√(2πmpq) ∫_{−a}^{+a} e^{−z²/2mpq} dz.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>外部公理依存 phase14b_bernoulli_analytic/ax_normal_approx・th_29_022 (「is, therefore,」: a = √(2mpq)γ として確率との差が m → ∞ で 0; 積分そのものの値は ✓ th_29_024)</dd>
 <dt>Quoted from</dt><dd>Bertrand</dd>
 <dt>Anchor words</dt><dd><code>given quantity a is, therefore,</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -312,7 +313,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>z/√(2mpq) = t</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(定義のみ: 置換の宣言; 帰結の積分等式は th_29_023・th_29_024 で ✓)</dd>
 <dt>Anchor words</dt><dd><code>If we put … this is equal to</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 339, x 125&ndash;1335, y 1260&ndash;1359 (full-size scan pixels)</dd>
@@ -323,7 +324,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>2/√π ∫_0^{a/√(2mpq)} e^{−t²} dt.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase14b_bernoulli_analytic/th_29_024 (mpq &gt; 0 で 022 の積分 = 2/√π ∫_0^{a/√(2mpq)} e^{−t²}dt)</dd>
 <dt>Quoted from</dt><dd>Bertrand</dd>
 <dt>Anchor words</dt><dd><code>this is equal to</code></dd>
 <dt>Remarks</dt><dd>上限は分数 a / √(2mpq)</dd>
@@ -335,7 +336,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>a = √(2mpq) γ</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(定義のみ: γ := a/√(2mpq) の名付け; th_29_025 は a/√(2mpq) = γ を 027 に使う)</dd>
 <dt>Anchor words</dt><dd><code>Thus, if we write</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 339, x 125&ndash;1335, y 1555&ndash;1609 (full-size scan pixels)</dd>
@@ -346,7 +347,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>mp + √(2mpq) γ and mp − √(2mpq) γ</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase14b_bernoulli_analytic/th_29_026 (abs(x − mp) &lt; √(2mpq)γ ⇔ mp − √(2mpq)γ &lt; x &lt; mp + √(2mpq)γ)</dd>
 <dt>Anchor words</dt><dd><code>will lie between</code></dd>
 <dt>Remarks</dt><dd>1 行に 2 式 (and で結ぶ)</dd>
 <dt>Crop</dt><dd>folio 339, x 125&ndash;1335, y 1675&ndash;1729 (full-size scan pixels)</dd>
@@ -357,7 +358,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>2/√π ∫_0^γ e^{−t²} dt</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>外部公理依存 phase14b_bernoulli_analytic/ax_normal_approx・th_29_027・th_29_027_eq (「is measured by」: p ∈ (0, 1)、γ &gt; 0 で確率 → 2/√π ∫_0^γ e^{−t²}dt; th_29_027_eq (022 の積分 = Θ(γ)) は公理に依らない)</dd>
 <dt>Anchor words</dt><dd><code>is measured by ² … This same expression</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 339, x 125&ndash;1335, y 1748&ndash;1861 (full-size scan pixels)</dd>
@@ -368,7 +369,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>h + 1</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase14b_bernoulli_analytic/th_29_028・th_29_028_pos (整数の誤差は h と h + 1 の間にない; 連続近似は (h, h + 1) に正の確率を与える — 脚注の「deceptive」の中身)</dd>
 <dt>Anchor words</dt><dd><code>lie between h and h+1.</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 339, x 125&ndash;1335, y 1956&ndash;1988 (full-size scan pixels)</dd>
@@ -379,10 +380,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Footnote 2 &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>2/√π ∫_0^γ e^{−t²} dt + e^{−γ²}/√(2πmpq)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>外部公理依存 phase14b_bernoulli_analytic/th_29_029_lim・th_29_029・th_29_029_vanish (補正項 e^{−γ²}/√(2πmpq) は限界 √(2mpq)γ での密度の値、m → ∞ で 0; よって「more precision」の形も同じ極限 (th_29_029_lim は ax_normal_approx に依る)。「より精密」(誤差の次数) は検証していない)</dd>
 <dt>Quoted from</dt><dd>Laplace; Czuber vol. i p. 121</dd>
 <dt>Anchor words</dt><dd><code>give the result as</code></dd>
-<dt>Remarks</dt><dd>「より精密な」形</dd>
+<dt>Remarks</dt><dd>「より精密な」形。B38: 補正項の読みは「限界での密度の値」(両端に ½ ずつの連続補正)。Keynes 自身は 340 脚注で「the simpler expression … not less satisfactory」とする。</dd>
 <dt>Crop</dt><dd>folio 339, x 125&ndash;1335, y 2067&ndash;2160 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-030">
@@ -391,7 +392,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 340 (PDF p. 360) &middot; &sect;§2 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>p + √(2pq/m) γ and p − √(2pq/m) γ.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase14b_bernoulli_analytic/th_29_030・sqrt_div_m (m &gt; 0 で (mp ± √(2mpq)γ)/m = p ± √(2pq/m)γ)</dd>
 <dt>Anchor words</dt><dd><code>proportion of occurrences will lie between</code></dd>
 <dt>Remarks</dt><dd>1 行に 2 式; 根号内は分数 2pq / m</dd>
 <dt>Crop</dt><dd>folio 340, x 125&ndash;1335, y 333&ndash;436 (full-size scan pixels)</dd>
@@ -402,7 +403,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 340 (PDF p. 360) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>2/√π ∫_0^t e^{−t²} dt = Θ(t)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(定義のみ: Θ の名付け; 印刷は積分変数と上限がともに t (F29.6)、Lean では積分変数を u とした)</dd>
 <dt>Anchor words</dt><dd><code>values of the integral … are given in tables</code></dd>
 <dt>Remarks</dt><dd>積分の上限 t と積分変数 t が同じ (S 候補)</dd>
 <dt>Crop</dt><dd>folio 340, x 125&ndash;1335, y 461&ndash;572 (full-size scan pixels)</dd>
@@ -413,7 +414,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 340 (PDF p. 360) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>√(2pq/m)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase14b_bernoulli_analytic/th_29_032・Θ_strictMono (√(2pq/m) = √(2pq)/√m; Θ は狭義増加; 比率の偏差 b 固定で Θ(b/√(2pq/m)) は m に増加、絶対偏差 a 固定で Θ(a/√(2mpq)) は減少。確率としての読みは 027 の外部公理)</dd>
 <dt>Anchor words</dt><dd><code>with the magnitude of … and this expression</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 340, x 125&ndash;1335, y 677&ndash;782 (full-size scan pixels)</dd>
@@ -424,7 +425,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 340 (PDF p. 360) &middot; &sect;§3 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>r/t</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定義のみ (名付け) phase14b_bernoulli_analytic/th_29_034 (p = r/t は仮定 r ≤ t、0 &lt; t)</dd>
 <dt>Quoted from</dt><dd>Bernoulli p. 236</dd>
 <dt>Anchor words</dt><dd><code>so that r/t is the probability</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -436,7 +437,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 340 (PDF p. 360) &middot; &sect;§3 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(r + 1)/t</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase14b_bernoulli_analytic/th_29_034・variance_bterm (Bernoulli の言明: c &lt; 1 なら十分大きいすべての m で (r − 1)/t &lt; n/m &lt; (r + 1)/t の確率 &gt; c; 分散 Σ T(n)(n − mp)² = mpq を Mathlib bernsteinPolynomial.variance から、Chebyshev 型の評価を補った; c &lt; 1 は読みの補い)</dd>
 <dt>Quoted from</dt><dd>Bernoulli p. 236</dd>
 <dt>Anchor words</dt><dd><code>will lie between … and</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -449,7 +450,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 340 (PDF p. 360) &middot; &sect;§3 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(r − 1)/t</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase14b_bernoulli_analytic/th_29_034 (034 と同じ定理)</dd>
 <dt>Quoted from</dt><dd>Bernoulli p. 236</dd>
 <dt>Anchor words</dt><dd><code>and … is greater than c.</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -461,7 +462,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 341 (PDF p. 361) &middot; &sect;§5 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>2m</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>数値評価 phase14b_bernoulli_analytic/th_29_036・th_29_036_half (二世界の模型: 各回の表の確率 ½、2m 回で m 回表の確率 0; 二項の項 C(2m, m)(½)^{2m} は正)</dd>
 <dt>Anchor words</dt><dd><code>m tails in 2m tosses</code></dd>
 <dt>Remarks</dt><dd>½ は裸の数 (2 箇所)</dd>
 <dt>Crop</dt><dd>folio 341, x 125&ndash;1335, y 1594&ndash;1640 (full-size scan pixels)</dd>
@@ -472,7 +473,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 342 (PDF p. 362) &middot; &sect;§5 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>2m</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>数値評価 phase14b_bernoulli_analytic/th_29_037 (同じ模型で 2m 回表か 0 回の確率 1)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-036">ch29-036</a></dd>
 <dt>Anchor words</dt><dd><code>there will be either 2m heads or none.</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -484,7 +485,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 342 (PDF p. 362) &middot; &sect;§5 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>p^r</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>数値評価 phase14b_bernoulli_analytic/th_29_038 (同じ模型で r 回続けて表の確率は ½ ≠ (½)^r、r ≥ 2; phase14a の 047 y_r/h = p^r の前提が崩れる例)</dd>
 <dt>Anchor words</dt><dd><code>p^r is the probability of r</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 342, x 125&ndash;1335, y 451&ndash;499 (full-size scan pixels)</dd>
@@ -495,7 +496,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 342 (PDF p. 362) &middot; &sect;§5 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>r − 1</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>数値評価 phase14b_bernoulli_analytic/th_29_039 (同じ模型で最初の r − 1 回が表なら r 回目の表の確率は 1、単独では ½)</dd>
 <dt>Anchor words</dt><dd><code>every one of the first r−1 occasions</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 342, x 125&ndash;1335, y 653&ndash;699 (full-size scan pixels)</dd>
@@ -506,7 +507,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 342 (PDF p. 362) &middot; &sect;§5 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>2/√π ∫_0^γ e^{−t²} dt</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase14b_bernoulli_analytic/th_29_040・th_29_040_lim・th_29_040_short (0 &lt; Θ(γ) &lt; 1、Θ → 1 は Mathlib の Gauss 積分 integral_gaussian_Ioi; 短い系列 m = 1、p = ½ では確率は 0 か 1 でどの γ &gt; 0 でも Θ(γ) と違う — 「worse position」の数値比較)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-027">ch29-027</a></dd>
 <dt>Anchor words</dt><dd><code>to employ the expression … we are in a worse</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -2286,7 +2287,7 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch28/index.html">&larr; Ch. 28</a> | <a href="../ch30/index.html">Ch. 30 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch29.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch29-001":"notation","ch29-002":"none","ch29-003":"notation","ch29-004":"notation","ch29-005":"notation","ch29-006":"none","ch29-007":"notation","ch29-008":"none","ch29-009":"none","ch29-010":"notation","ch29-011":"notation","ch29-012":"notation","ch29-013":"none","ch29-014":"none","ch29-015":"none","ch29-016":"notation","ch29-017":"notation","ch29-018":"notation","ch29-019":"notation","ch29-020":"notation","ch29-021":"notation","ch29-022":"notation","ch29-023":"none","ch29-024":"notation","ch29-025":"none","ch29-026":"notation","ch29-027":"notation","ch29-028":"notation","ch29-029":"notation","ch29-030":"notation","ch29-031":"none","ch29-032":"notation","ch29-033":"notation","ch29-034":"notation","ch29-035":"notation","ch29-036":"notation","ch29-037":"notation","ch29-038":"notation","ch29-039":"notation","ch29-040":"notation","ch29-041":"","ch29-042":"none","ch29-043":"external","ch29-044":"notation","ch29-045":"printed","ch29-046":"printed","ch29-047":"external","ch29-048":"equiv","ch29-049":"notation","ch29-050":"equiv","ch29-051":"notation","ch29-052":"external","ch29-053":"external","ch29-054":"notation","ch29-055":"none","ch29-056":"none","ch29-057":"notation","ch29-058":"none","ch29-059":"none","ch29-060":"none","ch29-061":"none","ch29-062":"notation","ch29-063":"none","ch29-064":"notation","ch29-065":"notation","ch29-066":"notation","ch29-067":"none","ch29-068":"notation","ch29-069":"notation","ch29-070":"none","ch29-071":"notation","ch29-072":"notation","ch29-073":"notation","ch29-074":"notation","ch29-075":"none","ch29-076":"none","ch29-077":"none","ch29-078":"none","ch29-079":"none","ch29-080":"notation","ch29-081":"notation","ch29-082":"notation","ch29-083":"notation","ch29-084":"notation","ch29-085":"notation","ch29-086":"none","ch29-087":"notation","ch29-088":"notation","ch29-089":"none","ch29-090":"none","ch29-091":"none","ch29-092":"none","ch29-093":"none","ch29-094":"none","ch29-095":"none","ch29-096":"notation","ch29-097":"notation","ch29-098":"notation","ch29-099":"notation","ch29-100":"notation","ch29-101":"notation","ch29-102":"none","ch29-103":"none","ch29-104":"none","ch29-105":"notation","ch29-106":"notation","ch29-107":"notation","ch29-108":"notation","ch29-109":"notation","ch29-110":"notation","ch29-111":"none","ch29-112":"none","ch29-113":"none","ch29-114":"none","ch29-115":"none","ch29-116":"none","ch29-117":"none","ch29-118":"none","ch29-119":"none","ch29-120":"none","ch29-121":"none","ch29-122":"none","ch29-123":"notation","ch29-124":"none","ch29-125":"none","ch29-126":"notation","ch29-127":"notation","ch29-128":"notation","ch29-129":"notation","ch29-130":"none","ch29-131":"notation","ch29-132":"notation","ch29-133":"notation","ch29-134":"none","ch29-135":"notation","ch29-136":"notation","ch29-137":"notation","ch29-138":"none","ch29-139":"none","ch29-140":"none","ch29-141":"none","ch29-142":"none","ch29-143":"none","ch29-144":"notation","ch29-145":"notation","ch29-146":"none","ch29-147":"none","ch29-148":"none","ch29-149":"none","ch29-150":"notation","ch29-151":"notation","ch29-152":"notation","ch29-153":"notation","ch29-154":"none","ch29-155":"none","ch29-156":"none","ch29-157":"none","ch29-158":"notation","ch29-159":"notation","ch29-160":"notation","ch29-161":"notation","ch29-162":"notation","ch29-163":"notation","ch29-164":"none","ch29-165":"notation","ch29-166":"none","ch29-167":"notation","ch29-168":"notation","ch29-169":"none","ch29-170":"none","ch29-171":"notation","ch29-172":"notation","ch29-173":"notation","ch29-174":"notation","ch29-175":"notation","ch29-176":"notation","ch29-177":"notation","ch29-178":"none","ch29-179":"notation","ch29-180":"notation","ch29-181":"notation","ch29-182":"notation","ch29-183":"notation","ch29-184":"notation","ch29-185":"notation","ch29-186":"none","ch29-187":"none","ch29-188":"notation","ch29-189":"none","ch29-190":"none"};
+var K={"ch29-001":"notation","ch29-002":"none","ch29-003":"notation","ch29-004":"notation","ch29-005":"notation","ch29-006":"none","ch29-007":"notation","ch29-008":"printed","ch29-009":"printed","ch29-010":"notation","ch29-011":"notation","ch29-012":"notation","ch29-013":"printed","ch29-014":"printed","ch29-015":"printed","ch29-016":"notation","ch29-017":"notation","ch29-018":"notation","ch29-019":"notation","ch29-020":"notation","ch29-021":"notation","ch29-022":"notation","ch29-023":"none","ch29-024":"notation","ch29-025":"none","ch29-026":"notation","ch29-027":"notation","ch29-028":"notation","ch29-029":"notation","ch29-030":"notation","ch29-031":"none","ch29-032":"notation","ch29-033":"notation","ch29-034":"notation","ch29-035":"notation","ch29-036":"notation","ch29-037":"notation","ch29-038":"notation","ch29-039":"notation","ch29-040":"notation","ch29-041":"","ch29-042":"none","ch29-043":"external","ch29-044":"notation","ch29-045":"printed","ch29-046":"printed","ch29-047":"external","ch29-048":"equiv","ch29-049":"notation","ch29-050":"equiv","ch29-051":"notation","ch29-052":"external","ch29-053":"external","ch29-054":"notation","ch29-055":"none","ch29-056":"none","ch29-057":"notation","ch29-058":"none","ch29-059":"none","ch29-060":"none","ch29-061":"none","ch29-062":"notation","ch29-063":"none","ch29-064":"notation","ch29-065":"notation","ch29-066":"notation","ch29-067":"none","ch29-068":"notation","ch29-069":"notation","ch29-070":"none","ch29-071":"notation","ch29-072":"notation","ch29-073":"notation","ch29-074":"notation","ch29-075":"none","ch29-076":"none","ch29-077":"none","ch29-078":"none","ch29-079":"none","ch29-080":"notation","ch29-081":"notation","ch29-082":"notation","ch29-083":"notation","ch29-084":"notation","ch29-085":"notation","ch29-086":"none","ch29-087":"notation","ch29-088":"notation","ch29-089":"none","ch29-090":"none","ch29-091":"none","ch29-092":"none","ch29-093":"none","ch29-094":"none","ch29-095":"none","ch29-096":"notation","ch29-097":"notation","ch29-098":"notation","ch29-099":"notation","ch29-100":"notation","ch29-101":"notation","ch29-102":"none","ch29-103":"none","ch29-104":"none","ch29-105":"notation","ch29-106":"notation","ch29-107":"notation","ch29-108":"notation","ch29-109":"notation","ch29-110":"notation","ch29-111":"none","ch29-112":"none","ch29-113":"none","ch29-114":"none","ch29-115":"none","ch29-116":"none","ch29-117":"none","ch29-118":"none","ch29-119":"none","ch29-120":"none","ch29-121":"none","ch29-122":"none","ch29-123":"notation","ch29-124":"none","ch29-125":"none","ch29-126":"notation","ch29-127":"notation","ch29-128":"notation","ch29-129":"notation","ch29-130":"none","ch29-131":"notation","ch29-132":"notation","ch29-133":"notation","ch29-134":"none","ch29-135":"notation","ch29-136":"notation","ch29-137":"notation","ch29-138":"none","ch29-139":"none","ch29-140":"none","ch29-141":"none","ch29-142":"none","ch29-143":"none","ch29-144":"notation","ch29-145":"notation","ch29-146":"none","ch29-147":"none","ch29-148":"none","ch29-149":"none","ch29-150":"notation","ch29-151":"notation","ch29-152":"notation","ch29-153":"notation","ch29-154":"none","ch29-155":"none","ch29-156":"none","ch29-157":"none","ch29-158":"notation","ch29-159":"notation","ch29-160":"notation","ch29-161":"notation","ch29-162":"notation","ch29-163":"notation","ch29-164":"none","ch29-165":"notation","ch29-166":"none","ch29-167":"notation","ch29-168":"notation","ch29-169":"none","ch29-170":"none","ch29-171":"notation","ch29-172":"notation","ch29-173":"notation","ch29-174":"notation","ch29-175":"notation","ch29-176":"notation","ch29-177":"notation","ch29-178":"none","ch29-179":"notation","ch29-180":"notation","ch29-181":"notation","ch29-182":"notation","ch29-183":"notation","ch29-184":"notation","ch29-185":"notation","ch29-186":"none","ch29-187":"none","ch29-188":"notation","ch29-189":"none","ch29-190":"none"};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';

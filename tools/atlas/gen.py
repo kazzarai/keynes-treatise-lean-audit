@@ -5,7 +5,7 @@
 # 列の順序は台帳の見出し行から決める (第I部の台帳は 項目ID が 2 列目、第III部以降は 7 列目)。
 # 空欄の印は "—" と "–" の両方を受ける。行が 1 本もない章は 1 行の断り書きだけを出す。
 # 見出しの「第N章」は英語の「Chapter <ローマ数字>」に直す。
-# 頁の先頭と末尾に目次 (../index.html)・前章・次章へのナビ、集計表に「Lean 済」の 1 行、その下に絞り込みボタンを置く。
+# 頁の先頭と末尾に目次 (../index.html)・前章・次章へのナビ、集計表に「Lean に載せた行 (✓+≈+✎+外)」の 1 行、その下に絞り込みボタンを置く。
 # 集計表とナビのリンクは折り返さない (集計表は .wide で包み、幅が足りなければ横スクロール)。
 # ボタンは JavaScript で .card の表示を切り替える。JS が無ければボタンは隠れたままで、全カードが見える。
 # 表示文言は章頁・目次 (gen_index.py) とも辞書 L から引く (--lang ja で切り替え; 既定は en)。
@@ -51,12 +51,14 @@ RULES = (
     "<i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted "
     "separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. "
     "Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. "
-    "The Lean column of a formula row takes one of four values, fixed mechanically: "
+    "The Lean column of a formula row takes one of five values, fixed mechanically: "
     "<b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); "
     "<b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, "
     "a definition substituted, a change of variables); "
     "<b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; "
-    "<b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart)."
+    "<b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart); "
+    "<b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms "
+    "do not yield; the theorem is proved, the premise is not."
 )
 
 RULES_JA = (
@@ -70,11 +72,13 @@ RULES_JA = (
     "<i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i> など) は"
     "<b>記法</b>として別に数え、添字・プライム・バーが付いても単独の記号は数えない。"
     "脚注の式も同じ規則に従い、別の頁に再掲された式はもう一度数える。"
-    "式の行の Lean 欄は次の 4 値のどれかで、機械的に決める: "
+    "式の行の Lean 欄は次の 5 値のどれかで、機械的に決める: "
     "<b>&#10003;</b> 印刷された関係が定理の文にそのまま現れる (束縛変数の名前・Lean の記法・添字の組み方だけは違ってよい); "
     "<b>&asymp;</b> 代数的に同値な形を定理が述べる (分母を払う、定義を代入する、変数を替える); "
     "<b>&#9998;</b> 印刷の行は反駁されるか導けず、修正形が証明されている; "
-    "<b>&#26410;</b> そのどれでもない (証明の途中の行、定義だけ、対応なし)。"
+    "<b>&#26410;</b> そのどれでもない (証明の途中の行、定義だけ、対応なし); "
+    "<b>&#22806;</b> 名指しされた外部公理 (独立性・等しい見込みなど) に依存する。"
+    "ケインズ自身の公理からは出ない公理で、定理は証明されているが、その前提は証明されていない。"
 )
 
 CSS = """
@@ -100,6 +104,7 @@ dd{margin:0;word-break:break-word}
 code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;padding:0 2px}
 .mark{display:inline-block;min-width:1.6em;text-align:center;border-radius:3px;padding:0 4px;margin-right:6px;font-weight:bold}
 .printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
+.external{background:#e4e0d4}
 .notation{background:#f3eaf6}
 footer{font-size:.85em;color:#666;margin-top:2em}
 nav.nav{font-size:.92em;margin:0 0 1em}
@@ -130,9 +135,10 @@ L = {
         # 章題の邦題 (英語版は使わない) と、章頁の副題に添える原題の文言
         "ch_title": {}, "sub_orig": "",
         # 章頁: 集計表
-        "lean_th": "Formulas in Lean",
-        "lean_td": "{m} / {n} formulas (&#10003;{a} &asymp;{b} &#9998;{c}), not yet {k} &mdash; {p}",
-        "lean_td_ext": "; depending on a named external axiom {e}", "ext": "external axiom",
+        "lean_th": "In Lean (&#10003;+&asymp;+&#9998;+&#22806;)",
+        "lean_td": "{m} / {n} formulas, {p} &mdash; of which proved (&#10003;+&asymp;+&#9998;) {q}: "
+                   "&#10003;{a} &asymp;{b} &#9998;{c}{ext}; not yet {k}",
+        "lean_td_ext": "; depending on a named external axiom (&#22806;) {e}", "ext": "external axiom",
         "s_rows": "Ledger rows", "s_formula": "Formulas",
         "s_formula_td": "{f} (display {d}, inline {i}; items {it}, numbered {nb})",
         "s_marks": "Formulas by Lean status", "s_notation": "Notation",
@@ -172,7 +178,7 @@ L = {
         "ix_d_ncov": "Items with a printed number or enumeration mark on one of their lines, "
                      "counted as in the previous box.",
         "ix_b_lcov": "Formula lines in a theorem statement",
-        "ix_d_lcov": "&#10003; {a}, &asymp; {b}, &#9998; {c}; not yet {k}.",
+        "ix_d_lcov": "&#10003; {a}, &asymp; {b}, &#9998; {c}, external {x}; not yet {k}.",
         "ix_h_parts": "By part",
         "ix_h_chaps": "Chapters",
         "ix_part": "Part {p}",
@@ -180,22 +186,26 @@ L = {
         "ix_part_span_notes": "Chapters {a}&ndash;{b} and the Notes on Part III",
         "ix_c_part": "Part", "ix_c_nch": "Chapters", "ix_c_lines": "Formula lines", "ix_c_items": "Items",
         "ix_c_icov": "Items in Lean", "ix_c_ncov": "Numbered items in Lean",
-        "ix_c_lcov": "Lines &#10003;+&asymp;+&#9998; / not yet",
+        "ix_c_lcov": "Lines &#10003;+&asymp;+&#9998;+&#22806; / not yet",
         "ix_c_nt": "Notation", "ix_c_cards": "Cards",
         "ix_c_ch": "Ch.", "ix_c_title": "Title", "ix_c_folio": "Folios",
-        "ix_c_done": "In Lean (&#10003;+&asymp;+&#9998;) / lines",
-        "ix_c_marks": "&#10003; / &asymp; / &#9998; / not yet",
+        "ix_c_done": "Lines in Lean (&#10003;+&asymp;+&#9998;+&#22806;) / formulas",
+        "ix_c_marks": "&#10003; / &asymp; / &#9998; / not yet", "ix_c_ext": "External (&#22806;)",
         "ix_notes": "Notes", "ix_total": "All",
         "ix_cards_part": "{c} ({m} of {n} chapters built)",
         "ix_end_marks": "<b>&#10003;</b> the printed relation appears as stated in a theorem; "
                         "<b>&asymp;</b> a theorem states an algebraically equivalent form; "
                         "<b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; "
-                        "<b>not yet</b> none of these.",
+                        "<b>not yet</b> none of these; "
+                        "<b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that "
+                        "Keynes's own axioms do not yield; the theorem is proved, the premise is not. "
+                        "A line marked &#22806; counts as a line in a theorem statement.",
         "ix_end_count": "One printed line containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, "
                         "&sup;, &rarr;) is one formula line; a compound expression without a relation sign is counted "
                         "separately as notation, and a bare symbol is not counted. Every number on this page is "
                         "computed from the census ledger (docs/全数台帳/), never typed.",
-        "ix_end_regen": "Rebuild: <code>{cmd}</code> (chapter pages: <code>tools/atlas/gen.py</code>, "
+        "ix_end_regen": "Rebuild, in this order: <code>python3 -I tools/atlas/gen_summary.py docs/全数台帳</code> "
+                        "(summary.csv), then <code>{cmd}</code> (chapter pages: <code>tools/atlas/gen.py</code>, "
                         "see docs/atlas/README.md).",
         "ix_footer": "Generated by tools/atlas/gen_index.py from docs/全数台帳/ (chNN.md, notes_III.md, summary.csv) "
                      "and the chapter pages. Do not edit this file by hand.",
@@ -211,24 +221,33 @@ L = {
                "台帳の各行に、それに当たる訳書の箇所を並べる。手元での照合用で、公開しない。",
         "no_rows": "印刷された式・記法はない。",
         "pages": "訳書 pp. {p0}&ndash;{p1} の切り抜き", "pages_none": "訳書の該当章 (切り抜きなし)",
-        # 章題の邦題 (訳書の章題ではなく自前の短い題; 鍵は ORDER の章名) と、副題に添える原題
+        # 章題の邦題 (訳書の目次どおり; 鍵は ORDER の章名) と、副題に添える原題
         "ch_title": {
-            "ch01": "確率とは何か", "ch02": "確率と知識", "ch03": "確率の測定", "ch04": "無差別原理",
-            "ch05": "確率を決める他の方法", "ch06": "推論の重み", "ch07": "歴史的回顧", "ch08": "頻度説",
-            "ch09": "第I部の要約", "ch10": "序論", "ch11": "群の理論", "ch12": "定義と公理",
-            "ch13": "必然的推論の基本定理", "ch14": "蓋然的推論の基本定理", "ch15": "数値測定と近似",
-            "ch16": "第14章の定理の考察・証言", "ch17": "逆確率・平均", "ch18": "第III部 序論",
-            "ch19": "類推による議論", "ch20": "純粋帰納", "ch21": "帰納的議論 続", "ch22": "方法の正当化",
-            "ch23": "帰納の歴史", "notes_III": "第III部への注", "ch24": "客観的偶然と無作為",
-            "ch25": "偶然をめぐる諸問題", "ch26": "確率の行為への適用", "ch27": "統計的推論の本性",
-            "ch28": "大数の法則", "ch29": "事前確率による頻度予測", "ch30": "Laplace の方法",
-            "ch31": "Bernoulli の定理の逆", "ch32": "Lexis の方法", "ch33": "構成的理論の素描",
+            "ch01": "確率の意味", "ch02": "確率に関する認識論", "ch03": "確率の測定", "ch04": "無差別原理",
+            "ch05": "確率を決定するその他の方法", "ch06": "推論の重み", "ch07": "歴史的回顧",
+            "ch08": "確率の頻度論", "ch09": "第Ⅰ部の建設的理論の要約", "ch10": "序説",
+            "ch11": "とくに論理的整合性，推理，および論理的先在性に関する群論",
+            "ch12": "推理および確率の諸定義と諸公理", "ch13": "必然的推理の基本定理",
+            "ch14": "蓋然的推理の基本定理", "ch15": "確率の数値の測定と近似",
+            "ch16": "第14章の諸定理に関する覚書，ならびにそれらの諸展開および証言への適用",
+            "ch17": "逆確率ならびに平均に関する若干の問題", "ch18": "序説",
+            "ch19": "類比による推論の本性", "ch20": "事例の増量の価値，すなわち純粋帰納",
+            "ch21": "続・帰納的推論の本性", "ch22": "これらの方法の正当化",
+            "ch23": "帰納の歴史に関する若干の覚書", "notes_III": "第Ⅲ部への注",
+            "ch24": "客観的偶然すなわち偶然性の意味", "ch25": "偶然に関する検討から生じる若干の問題",
+            "ch26": "確率の行為への適用", "ch27": "統計的推理の本性", "ch28": "大数の法則",
+            "ch29": "統計的頻度を予測するための事前確率の利用——ベルヌイ，ポアソンおよびチェビシェフの諸定理",
+            "ch30": "事後確率を算定するための統計的頻度の数学的利用——ラプラスの方法",
+            "ch31": "ベルヌイの定理の逆定理",
+            "ch32": "事後確率を算定するための統計的頻度の帰納的利用——レキシスの方法",
+            "ch33": "建設的理論の概略",
         },
         "sub_orig": "原題: <i>{orig}</i>。",
         # 章頁: 集計表
-        "lean_th": "Lean 済",
-        "lean_td": "{m} / {n} 式 (&#10003;{a} &asymp;{b} &#9998;{c})、未 {k} &mdash; {p}",
-        "lean_td_ext": "、外部公理依存 {e}", "ext": "外部公理依存",
+        "lean_th": "Lean に載せた行 (&#10003;+&asymp;+&#9998;+外)",
+        "lean_td": "{m} / {n} 式、{p} &mdash; うち証明 (&#10003;+&asymp;+&#9998;) {q}: "
+                   "&#10003;{a} &asymp;{b} &#9998;{c}{ext}、未 {k}",
+        "lean_td_ext": "、外部公理依存 (外) {e}", "ext": "外部公理依存",
         "s_rows": "台帳の行", "s_formula": "式",
         "s_formula_td": "{f} (表示 {d}、行内 {i}; 項目 {it}、番号付き {nb})",
         "s_marks": "式の Lean 状況", "s_notation": "記法",
@@ -267,7 +286,7 @@ L = {
         "ix_b_ncov": "番号付き項目の対応",
         "ix_d_ncov": "行のどれかに印刷の番号・箇条記号がある項目。数え方は左の枠と同じ。",
         "ix_b_lcov": "定理文に現れる行",
-        "ix_d_lcov": "&#10003; {a}・&asymp; {b}・&#9998; {c}、未 {k}。",
+        "ix_d_lcov": "&#10003; {a}・&asymp; {b}・&#9998; {c}・外 {x}、未 {k}。",
         "ix_h_parts": "部ごと",
         "ix_h_chaps": "章の一覧",
         "ix_part": "第{p}部",
@@ -275,21 +294,25 @@ L = {
         "ix_part_span_notes": "第 {a}〜{b} 章と第III部の注",
         "ix_c_part": "部", "ix_c_nch": "章", "ix_c_lines": "式 (行)", "ix_c_items": "項目",
         "ix_c_icov": "項目の Lean 対応", "ix_c_ncov": "番号付き項目の対応",
-        "ix_c_lcov": "行 &#10003;+&asymp;+&#9998; / 未",
+        "ix_c_lcov": "行 &#10003;+&asymp;+&#9998;+外 / 未",
         "ix_c_nt": "記法", "ix_c_cards": "カード",
         "ix_c_ch": "章", "ix_c_title": "題", "ix_c_folio": "folio",
-        "ix_c_done": "Lean 済 (&#10003;+&asymp;+&#9998;) / 式",
-        "ix_c_marks": "&#10003; / &asymp; / &#9998; / 未",
+        "ix_c_done": "Lean に載せた行 (&#10003;+&asymp;+&#9998;+外) / 式",
+        "ix_c_marks": "&#10003; / &asymp; / &#9998; / 未", "ix_c_ext": "外部公理依存 (外)",
         "ix_notes": "注", "ix_total": "合計",
         "ix_cards_part": "{c} ({n} 章中 {m} 章作成)",
         "ix_end_marks": "<b>&#10003;</b> 印刷の関係がそのまま定理文に現れる。"
                         "<b>&asymp;</b> 代数的に同値な形を定理が述べる。"
                         "<b>&#9998;</b> 印刷の行は反証または導出不能で、訂正形を証明した。"
-                        "<b>未</b> そのいずれでもない。",
+                        "<b>未</b> そのいずれでもない。"
+                        "<b>外</b> 名指しされた外部公理 (独立性・等しい見込みなど) に依存する。"
+                        "ケインズ自身の公理からは出ない公理で、定理は証明されているが、その前提は証明されていない。"
+                        "外の行も「定理文に現れる行」に数える。",
         "ix_end_count": "関係記号 (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr;) を含む印刷行 1 行 = 式 1 本。"
                         "関係記号のない複合の表現は記法として別に数え、裸の記号は数えない。"
                         "この頁の数はすべて全数台帳 (docs/全数台帳/) から数えたもので、手で書いていない。",
-        "ix_end_regen": "再生成: 目次は同じディレクトリの <code>build_index.sh</code> (章が増えたら打ち直す)、"
+        "ix_end_regen": "再生成の順: 先に <code>python3 -I tools/atlas/gen_summary.py docs/全数台帳</code> "
+                        "(summary.csv)、次に目次は同じディレクトリの <code>build_index.sh</code> (章が増えたら打ち直す)、"
                         "章頁は <code>tools/atlas/gen.py --lang ja</code> (手順は同じディレクトリの README.md)。",
         "ix_footer": "tools/atlas/gen_index.py が docs/全数台帳/ (chNN.md・notes_III.md・summary.csv) と各章頁から生成。"
                      "手で編集しない。",
@@ -506,15 +529,16 @@ def main():
     if not rows:
         o.append(f"<p>{t['no_rows']}</p>")
     else:
-        done = mk["✓"] + mk["≈"] + mk["✎"]
+        # 載せた行 = ✓+≈+✎+外 (目次と同じ数え方)。うち証明 = ✓+≈+✎
+        proved = mk["✓"] + mk["≈"] + mk["✎"]
+        done = proved + mk["外"]
         if s["formula"]:
-            lean_td = t["lean_td"].format(m=done, n=s["formula"], a=mk["✓"], b=mk["≈"], c=mk["✎"],
-                                          k=mk["未"], p=pct(done, s["formula"]))
-            if mk["外"]:
-                lean_td += t["lean_td_ext"].format(e=mk["外"])
+            lean_td = t["lean_td"].format(m=done, n=s["formula"], q=proved, a=mk["✓"], b=mk["≈"], c=mk["✎"],
+                                          k=mk["未"], p=pct(done, s["formula"]),
+                                          ext=t["lean_td_ext"].format(e=mk["外"]) if mk["外"] else "")
         else:
             lean_td = html.escape(t["no_formula"])
-        o.append(f'<div class="wide"><table class="sum"><tr><th>{html.escape(t["lean_th"])}</th>'
+        o.append(f'<div class="wide"><table class="sum"><tr><th>{t["lean_th"]}</th>'
                  f'<td><b>{lean_td}</b></td></tr>')
         o.append(f'<tr><th>{t["s_rows"]}</th><td>' + str(s["rows"]) + "</td></tr>")
         o.append(f'<tr><th>{t["s_formula"]}</th><td>'
