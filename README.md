@@ -7,6 +7,15 @@ measurements for every verified theorem, extended (v1.5) to Chapter VI
 (weight of arguments), Part III (Chapters 19, 20, 22 and the Notes on
 Chapter 22) and the whole of Chapter 26.**
 
+- **Next release (B40b): a sixth Lean status, 定 (definition).** A formula
+  line that only defines or names a quantity (a definition, a naming of a
+  symbol, a notational convention) carries 定 when the Lean definition that
+  carries it, or the theorem whose hypothesis carries the name, exists; there
+  is no theorem statement to compare. A line that reprints a hypothesis copies
+  the status of the line it reprints. 定 counts as "in Lean" but not as
+  proved, and an item whose lines are only 外 or 定 is not counted as covered.
+  `check_ledger_refs.py` checks that the cited definition exists in `phases/`.
+  Ledger totals and the per-chapter table: [`docs/全数台帳/`](docs/全数台帳/).
 - **v1.16 (November 2026): a fifth Lean status in the ledger and the atlas.**
   Besides ✓ / ≈ / ✎ / not yet, a formula line can now carry 外 (external): it
   depends on a named external axiom (e.g. independence, equal chance) that

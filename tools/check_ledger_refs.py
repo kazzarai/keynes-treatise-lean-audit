@@ -2,7 +2,8 @@
 """check_ledger_refs — 台帳の Lean 欄が指す名前が phases/ に実在するかを確かめる。
 
 使い方: python3 -I tools/check_ledger_refs.py docs/全数台帳 phases
-対象: 台帳 chNN.md・notes_III.md の表のうち、式行で ✓/≈/✎/外部公理依存 のもの、記法行で 未 以外のもの。
+対象: 台帳 chNN.md・notes_III.md の表のうち、式行で ✓/≈/✎/外部公理依存/定 のもの、記法行で 未 以外のもの。
+「定」の行は定義名 (または前提名を持つ定理名) を必ず 1 つ挙げる。名前がなければ MISSING にする。
 抽出: Lean 欄から括弧書きを除き、`ファイル略号/名前` の「名前」(「・」で並べたものも) を取る。
 照合: phases/*.lean の theorem・lemma・def・abbrev・structure・instance・axiom 等の宣言名
       (namespace 付きなら末尾一致も可) と突き合わせる。
@@ -120,7 +121,7 @@ def ledger_refs(ledger_dir, abbrevs):
                     continue
                 kind, cell = d.get("式/記法", ""), d[col]
                 if kind == "式":
-                    if not cell.startswith(("✓", "≈", "✎", "外部公理依存")):
+                    if not cell.startswith(("✓", "≈", "✎", "外部公理依存", "定")):
                         continue
                 elif kind == "記法":
                     if cell.startswith("未"):
@@ -136,6 +137,9 @@ def ledger_refs(ledger_dir, abbrevs):
                     found.extend(n for n in m.group(3).split("・") if n)
                 if found:
                     rows += 1
+                elif kind == "式" and cell.startswith("定"):
+                    # 「定」は対応する Lean の定義を挙げる行。名前がなければ実在を確かめられない
+                    refs.append((d["行ID"], "(定の行に定義名がない)"))
                 for n in found:
                     refs.append((d["行ID"], n))
     return refs, rows

@@ -26,6 +26,7 @@ code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;pad
 .mark{display:inline-block;min-width:1.6em;text-align:center;border-radius:3px;padding:0 4px;margin-right:6px;font-weight:bold}
 .printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
 .external{background:#e4e0d4}
+.definition{background:#dcefef}
 .notation{background:#f3eaf6}
 footer{font-size:.85em;color:#666;margin-top:2em}
 nav.nav{font-size:.92em;margin:0 0 1em}
@@ -38,16 +39,16 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch11/index.html">&larr; Ch. 11</a> | <a href="../ch13/index.html">Ch. 13 &rarr;</a></nav>
 <h1>Chapter XII. The Definitions and Axioms of Inference and Probability</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 133&ndash;138 (Cornell copy, PDF pp. 153&ndash;158). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;)</th><td><b>50 / 56 formulas, 89.3% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 50: &#10003;40 &asymp;10 &#9998;0; not yet 6</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;+&#23450;)</th><td><b>54 / 56 formulas, 96.4% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 50: &#10003;40 &asymp;10 &#9998;0; definition counterpart (&#23450;) 4; not yet 2</b></td></tr>
 <tr><th>Ledger rows</th><td>74</td></tr>
 <tr><th>Formulas</th><td>56 (display 13, inline 43; items 30, numbered 36)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>40 &nbsp; <span class="mark equiv">&asymp;</span>10 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>6</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>40 &nbsp; <span class="mark equiv">&asymp;</span>10 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>2 &nbsp; <span class="mark definition">&#23450;</span>4</td></tr>
 <tr><th>Notation</th><td>16 (with a Lean counterpart 7)</td></tr>
 <tr><th>Reference rows</th><td>0</td></tr>
 <tr><th>Bare-symbol rows (not counted)</th><td>2</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (74)</button><button type="button" data-k="printed">&#10003; (40)</button><button type="button" data-k="equiv">&asymp; (10)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (6)</button><button type="button" data-k="notation">notation (16)</button></div>
-<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of five values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not.</p>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (74)</button><button type="button" data-k="printed">&#10003; (40)</button><button type="button" data-k="equiv">&asymp; (10)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (2)</button><button type="button" data-k="definition">definition (4)</button><button type="button" data-k="notation">notation (16)</button></div>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line only defines or names a quantity (a definition, a naming of a symbol, a notational convention) and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
 <section class="card" id="ch12-001">
 <h2>ch12-001</h2>
 <img src="img/ch12-001.png" alt="a + b + c" loading="lazy">
@@ -99,7 +100,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 134 (PDF p. 154) &middot; &sect;4 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/h = P</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(Def. I は Pr/PrI 関数そのもので定理文なし; 関係の存在は 6c/Cons)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>6c/PrI (Def. I: a/h = P は PrI a h の値)</dd>
 <dt>Anchor words</dt><dd>between the proposition a and the premiss h</dd>
 <dt>Remarks</dt><dd>Def. I。定義のみ (名付け)</dd>
 <dt>Crop</dt><dd>folio 134, x 125&ndash;1335, y 1380&ndash;1429 (full-size scan pixels)</dd>
@@ -110,7 +111,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 134 (PDF p. 154) &middot; &sect;4 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>P = 1</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(値 1 を直接書く)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10g/Certain (Def. II: P = 1 は PrI a h = 1)</dd>
 <dt>Anchor words</dt><dd>If P is the relation of certainty</dd>
 <dt>Remarks</dt><dd>Def. II。脚注 1 (Leibnitz)。定義のみ (名付け)</dd>
 <dt>Crop</dt><dd>folio 134, x 125&ndash;1335, y 1481&ndash;1525 (full-size scan pixels)</dd>
@@ -121,7 +122,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 134 (PDF p. 154) &middot; &sect;4 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>P = 0</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(値 0 を直接書く)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10g/Impossible (Def. III: P = 0 は PrI a h = 0)</dd>
 <dt>Anchor words</dt><dd>If P is the relation of impossibility</dd>
 <dt>Remarks</dt><dd>Def. III。定義のみ (名付け)</dd>
 <dt>Crop</dt><dd>folio 134, x 125&ndash;1335, y 1580&ndash;1625 (full-size scan pixels)</dd>
@@ -165,7 +166,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 134 (PDF p. 154) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/h = 1</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(群は Lean に無い)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10g/groupOf (Def. VII: a/h = 1 の a の集まり)</dd>
 <dt>Anchor words</dt><dd>propositions a such that a/h = 1 is the group</dd>
 <dt>Remarks</dt><dd>Def. VII。定義のみ (名付け)</dd>
 <dt>Crop</dt><dd>folio 134, x 125&ndash;1335, y 1878&ndash;1930 (full-size scan pixels)</dd>
@@ -897,7 +898,7 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch11/index.html">&larr; Ch. 11</a> | <a href="../ch13/index.html">Ch. 13 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch12.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch12-001":"notation","ch12-002":"notation","ch12-003":"notation","ch12-004":"","ch12-005":"none","ch12-006":"none","ch12-007":"none","ch12-008":"equiv","ch12-009":"equiv","ch12-010":"equiv","ch12-011":"none","ch12-012":"printed","ch12-013":"printed","ch12-014":"printed","ch12-015":"","ch12-016":"equiv","ch12-017":"printed","ch12-018":"equiv","ch12-019":"equiv","ch12-020":"equiv","ch12-021":"equiv","ch12-022":"printed","ch12-023":"equiv","ch12-024":"notation","ch12-025":"notation","ch12-026":"equiv","ch12-027":"printed","ch12-028":"printed","ch12-029":"printed","ch12-030":"printed","ch12-031":"printed","ch12-032":"notation","ch12-033":"notation","ch12-034":"printed","ch12-035":"notation","ch12-036":"printed","ch12-037":"printed","ch12-038":"printed","ch12-039":"printed","ch12-040":"printed","ch12-041":"printed","ch12-042":"printed","ch12-043":"printed","ch12-044":"printed","ch12-045":"printed","ch12-046":"printed","ch12-047":"printed","ch12-048":"printed","ch12-049":"printed","ch12-050":"printed","ch12-051":"printed","ch12-052":"notation","ch12-053":"printed","ch12-054":"printed","ch12-055":"none","ch12-056":"notation","ch12-057":"printed","ch12-058":"none","ch12-059":"notation","ch12-060":"printed","ch12-061":"printed","ch12-062":"printed","ch12-063":"notation","ch12-064":"printed","ch12-065":"notation","ch12-066":"printed","ch12-067":"printed","ch12-068":"notation","ch12-069":"printed","ch12-070":"printed","ch12-071":"printed","ch12-072":"notation","ch12-073":"printed","ch12-074":"notation"};
+var K={"ch12-001":"notation","ch12-002":"notation","ch12-003":"notation","ch12-004":"","ch12-005":"definition","ch12-006":"definition","ch12-007":"definition","ch12-008":"equiv","ch12-009":"equiv","ch12-010":"equiv","ch12-011":"definition","ch12-012":"printed","ch12-013":"printed","ch12-014":"printed","ch12-015":"","ch12-016":"equiv","ch12-017":"printed","ch12-018":"equiv","ch12-019":"equiv","ch12-020":"equiv","ch12-021":"equiv","ch12-022":"printed","ch12-023":"equiv","ch12-024":"notation","ch12-025":"notation","ch12-026":"equiv","ch12-027":"printed","ch12-028":"printed","ch12-029":"printed","ch12-030":"printed","ch12-031":"printed","ch12-032":"notation","ch12-033":"notation","ch12-034":"printed","ch12-035":"notation","ch12-036":"printed","ch12-037":"printed","ch12-038":"printed","ch12-039":"printed","ch12-040":"printed","ch12-041":"printed","ch12-042":"printed","ch12-043":"printed","ch12-044":"printed","ch12-045":"printed","ch12-046":"printed","ch12-047":"printed","ch12-048":"printed","ch12-049":"printed","ch12-050":"printed","ch12-051":"printed","ch12-052":"notation","ch12-053":"printed","ch12-054":"printed","ch12-055":"none","ch12-056":"notation","ch12-057":"printed","ch12-058":"none","ch12-059":"notation","ch12-060":"printed","ch12-061":"printed","ch12-062":"printed","ch12-063":"notation","ch12-064":"printed","ch12-065":"notation","ch12-066":"printed","ch12-067":"printed","ch12-068":"notation","ch12-069":"printed","ch12-070":"printed","ch12-071":"printed","ch12-072":"notation","ch12-073":"printed","ch12-074":"notation"};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';

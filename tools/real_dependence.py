@@ -361,7 +361,8 @@ def ledger_pass(rows, axioms, write):
             d = dict(zip(hdr, cells[:len(hdr)]))
             lean = d.get("既存の Lean", "")
             items, items_out = [], []  # items = 括弧の中も含めて拾った参照、items_out = 括弧の外だけ (旧版の拾い方)
-            if d.get("式/記法") not in NOT_COUNTED:
+            # 判定「定」(定義対応) の行は定理の分類を拾わない (前提名つきの定理名を挙げていても ℝ 依存は付けない)
+            if d.get("式/記法") not in NOT_COUNTED and not lean.startswith("定"):
                 for text, acc in ((lean, items), (strip_parens(lean), items_out)):
                     for m in REF.finditer(text):
                         files = set()
