@@ -163,7 +163,9 @@ Chapter 22) and the whole of Chapter 26.**
   records toolchain, dependency pins, **SHA-256 of every source file**, and
   the complete output of a single verified run (**33/33 files, exit 0**);
   regenerate with `bash run_v10.sh`. The mechanical gate `tools/check_all.sh`
-  (also run in CI on every pull request) writes `logs/progress.json`. The v9
+  (stages [0] [1] [2] [3] [4] [8] [9]: Mathlib cache, compilation, no `sorryAx`,
+  verdict count, ledger names exist in `phases/`, hygiene, atlas generators agree
+  with the ledgers; also run in CI on every pull request) writes `logs/progress.json`. The v9
   (24 files), v8, v7 and v6 logs are retained as development history
 
 by **Kazunari Arai** (新井一成), with Claude (Anthropic).
