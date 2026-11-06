@@ -26,6 +26,7 @@ code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;pad
 .mark{display:inline-block;min-width:1.6em;text-align:center;border-radius:3px;padding:0 4px;margin-right:6px;font-weight:bold}
 .printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
 .external{background:#e4e0d4}
+.definition{background:#dcefef}
 .notation{background:#f3eaf6}
 footer{font-size:.85em;color:#666;margin-top:2em}
 nav.nav{font-size:.92em;margin:0 0 1em}
@@ -38,15 +39,15 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch13/index.html">&larr; Ch. 13</a> | <a href="../ch15/index.html">Ch. 15 &rarr;</a></nav>
 <h1>Chapter XIV. The Fundamental Theorems of Probable Inference</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 144&ndash;157 (Cornell copy, PDF pp. 164&ndash;177). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;)</th><td><b>177 / 188 formulas, 94.1% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 177: &#10003;111 &asymp;60 &#9998;6; not yet 11</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;+&#23450;)</th><td><b>186 / 188 formulas, 98.9% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 180: &#10003;114 &asymp;60 &#9998;6; definition counterpart (&#23450;) 6; not yet 2</b></td></tr>
 <tr><th>Ledger rows</th><td>231</td></tr>
 <tr><th>Formulas</th><td>188 (display 110, inline 78; items 70, numbered 173)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>111 &nbsp; <span class="mark equiv">&asymp;</span>60 &nbsp; <span class="mark corrected">&#9998;</span>6 &nbsp; <span class="mark none">&#26410;</span>11</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>114 &nbsp; <span class="mark equiv">&asymp;</span>60 &nbsp; <span class="mark corrected">&#9998;</span>6 &nbsp; <span class="mark none">&#26410;</span>2 &nbsp; <span class="mark definition">&#23450;</span>6</td></tr>
 <tr><th>Notation</th><td>37 (with a Lean counterpart 10)</td></tr>
 <tr><th>Reference rows</th><td>6</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (231)</button><button type="button" data-k="printed">&#10003; (111)</button><button type="button" data-k="equiv">&asymp; (60)</button><button type="button" data-k="corrected">&#9998; (6)</button><button type="button" data-k="none">not yet (11)</button><button type="button" data-k="notation">notation (37)</button></div>
-<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of five values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not.</p>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (231)</button><button type="button" data-k="printed">&#10003; (114)</button><button type="button" data-k="equiv">&asymp; (60)</button><button type="button" data-k="corrected">&#9998; (6)</button><button type="button" data-k="none">not yet (2)</button><button type="button" data-k="definition">definition (6)</button><button type="button" data-k="notation">notation (37)</button></div>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line only defines or names a quantity (a definition, a naming of a symbol, a notational convention) and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
 <section class="card" id="ch14-001">
 <h2>ch14-001</h2>
 <img src="img/ch14-001.png" alt="(a + b)/h = a/h + b/h − ab/h." loading="lazy">
@@ -311,7 +312,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 145 (PDF p. 165) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>(p₁ + p₂ + … + pₙ)/h = 1</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>6b/th_14_24_7 (前提 hexh; ch14-021 と同じ式の再掲)</dd>
 <dt>Reprint of</dt><dd><a href="#ch14-021">ch14-021</a></dd>
 <dt>Anchor words</dt><dd>Since … by hypothesis,</dd>
 <dt>Remarks</dt><dd>仮定の再掲 ((25) の仮定、ch14-021 と同じ式)</dd>
@@ -334,7 +335,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 145 (PDF p. 165) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>p_sp_t/h = 0</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>6b/th_14_24_7 (前提 hexcl; ch14-020 と同じ式の再掲)</dd>
 <dt>Reprint of</dt><dd><a href="#ch14-020">ch14-020</a></dd>
 <dt>Anchor words</dt><dd>and since … by hypothesis,</dd>
 <dt>Remarks</dt><dd>仮定の再掲 ((25) の仮定、ch14-020 と同じ式)</dd>
@@ -424,7 +425,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 145 (PDF p. 165) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>pᵣa/h = Xᵣ,</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10c/th_14_r034 (前提 hX)</dd>
 <dt>Anchor words</dt><dd>(25.1) If pᵣa/h = Xᵣ, the above may be written</dd>
 <dt>Remarks</dt><dd>言明 前件。定義のみ（名付け） (10c/th_14_r034 は前提 hX に写す)</dd>
 <dt>Crop</dt><dd>folio 145, x 125&ndash;1335, y 1996&ndash;2053 (full-size scan pixels)</dd>
@@ -1142,7 +1143,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 148 (PDF p. 168) &middot; &sect;5 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a₁/a₂h = a₁/h and a₂/a₁h = a₂/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>3a/Independent (ch12-070・071 と同じ関係の再掲)</dd>
 <dt>Reprint of</dt><dd><a href="../ch12/index.html#ch12-070">ch12-070</a></dd>
 <dt>Anchor words</dt><dd>and since a₁/h and a₂/h are independent, … by XIII.</dd>
 <dt>Remarks</dt><dd>関係 2。仮定の再掲 ((36) の仮定「independent」を Def. XIII で書いたもの)</dd>
@@ -1453,7 +1454,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 150 (PDF p. 170) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>p = a/h₁</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10c/th_14_r124 (前提 hp)</dd>
 <dt>Anchor words</dt><dd>where p = a/h₁ and q = a/h₂.</dd>
 <dt>Remarks</dt><dd>定義のみ（名付け） (10c/th_14_r124 は前提 hp に写す)</dd>
 <dt>Crop</dt><dd>folio 150, x 125&ndash;1335, y 1024&ndash;1081 (full-size scan pixels)</dd>
@@ -1465,7 +1466,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 150 (PDF p. 170) &middot; &sect;7 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>q = a/h₂.</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10c/th_14_r122 (前提 hq)</dd>
 <dt>Anchor words</dt><dd>and q = a/h₂.</dd>
 <dt>Remarks</dt><dd>定義のみ（名付け） (10c/th_14_r122 は前提 hq に写す)</dd>
 <dt>Crop</dt><dd>folio 150, x 125&ndash;1335, y 1024&ndash;1081 (full-size scan pixels)</dd>
@@ -2502,7 +2503,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 155 (PDF p. 175) &middot; &sect;付録 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/ε = a/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10c/mcE (McColl 記法の a/ε)</dd>
 <dt>Quoted from</dt><dd>McColl</dd>
 <dt>Anchor words</dt><dd>Thus a/ε = a/h, and</dd>
 <dt>Remarks</dt><dd>定義のみ（名付け）。McColl 記法と Keynes 記法の対応 (分数 = a/h)</dd>
@@ -2515,7 +2516,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 155 (PDF p. 175) &middot; &sect;付録 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/b = a/bh</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10c/mcC (McColl 記法の a/b)</dd>
 <dt>Quoted from</dt><dd>McColl</dd>
 <dt>Anchor words</dt><dd>and a/b = a/bh.</dd>
 <dt>Remarks</dt><dd>定義のみ（名付け）</dd>
@@ -2602,7 +2603,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 156 (PDF p. 176) &middot; &sect;付録 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>A = a/ε.</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10c/th_14_r225 (前提 hA)</dd>
 <dt>Quoted from</dt><dd>McColl</dd>
 <dt>Anchor words</dt><dd>where A = a/ε.</dd>
 <dt>Remarks</dt><dd>定義のみ（名付け） (10c/th_14_r225 は前提 hA に写す)</dd>
@@ -2671,7 +2672,7 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch13/index.html">&larr; Ch. 13</a> | <a href="../ch15/index.html">Ch. 15 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch14.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch14-001":"printed","ch14-002":"printed","ch14-003":"printed","ch14-004":"printed","ch14-005":"printed","ch14-006":"printed","ch14-007":"notation","ch14-008":"notation","ch14-009":"printed","ch14-010":"printed","ch14-011":"printed","ch14-012":"equiv","ch14-013":"printed","ch14-014":"equiv","ch14-015":"printed","ch14-016":"equiv","ch14-017":"equiv","ch14-018":"printed","ch14-019":"printed","ch14-020":"printed","ch14-021":"printed","ch14-022":"printed","ch14-023":"printed","ch14-024":"none","ch14-025":"printed","ch14-026":"none","ch14-027":"printed","ch14-028":"printed","ch14-029":"printed","ch14-030":"printed","ch14-031":"printed","ch14-032":"printed","ch14-033":"printed","ch14-034":"none","ch14-035":"equiv","ch14-036":"printed","ch14-037":"printed","ch14-038":"equiv","ch14-039":"printed","ch14-040":"printed","ch14-041":"printed","ch14-042":"printed","ch14-043":"printed","ch14-044":"printed","ch14-045":"printed","ch14-046":"printed","ch14-047":"printed","ch14-048":"printed","ch14-049":"printed","ch14-050":"printed","ch14-051":"printed","ch14-052":"printed","ch14-053":"equiv","ch14-054":"equiv","ch14-055":"equiv","ch14-056":"equiv","ch14-057":"equiv","ch14-058":"equiv","ch14-059":"equiv","ch14-060":"equiv","ch14-061":"equiv","ch14-062":"equiv","ch14-063":"equiv","ch14-064":"equiv","ch14-065":"equiv","ch14-066":"equiv","ch14-067":"equiv","ch14-068":"equiv","ch14-069":"equiv","ch14-070":"printed","ch14-071":"equiv","ch14-072":"equiv","ch14-073":"equiv","ch14-074":"equiv","ch14-075":"equiv","ch14-076":"printed","ch14-077":"printed","ch14-078":"printed","ch14-079":"notation","ch14-080":"equiv","ch14-081":"printed","ch14-082":"equiv","ch14-083":"equiv","ch14-084":"equiv","ch14-085":"equiv","ch14-086":"printed","ch14-087":"","ch14-088":"printed","ch14-089":"","ch14-090":"","ch14-091":"corrected","ch14-092":"","ch14-093":"printed","ch14-094":"notation","ch14-095":"printed","ch14-096":"printed","ch14-097":"none","ch14-098":"printed","ch14-099":"equiv","ch14-100":"equiv","ch14-101":"equiv","ch14-102":"equiv","ch14-103":"printed","ch14-104":"printed","ch14-105":"printed","ch14-106":"printed","ch14-107":"printed","ch14-108":"printed","ch14-109":"printed","ch14-110":"printed","ch14-111":"printed","ch14-112":"printed","ch14-113":"printed","ch14-114":"printed","ch14-115":"printed","ch14-116":"printed","ch14-117":"notation","ch14-118":"notation","ch14-119":"notation","ch14-120":"printed","ch14-121":"equiv","ch14-122":"printed","ch14-123":"equiv","ch14-124":"none","ch14-125":"none","ch14-126":"equiv","ch14-127":"equiv","ch14-128":"notation","ch14-129":"equiv","ch14-130":"notation","ch14-131":"equiv","ch14-132":"equiv","ch14-133":"printed","ch14-134":"printed","ch14-135":"","ch14-136":"notation","ch14-137":"printed","ch14-138":"printed","ch14-139":"printed","ch14-140":"printed","ch14-141":"printed","ch14-142":"printed","ch14-143":"printed","ch14-144":"printed","ch14-145":"equiv","ch14-146":"equiv","ch14-147":"printed","ch14-148":"printed","ch14-149":"printed","ch14-150":"printed","ch14-151":"equiv","ch14-152":"printed","ch14-153":"printed","ch14-154":"printed","ch14-155":"printed","ch14-156":"notation","ch14-157":"printed","ch14-158":"printed","ch14-159":"notation","ch14-160":"printed","ch14-161":"notation","ch14-162":"corrected","ch14-163":"notation","ch14-164":"notation","ch14-165":"printed","ch14-166":"notation","ch14-167":"equiv","ch14-168":"printed","ch14-169":"notation","ch14-170":"equiv","ch14-171":"equiv","ch14-172":"notation","ch14-173":"equiv","ch14-174":"equiv","ch14-175":"none","ch14-176":"equiv","ch14-177":"corrected","ch14-178":"corrected","ch14-179":"corrected","ch14-180":"equiv","ch14-181":"equiv","ch14-182":"notation","ch14-183":"printed","ch14-184":"printed","ch14-185":"notation","ch14-186":"printed","ch14-187":"equiv","ch14-188":"equiv","ch14-189":"notation","ch14-190":"equiv","ch14-191":"","ch14-192":"notation","ch14-193":"equiv","ch14-194":"notation","ch14-195":"printed","ch14-196":"printed","ch14-197":"printed","ch14-198":"printed","ch14-199":"corrected","ch14-200":"notation","ch14-201":"notation","ch14-202":"notation","ch14-203":"printed","ch14-204":"none","ch14-205":"printed","ch14-206":"notation","ch14-207":"printed","ch14-208":"printed","ch14-209":"notation","ch14-210":"printed","ch14-211":"notation","ch14-212":"notation","ch14-213":"printed","ch14-214":"notation","ch14-215":"notation","ch14-216":"notation","ch14-217":"notation","ch14-218":"none","ch14-219":"none","ch14-220":"notation","ch14-221":"notation","ch14-222":"printed","ch14-223":"printed","ch14-224":"printed","ch14-225":"equiv","ch14-226":"none","ch14-227":"printed","ch14-228":"printed","ch14-229":"notation","ch14-230":"printed","ch14-231":"printed"};
+var K={"ch14-001":"printed","ch14-002":"printed","ch14-003":"printed","ch14-004":"printed","ch14-005":"printed","ch14-006":"printed","ch14-007":"notation","ch14-008":"notation","ch14-009":"printed","ch14-010":"printed","ch14-011":"printed","ch14-012":"equiv","ch14-013":"printed","ch14-014":"equiv","ch14-015":"printed","ch14-016":"equiv","ch14-017":"equiv","ch14-018":"printed","ch14-019":"printed","ch14-020":"printed","ch14-021":"printed","ch14-022":"printed","ch14-023":"printed","ch14-024":"printed","ch14-025":"printed","ch14-026":"printed","ch14-027":"printed","ch14-028":"printed","ch14-029":"printed","ch14-030":"printed","ch14-031":"printed","ch14-032":"printed","ch14-033":"printed","ch14-034":"definition","ch14-035":"equiv","ch14-036":"printed","ch14-037":"printed","ch14-038":"equiv","ch14-039":"printed","ch14-040":"printed","ch14-041":"printed","ch14-042":"printed","ch14-043":"printed","ch14-044":"printed","ch14-045":"printed","ch14-046":"printed","ch14-047":"printed","ch14-048":"printed","ch14-049":"printed","ch14-050":"printed","ch14-051":"printed","ch14-052":"printed","ch14-053":"equiv","ch14-054":"equiv","ch14-055":"equiv","ch14-056":"equiv","ch14-057":"equiv","ch14-058":"equiv","ch14-059":"equiv","ch14-060":"equiv","ch14-061":"equiv","ch14-062":"equiv","ch14-063":"equiv","ch14-064":"equiv","ch14-065":"equiv","ch14-066":"equiv","ch14-067":"equiv","ch14-068":"equiv","ch14-069":"equiv","ch14-070":"printed","ch14-071":"equiv","ch14-072":"equiv","ch14-073":"equiv","ch14-074":"equiv","ch14-075":"equiv","ch14-076":"printed","ch14-077":"printed","ch14-078":"printed","ch14-079":"notation","ch14-080":"equiv","ch14-081":"printed","ch14-082":"equiv","ch14-083":"equiv","ch14-084":"equiv","ch14-085":"equiv","ch14-086":"printed","ch14-087":"","ch14-088":"printed","ch14-089":"","ch14-090":"","ch14-091":"corrected","ch14-092":"","ch14-093":"printed","ch14-094":"notation","ch14-095":"printed","ch14-096":"printed","ch14-097":"printed","ch14-098":"printed","ch14-099":"equiv","ch14-100":"equiv","ch14-101":"equiv","ch14-102":"equiv","ch14-103":"printed","ch14-104":"printed","ch14-105":"printed","ch14-106":"printed","ch14-107":"printed","ch14-108":"printed","ch14-109":"printed","ch14-110":"printed","ch14-111":"printed","ch14-112":"printed","ch14-113":"printed","ch14-114":"printed","ch14-115":"printed","ch14-116":"printed","ch14-117":"notation","ch14-118":"notation","ch14-119":"notation","ch14-120":"printed","ch14-121":"equiv","ch14-122":"printed","ch14-123":"equiv","ch14-124":"definition","ch14-125":"definition","ch14-126":"equiv","ch14-127":"equiv","ch14-128":"notation","ch14-129":"equiv","ch14-130":"notation","ch14-131":"equiv","ch14-132":"equiv","ch14-133":"printed","ch14-134":"printed","ch14-135":"","ch14-136":"notation","ch14-137":"printed","ch14-138":"printed","ch14-139":"printed","ch14-140":"printed","ch14-141":"printed","ch14-142":"printed","ch14-143":"printed","ch14-144":"printed","ch14-145":"equiv","ch14-146":"equiv","ch14-147":"printed","ch14-148":"printed","ch14-149":"printed","ch14-150":"printed","ch14-151":"equiv","ch14-152":"printed","ch14-153":"printed","ch14-154":"printed","ch14-155":"printed","ch14-156":"notation","ch14-157":"printed","ch14-158":"printed","ch14-159":"notation","ch14-160":"printed","ch14-161":"notation","ch14-162":"corrected","ch14-163":"notation","ch14-164":"notation","ch14-165":"printed","ch14-166":"notation","ch14-167":"equiv","ch14-168":"printed","ch14-169":"notation","ch14-170":"equiv","ch14-171":"equiv","ch14-172":"notation","ch14-173":"equiv","ch14-174":"equiv","ch14-175":"none","ch14-176":"equiv","ch14-177":"corrected","ch14-178":"corrected","ch14-179":"corrected","ch14-180":"equiv","ch14-181":"equiv","ch14-182":"notation","ch14-183":"printed","ch14-184":"printed","ch14-185":"notation","ch14-186":"printed","ch14-187":"equiv","ch14-188":"equiv","ch14-189":"notation","ch14-190":"equiv","ch14-191":"","ch14-192":"notation","ch14-193":"equiv","ch14-194":"notation","ch14-195":"printed","ch14-196":"printed","ch14-197":"printed","ch14-198":"printed","ch14-199":"corrected","ch14-200":"notation","ch14-201":"notation","ch14-202":"notation","ch14-203":"printed","ch14-204":"none","ch14-205":"printed","ch14-206":"notation","ch14-207":"printed","ch14-208":"printed","ch14-209":"notation","ch14-210":"printed","ch14-211":"notation","ch14-212":"notation","ch14-213":"printed","ch14-214":"notation","ch14-215":"notation","ch14-216":"notation","ch14-217":"notation","ch14-218":"definition","ch14-219":"definition","ch14-220":"notation","ch14-221":"notation","ch14-222":"printed","ch14-223":"printed","ch14-224":"printed","ch14-225":"equiv","ch14-226":"definition","ch14-227":"printed","ch14-228":"printed","ch14-229":"notation","ch14-230":"printed","ch14-231":"printed"};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';

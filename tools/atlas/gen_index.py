@@ -3,7 +3,8 @@
 # 数はすべて台帳本体 (chNN.md・notes_III.md) の行から、gen.py と同じ関数 (read_ledger・lean_mark・summary) で数える。
 #   式の行: 種別「式」の行。項目: 式の行の項目ID の種類。Lean 対応の項目: その項目の行のどれかが ✓/≈/✎。
 #   番号付き項目: 番号欄が空でない式の行を持つ項目 (箇条記号 (i.) なども番号に入れる)。
-# 「載せた行」は ✓+≈+✎+外 (第五の判定「外」を含む; 未だけが載せていない行)。項目の Lean 対応 (icov) は従来どおり ✓/≈/✎ のみ。
+# 「載せた行」は ✓+≈+✎+外+定 (第五の判定「外」・第六の判定「定」を含む; 未だけが載せていない行)。
+#   項目の Lean 対応 (icov) は従来どおり ✓/≈/✎ のみ (外・定しか持たない項目は定理になった項目に入れない; B37 F-B37.1)。
 # 題と folio 範囲は summary.csv から取る。summary.csv の数の列と台帳から数えた値が違えば標準エラーに出す (直さない)。
 # カード数は各章頁 (<atlas_dir>/<章>/index.html) の card を数え、台帳の行数と一致することを確かめる。
 # 表は数値の列を折り返さず右揃え (桁は tabular-nums)、折り返すのは題の列だけ。幅が足りなければ横スクロール (.wide)。
@@ -68,7 +69,7 @@ def chapter_stats(rows):
     mk = s["marks"]
     return {"lines": s["formula"], "items": len(items), "icov": len(cov), "num": len(num),
             "ncov": len(num & cov), "p": mk["✓"], "e": mk["≈"], "c": mk["✎"], "k": mk["未"],
-            "x": mk["外"], "nt": s["notation"], "n_lean": s["n_lean"], "rows": s["rows"]}
+            "x": mk["外"], "d": mk["定"], "nt": s["notation"], "n_lean": s["n_lean"], "rows": s["rows"]}
 
 
 def add(a, b):
@@ -113,7 +114,7 @@ def main():
         st[c] = x
         m = meta[c]
         for col, key in (("式", "lines"), ("項目数", "items"), ("記法", "nt"), ("✓", "p"), ("≈", "e"),
-                         ("✎", "c"), ("未(式)", "k"), ("記法のLean対応", "n_lean"), ("外", "x")):
+                         ("✎", "c"), ("未(式)", "k"), ("記法のLean対応", "n_lean"), ("外", "x"), ("定", "d")):
             if int(m[col]) != x[key]:
                 warn.append(f"{c}: summary.csv {col}={m[col]}, ledger {x[key]}")
         if (m["folio_from"], m["folio_to"]) != (fa, fb):
@@ -126,8 +127,8 @@ def main():
     tot = {}
     for p, _ in PARTS:
         tot = add(tot, part_tot[p])
-    # 載せた行 = ✓+≈+✎+外 (未だけが載せていない行)
-    done = tot["p"] + tot["e"] + tot["c"] + tot["x"]
+    # 載せた行 = ✓+≈+✎+外+定 (未だけが載せていない行)
+    done = tot["p"] + tot["e"] + tot["c"] + tot["x"] + tot["d"]
     cmd = "python3 -I tools/atlas/gen_index.py docs/全数台帳 docs/atlas docs/atlas/index.html" + (
         f" --lang {lang}" if lang != "en" else "") + (" --missing-ok" if missing_ok else "")
 
@@ -150,7 +151,7 @@ def main():
     o.append(box(t["ix_b_icov"], boxfrac(tot["icov"], tot["items"]), t["ix_d_icov"]))
     o.append(box(t["ix_b_ncov"], boxfrac(tot["ncov"], tot["num"]), t["ix_d_ncov"]))
     o.append(box(t["ix_b_lcov"], boxfrac(done, tot["lines"]),
-                 t["ix_d_lcov"].format(a=fmt(tot["p"]), b=fmt(tot["e"]), c=fmt(tot["c"]), x=fmt(tot["x"]), k=fmt(tot["k"]))))
+                 t["ix_d_lcov"].format(a=fmt(tot["p"]), b=fmt(tot["e"]), c=fmt(tot["c"]), x=fmt(tot["x"]), d=fmt(tot["d"]), k=fmt(tot["k"]))))
     o.append("</div>")
 
     # b. 部ごとの表
@@ -161,7 +162,7 @@ def main():
              + "</tr>")
 
     def part_row(label, nch, x, cls=""):
-        d = x["p"] + x["e"] + x["c"] + x["x"]
+        d = x["p"] + x["e"] + x["c"] + x["x"] + x["d"]
         # 未作成の章があれば、カード数に作成済の章の数を添える (--missing-ok のときだけ起こる)
         cards = fmt(x["cards"]) if x["built"] == nch else t["ix_cards_part"].format(
             c=fmt(x["cards"]), m=x["built"], n=nch)
@@ -184,7 +185,7 @@ def main():
         o.append(f"<h3>{html.escape(t['ix_part'].format(p=p))} &mdash; {span}</h3>")
         o.append('<div class="wide"><table class="sum chap"><tr class="head">' + "".join(
             f'<th{"" if k == "c_title" else NC}>{t["ix_" + k]}</th>'
-            for k in ("c_ch", "c_title", "c_folio", "c_lines", "c_done", "c_marks", "c_ext", "c_nt", "c_cards"))
+            for k in ("c_ch", "c_title", "c_folio", "c_lines", "c_done", "c_marks", "c_ext", "c_def", "c_nt", "c_cards"))
                  + "</tr>")
         for c in cs:
             x, m = st[c], meta[c]
@@ -203,11 +204,12 @@ def main():
                      f'<td class="n">{fmt(x["lines"])}</td>']
             if x["lines"]:
                 k = f'<span class="mark none">{x["k"]}</span>' if x["k"] else "0"
-                cells.append(f'<td class="n">{frac(x["p"] + x["e"] + x["c"] + x["x"], x["lines"])}</td>')
+                cells.append(f'<td class="n">{frac(x["p"] + x["e"] + x["c"] + x["x"] + x["d"], x["lines"])}</td>')
                 cells.append(f'<td class="n">{x["p"]} / {x["e"]} / {x["c"]} / {k}</td>')
                 cells.append(f'<td class="n">{x["x"]}</td>')
+                cells.append(f'<td class="n">{x["d"]}</td>')
             else:
-                cells.append(f'<td colspan="3" class="nf">{html.escape(t["no_formula"])}</td>')
+                cells.append(f'<td colspan="4" class="nf">{html.escape(t["no_formula"])}</td>')
             cells += [f'<td class="n">{fmt(x["nt"])}</td>',
                       f'<td class="n">{fmt(x["cards"]) if x["built"] else "&mdash;"}</td>']
             o.append("<tr>" + "".join(cells) + "</tr>")
@@ -223,7 +225,7 @@ def main():
         print("WARN", w, file=sys.stderr)
     print(f"index: {len(G.ORDER)} chapters, formula lines {tot['lines']}, items {tot['icov']}/{tot['items']}, "
           f"numbered {tot['ncov']}/{tot['num']}, lines {done}/{tot['lines']} "
-          f"(✓{tot['p']} ≈{tot['e']} ✎{tot['c']} 外{tot['x']} 未{tot['k']}), notation {tot['nt']}, cards {tot['cards']}"
+          f"(✓{tot['p']} ≈{tot['e']} ✎{tot['c']} 外{tot['x']} 定{tot['d']} 未{tot['k']}), notation {tot['nt']}, cards {tot['cards']}"
           + (f", built {tot['built']}/{len(G.ORDER)}" if missing_ok else ""))
 
 

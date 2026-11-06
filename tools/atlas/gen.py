@@ -5,7 +5,7 @@
 # 列の順序は台帳の見出し行から決める (第I部の台帳は 項目ID が 2 列目、第III部以降は 7 列目)。
 # 空欄の印は "—" と "–" の両方を受ける。行が 1 本もない章は 1 行の断り書きだけを出す。
 # 見出しの「第N章」は英語の「Chapter <ローマ数字>」に直す。
-# 頁の先頭と末尾に目次 (../index.html)・前章・次章へのナビ、集計表に「Lean に載せた行 (✓+≈+✎+外)」の 1 行、その下に絞り込みボタンを置く。
+# 頁の先頭と末尾に目次 (../index.html)・前章・次章へのナビ、集計表に「Lean に載せた行 (✓+≈+✎+外+定)」の 1 行、その下に絞り込みボタンを置く。
 # 集計表とナビのリンクは折り返さない (集計表は .wide で包み、幅が足りなければ横スクロール)。
 # ボタンは JavaScript で .card の表示を切り替える。JS が無ければボタンは隠れたままで、全カードが見える。
 # 表示文言は章頁・目次 (gen_index.py) とも辞書 L から引く (--lang ja で切り替え; 既定は en)。
@@ -37,9 +37,11 @@ KIND = {"表示": "Display", "行内": "Inline", "参考": "Reference", "表": "
 TYPE = {"式": "Formula", "記法": "Notation", "参考": "Reference", "裸記号": "Bare symbol (not counted)"}
 MARK = {"✓": ("printed", "Printed form"), "≈": ("equiv", "Equivalent form"),
         "✎": ("corrected", "Corrected form"), "未": ("none", "Not in Lean"),
-        "外": ("external", "Depends on a named external axiom")}
+        "外": ("external", "Depends on a named external axiom"),
+        "定": ("definition", "Definition counterpart")}
 # 第五の判定 (方針 2026-11-02): Lean 欄が「外部公理依存」で始まる式行。件数 0 の章では出力に現れない
 EXT = "外部公理依存"
+# 第六の判定 (B40b): Lean 欄が「定」で始まる式行。定義・名付け・記法の約束に当たる Lean の定義 (または前提名) がある。件数 0 の章では出力に現れない
 
 RULES = (
     "Every count on this page is computed from the census ledger, which is built from the page images "
@@ -51,14 +53,16 @@ RULES = (
     "<i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted "
     "separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. "
     "Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. "
-    "The Lean column of a formula row takes one of five values, fixed mechanically: "
+    "The Lean column of a formula row takes one of six values, fixed mechanically: "
     "<b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); "
     "<b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, "
     "a definition substituted, a change of variables); "
     "<b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; "
-    "<b>&#26410;</b> none of these (a line inside a proof, a definition only, or no counterpart); "
+    "<b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); "
     "<b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms "
-    "do not yield; the theorem is proved, the premise is not."
+    "do not yield; the theorem is proved, the premise is not; "
+    "<b>&#23450;</b> the line only defines or names a quantity (a definition, a naming of a symbol, a notational convention) "
+    "and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare."
 )
 
 RULES_JA = (
@@ -72,13 +76,15 @@ RULES_JA = (
     "<i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i> など) は"
     "<b>記法</b>として別に数え、添字・プライム・バーが付いても単独の記号は数えない。"
     "脚注の式も同じ規則に従い、別の頁に再掲された式はもう一度数える。"
-    "式の行の Lean 欄は次の 5 値のどれかで、機械的に決める: "
+    "式の行の Lean 欄は次の 6 値のどれかで、機械的に決める: "
     "<b>&#10003;</b> 印刷された関係が定理の文にそのまま現れる (束縛変数の名前・Lean の記法・添字の組み方だけは違ってよい); "
     "<b>&asymp;</b> 代数的に同値な形を定理が述べる (分母を払う、定義を代入する、変数を替える); "
     "<b>&#9998;</b> 印刷の行は反駁されるか導けず、修正形が証明されている; "
-    "<b>&#26410;</b> そのどれでもない (証明の途中の行、定義だけ、対応なし); "
+    "<b>&#26410;</b> そのどれでもない (証明の途中の行、Lean の定義がない定義だけの行、対応なし); "
     "<b>&#22806;</b> 名指しされた外部公理 (独立性・等しい見込みなど) に依存する。"
-    "ケインズ自身の公理からは出ない公理で、定理は証明されているが、その前提は証明されていない。"
+    "ケインズ自身の公理からは出ない公理で、定理は証明されているが、その前提は証明されていない; "
+    "<b>&#23450;</b> 定義・名付け・記法の約束だけの行で、それを担う Lean の定義 (または前提の名前) を挙げる。"
+    "比べるべき定理文はない。"
 )
 
 CSS = """
@@ -105,6 +111,7 @@ code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;pad
 .mark{display:inline-block;min-width:1.6em;text-align:center;border-radius:3px;padding:0 4px;margin-right:6px;font-weight:bold}
 .printed{background:#e3f2e3}.equiv{background:#e6eef9}.corrected{background:#fbefd9}.none{background:#eee}
 .external{background:#e4e0d4}
+.definition{background:#dcefef}
 .notation{background:#f3eaf6}
 footer{font-size:.85em;color:#666;margin-top:2em}
 nav.nav{font-size:.92em;margin:0 0 1em}
@@ -135,10 +142,11 @@ L = {
         # 章題の邦題 (英語版は使わない) と、章頁の副題に添える原題の文言
         "ch_title": {}, "sub_orig": "",
         # 章頁: 集計表
-        "lean_th": "In Lean (&#10003;+&asymp;+&#9998;+&#22806;)",
+        "lean_th": "In Lean (&#10003;+&asymp;+&#9998;+&#22806;)", "lean_th_def": "In Lean (&#10003;+&asymp;+&#9998;+&#22806;+&#23450;)",
         "lean_td": "{m} / {n} formulas, {p} &mdash; of which proved (&#10003;+&asymp;+&#9998;) {q}: "
                    "&#10003;{a} &asymp;{b} &#9998;{c}{ext}; not yet {k}",
         "lean_td_ext": "; depending on a named external axiom (&#22806;) {e}", "ext": "external axiom",
+        "lean_td_def": "; definition counterpart (&#23450;) {d}", "defn": "definition",
         "s_rows": "Ledger rows", "s_formula": "Formulas",
         "s_formula_td": "{f} (display {d}, inline {i}; items {it}, numbered {nb})",
         "s_marks": "Formulas by Lean status", "s_notation": "Notation",
@@ -177,8 +185,8 @@ L = {
         "ix_b_ncov": "Numbered items stated in Lean",
         "ix_d_ncov": "Items with a printed number or enumeration mark on one of their lines, "
                      "counted as in the previous box.",
-        "ix_b_lcov": "Formula lines in a theorem statement",
-        "ix_d_lcov": "&#10003; {a}, &asymp; {b}, &#9998; {c}, external {x}; not yet {k}.",
+        "ix_b_lcov": "Formula lines in Lean",
+        "ix_d_lcov": "&#10003; {a}, &asymp; {b}, &#9998; {c}, external {x}, definition {d}; not yet {k}.",
         "ix_h_parts": "By part",
         "ix_h_chaps": "Chapters",
         "ix_part": "Part {p}",
@@ -186,11 +194,11 @@ L = {
         "ix_part_span_notes": "Chapters {a}&ndash;{b} and the Notes on Part III",
         "ix_c_part": "Part", "ix_c_nch": "Chapters", "ix_c_lines": "Formula lines", "ix_c_items": "Items",
         "ix_c_icov": "Items in Lean", "ix_c_ncov": "Numbered items in Lean",
-        "ix_c_lcov": "Lines &#10003;+&asymp;+&#9998;+&#22806; / not yet",
+        "ix_c_lcov": "Lines &#10003;+&asymp;+&#9998;+&#22806;+&#23450; / not yet",
         "ix_c_nt": "Notation", "ix_c_cards": "Cards",
         "ix_c_ch": "Ch.", "ix_c_title": "Title", "ix_c_folio": "Folios",
-        "ix_c_done": "Lines in Lean (&#10003;+&asymp;+&#9998;+&#22806;) / formulas",
-        "ix_c_marks": "&#10003; / &asymp; / &#9998; / not yet", "ix_c_ext": "External (&#22806;)",
+        "ix_c_done": "Lines in Lean (&#10003;+&asymp;+&#9998;+&#22806;+&#23450;) / formulas",
+        "ix_c_marks": "&#10003; / &asymp; / &#9998; / not yet", "ix_c_ext": "External (&#22806;)", "ix_c_def": "Definition (&#23450;)",
         "ix_notes": "Notes", "ix_total": "All",
         "ix_cards_part": "{c} ({m} of {n} chapters built)",
         "ix_end_marks": "<b>&#10003;</b> the printed relation appears as stated in a theorem; "
@@ -199,7 +207,9 @@ L = {
                         "<b>not yet</b> none of these; "
                         "<b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that "
                         "Keynes's own axioms do not yield; the theorem is proved, the premise is not. "
-                        "A line marked &#22806; counts as a line in a theorem statement.",
+                        "A line marked &#22806; or &#23450; counts as a line in Lean. "
+                        "<b>&#23450;</b> the line only defines or names a quantity and a Lean definition carries it. "
+                        "An item whose lines are only &#22806; or &#23450; is not counted as an item stated in Lean.",
         "ix_end_count": "One printed line containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, "
                         "&sup;, &rarr;) is one formula line; a compound expression without a relation sign is counted "
                         "separately as notation, and a bare symbol is not counted. Every number on this page is "
@@ -244,10 +254,11 @@ L = {
         },
         "sub_orig": "原題: <i>{orig}</i>。",
         # 章頁: 集計表
-        "lean_th": "Lean に載せた行 (&#10003;+&asymp;+&#9998;+外)",
+        "lean_th": "Lean に載せた行 (&#10003;+&asymp;+&#9998;+外)", "lean_th_def": "Lean に載せた行 (&#10003;+&asymp;+&#9998;+外+定)",
         "lean_td": "{m} / {n} 式、{p} &mdash; うち証明 (&#10003;+&asymp;+&#9998;) {q}: "
                    "&#10003;{a} &asymp;{b} &#9998;{c}{ext}、未 {k}",
         "lean_td_ext": "、外部公理依存 (外) {e}", "ext": "外部公理依存",
+        "lean_td_def": "、定義対応 (定) {d}", "defn": "定義対応",
         "s_rows": "台帳の行", "s_formula": "式",
         "s_formula_td": "{f} (表示 {d}、行内 {i}; 項目 {it}、番号付き {nb})",
         "s_marks": "式の Lean 状況", "s_notation": "記法",
@@ -264,7 +275,7 @@ L = {
         "unident": "訳書で未同定 (切り抜きなし)。", "meta_unident": "訳書 未同定 (初版 folio {folio})",
         "pos": {}, "kind": {}, "type": {"裸記号": "裸記号 (数えない)"},
         "fn": "{s} (初版の番号)", "fn_cont": "{s} (初版の番号)",
-        "mark": {"✓": "印刷どおり", "≈": "同値な形", "✎": "修正形", "未": "Lean になし", "外": "外部公理依存"},
+        "mark": {"✓": "印刷どおり", "≈": "同値な形", "✎": "修正形", "未": "Lean になし", "外": "外部公理依存", "定": "定義対応"},
         "mark_r": "参考行 (数えない)", "mark_b": "裸記号 (数えない)", "mark_n": "記法",
         "d_trans": "転記 (初版)", "d_lean": "Lean", "d_repeat": "再掲元", "d_source": "引用元",
         "d_words": "照合語 (初版)", "d_note": "備考 (初版台帳)", "d_tnote": "訳書の備考", "d_crop": "切り抜き",
@@ -285,8 +296,8 @@ L = {
         "ix_d_icov": "項目の行のどれかが &#10003;・&asymp;・&#9998; なら数える。",
         "ix_b_ncov": "番号付き項目の対応",
         "ix_d_ncov": "行のどれかに印刷の番号・箇条記号がある項目。数え方は左の枠と同じ。",
-        "ix_b_lcov": "定理文に現れる行",
-        "ix_d_lcov": "&#10003; {a}・&asymp; {b}・&#9998; {c}・外 {x}、未 {k}。",
+        "ix_b_lcov": "Lean に載せた行",
+        "ix_d_lcov": "&#10003; {a}・&asymp; {b}・&#9998; {c}・外 {x}・定 {d}、未 {k}。",
         "ix_h_parts": "部ごと",
         "ix_h_chaps": "章の一覧",
         "ix_part": "第{p}部",
@@ -294,11 +305,11 @@ L = {
         "ix_part_span_notes": "第 {a}〜{b} 章と第III部の注",
         "ix_c_part": "部", "ix_c_nch": "章", "ix_c_lines": "式 (行)", "ix_c_items": "項目",
         "ix_c_icov": "項目の Lean 対応", "ix_c_ncov": "番号付き項目の対応",
-        "ix_c_lcov": "行 &#10003;+&asymp;+&#9998;+外 / 未",
+        "ix_c_lcov": "行 &#10003;+&asymp;+&#9998;+外+定 / 未",
         "ix_c_nt": "記法", "ix_c_cards": "カード",
         "ix_c_ch": "章", "ix_c_title": "題", "ix_c_folio": "folio",
-        "ix_c_done": "Lean に載せた行 (&#10003;+&asymp;+&#9998;+外) / 式",
-        "ix_c_marks": "&#10003; / &asymp; / &#9998; / 未", "ix_c_ext": "外部公理依存 (外)",
+        "ix_c_done": "Lean に載せた行 (&#10003;+&asymp;+&#9998;+外+定) / 式",
+        "ix_c_marks": "&#10003; / &asymp; / &#9998; / 未", "ix_c_ext": "外部公理依存 (外)", "ix_c_def": "定義対応 (定)",
         "ix_notes": "注", "ix_total": "合計",
         "ix_cards_part": "{c} ({n} 章中 {m} 章作成)",
         "ix_end_marks": "<b>&#10003;</b> 印刷の関係がそのまま定理文に現れる。"
@@ -307,7 +318,9 @@ L = {
                         "<b>未</b> そのいずれでもない。"
                         "<b>外</b> 名指しされた外部公理 (独立性・等しい見込みなど) に依存する。"
                         "ケインズ自身の公理からは出ない公理で、定理は証明されているが、その前提は証明されていない。"
-                        "外の行も「定理文に現れる行」に数える。",
+                        "外・定の行も「Lean に載せた行」に数える。"
+                        "<b>定</b> 定義・名付け・記法の約束だけの行で、Lean の定義がそれを担う。"
+                        "外・定の行しか持たない項目は「Lean で定理になった項目」に数えない。",
         "ix_end_count": "関係記号 (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr;) を含む印刷行 1 行 = 式 1 本。"
                         "関係記号のない複合の表現は記法として別に数え、裸の記号は数えない。"
                         "この頁の数はすべて全数台帳 (docs/全数台帳/) から数えたもので、手で書いていない。",
@@ -531,14 +544,15 @@ def main():
     else:
         # 載せた行 = ✓+≈+✎+外 (目次と同じ数え方)。うち証明 = ✓+≈+✎
         proved = mk["✓"] + mk["≈"] + mk["✎"]
-        done = proved + mk["外"]
+        done = proved + mk["外"] + mk["定"]
         if s["formula"]:
             lean_td = t["lean_td"].format(m=done, n=s["formula"], q=proved, a=mk["✓"], b=mk["≈"], c=mk["✎"],
                                           k=mk["未"], p=pct(done, s["formula"]),
-                                          ext=t["lean_td_ext"].format(e=mk["外"]) if mk["外"] else "")
+                                          ext=(t["lean_td_ext"].format(e=mk["外"]) if mk["外"] else "")
+                                          + (t["lean_td_def"].format(d=mk["定"]) if mk["定"] else ""))
         else:
             lean_td = html.escape(t["no_formula"])
-        o.append(f'<div class="wide"><table class="sum"><tr><th>{t["lean_th"]}</th>'
+        o.append(f'<div class="wide"><table class="sum"><tr><th>{t["lean_th_def" if mk["定"] else "lean_th"]}</th>'
                  f'<td><b>{lean_td}</b></td></tr>')
         o.append(f'<tr><th>{t["s_rows"]}</th><td>' + str(s["rows"]) + "</td></tr>")
         o.append(f'<tr><th>{t["s_formula"]}</th><td>'
@@ -550,6 +564,7 @@ def main():
                  f'<span class="mark corrected">&#9998;</span>{mk["✎"]} &nbsp; '
                  f'<span class="mark none">&#26410;</span>{mk["未"]}'
                  + (f' &nbsp; <span class="mark external">&#22806;</span>{mk["外"]}' if mk["外"] else "")
+                 + (f' &nbsp; <span class="mark definition">&#23450;</span>{mk["定"]}' if mk["定"] else "")
                  + '</td></tr>')
         o.append(f'<tr><th>{t["s_notation"]}</th><td>'
                  + t["s_notation_td"].format(n=s["notation"], k=s["n_lean"]) + "</td></tr>")
@@ -564,6 +579,9 @@ def main():
                 ("notation", html.escape(t["notation"]), cats.count("notation"))]
         if cats.count("external"):
             btns.insert(5, ("external", html.escape(t["ext"]), cats.count("external")))
+        if cats.count("definition"):
+            btns.insert(6 if cats.count("external") else 5,
+                        ("definition", html.escape(t["defn"]), cats.count("definition")))
         on = ' class="on"'
         o.append(f'<div class="filter" hidden>{html.escape(t["show"])} '
                  + "".join(f'<button type="button" data-k="{k}"{on if k == "all" else ""}>'
@@ -637,7 +655,7 @@ def main():
     open(out, "w", encoding="utf-8").write("\n".join(o) + "\n")
     print(f"{chap}{' (ja)' if ja else ''}: {s['rows']} cards, formulas {s['formula']} "
           f"(✓{mk['✓']} ≈{mk['≈']} ✎{mk['✎']} 未{mk['未']}"
-          + (f" 外{mk['外']}" if mk["外"] else "") + f"), notation {s['notation']}"
+          + (f" 外{mk['外']}" if mk["外"] else "") + (f" 定{mk['定']}" if mk["定"] else "") + f"), notation {s['notation']}"
           + (f", translator notes {sum(1 for r in rows if co.get(r['id'], {}).get('note'))}, "
              f"unidentified {len(missing)}" if ja else ""))
 
