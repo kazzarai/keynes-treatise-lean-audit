@@ -3,9 +3,9 @@
 The atlas puts every row of the census ledger (`docs/全数台帳/chNN.md`) beside a crop of the printed line it records, so that the transcription and the Lean entry can be checked against the page itself. One HTML page per chapter, in English; the ledger's remarks and Lean entries are quoted as written. Chapter 20 is the trial run (`ch20/index.html`, 40 cards from 24 crops).
 
 ## Index, navigation and filters
-- **Index page** (`index.html`): the totals of the census (formula lines, items, items stated in Lean, numbered items, lines in a theorem statement), a table by part, and the list of all 33 chapters and the Notes on Part III with links to their pages. Every number is computed from the ledger files.
+- **Index page** (`index.html`): the totals of the census (formula lines, items, items stated in Lean, numbered items, lines in Lean), a table by part, and the list of all 33 chapters and the Notes on Part III with links to their pages. Every number is computed from the ledger files.
 - **Navigation**: each chapter page has a line at the top and at the bottom leading back to the index and to the previous and next chapter (the Notes on Part III follow Chapter 23).
-- **Filters**: under the summary table of a chapter page, buttons show all cards, only the ✓ / ≈ / ✎ / not-yet formula rows (and the 外 rows, external-axiom dependence, on a page that has any), or only the notation rows. Without JavaScript the buttons stay hidden and every card is shown.
+- **Filters**: under the summary table of a chapter page, buttons show all cards, only the ✓ / ≈ / ✎ / not-yet formula rows (and the 外 rows, external-axiom dependence, and the 定 rows, definition counterpart, on a page that has any), or only the notation rows. Without JavaScript the buttons stay hidden and every card is shown.
 
 ## Source of the images
 J. M. Keynes, *A Treatise on Probability*, London: Macmillan, 1921 (first edition), Cornell University Library copy, scanned PDF. **PDF page = folio + 20** for the pages used here (checked against the page number in the PDF text layer). Pages are rendered at the scan's native size, 1445 × 2408 px, by the pure-Python tools in `原典照合1921/render_tool/` (`pdf_pages.py`, then `batch_render.py`; outside this repository). Crops are inverted to black on white, cut to the text column (x 125–1335) with an 8 px margin.
@@ -19,7 +19,7 @@ python3 -I tools/atlas/gen.py docs/全数台帳/ch20.md docs/atlas/ch20/coords.j
 
 When a column is added to a ledger, run `gen.py` on it to check (columns the generator does not know are skipped); gate [9] of `tools/check_all.sh` does this by machine (`gen.py --check` on every ledger, then `gen_index.py --missing-ok`).
 
-After any chapter page is rebuilt, recompute `summary.csv` from the ledger (`gen_summary.py`: folio range, formula/item/notation counts, ✓ ≈ ✎ 未 外; the title and the numbered-items column are kept as they are), then rebuild the index (it reads the ledger files, `summary.csv` and the chapter pages, and reports any disagreement between `summary.csv` and the ledger; the output should have no WARN line):
+After any chapter page is rebuilt, recompute `summary.csv` from the ledger (`gen_summary.py`: folio range, formula/item/notation counts, ✓ ≈ ✎ 未 外 定; the title and the numbered-items column are kept as they are), then rebuild the index (it reads the ledger files, `summary.csv` and the chapter pages, and reports any disagreement between `summary.csv` and the ledger; the output should have no WARN line):
 ```
 python3 -I tools/atlas/gen_summary.py docs/全数台帳
 python3 -I tools/atlas/gen_index.py docs/全数台帳 docs/atlas docs/atlas/index.html
