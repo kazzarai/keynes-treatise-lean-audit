@@ -5,8 +5,10 @@
 # 「外」は第五の判定 (外部公理依存)、「定」は第六の判定 (定義対応) の式の行の数で、列は末尾に足す (既存の列の位置は変えない)。
 # 改行は元のファイルに合わせて CRLF。出力は入力だけで決まる。何度回しても同じ。
 # gen_index.py の前に回す。
-# 使い方: python3 -I tools/atlas/gen_summary.py <ledger_dir>   (summary.csv は <ledger_dir>/summary.csv)
+# --check: summary.csv を書き換えず、台帳から再計算した内容とバイト単位で一致するかだけを調べる (違えば終了コード 1)。
+# 使い方: python3 -I tools/atlas/gen_summary.py [--check] <ledger_dir>   (summary.csv は <ledger_dir>/summary.csv)
 import csv
+import io
 import importlib.util
 import os
 import sys
@@ -22,7 +24,11 @@ DEF_COL = "定"
 
 
 def main():
-    ledger_dir = sys.argv[1]
+    args = sys.argv[1:]
+    check = "--check" in args
+    if check:
+        args.remove("--check")
+    ledger_dir = args[0]
     path = os.path.join(ledger_dir, "summary.csv")
     with open(path, encoding="utf-8", newline="") as f:
         rd = csv.DictReader(f)
@@ -41,10 +47,18 @@ def main():
                   "記法": s["notation"], "✓": mk["✓"], "≈": mk["≈"], "✎": mk["✎"], "未(式)": mk["未"],
                   "記法のLean対応": s["n_lean"], EXT_COL: mk["外"], DEF_COL: mk["定"]})
         out.append(r)
-    with open(path, "w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=head, lineterminator="\r\n")
-        w.writeheader()
-        w.writerows(out)
+    buf = io.StringIO(newline="")
+    w = csv.DictWriter(buf, fieldnames=head, lineterminator="\r\n")
+    w.writeheader()
+    w.writerows(out)
+    new = buf.getvalue().encode("utf-8")
+    if check:
+        with open(path, "rb") as f:
+            if f.read() != new:
+                sys.exit("summary.csv が台帳から再計算した内容と一致しない (gen_summary.py で作り直す)")
+    else:
+        with open(path, "wb") as f:
+            f.write(new)
     print(f"summary.csv: {len(out)} chapters, formulas {sum(int(r['式']) for r in out)}, "
           f"外 {sum(int(r[EXT_COL]) for r in out)}, 定 {sum(int(r[DEF_COL]) for r in out)}")
 
