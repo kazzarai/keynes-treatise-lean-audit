@@ -39,14 +39,14 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch04/index.html">&larr; Ch. 4</a> | <a href="../ch06/index.html">Ch. 6 &rarr;</a></nav>
 <h1>Chapter V. Other Methods of Determining Probabilities</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 65&ndash;70 (Cornell copy, PDF pp. 85&ndash;90). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;)</th><td><b>4 / 16 formulas, 25.0% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 4: &#10003;1 &asymp;3 &#9998;0; not yet 12</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;+&#23450;)</th><td><b>16 / 16 formulas, 100.0% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 6: &#10003;3 &asymp;3 &#9998;0; definition counterpart (&#23450;) 10; not yet 0</b></td></tr>
 <tr><th>Ledger rows</th><td>38</td></tr>
 <tr><th>Formulas</th><td>16 (display 1, inline 15; items 16, numbered 0)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>1 &nbsp; <span class="mark equiv">&asymp;</span>3 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>12</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>3 &nbsp; <span class="mark equiv">&asymp;</span>3 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>0 &nbsp; <span class="mark definition">&#23450;</span>10</td></tr>
 <tr><th>Notation</th><td>22 (with a Lean counterpart 0)</td></tr>
 <tr><th>Reference rows</th><td>0</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (38)</button><button type="button" data-k="printed">&#10003; (1)</button><button type="button" data-k="equiv">&asymp; (3)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (12)</button><button type="button" data-k="notation">notation (22)</button></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (38)</button><button type="button" data-k="printed">&#10003; (3)</button><button type="button" data-k="equiv">&asymp; (3)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (0)</button><button type="button" data-k="definition">definition (10)</button><button type="button" data-k="notation">notation (22)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line only defines or names a quantity (a definition, a naming of a symbol, a notational convention) and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
 <section class="card" id="ch05-001">
 <h2>ch05-001</h2>
@@ -144,9 +144,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 66 (PDF p. 86) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/hh₁ &gt; a/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/Favourable・th_5_r009 (a/hh₁ &gt; a/h は Favourable h₁ a h の本体; 前提の並置 hh₁ は iand h h₁ で印刷の順; Π の半順序の上)</dd>
 <dt>Anchor words</dt><dd>If h₁ is favourable,</dd>
-<dt>Remarks</dt><dd>好意的な証拠</dd>
+<dt>Remarks</dt><dd>好意的な証拠。B43: 好意的な証拠の定義 (phase13a の FavourablyRelevant は ℝ 値・h₁h の順)</dd>
 <dt>Crop</dt><dd>folio 66, x 125&ndash;1335, y 956&ndash;1004 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch05-010">
@@ -167,7 +167,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 66 (PDF p. 86) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/hh₁h₂ &gt; a/hh₁</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/Favourable・th_5_r011 (定義の展開: a/hh₁h₂ &gt; a/hh₁ は Favourable h₂ a (iand h h₁) の本体; 009 と同じ扱い)</dd>
 <dt>Anchor words</dt><dd>if h₂ is favourable to a/hh₁,</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 66, x 125&ndash;1335, y 1006&ndash;1054 (full-size scan pixels)</dd>
@@ -201,7 +201,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 66 (PDF p. 86) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/hh₁ &gt; a/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/th_5_r017 (例の仮定; 定理 th_5_r017 の前提 h014 に写す; h014: Favourable h₁ a h)</dd>
 <dt>Reprint of</dt><dd><a href="#ch05-009">ch05-009</a></dd>
 <dt>Anchor words</dt><dd>We may find, for instance, that</dd>
 <dt>Remarks</dt><dd>無差別原理との組合せ (hires で確認)</dd>
@@ -214,7 +214,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 66 (PDF p. 86) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/h = b/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/th_5_r017 (例の仮定; 定理 th_5_r017 の前提 h015 に写す; 無差別原理による判断)</dd>
 <dt>Anchor words</dt><dd>that</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 66, x 125&ndash;1335, y 1952&ndash;2002 (full-size scan pixels)</dd>
@@ -226,7 +226,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 66 (PDF p. 86) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>b/h &gt; b/hh₂</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/th_5_r017・Unfavourable・th_5_r016 (例の仮定; 定理 th_5_r017 の前提 h016 に写す; h016: h₂ は b/h に好意的でない (Unfavourable の本体))</dd>
 <dt>Anchor words</dt><dd>that</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 66, x 125&ndash;1335, y 1952&ndash;2002 (full-size scan pixels)</dd>
@@ -237,7 +237,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 66 (PDF p. 86) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/hh₁ &gt; b/hh₂</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase15a_ch05_ch08/th_5_r017 (前提 014–016 と Π の推移律)</dd>
 <dt>Anchor words</dt><dd>and that, therefore,</dd>
 <dt>Remarks</dt><dd>型 (iii.) の比較 (folio 67 冒頭)</dd>
 <dt>Crop</dt><dd>folio 66, x 125&ndash;1335, y 2002&ndash;2052 (full-size scan pixels)</dd>
@@ -293,7 +293,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 67 (PDF p. 87) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/h &lt; b/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase15a_ch05_ch08/th_5_r022 (前提 023–027 の 5 本と Π の推移律; 5 本とも使う)</dd>
 <dt>Anchor words</dt><dd>that the comparison</dd>
 <dt>Remarks</dt><dd>Romulus (a) と Caesar (b)</dd>
 <dt>Crop</dt><dd>folio 67, x 125&ndash;1335, y 1671&ndash;1724 (full-size scan pixels)</dd>
@@ -304,7 +304,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 67 (PDF p. 87) &middot; &sect;3 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/ψ₂(a) = b/ψ₂(b) ;</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/th_5_r022 (例の仮定; 定理 th_5_r022 の前提 h023 に写す)</dd>
 <dt>Anchor words</dt><dd>For</dd>
 <dt>Remarks</dt><dd>hires で確認</dd>
 <dt>Crop</dt><dd>folio 67, x 125&ndash;1335, y 2162&ndash;2199 (full-size scan pixels)</dd>
@@ -316,7 +316,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 67 (PDF p. 87) &middot; &sect;3 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/ψ₁(a) &lt; a/ψ₂(a) ;</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/th_5_r022 (例の仮定; 定理 th_5_r022 の前提 h024 に写す)</dd>
 <dt>Anchor words</dt><dd>a/ψ₂(a) = b/ψ₂(b) ;</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 67, x 125&ndash;1335, y 2162&ndash;2199 (full-size scan pixels)</dd>
@@ -328,7 +328,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 67 (PDF p. 87) &middot; &sect;3 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>b/ψ₂(b) &lt; b/ψ₂(b)ψ₃(b) ;</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/th_5_r022 (例の仮定; 定理 th_5_r022 の前提 h025 に写す; 並置 ψ₂(b)ψ₃(b) は iand (ψ₂ b) (ψ₃ b))</dd>
 <dt>Anchor words</dt><dd>a/ψ₁(a) &lt; a/ψ₂(a) ;</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 67, x 125&ndash;1335, y 2162&ndash;2199 (full-size scan pixels)</dd>
@@ -339,7 +339,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 67 (PDF p. 87) &middot; &sect;3 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/ψ₁(a) = a/h ;</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/th_5_r022 (例の仮定; 定理 th_5_r022 の前提 h026 に写す)</dd>
 <dt>Anchor words</dt><dd>b/ψ₂(b) &lt; b/ψ₂(b)ψ₃(b) ;</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 67, x 125&ndash;1335, y 2199&ndash;2238 (full-size scan pixels)</dd>
@@ -351,7 +351,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 67 (PDF p. 87) &middot; &sect;3 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>b/ψ₂(b)ψ₃(b) = b/h.</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/th_5_r022 (例の仮定; 定理 th_5_r022 の前提 h027 に写す)</dd>
 <dt>Anchor words</dt><dd>and</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 67, x 125&ndash;1335, y 2199&ndash;2238 (full-size scan pixels)</dd>
@@ -483,7 +483,7 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch04/index.html">&larr; Ch. 4</a> | <a href="../ch06/index.html">Ch. 6 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch05.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch05-001":"notation","ch05-002":"notation","ch05-003":"notation","ch05-004":"notation","ch05-005":"equiv","ch05-006":"notation","ch05-007":"notation","ch05-008":"notation","ch05-009":"none","ch05-010":"notation","ch05-011":"none","ch05-012":"notation","ch05-013":"notation","ch05-014":"none","ch05-015":"none","ch05-016":"none","ch05-017":"none","ch05-018":"notation","ch05-019":"notation","ch05-020":"notation","ch05-021":"notation","ch05-022":"none","ch05-023":"none","ch05-024":"none","ch05-025":"none","ch05-026":"none","ch05-027":"none","ch05-028":"notation","ch05-029":"equiv","ch05-030":"equiv","ch05-031":"notation","ch05-032":"notation","ch05-033":"notation","ch05-034":"notation","ch05-035":"notation","ch05-036":"notation","ch05-037":"printed","ch05-038":"notation"};
+var K={"ch05-001":"notation","ch05-002":"notation","ch05-003":"notation","ch05-004":"notation","ch05-005":"equiv","ch05-006":"notation","ch05-007":"notation","ch05-008":"notation","ch05-009":"definition","ch05-010":"notation","ch05-011":"definition","ch05-012":"notation","ch05-013":"notation","ch05-014":"definition","ch05-015":"definition","ch05-016":"definition","ch05-017":"printed","ch05-018":"notation","ch05-019":"notation","ch05-020":"notation","ch05-021":"notation","ch05-022":"printed","ch05-023":"definition","ch05-024":"definition","ch05-025":"definition","ch05-026":"definition","ch05-027":"definition","ch05-028":"notation","ch05-029":"equiv","ch05-030":"equiv","ch05-031":"notation","ch05-032":"notation","ch05-033":"notation","ch05-034":"notation","ch05-035":"notation","ch05-036":"notation","ch05-037":"printed","ch05-038":"notation"};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';

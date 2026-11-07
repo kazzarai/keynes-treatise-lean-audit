@@ -9,7 +9,7 @@
 - The names in the Lean column (`file/theorem`) are checked mechanically: stage [4] of `tools/check_all.sh` (`tools/check_ledger_refs.py`) fails if a name cited for a ✓/≈/✎/外/定 formula row or a notation row is not declared anywhere in `phases/`; a 定 row that cites no name is also reported. The gate prints `[4] ok ledger refs: rows=… decls=… refs=… names=… missing=0`, or `[4] RED ledger refs: …` followed by one `MISSING <row ID> → <name>` line per missing name.
 
 ## Totals (v1.17)
-Formula lines **1,175**; notations 731; items 698 (numbered 202). Lines whose relation appears in a theorem statement (✓+≈+✎, proved): 901 (✓ 564 / ≈ 303 / ✎ 34); lines that depend on a named external axiom (外): 4; lines whose Lean counterpart is a definition or a named premise (定): 46; lines in Lean in all (✓+≈+✎+外+定): **951 / 1,175**; not yet 224 (by part: I 52; II 10; III 18; IV 17; V 127). Items covered by at least one theorem (✓/≈/✎ only; 外 and 定 are not counted): 446 / 698; numbered items 189 / 202. By part (items covered / items): I 45/102, II 330/358, III 44/62, IV 18/35, V 9/141. Part II (Chapters X–XVII) has 825 formula lines: ✓ 477 / ≈ 270 / ✎ 28 / 定 40 / not yet 10.
+Formula lines **1,175**; notations 731; items 698 (numbered 202). Lines whose relation appears in a theorem statement (✓+≈+✎, proved): 907 (✓ 566 / ≈ 307 / ✎ 34); lines that depend on a named external axiom (外): 5; lines whose Lean counterpart is a definition or a named premise (定): 62; lines in Lean in all (✓+≈+✎+外+定): **974 / 1,175**; not yet 201 (by part: I 29; II 10; III 18; IV 17; V 127). Items covered by at least one theorem (✓/≈/✎ only; 外 and 定 are not counted): 452 / 698; numbered items 189 / 202. By part (items covered / items): I 51/102, II 330/358, III 44/62, IV 18/35, V 9/141. Part II (Chapters X–XVII) has 825 formula lines: ✓ 477 / ≈ 270 / ✎ 28 / 定 40 / not yet 10.
 
 The per-chapter figures below are the counts of the ledger rows (`chNN.md`, formula rows by Lean status) and agree with each chapter's own 集計 table; `summary.csv` is recomputed from the same rows for every chapter by `tools/atlas/gen_summary.py` (all columns but the title and 'numbered'; 外 and 定 are its last two columns), and its 'numbered' column is not uniform across parts (some chapters count numbered lines, some numbered items) — the table below is the one to cite. "In Lean" counts ✓+≈+✎+外+定, as the atlas index does; the first three alone are the lines proved.
 
@@ -20,10 +20,10 @@ The per-chapter figures below are the counts of the ledger rows (`chNN.md`, form
 | I | 2 | Probability in Relation to the Theory of Knowledge | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 / 0 / 0 | 0 | 0 |
 | I | 3 | The Measurement of Probabilities | 8 | 8 | 4 | 1/2 | 0 / 3 / 1 / 0 / 4 / 0 | 8 | 19 |
 | I | 4 | The Principle of Indifference | 31 | 31 | 16 | 3/3 | 15 / 1 / 0 / 0 / 0 / 15 | 16 | 95 |
-| I | 5 | Other Methods of Determining Probabilities | 16 | 16 | 4 | 3/3 | 1 / 3 / 0 / 0 / 0 / 12 | 4 | 22 |
+| I | 5 | Other Methods of Determining Probabilities | 16 | 16 | 6 | 3/3 | 3 / 3 / 0 / 0 / 10 / 0 | 16 | 22 |
 | I | 6 | The Weight of Arguments | 32 | 32 | 18 | 2/5 | 15 / 3 / 0 / 0 / 0 / 14 | 18 | 26 |
 | I | 7 | Historical Retrospect | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 / 0 / 0 | 0 | 5 |
-| I | 8 | The Frequency Theory of Probability | 14 | 14 | 3 | 0/0 | 2 / 1 / 0 / 0 / 0 / 11 | 3 | 14 |
+| I | 8 | The Frequency Theory of Probability | 14 | 14 | 7 | 0/0 | 2 / 5 / 0 / 1 / 6 / 0 | 14 | 14 |
 | I | 9 | The Constructive Theory of Part I Summarised | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 / 0 / 0 | 0 | 1 |
 | II | 10 | Introductory | 29 | 26 | 23 | 6/9 | 20 / 6 / 0 / 0 / 3 / 0 | 29 | 13 |
 | II | 11 | The Theory of Groups | 30 | 30 | 29 | 0/0 | 25 / 4 / 0 / 0 / 1 / 0 | 30 | 2 |
@@ -50,7 +50,7 @@ The per-chapter figures below are the counts of the ledger rows (`chNN.md`, form
 | V | 32 | The Inductive Use of Statistical Frequencies | 26 | 26 | 0 | 0/0 | 0 / 0 / 0 / 0 / 0 / 26 | 0 | 7 |
 | V | 33 | Outline of a Constructive Theory | 18 | 18 | 0 | 0/0 | 0 / 0 / 0 / 0 / 0 / 18 | 0 | 79 |
 | III | N3 | Notes on Part III | 20 | 10 | 10 | 9/9 | 20 / 0 / 0 / 0 / 0 / 0 | 20 | 2 |
-| **all** | | | **1,175** | **698** | **446** | **189/202** | **564 / 303 / 34 / 4 / 46 / 224** | **951** | **731** |
+| **all** | | | **1,175** | **698** | **452** | **189/202** | **566 / 307 / 34 / 5 / 62 / 201** | **974** | **731** |
 
 ## ℝ 依存 A〜E の本数 (第II部)
 
