@@ -2,10 +2,12 @@
 # check_all — mechanical gate for this repository.
 # Stages: 0 Mathlib cache present; 1 every phase compiles (exit 0, no "error"); 2 no sorryAx;
 #         3 verdict count -> logs/progress.json;
-#         4 every name cited in docs/全数台帳 exists in phases/ (tools/check_ledger_refs.py, no MISSING);
+#         4 every name cited in docs/全数台帳 (Lean column and notes column) exists in phases/
+#           (tools/check_ledger_refs.py, no MISSING);
 #         8 hygiene (no local absolute paths);
 #         9 atlas generators agree with the ledgers (gen.py --check on every ledger, gen_summary.py --check,
-#           gen_index.py --missing-ok with no WARN); nothing under docs/ is rewritten.
+#           gen_index.py --missing-ok with no WARN, gen_readme_totals.py --check on docs/全数台帳/README.md);
+#           nothing under docs/ is rewritten.
 # Usage: bash tools/check_all.sh [phases/file.lean ...]   (default: all phases)
 set -u
 cd "$(dirname "$0")/.." || exit 1
@@ -28,7 +30,7 @@ echo "[3] verdicts=$total files=${#FILES[@]} -> logs/progress.json" | tee -a "$L
 # [4] ledger references: every cited theorem/definition name is declared in phases/
 refs_out=$(python3 -I tools/check_ledger_refs.py docs/全数台帳 phases 2>&1); refs_ec=$?
 printf '%s\n' "$refs_out" >> "$LOG"
-refs_sum=$(printf '%s\n' "$refs_out" | grep -E '^(rows|names)=' | tr '\n' ' ' | sed 's/ $//')
+refs_sum=$(printf '%s\n' "$refs_out" | grep -E '^(rows|names|note_refs)=' | tr '\n' ' ' | sed 's/ $//')
 if [ $refs_ec -ne 0 ] || printf '%s\n' "$refs_out" | grep -q "^MISSING"; then
   echo "[4] RED ledger refs: $refs_sum" | tee -a "$LOG"
   printf '%s\n' "$refs_out" | grep "^MISSING" | tee -a "$LOG"; red=1
@@ -44,6 +46,7 @@ LEDGERS=(docs/全数台帳/ch*.md docs/全数台帳/notes_III.md)
 tmp9=$(mktemp -d); atlas_out=""; atlas_ec=0
 o=$(python3 -I tools/atlas/gen.py --check "${LEDGERS[@]}" 2>&1) || atlas_ec=1; atlas_out+="$o"$'\n'
 o=$(python3 -I tools/atlas/gen_summary.py --check docs/全数台帳 2>&1) || atlas_ec=1; atlas_out+="$o"$'\n'
+o=$(python3 -I tools/atlas/gen_readme_totals.py --check docs/全数台帳 2>&1) || atlas_ec=1; atlas_out+="$o"$'\n'
 o=$(python3 -I tools/atlas/gen_index.py --missing-ok docs/全数台帳 docs/atlas "$tmp9/index.html" 2>&1) || atlas_ec=1; atlas_out+="$o"$'\n'
 rm -rf "$tmp9"
 printf '%s\n' "$atlas_out" >> "$LOG"
