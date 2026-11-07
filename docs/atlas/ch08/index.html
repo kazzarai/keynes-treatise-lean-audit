@@ -39,15 +39,15 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch07/index.html">&larr; Ch. 7</a> | <a href="../ch09/index.html">Ch. 9 &rarr;</a></nav>
 <h1>Chapter VIII. The Frequency Theory of Probability</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 92&ndash;110 (Cornell copy, PDF pp. 112&ndash;130). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;)</th><td><b>3 / 14 formulas, 21.4% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 3: &#10003;2 &asymp;1 &#9998;0; not yet 11</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;+&#23450;)</th><td><b>14 / 14 formulas, 100.0% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 7: &#10003;2 &asymp;5 &#9998;0; depending on a named external axiom (&#22806;) 1; definition counterpart (&#23450;) 6; not yet 0</b></td></tr>
 <tr><th>Ledger rows</th><td>29</td></tr>
 <tr><th>Formulas</th><td>14 (display 2, inline 12; items 14, numbered 0)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>2 &nbsp; <span class="mark equiv">&asymp;</span>1 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>11</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>2 &nbsp; <span class="mark equiv">&asymp;</span>5 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>0 &nbsp; <span class="mark external">&#22806;</span>1 &nbsp; <span class="mark definition">&#23450;</span>6</td></tr>
 <tr><th>Notation</th><td>14 (with a Lean counterpart 0)</td></tr>
 <tr><th>Reference rows</th><td>1</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (29)</button><button type="button" data-k="printed">&#10003; (2)</button><button type="button" data-k="equiv">&asymp; (1)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (11)</button><button type="button" data-k="notation">notation (14)</button></div>
-<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line only defines or names a quantity (a definition, a naming of a symbol, a notational convention) and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (29)</button><button type="button" data-k="printed">&#10003; (2)</button><button type="button" data-k="equiv">&asymp; (5)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (0)</button><button type="button" data-k="external">external axiom (1)</button><button type="button" data-k="definition">definition (6)</button><button type="button" data-k="notation">notation (14)</button></div>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
 <section class="card" id="ch08-001">
 <h2>ch08-001</h2>
 <img src="img/ch08-001.png" alt="x/y" loading="lazy">
@@ -146,7 +146,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a_α/h = α_f</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/FreqProb・th_8_r009 (a_α/h は FreqProb a α h、本体は α の真理頻度 RefCls.tf; 頻度理論の担体で第II部の公理と接続しない)</dd>
 <dt>Anchor words</dt><dd>We then have</dd>
 <dt>Remarks</dt><dd>頻度理論の定義。右辺は類 α の真理頻度 (ch08-007 の定義) なので α_f と転記 (第 1 回は a_f)</dd>
 <dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 713&ndash;769 (full-size scan pixels)</dd>
@@ -157,7 +157,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>(a + b)_δ/h = a_α/h + b_β/h − ab_γ/h.</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase15a_ch05_ch08/th_8_r010 (前提 δ = δ′ (h013)・γ = αβ (h014) は印刷の条件; 印刷に無い前提として α と β が同じ系列 (hS: α.series = β.series) と、δ′・αβ を同じ成員の対の選言・連言 (disjCls・conjCls) と読むことを足した)</dd>
 <dt>Anchor words</dt><dd>which will be of the form :</dd>
 <dt>Remarks</dt><dd>頻度記法での加法定理 (証明すべき形)。hires で添字 δ, α, β, γ を確認</dd>
 <dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 907&ndash;962 (full-size scan pixels)</dd>
@@ -168,9 +168,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>δ′_f = α_f + β_f − αβ_f</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase15a_ch05_ch08/th_8_r011 (δ′ = disjCls α β、αβ = conjCls α β; 印刷に無い前提として α と β が同じ系列 (hS: α.series = β.series) と同じ成員の対の読みを足した; Finset.card_union_add_card_inter)</dd>
 <dt>Anchor words</dt><dd>arithmetic of classes that</dd>
-<dt>Remarks</dt><dd>類の算術。第 1 項・第 3 項の活字は斜体 a と同形だが、直前の「such that a is an α and b a β」と直後の「where αβ is the class of propositions which are members of both α and β」から類 α と読む (ヘッダの方針)。第 1 回の [?] は転記方針の不統一から生じたもので外した</dd>
+<dt>Remarks</dt><dd>類の算術。第 1 項・第 3 項の活字は斜体 a と同形だが、直前の「such that a is an α and b a β」と直後の「where αβ is the class of propositions which are members of both α and β」から類 α と読む (ヘッダの方針)。第 1 回の [?] は転記方針の不統一から生じたもので外した。B43: 「a is an α and b a β」を同じ成員の対と読む</dd>
 <dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 1094&ndash;1147 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch08-012">
@@ -191,7 +191,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>δ = δ′</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/th_8_r010・th_8_r010_needs_013 (例の仮定; 定理 th_8_r010 の前提 h013 に写す; h013: δ = disjCls α β; 外すと 010 は偽 (th_8_r010_needs_013))</dd>
 <dt>Anchor words</dt><dd>In the case, therefore, where</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 1194&ndash;1245 (full-size scan pixels)</dd>
@@ -203,7 +203,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>γ = αβ</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/th_8_r010・th_8_r010_needs_014 (例の仮定; 定理 th_8_r010 の前提 h014 に写す; h014: γ = conjCls α β; 外すと 010 は偽 (th_8_r010_needs_014))</dd>
 <dt>Anchor words</dt><dd>and</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 105, x 125&ndash;1335, y 1194&ndash;1245 (full-size scan pixels)</dd>
@@ -248,7 +248,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>δ = δ′</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/th_8_r010 (例の仮定; 定理 th_8_r010 の前提 h013 に写す; ch08-013 の再掲)</dd>
 <dt>Reprint of</dt><dd><a href="#ch08-013">ch08-013</a></dd>
 <dt>Anchor words</dt><dd>where it happens that</dd>
 <dt>Remarks</dt><dd></dd>
@@ -261,7 +261,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 105 (PDF p. 125) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>γ = αβ</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/th_8_r010 (例の仮定; 定理 th_8_r010 の前提 h014 に写す; ch08-014 の再掲)</dd>
 <dt>Reprint of</dt><dd><a href="#ch08-014">ch08-014</a></dd>
 <dt>Anchor words</dt><dd>and</dd>
 <dt>Remarks</dt><dd></dd>
@@ -296,7 +296,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 106 (PDF p. 126) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>ab/h = p₁p₂/q²</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15a_ch05_ch08/th_8_r023・IndepForKnowledge・th_8_r022 (例の仮定; 定理 th_8_r023 の前提 h022 に写す (第II部の担体 IProp・PrI、印刷の式のまま); IndepForKnowledge・th_8_r022 は頻度側の補助 (ℚ 値の知識についての独立 ab/h = a/h . b/h; a/h = p₁/q、b/h = p₂/q で ab/h = p₁p₂/q²; th_8_r024・th_8_r024_needs_ax の前提 h022 の形))</dd>
 <dt>Anchor words</dt><dd>relative to the given data,</dd>
 <dt>Remarks</dt><dd>「independent for knowledge」のときの連言の確率 (hires で確認)</dd>
 <dt>Crop</dt><dd>folio 106, x 125&ndash;1335, y 378&ndash;470 (full-size scan pixels)</dd>
@@ -307,9 +307,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 106 (PDF p. 126) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>(a + b)/h = p₁/q + p₂/q − p₁p₂/q²</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase15a_ch05_ch08/th_8_r023 (第II部の担体 IProp・PrI の上で、022 ab/h = p₁p₂/q² (前提 h022) を加法定理 (24) th_24_i に代入; 代入の形: a/h = p₁/q・b/h = p₂/q (前提 h020・h021) は folio 105 の割合を確率に取る読みで印刷に式として無い; Cons h は担体の但し書き)</dd>
 <dt>Anchor words</dt><dd>by the addition theorem,</dd>
-<dt>Remarks</dt><dd>2 行にまたがる行内式を 1 本</dd>
+<dt>Remarks</dt><dd>2 行にまたがる行内式を 1 本。B43 修正 r1: 頻度の担体の上の 023 (024 を前提 h024 に置く形) は phase15a_ch05_ch08/th_8_r023_freq</dd>
 <dt>Crop</dt><dd>folio 106, x 125&ndash;1335, y 488&ndash;677 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch08-024">
@@ -318,9 +318,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 106 (PDF p. 126) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>αβ_f = p₁p₂/q²</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark external" title="Depends on a named external axiom">外</span>外部公理依存 phase15a_ch05_ch08/ax_freq_eq_prob・th_8_r024 (頻度と確率の一致を外部公理に置くと、022 の独立・割合・γ = αβ から αβ_f = p₁p₂/q²); 外部公理なしでは出ない (KPr と参照類を自由な関数に替え、前提 h020・h021・h014・h022 を満たし結論を否定する模型): phase15a_ch05_ch08/th_8_r024_needs_ax; 024 があれば頻度の 023 が出る: th_8_r023_freq</dd>
 <dt>Anchor words</dt><dd>invalid; for</dd>
-<dt>Remarks</dt><dd>「only if this is the actual proportion in fact」</dd>
+<dt>Remarks</dt><dd>「only if this is the actual proportion in fact」。B43 修正 r2: 所見候補 F-B43.1 (Keynes の主張の確認): 模型 th_8_r024_needs_ax (2 人の系列、参照類はどれも成員 0 だけが真、K a h = K b h = 1/2、K (ab) h = 1/4、p₁ = p₂ = 1、q = 2) の中で 022 の独立 IndepForKnowledge (K ab h) (K a h) (K b h) は成り立つが、αβ_f = 1/2 ≠ p₁p₂/q² = 1/4</dd>
 <dt>Crop</dt><dd>folio 106, x 125&ndash;1335, y 693&ndash;784 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch08-025">
@@ -340,7 +340,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 106 (PDF p. 126) &middot; &sect;13 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>ab_δ/h = a_γ/bh . b_β/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase15a_ch05_ch08/th_8_r026 (δ = αβ、γ = condCls α β (β の真の成員に狭めた α) と読む; 前提 bh は頻度の側の連言 fconj b h; 印刷に無い前提として α と β が同じ系列 (hS: α.series = β.series) と同じ成員の対の読みを足した)</dd>
 <dt>Anchor words</dt><dd>will be of the form</dd>
 <dt>Remarks</dt><dd>頻度記法での乗法定理 (hires で添字 δ, γ, β を確認)</dd>
 <dt>Crop</dt><dd>folio 106, x 125&ndash;1335, y 1089&ndash;1142 (full-size scan pixels)</dd>
@@ -381,7 +381,7 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch07/index.html">&larr; Ch. 7</a> | <a href="../ch09/index.html">Ch. 9 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch08.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch08-001":"notation","ch08-002":"notation","ch08-003":"notation","ch08-004":"notation","ch08-005":"notation","ch08-006":"printed","ch08-007":"","ch08-008":"notation","ch08-009":"none","ch08-010":"none","ch08-011":"none","ch08-012":"notation","ch08-013":"none","ch08-014":"none","ch08-015":"notation","ch08-016":"notation","ch08-017":"notation","ch08-018":"none","ch08-019":"none","ch08-020":"notation","ch08-021":"notation","ch08-022":"none","ch08-023":"none","ch08-024":"none","ch08-025":"printed","ch08-026":"none","ch08-027":"equiv","ch08-028":"notation","ch08-029":"notation"};
+var K={"ch08-001":"notation","ch08-002":"notation","ch08-003":"notation","ch08-004":"notation","ch08-005":"notation","ch08-006":"printed","ch08-007":"","ch08-008":"notation","ch08-009":"definition","ch08-010":"equiv","ch08-011":"equiv","ch08-012":"notation","ch08-013":"definition","ch08-014":"definition","ch08-015":"notation","ch08-016":"notation","ch08-017":"notation","ch08-018":"definition","ch08-019":"definition","ch08-020":"notation","ch08-021":"notation","ch08-022":"definition","ch08-023":"equiv","ch08-024":"external","ch08-025":"printed","ch08-026":"equiv","ch08-027":"equiv","ch08-028":"notation","ch08-029":"notation"};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';
