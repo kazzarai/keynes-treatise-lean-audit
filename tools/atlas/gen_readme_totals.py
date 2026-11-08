@@ -1,10 +1,15 @@
 # gen_readme_totals.py — docs/全数台帳/README.md の「Totals」の段落と章別表 (合計行 all を含む) を台帳から作り直す。
 # 数はすべて台帳本体 (chNN.md・notes_III.md) の行から、gen_index.py と同じ関数 (chapter_stats) で数える。手で打たない。
-# 書き換える範囲: 「## Totals (…)」の見出しの次の段落 1 つ、「## Per chapter」の表の数値の列と all 行。
-#   部・章・題の列、見出し行、他の文章は変えない。版の表示 (v1.19 など) もそのまま。
-# 出力は入力だけで決まる。何度回しても同じ。
+# 書き換える範囲: Totals 節 (最初の「## Totals (…)」見出しから、最後の「## Totals (…)」見出しの次の段落まで) を
+#   見出し 1 つと段落 1 つに置き換える (追記しない; 古い版の見出しと段落が残っていれば消える)。
+#   「## Per chapter」の表は数値の列と all 行を書き換え、all 行が 2 行以上あれば 1 行にする。
+#   部・章・題の列、表の見出し行、他の文章は変えない。
+# 版の表示: --version <版> (例 v1.21) を渡せば見出しを「## Totals (<版>)」にする。渡さなければ最後の
+#   Totals 見出しの版をそのまま使う (--check は版を渡さずに回す)。
+# 出力は入力と --version だけで決まる。何度回しても同じ。
 # --check: README.md を書き換えず、作り直した内容とバイト単位で一致するかだけを調べる (違えば終了コード 1)。
-# 使い方: python3 -I tools/atlas/gen_readme_totals.py [--check] <ledger_dir>   (README.md は <ledger_dir>/README.md)
+# 使い方: python3 -I tools/atlas/gen_readme_totals.py [--check] [--version <版>] <ledger_dir>
+#   (README.md は <ledger_dir>/README.md)
 import importlib.util
 import os
 import re
@@ -68,15 +73,23 @@ def chapter_cells(x):
             f"{x['p']} / {x['e']} / {x['c']} / {x['x']} / {x['d']} / {x['k']}", fmt(done), fmt(x["nt"])]
 
 
-def rebuild(text, st):
+TOTALS_RE = re.compile(r"^## Totals(?: \((?P<ver>[^)]*)\))?\s*$")
+
+
+def rebuild(text, st, version=None):
     lines = text.split("\n")
-    # Totals の段落
-    i = next(k for k, l in enumerate(lines) if l.startswith("## Totals"))
-    j = i + 1
+    # Totals 節: 見出しが複数あれば、最初の見出しから最後の見出しの段落までを見出し 1 つ・段落 1 つにする
+    heads = [k for k, l in enumerate(lines) if TOTALS_RE.match(l)]
+    assert heads, "README.md に「## Totals」の見出しがない"
+    j = heads[-1] + 1
     while not lines[j].strip():
         j += 1
+    assert not lines[j].startswith("#"), "Totals の見出しの次に段落がない"
+    if version is None:
+        version = TOTALS_RE.match(lines[heads[-1]]).group("ver")
+    head = "## Totals" + (f" ({version})" if version else "")
     para, tot = totals_paragraph(st)
-    lines[j] = para
+    lines[heads[0]:j + 1] = [head, para]
     # 章別表
     k = next(n for n, l in enumerate(lines) if l.startswith("## Per chapter"))
     n = k + 1
@@ -85,9 +98,14 @@ def rebuild(text, st):
     n += 2  # 見出し行と区切り行の次
     # 表では Notes on Part III (N3) は第33章の次の最終行
     order = iter([c for c in G.ORDER if c != "notes_III"] + ["notes_III"])
+    seen_all = False
     while n < len(lines) and lines[n].startswith("|"):
         cells = [c.strip() for c in lines[n].strip().strip("|").split("|")]
+        if cells[0] == "**all**" and seen_all:
+            del lines[n]  # 2 行目以降の all 行は消す
+            continue
         if cells[0] == "**all**":
+            seen_all = True
             done = tot["p"] + tot["e"] + tot["c"] + tot["x"] + tot["d"]
             new = ["**all**", "", "", f"**{fmt(tot['lines'])}**", f"**{fmt(tot['items'])}**",
                    f"**{fmt(tot['icov'])}**", f"**{tot['ncov']}/{tot['num']}**",
@@ -104,6 +122,7 @@ def rebuild(text, st):
         lines[n] = row
         n += 1
     assert next(order, None) is None, "章別表の行が足りない"
+    assert seen_all, "章別表に all 行がない"
     return "\n".join(lines)
 
 
@@ -112,11 +131,16 @@ def main():
     check = "--check" in args
     if check:
         args.remove("--check")
+    version = None
+    if "--version" in args:
+        k = args.index("--version")
+        version = args[k + 1]
+        del args[k:k + 2]
     ledger_dir = args[0]
     path = os.path.join(ledger_dir, "README.md")
     with open(path, encoding="utf-8", newline="") as f:
         old = f.read()
-    new = rebuild(old, collect(ledger_dir))
+    new = rebuild(old, collect(ledger_dir), version)
     if check:
         if new != old:
             sys.exit("README.md の合計・章別表が台帳から作り直した内容と一致しない (gen_readme_totals.py で作り直す)")
