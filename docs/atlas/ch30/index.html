@@ -39,14 +39,14 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch29/index.html">&larr; Ch. 29</a> | <a href="../ch31/index.html">Ch. 31 &rarr;</a></nav>
 <h1>Chapter XXX. The Mathematical Use of Statistical Frequencies for the Determination of Probability à posteriori — the Methods of Laplace</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 367&ndash;383 (Cornell copy, PDF pp. 387&ndash;403). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;)</th><td><b>0 / 12 formulas, 0.0% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 0: &#10003;0 &asymp;0 &#9998;0; not yet 12</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;+&#23450;)</th><td><b>12 / 12 formulas, 100.0% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 4: &#10003;0 &asymp;1 &#9998;3; depending on a named external axiom (&#22806;) 1; definition counterpart (&#23450;) 7; not yet 0</b></td></tr>
 <tr><th>Ledger rows</th><td>65</td></tr>
 <tr><th>Formulas</th><td>12 (display 4, inline 8; items 12, numbered 0)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>0 &nbsp; <span class="mark equiv">&asymp;</span>0 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>12</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>0 &nbsp; <span class="mark equiv">&asymp;</span>1 &nbsp; <span class="mark corrected">&#9998;</span>3 &nbsp; <span class="mark none">&#26410;</span>0 &nbsp; <span class="mark external">&#22806;</span>1 &nbsp; <span class="mark definition">&#23450;</span>7</td></tr>
 <tr><th>Notation</th><td>52 (with a Lean counterpart 0)</td></tr>
 <tr><th>Reference rows</th><td>1</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (65)</button><button type="button" data-k="printed">&#10003; (0)</button><button type="button" data-k="equiv">&asymp; (0)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (12)</button><button type="button" data-k="notation">notation (52)</button></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (65)</button><button type="button" data-k="printed">&#10003; (0)</button><button type="button" data-k="equiv">&asymp; (1)</button><button type="button" data-k="corrected">&#9998; (3)</button><button type="button" data-k="none">not yet (0)</button><button type="button" data-k="external">external axiom (1)</button><button type="button" data-k="definition">definition (7)</button><button type="button" data-k="notation">notation (52)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
 <section class="card" id="ch30-001">
 <h2>ch30-001</h2>
@@ -103,7 +103,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 370 (PDF p. 390) &middot; &sect;§4 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>μ (= m + n)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15b_laplace/mu・th_30_005 (μ := m + n の名付け; 定理 th_30_008・th_30_009_subst の前提 hμ : μ = m + n に写す)</dd>
 <dt>Anchor words</dt><dd><code>of the event&#x27;s occurrence in</code></dd>
 <dt>Remarks</dt><dd>括弧内の定義等式</dd>
 <dt>Crop</dt><dd>folio 370, x 125&ndash;1335, y 759&ndash;808 (full-size scan pixels)</dd>
@@ -127,10 +127,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 370 (PDF p. 390) &middot; &sect;§4 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>P = (2/√π)∫₀^γ e^{−t²}dt + (1/√(2πμpq)) e^{−γ²}</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark external" title="Depends on a named external axiom">外</span>外部公理依存 phase15b_laplace/ax_normal_approx・th_30_007 (割合が p ± γ√(2pq/μ) の間にある確率 propWithin と印刷の P (Pdir) の差は μ → ∞ で 0; 積分形の de Moivre–Laplace 定理 ax_normal_approx (phase14b の同名の公理の再掲) に依る; 補正項 1/√(2πμpq) e^{−γ²} は 0 に近づく (vanish); 「P」を近似値と読み、誤差の次数は検証していない)</dd>
 <dt>Quoted from</dt><dd>Laplace</dd>
 <dt>Anchor words</dt><dd><code>where</code></dd>
-<dt>Remarks</dt><dd>Bernoulli 定理の直接形</dd>
+<dt>Remarks</dt><dd>Bernoulli 定理の直接形。B44: phase14b の ch29-029 (phase14b_bernoulli_analytic/th_29_029_lim) と同じ形を割合の幅で述べた (propWithin_eq)</dd>
 <dt>Crop</dt><dd>folio 370, x 125&ndash;1335, y 831&ndash;952 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch30-008">
@@ -151,10 +151,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 370 (PDF p. 390) &middot; &sect;§4 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>P = (2/√π)∫₀^γ e^{−t²}dt + (1/√(2πμ (m/μ²))) e^{−γ²}</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>phase15b_laplace/th_30_009_fix・th_30_009_subst・nec_30_009・nec_30_009_gt・nec_30_009_lim (外部公理依存を兼ねる: 修正形の極限 th_30_009_fix と nec_30_009_lim は外部公理 ax_normal_approx に依る; F30.1: 根号内 m/μ² を mn/μ² に直した形; 逆の読みは「which he assumes without proof」のとおり 007 の p・q に観測された m/μ・n/μ を入れること (th_30_009_subst、公理に依らない; 幅は th_30_008); 印刷の P と修正形の P は m = 1、n = 2 で違う (nec_30_009、公理に依らない); m = 1 で μ を大きくすると印刷の補正項 1/√(2π/μ) e^{−γ²} が 1 を超え、γ ≥ 0 なら印刷の P は 1 を超える (nec_30_009_gt、公理に依らない); m/μ = a/b を保って μ → ∞ とすると確率と修正形の差は 0 (th_30_009_fix)、印刷の形では差が −e^{−γ²}/√(2πa/b) ≠ 0 に近づく (nec_30_009_lim); 事後確率としての逆 (p の値についての確率) は証明していない)</dd>
 <dt>Quoted from</dt><dd>Laplace</dd>
 <dt>Anchor words</dt><dd><code>The same result is also given</code></dd>
-<dt>Remarks</dt><dd>根号内は 2πμ の右に m/μ² を上下に組んだ分数で、間に点はない (hires で確認; 第 1 回の「·」を除いた); 直接形 007 の pq = mn/μ² に対応するなら n が欠落 (所見候補 F30.1)</dd>
+<dt>Remarks</dt><dd>根号内は 2πμ の右に m/μ² を上下に組んだ分数で、間に点はない (hires で確認; 第 1 回の「·」を除いた); 直接形 007 の pq = mn/μ² に対応するなら n が欠落 (所見候補 F30.1)。B44: 印刷の形は 2πμ (m/μ²) = 2π m/μ が一定で補正項が μ → ∞ で消えない (phase15b_laplace/nec_30_009_lim) 司令塔裁定 (B44 r1): ✎ かつ 外。集計では ✎ に数える (台帳の判定は 1 行 1 値)。</dd>
 <dt>Crop</dt><dd>folio 370, x 125&ndash;1335, y 1241&ndash;1416 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch30-010">
@@ -292,10 +292,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>∫₀ Ax^m(1 − x)^n dx = 1 ∴ A = Γ(m + n + 2)/(Γ(m + 1)Γ(n + 1)).</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase15b_laplace/th_30_021 (積分の上限 1 は印刷にない (F30.2) ので 025 の ∫₀¹ と「x must have one of its possible values」から補った — 印刷にない前提を足した行は ≈ (司令塔裁定 B44 r1); ∴ の向きに逆向きも足して ↔ で述べる; 積分は Mathlib の Beta 積分 Complex.betaIntegral_eq_Gamma_mul_div から beta_nat; 外部公理に依らない)</dd>
 <dt>Quoted from</dt><dd>Laplace</dd>
 <dt>Anchor words</dt><dd><code>is determined by the equation</code></dd>
-<dt>Remarks</dt><dd>1 印刷行に ∴ で 2 等式が並ぶが、補則 2 (1 印刷行 = 1 本) により 1 本 (第 1 回は 021・022 の 2 本; 裁定事項 2); 積分の上限 1 が印刷されていない (下限 0 のみ; hires で確認、所見候補 F30.2)</dd>
+<dt>Remarks</dt><dd>1 印刷行に ∴ で 2 等式が並ぶが、補則 2 (1 印刷行 = 1 本) により 1 本 (第 1 回は 021・022 の 2 本; 裁定事項 2); 積分の上限 1 が印刷されていない (下限 0 のみ; hires で確認、所見候補 F30.2)。B44: A を代入した 025・026 の値 (m + 1)/(m + n + 2) は phase15b_laplace/th_30_026 (記法行の Lean 欄は変えていない) 司令塔裁定 (B44 r1): ✓ → ≈ (積分の上限 1 を補った)。</dd>
 <dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 574&ndash;680 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch30-022">
@@ -390,7 +390,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>n = 0</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15b_laplace/th_30_029・nec_30_029 (例の仮定; 定理 th_30_029 の前提 hn : n = 0 に写す; このとき値は (m + 1)/(m + 2) (036); 外すと m = 0、n = 1 で 1/3 ≠ 1/2 (nec_30_029))</dd>
 <dt>Anchor words</dt><dd><code>In the cases where</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 376, x 125&ndash;1335, y 1579&ndash;1628 (full-size scan pixels)</dd>
@@ -451,7 +451,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>ω̂ = 1</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15b_laplace/th_30_034・bachNext・nec_30_034 (例の仮定; 定理 th_30_034 の前提 hω : ∀ y, ω y = 1 に写す; このとき次の生起の確率 bachNext は (m + 1)/(m + n + 2) で「leads, as above, to Laplace&#x27;s Law of Succession」; 外すと ω̂(y) = y、m = n = 0 で 2/3 ≠ 1/2 (nec_30_034))</dd>
 <dt>Quoted from</dt><dd>Bachelier</dd>
 <dt>Anchor words</dt><dd><code>hypothesis is to put</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -463,7 +463,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 376 (PDF p. 396) &middot; &sect;§9 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>ω̂(y) = a + a₁y + a₂y² + . . .</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15b_laplace/ωpoly・th_30_035 (級数の記法; ωpoly a K は初めの K 項; 「the denominator is a series of Eulerian integrals」は有限の部分和で ∫₀¹ y^m(1 − y)^n ω̂ = Σ a_k Γ(m + k + 1)Γ(n + 1)/Γ(m + k + n + 2) (th_30_035); 無限級数の項別積分は扱っていない)</dd>
 <dt>Quoted from</dt><dd>Bachelier</dd>
 <dt>Anchor words</dt><dd><code>proposes the hypothesis</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -684,7 +684,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 379 (PDF p. 399) &middot; &sect;§12 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>n = p + q</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15b_laplace/pn・th_30_054 (n := p + q の名付け; 059 の印刷 n^r の n (fac059))</dd>
 <dt>Quoted from</dt><dd>Pearson</dd>
 <dt>Anchor words</dt><dd><code>then if on</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -709,7 +709,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 379 (PDF p. 399) &middot; &sect;§12 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>P_x = x^p(1 − x)^q dx / ∫₀¹ x^p(1 − x)^q dx .</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15b_laplace/Px・th_30_056・th_30_056_one (P_x の定義 (dx を除いた密度); Pearson の名付け「This is Bayes&#x27; Theorem」; 分母は Beta 積分で正、∫₀¹ P_x dx = 1 (th_30_056_one))</dd>
 <dt>Quoted from</dt><dd>Pearson</dd>
 <dt>Anchor words</dt><dd><code>distribution of our ignorance,</code></dd>
 <dt>Remarks</dt><dd>Pearson が「Bayes&#x27; Theorem」と呼ぶ式 (脚注 4)</dd>
@@ -721,7 +721,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 380 (PDF p. 400) &middot; &sect;§12 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>m = r + s</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15b_laplace/th_30_059_fix・th_30_060_fix (例の仮定; 定理 th_30_059_fix・th_30_060_fix・th_30_059_fact の前提 hm : m = r + s に写す)</dd>
 <dt>Quoted from</dt><dd>Pearson</dd>
 <dt>Anchor words</dt><dd><code>a second trial of</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -746,10 +746,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 380 (PDF p. 400) &middot; &sect;§12 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>= P_x (Γm/(ΓrΓs)) n^r(1 − x)^s,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>phase15b_laplace/th_30_059_fix・nec_30_059_n・nec_30_059_gamma・th_30_059_fact・th_30_059_pmf (修正形: P_x に掛かる因子は Γ(m + 1)/(Γ(r + 1)Γ(s + 1)) x^r(1 − x)^s で、chance x のとき m 回のうち r 回起こり s 回起こらない確率 (二項の項 bterm、Mathlib の PMF.binomial の値 th_30_059_pmf) に等しい (th_30_059_fix); F30.4: 印刷の n^r では p = 2、q = 1、r = 2、s = 1、x = 1/2 で因子 9 &gt; 1 (nec_30_059_n); F30.6 案: x^r に直しても Γ を Γ 関数と読むと係数 Γm/(ΓrΓs) は二項係数でない、m = 2、r = s = 1、x = 1/2 で 1/4 ≠ 1/2 (nec_30_059_gamma); Γk を k! と読めば二項係数 (th_30_059_fact))</dd>
 <dt>Quoted from</dt><dd>Pearson</dd>
 <dt>Anchor words</dt><dd><code>and accordingly the total chance</code></dd>
-<dt>Remarks</dt><dd>左辺なし (前行の文に続く); x^r が n^r と印刷 (hires で確認、所見候補 F30.4)</dd>
+<dt>Remarks</dt><dd>左辺なし (前行の文に続く); x^r が n^r と印刷 (hires で確認、所見候補 F30.4)。B44: 係数 Γm/(ΓrΓs) も所見候補 F30.6 (同じ章の 021 は Γ(m + 1) の形で Γ 関数を使う)</dd>
 <dt>Crop</dt><dd>folio 380, x 125&ndash;1335, y 376&ndash;469 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch30-060">
@@ -758,10 +758,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 380 (PDF p. 400) &middot; &sect;§12 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>C_r = (Γm/(ΓrΓs)) ∫₀¹ x^{p+r}(1 − x)^{q+s}dx / ∫₀¹ x^p(1 − x)^q dx .</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>phase15b_laplace/th_30_060_fix・th_30_060_sum・nec_30_060・th_30_060 (修正形: 係数を二項係数 C(m, r) にした C_r (th_30_060_fix)、その C_r は r = 0, …, m で和 1 (th_30_060_sum); 印刷の係数 Γm/(ΓrΓs) のままでは p = q = 0、r = s = 1 (m = 2) で印刷の C_r は 1/6、修正形は 1/3 (nec_30_060、F30.6 案); 056 の P_x と 059 の因子 (n^r を x^r に読み、係数は印刷どおり) の積を 0 から 1 まで積分すると印刷の右辺になること (「accordingly」の導出) は th_30_060)</dd>
 <dt>Quoted from</dt><dd>Pearson</dd>
 <dt>Anchor words</dt><dd><code>r times in the second series, is</code></dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B44: 「accordingly」の導出 (056 と 059 から) を確かめた。059 の係数を Γ 関数で読むと C_r は確率にならない (phase15b_laplace/nec_30_059_gamma) 司令塔裁定 (B44 r1): ✓ → ✎ (印刷の係数の反例 phase15b_laplace/nec_30_060)。</dd>
 <dt>Crop</dt><dd>folio 380, x 125&ndash;1335, y 608&ndash;823 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch30-061">
@@ -824,7 +824,7 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch29/index.html">&larr; Ch. 29</a> | <a href="../ch31/index.html">Ch. 31 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch30.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch30-001":"notation","ch30-002":"notation","ch30-003":"notation","ch30-004":"notation","ch30-005":"none","ch30-006":"notation","ch30-007":"none","ch30-008":"notation","ch30-009":"none","ch30-010":"notation","ch30-011":"notation","ch30-012":"notation","ch30-013":"notation","ch30-014":"notation","ch30-015":"notation","ch30-016":"notation","ch30-017":"notation","ch30-018":"notation","ch30-019":"notation","ch30-020":"notation","ch30-021":"none","ch30-022":"","ch30-023":"notation","ch30-024":"notation","ch30-025":"notation","ch30-026":"notation","ch30-027":"notation","ch30-028":"notation","ch30-029":"none","ch30-030":"notation","ch30-031":"notation","ch30-032":"notation","ch30-033":"notation","ch30-034":"none","ch30-035":"none","ch30-036":"notation","ch30-037":"notation","ch30-038":"notation","ch30-039":"notation","ch30-040":"notation","ch30-041":"notation","ch30-042":"notation","ch30-043":"notation","ch30-044":"notation","ch30-045":"notation","ch30-046":"notation","ch30-047":"notation","ch30-048":"notation","ch30-049":"notation","ch30-050":"notation","ch30-051":"notation","ch30-052":"notation","ch30-053":"notation","ch30-054":"none","ch30-055":"notation","ch30-056":"none","ch30-057":"none","ch30-058":"notation","ch30-059":"none","ch30-060":"none","ch30-061":"notation","ch30-062":"notation","ch30-063":"notation","ch30-064":"notation","ch30-065":"notation"};
+var K={"ch30-001":"notation","ch30-002":"notation","ch30-003":"notation","ch30-004":"notation","ch30-005":"definition","ch30-006":"notation","ch30-007":"external","ch30-008":"notation","ch30-009":"corrected","ch30-010":"notation","ch30-011":"notation","ch30-012":"notation","ch30-013":"notation","ch30-014":"notation","ch30-015":"notation","ch30-016":"notation","ch30-017":"notation","ch30-018":"notation","ch30-019":"notation","ch30-020":"notation","ch30-021":"equiv","ch30-022":"","ch30-023":"notation","ch30-024":"notation","ch30-025":"notation","ch30-026":"notation","ch30-027":"notation","ch30-028":"notation","ch30-029":"definition","ch30-030":"notation","ch30-031":"notation","ch30-032":"notation","ch30-033":"notation","ch30-034":"definition","ch30-035":"definition","ch30-036":"notation","ch30-037":"notation","ch30-038":"notation","ch30-039":"notation","ch30-040":"notation","ch30-041":"notation","ch30-042":"notation","ch30-043":"notation","ch30-044":"notation","ch30-045":"notation","ch30-046":"notation","ch30-047":"notation","ch30-048":"notation","ch30-049":"notation","ch30-050":"notation","ch30-051":"notation","ch30-052":"notation","ch30-053":"notation","ch30-054":"definition","ch30-055":"notation","ch30-056":"definition","ch30-057":"definition","ch30-058":"notation","ch30-059":"corrected","ch30-060":"corrected","ch30-061":"notation","ch30-062":"notation","ch30-063":"notation","ch30-064":"notation","ch30-065":"notation"};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';
