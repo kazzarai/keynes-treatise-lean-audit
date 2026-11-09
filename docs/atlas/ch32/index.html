@@ -39,14 +39,14 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch31/index.html">&larr; Ch. 31</a> | <a href="../ch33/index.html">Ch. 33 &rarr;</a></nav>
 <h1>Chapter XXXII. The Inductive Use of Statistical Frequencies for the Determination of Probability à posteriori — the Methods of Lexis</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 391&ndash;405 (Cornell copy, PDF pp. 411&ndash;425). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;)</th><td><b>0 / 26 formulas, 0.0% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 0: &#10003;0 &asymp;0 &#9998;0; not yet 26</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;+&#23450;)</th><td><b>26 / 26 formulas, 100.0% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 10: &#10003;5 &asymp;5 &#9998;0; definition counterpart (&#23450;) 16; not yet 0</b></td></tr>
 <tr><th>Ledger rows</th><td>33</td></tr>
 <tr><th>Formulas</th><td>26 (display 3, inline 23; items 26, numbered 0)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>0 &nbsp; <span class="mark equiv">&asymp;</span>0 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>26</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>5 &nbsp; <span class="mark equiv">&asymp;</span>5 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>0 &nbsp; <span class="mark definition">&#23450;</span>16</td></tr>
 <tr><th>Notation</th><td>7 (with a Lean counterpart 0)</td></tr>
 <tr><th>Reference rows</th><td>0</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (33)</button><button type="button" data-k="printed">&#10003; (0)</button><button type="button" data-k="equiv">&asymp; (0)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (26)</button><button type="button" data-k="notation">notation (7)</button></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (33)</button><button type="button" data-k="printed">&#10003; (5)</button><button type="button" data-k="equiv">&asymp; (5)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (0)</button><button type="button" data-k="definition">definition (16)</button><button type="button" data-k="notation">notation (7)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
 <section class="card" id="ch32-001">
 <h2>ch32-001</h2>
@@ -78,7 +78,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 395 (PDF p. 415) &middot; &sect;§4 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>p = (z₁/z)p₁ + (z₂/z)p₂ + . . . .</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/genProb・th_32_003 (一般確率の定義 Σ (z_i/z) p_i; z = Σ z_i (&gt; 0) のとき重みの和は 1 (genProb_weights)、p は特殊確率の下界と上界の間にある (genProb_between))</dd>
 <dt>Quoted from</dt><dd>Bortkiewicz</dd>
 <dt>Anchor words</dt><dd><code>made up as follows :</code></dd>
 <dt>Remarks</dt><dd>一般確率と特殊確率</dd>
@@ -90,7 +90,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 395 (PDF p. 415) &middot; &sect;§4 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>p₁ = p₂ = . . . . = p</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/Indifferent・th_32_004 (indifferent の定義: 全ての p_i が一般確率 p に等しい; z = Σ z_i (&gt; 0) なら特殊確率が互いに等しいことと同値で、等号連鎖の共通の値は p)</dd>
 <dt>Quoted from</dt><dd>Bortkiewicz</dd>
 <dt>Anchor words</dt><dd><code>If</code></dd>
 <dt>Remarks</dt><dd>等号連鎖 1 本; indifferent の定義</dd>
@@ -102,7 +102,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 396 (PDF p. 416) &middot; &sect;§4 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>p&#x27; = (n₁/n)p₁&#x27; + (n₂/n)p₂&#x27; + . . . .</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/genProb・th_32_005 (経験値 p′ の定義; 003 と同じ形)</dd>
 <dt>Quoted from</dt><dd>Bortkiewicz</dd>
 <dt>Anchor words</dt><dd><code>observations, we may have</code></dd>
 <dt>Remarks</dt><dd>経験値 (頻度)</dd>
@@ -114,7 +114,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 398 (PDF p. 418) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>r = ρ√(2v(1 − v)/g),</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/rBern・th_32_006 (r := ρ√(2v(1 − v)/g); 確率誤差 probErr ρ V = ρ√(2V) に分散 v(1 − v)/g を入れた形)</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>in a particular frequency à priori is</code></dd>
 <dt>Remarks</dt><dd>確率誤差 (probable error)</dd>
@@ -126,7 +126,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 398 (PDF p. 418) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>ρ = ·4769,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase15c_lexis_constructive/th_32_007 (数値評価: ρ を「probable error」の定数、すなわち Θ(ρ) = 2/√π ∫₀^ρ e^{−u²}du = 1/2 の根と読むと、根はただ 1 つで ·4769 と ·47695 の間にある (小数 4 位で ·4769); ρ の意味 Θ(ρ) = 1/2 は印刷にない読みなので ≈; Θ の値は e^{−u²} の Taylor 多項式と π の 6 桁の評価から (Θ_lo・Θ_hi); 外部公理に依らない)</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>where</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -138,7 +138,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 399 (PDF p. 419) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>R = ρ√(2[δ²]/(n − 1)),</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/RLex・th_32_008 (R := ρ√(2[δ²]/(n − 1))、[δ²] は平均のまわりの偏差平方和 sqDevN)</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>where [δ²] is the sum</code></dd>
 <dt>Remarks</dt><dd>行頭 (直後の語で照合)</dd>
@@ -163,7 +163,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 399 (PDF p. 419) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>R = r,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase15c_lexis_constructive/th_32_010・sqDev_expect (「approximately R = r」を E[R²] = r² と読む: n 個の頻度が互いに無相関で平均が同じ、分散がどれも v(1 − v)/g なら [δ²]/(n − 1) の期待値は v(1 − v)/g (sqDev_expect) で E[R²] = r²; 無相関・同じ分散の前提は「chance variations about a constant v」の読みで印刷にない; R そのものの近さは扱っていない)</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>we must have approximately</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -187,7 +187,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 399 (PDF p. 419) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>R &lt; r,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase15c_lexis_constructive/th_32_012・th_32_011 (R &lt; r (r ≥ 0) ならどの p についても R ≠ √(r² + p²): 「R cannot be less than r」(th_32_011) からの「therefore」; 「not independent」を独立な 2 成分の形 (020) が成り立たないことと読む)</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>If, therefore,</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -199,7 +199,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 399 (PDF p. 419) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>R = r,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/Qlex・th_32_017 (3 種の系列の第 1 の型 R = r; Q = 1 と同値 (th_32_017))</dd>
 <dt>Reprint of</dt><dd><a href="#ch32-010">ch32-010</a></dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>from one another according as</code></dd>
@@ -213,7 +213,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 399 (PDF p. 419) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>&gt; r,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/Qlex・th_32_018 (左辺 R の省略を補った R &gt; r; Q &gt; 1 と同値)</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>R = r,</code></dd>
 <dt>Remarks</dt><dd>左辺 R の省略 (裁定事項 4; 式に数えた)</dd>
@@ -226,7 +226,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 399 (PDF p. 419) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>&lt; r,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/Qlex・th_32_019 (左辺 R の省略を補った R &lt; r; Q &lt; 1 と同値)</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>or</code></dd>
 <dt>Remarks</dt><dd>左辺 R の省略 (裁定事項 4)</dd>
@@ -238,7 +238,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 399 (PDF p. 419) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>R/r = Q,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/Qlex・th_32_016 (分散比 Q := R/r)</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>Lexis puts</code></dd>
 <dt>Remarks</dt><dd>分散比 Q の定義</dd>
@@ -250,7 +250,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 399 (PDF p. 419) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>Q = 1,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase15c_lexis_constructive/th_32_017・th_32_Q_trichotomy (r &gt; 0 のとき Q = 1 ⇔ R = r; Q = 1・Q &gt; 1・Q &lt; 1 はどれか 1 つだけが成り立つ (th_32_Q_trichotomy))</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>If</code></dd>
 <dt>Remarks</dt><dd>normal dispersion</dd>
@@ -263,7 +263,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 399 (PDF p. 419) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>Q &gt; 1,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase15c_lexis_constructive/th_32_018・th_32_Q_trichotomy (r &gt; 0 のとき Q &gt; 1 ⇔ R &gt; r)</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>normal dispersion ; if</code></dd>
 <dt>Remarks</dt><dd>supernormal</dd>
@@ -275,7 +275,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 399 (PDF p. 419) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>Q &lt; 1,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase15c_lexis_constructive/th_32_019・th_32_Q_trichotomy (r &gt; 0 のとき Q &lt; 1 ⇔ R &lt; r)</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>and if</code></dd>
 <dt>Remarks</dt><dd>subnormal</dd>
@@ -287,7 +287,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 399 (PDF p. 419) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>R = √(r² + p²)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase15c_lexis_constructive/th_32_020 (頻度の偏差が独立な 2 成分 (ordinary と physical) の和なら、和の確率誤差は各成分の確率誤差 r・p から √(r² + p²); 確率誤差は分散 V について ρ√(2V) (006・008 と同じ形)、独立な確率変数の分散の加法性は Mathlib の IndepFun.variance_add; 左辺の R を和の母分散の確率誤差 ρ√(2Var[A + B]) に置き換えた定義の代入 (010 と揃える)、印刷の R は 008 の偏差平方和による値で「R will tend to equal」の近さは扱っていない)</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>and, therefore,</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -299,7 +299,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 399 (PDF p. 419) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>R = p.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase15c_lexis_constructive/th_32_021・th_32_021_r (「approximately」を r → 0 の極限と読む: √(r² + p²) → p; p → 0 なら → r (th_32_021_r、「a delusive appearance of normal dispersion」))</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>becomes approximately</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -311,10 +311,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 399 (PDF p. 419) &middot; &sect;§6 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>Q = P/C,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/QT・th_32_022 (Tschuprow の Q := P/C; Lexis の R/r とは v = p、g = M のとき √((n − 1)/n) 倍だけ違う (th_32_022_lexis、F32.1 案))</dd>
 <dt>Quoted from</dt><dd>Tschuprow</dd>
 <dt>Anchor words</dt><dd><code>In Tschuprow&#x27;s notation</code></dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B45: Tschuprow の P は n で、Lexis の R は n − 1 で割るので、v = p、g = M なら P/C = (R/r)√((n − 1)/n) (phase15c_lexis_constructive/th_32_022_lexis; 所見候補 F32.1 案、印刷の誤りではなく流儀の違い)</dd>
 <dt>Crop</dt><dd>folio 399, x 125&ndash;1335, y 1913&ndash;2048 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch32-023">
@@ -324,7 +324,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 399 (PDF p. 419) &middot; &sect;§6 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>P (the Physical modulus) = √(2Σ_{k=1}^{k=n}(p_k − p)²/n)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/PT・th_32_023 (P := √(2Σ(p_k − p)²/n)、p は n 個の頻度の平均 meanN)</dd>
 <dt>Quoted from</dt><dd>Tschuprow</dd>
 <dt>Anchor words</dt><dd><code>where</code></dd>
 <dt>Remarks</dt><dd>根号は分数全体にかかる; 脚注の行をまたぐ大きな組み</dd>
@@ -336,7 +336,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 399 (PDF p. 419) &middot; &sect;§6 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>C (the Combinatorial modulus) = √(2p(1 − p)/M),</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/CT・th_32_024 (C := √(2p(1 − p)/M))</dd>
 <dt>Quoted from</dt><dd>Tschuprow</dd>
 <dt>Anchor words</dt><dd><code>and</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -348,7 +348,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 400 (PDF p. 420) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>R = r.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/Qlex・th_32_017 (観測された関係 R = r (45 の登録地区、1859–1871); Q = 1 と同値)</dd>
 <dt>Reprint of</dt><dd><a href="#ch32-010">ch32-010</a></dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>approximately satisfy the relation</code></dd>
@@ -361,7 +361,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 400 (PDF p. 420) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>R = 2·6</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/th_32_028 (例の値; 定理 th_32_028 の前提 h026 : R = 2·6 に写す)</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>nevertheless</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -374,7 +374,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 400 (PDF p. 420) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>r = 1·6,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/th_32_028 (例の値; 定理 th_32_028 の前提 h027 : r = 1·6 に写す)</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>and</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -386,7 +386,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 400 (PDF p. 420) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>Q = 1·625 ;</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase15c_lexis_constructive/th_32_028 (数値評価: R = 2·6、r = 1·6 と Q = R/r (016) から Q = 1·625 (norm_num))</dd>
 <dt>Quoted from</dt><dd>Lexis</dd>
 <dt>Anchor words</dt><dd><code>so that</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -398,7 +398,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 401 (PDF p. 421) &middot; &sect;§7 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>R &gt; r</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase15c_lexis_constructive/th_32_029・th_32_029_form (Lexis の形 R = √(r² + p²)、p ≠ 0、r ≥ 0 から R &gt; r; 逆に R &gt; r の R はどれも √(r² + p²) の形に書ける (th_32_029_form) ので、形だけからは organic な系列と区別できない)</dd>
 <dt>Anchor words</dt><dd><code>have contemplated the result</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 401, x 125&ndash;1335, y 1224&ndash;1275 (full-size scan pixels)</dd>
@@ -447,17 +447,17 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 404 (PDF p. 424) &middot; &sect;§9 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>p = (z₁/z)p₁ + (z₂/z)p₂ + . . .</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase15c_lexis_constructive/genProb・th_32_003 (003 の再掲; 判定は 003 を引き写す。一般確率の定義 Σ (z_i/z) p_i)</dd>
 <dt>Reprint of</dt><dd><a href="#ch32-003">ch32-003</a></dd>
 <dt>Quoted from</dt><dd>Bortkiewicz</dd>
 <dt>Anchor words</dt><dd><code>special probabilities p₁ etc., where</code></dd>
-<dt>Remarks</dt><dd>395 の再掲</dd>
+<dt>Remarks</dt><dd>395 の再掲。B45 r1: 補助に phase15c_lexis_constructive/th_32_033 (「the average over a field」: 群 i の z_i 個の成員のうち k_i 個が特性を持ち、特殊確率を群の割合 p_i = k_i/z_i と読むと、場全体の割合 Σk_i/Σz_i は Σ (z_i/z) p_i に等しい; p_i = k_i/z_i は印刷にない読み)</dd>
 <dt>Crop</dt><dd>folio 404, x 125&ndash;1335, y 1649&ndash;1733 (full-size scan pixels)</dd>
 </dl></section>
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch31/index.html">&larr; Ch. 31</a> | <a href="../ch33/index.html">Ch. 33 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch32.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch32-001":"notation","ch32-002":"notation","ch32-003":"none","ch32-004":"none","ch32-005":"none","ch32-006":"none","ch32-007":"none","ch32-008":"none","ch32-009":"notation","ch32-010":"none","ch32-011":"notation","ch32-012":"none","ch32-013":"none","ch32-014":"none","ch32-015":"none","ch32-016":"none","ch32-017":"none","ch32-018":"none","ch32-019":"none","ch32-020":"none","ch32-021":"none","ch32-022":"none","ch32-023":"none","ch32-024":"none","ch32-025":"none","ch32-026":"none","ch32-027":"none","ch32-028":"none","ch32-029":"none","ch32-030":"notation","ch32-031":"notation","ch32-032":"notation","ch32-033":"none"};
+var K={"ch32-001":"notation","ch32-002":"notation","ch32-003":"definition","ch32-004":"definition","ch32-005":"definition","ch32-006":"definition","ch32-007":"equiv","ch32-008":"definition","ch32-009":"notation","ch32-010":"equiv","ch32-011":"notation","ch32-012":"equiv","ch32-013":"definition","ch32-014":"definition","ch32-015":"definition","ch32-016":"definition","ch32-017":"printed","ch32-018":"printed","ch32-019":"printed","ch32-020":"equiv","ch32-021":"equiv","ch32-022":"definition","ch32-023":"definition","ch32-024":"definition","ch32-025":"definition","ch32-026":"definition","ch32-027":"definition","ch32-028":"printed","ch32-029":"printed","ch32-030":"notation","ch32-031":"notation","ch32-032":"notation","ch32-033":"definition"};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';
