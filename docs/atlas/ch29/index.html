@@ -39,14 +39,14 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch28/index.html">&larr; Ch. 28</a> | <a href="../ch30/index.html">Ch. 30 &rarr;</a></nav>
 <h1>Chapter XXIX. The Use of à priori Probabilities for the Prediction of Statistical Frequency — the Theorems of Bernoulli, Poisson, and Tchebycheff</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 337&ndash;366 (Cornell copy, PDF pp. 357&ndash;386). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;+&#23450;)</th><td><b>14 / 83 formulas, 16.9% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 9: &#10003;7 &asymp;2 &#9998;0; depending on a named external axiom (&#22806;) 4; definition counterpart (&#23450;) 1; not yet 69</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;+&#23450;)</th><td><b>33 / 83 formulas, 39.8% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 12: &#10003;9 &asymp;3 &#9998;0; depending on a named external axiom (&#22806;) 7; definition counterpart (&#23450;) 14; not yet 50</b></td></tr>
 <tr><th>Ledger rows</th><td>190</td></tr>
 <tr><th>Formulas</th><td>83 (display 28, inline 55; items 83, numbered 0)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>7 &nbsp; <span class="mark equiv">&asymp;</span>2 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>69 &nbsp; <span class="mark external">&#22806;</span>4 &nbsp; <span class="mark definition">&#23450;</span>1</td></tr>
-<tr><th>Notation</th><td>106 (with a Lean counterpart 29)</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>9 &nbsp; <span class="mark equiv">&asymp;</span>3 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>50 &nbsp; <span class="mark external">&#22806;</span>7 &nbsp; <span class="mark definition">&#23450;</span>14</td></tr>
+<tr><th>Notation</th><td>106 (with a Lean counterpart 40)</td></tr>
 <tr><th>Reference rows</th><td>1</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (190)</button><button type="button" data-k="printed">&#10003; (7)</button><button type="button" data-k="equiv">&asymp; (2)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (69)</button><button type="button" data-k="external">external axiom (4)</button><button type="button" data-k="definition">definition (1)</button><button type="button" data-k="notation">notation (106)</button></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (190)</button><button type="button" data-k="printed">&#10003; (9)</button><button type="button" data-k="equiv">&asymp; (3)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (50)</button><button type="button" data-k="external">external axiom (7)</button><button type="button" data-k="definition">definition (14)</button><button type="button" data-k="notation">notation (106)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
 <section class="card" id="ch29-001">
 <h2>ch29-001</h2>
@@ -66,7 +66,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>p + q = 1</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(定義のみ: q := 1 − p の名付け、q・th_29_002)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase14b_bernoulli_analytic/q (q := 1 − p の名付け; th_29_002 は p + q = 1 の展開)</dd>
 <dt>Anchor words</dt><dd><code>where p+q=1. If</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 338, x 125&ndash;1335, y 963&ndash;1011 (full-size scan pixels)</dd>
@@ -77,7 +77,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>m − n</code></dd>
-<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定義のみ (名付け) phase14b_bernoulli_analytic/bterm (指数 m − n)</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase14b_bernoulli_analytic/bterm (名付け: 指数 m − n)</dd>
 <dt>Anchor words</dt><dd><code>and failing m−n times</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 338, x 125&ndash;1335, y 864&ndash;911 (full-size scan pixels)</dd>
@@ -88,7 +88,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>p^n q^{m−n}</code></dd>
-<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定義のみ (名付け) phase14b_bernoulli_analytic/bterm (因子 p^n q^{m−n}; 「subject to certain conditions to be elucidated later」の条件は §6 の phase14a 側)</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase14b_bernoulli_analytic/bterm (名付け: 因子 p^n q^{m−n}; 「subject to certain conditions to be elucidated later」の条件は §6 の phase14a 側)</dd>
 <dt>Anchor words</dt><dd><code>later) p^n q^{m−n} multiplied</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 338, x 125&ndash;1335, y 914&ndash;962 (full-size scan pixels)</dd>
@@ -111,7 +111,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 338 (PDF p. 358) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>n = mp − h</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(定義のみ: h := mp − n の名付け hdev; mq + h = m − n は th_29_007)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase14b_bernoulli_analytic/hdev (h := mp − n の名付け; mq + h = m − n は th_29_007)</dd>
 <dt>Anchor words</dt><dd><code>we write n=mp−h, this term is</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 338, x 125&ndash;1335, y 1019&ndash;1118 (full-size scan pixels)</dd>
@@ -314,7 +314,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>z/√(2mpq) = t</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(定義のみ: 置換の宣言; 帰結の積分等式は th_29_023・th_29_024 で ✓)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase14b_bernoulli_analytic/th_29_023 (置換 z/√(2mpq) = t の宣言; th_29_023 はこの置換による積分の変数変換で、帰結の積分等式は 024 の ✓)</dd>
 <dt>Anchor words</dt><dd><code>If we put … this is equal to</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 339, x 125&ndash;1335, y 1260&ndash;1359 (full-size scan pixels)</dd>
@@ -337,7 +337,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>a = √(2mpq) γ</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(定義のみ: γ := a/√(2mpq) の名付け; th_29_025 は a/√(2mpq) = γ を 027 に使う)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase14b_bernoulli_analytic/th_29_025 (前提 ha : a = √(2mpq) γ に写す; 帰結 a/√(2mpq) = γ を 027 に使う)</dd>
 <dt>Anchor words</dt><dd><code>Thus, if we write</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 339, x 125&ndash;1335, y 1555&ndash;1609 (full-size scan pixels)</dd>
@@ -404,7 +404,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 340 (PDF p. 360) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>2/√π ∫_0^t e^{−t²} dt = Θ(t)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(定義のみ: Θ の名付け; 印刷は積分変数と上限がともに t (F29.6)、Lean では積分変数を u とした)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase14b_bernoulli_analytic/Θ (Θ の名付け; 印刷は積分変数と上限がともに t (F29.6)、Lean では積分変数を u とした)</dd>
 <dt>Anchor words</dt><dd><code>values of the integral … are given in tables</code></dd>
 <dt>Remarks</dt><dd>積分の上限 t と積分変数 t が同じ (S 候補)</dd>
 <dt>Crop</dt><dd>folio 340, x 125&ndash;1335, y 461&ndash;572 (full-size scan pixels)</dd>
@@ -426,7 +426,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 340 (PDF p. 360) &middot; &sect;§3 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>r/t</code></dd>
-<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定義のみ (名付け) phase14b_bernoulli_analytic/th_29_034 (p = r/t は仮定 r ≤ t、0 &lt; t)</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase14b_bernoulli_analytic/th_29_034 (p = r/t を仮定 r ≤ t、0 &lt; t とともに前提に写す)</dd>
 <dt>Quoted from</dt><dd>Bernoulli p. 236</dd>
 <dt>Anchor words</dt><dd><code>so that r/t is the probability</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -463,7 +463,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 341 (PDF p. 361) &middot; &sect;§5 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>2m</code></dd>
-<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>数値評価 phase14b_bernoulli_analytic/th_29_036・th_29_036_half (二世界の模型: 各回の表の確率 ½、2m 回で m 回表の確率 0; 二項の項 C(2m, m)(½)^{2m} は正)</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>≈ (数値評価: th_29_036・th_29_036_half) phase14b_bernoulli_analytic/th_29_036・th_29_036_half (二世界の模型: 各回の表の確率 ½、2m 回で m 回表の確率 0; 二項の項 C(2m, m)(½)^{2m} は正; simp と norm_num で検算)</dd>
 <dt>Anchor words</dt><dd><code>m tails in 2m tosses</code></dd>
 <dt>Remarks</dt><dd>½ は裸の数 (2 箇所)</dd>
 <dt>Crop</dt><dd>folio 341, x 125&ndash;1335, y 1594&ndash;1640 (full-size scan pixels)</dd>
@@ -474,7 +474,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 342 (PDF p. 362) &middot; &sect;§5 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>2m</code></dd>
-<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>数値評価 phase14b_bernoulli_analytic/th_29_037 (同じ模型で 2m 回表か 0 回の確率 1)</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>≈ (数値評価: th_29_037) phase14b_bernoulli_analytic/th_29_037 (同じ模型で 2m 回表か 0 回の確率 1; simp と norm_num で検算)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-036">ch29-036</a></dd>
 <dt>Anchor words</dt><dd><code>there will be either 2m heads or none.</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -486,7 +486,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 342 (PDF p. 362) &middot; &sect;§5 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>p^r</code></dd>
-<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>数値評価 phase14b_bernoulli_analytic/th_29_038 (同じ模型で r 回続けて表の確率は ½ ≠ (½)^r、r ≥ 2; phase14a の 047 y_r/h = p^r の前提が崩れる例)</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>≈ (数値評価: th_29_038) phase14b_bernoulli_analytic/th_29_038 (同じ模型で r 回続けて表の確率は ½ ≠ (½)^r、r ≥ 2; phase14a の 047 y_r/h = p^r の前提が崩れる例; norm_num で検算)</dd>
 <dt>Anchor words</dt><dd><code>p^r is the probability of r</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 342, x 125&ndash;1335, y 451&ndash;499 (full-size scan pixels)</dd>
@@ -497,7 +497,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 342 (PDF p. 362) &middot; &sect;§5 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>r − 1</code></dd>
-<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>数値評価 phase14b_bernoulli_analytic/th_29_039 (同じ模型で最初の r − 1 回が表なら r 回目の表の確率は 1、単独では ½)</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>≈ (数値評価: th_29_039) phase14b_bernoulli_analytic/th_29_039 (同じ模型で最初の r − 1 回が表なら r 回目の表の確率は 1、単独では ½; norm_num で検算)</dd>
 <dt>Anchor words</dt><dd><code>every one of the first r−1 occasions</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 342, x 125&ndash;1335, y 653&ndash;699 (full-size scan pixels)</dd>
@@ -520,7 +520,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 343 (PDF p. 363) &middot; &sect;§6 &middot; Text &middot; Reference &middot; Reference</div>
 <dl>
 <dt>Transcription</dt><dd><code>_m x_n</code></dd>
-<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>定義のみ (名付け) phase14a_bernoulli_premises/x</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Reference line (not counted)">R</span>定 phase14a_bernoulli_premises/x (名付け)</dd>
 <dt>Anchor words</dt><dd><code>Let _m x_n represent the statement</code></dd>
 <dt>Remarks</dt><dd>補則 1: 前置添字つきの 1 記号は裸記号 (第 1 回は記法)。行 ID を保つため参考行とし、式にも記法にも数えない。前置添字 m、後置添字 n。B36: x a m n は最後の回を肯定・否定で分けた選言、m = n では y_n と同じ項 (x_diag)。</dd>
 <dt>Crop</dt><dd>folio 343, x 125&ndash;1335, y 188&ndash;236 (full-size scan pixels)</dd>
@@ -609,7 +609,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 343 (PDF p. 363) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>y_s / y_{s−1} h</code></dd>
-<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定義のみ (名付け) phase14a_bernoulli_premises/yfac</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase14a_bernoulli_premises/yfac (名付け)</dd>
 <dt>Anchor words</dt><dd><code>many particular examples … increases with s</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 343, x 125&ndash;1335, y 946&ndash;994 (full-size scan pixels)</dd>
@@ -631,7 +631,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 343 (PDF p. 363) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(½)^{1000}</code></dd>
-<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>phase14a_bernoulli_premises/th_29_051 (数値評価 10^−302 &lt; (½)^1000 &lt; 10^−301)</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>≈ (数値評価: th_29_051) phase14a_bernoulli_premises/th_29_051 (10^−302 &lt; (½)^1000 &lt; 10^−301; norm_num で検算)</dd>
 <dt>Anchor words</dt><dd><code>so infinitesimally small as … We can only</code></dd>
 <dt>Remarks</dt><dd>½ 単独 (2 箇所) は裸の数</dd>
 <dt>Crop</dt><dd>folio 343, x 125&ndash;1335, y 1496&ndash;1546 (full-size scan pixels)</dd>
@@ -664,7 +664,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 344 (PDF p. 364) &middot; &sect;§7 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>a_1 a_2 . . .</code></dd>
-<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定義のみ (名付け) phase14a_bernoulli_premises/lits</dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase14a_bernoulli_premises/lits (名付け)</dd>
 <dt>Anchor words</dt><dd><code>some series … can be found</code></dd>
 <dt>Remarks</dt><dd>数 ½, 500 to 1, 90,000, 20,200, 19,800 は裸の数</dd>
 <dt>Crop</dt><dd>folio 344, x 125&ndash;1335, y 307&ndash;352 (full-size scan pixels)</dd>
@@ -675,7 +675,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 345 (PDF p. 365) &middot; &sect;§8 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>λ = 1, 2 . . . s</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16b_poisson_succession/trials (試行の番号 λ = 1, 2 . . . s の名付け; Lean では Finset.Icc 1 s)</dd>
 <dt>Quoted from</dt><dd>Poisson</dd>
 <dt>Anchor words</dt><dd><code>at the λth trial (… ) let the</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -687,7 +687,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 345 (PDF p. 365) &middot; &sect;§8 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>Σ p_λ / s = p</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16b_poisson_succession/pmean・pp (p := Σp_λ/s の名付け; p_λ := a_λ/h は pp)</dd>
 <dt>Quoted from</dt><dd>Poisson</dd>
 <dt>Anchor words</dt><dd><code>Then, if … the probability that the</code></dd>
 <dt>Remarks</dt><dd>行内の分数</dd>
@@ -699,7 +699,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 345 (PDF p. 365) &middot; &sect;§8 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>sp ± l</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16b_poisson_succession/probWithinI・probWithinP (限界 sp ± l の確率の名付け; キャリア上の _m x_s の確率の和と Poisson 二項分布の和が等しいことは th_29_057 で外部公理依存 (ax_poisson_independence))</dd>
 <dt>Quoted from</dt><dd>Poisson</dd>
 <dt>Anchor words</dt><dd><code>between the limits … is given by</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -711,7 +711,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 345 (PDF p. 365) &middot; &sect;§8 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>P = 2/(k√(πs)) ∫_0^l e^{−x²/k²s} dx + e^{−l²/k²s}/(k√(πs)),</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark external" title="Depends on a named external axiom">外</span>外部公理依存 phase16b_poisson_succession/ax_poisson_independence・ax_poisson_approx・th_29_058 (「is given by」を極限で読む: l = γk√s、γ &gt; 0 固定、各 p_λ = a_λ/h が δ ≤ p_λ ≤ 1 − δ (δ &gt; 0) のとき、限界 sp ± l の確率と P の差は s → ∞ で 0; 独立の前提を仮定に取ったキャリア上の分布 th_poisson_dist、分散 th_29_059、Chebyshev 型の評価 th_29_poisson_cheb は ax_poisson_approx に依らない; 第II部の公理からは導けない: 公理群 13 本を満たす可算模型 MS で ax_poisson_independence の形が偽 (a_2/_1x_1 h = 2/3 ≠ 1/3 = a_2/h)、nec_poisson_model・not_derivable_poisson)</dd>
 <dt>Quoted from</dt><dd>Poisson; Czuber vol. i pp. 153-159</dd>
 <dt>Anchor words</dt><dd><code>sp±l is given by</code></dd>
 <dt>Remarks</dt><dd>指数は分数 x² / k²s, l² / k²s</dd>
@@ -723,7 +723,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 345 (PDF p. 365) &middot; &sect;§8 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>k = √(2Σp_λ q_λ / s).</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16b_poisson_succession/kP (k := √(2Σp_λq_λ/s) の名付け; th_29_059 は生起の回数の分散 Σp_λq_λ = k²s/2 で k の意味を示す、外部公理に依らない)</dd>
 <dt>Quoted from</dt><dd>Poisson</dd>
 <dt>Anchor words</dt><dd><code>where k = … By substituting</code></dd>
 <dt>Remarks</dt><dd>行頭 where、根号内は分数</dd>
@@ -735,7 +735,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 345 (PDF p. 365) &middot; &sect;§8 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>x/(k√s) = t</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16b_poisson_succession/th_29_060 (置換 x/(k√s) = t; th_29_060 はこの置換による変数変換 2/(k√(πs)) ∫_0^l e^{−x²/k²s}dx = 2/√π ∫_0^{l/(k√s)} e^{−t²}dt)</dd>
 <dt>Anchor words</dt><dd><code>By substituting … and</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 345, x 125&ndash;1335, y 1409&ndash;1517 (full-size scan pixels)</dd>
@@ -747,7 +747,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 345 (PDF p. 365) &middot; &sect;§8 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>l/(k√s) = γ</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16b_poisson_succession/th_29_063_eq (前提 hγ : l/(k√s) = γ に写す)</dd>
 <dt>Anchor words</dt><dd><code>and … this may be written</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 345, x 125&ndash;1335, y 1409&ndash;1517 (full-size scan pixels)</dd>
@@ -758,7 +758,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 345 (PDF p. 365) &middot; &sect;§8 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>sp ± γk√s</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase16b_poisson_succession/th_29_062 (l/(k√s) = γ なら sp − l &lt; m &lt; sp + l ⇔ sp − γk√s &lt; m &lt; sp + γk√s)</dd>
 <dt>Quoted from</dt><dd>Poisson</dd>
 <dt>Anchor words</dt><dd><code>will lie between … is given by</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -770,7 +770,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 345 (PDF p. 365) &middot; &sect;§8 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>P = 2/√π ∫_0^γ e^{−t²} dt + e^{−γ²}/(k√(πs)).</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark external" title="Depends on a named external axiom">外</span>外部公理依存 phase16b_poisson_succession/th_29_063・th_29_063_eq (「is given by」: 限界 sp ± γk√s の確率と 2/√π ∫_0^γ e^{−t²}dt + e^{−γ²}/(k√(πs)) の差は s → ∞ で 0 (ax_poisson_independence・ax_poisson_approx); 058 の P との恒等式 th_29_063_eq は公理に依らない; 第II部の公理からは導けない: 公理群 13 本を満たす可算模型 MS で ax_poisson_independence の形が偽 (a_2/_1x_1 h = 2/3 ≠ 1/3 = a_2/h)、nec_poisson_model・not_derivable_poisson)</dd>
 <dt>Quoted from</dt><dd>Poisson</dd>
 <dt>Anchor words</dt><dd><code>sp±γk√s is given by</code></dd>
 <dt>Remarks</dt><dd>339 脚注 2 の形と対応 (脚注 2)</dd>
@@ -782,7 +782,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 347 (PDF p. 367) &middot; &sect;§10 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>σ − s</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16b_poisson_succession/th_29_065_ratio (名付け: 取り出さない玉の数 σ − s; 065 の因子 (σ − s)/σ と s(σ − s)/(σ − 1) に現れる)</dd>
 <dt>Quoted from</dt><dd>Czuber vol. i pp. 163, 164</dd>
 <dt>Anchor words</dt><dd><code>σ, s and σ−s are all large</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -794,10 +794,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 347 (PDF p. 367) &middot; &sect;§10 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(σ − s)/σ · s</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法; 数値例は結論を支えていない: phase16b_poisson_succession/th_29_065・th_29_065_ratio は σ = 10 の厳密な分散 s(σ − s)/(σ − 1) · pq と (σ − s)/σ · s の比 σ/(σ − 1) を示すだけで、「σ, s, σ − s が大きい」ときの Czuber の近似そのもの (Stirling による) は形式化していない)</dd>
 <dt>Quoted from</dt><dd>Czuber vol. i pp. 163, 164</dd>
 <dt>Anchor words</dt><dd><code>of drawings were … s instead of s.</code></dd>
-<dt>Remarks</dt><dd>行内の分数に s を乗じる</dd>
+<dt>Remarks</dt><dd>行内の分数に s を乗じる。B48 修正 1 回目 (裁定): ≈ (数値評価) をやめ未に。</dd>
 <dt>Crop</dt><dd>folio 347, x 125&ndash;1335, y 914&ndash;998 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-066">
@@ -806,7 +806,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 347 (PDF p. 367) &middot; &sect;§10 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>pσ</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16b_poisson_succession/th_29_067 (名付け: 黒の玉の総数 pσ、th_29_067 の K)</dd>
 <dt>Anchor words</dt><dd><code>total number of black balls pσ.</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 347, x 125&ndash;1335, y 1161&ndash;1208 (full-size scan pixels)</dd>
@@ -817,7 +817,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 347 (PDF p. 367) &middot; &sect;§10 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>s &gt; pσ</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16b_poisson_succession/th_29_067 (Pearson の場合 s &gt; pσ を前提 hs : K &lt; s に写す; 帰結: s 個すべてが黒の確率は 0)</dd>
 <dt>Quoted from</dt><dd>Pearson 1895</dd>
 <dt>Anchor words</dt><dd><code>even where s&gt;pσ. The various</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -829,7 +829,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 348 (PDF p. 368) &middot; &sect;§10 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>m/(m + n)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>≈ (数値評価: th_29_068) phase16b_poisson_succession/th_29_068・pairs_cards (l = μ = 1 の Poisson の壺: 黒 3・白 2 の 5 個から 2 個を戻さず取り出す; 最初の 1 個の色が知られていなければ次の 1 個が黒の確率は 3/5 で取り出す前と同じ、黒と知られていれば 1/2、白なら 3/4; norm_num で検算)</dd>
 <dt>Quoted from</dt><dd>Poisson pp. 231, 232</dd>
 <dt>Anchor words</dt><dd><code>proportion … of these μ balls</code></dd>
 <dt>Remarks</dt><dd>行内の分数</dd>
@@ -841,7 +841,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 348 (PDF p. 368) &middot; &sect;§10 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>l + μ</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16b_poisson_succession/th_29_068 (名付け: 取り出しの総数 l + μ; 模型は l = μ = 1)</dd>
 <dt>Quoted from</dt><dd>Poisson pp. 231, 232</dd>
 <dt>Anchor words</dt><dd><code>he argues, if l+μ balls are drawn</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -853,7 +853,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 349 (PDF p. 369) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>p ( = r/s )</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16b_poisson_succession/pR (p := r/s の名付け; data 上で 1 回目の確率が r/s になることは th_29_070_data、外部公理依存)</dd>
 <dt>Anchor words</dt><dd><code>the à priori probability p (= r/s) of an event</code></dd>
 <dt>Remarks</dt><dd>括弧内に = r/s</dd>
 <dt>Crop</dt><dd>folio 349, x 125&ndash;1335, y 1208&ndash;1313 (full-size scan pixels)</dd>
@@ -864,7 +864,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 349 (PDF p. 369) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>p^n</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16b_poisson_succession/bernP (Bernoulli の定理を直接当てた値 p^n の名付け; その導出は phase14a の th_29_047 (外部公理依存))</dd>
 <dt>Anchor words</dt><dd><code>n times running is p^n or</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 349, x 125&ndash;1335, y 1466&ndash;1569 (full-size scan pixels)</dd>
@@ -876,7 +876,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 349 (PDF p. 369) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(r/s)^n.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16b_poisson_succession/th_29_072 (p^n = (r/s)^n は pR の代入; th_29_072 は rfl)</dd>
 <dt>Anchor words</dt><dd><code>or (r/s)^n. But, if the</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 349, x 125&ndash;1335, y 1466&ndash;1569 (full-size scan pixels)</dd>
@@ -887,7 +887,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 350 (PDF p. 370) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(r + 1)/(s + 1)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>外部公理依存 phase16b_poisson_succession/ax_succession_rule・th_29_073 (data 上で、1 回目に起これば 2 回目の確率は (r + 1)/(s + 1); 人工例の仮定 SuccRule を名前付きの外部公理に置いた。事前の密度 θ^{r−1}(1 − θ)^{s−r−1} からの導出 th_29_073_beta は公理に依らない; 第II部の公理からは導けない: 公理群 13 本を満たす可算模型 MS で ax_succession_rule の形が偽 (y_1/h = 1/2 = r/s のもとで a_2/y_1 h = 1 ≠ 2/3)、nec_succession_model・not_derivable_succession)</dd>
 <dt>Anchor words</dt><dd><code>becomes … and so on.</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 350, x 125&ndash;1335, y 210&ndash;303 (full-size scan pixels)</dd>
@@ -898,7 +898,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 350 (PDF p. 370) &middot; &sect;§11 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>r/s · (r+1)/(s+1) · (r+2)/(s+2) · · · (r+n−1)/(s+n−1).</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>外部公理依存 phase16b_poisson_succession/th_29_074・th_29_074_of (「the probability P, properly calculated」: data 上で y_n/h = r/s · (r+1)/(s+1) · · · (r+n−1)/(s+n−1); 仮定 SuccRule を前提に取った形 th_29_074_of は第 II 部の公理のみ (Def. X 左形の反復); 第II部の公理からは導けない: 公理群 13 本を満たす可算模型 MS で ax_succession_rule の形が偽 (y_1/h = 1/2 = r/s のもとで a_2/y_1 h = 1 ≠ 2/3)、nec_succession_model・not_derivable_succession)</dd>
 <dt>Anchor words</dt><dd><code>of n successive occurrences is</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 350, x 125&ndash;1335, y 377&ndash;472 (full-size scan pixels)</dd>
@@ -909,9 +909,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 350 (PDF p. 370) &middot; &sect;§11 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>P = (r+n−1)! (s−1)! / ((s+n−1)! (r−1)!)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark external" title="Depends on a named external axiom">外</span>外部公理依存 phase16b_poisson_succession/ax_succession_rule・th_29_075_data (P を確率として述べる形: data 上で n 回続けて起こる確率 y_n/h = (r+n−1)!(s−1)!/((s+n−1)!(r−1)!)、0 &lt; r &lt; s; 047 と同じ扱い; 第II部の公理からは導けない: 公理群 13 本を満たす可算模型 MS で ax_succession_rule の形が偽 (y_1/h = 1/2 = r/s のもとで a_2/y_1 h = 1 ≠ 2/3)、nec_succession_model・not_derivable_succession)</dd>
 <dt>Anchor words</dt><dd><code>Hence</code></dd>
-<dt>Remarks</dt><dd>連鎖の第 1 行</dd>
+<dt>Remarks</dt><dd>連鎖の第 1 行。B48 修正 1 回目 (裁定): ✓ をやめ外部公理依存に。補助: 算術の恒等式 th_29_075 (r, s ≥ 1 で r/s · (r+1)/(s+1) · · · (r+n−1)/(s+n−1) = (r+n−1)!(s−1)!/((s+n−1)!(r−1)!)) と Beta 積分の形 th_29_075_beta は公理に依らない。</dd>
 <dt>Crop</dt><dd>folio 350, x 125&ndash;1335, y 549&ndash;653 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-076">
@@ -920,7 +920,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 350 (PDF p. 370) &middot; &sect;§11 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>= (r+n−1)^{r+n−½} e^{−(r+n−1)} s^{s−½} e^{−(s−1)} / ((s+n−1)^{s+n−½} e^{−(s+n−1)} r^{r−½} e^{−(r−1)})</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase16b_poisson_succession/th_29_076・st076_g・stirling_g (印刷の = を r, s → ∞ (n ≥ 1 固定) での漸近同値 ∼ と読む; Mathlib の Stirling.factorial_isEquivalent_stirling だけから。(s−1)!・(r−1)! の近似の e^{−(s−1)}・e^{−(r−1)} は単独では e 倍ずれるが、分子と分母で打ち消すので比は正しい (F29.14))</dd>
 <dt>Quoted from</dt><dd>Stirling</dd>
 <dt>Anchor words</dt><dd><code>by Stirling&#x27;s Theorem, provided that r and s are large;</code></dd>
 <dt>Remarks</dt><dd>連鎖の第 2 行; (s−1)! を s^{s−½}e^{−(s−1)}、(r−1)! を r^{r−½}e^{−(r−1)} で近似</dd>
@@ -932,7 +932,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 350 (PDF p. 370) &middot; &sect;§11 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>= (r/s)^n · (1 + (n−1)/r)^{r+n−½} / (1 + (n−1)/s)^{s+n−½}</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16b_poisson_succession/th_29_077 (r, s &gt; 0、n ≥ 1 で 076 の右辺 = (r/s)^n (1 + (n−1)/r)^{r+n−½}/(1 + (n−1)/s)^{s+n−½}、等式)</dd>
 <dt>Anchor words</dt><dd><code>provided that r and s are large ;</code></dd>
 <dt>Remarks</dt><dd>連鎖の第 3 行</dd>
 <dt>Crop</dt><dd>folio 350, x 125&ndash;1335, y 888&ndash;1110 (full-size scan pixels)</dd>
@@ -943,7 +943,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 350 (PDF p. 370) &middot; &sect;§11 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>= p^n Q^n, where Q = (1 + (n−1)/r)^{(r−½)/n + 1} / (1 + (n−1)/s)^{(s−½)/n + 1}.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16b_poisson_succession/th_29_078・Q078 (r, s &gt; 0、n ≥ 1 で 077 の右辺 = p^n Q^n、Q は印刷の式、p = r/s)</dd>
 <dt>Anchor words</dt><dd><code>Thus, in this case, the assumption</code></dd>
 <dt>Remarks</dt><dd>連鎖の第 4 行; 1 行に 2 等式 (where Q = …); 指数は分数 (r−½)/n の後に +1</dd>
 <dt>Crop</dt><dd>folio 350, x 125&ndash;1335, y 1140&ndash;1379 (full-size scan pixels)</dd>
@@ -954,9 +954,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 350 (PDF p. 370) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>sp ( = r)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16b_poisson_succession/pR・th_29_079 (p := r/s の展開: s &gt; 0 で sp = r; 002・042 の前例)</dd>
 <dt>Anchor words</dt><dd><code>i.e. sp (=r), must be large</code></dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B48 修正 1 回目 (裁定): ✓ をやめ定に。</dd>
 <dt>Crop</dt><dd>folio 350, x 125&ndash;1335, y 1808&ndash;1855 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-080">
@@ -965,7 +965,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 350 (PDF p. 370) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>p^n</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase16b_poisson_succession/th_29_080_gt・th_29_080_lim・th_29_080_num (Keynes の批判の式: 0 &lt; r &lt; s、n ≥ 2 で P &gt; p^n (th_29_080_gt); n 固定で r, s → ∞ なら P/p^n → 1 (th_29_080_lim); 数値例 r = 1、s = 2、n = 10 で P = 1/11、p^n = 1/1024 (th_29_080_num))</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-071">ch29-071</a></dd>
 <dt>Anchor words</dt><dd><code>is approximately p^n, unless n is</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -977,7 +977,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 350 (PDF p. 370) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>m + n</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法; m 回の失敗を含む確率は継起の仮定の一般形 (084 の (r + x)/(s + y)) を要し、本 phase は連続生起の場合だけを data 上に置く。事前の密度からの値は phase16b_poisson_succession/th_29_073_beta の c &gt; 0 の場合)</dd>
 <dt>Anchor words</dt><dd><code>m failures on m+n occasions, it is</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 350, x 125&ndash;1335, y 2156&ndash;2203 (full-size scan pixels)</dd>
@@ -988,9 +988,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 351 (PDF p. 371) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>s − r</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法; 対応が弱い: phase16b_poisson_succession/th_29_082 は 1 − (r+x)/(s+y) = ((s − r) + (y − x))/(s + y) の算術で、印刷の「m small compared with s − r」の条件は扱わない)</dd>
 <dt>Anchor words</dt><dd><code>m small compared with s−r.</code></dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B48 修正 1 回目 (裁定): 定をやめ未に (044 の前例)。</dd>
 <dt>Crop</dt><dd>folio 351, x 125&ndash;1335, y 246&ndash;284 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-083">
@@ -999,9 +999,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 351 (PDF p. 371) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>y + 1</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法、序数; 対応が弱い: phase16b_poisson_succession/SuccRule は k 回続けて起こった後の k + 1 回目の確率で、印刷の y 回中 x 回 (084) の場合は扱わない)</dd>
 <dt>Anchor words</dt><dd><code>its probability at the y+1th is</code></dd>
-<dt>Remarks</dt><dd>序数</dd>
+<dt>Remarks</dt><dd>序数。B48 修正 1 回目 (裁定): 定をやめ未に (044 の前例)。</dd>
 <dt>Crop</dt><dd>folio 351, x 125&ndash;1335, y 409&ndash;503 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-084">
@@ -2288,7 +2288,7 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch28/index.html">&larr; Ch. 28</a> | <a href="../ch30/index.html">Ch. 30 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch29.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch29-001":"notation","ch29-002":"none","ch29-003":"notation","ch29-004":"notation","ch29-005":"notation","ch29-006":"none","ch29-007":"notation","ch29-008":"printed","ch29-009":"printed","ch29-010":"notation","ch29-011":"notation","ch29-012":"notation","ch29-013":"printed","ch29-014":"printed","ch29-015":"printed","ch29-016":"notation","ch29-017":"notation","ch29-018":"notation","ch29-019":"notation","ch29-020":"notation","ch29-021":"notation","ch29-022":"notation","ch29-023":"none","ch29-024":"notation","ch29-025":"none","ch29-026":"notation","ch29-027":"notation","ch29-028":"notation","ch29-029":"notation","ch29-030":"notation","ch29-031":"none","ch29-032":"notation","ch29-033":"notation","ch29-034":"notation","ch29-035":"notation","ch29-036":"notation","ch29-037":"notation","ch29-038":"notation","ch29-039":"notation","ch29-040":"notation","ch29-041":"","ch29-042":"definition","ch29-043":"external","ch29-044":"notation","ch29-045":"printed","ch29-046":"printed","ch29-047":"external","ch29-048":"equiv","ch29-049":"notation","ch29-050":"equiv","ch29-051":"notation","ch29-052":"external","ch29-053":"external","ch29-054":"notation","ch29-055":"none","ch29-056":"none","ch29-057":"notation","ch29-058":"none","ch29-059":"none","ch29-060":"none","ch29-061":"none","ch29-062":"notation","ch29-063":"none","ch29-064":"notation","ch29-065":"notation","ch29-066":"notation","ch29-067":"none","ch29-068":"notation","ch29-069":"notation","ch29-070":"none","ch29-071":"notation","ch29-072":"notation","ch29-073":"notation","ch29-074":"notation","ch29-075":"none","ch29-076":"none","ch29-077":"none","ch29-078":"none","ch29-079":"none","ch29-080":"notation","ch29-081":"notation","ch29-082":"notation","ch29-083":"notation","ch29-084":"notation","ch29-085":"notation","ch29-086":"none","ch29-087":"notation","ch29-088":"notation","ch29-089":"none","ch29-090":"none","ch29-091":"none","ch29-092":"none","ch29-093":"none","ch29-094":"none","ch29-095":"none","ch29-096":"notation","ch29-097":"notation","ch29-098":"notation","ch29-099":"notation","ch29-100":"notation","ch29-101":"notation","ch29-102":"none","ch29-103":"none","ch29-104":"none","ch29-105":"notation","ch29-106":"notation","ch29-107":"notation","ch29-108":"notation","ch29-109":"notation","ch29-110":"notation","ch29-111":"none","ch29-112":"none","ch29-113":"none","ch29-114":"none","ch29-115":"none","ch29-116":"none","ch29-117":"none","ch29-118":"none","ch29-119":"none","ch29-120":"none","ch29-121":"none","ch29-122":"none","ch29-123":"notation","ch29-124":"none","ch29-125":"none","ch29-126":"notation","ch29-127":"notation","ch29-128":"notation","ch29-129":"notation","ch29-130":"none","ch29-131":"notation","ch29-132":"notation","ch29-133":"notation","ch29-134":"none","ch29-135":"notation","ch29-136":"notation","ch29-137":"notation","ch29-138":"none","ch29-139":"none","ch29-140":"none","ch29-141":"none","ch29-142":"none","ch29-143":"none","ch29-144":"notation","ch29-145":"notation","ch29-146":"none","ch29-147":"none","ch29-148":"none","ch29-149":"none","ch29-150":"notation","ch29-151":"notation","ch29-152":"notation","ch29-153":"notation","ch29-154":"none","ch29-155":"none","ch29-156":"none","ch29-157":"none","ch29-158":"notation","ch29-159":"notation","ch29-160":"notation","ch29-161":"notation","ch29-162":"notation","ch29-163":"notation","ch29-164":"none","ch29-165":"notation","ch29-166":"none","ch29-167":"notation","ch29-168":"notation","ch29-169":"none","ch29-170":"none","ch29-171":"notation","ch29-172":"notation","ch29-173":"notation","ch29-174":"notation","ch29-175":"notation","ch29-176":"notation","ch29-177":"notation","ch29-178":"none","ch29-179":"notation","ch29-180":"notation","ch29-181":"notation","ch29-182":"notation","ch29-183":"notation","ch29-184":"notation","ch29-185":"notation","ch29-186":"none","ch29-187":"none","ch29-188":"notation","ch29-189":"none","ch29-190":"none"};
+var K={"ch29-001":"notation","ch29-002":"definition","ch29-003":"notation","ch29-004":"notation","ch29-005":"notation","ch29-006":"definition","ch29-007":"notation","ch29-008":"printed","ch29-009":"printed","ch29-010":"notation","ch29-011":"notation","ch29-012":"notation","ch29-013":"printed","ch29-014":"printed","ch29-015":"printed","ch29-016":"notation","ch29-017":"notation","ch29-018":"notation","ch29-019":"notation","ch29-020":"notation","ch29-021":"notation","ch29-022":"notation","ch29-023":"definition","ch29-024":"notation","ch29-025":"definition","ch29-026":"notation","ch29-027":"notation","ch29-028":"notation","ch29-029":"notation","ch29-030":"notation","ch29-031":"definition","ch29-032":"notation","ch29-033":"notation","ch29-034":"notation","ch29-035":"notation","ch29-036":"notation","ch29-037":"notation","ch29-038":"notation","ch29-039":"notation","ch29-040":"notation","ch29-041":"","ch29-042":"definition","ch29-043":"external","ch29-044":"notation","ch29-045":"printed","ch29-046":"printed","ch29-047":"external","ch29-048":"equiv","ch29-049":"notation","ch29-050":"equiv","ch29-051":"notation","ch29-052":"external","ch29-053":"external","ch29-054":"notation","ch29-055":"definition","ch29-056":"definition","ch29-057":"notation","ch29-058":"external","ch29-059":"definition","ch29-060":"definition","ch29-061":"definition","ch29-062":"notation","ch29-063":"external","ch29-064":"notation","ch29-065":"notation","ch29-066":"notation","ch29-067":"definition","ch29-068":"notation","ch29-069":"notation","ch29-070":"definition","ch29-071":"notation","ch29-072":"notation","ch29-073":"notation","ch29-074":"notation","ch29-075":"external","ch29-076":"equiv","ch29-077":"printed","ch29-078":"printed","ch29-079":"definition","ch29-080":"notation","ch29-081":"notation","ch29-082":"notation","ch29-083":"notation","ch29-084":"notation","ch29-085":"notation","ch29-086":"none","ch29-087":"notation","ch29-088":"notation","ch29-089":"none","ch29-090":"none","ch29-091":"none","ch29-092":"none","ch29-093":"none","ch29-094":"none","ch29-095":"none","ch29-096":"notation","ch29-097":"notation","ch29-098":"notation","ch29-099":"notation","ch29-100":"notation","ch29-101":"notation","ch29-102":"none","ch29-103":"none","ch29-104":"none","ch29-105":"notation","ch29-106":"notation","ch29-107":"notation","ch29-108":"notation","ch29-109":"notation","ch29-110":"notation","ch29-111":"none","ch29-112":"none","ch29-113":"none","ch29-114":"none","ch29-115":"none","ch29-116":"none","ch29-117":"none","ch29-118":"none","ch29-119":"none","ch29-120":"none","ch29-121":"none","ch29-122":"none","ch29-123":"notation","ch29-124":"none","ch29-125":"none","ch29-126":"notation","ch29-127":"notation","ch29-128":"notation","ch29-129":"notation","ch29-130":"none","ch29-131":"notation","ch29-132":"notation","ch29-133":"notation","ch29-134":"none","ch29-135":"notation","ch29-136":"notation","ch29-137":"notation","ch29-138":"none","ch29-139":"none","ch29-140":"none","ch29-141":"none","ch29-142":"none","ch29-143":"none","ch29-144":"notation","ch29-145":"notation","ch29-146":"none","ch29-147":"none","ch29-148":"none","ch29-149":"none","ch29-150":"notation","ch29-151":"notation","ch29-152":"notation","ch29-153":"notation","ch29-154":"none","ch29-155":"none","ch29-156":"none","ch29-157":"none","ch29-158":"notation","ch29-159":"notation","ch29-160":"notation","ch29-161":"notation","ch29-162":"notation","ch29-163":"notation","ch29-164":"none","ch29-165":"notation","ch29-166":"none","ch29-167":"notation","ch29-168":"notation","ch29-169":"none","ch29-170":"none","ch29-171":"notation","ch29-172":"notation","ch29-173":"notation","ch29-174":"notation","ch29-175":"notation","ch29-176":"notation","ch29-177":"notation","ch29-178":"none","ch29-179":"notation","ch29-180":"notation","ch29-181":"notation","ch29-182":"notation","ch29-183":"notation","ch29-184":"notation","ch29-185":"notation","ch29-186":"none","ch29-187":"none","ch29-188":"notation","ch29-189":"none","ch29-190":"none"};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';
