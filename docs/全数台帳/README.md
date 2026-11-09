@@ -9,7 +9,7 @@
 - The names in the Lean column (`file/theorem`) are checked mechanically: stage [4] of `tools/check_all.sh` (`tools/check_ledger_refs.py`) fails if a name cited for a ✓/≈/✎/外/定 formula row or a notation row is not declared anywhere in `phases/` (every name in a list separated by `・`, `,`, `;` or `、` is checked, not only the first; a later name may start with a Latin or Greek letter or `_` and must be followed by a separator or the end of the cell, so a later item followed by prose, as in `; h = 0 の場合は`, is not checked); a 定 row that cites no name is also reported. The gate prints `[4] ok ledger refs: rows=… decls=… refs=… names=… missing=0`, or `[4] RED ledger refs: …` followed by one `MISSING <row ID> → <name>` line per missing name.
 
 ## Totals (v1.21)
-Formula lines **1,175**; notations 731; items 698 (numbered 202). Lines whose relation appears in a theorem statement (✓+≈+✎, proved): 910 (✓ 564 / ≈ 308 / ✎ 38); lines that depend on a named external axiom (外): 6; lines whose Lean counterpart is a definition or a named premise (定): 72; lines in Lean in all (✓+≈+✎+外+定): **988 / 1,175**; not yet 187 (by part: I 29; II 10; III 18; IV 17; V 113). Items covered by at least one theorem (✓/≈/✎ only; 外 and 定 are not counted): 455 / 698; numbered items 187 / 202. By part (items covered / items): I 51/102, II 328/358, III 44/62, IV 18/35, V 14/141. Part II (Chapters X–XVII) has 825 formula lines: ✓ 475 / ≈ 270 / ✎ 28 / 定 42 / not yet 10.
+Formula lines **1,175**; notations 731; items 698 (numbered 202). Lines whose relation appears in a theorem statement (✓+≈+✎, proved): 922 (✓ 570 / ≈ 313 / ✎ 39); lines that depend on a named external axiom (外): 9; lines whose Lean counterpart is a definition or a named premise (定): 101; lines in Lean in all (✓+≈+✎+外+定): **1,032 / 1,175**; not yet 143 (by part: I 29; II 10; III 18; IV 17; V 69). Items covered by at least one theorem (✓/≈/✎ only; 外 and 定 are not counted): 467 / 698; numbered items 187 / 202. By part (items covered / items): I 51/102, II 328/358, III 44/62, IV 18/35, V 26/141. Part II (Chapters X–XVII) has 825 formula lines: ✓ 475 / ≈ 270 / ✎ 28 / 定 42 / not yet 10.
 
 The per-chapter figures below are the counts of the ledger rows (`chNN.md`, formula rows by Lean status) and agree with each chapter's own 集計 table; `summary.csv` is recomputed from the same rows for every chapter by `tools/atlas/gen_summary.py` (all columns but the title and 'numbered'; 外 and 定 are its last two columns), and its 'numbered' column is not uniform across parts (some chapters count numbered lines, some numbered items) — the table below is the one to cite. The Totals paragraph and the table (the **all** row included) are written by `tools/atlas/gen_readme_totals.py` from the same ledger rows, never typed; gate [9] runs it with `--check`. "In Lean" counts ✓+≈+✎+外+定, as the atlas index does; the first three alone are the lines proved.
 
@@ -47,10 +47,10 @@ The per-chapter figures below are the counts of the ledger rows (`chNN.md`, form
 | V | 29 | The Use of A Priori Probabilities for the Prediction of Statistical Frequency | 83 | 83 | 9 | 0/2 | 7 / 2 / 0 / 4 / 1 / 69 | 14 | 106 |
 | V | 30 | The Mathematical Use of Statistical Frequencies | 12 | 12 | 4 | 0/0 | 0 / 1 / 3 / 1 / 7 / 0 | 12 | 52 |
 | V | 31 | The Inversion of Bernoulli's Theorem | 2 | 2 | 1 | 0/0 | 0 / 0 / 1 / 0 / 1 / 0 | 2 | 44 |
-| V | 32 | The Inductive Use of Statistical Frequencies | 26 | 26 | 0 | 0/0 | 0 / 0 / 0 / 0 / 0 / 26 | 0 | 7 |
-| V | 33 | Outline of a Constructive Theory | 18 | 18 | 0 | 0/0 | 0 / 0 / 0 / 0 / 0 / 18 | 0 | 79 |
+| V | 32 | The Inductive Use of Statistical Frequencies | 26 | 26 | 10 | 0/0 | 5 / 5 / 0 / 0 / 16 / 0 | 26 | 7 |
+| V | 33 | Outline of a Constructive Theory | 18 | 18 | 2 | 0/0 | 1 / 0 / 1 / 3 / 13 / 0 | 18 | 79 |
 | III | N3 | Notes on Part III | 20 | 10 | 10 | 9/9 | 20 / 0 / 0 / 0 / 0 / 0 | 20 | 2 |
-| **all** | | | **1,175** | **698** | **455** | **187/202** | **564 / 308 / 38 / 6 / 72 / 187** | **988** | **731** |
+| **all** | | | **1,175** | **698** | **467** | **187/202** | **570 / 313 / 39 / 9 / 101 / 143** | **1,032** | **731** |
 
 ## ℝ 依存 A〜E の本数 (第II部)
 
