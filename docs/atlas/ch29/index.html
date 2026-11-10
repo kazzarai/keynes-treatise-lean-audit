@@ -39,14 +39,14 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch28/index.html">&larr; Ch. 28</a> | <a href="../ch30/index.html">Ch. 30 &rarr;</a></nav>
 <h1>Chapter XXIX. The Use of à priori Probabilities for the Prediction of Statistical Frequency — the Theorems of Bernoulli, Poisson, and Tchebycheff</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 337&ndash;366 (Cornell copy, PDF pp. 357&ndash;386). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;+&#23450;)</th><td><b>33 / 83 formulas, 39.8% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 12: &#10003;9 &asymp;3 &#9998;0; depending on a named external axiom (&#22806;) 7; definition counterpart (&#23450;) 14; not yet 50</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;+&#23450;)</th><td><b>82 / 83 formulas, 98.8% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 33: &#10003;26 &asymp;5 &#9998;2; depending on a named external axiom (&#22806;) 10; definition counterpart (&#23450;) 39; not yet 1</b></td></tr>
 <tr><th>Ledger rows</th><td>190</td></tr>
 <tr><th>Formulas</th><td>83 (display 28, inline 55; items 83, numbered 0)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>9 &nbsp; <span class="mark equiv">&asymp;</span>3 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>50 &nbsp; <span class="mark external">&#22806;</span>7 &nbsp; <span class="mark definition">&#23450;</span>14</td></tr>
-<tr><th>Notation</th><td>106 (with a Lean counterpart 40)</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>26 &nbsp; <span class="mark equiv">&asymp;</span>5 &nbsp; <span class="mark corrected">&#9998;</span>2 &nbsp; <span class="mark none">&#26410;</span>1 &nbsp; <span class="mark external">&#22806;</span>10 &nbsp; <span class="mark definition">&#23450;</span>39</td></tr>
+<tr><th>Notation</th><td>106 (with a Lean counterpart 78)</td></tr>
 <tr><th>Reference rows</th><td>1</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (190)</button><button type="button" data-k="printed">&#10003; (9)</button><button type="button" data-k="equiv">&asymp; (3)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (50)</button><button type="button" data-k="external">external axiom (7)</button><button type="button" data-k="definition">definition (14)</button><button type="button" data-k="notation">notation (106)</button></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (190)</button><button type="button" data-k="printed">&#10003; (26)</button><button type="button" data-k="equiv">&asymp; (5)</button><button type="button" data-k="corrected">&#9998; (2)</button><button type="button" data-k="none">not yet (1)</button><button type="button" data-k="external">external axiom (10)</button><button type="button" data-k="definition">definition (39)</button><button type="button" data-k="notation">notation (106)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
 <section class="card" id="ch29-001">
 <h2>ch29-001</h2>
@@ -1011,7 +1011,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 351 (PDF p. 371) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(r + x)/(s + y)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/GenSucc ((r + x)/(s + y) は前提 GenSucc の右辺)</dd>
 <dt>Anchor words</dt><dd><code>at the y+1th is … ; determine the</code></dd>
 <dt>Remarks</dt><dd>行内の分数</dd>
 <dt>Crop</dt><dd>folio 351, x 125&ndash;1335, y 409&ndash;503 (full-size scan pixels)</dd>
@@ -1022,7 +1022,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 351 (PDF p. 371) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>φ(p, q)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/φ (φ(p, q) := _p x_q / h)</dd>
 <dt>Anchor words</dt><dd><code>is represented by φ(p, q), we</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 351, x 125&ndash;1335, y 555&ndash;605 (full-size scan pixels)</dd>
@@ -1033,9 +1033,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 351 (PDF p. 371) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>φ(p, q) = (r+p−1)/(s+q−1) · φ(p−1, q−1) + (s+q−1−r−p)/(s+q−1) · φ(p, q−1).</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark external" title="Depends on a named external axiom">外</span>外部公理依存 phase16c_tchebycheff/ax_gen_succ・th_29_086_data (data aG・hG の上で、印刷の前提「If an event has occurred x times in the first y trials, its probability at the y+1th is (r+x)/(s+y)」を外部公理 ax_gen_succ (GenSucc、0 &lt; r &lt; s) として名付け、p, q ≥ 1 で漸化式; 074・075 と同じ扱い; 第II部の公理からは導けない: GenSucc の x = y の場合は phase16b の SuccRule の形 (gensucc_succ) で、phase16b の nec_succession_model が公理群 13 本を満たす可算模型 MS でその形を偽にする)</dd>
 <dt>Anchor words</dt><dd><code>have … I know of no solution</code></dd>
-<dt>Remarks</dt><dd>行頭 have から 1 行; 漸化式</dd>
+<dt>Remarks</dt><dd>行頭 have から 1 行; 漸化式。B49 修正 1 回目 (裁定): ✓ をやめ外部公理依存に。補助: 仮定 GenSucc を前提に取った形 th_29_086 は第 II 部の公理のみで閉じる; 漸化式の解 phiP (Pólya の壺の分布) は th_29_086_sol・th_29_086_closed・th_29_086_closed_data、前提の自明な充足 (r = s) は rel_cons_gensucc_trivial。</dd>
 <dt>Crop</dt><dd>folio 351, x 125&ndash;1335, y 609&ndash;710 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-087">
@@ -1068,7 +1068,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 351 (PDF p. 371) &middot; &sect;§12 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>m = 4,311,076 male births</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/mB (m = 4,311,076 の名付け)</dd>
 <dt>Quoted from</dt><dd>Czuber vol. ii p. 15</dd>
 <dt>Anchor words</dt><dd><code>registered in Austria</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1080,7 +1080,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 351 (PDF p. 371) &middot; &sect;§12 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>n = 4,052,193 female births</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/nB (n = 4,052,193 の名付け)</dd>
 <dt>Quoted from</dt><dd>Czuber vol. ii p. 15</dd>
 <dt>Anchor words</dt><dd><code>male births / female births</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1092,7 +1092,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 351 (PDF p. 371) &middot; &sect;§12 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>s = 8,363,269 ;</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>(数値評価: th_29_091) phase16c_tchebycheff/th_29_091 (m + n = 8,363,269; norm_num で検算)</dd>
 <dt>Quoted from</dt><dd>Czuber vol. ii p. 15</dd>
 <dt>Anchor words</dt><dd><code>female births / for the succeeding period</code></dd>
 <dt>Remarks</dt><dd>罫線の下 (合計)</dd>
@@ -1104,7 +1104,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 352 (PDF p. 372) &middot; &sect;§12 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>m′ = 6,533,961 male births ;</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/mB&#x27; (m′ = 6,533,961 の名付け)</dd>
 <dt>Quoted from</dt><dd>Czuber vol. ii p. 15</dd>
 <dt>Anchor words</dt><dd><code>we are given only</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1116,7 +1116,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 352 (PDF p. 372) &middot; &sect;§12 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>n_0′ = nm′/m = 6,141,587,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>phase16c_tchebycheff/nec_29_093・th_29_093_fix (印刷の m、n、m′ では nm′/m = 6,141,592·27 . . . で 6,141,587 でない; 修正形 6,141,592 &lt; nm′/m &lt; 6,141,593; F29.16)</dd>
 <dt>Quoted from</dt><dd>Czuber vol. ii p. 15</dd>
 <dt>Anchor words</dt><dd><code>the most probable value</code></dd>
 <dt>Remarks</dt><dd>1 行に等号 2 つ (連鎖)</dd>
@@ -1128,10 +1128,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 352 (PDF p. 372) &middot; &sect;§12 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>P = ·9999779</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark external" title="Depends on a named external axiom">外</span>外部公理依存 phase16c_tchebycheff/ax_normal_approx・th_29_094 (ax_normal_approx の当てはめ（p = n/s、γ = 3）のみ。Czuber の問題（m′ を与えたときの n′ の中心 nm′/m と限界）は模型化していない)</dd>
 <dt>Quoted from</dt><dd>Czuber vol. ii p. 15</dd>
 <dt>Anchor words</dt><dd><code>a probability P=·9999779 that n′ will lie</code></dd>
-<dt>Remarks</dt><dd>限界 6,118,361 と 6,164,813 は裸の数</dd>
+<dt>Remarks</dt><dd>限界 6,118,361 と 6,164,813 は裸の数。B49 修正 1 回目 (裁定): Lean 欄を当てはめの範囲に限って書き直した。補助の数値評価: γ = 3 の読みは th_29_094_gamma (限界の幅 23,226 と Czuber の分散の読み (推定、印刷にない) から 2·9998 &lt; γ &lt; 2·9999)、限界は 6,141,587 ± 23,226 (th_29_094_limits); ·9999779 = Θ(3) は表の値で検算していない。</dd>
 <dt>Crop</dt><dd>folio 352, x 125&ndash;1335, y 639&ndash;693 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-095">
@@ -1140,7 +1140,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 352 (PDF p. 372) &middot; &sect;§12 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>(P = ·9999779 = 1 − 1/45250)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>(数値評価: th_29_095) phase16c_tchebycheff/th_29_095 (·9999779 と 1 − 1/45250 の差は ½·10⁻⁷ 未満; 第 1 の等号は 094 の再掲で表の値)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-094">ch29-094</a></dd>
 <dt>Anchor words</dt><dd><code>with practical certainty … to estimate the number</code></dd>
 <dt>Remarks</dt><dd>括弧内、行内の分数</dd>
@@ -1152,7 +1152,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 353 (PDF p. 373) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>x_1 x_2 . . . x_k</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/Mag (量 x の値 X)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>can take the values … with probabilities</code></dd>
 <dt>Remarks</dt><dd>x, y, z . . . は裸の記号の列挙 (数えない)</dd>
@@ -1165,7 +1165,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 353 (PDF p. 373) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>p_1 p_2 . . . p_k</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/Mag (量 x の確率 P)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>with probabilities … respectively, y</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1177,7 +1177,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 353 (PDF p. 373) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>y_1 y_2 . . . y_l</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/Mag (量 y の値 X)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>y the values … with probabilities</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1190,7 +1190,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 353 (PDF p. 373) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>q_1 q_2 . . q_l,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/Mag (量 y の確率 P)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>with probabilities … z the values</code></dd>
 <dt>Remarks</dt><dd>点は 2 つに見える</dd>
@@ -1202,7 +1202,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 353 (PDF p. 373) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>z_1 z_2 . . . z_m</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/Mag (量 z の値 X)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>z the values … with probabilities</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1215,7 +1215,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 353 (PDF p. 373) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>r_1 r_2 . . . r_m</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/Mag (量 z の確率 P)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>with probabilities … and so on,</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1227,7 +1227,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 353 (PDF p. 373) &middot; &sect;§13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>Σ_1^k p = 1, Σ_1^l q = 1, Σ_1^m r = 1, etc.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/Mag (量の値 X と確率 P; Σp = 1 は各定理の仮定 hN、p ≥ 0 は hP)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>so that</code></dd>
 <dt>Remarks</dt><dd>1 行に 3 等式; Σ の上下に k/1, l/1, m/1</dd>
@@ -1239,7 +1239,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 353 (PDF p. 373) &middot; &sect;§13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>Σ_1^k p_κ x_κ = a, Σ_1^l q_λ y_λ = b, Σ_1^m r_μ z_μ = c, etc.,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/mean (a := Σp_κx_κ)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>Write</code></dd>
 <dt>Remarks</dt><dd>1 行に 3 等式</dd>
@@ -1251,7 +1251,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 353 (PDF p. 373) &middot; &sect;§13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>Σ_1^k p_κ x_κ² = a_1, Σ_1^l q_λ y_λ² = b_1, Σ_1^m r_μ z_μ² = c, etc.,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/mean2 (a_1 := Σp_κx_κ²; 第 3 式の右辺 c は c_1 と読む、F29.3)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>and</code></dd>
 <dt>Remarks</dt><dd>1 行に 3 等式。第 3 式の右辺が <code>c</code> (原寸で確認、<code>c_1</code> でない): T 候補 (103 の c と衝突)</dd>
@@ -1263,7 +1263,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 353 (PDF p. 373) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>x²</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/mean2 (x² の平均)</dd>
 <dt>Anchor words</dt><dd><code>average value of x², etc.</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 353, x 125&ndash;1335, y 1646&ndash;1694 (full-size scan pixels)</dd>
@@ -1274,7 +1274,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 353 (PDF p. 373) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>x + y + z + . . .</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/Ssum</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>the sum … will have for</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1286,7 +1286,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 353 (PDF p. 373) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>x_κ + y_λ + z_μ + . . .</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/Ssum</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>its value … is</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1299,7 +1299,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 353 (PDF p. 373) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>p_κ q_λ r_μ . . .</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/jp (独立の積)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>is … (provided that the</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1311,7 +1311,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 354 (PDF p. 374) &middot; &sect;§13 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>Σ(x_κ + y_λ + z_μ + . . . − a − b − c − . . .)² p_κ q_λ r_μ . . .</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase16c_tchebycheff/th_29_117 (左辺)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>Hence / summed for all values of κ, λ, μ</code></dd>
 <dt>Remarks</dt><dd>頁頭</dd>
@@ -1323,7 +1323,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 354 (PDF p. 374) &middot; &sect;§13 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(x_κ + y_λ + z_μ + . . . − a − b − c − . . .)².</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/Ssum・Atot ((Ssum − Atot)²)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>is the average expectation for</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1335,7 +1335,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 354 (PDF p. 374) &middot; &sect;§13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>Σ_1^k (x_κ² − 2a x_κ + a²) p_κ = Σ p_κ x_κ² − 2a Σ p_κ x_κ + a² Σ p_κ</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_111</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>Now</code></dd>
 <dt>Remarks</dt><dd>連鎖第 1 行</dd>
@@ -1347,7 +1347,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 354 (PDF p. 374) &middot; &sect;§13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>= a_1 − 2a² + a² = a_1 − a².</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_112 (Σp = 1、a = Σpx のとき; 111 と合わせた形は var_one)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>Also Σq_λ r_μ</code></dd>
 <dt>Remarks</dt><dd>連鎖第 2 行 (等号 2 つ)</dd>
@@ -1359,7 +1359,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 354 (PDF p. 374) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>Σ q_λ r_μ . . . = 1</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_113 (すべての量の値の組にわたる確率の積の和 = 1; Mathlib Fintype.prod_sum)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>Also … summed for all values of λ, μ</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1371,7 +1371,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 354 (PDF p. 374) &middot; &sect;§13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>Σ_1^k 2(x_κ − a)(y_λ − b) p_κ = Σ_1^k 2(x_κ y_λ − b x_κ − a y_λ + ab) p_κ</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_114</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>summed for all values of λ, μ . . ., and</code></dd>
 <dt>Remarks</dt><dd>連鎖第 1 行</dd>
@@ -1383,7 +1383,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 354 (PDF p. 374) &middot; &sect;§13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>= 2(y_λ Σ p_κ x_κ − b Σ p_κ x_κ − a y_λ Σ p_κ + ab Σ p_κ)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_115</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd>(前行の続き)</dd>
 <dt>Remarks</dt><dd>連鎖第 2 行</dd>
@@ -1395,7 +1395,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 354 (PDF p. 374) &middot; &sect;§13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>= 2(a y_λ − ab − a y_λ + ab) = 0.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_116 (Σp = 1、a = Σpx のとき)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>Therefore</code></dd>
 <dt>Remarks</dt><dd>連鎖第 3 行</dd>
@@ -1407,7 +1407,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 354 (PDF p. 374) &middot; &sect;§13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>Σ(x_κ + y_λ + z_μ t + . . . − a − b − c − . . .)² p_κ q_λ r_μ . . .</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_117 (左辺; z_μ の後の余分な t は読まない、F29.4)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>Therefore</code></dd>
 <dt>Remarks</dt><dd>次行に続く連鎖の左辺。<code>z_μ</code> の直後に余分な <code>t</code> が印刷 (原寸で確認; 109 には無い): T 候補</dd>
@@ -1419,7 +1419,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 354 (PDF p. 374) &middot; &sect;§13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>= a_1 + b_1 + c_1 + . . . − a² − b² − c² − . . .,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_117 (右辺)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>whence</code></dd>
 <dt>Remarks</dt><dd>連鎖第 2 行</dd>
@@ -1431,7 +1431,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 354 (PDF p. 374) &middot; &sect;§13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>Σ(x_κ + y_λ + z_μ + . . . − a − b − c . . .)² p_κ q_λ r_μ . . . / (a²(a_1 + b_1 + c_1 + . . . − a² − b² − c² − . . .)) = 1/a²,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_119 (a &gt; 1; 分母 a_1 + b_1 + . . . − a² − b² − . . . ≠ 0 は分数が意味をもつ条件で、0 なら偽 (nec_29_119))</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>whence … where the summation extends</code></dd>
 <dt>Remarks</dt><dd>分子の <code>− c . . .</code> には c の後の − が無い (117 と組み方が違う)</dd>
@@ -1443,7 +1443,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 354 (PDF p. 374) &middot; &sect;§13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>(x_κ + y_λ + z_μ + . . . − a − b − c − . . .)² / (a²(a_1 + b_1 + c_1 + . . . − a² − b² − c² − . . .)) &lt; 1,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/ratio (省く項の条件 比 &lt; 1; 二つの操作が左辺を増やさないことは th_29_120)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>the above equation for which</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1455,7 +1455,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 354 (PDF p. 374) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>Σ p_κ q_λ r_μ . . . &lt; 1/a²</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>phase16c_tchebycheff/nec_29_121・th_29_121_fix (狭義の &lt; は一般に偽: 値 −2, 0, 2、確率 1/8, 3/4, 1/8、a = 2 で等号; 修正形は ≤; F29.17)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>Hence … where the summation covers</code></dd>
 <dt>Remarks</dt><dd>行内の分数</dd>
@@ -1467,7 +1467,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 354 (PDF p. 374) &middot; &sect;§13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>(x_κ + y_λ + z_μ + . . . − a − b − c . . .)² / (a²(a_1 + b_1 + c_1 + . . . − a² − b² − c² . . .)) ≥ 1.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/ratio (121 の和の範囲 比 ≥ 1)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>of values only for which</code></dd>
 <dt>Remarks</dt><dd>≥ の活字は = の下に &gt; を重ねた形</dd>
@@ -1479,7 +1479,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 354 (PDF p. 374) &middot; &sect;§13 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(x_κ + y_λ + z_μ + . . . − a − b − c . . .)² / (a²(a_1 + b_1 + c_1 + . . . − a² − b² − c² − . . .))</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/ratio・Pt</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>If P is the probability that … is equal to or less than unity</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1491,7 +1491,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 355 (PDF p. 375) &middot; &sect;§13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>1 − P &lt; 1/a²,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_124 (P := 比 ≤ 1 の確率 Pt; 1 − P は比 &gt; 1 の確率で、狭義の &lt; が成り立つ)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>it follows that</code></dd>
 <dt>Remarks</dt><dd>頁頭</dd>
@@ -1503,7 +1503,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 355 (PDF p. 375) &middot; &sect;§13 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>P &gt; 1 − 1/a².</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_125</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>i.e.</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1515,7 +1515,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 355 (PDF p. 375) &middot; &sect;§13 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>x_κ + y_λ + z_μ + . . .</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/Ssum</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>Hence the probability that the sum … lies between the limits</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1527,7 +1527,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 355 (PDF p. 375) &middot; &sect;§13 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>a + b + c + . . . − a √(a_1 + b_1 + c_1 + . . . − a² − b² − c² − . . .)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase16c_tchebycheff/th_29_tcheb (下の限界)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>lies between the limits</code></dd>
 <dt>Remarks</dt><dd>根号は行末まで</dd>
@@ -1539,7 +1539,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 355 (PDF p. 375) &middot; &sect;§13 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>a + b + c + . . . + a √(a_1 + b_1 + c_1 + . . . − a² − b² − c² − . . .)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase16c_tchebycheff/th_29_tcheb (上の限界)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>and … is greater than</code></dd>
 <dt>Remarks</dt><dd>行頭 and</dd>
@@ -1551,7 +1551,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 355 (PDF p. 375) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>1 − 1/a²</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase16c_tchebycheff/th_29_tcheb</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>is greater than … where a is some number</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1563,7 +1563,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 355 (PDF p. 375) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>a = √n / t</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/aT (a := √n/t; 帰結 1 − 1/a² = 1 − t²/n は th_29_130、第二の形は th_29_133)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>write … ; then the probability</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1575,7 +1575,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 355 (PDF p. 375) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(x_κ + y_λ + z_μ + . . .) / n</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/Ssum (算術平均 Ssum/n、th_29_133)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>mean … lies between the limits</code></dd>
 <dt>Remarks</dt><dd>行内の分数</dd>
@@ -1587,7 +1587,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 355 (PDF p. 375) &middot; &sect;§13 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(a + b + c + . . .)/n ± (1/t) √((a_1 + b_1 + c_1 + . . .)/n − (a² + b² + c² + . . .)/n)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase16c_tchebycheff/th_29_133</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>lies between the limits</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1599,7 +1599,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 355 (PDF p. 375) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>1 − t²/n</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase16c_tchebycheff/th_29_133</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1867</dd>
 <dt>Anchor words</dt><dd><code>is greater than</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1611,7 +1611,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 355 (PDF p. 375) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>p [p = 1 − q]</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/q (p = 1 − q を q := 1 − p と書く; 勝ち負けの量は gainMag、135 の主張は th_29_135)</dd>
 <dt>Quoted from</dt><dd>Czuber vol. i p. 216</dd>
 <dt>Anchor words</dt><dd><code>an event of probability p[p=1−q] occurs</code></dd>
 <dt>Remarks</dt><dd>角括弧内</dd>
@@ -1623,7 +1623,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 355 (PDF p. 375) &middot; &sect;§13 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>s(pA − qB) ± a(A + B) √(spq)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase16c_tchebycheff/th_29_135 (A + B &gt; 0、0 &lt; p &lt; 1、a &gt; 1)</dd>
 <dt>Quoted from</dt><dd>Czuber vol. i p. 216</dd>
 <dt>Anchor words</dt><dd><code>between the limits</code></dd>
 <dt>Remarks</dt><dd>A, B はローマン体</dd>
@@ -1635,7 +1635,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 355 (PDF p. 375) &middot; &sect;§13 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>1 − 1/a².</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase16c_tchebycheff/th_29_135</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-129">ch29-129</a></dd>
 <dt>Quoted from</dt><dd>Czuber vol. i p. 216</dd>
 <dt>Anchor words</dt><dd><code>is greater than</code></dd>
@@ -1648,7 +1648,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>x_1 x_2 . . . x_s</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/bern (s 個の量)</dd>
 <dt>Anchor words</dt><dd><code>s magnitudes … corresponding, such that</code></dd>
 <dt>Remarks</dt><dd>柱の頁番号は黒塗り [?] (356)</dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 209&ndash;257 (full-size scan pixels)</dd>
@@ -1659,7 +1659,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>x = 1</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/indMag (x = 1: 事象が起こる)</dd>
 <dt>Anchor words</dt><dd><code>such that x=1 when the event</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 260&ndash;307 (full-size scan pixels)</dd>
@@ -1670,7 +1670,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>x = 0</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/indMag (x = 0: 起こらない)</dd>
 <dt>Anchor words</dt><dd><code>and x=0 when it fails.</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 310&ndash;358 (full-size scan pixels)</dd>
@@ -1681,7 +1681,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>a = p</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_140</dd>
 <dt>Anchor words</dt><dd><code>we have a=p, b=p, etc.,</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 361&ndash;408 (full-size scan pixels)</dd>
@@ -1693,7 +1693,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>b = p</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_140 (二つ目の量も同じ indMag p)</dd>
 <dt>Anchor words</dt><dd><code>a=p, b=p, etc., and</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 361&ndash;408 (full-size scan pixels)</dd>
@@ -1705,7 +1705,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>a_1 = p</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_142</dd>
 <dt>Anchor words</dt><dd><code>and a_1=p, b_1=p, etc.</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 361&ndash;408 (full-size scan pixels)</dd>
@@ -1717,7 +1717,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>b_1 = p</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_142 (二つ目の量も同じ indMag p)</dd>
 <dt>Anchor words</dt><dd><code>a_1=p, b_1=p, etc. Hence</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 361&ndash;408 (full-size scan pixels)</dd>
@@ -1728,7 +1728,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>sp ± a √(sp − sp²)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase16c_tchebycheff/th_29_144</dd>
 <dt>Anchor words</dt><dd><code>between the limits … i.e. between</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 462&ndash;515 (full-size scan pixels)</dd>
@@ -1739,7 +1739,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>sp ± a √(spq)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase16c_tchebycheff/th_29_145</dd>
 <dt>Anchor words</dt><dd><code>the limits … where</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 521&ndash;612 (full-size scan pixels)</dd>
@@ -1751,7 +1751,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>q = 1 − p</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/q (q := 1 − p)</dd>
 <dt>Anchor words</dt><dd><code>where q=1−p, is</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 521&ndash;612 (full-size scan pixels)</dd>
@@ -1763,7 +1763,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>&gt; 1 − 1/a².</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_147 (s ≥ 1、0 &lt; p &lt; 1、a &gt; 1; 主語 P は限界 sp ± a√(spq) の確率)</dd>
 <dt>Anchor words</dt><dd><code>is &gt;1−1/a². If we</code></dd>
 <dt>Remarks</dt><dd>関係記号で始まる (主語は P)</dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 521&ndash;612 (full-size scan pixels)</dd>
@@ -1774,7 +1774,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>P &gt; 1 − 1/a²,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>phase16c_tchebycheff/th_29_148 (147 と同じ P)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-125">ch29-125</a></dd>
 <dt>Anchor words</dt><dd><code>gives … Bernoulli&#x27;s Theorem with greater</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1786,7 +1786,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>P = Θ(a/√2).</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark external" title="Depends on a named external axiom">外</span>外部公理依存 phase16c_tchebycheff/ax_normal_approx・th_29_149 (Bernoulli の定理の P を二項分布の和 probWithin の s → ∞ の極限で読む; √(2spq)γ = a√(spq) より γ = a/√2; 147 の P (独立の積の和、閉区間) と二項分布の和 (開区間) の一致は示していない)</dd>
 <dt>Anchor words</dt><dd><code>gives … The degree of superiority</code></dd>
 <dt>Remarks</dt><dd>Θ の後は括弧付き分数</dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 836&ndash;943 (full-size scan pixels)</dd>
@@ -1809,7 +1809,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Table &middot; Table &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>Θ a/√2 .</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/Θ (表の値は検算していない)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-149">ch29-149</a></dd>
 <dt>Anchor words</dt><dd>(表の列見出し 2)</dd>
 <dt>Remarks</dt><dd>括弧なしで Θ の直後に分数</dd>
@@ -1822,7 +1822,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Table &middot; Table &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>1 − 1/a².</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>≈ (数値評価: th_29_152・nec_29_152) phase16c_tchebycheff/th_29_152・nec_29_152 (列の値; ·9445 は F29.8)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-129">ch29-129</a></dd>
 <dt>Anchor words</dt><dd>(表の列見出し 3)</dd>
 <dt>Remarks</dt><dd>表の数値 6 行 (裸の数、数えない): 1·5/·7788/·333; 2/·8427/·5; 4·5/·9661/·7778; [?]/·9953/·875 (a² = 8 と推定); 12·5/·9996/·92; 18/·99998/·9445 (1 − 1/18 = ·9444…、末尾の 5 は丸め方の相違か: 所見候補 低)</dd>
@@ -1834,7 +1834,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>1 − 1/a².</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase16c_tchebycheff/th_29_147 (1 − 1/a²)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-129">ch29-129</a></dd>
 <dt>Anchor words</dt><dd><code>very much in excess of … But</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1846,9 +1846,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>a = p_1</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/poi (印刷は「For we put」: λ 回目の量 x_λ の平均を p_λ と置く; 079 の前例)</dd>
 <dt>Anchor words</dt><dd><code>For we put ¹ a=p_1, b=p_2, etc.,</code></dd>
-<dt>Remarks</dt><dd>脚注 1: §8 と同じ記法</dd>
+<dt>Remarks</dt><dd>脚注 1: §8 と同じ記法。B49 修正 1 回目 (裁定): ✓ をやめ定に。補助: x = 1/0 の量の平均として導く形 th_29_154。</dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 2104&ndash;2153 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-155">
@@ -1858,9 +1858,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>b = p_2</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/poi (b = p_2; 154 と同じ置き方)</dd>
 <dt>Anchor words</dt><dd><code>a=p_1, b=p_2, etc., and</code></dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B49 修正 1 回目 (裁定): ✓ をやめ定に。補助: th_29_155。</dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 2104&ndash;2153 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-156">
@@ -1870,9 +1870,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>a_1 = p_1</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/poi (a_1 = p_1: x_λ² の平均; 154 と同じ置き方)</dd>
 <dt>Anchor words</dt><dd><code>and a_1=p_1, b_1=p_2, etc.,</code></dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B49 修正 1 回目 (裁定): ✓ をやめ定に。補助: th_29_156。</dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 2104&ndash;2153 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-157">
@@ -1882,9 +1882,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>b_1 = p_2</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/poi (b_1 = p_2; 154 と同じ置き方)</dd>
 <dt>Anchor words</dt><dd><code>a_1=p_1, b_1=p_2, etc.,</code></dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B49 修正 1 回目 (裁定): ✓ をやめ定に。補助: th_29_157。</dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 2104&ndash;2153 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-158">
@@ -1893,7 +1893,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 357 (PDF p. 377) &middot; &sect;§14 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>Σ_1^λ p_λ ± a √(Σ_1^λ p_λ − Σ_1^λ p_λ²),</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase16c_tchebycheff/th_29_158 (Σ の上限は s と読む、F29.7)</dd>
 <dt>Anchor words</dt><dd><code>occurrences will lie between the limits</code></dd>
 <dt>Remarks</dt><dd>三つの Σ の上限が添字と同じ <code>λ</code> に印刷 (s が自然): S 候補</dd>
 <dt>Crop</dt><dd>folio 357, x 125&ndash;1335, y 329&ndash;433 (full-size scan pixels)</dd>
@@ -1904,7 +1904,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 357 (PDF p. 377) &middot; &sect;§14 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>sp ± a √(Σ_1^λ p_λ q_λ),</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✓ phase16c_tchebycheff/th_29_159</dd>
 <dt>Anchor words</dt><dd><code>i.e. between the limits</code></dd>
 <dt>Remarks</dt><dd>Σ の上限 λ (同上)</dd>
 <dt>Crop</dt><dd>folio 357, x 125&ndash;1335, y 441&ndash;524 (full-size scan pixels)</dd>
@@ -1915,7 +1915,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 357 (PDF p. 377) &middot; &sect;§14 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>sp ± √2 ak √s,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✎ phase16c_tchebycheff/nec_29_160・th_29_160_fix (印刷の √2 ak√s は 2 倍; 修正形 ak√s/√2; F29.2)</dd>
 <dt>Anchor words</dt><dd><code>i.e. between the limits</code></dd>
 <dt>Remarks</dt><dd>345 の k = √(2Σp_λq_λ/s) から a√(Σp_λq_λ) = ak√(s/2) = ak√s/√2 であり、印刷の √2·ak√s はその 2 倍: F 候補 (確度中)。356 の Θ(a/√2) とは ak√s/√2 の方が整合</dd>
 <dt>Crop</dt><dd>folio 357, x 125&ndash;1335, y 559&ndash;613 (full-size scan pixels)</dd>
@@ -1926,9 +1926,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 357 (PDF p. 377) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>t − 1/a².</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>✎ phase16c_tchebycheff/nec_29_161・th_29_158 (印刷の t を §13 の a = √n/t (130; n は量の個数で、ここでは s) で読むと偽: s = 16、t = 2 で a = 2、t − 1/a² = 7/4 &gt; 1 だが確率は 1 を超えない (nec_29_161); t を 1 と読んだ修正形は th_29_158; F29.1)</dd>
 <dt>Anchor words</dt><dd><code>is greater than</code></dd>
-<dt>Remarks</dt><dd>355・356 では <code>1 − 1/a²</code>; ここは <code>1</code> がイタリック <code>t</code> に印刷 (原寸で確認): T 候補 (確度高)</dd>
+<dt>Remarks</dt><dd>355・356 では <code>1 − 1/a²</code>; ここは <code>1</code> がイタリック <code>t</code> に印刷 (原寸で確認): T 候補 (確度高)。B49 修正 1 回目 (裁定): 反例 nec_29_161 を置いて ✎ を保った。反例は t を 130 の定義で読んだ場合のもので、この読みは作業役の読み (裁定事項 17)。</dd>
 <dt>Crop</dt><dd>folio 357, x 125&ndash;1335, y 623&ndash;715 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-162">
@@ -1949,7 +1949,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 357 (PDF p. 377) &middot; &sect;§14 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>1/(2(m − s)) √(m(μ − m)/μ) (s/μ)^m ((μ − s)/(μ − m))^{μ−m+1}</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(I. は証明していない; 印刷形 (s/μ)^m の反例は nec_29_163、F29.5)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1846</dd>
 <dt>Anchor words</dt><dd><code>at least m times is less than</code></dd>
 <dt>Remarks</dt><dd>第 2 因子は <code>(s/μ)^m</code>; III. の対応因子は <code>(s/m)^m</code> (不一致、どちらかが T)</dd>
@@ -1961,7 +1961,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 357 (PDF p. 377) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>m &gt; s + 1 ;</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/provI (I. の但し書き; I. そのものは証明していない、印刷形の反例は nec_29_163)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1846</dd>
 <dt>Anchor words</dt><dd><code>provided that m&gt;s+1;</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1973,7 +1973,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 357 (PDF p. 377) &middot; &sect;§14 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>1/(2(s − n)) √(μ(μ − n)/μ) ((μ − s)/(μ − n))^{μ−n} (s/n)^{n+1}</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(II. は証明していない; 根号 √(μ(μ − n)/μ) と I. を起こらない回数に写した形の √(n(μ − n)/μ) の比較は th_29_165_cmp、F29.5)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1846</dd>
 <dt>Anchor words</dt><dd><code>not occur more than n times is less than</code></dd>
 <dt>Remarks</dt><dd>根号内 <code>μ(μ−n)/μ</code> (III. では <code>n(μ−n)/μ</code>)、指数 <code>μ−n</code> (III. では <code>n−μ</code>): 不一致 2 箇所</dd>
@@ -1985,10 +1985,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 357 (PDF p. 377) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>n &lt; s − 1.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/provII・th_29_165_cmp (II. の但し書き; th_29_165_cmp の前提 hII に写す: 但し書きの下で印刷の II. は I. を起こらない回数に写した形以上; II. そのものは証明していない)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1846</dd>
 <dt>Anchor words</dt><dd><code>provided that n&lt;s−1.</code></dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B49 修正 1 回目 (裁定): provII を前提に取る定理 th_29_165_cmp を置いた。</dd>
 <dt>Crop</dt><dd>folio 357, x 125&ndash;1335, y 1459&ndash;1506 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-167">
@@ -2021,7 +2021,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 357 (PDF p. 377) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>m &gt; s + 1,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/provI (III. の但し書き、164 の再掲)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-164">ch29-164</a></dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1846</dd>
 <dt>Anchor words</dt><dd><code>provided m&gt;s+1, n&lt;s−1.</code></dd>
@@ -2035,11 +2035,11 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 357 (PDF p. 377) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>n &lt; s − 1.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/provII・th_29_165_cmp (III. の但し書き、166 の再掲; provII を前提に取る定理は th_29_165_cmp (II. の比較) だけで、III. は扱っていない)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-166">ch29-166</a></dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1846</dd>
 <dt>Anchor words</dt><dd><code>provided m&gt;s+1, n&lt;s−1.</code></dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B49 修正 1 回目 (裁定): provII を前提に取る定理 th_29_165_cmp を置いた (166 と同じ)。</dd>
 <dt>Crop</dt><dd>folio 357, x 125&ndash;1335, y 1896&ndash;1942 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-171">
@@ -2107,7 +2107,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 359 (PDF p. 379) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>1/(a + 1)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/pS</dd>
 <dt>Quoted from</dt><dd>Simmons</dd>
 <dt>Anchor words</dt><dd><code>If … is the probability of the event</code></dd>
 <dt>Remarks</dt><dd>行内の分数</dd>
@@ -2120,7 +2120,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 359 (PDF p. 379) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>n(a + 1)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/mS</dd>
 <dt>Quoted from</dt><dd>Simmons</dd>
 <dt>Anchor words</dt><dd><code>and n(a+1) the number of trials</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -2132,10 +2132,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 359 (PDF p. 379) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>n = 1</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(数値 9 点の検算のみ、一般の証明なし: phase16c_tchebycheff/th_29_178 は a = 2, 3, 9 で n = 1, 2, 3 の Δ を厳密に計算する)</dd>
 <dt>Quoted from</dt><dd>Simmons</dd>
 <dt>Anchor words</dt><dd><code>a maximum when n=1, constantly</code></dd>
-<dt>Remarks</dt><dd></dd>
+<dt>Remarks</dt><dd>B49 修正 1 回目 (裁定): ≈ (数値評価) をやめ未に (065 と同じ)。a = 1 (p = 1/2) では対称性から Δ = 0 で、「constantly diminishing」は狭義には成り立たない (F29.22、Lean では示していない)。</dd>
 <dt>Crop</dt><dd>folio 359, x 125&ndash;1335, y 1317&ndash;1365 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-179">
@@ -2206,7 +2206,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 360 (PDF p. 380) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>pm</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/deltaS (c = pm)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-172">ch29-172</a></dd>
 <dt>Anchor words</dt><dd><code>frequency less than pm over the</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -2218,7 +2218,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 360 (PDF p. 380) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>pm</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark notation" title="Notation">N</span>定 phase16c_tchebycheff/deltaS (c = pm)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-172">ch29-172</a></dd>
 <dt>Anchor words</dt><dd><code>greater than pm for various values</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -2230,7 +2230,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 360 (PDF p. 380) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>p = 1/(a + 1),</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/pS (p := 1/(a + 1))</dd>
 <dt>Quoted from</dt><dd>Simmons</dd>
 <dt>Anchor words</dt><dd><code>the number of trials [ … ], as</code></dd>
 <dt>Remarks</dt><dd>角括弧内</dd>
@@ -2243,7 +2243,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 360 (PDF p. 380) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>m = n(a + 1)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/mS (m := n(a + 1); 続く表は th_29_187_table・th_29_187_table_1000 で検算、8 行目は nec_29_187_table (F29.9))</dd>
 <dt>Quoted from</dt><dd>Simmons</dd>
 <dt>Anchor words</dt><dd><code>[p = …, m = n(a+1)], as calculated</code></dd>
 <dt>Remarks</dt><dd>角括弧内。続く表 (p. / m. / Δ. の 3 列 10 行) は見出しが裸の記号、中身は裸の数で、数えない。判読不能 6 セルは冒頭の表に記載。値: (1/[?], [?], ·037037), (1/3, 15, ·02243662), (1/[?], 24, ·0182706), ([?]/4, 4, ·054687), (1/4, 20, ·03201413), (1/10, 10, ·084777), (1/10, [?], ·068673713), (1/100, 100, ·101813), ([?]/100, 200, ·081324387), (1/1000, 1000, ·103454)。二項分布から計算すると 8 行目 (1/100, 100) は ·101794 で印刷の ·101813 と 4 桁目から異なる (所見候補 低、Simmons の計算値の引用)</dd>
@@ -2267,10 +2267,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 360 (PDF p. 380) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>p = 1/4,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/th_29_189 (例の前提 p = 1/4 を前提 hp に写す)</dd>
 <dt>Quoted from</dt><dd>Simmons</dd>
 <dt>Anchor words</dt><dd><code>sets of 4 trials each, where</code></dd>
-<dt>Remarks</dt><dd>数 100, 4, 26, 31 は裸の数</dd>
+<dt>Remarks</dt><dd>数 100, 4, 26, 31 は裸の数。B49 修正 1 回目 (裁定): ≈ (数値評価) をやめ定に。検算: th_29_189 (4 回: 100 · 67/256 = 26·17、100 · 81/256 = 31·64; 印刷の 26・31 は切り捨て、F29.21)。</dd>
 <dt>Crop</dt><dd>folio 360, x 125&ndash;1335, y 1851&ndash;1942 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch29-190">
@@ -2279,16 +2279,16 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 360 (PDF p. 380) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>p = 1/10,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase16c_tchebycheff/th_29_190 (例の前提 p = 1/10 を前提 hp に写す)</dd>
 <dt>Quoted from</dt><dd>Simmons</dd>
 <dt>Anchor words</dt><dd><code>sets of 10 trials each, where</code></dd>
-<dt>Remarks</dt><dd>数 26, 34 は裸の数</dd>
+<dt>Remarks</dt><dd>数 26, 34 は裸の数。B49 修正 1 回目 (裁定): ≈ (数値評価) をやめ定に。検算: th_29_190 (10 回: 26·39、34·87; 印刷の 26・34 は切り捨て、F29.21)。</dd>
 <dt>Crop</dt><dd>folio 360, x 125&ndash;1335, y 2005&ndash;2096 (full-size scan pixels)</dd>
 </dl></section>
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch28/index.html">&larr; Ch. 28</a> | <a href="../ch30/index.html">Ch. 30 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch29.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch29-001":"notation","ch29-002":"definition","ch29-003":"notation","ch29-004":"notation","ch29-005":"notation","ch29-006":"definition","ch29-007":"notation","ch29-008":"printed","ch29-009":"printed","ch29-010":"notation","ch29-011":"notation","ch29-012":"notation","ch29-013":"printed","ch29-014":"printed","ch29-015":"printed","ch29-016":"notation","ch29-017":"notation","ch29-018":"notation","ch29-019":"notation","ch29-020":"notation","ch29-021":"notation","ch29-022":"notation","ch29-023":"definition","ch29-024":"notation","ch29-025":"definition","ch29-026":"notation","ch29-027":"notation","ch29-028":"notation","ch29-029":"notation","ch29-030":"notation","ch29-031":"definition","ch29-032":"notation","ch29-033":"notation","ch29-034":"notation","ch29-035":"notation","ch29-036":"notation","ch29-037":"notation","ch29-038":"notation","ch29-039":"notation","ch29-040":"notation","ch29-041":"","ch29-042":"definition","ch29-043":"external","ch29-044":"notation","ch29-045":"printed","ch29-046":"printed","ch29-047":"external","ch29-048":"equiv","ch29-049":"notation","ch29-050":"equiv","ch29-051":"notation","ch29-052":"external","ch29-053":"external","ch29-054":"notation","ch29-055":"definition","ch29-056":"definition","ch29-057":"notation","ch29-058":"external","ch29-059":"definition","ch29-060":"definition","ch29-061":"definition","ch29-062":"notation","ch29-063":"external","ch29-064":"notation","ch29-065":"notation","ch29-066":"notation","ch29-067":"definition","ch29-068":"notation","ch29-069":"notation","ch29-070":"definition","ch29-071":"notation","ch29-072":"notation","ch29-073":"notation","ch29-074":"notation","ch29-075":"external","ch29-076":"equiv","ch29-077":"printed","ch29-078":"printed","ch29-079":"definition","ch29-080":"notation","ch29-081":"notation","ch29-082":"notation","ch29-083":"notation","ch29-084":"notation","ch29-085":"notation","ch29-086":"none","ch29-087":"notation","ch29-088":"notation","ch29-089":"none","ch29-090":"none","ch29-091":"none","ch29-092":"none","ch29-093":"none","ch29-094":"none","ch29-095":"none","ch29-096":"notation","ch29-097":"notation","ch29-098":"notation","ch29-099":"notation","ch29-100":"notation","ch29-101":"notation","ch29-102":"none","ch29-103":"none","ch29-104":"none","ch29-105":"notation","ch29-106":"notation","ch29-107":"notation","ch29-108":"notation","ch29-109":"notation","ch29-110":"notation","ch29-111":"none","ch29-112":"none","ch29-113":"none","ch29-114":"none","ch29-115":"none","ch29-116":"none","ch29-117":"none","ch29-118":"none","ch29-119":"none","ch29-120":"none","ch29-121":"none","ch29-122":"none","ch29-123":"notation","ch29-124":"none","ch29-125":"none","ch29-126":"notation","ch29-127":"notation","ch29-128":"notation","ch29-129":"notation","ch29-130":"none","ch29-131":"notation","ch29-132":"notation","ch29-133":"notation","ch29-134":"none","ch29-135":"notation","ch29-136":"notation","ch29-137":"notation","ch29-138":"none","ch29-139":"none","ch29-140":"none","ch29-141":"none","ch29-142":"none","ch29-143":"none","ch29-144":"notation","ch29-145":"notation","ch29-146":"none","ch29-147":"none","ch29-148":"none","ch29-149":"none","ch29-150":"notation","ch29-151":"notation","ch29-152":"notation","ch29-153":"notation","ch29-154":"none","ch29-155":"none","ch29-156":"none","ch29-157":"none","ch29-158":"notation","ch29-159":"notation","ch29-160":"notation","ch29-161":"notation","ch29-162":"notation","ch29-163":"notation","ch29-164":"none","ch29-165":"notation","ch29-166":"none","ch29-167":"notation","ch29-168":"notation","ch29-169":"none","ch29-170":"none","ch29-171":"notation","ch29-172":"notation","ch29-173":"notation","ch29-174":"notation","ch29-175":"notation","ch29-176":"notation","ch29-177":"notation","ch29-178":"none","ch29-179":"notation","ch29-180":"notation","ch29-181":"notation","ch29-182":"notation","ch29-183":"notation","ch29-184":"notation","ch29-185":"notation","ch29-186":"none","ch29-187":"none","ch29-188":"notation","ch29-189":"none","ch29-190":"none"};
+var K={"ch29-001":"notation","ch29-002":"definition","ch29-003":"notation","ch29-004":"notation","ch29-005":"notation","ch29-006":"definition","ch29-007":"notation","ch29-008":"printed","ch29-009":"printed","ch29-010":"notation","ch29-011":"notation","ch29-012":"notation","ch29-013":"printed","ch29-014":"printed","ch29-015":"printed","ch29-016":"notation","ch29-017":"notation","ch29-018":"notation","ch29-019":"notation","ch29-020":"notation","ch29-021":"notation","ch29-022":"notation","ch29-023":"definition","ch29-024":"notation","ch29-025":"definition","ch29-026":"notation","ch29-027":"notation","ch29-028":"notation","ch29-029":"notation","ch29-030":"notation","ch29-031":"definition","ch29-032":"notation","ch29-033":"notation","ch29-034":"notation","ch29-035":"notation","ch29-036":"notation","ch29-037":"notation","ch29-038":"notation","ch29-039":"notation","ch29-040":"notation","ch29-041":"","ch29-042":"definition","ch29-043":"external","ch29-044":"notation","ch29-045":"printed","ch29-046":"printed","ch29-047":"external","ch29-048":"equiv","ch29-049":"notation","ch29-050":"equiv","ch29-051":"notation","ch29-052":"external","ch29-053":"external","ch29-054":"notation","ch29-055":"definition","ch29-056":"definition","ch29-057":"notation","ch29-058":"external","ch29-059":"definition","ch29-060":"definition","ch29-061":"definition","ch29-062":"notation","ch29-063":"external","ch29-064":"notation","ch29-065":"notation","ch29-066":"notation","ch29-067":"definition","ch29-068":"notation","ch29-069":"notation","ch29-070":"definition","ch29-071":"notation","ch29-072":"notation","ch29-073":"notation","ch29-074":"notation","ch29-075":"external","ch29-076":"equiv","ch29-077":"printed","ch29-078":"printed","ch29-079":"definition","ch29-080":"notation","ch29-081":"notation","ch29-082":"notation","ch29-083":"notation","ch29-084":"notation","ch29-085":"notation","ch29-086":"external","ch29-087":"notation","ch29-088":"notation","ch29-089":"definition","ch29-090":"definition","ch29-091":"equiv","ch29-092":"definition","ch29-093":"corrected","ch29-094":"external","ch29-095":"equiv","ch29-096":"notation","ch29-097":"notation","ch29-098":"notation","ch29-099":"notation","ch29-100":"notation","ch29-101":"notation","ch29-102":"definition","ch29-103":"definition","ch29-104":"definition","ch29-105":"notation","ch29-106":"notation","ch29-107":"notation","ch29-108":"notation","ch29-109":"notation","ch29-110":"notation","ch29-111":"printed","ch29-112":"printed","ch29-113":"printed","ch29-114":"printed","ch29-115":"printed","ch29-116":"printed","ch29-117":"printed","ch29-118":"printed","ch29-119":"printed","ch29-120":"definition","ch29-121":"corrected","ch29-122":"definition","ch29-123":"notation","ch29-124":"printed","ch29-125":"printed","ch29-126":"notation","ch29-127":"notation","ch29-128":"notation","ch29-129":"notation","ch29-130":"definition","ch29-131":"notation","ch29-132":"notation","ch29-133":"notation","ch29-134":"definition","ch29-135":"notation","ch29-136":"notation","ch29-137":"notation","ch29-138":"definition","ch29-139":"definition","ch29-140":"printed","ch29-141":"printed","ch29-142":"printed","ch29-143":"printed","ch29-144":"notation","ch29-145":"notation","ch29-146":"definition","ch29-147":"printed","ch29-148":"printed","ch29-149":"external","ch29-150":"notation","ch29-151":"notation","ch29-152":"notation","ch29-153":"notation","ch29-154":"definition","ch29-155":"definition","ch29-156":"definition","ch29-157":"definition","ch29-158":"notation","ch29-159":"notation","ch29-160":"notation","ch29-161":"notation","ch29-162":"notation","ch29-163":"notation","ch29-164":"definition","ch29-165":"notation","ch29-166":"definition","ch29-167":"notation","ch29-168":"notation","ch29-169":"definition","ch29-170":"definition","ch29-171":"notation","ch29-172":"notation","ch29-173":"notation","ch29-174":"notation","ch29-175":"notation","ch29-176":"notation","ch29-177":"notation","ch29-178":"none","ch29-179":"notation","ch29-180":"notation","ch29-181":"notation","ch29-182":"notation","ch29-183":"notation","ch29-184":"notation","ch29-185":"notation","ch29-186":"definition","ch29-187":"definition","ch29-188":"notation","ch29-189":"definition","ch29-190":"definition"};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';
