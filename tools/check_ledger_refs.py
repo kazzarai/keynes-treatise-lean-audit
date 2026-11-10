@@ -14,7 +14,14 @@
       (namespace 付きなら末尾一致も可) と突き合わせる。
 備考欄: 表のすべての行 (判定・種別に関わらず) の備考欄に書かれた `略号/名前` (括弧の中も、「・」「,」「;」「、」で並べたものも) も
       同じ規則で拾い、実在だけを確かめる (判定は触らない)。名前空間の名前 (`Witness_F20_11_den` など) も実在とみなす。
-出力: `names=M missing=N` (Lean 欄) と `note_refs=K note_names=L note_missing=J` (備考欄)。
+未の分類 (B51): 式行の Lean 欄が「未」で始まるときは、`未 (分類: 理由)` の形で、分類が次の 5 つの
+      どれかでなければならない。裸の「未」、括弧の先頭が 5 分類のどれでもないもの、理由が空のものは
+      `MISSING 行ID → (…)` として数え、終了コード 1 (関門 [4] が赤)。
+        他の著者の式 / Keynes が却下 / 境界: 外から公理が要る / 近似・実測値 / 一般の証明なし
+      記法行の「未」は対象外。
+出力: `names=M missing=N mi=K bare=B unclassified=U` (Lean 欄; mi は式行の未の数、bare は裸の「未」、
+      unclassified は分類の語が外れたもの) と `note_refs=K note_names=L note_missing=J` (備考欄)、
+      `mi_classes=` に分類ごとの行数。
       見つからない名前があれば `MISSING 行ID → 名前` (備考欄は末尾に `(備考)`) を並べ、終了コード 1。
 """
 import glob
@@ -37,6 +44,9 @@ REF = re.compile(
 TAIL = re.compile(
     r"\s*[,;、・]\s*(?:(?:全 phase|\w+(?:,\w+)*)/)?(?P<bare>[A-Za-zΑ-Ωα-ω_][\w.'′!?]*(?=\s*(?:[,;、・]|$)))?"
 )
+# 式行の「未」の 5 分類 (B51)。Lean 欄は `未 (分類: 理由)` で、理由は空でない
+MI_CLASSES = ("他の著者の式", "Keynes が却下", "境界: 外から公理が要る", "近似・実測値", "一般の証明なし")
+MI = re.compile(r"^未 \((" + "|".join(re.escape(c) for c in MI_CLASSES) + r"): \S.*\)$")
 SECTION = re.compile(r"^\s*section(?:\s+(" + IDENT + r"))?\s*$")
 END = re.compile(r"^\s*end(?:\s+(" + IDENT + r"))?\s*$")
 FIELD = re.compile(r"^\s+(" + IDENT + r")\s*:")
@@ -137,11 +147,12 @@ def names_in(text, abbrevs):
 
 
 def ledger_refs(ledger_dir, abbrevs):
-    """(行ID, 名前) の列、対象にした行の数、備考欄の (行ID, 名前) の列。
+    """(行ID, 名前) の列、対象にした行の数、備考欄の (行ID, 名前) の列、式行の未の (行ID, 分類) の列。
 
     備考欄は括弧の中も含めて拾う (散文の中の `10a/名前`)。判定には使わず、実在だけを確かめる。
+    式行の未は分類を確かめる (分類が外れたものは refs に疑似の名前で積み、MISSING にする)。
     """
-    refs, rows, note_refs = [], 0, []
+    refs, rows, note_refs, mi = [], 0, [], []
     for path in sorted(glob.glob(os.path.join(ledger_dir, "*.md"))):
         hdr = None
         with open(path, encoding="utf-8") as fh:
@@ -164,6 +175,18 @@ def ledger_refs(ledger_dir, abbrevs):
                 if col is None:
                     continue
                 kind, cell = d.get("式/記法", ""), d[col]
+                if kind == "式" and cell.startswith("未"):
+                    # 式行の未は `未 (分類: 理由)` の 5 分類のどれか。裸の「未」と分類外は MISSING に数える
+                    m = MI.match(cell)
+                    if cell == "未":
+                        mi.append((d["行ID"], None))
+                        refs.append((d["行ID"], "(式行の Lean 欄が裸の「未」)"))
+                    elif not m:
+                        mi.append((d["行ID"], None))
+                        refs.append((d["行ID"], "(未 の分類が 5 分類のどれでもない)"))
+                    else:
+                        mi.append((d["行ID"], m.group(1)))
+                    continue
                 if kind == "式":
                     if not cell.startswith(("✓", "≈", "✎", "外部公理依存", "定")):
                         continue
@@ -181,7 +204,7 @@ def ledger_refs(ledger_dir, abbrevs):
                 # 同じ行で同じ名前を 2 度挙げた (別ファイルの略号違い `8d/V; 8dp/V` など) ときは 1 回に数える
                 for n in dict.fromkeys(found):
                     refs.append((d["行ID"], n))
-    return refs, rows, note_refs
+    return refs, rows, note_refs, mi
 
 
 def main(argv):
@@ -189,7 +212,7 @@ def main(argv):
         print(__doc__)
         return 2
     decls, ndecl, abbrevs, spaces = declared_names(argv[2])
-    refs, rows, note_refs = ledger_refs(argv[1], abbrevs)
+    refs, rows, note_refs, mi = ledger_refs(argv[1], abbrevs)
     distinct = {n for _, n in refs}
     missing = sorted({n for n in distinct if n not in decls})
     note_distinct = {n for _, n in note_refs}
@@ -201,7 +224,10 @@ def main(argv):
     for rid, n in note_refs:
         if n in note_missing:
             print(f"MISSING {rid} → {n} (備考)")
-    print(f"names={len(distinct)} missing={len(missing)}")
+    bare = sum(1 for _, n in refs if n == "(式行の Lean 欄が裸の「未」)")
+    unclassified = sum(1 for _, c in mi if c is None) - bare
+    print(f"names={len(distinct)} missing={len(missing)} mi={len(mi)} bare={bare} unclassified={unclassified}")
+    print("mi_classes=" + "; ".join(f"{c} {sum(1 for _, x in mi if x == c)}" for c in MI_CLASSES))
     print(f"note_refs={len(note_refs)} note_names={len(note_distinct)} note_missing={len(note_missing)}")
     return 1 if missing or note_missing else 0
 
