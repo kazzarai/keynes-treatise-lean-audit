@@ -39,14 +39,14 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch20/index.html">&larr; Ch. 20</a> | <a href="../ch22/index.html">Ch. 22 &rarr;</a></nav>
 <h1>Chapter XXI. The Nature of Inductive Argument Continued</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 242&ndash;250 (Cornell copy, PDF pp. 262&ndash;270). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;)</th><td><b>0 / 3 formulas, 0.0% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 0: &#10003;0 &asymp;0 &#9998;0; not yet 3</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;)</th><td><b>3 / 3 formulas, 100.0% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 3: &#10003;1 &asymp;2 &#9998;0; not yet 0</b></td></tr>
 <tr><th>Ledger rows</th><td>7</td></tr>
 <tr><th>Formulas</th><td>3 (display 0, inline 3; items 3, numbered 0)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>0 &nbsp; <span class="mark equiv">&asymp;</span>0 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>3</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>1 &nbsp; <span class="mark equiv">&asymp;</span>2 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>0</td></tr>
 <tr><th>Notation</th><td>4 (with a Lean counterpart 0)</td></tr>
 <tr><th>Reference rows</th><td>0</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (7)</button><button type="button" data-k="printed">&#10003; (0)</button><button type="button" data-k="equiv">&asymp; (0)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (3)</button><button type="button" data-k="notation">notation (4)</button></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (7)</button><button type="button" data-k="printed">&#10003; (1)</button><button type="button" data-k="equiv">&asymp; (2)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (0)</button><button type="button" data-k="notation">notation (4)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
 <section class="card" id="ch21-001">
 <h2>ch21-001</h2>
@@ -66,9 +66,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 242 (PDF p. 262) &middot; &sect;1 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>a = 1, 2, 3, and 4</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(対応なし: 第III部の phase は本章を扱わない)</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>(数値評価: th_21_fermat_primes) keynes_misc_numerics/th_21_fermat_primes (a = 1, 2, 3, 4 で 2^(2^a) + 1 は素数; norm_num の素数判定)</dd>
 <dt>Anchor words</dt><dd><code>laborious—namely, for</code></dd>
-<dt>Remarks</dt><dd>既存 F21.2</dd>
+<dt>Remarks</dt><dd>既存 F21.2。B50: 「a = 1, 2, 3, and 4 で検証済み」を素数性の算術として評価した (5, 17, 257, 65537)</dd>
 <dt>Crop</dt><dd>folio 242, x 125&ndash;1335, y 1526&ndash;1628 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch21-003">
@@ -90,9 +90,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 242 (PDF p. 262) &middot; &sect;1 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>a = 4</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(対応なし: 第III部の phase は本章を扱わない)</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>(数値評価: th_21_fermat_a4) keynes_misc_numerics/th_21_fermat_a4 (2^(2^4) + 1 = 65537、素数; norm_num)</dd>
 <dt>Anchor words</dt><dd><code>it yields primes up to</code></dd>
-<dt>Remarks</dt><dd>既存 F21.3 の後半</dd>
+<dt>Remarks</dt><dd>既存 F21.3 の後半。B50: a = 4 の値 65537 まで素数であることの算術評価</dd>
 <dt>Crop</dt><dd>folio 242, x 125&ndash;1335, y 1932&ndash;1984 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch21-005">
@@ -101,9 +101,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 242 (PDF p. 262) &middot; &sect;1 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>2^{2^5} + 1 = 4, 294, 967, 297 = 641 × 6, 700, 417.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(対応なし: 第III部の phase は本章を扱わない)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>keynes_misc_numerics/th_21_euler_641 (2^(2^5) + 1 = 4294967297 ∧ 4294967297 = 641 × 6700417; 付加: 合成数、因数 641・6700417 は素数; norm_num)</dd>
 <dt>Anchor words</dt><dd><code>disproved in recent times, e.g.</code></dd>
-<dt>Remarks</dt><dd>既存 F21.4。脚注 1 行目末 <code>2^{2^5}+1=</code> で改行し 2 行目に続く。桁区切りコンマの後に細い空白 (原寸で確認)</dd>
+<dt>Remarks</dt><dd>既存 F21.4。脚注 1 行目末 <code>2^{2^5}+1=</code> で改行し 2 行目に続く。桁区切りコンマの後に細い空白 (原寸で確認)。B50 r1 (司令塔裁定): 印刷の算術等式 2 本がそのまま定理の連言肢なので ✓</dd>
 <dt>Crop</dt><dd>folio 242, x 125&ndash;1335, y 2096&ndash;2172 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch21-006">
@@ -133,7 +133,7 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch20/index.html">&larr; Ch. 20</a> | <a href="../ch22/index.html">Ch. 22 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch21.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch21-001":"notation","ch21-002":"none","ch21-003":"notation","ch21-004":"none","ch21-005":"none","ch21-006":"notation","ch21-007":"notation"};
+var K={"ch21-001":"notation","ch21-002":"equiv","ch21-003":"notation","ch21-004":"equiv","ch21-005":"printed","ch21-006":"notation","ch21-007":"notation"};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';

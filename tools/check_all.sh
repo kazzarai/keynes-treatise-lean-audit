@@ -4,7 +4,8 @@
 #         3 verdict count -> logs/progress.json (phases/ only);
 #         1i no phases/*.lean imports others/;
 #         1o/2o every others/**/*.lean compiles and has no sorryAx (comparison files, no ledger rows;
-#           NOT counted in [3]); `import phases.X` / `import others.X` are first compiled with
+#           NOT counted in [3]; default mode is RED if .lean files exist under others/ but fewer were
+#           picked up); `import phases.X` / `import others.X` are first compiled with
 #           `lean -R . -o` into a temporary directory that is put on LEAN_PATH;
 #         4 every name cited in docs/全数台帳 (Lean column and notes column) exists in phases/
 #           (tools/check_ledger_refs.py, no MISSING);
@@ -45,6 +46,16 @@ bad=$(grep -lE '^[[:space:]]*import[[:space:]]+others([.[:space:]]|$)' phases/*.
 if [ -n "$bad" ]; then echo "[1i] RED phases import others/:" | tee -a "$LOG"; printf '%s\n' "$bad" | tee -a "$LOG"; red=1
 else echo "[1i] ok no phases/*.lean imports others/" | tee -a "$LOG"; fi
 # [1o]/[2o] others/: comparison files (no ledger rows), compiled but NOT counted in [3]
+# default mode: .lean files that exist under others/ (counted independently of the list above, following
+# symbolic links) but were not all picked up are RED, so an empty detection can never pass as "nothing to check"
+if [ $# -eq 0 ]; then
+  n_others=$(find -L others -name '*.lean' 2>/dev/null | wc -l | tr -d ' ')
+  if [ "$n_others" -gt "${#OFILES[@]}" ]; then
+    if [ ${#OFILES[@]} -eq 0 ]; then echo "[1o] RED others: files exist but none checked ($n_others .lean under others/)" | tee -a "$LOG"
+    else echo "[1o] RED others: only ${#OFILES[@]} of $n_others .lean files under others/ are checked" | tee -a "$LOG"; fi
+    red=1
+  fi
+fi
 if [ ${#OFILES[@]} -gt 0 ]; then
   tmpo=$(mktemp -d); built=" "
   # build_mod M: compile module M (phases.X or others.X.Y) to $tmpo/M.olean after its own imports

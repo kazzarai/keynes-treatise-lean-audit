@@ -8,9 +8,8 @@
 - Lean status, decided mechanically by one rule: **✓** the printed relation appears in a theorem statement (only bound-variable names, Lean notation and subscript layout may differ); **≈** the theorem states an algebraically equivalent form (denominators cleared, a definition substituted, hypotheses re-parametrised); **✎** the printed form is refuted and a corrected form is the theorem; **not yet** — nothing in the statement of any theorem (lines inside a proof, values absorbed by substitution, sums only); **外** (external) — depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; **定** (definition) — the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition, or the theorem whose hypothesis carries it, is cited; there is no theorem statement to compare. (日本語: 定義・名付け・記法の約束・例の中で置かれた仮定 — 印刷が主張ではなく前提として置いている行。定理の前提として写す。) A reprint of a hypothesis copies the status of the line it reprints. At item level, an item counts as covered if any of its lines is ✓/≈/✎ (外 and 定 do not count).
 - The names in the Lean column (`file/theorem`) are checked mechanically: stage [4] of `tools/check_all.sh` (`tools/check_ledger_refs.py`) fails if a name cited for a ✓/≈/✎/外/定 formula row or a notation row is not declared anywhere in `phases/` (every name in a list separated by `・`, `,`, `;` or `、` is checked, not only the first; a later name may start with a Latin or Greek letter or `_` and must be followed by a separator or the end of the cell, so a later item followed by prose, as in `; h = 0 の場合は`, is not checked); a 定 row that cites no name is also reported. The gate prints `[4] ok ledger refs: rows=… decls=… refs=… names=… missing=0`, or `[4] RED ledger refs: …` followed by one `MISSING <row ID> → <name>` line per missing name.
 
-## Totals (v1.21)
-Formula lines **1,175**; notations 731; items 698 (numbered 202). Lines whose relation appears in a theorem statement (✓+≈+✎, proved): 925 (✓ 572 / ≈ 314 / ✎ 39); lines that depend on a named external axiom (外): 12; lines whose Lean counterpart is a definition or a named premise (定): 114; lines in Lean in all (✓+≈+✎+外+定): **1,051 / 1,175**; not yet 124 (by part: I 29; II 10; III 18; IV 17; V 50). Items covered by at least one theorem (✓/≈/✎ only; 外 and 定 are not counted): 470 / 698; numbered items 187 / 202. By part (items covered / items): I 51/102, II 328/358, III 44/62, IV 18/35, V 29/141. Part II (Chapters X–XVII) has 825 formula lines: ✓ 475 / ≈ 270 / ✎ 28 / 定 42 / not yet 10.
-Formula lines **1,175**; notations 731; items 698 (numbered 202). Lines whose relation appears in a theorem statement (✓+≈+✎, proved): 922 (✓ 570 / ≈ 313 / ✎ 39); lines that depend on a named external axiom (外): 9; lines whose Lean counterpart is a definition or a named premise (定): 101; lines in Lean in all (✓+≈+✎+外+定): **1,032 / 1,175**; not yet 143 (by part: I 29; II 10; III 18; IV 17; V 69). Items covered by at least one theorem (✓/≈/✎ only; 外 and 定 are not counted): 467 / 698; numbered items 187 / 202. By part (items covered / items): I 51/102, II 328/358, III 44/62, IV 18/35, V 26/141. Part II (Chapters X–XVII) has 825 formula lines: ✓ 475 / ≈ 270 / ✎ 28 / 定 42 / not yet 10.
+## Totals (v1.25)
+Formula lines **1,175**; notations 731; items 698 (numbered 202). Lines whose relation appears in a theorem statement (✓+≈+✎, proved): 930 (✓ 573 / ≈ 317 / ✎ 40); lines that depend on a named external axiom (外): 12; lines whose Lean counterpart is a definition or a named premise (定): 126; lines in Lean in all (✓+≈+✎+外+定): **1,068 / 1,175**; not yet 107 (by part: I 27; II 10; III 15; IV 5; V 50). Items covered by at least one theorem (✓/≈/✎ only; 外 and 定 are not counted): 475 / 698; numbered items 187 / 202. By part (items covered / items): I 51/102, II 328/358, III 47/62, IV 20/35, V 29/141. Part II (Chapters X–XVII) has 825 formula lines: ✓ 475 / ≈ 270 / ✎ 28 / 定 42 / not yet 10.
 
 The per-chapter figures below are the counts of the ledger rows (`chNN.md`, formula rows by Lean status) and agree with each chapter's own 集計 table; `summary.csv` is recomputed from the same rows for every chapter by `tools/atlas/gen_summary.py` (all columns but the title and 'numbered'; 外 and 定 are its last two columns), and its 'numbered' column is not uniform across parts (some chapters count numbered lines, some numbered items) — the table below is the one to cite. The Totals paragraph and the table (the **all** row included) are written by `tools/atlas/gen_readme_totals.py` from the same ledger rows, never typed; gate [9] runs it with `--check`. "In Lean" counts ✓+≈+✎+外+定, as the atlas index does; the first three alone are the lines proved.
 
@@ -20,7 +19,7 @@ The per-chapter figures below are the counts of the ledger rows (`chNN.md`, form
 | I | 1 | The Meaning of Probability | 1 | 1 | 0 | 0/0 | 0 / 0 / 0 / 0 / 1 / 0 | 1 | 0 |
 | I | 2 | Probability in Relation to the Theory of Knowledge | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 / 0 / 0 | 0 | 0 |
 | I | 3 | The Measurement of Probabilities | 8 | 8 | 4 | 1/2 | 0 / 3 / 1 / 0 / 4 / 0 | 8 | 19 |
-| I | 4 | The Principle of Indifference | 31 | 31 | 16 | 3/3 | 15 / 1 / 0 / 0 / 0 / 15 | 16 | 95 |
+| I | 4 | The Principle of Indifference | 31 | 31 | 16 | 3/3 | 15 / 1 / 0 / 0 / 2 / 13 | 18 | 95 |
 | I | 5 | Other Methods of Determining Probabilities | 16 | 16 | 6 | 3/3 | 3 / 3 / 0 / 0 / 10 / 0 | 16 | 22 |
 | I | 6 | The Weight of Arguments | 32 | 32 | 18 | 2/5 | 15 / 3 / 0 / 0 / 0 / 14 | 18 | 26 |
 | I | 7 | Historical Retrospect | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 / 0 / 0 | 0 | 5 |
@@ -37,12 +36,12 @@ The per-chapter figures below are the counts of the ledger rows (`chNN.md`, form
 | III | 18 | Introduction | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 / 0 / 0 | 0 | 1 |
 | III | 19 | The Nature of Argument by Analogy | 16 | 16 | 7 | 0/0 | 3 / 2 / 2 / 0 / 0 / 9 | 7 | 49 |
 | III | 20 | The Value of Multiplication of Instances, or Pure Induction | 30 | 30 | 24 | 0/0 | 15 / 7 / 2 / 0 / 0 / 6 | 24 | 10 |
-| III | 21 | The Nature of Inductive Argument Continued | 3 | 3 | 0 | 0/0 | 0 / 0 / 0 / 0 / 0 / 3 | 0 | 4 |
+| III | 21 | The Nature of Inductive Argument Continued | 3 | 3 | 3 | 0/0 | 1 / 2 / 0 / 0 / 0 / 0 | 3 | 4 |
 | III | 22 | The Justification of These Methods | 3 | 3 | 3 | 0/0 | 3 / 0 / 0 / 0 / 0 / 0 | 3 | 25 |
 | III | 23 | Some Historical Notes on Induction | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 / 0 / 0 | 0 | 0 |
 | IV | 24 | The Meanings of Objective Chance, and of Randomness | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 / 0 / 0 | 0 | 18 |
 | IV | 25 | Some Problems arising out of the Discussion of Chance | 4 | 4 | 1 | 0/0 | 0 / 1 / 0 / 0 / 0 / 3 | 1 | 6 |
-| IV | 26 | The Application of Probability to Conduct | 31 | 31 | 17 | 0/0 | 6 / 10 / 1 / 0 / 0 / 14 | 17 | 11 |
+| IV | 26 | The Application of Probability to Conduct | 31 | 31 | 19 | 0/0 | 6 / 11 / 2 / 0 / 10 / 2 | 29 | 11 |
 | V | 27 | The Nature of Statistical Inference | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 / 0 / 0 | 0 | 0 |
 | V | 28 | The Law of Great Numbers | 0 | 0 | 0 | 0/0 | 0 / 0 / 0 / 0 / 0 / 0 | 0 | 0 |
 | V | 29 | The Use of A Priori Probabilities for the Prediction of Statistical Frequency | 83 | 83 | 12 | 0/2 | 9 / 3 / 0 / 7 / 14 / 50 | 33 | 106 |
@@ -51,7 +50,7 @@ The per-chapter figures below are the counts of the ledger rows (`chNN.md`, form
 | V | 32 | The Inductive Use of Statistical Frequencies | 26 | 26 | 10 | 0/0 | 5 / 5 / 0 / 0 / 16 / 0 | 26 | 7 |
 | V | 33 | Outline of a Constructive Theory | 18 | 18 | 2 | 0/0 | 1 / 0 / 1 / 3 / 13 / 0 | 18 | 79 |
 | III | N3 | Notes on Part III | 20 | 10 | 10 | 9/9 | 20 / 0 / 0 / 0 / 0 / 0 | 20 | 2 |
-| **all** | | | **1,175** | **698** | **470** | **187/202** | **572 / 314 / 39 / 12 / 114 / 124** | **1,051** | **731** |
+| **all** | | | **1,175** | **698** | **475** | **187/202** | **573 / 317 / 40 / 12 / 126 / 107** | **1,068** | **731** |
 
 ## ℝ 依存 A〜E の本数 (第II部)
 

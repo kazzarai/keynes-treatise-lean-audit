@@ -1,7 +1,8 @@
 # gen_readme_totals.py — docs/全数台帳/README.md の「Totals」の段落と章別表 (合計行 all を含む) を台帳から作り直す。
 # 数はすべて台帳本体 (chNN.md・notes_III.md) の行から、gen_index.py と同じ関数 (chapter_stats) で数える。手で打たない。
-# 書き換える範囲: Totals 節 (最初の「## Totals (…)」見出しから、最後の「## Totals (…)」見出しの次の段落まで) を
-#   見出し 1 つと段落 1 つに置き換える (追記しない; 古い版の見出しと段落が残っていれば消える)。
+# 書き換える範囲: Totals 節 (最初の「## Totals (…)」見出しから「## Per chapter」の前まで) を
+#   見出し 1 つと段落 1 つに置き換える (追記しない; 2 つ目以降の「## Totals」見出しと「Formula lines **」で始まる段落は消え、
+#   節の他の文章は残る)。
 #   「## Per chapter」の表は数値の列と all 行を書き換え、all 行が 2 行以上あれば 1 行にする。
 #   部・章・題の列、表の見出し行、他の文章は変えない。
 # 版の表示: --version <版> (例 v1.21) を渡せば見出しを「## Totals (<版>)」にする。渡さなければ最後の
@@ -78,18 +79,19 @@ TOTALS_RE = re.compile(r"^## Totals(?: \((?P<ver>[^)]*)\))?\s*$")
 
 def rebuild(text, st, version=None):
     lines = text.split("\n")
-    # Totals 節: 見出しが複数あれば、最初の見出しから最後の見出しの段落までを見出し 1 つ・段落 1 つにする
+    # Totals 節: 最初の「## Totals」見出しから「## Per chapter」の前までを、見出し 1 つ・段落 1 つ
+    # (+ 節に残る他の文章) にする。古い版の見出しと「Formula lines **」で始まる段落は消す (追記しない)。
     heads = [k for k, l in enumerate(lines) if TOTALS_RE.match(l)]
     assert heads, "README.md に「## Totals」の見出しがない"
-    j = heads[-1] + 1
-    while not lines[j].strip():
-        j += 1
-    assert not lines[j].startswith("#"), "Totals の見出しの次に段落がない"
+    end = next(n for n, l in enumerate(lines) if l.startswith("## Per chapter"))
+    assert heads[-1] < end, "Totals の見出しが「## Per chapter」の後にある"
     if version is None:
         version = TOTALS_RE.match(lines[heads[-1]]).group("ver")
     head = "## Totals" + (f" ({version})" if version else "")
     para, tot = totals_paragraph(st)
-    lines[heads[0]:j + 1] = [head, para]
+    rest = [l for l in lines[heads[0] + 1:end]
+            if not l.startswith("Formula lines **") and not TOTALS_RE.match(l)]
+    lines[heads[0]:end] = [head, para] + rest
     # 章別表
     k = next(n for n, l in enumerate(lines) if l.startswith("## Per chapter"))
     n = k + 1
