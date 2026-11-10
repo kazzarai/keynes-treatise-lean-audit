@@ -199,3 +199,32 @@ folio 307–323 の全葉を画像で通読し、記号式 27 件 (F26.1–F26.2
 | 19 | #18 | 225 | 9b th_19_18_src | E | g(φ,f₁)/h ≥ g(φ,f)/h ≥ g(φ₁,f)/h, as printed. The prose (#12, folio 224 "increases"/"diminish") is strict; strictness is not derivable even with #13–15 (StrictnessCountermodel: all three equal 1) |
 | 19 | #35 | 230 | 9b p_sec9 | T | general formula prints the negative-analogy term as `Ā(_aφ¹)` (superscript 1); folios 227–229, 231 print `φ′`. Read as `_aφ′`; noted in the Lean comment, not refuted (symbol slip, no proposition at stake) |
 | 19 | #7–10, #26, #29, #32, #34, #38, #42 | 223–231 | 9b A, Abar, p_sec6–p_sec9, ev_partial, ev_negative | — | notation only (definitions); §5–§11 claims that need extra principles are listed as 形式化の境界の記録 in the Lean file, not stated as theorems |
+
+## 第 V 部 第 XXIX 章 (phase14a・phase14b・phase16b・phase16c、台帳外、分類は裁定待ち)
+
+照合: `原典照合1921/img_all/folio_338–360.png` (密な行は `img_all/hires/`)、台帳 `docs/全数台帳/ch29.md` の所見候補 F29.1–F29.22 (行 ID は同台帳の ch29-NNN)。Lean: `phases/keynes_part_v_phase14a_bernoulli_premises.lean` (14a)、`phases/keynes_part_v_phase14b_bernoulli_analytic.lean` (14b)、`phases/keynes_part_v_phase16b_poisson_succession.lean` (16b)、`phases/keynes_part_v_phase16c_tchebycheff.lean` (16c)。B36 以来未記録だった F29.10–F29.15 を含め、B49 修正 1 回目 (2026-11-10) に一括して記録した。分類は上の E/C/T/S/F に倣う作業役の候補 (T はここでは植字・文字の不整合、S は狭義不等号) で、裁定は司令塔。台帳の判定案で「S」(記法の緩み・条件の省略・数値の丸め) としたものは、本節では「注記」と書く。
+
+| 章 | 項目 | folio | Phase (Lean) | 分類 (候補) | 注記 |
+|---|---|---|---|---|---|
+| 29 | F29.1 `t − 1/a²` (ch29-161) | 357 | 16c nec_29_161, th_29_158 | T | 355・356 の `1 − 1/a²` の 1 がイタリック t に印刷。§14 で t は定義されていない。t を §13 の a = √n/t (ch29-130) で読むと、s = 16、t = 2 で t − 1/a² = 7/4 > 1 となり偽 (nec_29_161; この読みは作業役の読みで裁定待ち)。1 と読んだ形を検証 (th_29_158) |
+| 29 | F29.2 `sp ± √2 ak √s` (ch29-160) | 357 | 16c nec_29_160, th_29_160_fix | F | 345 の k = √(2Σp_λq_λ/s) から a√(Σp_λq_λ) = ak√s/√2 で、印刷の幅はその 2 倍 (nec_29_160)。修正形 ak√s/√2 を検証 (th_29_160_fix); 356 の Θ(a/√2) と整合 |
+| 29 | F29.3 `Σ r_μ z_μ² = c` (ch29-104) | 353 | 16c mean2 (c_1 と読む) | T | ch29-103 の `Σ r_μ z_μ = c` と同じ文字; 354 の c_1 が意図 |
+| 29 | F29.4 `z_μ t` (ch29-117) | 354 | 16c th_29_117 (t を読まない) | T | `z_μ` の直後の余分な t (ch29-109・119 には無い) |
+| 29 | F29.5 Tchebycheff (1846) の I.–III. (ch29-163/165/167/168) | 357 | 16c nec_29_163, th_29_165_cmp | F (I.) / 注記 (II.) | I. の因子 (s/μ)^m は但し書き m > s + 1 の下でも偽 (μ = 10、p = 1/5、m = 5; nec_29_163)、III. の (s/m)^m が意図と読める。II. の根号 √(μ(μ − n)/μ) は I. を起こらない回数に写した形の √(n(μ − n)/μ) 以上で、印刷の II. は弱い上界 (反例にならない; th_29_165_cmp、但し書き n < s − 1 の下)。III. 第 2 行の指数 n − μ は未検。I.–III. そのものは証明していない。*Crelle* 33 (1846) との照合待ち |
+| 29 | F29.6 `2/√π ∫_0^t e^{−t²} dt = Θ(t)` (ch29-031) | 340 | 14b Θ (積分変数を u とした) | 注記 | 積分の上限と積分変数が同じ t |
+| 29 | F29.7 Σ の上限 λ (ch29-158/159) | 357 | 16c th_29_158 (上限を s と読む) | 注記 | 三つの Σ の上限が添字と同じ λ |
+| 29 | F29.8 表の `·9445` (ch29-152) | 356 | 16c nec_29_152, th_29_152 | 注記 | 1 − 1/18 = ·94444… の 4 桁の丸め (·9444) でない |
+| 29 | F29.9 Simmons の表 (ch29-187) | 360 | 16c nec_29_187_table, th_29_187_table, th_29_187_table_1000 | 注記 | 8 行目 (p = 1/100、m = 100) の Δ は ·101794… で印刷の ·101813 と 10⁻⁵ 以上違う; 他の 9 行は印刷の桁で合う (印刷は切り捨て)。Simmons の値の引用 |
+| 29 | F29.10 `y_r/h > p^r` (ch29-050) | 343 | 14a th_29_050 | 注記 (≈) | 前提「y_s/y_{s−1}h increases with s」の下で成り立つのは p > 0 かつ r ≥ 2 のとき; 印刷はこの 2 条件を書かない |
+| 29 | F29.11 `y_s/y_{s−1}h = p` (ch29-048) | 343 | 14a th_29_048, nec_29_048_single | 注記 (≈) | 「r 以下のすべての長さで y_s/h = p^s」と p ≠ 0 を補って閉じる (読みの補い); 単一の r の読みへの反例は実数の算術上のもので担体上の模型ではない |
+| 29 | F29.12 「or the nearest integer to this」 (ch29-001/009/010) | 338 | 14b nec_29_010, nec_29_010_small, th_29_010_fix | F | 括弧内は一般に偽: m = 6、p = 9/10 で mp = 5.4、最も近い整数は 5 だが T(6) = ·531 > T(5) = ·354; p = 1/10 でも外れる。最大項は mp − q ≤ N ≤ mp + p の整数 N = ⌊(m+1)p⌋ (修正形を検証) |
+| 29 | F29.13 「approximate value」「is, therefore,」「is measured by」 (ch29-012/022/027) | 338–339 | 14b ax_stirling_approx, ax_normal_approx, th_29_012_h0 | 外部公理依存 (分類は裁定待ち) | 局所・積分形の de Moivre–Laplace 定理に当たる近似で、誤差の評価は書かれていない。外部公理 2 本に置いた。h = 0 の場合だけ Mathlib の Stirling から証明 (th_29_012_h0) |
+| 29 | F29.14 Stirling の段 (ch29-076) | 350 | 16b th_29_076, st076_g | 注記 | (s − 1)! を s^{s−½}e^{−(s−1)} と書くが、単独の漸近形は √(2π)s^{s−½}e^{−s} (r も同様)。分子と分母で打ち消すので 076 の比は正しい |
+| 29 | F29.15 初期の確率 P (ch29-079 と 080 の間の本文) | 350 | — | T | 「the initial probability P」の立体の P は、§11 の記法では小文字 p (= r/s、ch29-070) の誤植の候補 |
+| 29 | F29.16 `n_0′ = nm′/m = 6,141,587` (ch29-093) | 352 | 16c nec_29_093, th_29_093_fix, th_29_094_limits | F | 印刷の m = 4,311,076、n = 4,052,193、m′ = 6,533,961 では nm′/m = 6,141,592·27… (nec_29_093); 6,141,592 < nm′/m < 6,141,593 を検証。限界 6,118,361・6,164,813 は 6,141,587 ± 23,226 で印刷の中心値に揃う。Czuber の値の引き写しか、どの数の誤りかは原文照合待ち |
+| 29 | F29.17 `Σ p_κ q_λ r_μ . . . < 1/a²` (ch29-121) | 354 | 16c nec_29_121, th_29_121_fix, th_29_124, th_29_125 | S | 狭義の < は導出不能: 値 −2, 0, 2、確率 1/8, 3/4, 1/8、a = 2 で和 = 1/4 = 1/a² (等号事例)。≤ を検証。結論の 1 − P < 1/a²、P > 1 − 1/a² は狭義で真 (台帳の判定は ✎) |
+| 29 | F29.18 「I know of no solution of this, even approximate」 (ch29-086) | 351 | 16c th_29_086_sol, th_29_086_closed, th_29_086_closed_data | 注記 (補足) | 漸化式は閉じた解 C(q, p) r^{(p)} (s − r)^{(q−p)}/s^{(q)} (上昇階乗; Pólya の壺の分布) をもつ。印刷の誤りではない |
+| 29 | F29.19 分母 a_1 + b_1 + . . . − a² − b² − . . . (ch29-119) | 354 | 16c th_29_119, nec_29_119 | 注記 | 分母が 0 でないことを書かずに仮定している (0 なら等式は偽) |
+| 29 | F29.20 文字 a の二役 (ch29-103/119–129) | 354–355 | 16c mean, th_29_tcheb | 注記 | a が x の平均 (103) と限界の倍率 (119、「greater than unity」) の二役に印刷 (127 で両方が並ぶ)。Lean では倍率を a、平均を mean と書く |
+| 29 | F29.21 26・31・26・34 (ch29-189/190) | 360 | 16c th_29_189, th_29_190 | 注記 | 100 倍した確率 26·17・31·64・26·39・34·87 の切り捨て (丸めなら 31 は 32、34 は 35) |
+| 29 | F29.22 「a maximum when n = 1, constantly diminishing as n increases」 (ch29-178) | 359 | 16c th_29_178 (a = 2, 3, 9 の 9 点のみ) | 注記 | a = 1 (p = 1/2) では二項分布の対称性から Δ = 0 で、狭義の減少は成り立たない (Lean では示していない)。一般の主張は証明していない (台帳は 未) |
