@@ -39,14 +39,14 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch25/index.html">&larr; Ch. 25</a> | <a href="../ch27/index.html">Ch. 27 &rarr;</a></nav>
 <h1>Chapter XXVI. The Application of Probability to Conduct</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 307&ndash;323 (Cornell copy, PDF pp. 327&ndash;343). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;)</th><td><b>17 / 31 formulas, 54.8% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 17: &#10003;6 &asymp;10 &#9998;1; not yet 14</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;+&#23450;)</th><td><b>29 / 31 formulas, 93.5% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 19: &#10003;6 &asymp;11 &#9998;2; definition counterpart (&#23450;) 10; not yet 2</b></td></tr>
 <tr><th>Ledger rows</th><td>43</td></tr>
 <tr><th>Formulas</th><td>31 (display 3, inline 28; items 31, numbered 0)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>6 &nbsp; <span class="mark equiv">&asymp;</span>10 &nbsp; <span class="mark corrected">&#9998;</span>1 &nbsp; <span class="mark none">&#26410;</span>14</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>6 &nbsp; <span class="mark equiv">&asymp;</span>11 &nbsp; <span class="mark corrected">&#9998;</span>2 &nbsp; <span class="mark none">&#26410;</span>2 &nbsp; <span class="mark definition">&#23450;</span>10</td></tr>
 <tr><th>Notation</th><td>11 (with a Lean counterpart 9)</td></tr>
 <tr><th>Reference rows</th><td>1</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (43)</button><button type="button" data-k="printed">&#10003; (6)</button><button type="button" data-k="equiv">&asymp; (10)</button><button type="button" data-k="corrected">&#9998; (1)</button><button type="button" data-k="none">not yet (14)</button><button type="button" data-k="notation">notation (11)</button></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (43)</button><button type="button" data-k="printed">&#10003; (6)</button><button type="button" data-k="equiv">&asymp; (11)</button><button type="button" data-k="corrected">&#9998; (2)</button><button type="button" data-k="none">not yet (2)</button><button type="button" data-k="definition">definition (10)</button><button type="button" data-k="notation">notation (11)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
 <section class="card" id="ch26-001">
 <h2>ch26-001</h2>
@@ -54,9 +54,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>(p + q = 1),</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase8a3_endpoints/th_26_fn2_F1_explicit (前提 hpq, hpq′)</dd>
 <dt>Anchor words</dt><dd><code>p its probability</code></dd>
-<dt>Remarks</dt><dd>F26.1。未の理由: phase8a, phase8a2 とも q を 1 − p に置換して扱い、この関係は定理文に現れない (補則 8 既知の裁定)。phase8a/risk_identities と phase8a/c の分母 1 + q = 2 − p がこの約定を前提にする</dd>
+<dt>Remarks</dt><dd>F26.1。q の名付け (p + q = 1) で、例の仮定に当たる (定)。B50: phase8a・phase8a2 は q を 1 − p に置換して扱い、この関係は定理文に現れなかった。phase8a3_endpoints/th_26_fn2_F1_explicit・th_26_fn2_F2_explicit・th_26_fn2_F4_printed_explicit は p + q = 1, p′ + q′ = 1 を前提 hpq・hpq′ として置く。phase8a/risk_identities と phase8a/c の分母 1 + q = 2 − p がこの約定を前提にする</dd>
 <dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 989&ndash;1040 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch26-002">
@@ -65,9 +65,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>E = pA,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase8a3_endpoints/th_26_risk_identities_explicit (前提 hE)</dd>
 <dt>Anchor words</dt><dd><code>so that</code></dd>
-<dt>Remarks</dt><dd>F26.2。数学的期待の定義。未の理由: E の def がなく、phase8a/risk_identities は E を pA に置換した形 (補則 8 既知の裁定)</dd>
+<dt>Remarks</dt><dd>F26.2。数学的期待の定義 E = pA (例の仮定: 定、ch26-001 と揃える)。B50 r1 (司令塔裁定): E, q を自由な量とし、E = pA と p + q = 1 を前提 hE, hpq として置いた定理 th_26_risk_identities_explicit (結論 p(A − E) = p(1 − p)A = pqA = qE)。phase8a/risk_identities は E を pA に置換した形で、この関係は定理文に現れなかった。必要性: phase8a3_endpoints/th_26_risk_identities_needs_hE (E = 0 では p(A − E) ≠ p(1 − p)A)</dd>
 <dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 1040&ndash;1090 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch26-003">
@@ -109,9 +109,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>p = 1</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase8a3_endpoints/th_26_c_endpoint_one (前提 hp)</dd>
 <dt>Anchor words</dt><dd><code>is equal to unity when</code></dd>
-<dt>Remarks</dt><dd>F26.6 前半。未の理由: 条件 p = 1 は phase8a/c_one_one (<code>c 1 1 = 1</code>) に p := 1 の代入値としてしか現れず、関係式としては定理文にない (補則 8 の「置換で吸収」と同じ仕組み; 代入値を ≈ に数えるかは裁定事項)</dd>
+<dt>Remarks</dt><dd>F26.6 前半。端点の約定 (「c は p = 1 かつ w = 1 のとき 1 に等しい」の条件)。B50: 条件 p = 1 を前提 hp として置いた定理 th_26_c_endpoint_one (c p w = 1) に写した。phase8a/c_one_one (<code>c 1 1 = 1</code>) は p := 1 の代入値だった。必要性: phase8a3_endpoints/th_26_c_endpoint_one_needs_p (p = 1/2 では c (1/2) 1 ≠ 1)</dd>
 <dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 1548&ndash;1598 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch26-007">
@@ -121,9 +121,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>w = 1,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase8a3_endpoints/th_26_c_endpoint_one (前提 hw)</dd>
 <dt>Anchor words</dt><dd><code>and</code> / <code>and to zero when</code> (直後)</dd>
-<dt>Remarks</dt><dd>F26.6 後半。未の理由: ch26-006 と同じ (phase8a/c_one_one に w := 1 の代入値; 裁定事項)</dd>
+<dt>Remarks</dt><dd>F26.6 後半。ch26-006 と同じ (前提 hw : w = 1)。必要性: phase8a3_endpoints/th_26_c_endpoint_one_needs_w (w = 2 では c 1 2 ≠ 1)。phase8a/c_one_one は w := 1 の代入値だった</dd>
 <dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 1548&ndash;1598 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch26-008">
@@ -132,9 +132,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>p = 0</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase8a3_endpoints/th_26_c_endpoint_zero_p (前提 hp)</dd>
 <dt>Anchor words</dt><dd><code>to zero when</code></dd>
-<dt>Remarks</dt><dd>F26.7 前半。未の理由: phase8a/c_zero_p (<code>c 0 w = 0</code>) に p := 0 の代入値としてしか現れない (裁定事項)</dd>
+<dt>Remarks</dt><dd>F26.7 前半。端点の約定 (「p = 0 のとき c は 0」の条件)。B50: 条件 p = 0 を前提 hp として置いた定理 th_26_c_endpoint_zero_p (c p w = 0、w は任意) に写した。phase8a/c_zero_p (<code>c 0 w = 0</code>) は p := 0 の代入値だった。B50 r1: 必要性: phase8a3_endpoints/th_26_c_endpoint_zero_p_needs_p (p = 1, w = 1 では c ≠ 0)</dd>
 <dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 1598&ndash;1648 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch26-009">
@@ -144,9 +144,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>w = 0,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase8a3_endpoints/th_26_c_endpoint_zero_w (前提 hw)</dd>
 <dt>Anchor words</dt><dd><code>or</code> / <code>and has an intermediate value</code> (直後)</dd>
-<dt>Remarks</dt><dd>F26.7 後半。未の理由: phase8a/c_zero_w (<code>c p 0 = 0</code>) に w := 0 の代入値としてしか現れない (裁定事項)。「中間の値」(語) は phase8a/c_nonneg, c_le_one</dd>
+<dt>Remarks</dt><dd>F26.7 後半。端点の約定 (「w = 0 のとき c は 0」の条件)。B50: 条件 w = 0 を前提 hw として置いた定理 th_26_c_endpoint_zero_w (c p w = 0、p は任意) に写した。phase8a/c_zero_w (<code>c p 0 = 0</code>) は w := 0 の代入値だった。「中間の値」(語) は phase8a/c_nonneg, c_le_one。B50 r1: 必要性: phase8a3_endpoints/th_26_c_endpoint_zero_w_needs_w (p = 1, w = 1 では c ≠ 0)</dd>
 <dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 1598&ndash;1648 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch26-010">
@@ -181,7 +181,7 @@ nav.nav.end{margin:2em 0 0}
 <dt>Transcription</dt><dd><code>pA = p′A′,</code></dd>
 <dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase8a/keynes_F1</dd>
 <dt>Anchor words</dt><dd><code>If</code></dd>
-<dt>Remarks</dt><dd>F26.10 (F1) 第 1 条件。≈ の理由: 仮定 hE は <code>p * A = p * A′</code> で、F1 の第 3 条件 q = q′ (ch26-014、未) を p′ = p として吸収したため p′ が p に同一視されている (✓ ではない)</dd>
+<dt>Remarks</dt><dd>F26.10 (F1) 第 1 条件。≈ の理由: 仮定 hE は <code>p * A = p * A′</code> で、F1 の第 3 条件 q = q′ (ch26-014、定) を p′ = p として吸収したため p′ が p に同一視されている (✓ ではない)</dd>
 <dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2088&ndash;2126 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch26-013">
@@ -203,9 +203,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>q = q′,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase8a3_endpoints/th_26_fn2_F1_explicit (前提 hqq)</dd>
 <dt>Anchor words</dt><dd><code>and</code> / <code>then</code> (直後)</dd>
-<dt>Remarks</dt><dd>F26.10 第 3 条件。未の理由: phase8a/keynes_F1 は p′ を p に置換して表し、この関係は定理文に現れない (補則 8 既知の裁定)</dd>
+<dt>Remarks</dt><dd>F26.10 第 3 条件。例の仮定 (F1 の条件 q = q′)。B50: phase8a/keynes_F1 は p′ を p に置換して表していた。phase8a3_endpoints/th_26_fn2_F1_explicit は q = q′ を前提 hqq (と p + q = 1, p′ + q′ = 1) として置き、pA = p′A′ (p′ は p と別の変数のまま)、w′ &lt; w ⟹ c′A′ &lt; cA を述べる。必要性: phase8a3_endpoints/th_26_fn2_F1_needs_qq (q = q′ を落とすと、p = 1/2, p′ = 3/4, A = 2, A′ = 4/3, w = 1, w′ = 9/10 で c′A′ &gt; cA)。同じ定理は ch26-012・015 の p′ ≠ p の形でもあり ✓ に上げられる (裁定待ち、本依頼では動かさない)</dd>
 <dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2088&ndash;2126 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch26-015">
@@ -240,9 +240,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>w = w′,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase8a3_endpoints/th_26_fn2_F2_explicit (前提 hww)</dd>
 <dt>Anchor words</dt><dd><code>and</code> (行末、脚注 1 行目末)</dd>
-<dt>Remarks</dt><dd>F26.11 第 2 条件。未の理由: phase8a/keynes_F2, phase8a2/th_26_fn2_F2 は w′ を w に置換して表し、この関係は定理文に現れない (補則 8 既知の裁定)</dd>
+<dt>Remarks</dt><dd>F26.11 第 2 条件。例の仮定 (F2 の条件 w = w′)。B50: phase8a/keynes_F2, phase8a2/th_26_fn2_F2 は w′ を w に置換して表していた。phase8a3_endpoints/th_26_fn2_F2_explicit は w = w′ を前提 hww として置き、pA = p′A′, q &lt; q′ ⟹ c′A′ &lt; cA を述べる。同じ定理は ch26-019 の w′ ≠ w の形でもあり ✓ に上げられる (裁定待ち、本依頼では動かさない)。B50 r1: 必要性: phase8a3_endpoints/th_26_fn2_F2_needs_ww (他の前提を満たす w ≠ w′ の例で cA &gt; c′A′ が崩れる)</dd>
 <dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2088&ndash;2126 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch26-018">
@@ -340,10 +340,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 315 (PDF p. 335) &middot; &sect;8 &middot; Footnote 2 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>w = w′,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase8a3_endpoints/th_26_fn2_F4_printed_explicit (前提 hww)</dd>
 <dt>Reprint of</dt><dd><a href="#ch26-017">ch26-017</a></dd>
 <dt>Anchor words</dt><dd><code>and</code></dd>
-<dt>Remarks</dt><dd>F26.13 第 2 条件。原寸で <code>w = w′</code> を再確認。未の理由: phase8a/keynes_F4_printed_determinate, phase8a2/th_26_fn2_F4_printed_determinate は w′ を w に置換して表す (補則 8 既知の裁定)</dd>
+<dt>Remarks</dt><dd>F26.13 第 2 条件。原寸で <code>w = w′</code> を再確認。例の仮定 (F4 の印刷どおりの条件 w = w′)。B50: phase8a/keynes_F4_printed_determinate, phase8a2/th_26_fn2_F4_printed_determinate は w′ を w に置換して表していた。phase8a3_endpoints/th_26_fn2_F4_printed_explicit は w = w′ を前提 hww として置き、pA = p′A′, q′ &lt; q ⟹ cA &lt; c′A′ (印刷の「比較できない」に反して確定) を述べる。B50 r1: 必要性: phase8a3_endpoints/th_26_fn2_F4_needs_ww (他の前提を満たす w ≠ w′ の例で cA &lt; c′A′ が崩れる)</dd>
 <dt>Crop</dt><dd>folio 315, x 125&ndash;1335, y 2160&ndash;2201 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch26-026">
@@ -444,10 +444,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 317 (PDF p. 337) &middot; &sect;9 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>y = k log x/a,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase8a3_endpoints/th_26_bernoulli_integral・th_26_bernoulli_ode_unique</dd>
 <dt>Quoted from</dt><dd>D. Bernoulli</dd>
 <dt>Anchor words</dt><dd><code>or</code> / <code>where k and a are constants.</code> (直後)</dd>
-<dt>Remarks</dt><dd>F26.19。横線分数 x/a。未の理由: y の def も y = … の文もなく、phase8a2/th_26_bernoulli_deriv の被微分関数 <code>fun x =&gt; k * Real.log (x / a)</code> に置換で吸収されている (補則 8 既知の裁定)。積分定数の補助は phase8a2/th_26_bernoulli_initial</dd>
+<dt>Remarks</dt><dd>F26.19。横線分数 x/a。B50: ≈ の理由 (前提の足し方): y を ch26-033 の dy = k dx/x の解で y(a) = 0 のものとすると、x &gt; 0, a &gt; 0 で y = k log(x/a) (th_26_bernoulli_ode_unique)。同じことを積分で述べた形が y(x) = ∫ₐˣ k dt/t = k log(x/a) (th_26_bernoulli_integral、Mathlib の <code>integral_inv_of_pos</code>)。初期条件 y(a) = 0 (積分定数; phase8a2/th_26_bernoulli_initial) は印刷になく、「k and a are constants」の a の読みとして足した。phase8a2/th_26_bernoulli_deriv は逆向き (y = … を微分する)</dd>
 <dt>Crop</dt><dd>folio 317, x 125&ndash;1335, y 2010&ndash;2112 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch26-035">
@@ -456,10 +456,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 318 (PDF p. 338) &middot; &sect;9 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>x = (a + x₁)p₁(a + x₂)p₂ . . .,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>phase8a3_endpoints/th_26_moral_fortune_eq (反駁 phase8a2/th_26_laplace_printed_refuted)</dd>
 <dt>Quoted from</dt><dd>D. Bernoulli / Laplace</dd>
 <dt>Anchor words</dt><dd><code>the further formula—</code></dd>
-<dt>Remarks</dt><dd>F26.20。本文 &quot;built up both by Bernoulli himself and by Laplace. It leads easily to the further formula&quot;。F 候補: p₁, p₂ が指数でなくベースラインに下付き数字で組まれている (既存台帳の原寸 3 倍で確認)。未の理由 (第 4 回、司令塔裁定): 定理文に x = … の関係が現れず x の def もない (置換で吸収)。phase8a2/th_26_moral_expectation と phase8a2/th_26_laplace_printed_refuted は右辺に置換した形。前者は指数形の右辺 Π(a + x_i)^{p_i} について <code>k * log(Π (a + x i) ^ (p i) / a) = Σ p i * (k * log((a + x i) / a))</code>、後者は文字どおり積と読んだ右辺が a = 1, x₁ = x₂ = 1, p₁ = p₂ = ½ で道徳的期待の等式を満たさないことを示す</dd>
+<dt>Remarks</dt><dd>F26.20。本文 &quot;built up both by Bernoulli himself and by Laplace. It leads easily to the further formula&quot;、続けて &quot;x the &#x27;physical&#x27; fortune whose present possession would yield the same &#x27;moral&#x27; fortune as does the expectation&quot;。F 候補: p₁, p₂ が指数でなくベースラインに下付き数字で組まれている (既存台帳の原寸 3 倍で確認)。B50 (第 5 回): x は「期待と同じ道徳的財産を与える物理的財産」で、式はそこからの導出結果。phase8a3_endpoints/th_26_moral_fortune_eq は k log(x/a) = Σ p_i k log((a + x_i)/a) (Σ p_i = 1, k ≠ 0, x &gt; 0) から x = Π (a + x_i)^{p_i} (指数形) を導く (修正形が定理)。第 4 回の未 (定理文に x = … が現れない) はこの定理で解消した。B50 r1 (司令塔裁定): ✎ を認める (印刷形の反駁と修正形の定理がある)。第 4 回の裁定 (未) を上書きした。phase8a2/th_26_moral_expectation は逆向きの置換形、phase8a2/th_26_laplace_printed_refuted は文字どおり積と読んだ印刷形の反例 (a = 1, x₁ = x₂ = 1, p₁ = p₂ = ½)</dd>
 <dt>Crop</dt><dd>folio 318, x 125&ndash;1335, y 310&ndash;395 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch26-036">
@@ -506,7 +506,7 @@ nav.nav.end{margin:2em 0 0}
 <dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
 <dt>Quoted from</dt><dd>Laurent</dd>
 <dt>Anchor words</dt><dd><code>Thus</code></dd>
-<dt>Remarks</dt><dd>F26.25。横線分数 (分子 b、分母 a + b)、脚注番号 2 が続く。式自体は Laurent, *Calcul des probabilités* p. 129 の引用で導出なし。未の理由: f の def がなく、phase8a2/th_26_laurent_poorer は右辺を代入した帰結 (単調性 <code>b / (a′ + b) &lt; b / (a + b)</code>) だけで、この等式は定理文に現れない (ch26-034 と同じ吸収)</dd>
+<dt>Remarks</dt><dd>F26.25。横線分数 (分子 b、分母 a + b)、脚注番号 2 が続く。式自体は Laurent, *Calcul des probabilités* p. 129 の引用で導出なし。未の理由 (B50 で再検討): f の def がなく、賭けの模型 (公平な等額賭けを破産まで繰り返す、など) が印刷にない。模型を置けば f(k) = (f(k−1) + f(k+1))/2, f(0) = 1, f(a+b) = 0 から b/(a+b) は出るが、それは印刷にない仮定を足すことになる。脚注 2 は「Laurent の推論は誤りの結果らしい」と述べる。phase8a2/th_26_laurent_poorer は右辺を代入した帰結 (単調性 <code>b / (a′ + b) &lt; b / (a + b)</code>) だけで、この等式は定理文に現れない</dd>
 <dt>Crop</dt><dd>folio 319, x 125&ndash;1335, y 1190&ndash;1292 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch26-040">
@@ -515,10 +515,10 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 319 (PDF p. 339) &middot; &sect;10 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>b = ∞ ,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase8a3_endpoints/th_26_laurent_infinite_b (前提 hb)</dd>
 <dt>Quoted from</dt><dd>Laurent</dd>
 <dt>Anchor words</dt><dd><code>But further, if</code></dd>
-<dt>Remarks</dt><dd>F26.26 前半。∞ の前後に空き。未の理由: phase8a2/th_26_laurent_limit は b → ∞ の極限 <code>Tendsto (fun b =&gt; b / (a + b)) atTop (𝓝 1)</code> で、<code>b = ∞</code> という関係は定理文に現れない。極限形を ✎ (導けない印刷形の修正形) に数えるかは裁定事項</dd>
+<dt>Remarks</dt><dd>F26.26 前半。∞ の前後に空き。「if b = ∞」は仮定で、∞ は数でなく極限の言い方。B50: b = ∞ を b_n → ∞ (前提 hb : Tendsto b atTop atTop) と読んで置いた定理 th_26_laurent_infinite_b (b_n/(a + b_n) → 1)。phase8a2/th_26_laurent_limit は同じことを filter atTop で述べる。極限形を ✎ に数えるかは裁定事項 (f) のまま</dd>
 <dt>Crop</dt><dd>folio 319, x 125&ndash;1335, y 1345&ndash;1394 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch26-041">
@@ -531,7 +531,7 @@ nav.nav.end{margin:2em 0 0}
 <dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
 <dt>Quoted from</dt><dd>Laurent</dd>
 <dt>Anchor words</dt><dd><code>i.e. ruin is certain.</code> (直後)</dd>
-<dt>Remarks</dt><dd>F26.26 後半。未の理由: f の def がなく、phase8a2/th_26_laurent_limit の極限値 1 としてしか現れない (ch26-040 と同じ裁定事項)</dd>
+<dt>Remarks</dt><dd>F26.26 後半。結論側の f(a) = 1。未の理由: f の def がなく、phase8a3_endpoints/th_26_laurent_infinite_b と phase8a2/th_26_laurent_limit の極限値 1 としてしか現れない (ch26-039 が未なので f(a) の等式の足場もない)。極限形を ✎ (導けない印刷形の修正形) に数えるかは裁定事項 (f) のまま</dd>
 <dt>Crop</dt><dd>folio 319, x 125&ndash;1335, y 1345&ndash;1394 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch26-042">
@@ -562,7 +562,7 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch25/index.html">&larr; Ch. 25</a> | <a href="../ch27/index.html">Ch. 27 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch26.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch26-001":"none","ch26-002":"none","ch26-003":"equiv","ch26-004":"notation","ch26-005":"equiv","ch26-006":"none","ch26-007":"none","ch26-008":"none","ch26-009":"none","ch26-010":"equiv","ch26-011":"corrected","ch26-012":"equiv","ch26-013":"printed","ch26-014":"none","ch26-015":"equiv","ch26-016":"printed","ch26-017":"none","ch26-018":"equiv","ch26-019":"equiv","ch26-020":"printed","ch26-021":"printed","ch26-022":"equiv","ch26-023":"printed","ch26-024":"printed","ch26-025":"none","ch26-026":"equiv","ch26-027":"notation","ch26-028":"notation","ch26-029":"notation","ch26-030":"notation","ch26-031":"notation","ch26-032":"notation","ch26-033":"equiv","ch26-034":"none","ch26-035":"none","ch26-036":"notation","ch26-037":"notation","ch26-038":"notation","ch26-039":"none","ch26-040":"none","ch26-041":"none","ch26-042":"notation","ch26-043":""};
+var K={"ch26-001":"definition","ch26-002":"definition","ch26-003":"equiv","ch26-004":"notation","ch26-005":"equiv","ch26-006":"definition","ch26-007":"definition","ch26-008":"definition","ch26-009":"definition","ch26-010":"equiv","ch26-011":"corrected","ch26-012":"equiv","ch26-013":"printed","ch26-014":"definition","ch26-015":"equiv","ch26-016":"printed","ch26-017":"definition","ch26-018":"equiv","ch26-019":"equiv","ch26-020":"printed","ch26-021":"printed","ch26-022":"equiv","ch26-023":"printed","ch26-024":"printed","ch26-025":"definition","ch26-026":"equiv","ch26-027":"notation","ch26-028":"notation","ch26-029":"notation","ch26-030":"notation","ch26-031":"notation","ch26-032":"notation","ch26-033":"equiv","ch26-034":"equiv","ch26-035":"corrected","ch26-036":"notation","ch26-037":"notation","ch26-038":"notation","ch26-039":"none","ch26-040":"definition","ch26-041":"none","ch26-042":"notation","ch26-043":""};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';
