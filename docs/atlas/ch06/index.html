@@ -39,14 +39,14 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch05/index.html">&larr; Ch. 5</a> | <a href="../ch07/index.html">Ch. 7 &rarr;</a></nav>
 <h1>Chapter VI. The Weight of Arguments</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 71&ndash;78 (Cornell copy, PDF pp. 91&ndash;98). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;)</th><td><b>18 / 32 formulas, 56.2% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 18: &#10003;15 &asymp;3 &#9998;0; not yet 14</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;+&#23450;)</th><td><b>21 / 32 formulas, 65.6% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 19: &#10003;15 &asymp;4 &#9998;0; definition counterpart (&#23450;) 2; not yet 11</b></td></tr>
 <tr><th>Ledger rows</th><td>58</td></tr>
 <tr><th>Formulas</th><td>32 (display 0, inline 32; items 32, numbered 0)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>15 &nbsp; <span class="mark equiv">&asymp;</span>3 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>14</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>15 &nbsp; <span class="mark equiv">&asymp;</span>4 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>11 &nbsp; <span class="mark definition">&#23450;</span>2</td></tr>
 <tr><th>Notation</th><td>26 (with a Lean counterpart 2)</td></tr>
 <tr><th>Reference rows</th><td>0</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (58)</button><button type="button" data-k="printed">&#10003; (15)</button><button type="button" data-k="equiv">&asymp; (3)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (14)</button><button type="button" data-k="notation">notation (26)</button></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (58)</button><button type="button" data-k="printed">&#10003; (15)</button><button type="button" data-k="equiv">&asymp; (4)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (11)</button><button type="button" data-k="definition">definition (2)</button><button type="button" data-k="notation">notation (26)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
 <section class="card" id="ch06-001">
 <h2>ch06-001</h2>
@@ -54,7 +54,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 72 (PDF p. 92) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>φa/ψa.h₁ = φb/ψb.h₂</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: 比較の型 (i) は無差別原理の適用 (h₁, h₂ は無関連) で、一般形の公理・定理はない。対照: phase12b_underdetermination/underdetermined)</dd>
 <dt>Anchor words</dt><dd>and of the form</dd>
 <dt>Remarks</dt><dd>確率の比較 (i) 無差別原理型。番号欄は箇条番号。hires で確認 (φa, ψa は括弧なし)</dd>
 <dt>Crop</dt><dd>folio 72, x 125&ndash;1335, y 1876&ndash;1926 (full-size scan pixels)</dd>
@@ -65,9 +65,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 72 (PDF p. 92) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/hh₁ ⋛ a/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase17_closing/th_6_r002 (ℝ 値の PrI で三分律 lt_trichotomy: &gt;・=・&lt; の選言; 前提の並置 hh₁ は iand h h₁)</dd>
 <dt>Anchor words</dt><dd>where h₁ is a single unit of information</dd>
-<dt>Remarks</dt><dd>活字は ≷ に = を重ねた三段記号「greater than, equal to, or less than」(hires で確認)。規則の関係記号一覧にない活字 → 裁定事項</dd>
+<dt>Remarks</dt><dd>活字は ≷ に = を重ねた三段記号「greater than, equal to, or less than」(hires で確認)。規則の関係記号一覧にない活字 → 裁定事項。B51: 三段記号を「&gt;・=・&lt; のどれか」の選言と読んで ≈。ℝ では自明、Π では偽になりうる (半順序の型では a/hh₁ と a/h が比較不能になりうる: phase17_closing/th_6_r002_pi_incomp、phase12a と同文の Incomp)</dd>
 <dt>Crop</dt><dd>folio 72, x 125&ndash;1335, y 1975&ndash;2027 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch06-003">
@@ -111,7 +111,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 73 (PDF p. 93) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>V(φa/ψa.h₁) = V(φb/ψb.h₂)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: 重みの比較 (i)「無差別原理が適用できる推論は重みが等しい」は phase8dp の重みの公理 (mono・compl・equiv) からは出ない (公理を満たし同じ三択の元どうしで重みが異なる模型 phase8dp/th_8dp_V_split_breaks_indifference)。phase8dp/th_8dp_indifference_witness は有限模型の証人だけ。対照: phase12b_underdetermination/underdetermined)</dd>
 <dt>Anchor words</dt><dd>(i.)</dd>
 <dt>Remarks</dt><dd>重みの比較 (i)。「where h₁ and h₂ are irrelevant in the strict sense」(hires で確認)。phase8dp/th_8dp_indifference_witness, th_8dp_two_triads は有限モデルで §3(i) を満たす証人にすぎず、一般形の公理・定理はない (所見候補)</dd>
 <dt>Crop</dt><dd>folio 73, x 125&ndash;1335, y 318&ndash;370 (full-size scan pixels)</dd>
@@ -144,7 +144,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 73 (PDF p. 93) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>V(ab/h) &lt; V(a/h)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(Keynes が却下: 「But this is invalid」。(iii.) に対応する重みの規則の候補で、公理化しない。参考: 規則として置くと重みの公理の模型で破れる phase17_closing/th_6_r009_rule_fails)</dd>
 <dt>Anchor words</dt><dd>It might be thought that</dd>
 <dt>Remarks</dt><dd>(iii.) に対応する重みの規則の候補。「But this is invalid」。8d/8dp ヘッダに「ケインズ自身が却下」と記録のみ (公理化せず)</dd>
 <dt>Crop</dt><dd>folio 73, x 125&ndash;1335, y 773&ndash;824 (full-size scan pixels)</dd>
@@ -178,7 +178,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 73 (PDF p. 93) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>ab/h = 0</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase17_closing/th_6_r012_r013 (例の仮定; 定理 th_6_r012_r013 の前提 h012 : ab/h = 0 に写す; 並置 ab は iand a b)</dd>
 <dt>Anchor words</dt><dd>For example, if</dd>
 <dt>Remarks</dt><dd>反例の前提</dd>
 <dt>Crop</dt><dd>folio 73, x 125&ndash;1335, y 974&ndash;1025 (full-size scan pixels)</dd>
@@ -189,7 +189,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 73 (PDF p. 93) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/h &gt; 0</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase17_closing/th_6_r012_r013 (例の仮定; 定理 th_6_r012_r013 の前提 h013 : a/h &gt; 0 に写す)</dd>
 <dt>Anchor words</dt><dd>and</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 73, x 125&ndash;1335, y 1024&ndash;1074 (full-size scan pixels)</dd>
@@ -201,7 +201,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 73 (PDF p. 93) &middot; &sect;3 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>V(ab/h) &gt; V(a/h)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: 前提 ab/h = 0, a/h &gt; 0 の下で、第二段の公理と重みの公理 (mono・compl・equiv) からは出ず (phase17_closing/th_6_r014_not_derivable)、反証もされない (phase17_closing/th_6_r014_consistent)。V と「反証に近い」を結ぶ公理が要る。対照: phase12b_underdetermination/underdetermined)</dd>
 <dt>Anchor words</dt><dd>then</dd>
 <dt>Remarks</dt><dd>印刷は小文字 a (照合_E で tex の V(A/h) を T と判定済み)。8d/8dp ヘッダに記録のみ</dd>
 <dt>Crop</dt><dd>folio 73, x 125&ndash;1335, y 1024&ndash;1074 (full-size scan pixels)</dd>
@@ -409,7 +409,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 74 (PDF p. 94) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>x/h₁h₂ = ⅔</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: ⅔ は例の仮定として与えられた確率の値で、Keynes の公理からは出ない; 前提に運ぶ定理なし。対照: phase12b_underdetermination/underdetermined)</dd>
 <dt>Anchor words</dt><dd>If</dd>
 <dt>Remarks</dt><dd>数値を伴う式。8d ヘッダ §5 に De Morgan 流の説明の拒否として記録のみ。B50: 未のまま。⅔ は「x の確率が h₁h₂ のもとで ⅔」という例の仮定として与えられた値で、算術の検算で出る関係ではない (比較 ⅔ &lt; ¾ は印刷の式ではない)</dd>
 <dt>Crop</dt><dd>folio 74, x 125&ndash;1335, y 572&ndash;619 (full-size scan pixels)</dd>
@@ -421,7 +421,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 74 (PDF p. 94) &middot; &sect;5 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>x/h₁ = ¾</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: ¾ は例の仮定として与えられた確率の値で、Keynes の公理からは出ない (ch06-032 と同じ); 前提に運ぶ定理なし。対照: phase12b_underdetermination/underdetermined)</dd>
 <dt>Anchor words</dt><dd>and</dd>
 <dt>Remarks</dt><dd>同上。B50: 未のまま。ch06-032 と同じ (例の仮定として与えられた確率 ¾)</dd>
 <dt>Crop</dt><dd>folio 74, x 125&ndash;1335, y 572&ndash;619 (full-size scan pixels)</dd>
@@ -558,7 +558,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 75 (PDF p. 95) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>x = 5</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(別命題の定理 <code>phase13b/th_vi_6_045_x_eq_5</code> あり: 確率 ⅓ をもつ大きさは 5 に限る、x : ℕ の読み)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: 「x = 5」の確率 ⅓ は例の資料 (data) が与える値で、公理からは出ない。別命題の定理 <code>phase13b/th_vi_6_045_x_eq_5</code> あり: 確率 ⅓ をもつ大きさは 5 に限る、x : ℕ の読み)</dd>
 <dt>Anchor words</dt><dd>the probability of</dd>
 <dt>Remarks</dt><dd>第1分布 (hires で確認)。phase8d/th_vi_6_dist1_sums は分布の和 1/3 + 1/4 + 1/5 + 1/6 + 1/20 = 1 のみを述べ、「x = 5」も x = 5 の確率が ⅓ であることも定理文にない (読み手役 F-B00a-1; 第 1 回は部分対応としていた)。B35: 定理文は Dist1 p → p x = ⅓ → x = 5 (Dist1 は第 1 分布の五つの値と、排反な大きさの確率の有限和が 1 を超えないこと)。x = 5 は結論にそのまま現れるが、印刷の「x = 5」は確率の引数 (命題「x = 5」) で、定理文では「確率 ⅓ をもつ大きさは 5 に限る」という大きさの等式として置いた。印刷の命題 (「x = 5」の確率が ⅓) とは別の命題なので、修正 2 回目の裁定 (印刷の命題と別の命題になっている定理は ≈ にしない) により 未。定理は残す。Dist1 が空でないことは th_vi_6_dist1_exists</dd>
 <dt>Crop</dt><dd>folio 75, x 125&ndash;1335, y 1224&ndash;1272 (full-size scan pixels)</dd>
@@ -582,7 +582,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 75 (PDF p. 95) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>x = 6</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(別命題の定理 <code>phase13b/th_vi_6_047_x_eq_6</code> あり: 確率 ¼ をもつ大きさは 6 に限る、x : ℕ の読み)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: 「x = 6」の確率 ¼ は例の資料 (data) が与える値で、公理からは出ない。別命題の定理 <code>phase13b/th_vi_6_047_x_eq_6</code> あり: 確率 ¼ をもつ大きさは 6 に限る、x : ℕ の読み)</dd>
 <dt>Anchor words</dt><dd>of</dd>
 <dt>Remarks</dt><dd>同上 (8d th_vi_6_dist1_sums は分布の和のみ)。B35: 定理文は Dist1 p → p x = ¼ → x = 6 (Dist1 は第 1 分布の五つの値と、排反な大きさの確率の有限和が 1 を超えないこと)。x = 6 は結論にそのまま現れるが、印刷の「x = 6」は確率の引数 (命題「x = 6」) で、定理文では「確率 ¼ をもつ大きさは 6 に限る」という大きさの等式として置いた。印刷の命題 (「x = 6」の確率が ¼) とは別の命題なので、修正 2 回目の裁定 (印刷の命題と別の命題になっている定理は ≈ にしない) により 未。定理は残す。Dist1 が空でないことは th_vi_6_dist1_exists</dd>
 <dt>Crop</dt><dd>folio 75, x 125&ndash;1335, y 1224&ndash;1272 (full-size scan pixels)</dd>
@@ -605,7 +605,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 75 (PDF p. 95) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>x = 7</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(別命題の定理 <code>phase13b/th_vi_6_049_x_eq_7</code> あり: 確率 ⅕ をもつ大きさは 7 に限る、x : ℕ の読み)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: 「x = 7」の確率 ⅕ は例の資料 (data) が与える値で、公理からは出ない。別命題の定理 <code>phase13b/th_vi_6_049_x_eq_7</code> あり: 確率 ⅕ をもつ大きさは 7 に限る、x : ℕ の読み)</dd>
 <dt>Anchor words</dt><dd>of</dd>
 <dt>Remarks</dt><dd>同上。B35: 定理文は Dist1 p → p x = ⅕ → x = 7 (Dist1 は第 1 分布の五つの値と、排反な大きさの確率の有限和が 1 を超えないこと)。x = 7 は結論にそのまま現れるが、印刷の「x = 7」は確率の引数 (命題「x = 7」) で、定理文では「確率 ⅕ をもつ大きさは 7 に限る」という大きさの等式として置いた。印刷の命題 (「x = 7」の確率が ⅕) とは別の命題なので、修正 2 回目の裁定 (印刷の命題と別の命題になっている定理は ≈ にしない) により 未。定理は残す。Dist1 が空でないことは th_vi_6_dist1_exists</dd>
 <dt>Crop</dt><dd>folio 75, x 125&ndash;1335, y 1275&ndash;1321 (full-size scan pixels)</dd>
@@ -629,7 +629,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 75 (PDF p. 95) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>x = 8</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(別命題の定理 <code>phase13b/th_vi_6_051_x_eq_8</code> あり: 確率 ⅙ をもつ大きさは 8 に限る、x : ℕ の読み)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: 「x = 8」の確率 ⅙ は例の資料 (data) が与える値で、公理からは出ない。別命題の定理 <code>phase13b/th_vi_6_051_x_eq_8</code> あり: 確率 ⅙ をもつ大きさは 8 に限る、x : ℕ の読み)</dd>
 <dt>Anchor words</dt><dd>of</dd>
 <dt>Remarks</dt><dd>同上。B35: 定理文は Dist1 p → p x = ⅙ → x = 8 (Dist1 は第 1 分布の五つの値と、排反な大きさの確率の有限和が 1 を超えないこと)。x = 8 は結論にそのまま現れるが、印刷の「x = 8」は確率の引数 (命題「x = 8」) で、定理文では「確率 ⅙ をもつ大きさは 8 に限る」という大きさの等式として置いた。印刷の命題 (「x = 8」の確率が ⅙) とは別の命題なので、修正 2 回目の裁定 (印刷の命題と別の命題になっている定理は ≈ にしない) により 未。定理は残す。Dist1 が空でないことは th_vi_6_dist1_exists</dd>
 <dt>Crop</dt><dd>folio 75, x 125&ndash;1335, y 1275&ndash;1321 (full-size scan pixels)</dd>
@@ -653,7 +653,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 75 (PDF p. 95) &middot; &sect;6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>x = 9</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(別命題の定理 <code>phase13b/th_vi_6_053_x_eq_9</code> あり: 確率 1/20 をもつ大きさは 9 に限る、x : ℕ の読み)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: 「x = 9」の確率 1/20 は例の資料 (data) が与える値で、公理からは出ない。別命題の定理 <code>phase13b/th_vi_6_053_x_eq_9</code> あり: 確率 1/20 をもつ大きさは 9 に限る、x : ℕ の読み)</dd>
 <dt>Anchor words</dt><dd>and of</dd>
 <dt>Remarks</dt><dd>同上。B35: 定理文は Dist1 p → p x = 1/20 → x = 9 (Dist1 は第 1 分布の五つの値と、排反な大きさの確率の有限和が 1 を超えないこと)。x = 9 は結論にそのまま現れるが、印刷の「x = 9」は確率の引数 (命題「x = 9」) で、定理文では「確率 1/20 をもつ大きさは 9 に限る」という大きさの等式として置いた。印刷の命題 (「x = 9」の確率が 1/20) とは別の命題なので、修正 2 回目の裁定 (印刷の命題と別の命題になっている定理は ≈ にしない) により 未。定理は残す。Dist1 が空でないことは th_vi_6_dist1_exists</dd>
 <dt>Crop</dt><dd>folio 75, x 125&ndash;1335, y 1275&ndash;1321 (full-size scan pixels)</dd>
@@ -719,7 +719,7 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch05/index.html">&larr; Ch. 5</a> | <a href="../ch07/index.html">Ch. 7 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch06.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch06-001":"none","ch06-002":"none","ch06-003":"equiv","ch06-004":"notation","ch06-005":"notation","ch06-006":"none","ch06-007":"equiv","ch06-008":"printed","ch06-009":"none","ch06-010":"notation","ch06-011":"notation","ch06-012":"none","ch06-013":"none","ch06-014":"none","ch06-015":"notation","ch06-016":"notation","ch06-017":"printed","ch06-018":"printed","ch06-019":"equiv","ch06-020":"printed","ch06-021":"printed","ch06-022":"printed","ch06-023":"printed","ch06-024":"printed","ch06-025":"printed","ch06-026":"printed","ch06-027":"printed","ch06-028":"printed","ch06-029":"printed","ch06-030":"printed","ch06-031":"printed","ch06-032":"none","ch06-033":"none","ch06-034":"notation","ch06-035":"notation","ch06-036":"notation","ch06-037":"notation","ch06-038":"notation","ch06-039":"notation","ch06-040":"notation","ch06-041":"notation","ch06-042":"notation","ch06-043":"notation","ch06-044":"notation","ch06-045":"none","ch06-046":"notation","ch06-047":"none","ch06-048":"notation","ch06-049":"none","ch06-050":"notation","ch06-051":"none","ch06-052":"notation","ch06-053":"none","ch06-054":"notation","ch06-055":"notation","ch06-056":"notation","ch06-057":"notation","ch06-058":"notation"};
+var K={"ch06-001":"none","ch06-002":"equiv","ch06-003":"equiv","ch06-004":"notation","ch06-005":"notation","ch06-006":"none","ch06-007":"equiv","ch06-008":"printed","ch06-009":"none","ch06-010":"notation","ch06-011":"notation","ch06-012":"definition","ch06-013":"definition","ch06-014":"none","ch06-015":"notation","ch06-016":"notation","ch06-017":"printed","ch06-018":"printed","ch06-019":"equiv","ch06-020":"printed","ch06-021":"printed","ch06-022":"printed","ch06-023":"printed","ch06-024":"printed","ch06-025":"printed","ch06-026":"printed","ch06-027":"printed","ch06-028":"printed","ch06-029":"printed","ch06-030":"printed","ch06-031":"printed","ch06-032":"none","ch06-033":"none","ch06-034":"notation","ch06-035":"notation","ch06-036":"notation","ch06-037":"notation","ch06-038":"notation","ch06-039":"notation","ch06-040":"notation","ch06-041":"notation","ch06-042":"notation","ch06-043":"notation","ch06-044":"notation","ch06-045":"none","ch06-046":"notation","ch06-047":"none","ch06-048":"notation","ch06-049":"none","ch06-050":"notation","ch06-051":"none","ch06-052":"notation","ch06-053":"none","ch06-054":"notation","ch06-055":"notation","ch06-056":"notation","ch06-057":"notation","ch06-058":"notation"};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';
