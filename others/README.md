@@ -31,6 +31,7 @@
 |---|---|---|
 | boole/boole_1854.lean | `Boole` | Boole の挑戦問題 (1851) の方程式・限界・解 (存在と一意性)、構成要素の理想的条件と積の形、Keynes の批判「do not reduce」の算術形。import Mathlib のみ。 |
 | boole/compare_keynes_56.lean | `Boole` | phase16a の (56)–(56.5) と比べる。理想的条件から Boole の解 (KeynesI 担体)、比較定理 1 (Boole の解は Keynes の区間に入る)、比較定理 2 (Keynes の公理 13 本を満たす模型で Boole の方程式が偽)、Wilbraham の形、外延 (真偽) 担体では data を置けないこと。 |
+| gt12/interval_decision.lean | `GT12` | Keynes の式ではなく、(56.1) の区間の上に報告者が置いた決定モデル (B53)。Invest u k := k ⩽ u。内側 (k ⩽ L で Invest、U < k で ¬Invest)、沈黙 (L < k ⩽ U で公理 13 本と data を満たす模型が両方の決定を与える、両端の実現)、慣習 (u を一意に定める追加前提: Boole の理想的条件・排反・独立 + 値; 無矛盾・公理から出ない・同じ data に違う u)、血気 (u_α = L + α(U − L)、閾値 (k − L)/(U − L)、α は data と公理から定まらない)、数値例 (c = p = 1/2 で Boole の根 (3 − √2)/4)。帰属は区間の読み Brady (2004)、α 規準 Hurwicz (1951)、血気の読み 新井 (2015)。 |
 
 ## 典拠と未照合
 
