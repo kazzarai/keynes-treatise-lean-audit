@@ -28,6 +28,11 @@ code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;pad
 .external{background:#e4e0d4}
 .definition{background:#dcefef}
 .notation{background:#f3eaf6}
+.mi{display:inline-block;border:1px solid #999;border-radius:3px;padding:0 5px;margin-right:6px;font-size:.88em;background:#f7f7f7}
+.legend{margin:0 0 1em;font-size:.92em}
+.legend h2{font-size:1.05em;margin:.8em 0 .3em}
+.legend dl{grid-template-columns:13em 1fr}
+.legend dt{color:#111}
 footer{font-size:.85em;color:#666;margin-top:2em}
 nav.nav{font-size:.92em;margin:0 0 1em}
 nav.nav a{white-space:nowrap}
@@ -43,11 +48,29 @@ nav.nav.end{margin:2em 0 0}
 <tr><th>Ledger rows</th><td>231</td></tr>
 <tr><th>Formulas</th><td>188 (display 110, inline 78; items 70, numbered 173)</td></tr>
 <tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>114 &nbsp; <span class="mark equiv">&asymp;</span>61 &nbsp; <span class="mark corrected">&#9998;</span>6 &nbsp; <span class="mark none">&#26410;</span>1 &nbsp; <span class="mark definition">&#23450;</span>6</td></tr>
+<tr><th>Not yet, by class</th><td><span class="mi">Rejected by Keynes</span>1</td></tr>
 <tr><th>Notation</th><td>37 (with a Lean counterpart 10)</td></tr>
 <tr><th>Reference rows</th><td>6</td></tr>
 </table></div>
 <div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (231)</button><button type="button" data-k="printed">&#10003; (114)</button><button type="button" data-k="equiv">&asymp; (61)</button><button type="button" data-k="corrected">&#9998; (6)</button><button type="button" data-k="none">not yet (1)</button><button type="button" data-k="definition">definition (6)</button><button type="button" data-k="notation">notation (37)</button></div>
-<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically (legend below).</p>
+<div class="legend">
+<h2>Legend: the Lean column of a formula row</h2>
+<dl>
+<dt><span class="mark printed">✓</span>Printed form</dt><dd>the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ).</dd>
+<dt><span class="mark equiv">≈</span>Equivalent form</dt><dd>a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables).</dd>
+<dt><span class="mark corrected">✎</span>Corrected form</dt><dd>the printed line is refuted or not derivable, and a corrected form is proved.</dd>
+<dt><span class="mark external">外</span>Depends on a named external axiom</dt><dd>depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not.</dd>
+<dt><span class="mark definition">定</span>Definition counterpart</dt><dd>the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</dd>
+<dt><span class="mark none">未</span>Not yet</dt><dd>none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); the card names one of the five classes below.</dd>
+</dl>
+<h2>Not yet (&#26410;): five classes</h2><dl>
+<dt><span class="mi">Other author&#x27;s formula</span></dt><dd>another author's formula, quoted or criticised by Keynes; a theorem refuting it, if any, is named; &#9998; is not used, since &#9998; is reserved for Keynes's own printed errors.</dd>
+<dt><span class="mi">Rejected by Keynes</span></dt><dd>a rule or a simplified form that Keynes himself rejects as invalid, or says does not follow.</dd>
+<dt><span class="mi">Boundary: needs an outside axiom</span></dt><dd>boundary: the line becomes a theorem only if an axiom Keynes does not state is added, e.g. an application of the Principle of Indifference such as &phi;(x)/h = &phi;(y)/h, or a probability value assigned in an example; the contrast is <code>phase12b_underdetermination/underdetermined</code>, where the axioms leave a/h undetermined.</dd>
+<dt><span class="mi">Approximation / measured value</span></dt><dd>an equation printed as approximate, or a value from a table of measurements.</dd>
+<dt><span class="mi">No general proof</span></dt><dd>no proof of the general form: only numerical checks, finite-model values, or steps inside a proof.</dd>
+</dl></div>
 <section class="card" id="ch14-001">
 <h2>ch14-001</h2>
 <img src="img/ch14-001.png" alt="(a + b)/h = a/h + b/h − ab/h." loading="lazy">
@@ -122,7 +145,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 144 (PDF p. 164) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>a/h + (b/h − ab/h) ; b/h + (a/h − ab/h)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>should be written, strictly, in the form</dd>
 <dt>Remarks</dt><dd>第 XII 章 §6 の括弧の注意</dd>
 <dt>Crop</dt><dd>folio 144, x 125&ndash;1335, y 1342&ndash;1442 (full-size scan pixels)</dd>
@@ -133,7 +156,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 144 (PDF p. 164) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>(b/h − ab/h) ; āb/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>the probability (b/h − ab/h) is equal to āb/h</dd>
 <dt>Remarks</dt><dd>「is equal to」は語 (関係記号なし) なので記法 (裁定事項)</dd>
 <dt>Crop</dt><dd>folio 144, x 125&ndash;1335, y 1442&ndash;1492 (full-size scan pixels)</dd>
@@ -1377,7 +1400,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 149 (PDF p. 169) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>p₁q₁ / (p₁q₁ + p₂q₂) ; p₂q₂ / (p₁q₁ + p₂q₂)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>Then … are the probabilities of the existence</dd>
 <dt>Remarks</dt><dd>語による翻訳 (関係記号なし)</dd>
 <dt>Crop</dt><dd>folio 149, x 125&ndash;1335, y 1205&ndash;1305 (full-size scan pixels)</dd>
@@ -1388,7 +1411,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 149 (PDF p. 169) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>a/h₁ ; a/h₂ ; a₁a₂/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>given a/h₁ and a/h₂ we considered the relation of a₁a₂/h</dd>
 <dt>Remarks</dt><dd>§7 の導入</dd>
 <dt>Crop</dt><dd>folio 149, x 125&ndash;1335, y 2087&ndash;2188 (full-size scan pixels)</dd>
@@ -1399,7 +1422,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 150 (PDF p. 170) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>a/h₁ ; a/h₂ ; a/h₁h₂</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>given a/h₁ and a/h₂ we shall consider the relation of a/h₁h₂</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 150, x 125&ndash;1335, y 186&ndash;323 (full-size scan pixels)</dd>
@@ -1500,7 +1523,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 150 (PDF p. 170) &middot; &sect;7 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>h₂/ah₁ ÷ h₂/āh₁.</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(比の単調性は定理文に無い)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span>(比の単調性は定理文に無い)</dd>
 <dt>Anchor words</dt><dd>and increases with</dd>
 <dt>Remarks</dt><dd>関係記号なし (分数のみ) → 記法 (裁定事項)</dd>
 <dt>Crop</dt><dd>folio 150, x 125&ndash;1335, y 1195&ndash;1317 (full-size scan pixels)</dd>
@@ -1816,7 +1839,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 151 (PDF p. 171) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>a/h and b/h are independent arguments ; and conversely</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(3b/th_14_44_1 の結論は積の形で、independent の語形は無い)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span>(3b/th_14_44_1 の結論は積の形で、independent の語形は無い)</dd>
 <dt>Anchor words</dt><dd>it follows that a/h and b/h are independent</dd>
 <dt>Remarks</dt><dd>後件 (語)</dd>
 <dt>Crop</dt><dd>folio 151, x 125&ndash;1335, y 1590&ndash;1691 (full-size scan pixels)</dd>
@@ -1849,7 +1872,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 151 (PDF p. 171) &middot; &sect;8 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/ah : x′/ah : x″/ah : …</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(C: 比例式は定理文に無い)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span>(C: 比例式は定理文に無い)</dd>
 <dt>Anchor words</dt><dd>(46) The Cumulative Formula :</dd>
 <dt>Remarks</dt><dd>比例式の左辺 (1 行目、関係記号なし)。次行の「=」で式になる</dd>
 <dt>Crop</dt><dd>folio 151, x 125&ndash;1335, y 1844&ndash;1892 (full-size scan pixels)</dd>
@@ -1871,7 +1894,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 151 (PDF p. 171) &middot; &sect;8 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/ah . x/bh . x/ch … : x′/a . x′b/ . x′/c … : x″/a . x″/b . x″/c … : …</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>Take n + 1 propositions a, b, c … Then by repetition</dd>
 <dt>Remarks</dt><dd>比例式の左辺。印刷は x′/a, x′/c (h なし) で、2 項目は斜線の位置がずれた「x′b/」(2 倍切り出しで確認; x′/b と読む) — 所見候補 (x′/ah, x′/bh であるべき; 2 行目の x′/ah と不整合)。印刷どおりの頭で ch14-162 を述べると偽 (ch14-162 の ✎)</dd>
 <dt>Crop</dt><dd>folio 151, x 125&ndash;1335, y 1999&ndash;2058 (full-size scan pixels)</dd>
@@ -1893,7 +1916,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 151 (PDF p. 171) &middot; &sect;8 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>: (x″/h)^{n+1}a/x″h . b/x″h …</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>: (x″/h)^{n+1}a/x″h</dd>
 <dt>Remarks</dt><dd>第 3 行 (比の続き、関係記号なし)</dd>
 <dt>Crop</dt><dd>folio 151, x 125&ndash;1335, y 2107&ndash;2159 (full-size scan pixels)</dd>
@@ -1904,7 +1927,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 152 (PDF p. 172) &middot; &sect;8 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>Π^{n+1}x/ah : Π^{n+1}x′/ah : Π^{n+1}x″/ah : …</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>which may be written</dd>
 <dt>Remarks</dt><dd>Π の上に n+1</dd>
 <dt>Crop</dt><dd>folio 152, x 125&ndash;1335, y 170&ndash;270 (full-size scan pixels)</dd>
@@ -1926,7 +1949,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 152 (PDF p. 172) &middot; &sect;8 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/habc … : x′/habc … : x″/habc …</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>Now</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 152, x 125&ndash;1335, y 393&ndash;448 (full-size scan pixels)</dd>
@@ -1959,7 +1982,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 152 (PDF p. 172) &middot; &sect;8 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>∴ (x/h)ⁿ . x/habc … : (x′/h)ⁿ . x′/habc … : (x″/h)ⁿ . x″/habc … : …</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>∴ (x/h)ⁿ . x/habc</dd>
 <dt>Remarks</dt><dd>比例式の左辺</dd>
 <dt>Crop</dt><dd>folio 152, x 125&ndash;1335, y 627&ndash;681 (full-size scan pixels)</dd>
@@ -1992,7 +2015,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 152 (PDF p. 172) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/h ; {a^{xh}b^{xh}c …}</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>(1) x/h, etc., i.e. the à priori probabilities of x, etc., and (2)</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 152, x 125&ndash;1335, y 1240&ndash;1342 (full-size scan pixels)</dd>
@@ -2025,7 +2048,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 152 (PDF p. 172) &middot; &sect;8 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>x/habc … ∝ x/ah . x/bh . x/ch …</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(Keynes が却下: 誤った簡略形。前提付きの成立 10c/th_14_r175、一般には偽 10c/Ch14Models.simplified_46_fails)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">Rejected by Keynes</span>(Keynes が却下: 誤った簡略形。前提付きの成立 10c/th_14_r175、一般には偽 10c/Ch14Models.simplified_46_fails)</dd>
 <dt>Anchor words</dt><dd>has been omitted, so that</dd>
 <dt>Remarks</dt><dd>誤った簡略形 2 (教科書の証言結合則の誤り)。脚注 1「See p 180 below」。必要な前提: 係数 {a^{xh}b^{xh}c …} が全て 1、かつ x/h が選択肢 x によらない（印刷に無い; 本文は「except under special conditions」とだけ言う）。前提付きの成立は 10c/th_14_r175、一般には偽 10c/Ch14Models.simplified_46_fails</dd>
 <dt>Crop</dt><dd>folio 152, x 125&ndash;1335, y 1840&ndash;1890 (full-size scan pixels)</dd>
@@ -2136,7 +2159,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 153 (PDF p. 173) &middot; &sect;8 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>. (abc … /xh ÷ (a/xh . b/xh . c/xh …)) . [a/xh ÷ a/h . b/xh ÷ b/h …],</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>. abc … /xh</dd>
 <dt>Remarks</dt><dd>第 2 行 (積の続き)</dd>
 <dt>Crop</dt><dd>folio 153, x 125&ndash;1335, y 1414&ndash;1539 (full-size scan pixels)</dd>
@@ -2180,7 +2203,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 154 (PDF p. 174) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/habc … ; x/ah, x/bh ; x/h, {a^{xh}b^{xh}c^{xh} …}, {a^{x̄h}b^{x̄h}c^{x̄h} …}</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>This formula gives x/habc … in terms of</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 154, x 125&ndash;1335, y 173&ndash;342 (full-size scan pixels)</dd>
@@ -2213,7 +2236,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 154 (PDF p. 174) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>{a^{xh}b^{xh}c …} and {a^{x̄h}b^{x̄h}c …} are not less than unity</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>I.e. if … are not less than unity,</dd>
 <dt>Remarks</dt><dd>「not less than」は語 (関係記号なし)</dd>
 <dt>Crop</dt><dd>folio 154, x 125&ndash;1335, y 808&ndash;862 (full-size scan pixels)</dd>
@@ -2235,7 +2258,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 154 (PDF p. 174) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>{aʰbʰcʰd …}</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>then {aʰbʰcʰd …} beginning with unity, continually increases</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 154, x 125&ndash;1335, y 908&ndash;963 (full-size scan pixels)</dd>
@@ -2301,7 +2324,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 154 (PDF p. 174) &middot; &sect;8 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>Π[x̄/ah ÷ x̄/h . x̄/bh ÷ x̄/h …].</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>Π[</dd>
 <dt>Remarks</dt><dd>第 2 行 (積の続き、関係記号なし)</dd>
 <dt>Crop</dt><dd>folio 154, x 125&ndash;1335, y 1467&ndash;1584 (full-size scan pixels)</dd>
@@ -2312,7 +2335,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 154 (PDF p. 174) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/h . G + x̄/h . G′</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>For let x/h . G + x̄/h . G′ be its value</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 154, x 125&ndash;1335, y 1640&ndash;1690 (full-size scan pixels)</dd>
@@ -2323,7 +2346,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 154 (PDF p. 174) &middot; &sect;8 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/kh . G + x̄/kh . G′</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>so that … is its value when k is taken</dd>
 <dt>Remarks</dt><dd>関係記号なし</dd>
 <dt>Crop</dt><dd>folio 154, x 125&ndash;1335, y 1749&ndash;1812 (full-size scan pixels)</dd>
@@ -2368,7 +2391,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 154 (PDF p. 174) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/kh − x/h ; x̄/h − x̄/kh</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>for the same reason x/kh − x/h, which is equal to x̄/h − x̄/kh, is positive</dd>
 <dt>Remarks</dt><dd>「is equal to」「is positive」は語</dd>
 <dt>Crop</dt><dd>folio 154, x 125&ndash;1335, y 1917&ndash;2023 (full-size scan pixels)</dd>
@@ -2478,7 +2501,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 155 (PDF p. 175) &middot; &sect;付録 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>a/ε (分数: 上 a 下 ε)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>McColl</dd>
 <dt>Anchor words</dt><dd>he writes a/ε ; and</dd>
 <dt>Remarks</dt><dd>McColl の記法 (分数で印刷)</dd>
@@ -2490,7 +2513,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 155 (PDF p. 175) &middot; &sect;付録 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>a/b (分数)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>McColl</dd>
 <dt>Anchor words</dt><dd>he writes a/b.</dd>
 <dt>Remarks</dt><dd></dd>
@@ -2529,7 +2552,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 155 (PDF p. 175) &middot; &sect;付録 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>a/b − a/ε</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>McColl</dd>
 <dt>Anchor words</dt><dd>The difference a/b − a/ε, i.e. the change</dd>
 <dt>Remarks</dt><dd>分数の差 (関係記号なし)</dd>
@@ -2541,7 +2564,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 156 (PDF p. 176) &middot; &sect;付録 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>δ a/b (分数の前に δ)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>McColl</dd>
 <dt>Anchor words</dt><dd>and denotes it by δ a/b.</dd>
 <dt>Remarks</dt><dd>「依存 (dependence)」の記法</dd>
@@ -2639,7 +2662,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 157 (PDF p. 177) &middot; &sect;付録 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>W(E) ; W_F(E)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Czuber</dd>
 <dt>Anchor words</dt><dd>He denotes the probability of an event E by W(E), and … by W_F(E).</dd>
 <dt>Remarks</dt><dd>直前行は folio 156 末尾</dd>

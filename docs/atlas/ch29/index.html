@@ -28,6 +28,11 @@ code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;pad
 .external{background:#e4e0d4}
 .definition{background:#dcefef}
 .notation{background:#f3eaf6}
+.mi{display:inline-block;border:1px solid #999;border-radius:3px;padding:0 5px;margin-right:6px;font-size:.88em;background:#f7f7f7}
+.legend{margin:0 0 1em;font-size:.92em}
+.legend h2{font-size:1.05em;margin:.8em 0 .3em}
+.legend dl{grid-template-columns:13em 1fr}
+.legend dt{color:#111}
 footer{font-size:.85em;color:#666;margin-top:2em}
 nav.nav{font-size:.92em;margin:0 0 1em}
 nav.nav a{white-space:nowrap}
@@ -43,11 +48,29 @@ nav.nav.end{margin:2em 0 0}
 <tr><th>Ledger rows</th><td>190</td></tr>
 <tr><th>Formulas</th><td>83 (display 28, inline 55; items 83, numbered 0)</td></tr>
 <tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>26 &nbsp; <span class="mark equiv">&asymp;</span>5 &nbsp; <span class="mark corrected">&#9998;</span>2 &nbsp; <span class="mark none">&#26410;</span>1 &nbsp; <span class="mark external">&#22806;</span>10 &nbsp; <span class="mark definition">&#23450;</span>39</td></tr>
+<tr><th>Not yet, by class</th><td><span class="mi">No general proof</span>1</td></tr>
 <tr><th>Notation</th><td>106 (with a Lean counterpart 78)</td></tr>
 <tr><th>Reference rows</th><td>1</td></tr>
 </table></div>
 <div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (190)</button><button type="button" data-k="printed">&#10003; (26)</button><button type="button" data-k="equiv">&asymp; (5)</button><button type="button" data-k="corrected">&#9998; (2)</button><button type="button" data-k="none">not yet (1)</button><button type="button" data-k="external">external axiom (10)</button><button type="button" data-k="definition">definition (39)</button><button type="button" data-k="notation">notation (106)</button></div>
-<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically (legend below).</p>
+<div class="legend">
+<h2>Legend: the Lean column of a formula row</h2>
+<dl>
+<dt><span class="mark printed">✓</span>Printed form</dt><dd>the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ).</dd>
+<dt><span class="mark equiv">≈</span>Equivalent form</dt><dd>a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables).</dd>
+<dt><span class="mark corrected">✎</span>Corrected form</dt><dd>the printed line is refuted or not derivable, and a corrected form is proved.</dd>
+<dt><span class="mark external">外</span>Depends on a named external axiom</dt><dd>depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not.</dd>
+<dt><span class="mark definition">定</span>Definition counterpart</dt><dd>the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</dd>
+<dt><span class="mark none">未</span>Not yet</dt><dd>none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); the card names one of the five classes below.</dd>
+</dl>
+<h2>Not yet (&#26410;): five classes</h2><dl>
+<dt><span class="mi">Other author&#x27;s formula</span></dt><dd>another author's formula, quoted or criticised by Keynes; a theorem refuting it, if any, is named; &#9998; is not used, since &#9998; is reserved for Keynes's own printed errors.</dd>
+<dt><span class="mi">Rejected by Keynes</span></dt><dd>a rule or a simplified form that Keynes himself rejects as invalid, or says does not follow.</dd>
+<dt><span class="mi">Boundary: needs an outside axiom</span></dt><dd>boundary: the line becomes a theorem only if an axiom Keynes does not state is added, e.g. an application of the Principle of Indifference such as &phi;(x)/h = &phi;(y)/h, or a probability value assigned in an example; the contrast is <code>phase12b_underdetermination/underdetermined</code>, where the axioms leave a/h undetermined.</dd>
+<dt><span class="mi">Approximation / measured value</span></dt><dd>an equation printed as approximate, or a value from a table of measurements.</dd>
+<dt><span class="mi">No general proof</span></dt><dd>no proof of the general form: only numerical checks, finite-model values, or steps inside a proof.</dd>
+</dl></div>
 <section class="card" id="ch29-001">
 <h2>ch29-001</h2>
 <img src="img/ch29-001.png" alt="mp" loading="lazy">
@@ -241,7 +264,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>mpq</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法、016 の再掲; 条件「mpq must be large」は外部公理 2 本の p ∈ (0, 1) 固定・m → ∞ に含まれる)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span>(記法、016 の再掲; 条件「mpq must be large」は外部公理 2 本の p ∈ (0, 1) 固定・m → ∞ に含まれる)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-016">ch29-016</a></dd>
 <dt>Anchor words</dt><dd><code>also that mpq must be large</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -253,7 +276,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>mp</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法、001 の再掲)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span>(記法、001 の再掲)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-001">ch29-001</a></dd>
 <dt>Anchor words</dt><dd><code>most probable value mp will lie between</code></dd>
 <dt>Remarks</dt><dd>第 2 回で追加 (読み手役の指摘): 「divergence from the most probable value mp will lie between z and z+dz」</dd>
@@ -266,7 +289,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>z + dz</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法; 整数 h を連続変数 z に置き換える「fiction」は形式化しない。密度は 020)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span>(記法; 整数 h を連続変数 z に置き換える「fiction」は形式化しない。密度は 020)</dd>
 <dt>Quoted from</dt><dd>Bertrand</dd>
 <dt>Anchor words</dt><dd><code>between z and z+dz, is</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -290,7 +313,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 339 (PDF p. 359) &middot; &sect;§2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>mp</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法、001 の再掲)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span>(記法、001 の再掲)</dd>
 <dt>Reprint of</dt><dd><a href="#ch29-001">ch29-001</a></dd>
 <dt>Anchor words</dt><dd><code>most probable value mp will be less</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -553,7 +576,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 343 (PDF p. 363) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>n + 1</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法、Lean 対応なし)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span>(記法、Lean 対応なし)</dd>
 <dt>Anchor words</dt><dd><code>on the n+1th occasion must be</code></dd>
 <dt>Remarks</dt><dd>序数 (n+1)th。B36 修正 1 回目: x の第 2 添字の場合分けへの対応づけは弱いので Lean 対応から外した。</dd>
 <dt>Crop</dt><dd>folio 343, x 125&ndash;1335, y 491&ndash;543 (full-size scan pixels)</dd>
@@ -794,7 +817,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 347 (PDF p. 367) &middot; &sect;§10 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(σ − s)/σ · s</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法; 数値例は結論を支えていない: phase16b_poisson_succession/th_29_065・th_29_065_ratio は σ = 10 の厳密な分散 s(σ − s)/(σ − 1) · pq と (σ − s)/σ · s の比 σ/(σ − 1) を示すだけで、「σ, s, σ − s が大きい」ときの Czuber の近似そのもの (Stirling による) は形式化していない)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span>(記法; 数値例は結論を支えていない: phase16b_poisson_succession/th_29_065・th_29_065_ratio は σ = 10 の厳密な分散 s(σ − s)/(σ − 1) · pq と (σ − s)/σ · s の比 σ/(σ − 1) を示すだけで、「σ, s, σ − s が大きい」ときの Czuber の近似そのもの (Stirling による) は形式化していない)</dd>
 <dt>Quoted from</dt><dd>Czuber vol. i pp. 163, 164</dd>
 <dt>Anchor words</dt><dd><code>of drawings were … s instead of s.</code></dd>
 <dt>Remarks</dt><dd>行内の分数に s を乗じる。B48 修正 1 回目 (裁定): ≈ (数値評価) をやめ未に。</dd>
@@ -977,7 +1000,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 350 (PDF p. 370) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>m + n</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法; m 回の失敗を含む確率は継起の仮定の一般形 (084 の (r + x)/(s + y)) を要し、本 phase は連続生起の場合だけを data 上に置く。事前の密度からの値は phase16b_poisson_succession/th_29_073_beta の c &gt; 0 の場合)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span>(記法; m 回の失敗を含む確率は継起の仮定の一般形 (084 の (r + x)/(s + y)) を要し、本 phase は連続生起の場合だけを data 上に置く。事前の密度からの値は phase16b_poisson_succession/th_29_073_beta の c &gt; 0 の場合)</dd>
 <dt>Anchor words</dt><dd><code>m failures on m+n occasions, it is</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 350, x 125&ndash;1335, y 2156&ndash;2203 (full-size scan pixels)</dd>
@@ -988,7 +1011,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 351 (PDF p. 371) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>s − r</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法; 対応が弱い: phase16b_poisson_succession/th_29_082 は 1 − (r+x)/(s+y) = ((s − r) + (y − x))/(s + y) の算術で、印刷の「m small compared with s − r」の条件は扱わない)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span>(記法; 対応が弱い: phase16b_poisson_succession/th_29_082 は 1 − (r+x)/(s+y) = ((s − r) + (y − x))/(s + y) の算術で、印刷の「m small compared with s − r」の条件は扱わない)</dd>
 <dt>Anchor words</dt><dd><code>m small compared with s−r.</code></dd>
 <dt>Remarks</dt><dd>B48 修正 1 回目 (裁定): 定をやめ未に (044 の前例)。</dd>
 <dt>Crop</dt><dd>folio 351, x 125&ndash;1335, y 246&ndash;284 (full-size scan pixels)</dd>
@@ -999,7 +1022,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 351 (PDF p. 371) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>y + 1</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記法、序数; 対応が弱い: phase16b_poisson_succession/SuccRule は k 回続けて起こった後の k + 1 回目の確率で、印刷の y 回中 x 回 (084) の場合は扱わない)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span>(記法、序数; 対応が弱い: phase16b_poisson_succession/SuccRule は k 回続けて起こった後の k + 1 回目の確率で、印刷の y 回中 x 回 (084) の場合は扱わない)</dd>
 <dt>Anchor words</dt><dd><code>its probability at the y+1th is</code></dd>
 <dt>Remarks</dt><dd>序数。B48 修正 1 回目 (裁定): 定をやめ未に (044 の前例)。</dd>
 <dt>Crop</dt><dd>folio 351, x 125&ndash;1335, y 409&ndash;503 (full-size scan pixels)</dd>
@@ -1044,7 +1067,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 351 (PDF p. 371) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>r/s</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Reprint of</dt><dd><a href="#ch29-033">ch29-033</a></dd>
 <dt>Anchor words</dt><dd><code>differing widely from r/s is greater than</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1056,7 +1079,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 351 (PDF p. 371) &middot; &sect;§11 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>r/s</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Reprint of</dt><dd><a href="#ch29-033">ch29-033</a></dd>
 <dt>Anchor words</dt><dd><code>tend back towards r/s (as when we draw</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1797,7 +1820,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 356 (PDF p. 376) &middot; &sect;§14 &middot; Table &middot; Table &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>a².</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd><code>following table :</code></dd>
 <dt>Remarks</dt><dd>表の列見出し 1</dd>
 <dt>Crop</dt><dd>folio 356, x 125&ndash;1335, y 1080&ndash;1180 (full-size scan pixels)</dd>
@@ -1937,7 +1960,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 357 (PDF p. 377) &middot; &sect;§14 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>p_1 p_2 . . . p_μ</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1846</dd>
 <dt>Anchor words</dt><dd><code>in μ consecutive trials are … respectively</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -1949,7 +1972,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 357 (PDF p. 377) &middot; &sect;§14 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>1/(2(m − s)) √(m(μ − m)/μ) (s/μ)^m ((μ − s)/(μ − m))^{μ−m+1}</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(I. は証明していない; 印刷形 (s/μ)^m の反例は nec_29_163、F29.5)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span>(I. は証明していない; 印刷形 (s/μ)^m の反例は nec_29_163、F29.5)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1846</dd>
 <dt>Anchor words</dt><dd><code>at least m times is less than</code></dd>
 <dt>Remarks</dt><dd>第 2 因子は <code>(s/μ)^m</code>; III. の対応因子は <code>(s/m)^m</code> (不一致、どちらかが T)</dd>
@@ -1973,7 +1996,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 357 (PDF p. 377) &middot; &sect;§14 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>1/(2(s − n)) √(μ(μ − n)/μ) ((μ − s)/(μ − n))^{μ−n} (s/n)^{n+1}</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(II. は証明していない; 根号 √(μ(μ − n)/μ) と I. を起こらない回数に写した形の √(n(μ − n)/μ) の比較は th_29_165_cmp、F29.5)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span>(II. は証明していない; 根号 √(μ(μ − n)/μ) と I. を起こらない回数に写した形の √(n(μ − n)/μ) の比較は th_29_165_cmp、F29.5)</dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1846</dd>
 <dt>Anchor words</dt><dd><code>not occur more than n times is less than</code></dd>
 <dt>Remarks</dt><dd>根号内 <code>μ(μ−n)/μ</code> (III. では <code>n(μ−n)/μ</code>)、指数 <code>μ−n</code> (III. では <code>n−μ</code>): 不一致 2 箇所</dd>
@@ -1997,7 +2020,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 357 (PDF p. 377) &middot; &sect;§14 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>1 − 1/(2(m − s)) √(m(μ − m)/μ) (s/m)^m ((μ − s)/(μ − m))^{μ−m+1}</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1846</dd>
 <dt>Anchor words</dt><dd><code>and more than n is greater than</code></dd>
 <dt>Remarks</dt><dd>2 行にわたる 1 式の第 1 行</dd>
@@ -2009,7 +2032,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 357 (PDF p. 377) &middot; &sect;§14 &middot; Text &middot; Display &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>− 1/(2(s − n)) √(n(μ − n)/μ) (s/n)^{n+1} ((μ − s)/(μ − n))^{n−μ}</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Tchebycheff 1846</dd>
 <dt>Anchor words</dt><dd><code>provided m&gt;s+1, n&lt;s−1.</code></dd>
 <dt>Remarks</dt><dd>第 2 行; 165 との不一致は上記</dd>
@@ -2048,7 +2071,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 358 (PDF p. 378) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>1/√(2πmpq) · e^{−h²/2mpq},</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Reprint of</dt><dd><a href="#ch29-012">ch29-012</a></dd>
 <dt>Anchor words</dt><dd><code>takes the form … which is the same for</code></dd>
 <dt>Remarks</dt><dd>行内に組まれた分数; <code>+h</code>, <code>−h</code> は符号付き裸の記号 (数えない)</dd>
@@ -2060,7 +2083,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 358 (PDF p. 378) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>pm</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd><code>divergence less than pm is equal to</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 358, x 125&ndash;1335, y 1293&ndash;1342 (full-size scan pixels)</dd>
@@ -2071,7 +2094,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 358 (PDF p. 378) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>pm</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Reprint of</dt><dd><a href="#ch29-172">ch29-172</a></dd>
 <dt>Anchor words</dt><dd><code>divergence in excess of pm, and</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -2083,7 +2106,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 358 (PDF p. 378) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>pm</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Reprint of</dt><dd><a href="#ch29-172">ch29-172</a></dd>
 <dt>Anchor words</dt><dd><code>frequency&#x27;s exceeding pm in a set</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -2095,7 +2118,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 358 (PDF p. 378) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>pm.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Reprint of</dt><dd><a href="#ch29-172">ch29-172</a></dd>
 <dt>Anchor words</dt><dd><code>of its falling short of pm.</code></dd>
 <dt>Remarks</dt><dd>数 60, 10, 9, 11, 5, 20 は裸の数</dd>
@@ -2132,7 +2155,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 359 (PDF p. 379) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>n = 1</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(一般の証明なし: 数値 9 点の検算のみ: phase16c_tchebycheff/th_29_178 は a = 2, 3, 9 で n = 1, 2, 3 の Δ を厳密に計算する)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">No general proof</span>(一般の証明なし: 数値 9 点の検算のみ: phase16c_tchebycheff/th_29_178 は a = 2, 3, 9 で n = 1, 2, 3 の Δ を厳密に計算する)</dd>
 <dt>Quoted from</dt><dd>Simmons</dd>
 <dt>Anchor words</dt><dd><code>a maximum when n=1, constantly</code></dd>
 <dt>Remarks</dt><dd>B49 修正 1 回目 (裁定): ≈ (数値評価) をやめ未に (065 と同じ)。a = 1 (p = 1/2) では対称性から Δ = 0 で、「constantly diminishing」は狭義には成り立たない (F29.22、Lean では示していない)。</dd>
@@ -2144,7 +2167,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 359 (PDF p. 379) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(1/3) · (a − 1)/(a + 1)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Simmons</dd>
 <dt>Anchor words</dt><dd><code>lying always between … times the</code></dd>
 <dt>Remarks</dt><dd>行内の分数 2 つの積</dd>
@@ -2156,7 +2179,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 359 (PDF p. 379) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(a/(a + 1) + 1/(a + 1))^{n(a+1)}</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Simmons</dd>
 <dt>Anchor words</dt><dd><code>greatest term in … and</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -2169,7 +2192,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 359 (PDF p. 379) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(1/3) · (a − 1)/(a + 1)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Reprint of</dt><dd><a href="#ch29-179">ch29-179</a></dd>
 <dt>Quoted from</dt><dd>Simmons</dd>
 <dt>Anchor words</dt><dd><code>and … times the</code></dd>
@@ -2182,7 +2205,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 360 (PDF p. 380) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(a/(a + 1) + 1/(a + 1))^{(n+1)(a+1)},</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Simmons</dd>
 <dt>Anchor words</dt><dd><code>greatest term in … , and being approxi-</code></dd>
 <dt>Remarks</dt><dd>頁頭; 指数が 180 と違う</dd>
@@ -2194,7 +2217,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 360 (PDF p. 380) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>(1/3) · (a − 1)/√(2πna(a + 1)).</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Simmons</dd>
 <dt>Anchor words</dt><dd><code>when n is very large, to</code></dd>
 <dt>Remarks</dt><dd></dd>
@@ -2255,7 +2278,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 360 (PDF p. 380) &middot; &sect;§16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd><code>mp</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Reprint of</dt><dd><a href="#ch29-001">ch29-001</a></dd>
 <dt>Anchor words</dt><dd><code>not only m but mp also is large</code></dd>
 <dt>Remarks</dt><dd>第 2 回で追加 (再読で発見): 表の直後「Thus unless not only m but mp also is large」</dd>

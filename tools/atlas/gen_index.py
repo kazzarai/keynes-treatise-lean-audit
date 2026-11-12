@@ -3,6 +3,8 @@
 # 数はすべて台帳本体 (chNN.md・notes_III.md) の行から、gen.py と同じ関数 (read_ledger・lean_mark・summary) で数える。
 #   式の行: 種別「式」の行。項目: 式の行の項目ID の種類。Lean 対応の項目: その項目の行のどれかが ✓/≈/✎。
 #   番号付き項目: 番号欄が空でない式の行を持つ項目 (箇条記号 (i.) なども番号に入れる)。
+# 部ごとの表と章の一覧の下に、未の式行の分類別の表 (未のある章だけ + 合計) と凡例 (gen.py の legend) を置く。
+#   未の分類が 5 つのどれにも当たらない行があれば WARN (check_all の関門 [9] が赤になる)。
 # 「載せた行」は ✓+≈+✎+外+定 (第五の判定「外」・第六の判定「定」を含む; 未だけが載せていない行)。
 #   項目の Lean 対応 (icov) は従来どおり ✓/≈/✎ のみ (外・定しか持たない項目は定理になった項目に入れない; B37 F-B37.1)。
 # 題と folio 範囲は summary.csv から取る。summary.csv の数の列と台帳から数えた値が違えば標準エラーに出す (直さない)。
@@ -67,7 +69,8 @@ def chapter_stats(rows):
     cov = {k for k, v in items.items() if any(G.lean_mark(r) in ("✓", "≈", "✎") for r in v)}
     num = {k for k, v in items.items() if any(r["num"] not in G.BLANK for r in v)}
     mk = s["marks"]
-    return {"lines": s["formula"], "items": len(items), "icov": len(cov), "num": len(num),
+    mi = {f"mi{i}": k for i, k in enumerate(s["mi"])}  # mi0..mi4 は 5 分類 (G.MI_CLASSES の順)、mi5 は分類外
+    return {**mi, "lines": s["formula"], "items": len(items), "icov": len(cov), "num": len(num),
             "ncov": len(num & cov), "p": mk["✓"], "e": mk["≈"], "c": mk["✎"], "k": mk["未"],
             "x": mk["外"], "d": mk["定"], "nt": s["notation"], "n_lean": s["n_lean"], "rows": s["rows"]}
 
@@ -103,6 +106,8 @@ def main():
         chap, _, (fa, fb, _, _), rows = G.read_ledger(os.path.join(ledger_dir, f"{c}.md"))
         assert chap == c, (chap, c)
         x = chapter_stats(rows)
+        for rid in G.mi_unclassified(rows):
+            warn.append(f"{c}: {rid} 未の分類が 5 分類のどれでもない")
         path = os.path.join(atlas_dir, c, "index.html")
         x["built"] = int(os.path.exists(path) or not missing_ok)
         if x["built"]:
@@ -215,7 +220,23 @@ def main():
             o.append("<tr>" + "".join(cells) + "</tr>")
         o.append("</table></div>")
 
-    # d. 読み方
+    # d. 未の分類別 (未のある章だけ、合計は全章)
+    o.append(f"<h2>{t['ix_h_mi']}</h2>")
+    o.append('<div class="wide"><table class="sum"><tr class="head"><th>' + t["ix_c_mi_ch"] + "</th>"
+             + "".join(f'<th{NC}><span class="mi">{html.escape(t["mi_label"][c])}</span></th>' for c in G.MI_CLASSES)
+             + f'<th{NC}>{html.escape(t["mi_none"])}</th><th{NC}>{t["ix_c_mi_all"]}</th></tr>')
+    for c in G.ORDER:
+        x = st[c]
+        if x["k"]:
+            no = html.escape(t["ix_notes"]) if c == "notes_III" else str(int(c[2:]))
+            o.append(f"<tr><th>{no}</th>" + "".join(f'<td class="n">{x[f"mi{i}"]}</td>' for i in range(6))
+                     + f'<td class="n">{x["k"]}</td></tr>')
+    o.append(f'<tr class="total"><th>{html.escape(t["ix_total"])}</th>'
+             + "".join(f'<td class="n">{tot[f"mi{i}"]}</td>' for i in range(6)) + f'<td class="n">{tot["k"]}</td></tr>')
+    o.append("</table></div>")
+
+    # e. 凡例と読み方
+    o.append(G.legend(t))
     o.append(f'<p class="rules">{t["ix_end_marks"]}<br>{t["ix_end_count"]}<br>'
              f'{t["ix_end_regen"].format(cmd=cmd)}</p>')
     o.append(f"<footer>{t['ix_footer']}</footer>")

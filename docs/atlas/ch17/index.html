@@ -28,6 +28,11 @@ code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;pad
 .external{background:#e4e0d4}
 .definition{background:#dcefef}
 .notation{background:#f3eaf6}
+.mi{display:inline-block;border:1px solid #999;border-radius:3px;padding:0 5px;margin-right:6px;font-size:.88em;background:#f7f7f7}
+.legend{margin:0 0 1em;font-size:.92em}
+.legend h2{font-size:1.05em;margin:.8em 0 .3em}
+.legend dl{grid-template-columns:13em 1fr}
+.legend dt{color:#111}
 footer{font-size:.85em;color:#666;margin-top:2em}
 nav.nav{font-size:.92em;margin:0 0 1em}
 nav.nav a{white-space:nowrap}
@@ -48,7 +53,24 @@ nav.nav.end{margin:2em 0 0}
 <tr><th>Bare-symbol rows (not counted)</th><td>8</td></tr>
 </table></div>
 <div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (230)</button><button type="button" data-k="printed">&#10003; (80)</button><button type="button" data-k="equiv">&asymp; (87)</button><button type="button" data-k="corrected">&#9998; (16)</button><button type="button" data-k="none">not yet (0)</button><button type="button" data-k="definition">definition (19)</button><button type="button" data-k="notation">notation (20)</button></div>
-<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically (legend below).</p>
+<div class="legend">
+<h2>Legend: the Lean column of a formula row</h2>
+<dl>
+<dt><span class="mark printed">✓</span>Printed form</dt><dd>the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ).</dd>
+<dt><span class="mark equiv">≈</span>Equivalent form</dt><dd>a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables).</dd>
+<dt><span class="mark corrected">✎</span>Corrected form</dt><dd>the printed line is refuted or not derivable, and a corrected form is proved.</dd>
+<dt><span class="mark external">外</span>Depends on a named external axiom</dt><dd>depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not.</dd>
+<dt><span class="mark definition">定</span>Definition counterpart</dt><dd>the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</dd>
+<dt><span class="mark none">未</span>Not yet</dt><dd>none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); the card names one of the five classes below.</dd>
+</dl>
+<h2>Not yet (&#26410;): five classes</h2><dl>
+<dt><span class="mi">Other author&#x27;s formula</span></dt><dd>another author's formula, quoted or criticised by Keynes; a theorem refuting it, if any, is named; &#9998; is not used, since &#9998; is reserved for Keynes's own printed errors.</dd>
+<dt><span class="mi">Rejected by Keynes</span></dt><dd>a rule or a simplified form that Keynes himself rejects as invalid, or says does not follow.</dd>
+<dt><span class="mi">Boundary: needs an outside axiom</span></dt><dd>boundary: the line becomes a theorem only if an axiom Keynes does not state is added, e.g. an application of the Principle of Indifference such as &phi;(x)/h = &phi;(y)/h, or a probability value assigned in an example; the contrast is <code>phase12b_underdetermination/underdetermined</code>, where the axioms leave a/h undetermined.</dd>
+<dt><span class="mi">Approximation / measured value</span></dt><dd>an equation printed as approximate, or a value from a table of measurements.</dd>
+<dt><span class="mi">No general proof</span></dt><dd>no proof of the general form: only numerical checks, finite-model values, or steps inside a proof.</dd>
+</dl></div>
 <section class="card" id="ch17-001">
 <h2>ch17-001</h2>
 <img src="img/ch17-001.png" alt="A₁, A₂ ; c₁, c₂ ; p₁ ; p₂" loading="lazy">
@@ -78,7 +100,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 187 (PDF p. 207) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>not less than c₁p₁ and c₂p₂ and not greater than 1 − c₁(1 − p₁), 1 − c₂(1 − p₂), or c₁p₁ + c₂p₂.</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Boole</dd>
 <dt>Anchor words</dt><dd>which is not less than c₁p₁ and c₂p₂ and not greater than</dd>
 <dt>Remarks</dt><dd>関係は語</dd>
@@ -90,7 +112,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 187 (PDF p. 207) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>u = c₁p₁ + c₂p₂ ;</dd>
-<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l004 (前提: 排反を a₁a₂/h = 0、網羅を e/ā₁ā₂h = 0 で)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l004 (前提: 排反を a₁a₂/h = 0、網羅を e/ā₁ā₂h = 0 で); phase16a_boole_challenge/th_17_56_l004_i・th_17_56_l004_cited (引用版に def_X_left_i が残る: 乗法の暗黙使用)</dd>
 <dt>Anchor words</dt><dd>the solution is u = c₁p₁ + c₂p₂ ; whereas Boole’s equations do not reduce to</dd>
 <dt>Remarks</dt><dd>排反の場合</dd>
 <dt>Crop</dt><dd>folio 187, x 125&ndash;1335, y 1428&ndash;1491 (full-size scan pixels)</dd>
@@ -113,7 +135,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a₁/h = c₁,</dd>
-<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10d/th_17_56_l018 (前提 hc₁)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10d/th_17_56_l018 (前提 hc₁); phase16a_boole_challenge/th_17_56_l018_i (前提 hc₁)</dd>
 <dt>Anchor words</dt><dd>Then we have a₁/h = c₁,</dd>
 <dt>Remarks</dt><dd>定義のみ（名付け）。B28d の 10d/th_17_56_l018, l004 (前提 hc₁) は定理の前提に置いて使う</dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 508&ndash;559 (full-size scan pixels)</dd>
@@ -125,7 +147,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a₂/h = c₂,</dd>
-<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10d/th_17_56_l018 (前提 hc₂)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10d/th_17_56_l018 (前提 hc₂); phase16a_boole_challenge/th_17_56_l018_i (前提 hc₂)</dd>
 <dt>Anchor words</dt><dd>a₂/h = c₂,</dd>
 <dt>Remarks</dt><dd>定義のみ（名付け）。B28d の 10d/th_17_56_l018 (前提 hc₂) は定理の前提に置いて使う</dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 508&ndash;559 (full-size scan pixels)</dd>
@@ -137,7 +159,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>e/a₁h = p₁,</dd>
-<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10d/th_17_56_l018 (前提 hp₁)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10d/th_17_56_l018 (前提 hp₁); phase16a_boole_challenge/th_17_56_l018_i (前提 hp₁)</dd>
 <dt>Anchor words</dt><dd>e/a₁h = p₁,</dd>
 <dt>Remarks</dt><dd>定義のみ（名付け）。B28d の 10d/th_17_56_l018 (前提 hp₁) は定理の前提に置いて使う</dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 508&ndash;559 (full-size scan pixels)</dd>
@@ -149,7 +171,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>e/a₂h = p₂ :</dd>
-<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10d/th_17_56_l018 (前提 hp₂)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10d/th_17_56_l018 (前提 hp₂); phase16a_boole_challenge/th_17_56_l018_i (前提 hp₂)</dd>
 <dt>Anchor words</dt><dd>e/a₂h = p₂ : we require e/h.</dd>
 <dt>Remarks</dt><dd>定義のみ（名付け）。B28d の 10d/th_17_56_l018 (前提 hp₂) は定理の前提に置いて使う</dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 508&ndash;559 (full-size scan pixels)</dd>
@@ -172,7 +194,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>e/h = u,</dd>
-<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10d/th_17_56_l018 (前提 hu)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10d/th_17_56_l018 (前提 hu); phase16a_boole_challenge/th_17_56_l018_i (前提 hu)</dd>
 <dt>Anchor words</dt><dd>Let e/h = u, and</dd>
 <dt>Remarks</dt><dd>定義のみ（名付け）。B28d の 10d/th_17_56_l018, l021 (前提 hu) は定理の前提に置いて使う</dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 559&ndash;610 (full-size scan pixels)</dd>
@@ -184,7 +206,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a₁a₂/eh = z.</dd>
-<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10d/th_17_56_l021 (前提 hz)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10d/th_17_56_l021 (前提 hz); phase16a_boole_challenge/th_17_56_l019_i (前提 hz)</dd>
 <dt>Anchor words</dt><dd>and let a₁a₂/eh = z.</dd>
 <dt>Remarks</dt><dd>定義のみ（名付け）。B28d の 10d/th_17_56_l021 (前提 hz) は定理の前提に置いて使う</dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 559&ndash;610 (full-size scan pixels)</dd>
@@ -195,7 +217,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>e/ā₁ā₂h = 0.</dd>
-<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l014 (前提 hexh)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l014 (前提 hexh); phase16a_boole_challenge/th_17_56_l014_i (前提 hexh)</dd>
 <dt>Anchor words</dt><dd>Since the event cannot occur in the absence of both the causes,</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 665&ndash;739 (full-size scan pixels)</dd>
@@ -206,7 +228,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>ā₁ā₂/eh = 0,</dd>
-<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l014 (結論の第 1 選言)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l014 (結論の第 1 選言); phase16a_boole_challenge/th_17_56_l014_i (段そのものが逆確率、def_X 左右両形: 乗法の暗黙使用)</dd>
 <dt>Anchor words</dt><dd>It follows from this that ā₁ā₂/eh = 0, unless</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 739&ndash;812 (full-size scan pixels)</dd>
@@ -218,7 +240,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>e/h = 0,</dd>
-<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l014 (「unless e/h = 0」を第 2 選言で)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l014 (「unless e/h = 0」を第 2 選言で); phase16a_boole_challenge/th_17_56_l014_i (第 2 選言)</dd>
 <dt>Anchor words</dt><dd>unless e/h = 0,</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 739&ndash;812 (full-size scan pixels)</dd>
@@ -229,7 +251,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>(a₁ + a₂)/eh = 1,</dd>
-<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>5/th_17_56 (前提 hexh)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>5/th_17_56 (前提 hexh); phase16a_boole_challenge/th_17_56_l016_i・th_17_56_l016_cited (def_X は (1) と代入原理 (12) を経る)</dd>
 <dt>Anchor words</dt><dd>i.e.</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 812&ndash;894 (full-size scan pixels)</dd>
@@ -240,7 +262,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a₁/eh + a₂/eh = 1 + a₁a₂/eh</dd>
-<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l017 (前提 (a₁ + a₂)/eh = 1 と Cons (eh))</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l017 (前提 (a₁ + a₂)/eh = 1 と Cons (eh)); phase16a_boole_challenge/th_17_56_l017_i・th_17_56_l017_cited (def_X は (24) を経る)</dd>
 <dt>Anchor words</dt><dd>whence … by (24).</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 893&ndash;985 (full-size scan pixels)</dd>
@@ -251,7 +273,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a₁/eh = c₁p₁/u and a₂/eh = c₂p₂/u,</dd>
-<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l018 (u ≠ 0)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l018 (u ≠ 0); phase16a_boole_challenge/th_17_56_l018_i (第 14 章 (38) の Bayes 反転 th_14_38_full_i と同じ公理の組: 乗法の暗黙使用)</dd>
 <dt>Anchor words</dt><dd>Now</dd>
 <dt>Remarks</dt><dd>関係 2 (分数)</dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 984&ndash;1109 (full-size scan pixels)</dd>
@@ -262,7 +284,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>∴ u = (c₁p₁ + c₂p₂)/(1 + z),</dd>
-<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56 (分母払い形 u = p₁c₁ + p₂c₂ − zu; u, c, p, z を Pr で)</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56 (分母払い形 u = p₁c₁ + p₂c₂ − zu; u, c, p, z を Pr で); phase16a_boole_challenge/th_17_56_l019_i・th_17_56_l019_cited (印刷の分数形)</dd>
 <dt>Anchor words</dt><dd>∴</dd>
 <dt>Remarks</dt><dd>分数。(56) の結論</dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1109&ndash;1231 (full-size scan pixels)</dd>
@@ -273,7 +295,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>ea₁a₂/h = y,</dd>
-<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10d/th_17_56_l021 (前提 hy)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>10d/th_17_56_l021 (前提 hy); phase16a_boole_challenge/th_17_56_l021_i (前提 hy)</dd>
 <dt>Anchor words</dt><dd>If we write ea₁a₂/h = y,</dd>
 <dt>Remarks</dt><dd>定義のみ（名付け）。B28d の 10d/th_17_56_l021 (前提 hy) は定理の前提に置いて使う</dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1346&ndash;1408 (full-size scan pixels)</dd>
@@ -284,7 +306,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>y = a₁a₂/eh . e/h = uz,</dd>
-<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l021 (連鎖 2 段)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l021 (連鎖 2 段); phase16a_boole_challenge/th_17_56_l021_i (def_X 右形: 乗法の暗黙使用)</dd>
 <dt>Anchor words</dt><dd></dd>
 <dt>Remarks</dt><dd>連鎖</dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1407&ndash;1477 (full-size scan pixels)</dd>
@@ -295,7 +317,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>u = (c₁p₁ + c₂p₂) − y.</dd>
-<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_raw (c₁p₁ を Def. X で ea₁/h、y を ea₁a₂/h に代入)</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_raw (c₁p₁ を Def. X で ea₁/h、y を ea₁a₂/h に代入); phase16a_boole_challenge/th_17_56_l022_i・th_17_56_l022_cited</dd>
 <dt>Anchor words</dt><dd>so that</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1477&ndash;1554 (full-size scan pixels)</dd>
@@ -306,7 +328,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>y ⩾ 0,</dd>
-<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l023 (範囲公理)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l023 (範囲公理); phase16a_boole_challenge/th_17_56_l023_i</dd>
 <dt>Anchor words</dt><dd>then, since y ⩾ 0,</dd>
 <dt>Remarks</dt><dd>活字は &gt; の下に横線</dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1715&ndash;1773 (full-size scan pixels)</dd>
@@ -317,7 +339,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>u ⩽ c₁p₁ + c₂p₂.</dd>
-<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_1 (第 3 成分; c, p を Pr で、積の順序 p₁c₁)</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_1 (第 3 成分; c, p を Pr で、積の順序 p₁c₁); phase16a_boole_challenge/th_17_56_l024_i・th_17_56_l024_cited</dd>
 <dt>Anchor words</dt><dd>u ⩽ c₁p₁ + c₂p₂. Again</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1772&ndash;1816 (full-size scan pixels)</dd>
@@ -328,7 +350,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>e/h = eā₁/h + ea₁/h ⩽ ā₁/h + ea₁/h ⩽ 1 − c₁ + c₁p₁</dd>
-<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l025 (連鎖 3 段; 第 2 の ⩽ は実際には等号)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l025 (連鎖 3 段; 第 2 の ⩽ は実際には等号); phase16a_boole_challenge/th_17_56_l025_i・th_17_56_l025_cited (引用 (24.2)・(4) の外で def_X_left_i が残る: 乗法の暗黙使用)</dd>
 <dt>Anchor words</dt><dd>by (24.2) and (4).</dd>
 <dt>Remarks</dt><dd>関係 3 (= ⩽ ⩽)</dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1874&ndash;1950 (full-size scan pixels)</dd>
@@ -339,7 +361,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>e/h ⩽ 1 − c₂ + c₂p₂.</dd>
-<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_1 (第 5 成分; c, p を Pr で)</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_1 (第 5 成分; c, p を Pr で); phase16a_boole_challenge/th_17_56_l026_i (乗法の暗黙使用、ch17-025 と同じ)</dd>
 <dt>Anchor words</dt><dd>Similarly e/h ⩽ 1 − c₂ + c₂p₂.</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 1949&ndash;2014 (full-size scan pixels)</dd>
@@ -350,7 +372,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>e/h ⩾ c₁p₁</dd>
-<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_1 (第 1 成分; c, p を Pr で)</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_1 (第 1 成分; c, p を Pr で); phase16a_boole_challenge/th_17_56_l027_i・th_17_56_l027_cited (引用版に def_X_left_i が残る: 乗法の暗黙使用)</dd>
 <dt>Anchor words</dt><dd>From the same equations it appears that e/h ⩾ c₁p₁ and</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 2014&ndash;2082 (full-size scan pixels)</dd>
@@ -362,7 +384,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 188 (PDF p. 208) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>⩾ c₂p₂.</dd>
-<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_1 (第 2 成分; c, p を Pr で)</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_1 (第 2 成分; c, p を Pr で); phase16a_boole_challenge/th_17_56_l027_i・th_17_56_l027_cited (第 2 成分)</dd>
 <dt>Anchor words</dt><dd>and ⩾ c₂p₂.</dd>
 <dt>Remarks</dt><dd>左辺省略</dd>
 <dt>Crop</dt><dd>folio 188, x 125&ndash;1335, y 2014&ndash;2082 (full-size scan pixels)</dd>
@@ -373,7 +395,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>∴ u lies between the greatest of {c₁p₁, c₂p₂} and the least of {c₁p₁ + c₂p₂, 1 − c₁(1 − p₁), 1 − c₂(1 − p₂)}.</dd>
-<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_1 (語の between を 5 不等式の連言で)</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_1 (語の between を 5 不等式の連言で); phase16a_boole_challenge/th_17_56_1_i・th_17_56_1_cited</dd>
 <dt>Anchor words</dt><dd>∴ u lies between</dd>
 <dt>Remarks</dt><dd>波括弧で縦に並ぶ (印刷 3 行) を 1 本に数える (裁定事項)</dd>
 <dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 170&ndash;407 (full-size scan pixels)</dd>
@@ -384,7 +406,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>u &lt; p₁ + p₂.</dd>
-<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>5/th_17_56_2 (修正形 ≤; 印刷の狭義 &lt; は S 判定); 反例 phase15a_ch05_ch08/th_17_56_2_strict_cm・th_17_56_2_eq_model (phase5 の公理を写した PrLaws を満たす 4 世界の数え上げ模型で、a₂ が e と両立しないとき u = p₁ + p₂ = 1/2; PrLaws は phase5 の公理系と同じではない: iii_true を前提が空でない場合に弱め、ax_iii_op・def_XI を含まず、担体は有限集合 (Fin 4 の部分集合) の上の数え上げ確率模型 (値は ℚ))</dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>5/th_17_56_2 (修正形 ≤; 印刷の狭義 &lt; は S 判定); 反例 phase15a_ch05_ch08/th_17_56_2_strict_cm・th_17_56_2_eq_model (phase5 の公理を写した PrLaws を満たす 4 世界の数え上げ模型で、a₂ が e と両立しないとき u = p₁ + p₂ = 1/2; PrLaws は phase5 の公理系と同じではない: iii_true を前提が空でない場合に弱め、ax_iii_op・def_XI を含まず、担体は有限集合 (Fin 4 の部分集合) の上の数え上げ確率模型 (値は ℚ)); phase16a_boole_challenge/th_17_56_2_i・th_17_56_2_cited (修正形 ≤)</dd>
 <dt>Anchor words</dt><dd>The only limit we then have is u &lt; p₁ + p₂.</dd>
 <dt>Remarks</dt><dd>狭義の &lt; (切り出しで確認)</dd>
 <dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 622&ndash;667 (full-size scan pixels)</dd>
@@ -395,7 +417,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>c₁p₁ ⩽ u ⩽ 1 − c₁ + c₁p₁.</dd>
-<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_3 (c, p を Pr で)</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>5/th_17_56_3 (c, p を Pr で); phase16a_boole_challenge/th_17_56_3_i・th_17_56_3_cited</dd>
 <dt>Anchor words</dt><dd>We then have limits c₁p₁ ⩽ u ⩽ 1 − c₁ + c₁p₁.</dd>
 <dt>Remarks</dt><dd>関係 2</dd>
 <dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 717&ndash;768 (full-size scan pixels)</dd>
@@ -406,7 +428,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>c₁p₁ ⩽ u ⩽ c₁p₁ + c₂</dd>
-<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7i/th_17_56_4_src (第 1・2 成分; c, p を Pr で); 5/th_17_56_4</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7i/th_17_56_4_src (第 1・2 成分; c, p を Pr で); 5/th_17_56_4; phase16a_boole_challenge/th_17_56_4_i・th_17_56_4_cited (第 1・2 成分)</dd>
 <dt>Anchor words</dt><dd>We then have</dd>
 <dt>Remarks</dt><dd>関係 2</dd>
 <dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 882&ndash;939 (full-size scan pixels)</dd>
@@ -417,7 +439,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>⩽ c₁p₁ + 1 − c₁.</dd>
-<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7i/th_17_56_4_src (第 3 成分; c, p を Pr で)</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>7i/th_17_56_4_src (第 3 成分; c, p を Pr で); phase16a_boole_challenge/th_17_56_4_i・th_17_56_4_cited (第 3 成分)</dd>
 <dt>Anchor words</dt><dd>⩽ c₁p₁ + 1 − c₁.</dd>
 <dt>Remarks</dt><dd>連鎖の 2 行目</dd>
 <dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 938&ndash;1000 (full-size scan pixels)</dd>
@@ -428,7 +450,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a₁/a₂h = a₁/h,</dd>
-<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>5/th_17_56_5 (前提 hindep)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>5/th_17_56_5 (前提 hindep); phase16a_boole_challenge/th_17_56_5_i (前提 hind)</dd>
 <dt>Anchor words</dt><dd>(56.5) If a₁/a₂h = a₁/h, i.e. if our knowledge of each of the causes is independent,</dd>
 <dt>Remarks</dt><dd>言明 前件</dd>
 <dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 1113&ndash;1163 (full-size scan pixels)</dd>
@@ -439,7 +461,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>y = ea₁a₂/h = e/a₁a₂h . a₁/a₂h . a₂/h = e/a₁a₂h . c₁c₂,</dd>
-<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l035 (連鎖 3 段; 前提 a₁/a₂h = a₁/h)</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l035 (連鎖 3 段; 前提 a₁/a₂h = a₁/h); phase16a_boole_challenge/th_17_56_l035_i (def_X 左形 2 回: 乗法の暗黙使用)</dd>
 <dt>Anchor words</dt><dd>For</dd>
 <dt>Remarks</dt><dd>連鎖 (= 3 つ)</dd>
 <dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 1223&ndash;1295 (full-size scan pixels)</dd>
@@ -450,7 +472,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>∴ u = c₁p₁ + c₂p₂ − c₁c₂ . e/a₁a₂h,</dd>
-<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l036</dd>
+<dt>Lean</dt><dd><span class="mark printed" title="Printed form">✓</span>10d/th_17_56_l036; phase16a_boole_challenge/th_17_56_l036_i・th_17_56_l036_cited</dd>
 <dt>Anchor words</dt><dd>∴</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 1295&ndash;1339 (full-size scan pixels)</dd>
@@ -461,7 +483,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 189 (PDF p. 209) &middot; &sect;2 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>∴ u &gt; c₁p₁ + c₂p₂ − c₁c₂.</dd>
-<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>5/th_17_56_5 (修正形 ≥; 印刷の狭義 &gt; は S 判定); 反例 phase15a_ch05_ch08/th_17_56_5_strict_cm・th_17_56_5_eq_model (同じ模型で e = a₁ + a₂、e/a₁a₂h = 1 のとき u = c₁p₁ + c₂p₂ − c₁c₂ = 3/4; PrLaws は phase5 の公理系と同じではない: iii_true を前提が空でない場合に弱め、ax_iii_op・def_XI を含まず、担体は有限集合 (Fin 4 の部分集合) の上の数え上げ確率模型 (値は ℚ))</dd>
+<dt>Lean</dt><dd><span class="mark corrected" title="Corrected form">✎</span>5/th_17_56_5 (修正形 ≥; 印刷の狭義 &gt; は S 判定); 反例 phase15a_ch05_ch08/th_17_56_5_strict_cm・th_17_56_5_eq_model (同じ模型で e = a₁ + a₂、e/a₁a₂h = 1 のとき u = c₁p₁ + c₂p₂ − c₁c₂ = 3/4; PrLaws は phase5 の公理系と同じではない: iii_true を前提が空でない場合に弱め、ax_iii_op・def_XI を含まず、担体は有限集合 (Fin 4 の部分集合) の上の数え上げ確率模型 (値は ℚ)); phase16a_boole_challenge/th_17_56_5_i・th_17_56_5_cited (修正形 ≥)</dd>
 <dt>Anchor words</dt><dd>∴</dd>
 <dt>Remarks</dt><dd>狭義の &gt; (切り出しで確認)</dd>
 <dt>Crop</dt><dd>folio 189, x 125&ndash;1335, y 1338&ndash;1395 (full-size scan pixels)</dd>
@@ -1057,7 +1079,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 193 (PDF p. 213) &middot; &sect;2 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>(p − a)((p − a)/(1 − a))ʳ is positive and decreases as r increases,</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>So that (p − a)((p − a)/(1 − a))ʳ is positive and decreases as r increases,</dd>
 <dt>Remarks</dt><dd>関係は語</dd>
 <dt>Crop</dt><dd>folio 193, x 125&ndash;1335, y 1023&ndash;1139 (full-size scan pixels)</dd>
@@ -1950,7 +1972,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 201 (PDF p. 221) &middot; &sect;5 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>Σ₁ᵐ z_q is to be a minimum</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(記号の約束 z_q)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span>(記号の約束 z_q)</dd>
 <dt>Anchor words</dt><dd>Then since Σz_q is to be a minimum we must have</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 201, x 125&ndash;1335, y 1226&ndash;1326 (full-size scan pixels)</dd>

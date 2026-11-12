@@ -9,6 +9,9 @@
 # 集計表とナビのリンクは折り返さない (集計表は .wide で包み、幅が足りなければ横スクロール)。
 # ボタンは JavaScript で .card の表示を切り替える。JS が無ければボタンは隠れたままで、全カードが見える。
 # 表示文言は章頁・目次 (gen_index.py) とも辞書 L から引く (--lang ja で切り替え; 既定は en)。
+# 凡例 (Lean 欄の 6 値 ✓ ≈ ✎ 外 定 未 と、未の 5 分類) は辞書 L の legend_* から章頁・目次の両方に出す。
+#   式行の「未 (分類: 理由)」は分類を読んでカードに札 (mi_label) を付け、章頁の集計表に未の分類別の行数を出す。
+#   分類は MI_CLASSES の 5 つだけ。どれにも当たらない未の式行があれば、通常の生成でも --check でも標準エラーに WARN を出す (止めない)。
 # --lang ja: 訳書の切り抜きを並べる手元用の頁 (repo の外にだけ置く)。座標表は {"id","page"(訳書の頁),"pdf_page",
 #   "y0","y1","x0","x1","img"} と任意の "note" (訳書の備考)。数え方・転記・Lean 欄は初版台帳のまま。
 #   訳書で同定できなかった行は座標表に入れない。その行もカードは出し「未同定」と書き、集計表の下に行IDを並べる。
@@ -36,12 +39,18 @@ POS = {"本文": "Text", "図": "Figure", "表": "Table"}
 KIND = {"表示": "Display", "行内": "Inline", "参考": "Reference", "表": "Table"}
 TYPE = {"式": "Formula", "記法": "Notation", "参考": "Reference", "裸記号": "Bare symbol (not counted)"}
 MARK = {"✓": ("printed", "Printed form"), "≈": ("equiv", "Equivalent form"),
-        "✎": ("corrected", "Corrected form"), "未": ("none", "Not in Lean"),
+        "✎": ("corrected", "Corrected form"), "未": ("none", "Not yet"),
         "外": ("external", "Depends on a named external axiom"),
         "定": ("definition", "Definition counterpart")}
 # 第五の判定 (方針 2026-11-02): Lean 欄が「外部公理依存」で始まる式行。件数 0 の章では出力に現れない
 EXT = "外部公理依存"
 # 第六の判定 (B40b): Lean 欄が「定」で始まる式行。定義・名付け・記法の約束に当たる Lean の定義 (または前提名) がある。件数 0 の章では出力に現れない
+# 式行の「未」の 5 分類 (B51; 台帳の語)。Lean 欄は「未 (分類: 理由)」。この 5 つだけで、新設しない。
+MI_CLASSES = ("他の著者の式", "Keynes が却下", "境界: 外から公理が要る", "近似・実測値", "一般の証明なし")
+# 読む側は空白と全角・半角の括弧・コロンの揺れを受ける (書式の厳密な検査は tools/check_ledger_refs.py)
+MI_PAT = {c: re.compile(r"^未\s*[(（]\s*" + r"\s*[:：]\s*".join(r"\s*".join(map(re.escape, w.split(" ")))
+                                                              for w in c.split(": ")) + r"\s*[:：]")
+          for c in MI_CLASSES}
 
 RULES = (
     "Every count on this page is computed from the census ledger, which is built from the page images "
@@ -53,17 +62,7 @@ RULES = (
     "<i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted "
     "separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. "
     "Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. "
-    "The Lean column of a formula row takes one of six values, fixed mechanically: "
-    "<b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); "
-    "<b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, "
-    "a definition substituted, a change of variables); "
-    "<b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; "
-    "<b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); "
-    "<b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms "
-    "do not yield; the theorem is proved, the premise is not; "
-    "<b>&#23450;</b> the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); "
-    "it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; "
-    "there is no theorem statement to compare."
+    "The Lean column of a formula row takes one of six values, fixed mechanically (legend below)."
 )
 
 RULES_JA = (
@@ -77,15 +76,7 @@ RULES_JA = (
     "<i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i> など) は"
     "<b>記法</b>として別に数え、添字・プライム・バーが付いても単独の記号は数えない。"
     "脚注の式も同じ規則に従い、別の頁に再掲された式はもう一度数える。"
-    "式の行の Lean 欄は次の 6 値のどれかで、機械的に決める: "
-    "<b>&#10003;</b> 印刷された関係が定理の文にそのまま現れる (束縛変数の名前・Lean の記法・添字の組み方だけは違ってよい); "
-    "<b>&asymp;</b> 代数的に同値な形を定理が述べる (分母を払う、定義を代入する、変数を替える); "
-    "<b>&#9998;</b> 印刷の行は反駁されるか導けず、修正形が証明されている; "
-    "<b>&#26410;</b> そのどれでもない (証明の途中の行、Lean の定義がない定義だけの行、対応なし); "
-    "<b>&#22806;</b> 名指しされた外部公理 (独立性・等しい見込みなど) に依存する。"
-    "ケインズ自身の公理からは出ない公理で、定理は証明されているが、その前提は証明されていない; "
-    "<b>&#23450;</b> 定義・名付け・記法の約束・例の中で置かれた仮定 (印刷が主張ではなく前提として置いている行)。"
-    "定理の前提として写し、それを担う Lean の定義 (または前提の名前) を挙げる。比べるべき定理文はない。"
+    "式の行の Lean 欄は次の 6 値のどれかで、機械的に決める (凡例は下)。"
 )
 
 CSS = """
@@ -114,6 +105,11 @@ code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;pad
 .external{background:#e4e0d4}
 .definition{background:#dcefef}
 .notation{background:#f3eaf6}
+.mi{display:inline-block;border:1px solid #999;border-radius:3px;padding:0 5px;margin-right:6px;font-size:.88em;background:#f7f7f7}
+.legend{margin:0 0 1em;font-size:.92em}
+.legend h2{font-size:1.05em;margin:.8em 0 .3em}
+.legend dl{grid-template-columns:13em 1fr}
+.legend dt{color:#111}
 footer{font-size:.85em;color:#666;margin-top:2em}
 nav.nav{font-size:.92em;margin:0 0 1em}
 nav.nav a{white-space:nowrap}
@@ -164,6 +160,41 @@ L = {
         "pos": POS, "kind": KIND, "type": TYPE,
         "fn": "Footnote {n}", "fn_cont": "Footnote {n} (continued from folio {f})",
         "mark": {k: v[1] for k, v in MARK.items()},
+        # 凡例 (章頁と目次で共用): Lean 欄の 6 値と、未の 5 分類。mi_label は未のカードに付く札
+        "legend_h": "Legend: the Lean column of a formula row", "legend_mi_h": "Not yet (&#26410;): five classes",
+        "legend_mark": {
+            "✓": "the printed relation appears as stated in a theorem (only the names of bound variables, "
+                 "Lean notation and the layout of subscripts may differ).",
+            "≈": "a theorem states an algebraically equivalent form (cleared denominators, a definition "
+                 "substituted, a change of variables).",
+            "✎": "the printed line is refuted or not derivable, and a corrected form is proved.",
+            "外": "depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not "
+                  "yield; the theorem is proved, the premise is not.",
+            "定": "the line defines, names, fixes a notation, or states a premise of an example (not a claim to be "
+                  "derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it "
+                  "is cited; there is no theorem statement to compare.",
+            "未": "none of these (a line inside a proof, a definition with no Lean definition behind it, or no "
+                  "counterpart); the card names one of the five classes below.",
+        },
+        "legend_mi": {
+            "他の著者の式": "another author's formula, quoted or criticised by Keynes; a theorem refuting it, if any, "
+                            "is named; &#9998; is not used, since &#9998; is reserved for Keynes's own printed errors.",
+            "Keynes が却下": "a rule or a simplified form that Keynes himself rejects as invalid, or says does not follow.",
+            "境界: 外から公理が要る": "boundary: the line becomes a theorem only if an axiom Keynes does not state is "
+                                      "added, e.g. an application of the Principle of Indifference such as "
+                                      "&phi;(x)/h = &phi;(y)/h, or a probability value assigned in an example; the "
+                                      "contrast is <code>phase12b_underdetermination/underdetermined</code>, where the "
+                                      "axioms leave a/h undetermined.",
+            "近似・実測値": "an equation printed as approximate, or a value from a table of measurements.",
+            "一般の証明なし": "no proof of the general form: only numerical checks, finite-model values, or steps "
+                              "inside a proof.",
+        },
+        "mi_label": {
+            "他の著者の式": "Other author's formula", "Keynes が却下": "Rejected by Keynes",
+            "境界: 外から公理が要る": "Boundary: needs an outside axiom", "近似・実測値": "Approximation / measured value",
+            "一般の証明なし": "No general proof",
+        },
+        "s_mi": "Not yet, by class", "mi_none": "unclassified",
         "mark_r": "Reference line (not counted)", "mark_b": "Bare symbol (not counted)", "mark_n": "Notation",
         "d_trans": "Transcription", "d_lean": "Lean", "d_repeat": "Reprint of", "d_source": "Quoted from",
         "d_words": "Anchor words", "d_note": "Remarks", "d_tnote": "", "d_crop": "Crop",
@@ -202,16 +233,11 @@ L = {
         "ix_c_marks": "&#10003; / &asymp; / &#9998; / not yet", "ix_c_ext": "External (&#22806;)", "ix_c_def": "Definition (&#23450;)",
         "ix_notes": "Notes", "ix_total": "All",
         "ix_cards_part": "{c} ({m} of {n} chapters built)",
-        "ix_end_marks": "<b>&#10003;</b> the printed relation appears as stated in a theorem; "
-                        "<b>&asymp;</b> a theorem states an algebraically equivalent form; "
-                        "<b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; "
-                        "<b>not yet</b> none of these; "
-                        "<b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that "
-                        "Keynes's own axioms do not yield; the theorem is proved, the premise is not. "
-                        "A line marked &#22806; or &#23450; counts as a line in Lean. "
-                        "<b>&#23450;</b> the line defines, names, fixes a notation, or states a premise of an example "
-                        "(not a claim to be derived); it is carried as a hypothesis. "
-                        "An item whose lines are only &#22806; or &#23450; is not counted as an item stated in Lean.",
+        "ix_end_marks": "A line marked &#22806; or &#23450; counts as a line in Lean. "
+                        "An item whose lines are only &#22806; or &#23450; is not counted as an item stated in Lean. "
+                        "&#26410; (not yet) counts only formula rows; notation rows are not part of it.",
+        "ix_h_mi": "Formulas not yet (&#26410;), by class",
+        "ix_c_mi_ch": "Ch.", "ix_c_mi_all": "Not yet",
         "ix_end_count": "One printed line containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, "
                         "&sup;, &rarr;) is one formula line; a compound expression without a relation sign is counted "
                         "separately as notation, and a bare symbol is not counted. Every number on this page is "
@@ -279,6 +305,31 @@ L = {
         "pos": {}, "kind": {}, "type": {"裸記号": "裸記号 (数えない)"},
         "fn": "{s} (初版の番号)", "fn_cont": "{s} (初版の番号)",
         "mark": {"✓": "印刷どおり", "≈": "同値な形", "✎": "修正形", "未": "Lean になし", "外": "外部公理依存", "定": "定義対応"},
+        "legend_h": "凡例: 式の行の Lean 欄", "legend_mi_h": "未 (Lean になし) の 5 分類",
+        "legend_mark": {
+            "✓": "印刷された関係が定理の文にそのまま現れる (束縛変数の名前・Lean の記法・添字の組み方だけは違ってよい)。",
+            "≈": "代数的に同値な形を定理が述べる (分母を払う、定義を代入する、変数を替える)。",
+            "✎": "印刷の行は反駁されるか導けず、修正形が証明されている。",
+            "外": "名指しされた外部公理 (独立性・等しい見込みなど) に依存する。ケインズ自身の公理からは出ない公理で、"
+                  "定理は証明されているが、その前提は証明されていない。",
+            "定": "定義・名付け・記法の約束・例の中で置かれた仮定 (印刷が主張ではなく前提として置いている行)。"
+                  "定理の前提として写し、それを担う Lean の定義 (または前提の名前) を挙げる。比べるべき定理文はない。",
+            "未": "そのどれでもない (証明の途中の行、Lean の定義がない定義だけの行、対応なし)。"
+                  "カードには下の 5 分類のどれかを札として付ける。",
+        },
+        "legend_mi": {
+            "他の著者の式": "ケインズが引くか批判する他の著者の式。それを反駁する定理があれば名を挙げる。"
+                            "✎ は使わない (✎ はケインズ自身の印刷の誤りに限る)。",
+            "Keynes が却下": "ケインズ自身が成り立たないと退ける、または導けないと言う規則や簡約形。",
+            "境界: 外から公理が要る": "境界: ケインズが述べていない公理を加えて初めて定理になる行 "
+                                      "(例: φ(x)/h = φ(y)/h のような無差別原理の適用、例の中で与えられた確率の値)。"
+                                      "対比は <code>phase12b_underdetermination/underdetermined</code> で、"
+                                      "そこでは公理が a/h を決めない。",
+            "近似・実測値": "近似として印刷された等式、または測定値の表から取った値。",
+            "一般の証明なし": "一般形の証明がない行: 数値の検算、有限モデルでの値、証明の途中の段だけがある。",
+        },
+        "mi_label": {c: c for c in MI_CLASSES},
+        "s_mi": "未の分類別", "mi_none": "分類外",
         "mark_r": "参考行 (数えない)", "mark_b": "裸記号 (数えない)", "mark_n": "記法",
         "d_trans": "転記 (初版)", "d_lean": "Lean", "d_repeat": "再掲元", "d_source": "引用元",
         "d_words": "照合語 (初版)", "d_note": "備考 (初版台帳)", "d_tnote": "訳書の備考", "d_crop": "切り抜き",
@@ -315,16 +366,11 @@ L = {
         "ix_c_marks": "&#10003; / &asymp; / &#9998; / 未", "ix_c_ext": "外部公理依存 (外)", "ix_c_def": "定義対応 (定)",
         "ix_notes": "注", "ix_total": "合計",
         "ix_cards_part": "{c} ({n} 章中 {m} 章作成)",
-        "ix_end_marks": "<b>&#10003;</b> 印刷の関係がそのまま定理文に現れる。"
-                        "<b>&asymp;</b> 代数的に同値な形を定理が述べる。"
-                        "<b>&#9998;</b> 印刷の行は反証または導出不能で、訂正形を証明した。"
-                        "<b>未</b> そのいずれでもない。"
-                        "<b>外</b> 名指しされた外部公理 (独立性・等しい見込みなど) に依存する。"
-                        "ケインズ自身の公理からは出ない公理で、定理は証明されているが、その前提は証明されていない。"
-                        "外・定の行も「Lean に載せた行」に数える。"
-                        "<b>定</b> 定義・名付け・記法の約束・例の中で置かれた仮定 (印刷が主張ではなく前提として置いている行)。"
-                        "定理の前提として写す。"
-                        "外・定の行しか持たない項目は「Lean で定理になった項目」に数えない。",
+        "ix_end_marks": "外・定の行も「Lean に載せた行」に数える。"
+                        "外・定の行しか持たない項目は「Lean で定理になった項目」に数えない。"
+                        "未は Lean になし の式の行だけを数え、記法の行は含まない。",
+        "ix_h_mi": "未 (Lean になし) の分類別",
+        "ix_c_mi_ch": "章", "ix_c_mi_all": "未",
         "ix_end_count": "関係記号 (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr;) を含む印刷行 1 行 = 式 1 本。"
                         "関係記号のない複合の表現は記法として別に数え、裸の記号は数えない。"
                         "この頁の数はすべて全数台帳 (docs/全数台帳/) から数えたもので、手で書いていない。",
@@ -479,6 +525,45 @@ def lean_mark(r):
     return "未" if r["lean"].startswith("未") or not r["lean"] else "N"
 
 
+def mi_class(r):
+    # 式行の未の分類 (MI_CLASSES のどれか)。未の式行でなければ None、5 つのどれにも当たらなければ ""
+    if r["type"] != "式" or lean_mark(r) != "未":
+        return None
+    return next((c for c in MI_CLASSES if MI_PAT[c].match(r["lean"])), "")
+
+
+def mi_unclassified(rows):
+    return [r["id"] for r in rows if mi_class(r) == ""]
+
+
+def mi_counts(rows):
+    # 分類ごとの未の式行数 (MI_CLASSES の順)。末尾は分類外
+    cl = [mi_class(r) for r in rows]
+    return [cl.count(c) for c in MI_CLASSES] + [cl.count("")]
+
+
+def mi_text(t, n):
+    # 「分類名 n」を 0 でないものだけ並べる (n は mi_counts の値)
+    parts = [f'<span class="mi">{html.escape(t["mi_label"][c])}</span>{k}' for c, k in zip(MI_CLASSES, n) if k]
+    if n[-1]:
+        parts.append(f'<span class="mi">{html.escape(t["mi_none"])}</span>{n[-1]}')
+    return " &nbsp; ".join(parts)
+
+
+def legend(t):
+    # 凡例: Lean 欄の 6 値と、未の 5 分類 (章頁・目次で共用)
+    o = ['<div class="legend">', f'<h2>{t["legend_h"]}</h2>', "<dl>"]
+    for m in ("✓", "≈", "✎", "外", "定", "未"):
+        o.append(f'<dt><span class="mark {MARK[m][0]}">{html.escape(m)}</span>{html.escape(t["mark"][m])}</dt>'
+                 f'<dd>{t["legend_mark"][m]}</dd>')
+    o.append("</dl>")
+    o.append(f'<h2>{t["legend_mi_h"]}</h2><dl>')
+    for c in MI_CLASSES:
+        o.append(f'<dt><span class="mi">{html.escape(t["mi_label"][c])}</span></dt><dd>{t["legend_mi"][c]}</dd>')
+    o.append("</dl></div>")
+    return "\n".join(o)
+
+
 def summary(rows):
     f = [r for r in rows if r["type"] == "式"]
     n = [r for r in rows if r["type"] == "記法"]
@@ -493,6 +578,7 @@ def summary(rows):
         "bare": sum(1 for r in rows if r["type"] == "裸記号"),
         "marks": marks,
         "n_lean": sum(1 for r in n if lean_mark(r) == "N"),
+        "mi": mi_counts(rows),
     }
 
 
@@ -510,7 +596,9 @@ def main():
         if not ledgers:
             sys.exit("--check: 台帳が 1 本も渡されていない")
         for ledger in ledgers:
-            read_ledger(ledger)
+            rows = read_ledger(ledger)[3]
+            for rid in mi_unclassified(rows):
+                print("WARN", ledger, rid, "未の分類が 5 分類のどれでもない", file=sys.stderr)
         return
     ledger, coords, out = args[0], args[1], args[2]
     chap, title, (fa, fb, pa, pb), rows = read_ledger(ledger)
@@ -524,6 +612,8 @@ def main():
             first_of.setdefault(co[r["id"]]["img"], r["id"])
     s = summary(rows)
     mk = s["marks"]
+    for rid in mi_unclassified(rows):
+        print("WARN", chap, rid, "未の分類が 5 分類のどれでもない", file=sys.stderr)
     chno = t["notes"] if chap == "notes_III" else t["chno"].format(n=int(chap[2:]))
     sub_orig = ""
     if ja:
@@ -571,6 +661,8 @@ def main():
                  + (f' &nbsp; <span class="mark external">&#22806;</span>{mk["外"]}' if mk["外"] else "")
                  + (f' &nbsp; <span class="mark definition">&#23450;</span>{mk["定"]}' if mk["定"] else "")
                  + '</td></tr>')
+        if mk["未"]:
+            o.append(f'<tr><th>{t["s_mi"]}</th><td>{mi_text(t, s["mi"])}</td></tr>')
         o.append(f'<tr><th>{t["s_notation"]}</th><td>'
                  + t["s_notation_td"].format(n=s["notation"], k=s["n_lean"]) + "</td></tr>")
         o.append(f'<tr><th>{t["s_ref"]}</th><td>{s["reference"]}</td></tr>')
@@ -592,6 +684,7 @@ def main():
                  + "".join(f'<button type="button" data-k="{k}"{on if k == "all" else ""}>'
                            f"{lab} ({n})</button>" for k, lab, n in btns) + "</div>")
         o.append(f'<p class="rules">{t["rules"]}</p>')
+        o.append(legend(t))
     if missing:
         o.append(f'<p class="rules">{t["unident_list"].format(ids=inline(", ".join(missing)))}</p>')
 
@@ -628,6 +721,10 @@ def main():
         lean = r["lean"]
         if m in MARK and m != "外" and lean.startswith(m):
             lean = lean[len(m):].strip()
+        mc = mi_class(r)
+        if mc is not None:
+            # 未の式行: 分類の札 (分類外は mi_none)。Lean 欄の文は台帳のまま引く
+            badge += f'<span class="mi">{html.escape(t["mi_label"][mc] if mc else t["mi_none"])}</span>'
         o.append(f'<dt>{t["d_lean"]}</dt><dd>{badge}{inline(lean)}</dd>')
         if r["repeat"] not in BLANK:
             o.append(f'<dt>{t["d_repeat"]}</dt><dd>{reprint_links(chap, r["repeat"])}</dd>')

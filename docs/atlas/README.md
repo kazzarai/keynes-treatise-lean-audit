@@ -7,6 +7,9 @@ The atlas puts every row of the census ledger (`docs/全数台帳/chNN.md`) besi
 - **Navigation**: each chapter page has a line at the top and at the bottom leading back to the index and to the previous and next chapter (the Notes on Part III follow Chapter 23).
 - **Filters**: under the summary table of a chapter page, buttons show all cards, only the ✓ / ≈ / ✎ / not-yet formula rows (and the 外 rows, external-axiom dependence, and the 定 rows, definition counterpart, on a page that has any), or only the notation rows. Without JavaScript the buttons stay hidden and every card is shown.
 
+## Legend and the classes of "not yet"
+Every chapter page (under the counting rules) and the index carry a legend of the six values of the Lean column (✓ ≈ ✎ 外 定 未). A formula row marked 未 reads `未 (class: reason)` in the ledger, with one of five classes: other author's formula, rejected by Keynes, boundary (an axiom from outside is needed), approximation / measured value, no general proof. The card shows the class as a tag, the summary table of a chapter page gives the count per class, and the index has a table of the counts by class. A 未 formula row whose class is none of the five makes `gen.py` print `WARN` (also with `--check`), which turns gate [9] red. The filter buttons keep one button for 未.
+
 ## Source of the images
 J. M. Keynes, *A Treatise on Probability*, London: Macmillan, 1921 (first edition), Cornell University Library copy, scanned PDF. **PDF page = folio + 20** for the pages used here (checked against the page number in the PDF text layer). Pages are rendered at the scan's native size, 1445 × 2408 px, by the pure-Python tools in `原典照合1921/render_tool/` (`pdf_pages.py`, then `batch_render.py`; outside this repository). Crops are inverted to black on white, cut to the text column (x 125–1335) with an 8 px margin.
 
