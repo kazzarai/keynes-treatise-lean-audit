@@ -44,25 +44,25 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch18/index.html">&larr; Ch. 18</a> | <a href="../ch20/index.html">Ch. 20 &rarr;</a></nav>
 <h1>Chapter XIX. The Nature of Argument by Analogy</h1>
 <p class="sub">J. M. Keynes, <i>A Treatise on Probability</i> (London: Macmillan, 1921), first edition, pp. 222&ndash;232 (Cornell copy, PDF pp. 242&ndash;252). Formula atlas: every ledger row of the chapter beside the printed line it records.</p>
-<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;)</th><td><b>7 / 16 formulas, 43.8% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 7: &#10003;3 &asymp;2 &#9998;2; not yet 9</b></td></tr>
+<div class="wide"><table class="sum"><tr><th>In Lean (&#10003;+&asymp;+&#9998;+&#22806;+&#23450;)</th><td><b>12 / 16 formulas, 75.0% &mdash; of which proved (&#10003;+&asymp;+&#9998;) 8: &#10003;3 &asymp;3 &#9998;2; definition counterpart (&#23450;) 4; not yet 4</b></td></tr>
 <tr><th>Ledger rows</th><td>75</td></tr>
 <tr><th>Formulas</th><td>16 (display 8, inline 8; items 16, numbered 0)</td></tr>
-<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>3 &nbsp; <span class="mark equiv">&asymp;</span>2 &nbsp; <span class="mark corrected">&#9998;</span>2 &nbsp; <span class="mark none">&#26410;</span>9</td></tr>
-<tr><th>Not yet, by class</th><td><span class="mi">No general proof</span>9</td></tr>
+<tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>3 &nbsp; <span class="mark equiv">&asymp;</span>3 &nbsp; <span class="mark corrected">&#9998;</span>2 &nbsp; <span class="mark none">&#26410;</span>4 &nbsp; <span class="mark definition">&#23450;</span>4</td></tr>
+<tr><th>Not yet, by class</th><td><span class="mi">No general proof</span>4</td></tr>
 <tr><th>Notation</th><td>49 (with a Lean counterpart 40)</td></tr>
 <tr><th>Reference rows</th><td>10</td></tr>
 </table></div>
-<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (75)</button><button type="button" data-k="printed">&#10003; (3)</button><button type="button" data-k="equiv">&asymp; (2)</button><button type="button" data-k="corrected">&#9998; (2)</button><button type="button" data-k="none">not yet (9)</button><button type="button" data-k="notation">notation (49)</button></div>
+<div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (75)</button><button type="button" data-k="printed">&#10003; (3)</button><button type="button" data-k="equiv">&asymp; (3)</button><button type="button" data-k="corrected">&#9998; (2)</button><button type="button" data-k="none">not yet (4)</button><button type="button" data-k="definition">definition (4)</button><button type="button" data-k="notation">notation (49)</button></div>
 <p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically (legend below).</p>
 <div class="legend">
 <h2>Legend: the Lean column of a formula row</h2>
 <dl>
-<dt><span class="mark printed">✓</span>Printed form</dt><dd>the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ).</dd>
-<dt><span class="mark equiv">≈</span>Equivalent form</dt><dd>a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables).</dd>
-<dt><span class="mark corrected">✎</span>Corrected form</dt><dd>the printed line is refuted or not derivable, and a corrected form is proved.</dd>
+<dt><span class="mark printed">✓</span>Printed form</dt><dd>the printed relation appears in a theorem statement (only bound-variable names, Lean notation and subscript layout may differ).</dd>
+<dt><span class="mark equiv">≈</span>Equivalent form</dt><dd>the theorem states an algebraically equivalent form (denominators cleared, a definition substituted, hypotheses re-parametrised).</dd>
+<dt><span class="mark corrected">✎</span>Corrected form</dt><dd>the printed form is refuted and a corrected form is the theorem.</dd>
 <dt><span class="mark external">外</span>Depends on a named external axiom</dt><dd>depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not.</dd>
-<dt><span class="mark definition">定</span>Definition counterpart</dt><dd>the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</dd>
-<dt><span class="mark none">未</span>Not yet</dt><dd>none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); the card names one of the five classes below.</dd>
+<dt><span class="mark definition">定</span>Definition counterpart</dt><dd>the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition, or the theorem whose hypothesis carries it, is cited; there is no theorem statement to compare.</dd>
+<dt><span class="mark none">未</span>Not yet</dt><dd>nothing in the statement of any theorem (lines inside a proof, values absorbed by substitution, sums only). The card names one of the five classes below.</dd>
 </dl>
 <h2>Not yet (&#26410;): five classes</h2><dl>
 <dt><span class="mi">Other author&#x27;s formula</span></dt><dd>another author's formula, quoted or criticised by Keynes; a theorem refuting it, if any, is named; &#9998; is not used, since &#9998; is reserved for Keynes's own printed errors.</dd>
@@ -237,9 +237,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>φ( ≡ φ₁φ₂)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">No general proof</span>(一般の証明なし: 略記の約定 (≡) で、定理文では展開して置換で吸収; 約定そのものは定理文に現れない)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase9b/pand (約定 φ ≡ φ₁φ₂ の右辺 φ₁φ₂ は φ₁ ∧ₚ φ₂; 約定を展開した形が phase9b/th_19_16_src・th_19_18_src の定理文に現れる)</dd>
 <dt>Anchor words</dt><dd><code>The condition</code></dd>
-<dt>Remarks</dt><dd>既存 #13。phase9b/th_19_18_src は φ を φ₁ ∧ₚ φ₂ に展開して述べ、約定そのものは定理文に現れない。有限モデルでは phase9b/Erratum19_17Countermodel.φB (Bool 版 pand) として置かれる</dd>
+<dt>Remarks</dt><dd>既存 #13。phase9b/th_19_18_src は φ を φ₁ ∧ₚ φ₂ に展開して述べ、約定そのものは定理文に現れない。有限モデルでは phase9b/Erratum19_17Countermodel.φB (Bool 版 pand) として置かれる。B54: 未 (一般の証明なし) から 定 に (裁定 (a): 既存の def pand)。</dd>
 <dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 184&ndash;261 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch19-016">
@@ -259,9 +259,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>f( ≡ f₁f₂)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">No general proof</span>(一般の証明なし: 略記の約定 (≡) で、定理文では展開して置換で吸収; 約定そのものは定理文に現れない)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase9b/pand; phase18_notation/th_19_023_rewrite (約定 f ≡ f₁f₂ の右辺は f₁ ∧ₚ f₂; th_19_023_rewrite は約定を前提 hf に運ぶ)</dd>
 <dt>Anchor words</dt><dd><code>Similarly the conclusion</code></dd>
-<dt>Remarks</dt><dd>既存 #14。phase9b/th_19_18_src は f を f₁ ∧ₚ f₂ に展開して述べる。有限モデルでは phase9b/StrictnessCountermodel.fB</dd>
+<dt>Remarks</dt><dd>既存 #14。phase9b/th_19_18_src は f を f₁ ∧ₚ f₂ に展開して述べる。有限モデルでは phase9b/StrictnessCountermodel.fB。B54: 未 (一般の証明なし) から 定 に (裁定 (a): 既存の def pand)。</dd>
 <dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 463&ndash;513 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch19-018">
@@ -281,9 +281,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>φ ≡ φ₁φ₂</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">No general proof</span>(一般の証明なし: 略記の約定 (≡) で、定理文では展開して置換で吸収; 約定そのものは定理文に現れない)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase9b/pand (約定 φ ≡ φ₁φ₂ の右辺 φ₁φ₂ は φ₁ ∧ₚ φ₂; 約定を展開した形が phase9b/th_19_16_src・th_19_18_src の定理文に現れる)</dd>
 <dt>Anchor words</dt><dd><code>If</code> / <code>and f ≡ f₁f₂, where</code></dd>
-<dt>Remarks</dt><dd>既存 #15。phase9b/th_19_18_src は φ を φ₁ ∧ₚ φ₂ に展開して述べる</dd>
+<dt>Remarks</dt><dd>既存 #15。phase9b/th_19_18_src は φ を φ₁ ∧ₚ φ₂ に展開して述べる。B54: 未 (一般の証明なし) から 定 に (裁定 (a): 既存の def pand)。</dd>
 <dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 613&ndash;664 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch19-020">
@@ -293,9 +293,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>f ≡ f₁f₂</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">No general proof</span>(一般の証明なし: 略記の約定 (≡) で、定理文では展開して置換で吸収; 約定そのものは定理文に現れない)</dd>
+<dt>Lean</dt><dd><span class="mark definition" title="Definition counterpart">定</span>phase9b/pand; phase18_notation/th_19_023_rewrite (約定 f ≡ f₁f₂ の右辺は f₁ ∧ₚ f₂; th_19_023_rewrite は約定を前提 hf に運ぶ)</dd>
 <dt>Anchor words</dt><dd><code>, where φ₁ and φ₂ are independent</code></dd>
-<dt>Remarks</dt><dd>既存 #15。phase9b/th_19_18_src は f を f₁ ∧ₚ f₂ に展開して述べる</dd>
+<dt>Remarks</dt><dd>既存 #15。phase9b/th_19_18_src は f を f₁ ∧ₚ f₂ に展開して述べる。B54: 未 (一般の証明なし) から 定 に (裁定 (a): 既存の def pand)。</dd>
 <dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 613&ndash;664 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch19-021">
@@ -326,9 +326,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 225 (PDF p. 245) &middot; &sect;4 &middot; Text &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>g(φ, f)/h = g(φ, f₁f₂)/h</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">No general proof</span>(一般の証明なし: 略記 f ≡ f₁f₂ による書換えで、置換で吸収; この等号は定理文に現れない)</dd>
+<dt>Lean</dt><dd><span class="mark equiv" title="Equivalent form">≈</span>phase18_notation/th_19_023_rewrite (約定 f ≡ f₁f₂ を前提 hf に運び、書換えの等号を述べる; 略記の代入)</dd>
 <dt>Anchor words</dt><dd><code>and</code></dd>
-<dt>Remarks</dt><dd>既存 #17 第 1 行。phase9b/pr_g_concl_split は g(φ, f₁f₂)/h = (g(φf₁, f₂) . g(φ, f₁))/h を述べ、この行の等号 (約定による書換え) は定理文に現れない</dd>
+<dt>Remarks</dt><dd>既存 #17 第 1 行。phase9b/pr_g_concl_split は g(φ, f₁f₂)/h = (g(φf₁, f₂) . g(φ, f₁))/h を述べ、この行の等号 (約定による書換え) は定理文に現れない。B54: 未 (一般の証明なし) から ≈ に (略記の代入は定義の代入に当たるので ≈、司令塔裁定 2026-10-25 と同じ扱い)。証明は約定の代入だけ (subst; rfl) で、確率の公理を使わない。</dd>
 <dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 822&ndash;875 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch19-024">
@@ -441,9 +441,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 225 (PDF p. 245) &middot; &sect;5 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>ψ(a) = h . θ(a)</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">No general proof</span>(一般の証明なし: 脚注の一般化記法で、対応する定義・定理なし)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">No general proof</span>(一般の証明なし: 脚注の条件付き定義 (θ(a) を「a についての言明」とみなす) の前提で、但し書き「h は a を含まない命題」を IProp の上で述べる語彙がなく、def に書けない)</dd>
 <dt>Anchor words</dt><dd><code>is a proposition and</code></dd>
-<dt>Remarks</dt><dd>既存 #21。「a についての言明」の関係は phase9b で形式化の境界に記録</dd>
+<dt>Remarks</dt><dd>既存 #21。「a についての言明」の関係は phase9b で形式化の境界に記録。B54: 裁定 (c)。理由を具体的に書き直した (判定は 未 のまま)。</dd>
 <dt>Crop</dt><dd>folio 225, x 125&ndash;1335, y 2137&ndash;2181 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch19-034">
@@ -931,7 +931,7 @@ nav.nav.end{margin:2em 0 0}
 <nav class="nav end"><a href="../index.html">&larr; Atlas index</a> | <a href="../ch18/index.html">&larr; Ch. 18</a> | <a href="../ch20/index.html">Ch. 20 &rarr;</a></nav>
 <footer>Generated by tools/atlas/gen.py from the ledger ch19.md and coords.json; crops by tools/atlas/crops.py. Remarks and Lean entries are quoted from the ledger as written. Do not edit this file by hand.</footer>
 <script>(function(){
-var K={"ch19-001":"notation","ch19-002":"notation","ch19-003":"notation","ch19-004":"notation","ch19-005":"notation","ch19-006":"notation","ch19-007":"notation","ch19-008":"printed","ch19-009":"notation","ch19-010":"notation","ch19-011":"notation","ch19-012":"notation","ch19-013":"notation","ch19-014":"printed","ch19-015":"none","ch19-016":"none","ch19-017":"none","ch19-018":"none","ch19-019":"none","ch19-020":"none","ch19-021":"printed","ch19-022":"equiv","ch19-023":"none","ch19-024":"corrected","ch19-025":"corrected","ch19-026":"equiv","ch19-027":"notation","ch19-028":"none","ch19-029":"notation","ch19-030":"notation","ch19-031":"notation","ch19-032":"notation","ch19-033":"none","ch19-034":"notation","ch19-035":"notation","ch19-036":"notation","ch19-037":"notation","ch19-038":"notation","ch19-039":"notation","ch19-040":"notation","ch19-041":"notation","ch19-042":"notation","ch19-043":"notation","ch19-044":"notation","ch19-045":"notation","ch19-046":"notation","ch19-047":"notation","ch19-048":"notation","ch19-049":"notation","ch19-050":"notation","ch19-051":"notation","ch19-052":"notation","ch19-053":"","ch19-054":"notation","ch19-055":"notation","ch19-056":"","ch19-057":"notation","ch19-058":"","ch19-059":"","ch19-060":"notation","ch19-061":"notation","ch19-062":"notation","ch19-063":"","ch19-064":"","ch19-065":"notation","ch19-066":"","ch19-067":"notation","ch19-068":"notation","ch19-069":"","ch19-070":"","ch19-071":"notation","ch19-072":"notation","ch19-073":"notation","ch19-074":"","ch19-075":"notation"};
+var K={"ch19-001":"notation","ch19-002":"notation","ch19-003":"notation","ch19-004":"notation","ch19-005":"notation","ch19-006":"notation","ch19-007":"notation","ch19-008":"printed","ch19-009":"notation","ch19-010":"notation","ch19-011":"notation","ch19-012":"notation","ch19-013":"notation","ch19-014":"printed","ch19-015":"definition","ch19-016":"none","ch19-017":"definition","ch19-018":"none","ch19-019":"definition","ch19-020":"definition","ch19-021":"printed","ch19-022":"equiv","ch19-023":"equiv","ch19-024":"corrected","ch19-025":"corrected","ch19-026":"equiv","ch19-027":"notation","ch19-028":"none","ch19-029":"notation","ch19-030":"notation","ch19-031":"notation","ch19-032":"notation","ch19-033":"none","ch19-034":"notation","ch19-035":"notation","ch19-036":"notation","ch19-037":"notation","ch19-038":"notation","ch19-039":"notation","ch19-040":"notation","ch19-041":"notation","ch19-042":"notation","ch19-043":"notation","ch19-044":"notation","ch19-045":"notation","ch19-046":"notation","ch19-047":"notation","ch19-048":"notation","ch19-049":"notation","ch19-050":"notation","ch19-051":"notation","ch19-052":"notation","ch19-053":"","ch19-054":"notation","ch19-055":"notation","ch19-056":"","ch19-057":"notation","ch19-058":"","ch19-059":"","ch19-060":"notation","ch19-061":"notation","ch19-062":"notation","ch19-063":"","ch19-064":"","ch19-065":"notation","ch19-066":"","ch19-067":"notation","ch19-068":"notation","ch19-069":"","ch19-070":"","ch19-071":"notation","ch19-072":"notation","ch19-073":"notation","ch19-074":"","ch19-075":"notation"};
 var f=document.querySelector('.filter'),bs=f.querySelectorAll('button'),cs=document.querySelectorAll('section.card');
 function show(k){
  for(var i=0;i<cs.length;i++)cs[i].style.display=(k==='all'||K[cs[i].id]===k)?'':'none';
