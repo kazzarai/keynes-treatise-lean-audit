@@ -28,6 +28,11 @@ code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;pad
 .external{background:#e4e0d4}
 .definition{background:#dcefef}
 .notation{background:#f3eaf6}
+.mi{display:inline-block;border:1px solid #999;border-radius:3px;padding:0 5px;margin-right:6px;font-size:.88em;background:#f7f7f7}
+.legend{margin:0 0 1em;font-size:.92em}
+.legend h2{font-size:1.05em;margin:.8em 0 .3em}
+.legend dl{grid-template-columns:13em 1fr}
+.legend dt{color:#111}
 footer{font-size:.85em;color:#666;margin-top:2em}
 nav.nav{font-size:.92em;margin:0 0 1em}
 nav.nav a{white-space:nowrap}
@@ -43,11 +48,29 @@ nav.nav.end{margin:2em 0 0}
 <tr><th>Ledger rows</th><td>11</td></tr>
 <tr><th>Formulas</th><td>4 (display 3, inline 1; items 4, numbered 0)</td></tr>
 <tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>0 &nbsp; <span class="mark equiv">&asymp;</span>1 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>3</td></tr>
+<tr><th>Not yet, by class</th><td><span class="mi">Approximation / measured value</span>3</td></tr>
 <tr><th>Notation</th><td>6 (with a Lean counterpart 6)</td></tr>
 <tr><th>Reference rows</th><td>1</td></tr>
 </table></div>
 <div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (11)</button><button type="button" data-k="printed">&#10003; (0)</button><button type="button" data-k="equiv">&asymp; (1)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (3)</button><button type="button" data-k="notation">notation (6)</button></div>
-<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically (legend below).</p>
+<div class="legend">
+<h2>Legend: the Lean column of a formula row</h2>
+<dl>
+<dt><span class="mark printed">✓</span>Printed form</dt><dd>the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ).</dd>
+<dt><span class="mark equiv">≈</span>Equivalent form</dt><dd>a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables).</dd>
+<dt><span class="mark corrected">✎</span>Corrected form</dt><dd>the printed line is refuted or not derivable, and a corrected form is proved.</dd>
+<dt><span class="mark external">外</span>Depends on a named external axiom</dt><dd>depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not.</dd>
+<dt><span class="mark definition">定</span>Definition counterpart</dt><dd>the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</dd>
+<dt><span class="mark none">未</span>Not yet</dt><dd>none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); the card names one of the five classes below.</dd>
+</dl>
+<h2>Not yet (&#26410;): five classes</h2><dl>
+<dt><span class="mi">Other author&#x27;s formula</span></dt><dd>another author's formula, quoted or criticised by Keynes; a theorem refuting it, if any, is named; &#9998; is not used, since &#9998; is reserved for Keynes's own printed errors.</dd>
+<dt><span class="mi">Rejected by Keynes</span></dt><dd>a rule or a simplified form that Keynes himself rejects as invalid, or says does not follow.</dd>
+<dt><span class="mi">Boundary: needs an outside axiom</span></dt><dd>boundary: the line becomes a theorem only if an axiom Keynes does not state is added, e.g. an application of the Principle of Indifference such as &phi;(x)/h = &phi;(y)/h, or a probability value assigned in an example; the contrast is <code>phase12b_underdetermination/underdetermined</code>, where the axioms leave a/h undetermined.</dd>
+<dt><span class="mi">Approximation / measured value</span></dt><dd>an equation printed as approximate, or a value from a table of measurements.</dd>
+<dt><span class="mi">No general proof</span></dt><dd>no proof of the general form: only numerical checks, finite-model values, or steps inside a proof.</dd>
+</dl></div>
 <section class="card" id="ch25-001">
 <h2>ch25-001</h2>
 <img src="img/ch25-001.png" alt="a/h" loading="lazy">
@@ -137,7 +160,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 305 (PDF p. 325) &middot; &sect;7 &middot; Table &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>3·48 = ²√12</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(近似・実測値: Playfair の比重の表の値で、印刷は approximately、許容誤差は印刷にない。差の大きさ keynes_misc_numerics/th_25_playfair_gap_sizes)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">Approximation / measured value</span>(近似・実測値: Playfair の比重の表の値で、印刷は approximately、許容誤差は印刷にない。差の大きさ keynes_misc_numerics/th_25_playfair_gap_sizes)</dd>
 <dt>Quoted from</dt><dd>Playfair</dd>
 <dt>Anchor words</dt><dd><code>Diamond</code></dd>
 <dt>Remarks</dt><dd>Lyon Playfair の比重の表 1 行目。小数点は中点、根号指数 2 は √ の左上に小字 (原寸で確認)。「approximately」と続く。近似等式を式に数える (裁定事項)。既存の Lean に対応なし。B50: 未のまま。印刷は &quot;approximately&quot; で許容誤差が印刷にない (Playfair の表の近似値)。参考: keynes_misc_numerics/th_25_playfair_roots_within (差が 1/50 未満; 許容誤差は本ファイルの置き方) と keynes_misc_numerics/th_25_playfair_gap_sizes (3·48 − √12 &gt; 1/100、差の大きさを述べるだけ)。folio 305 の 3·48 等は実測の比重で、√12 等に &quot;approximately&quot; 等しいと言っているだけなので、印刷の誤りの候補とする所見 (旧 所見候補 S) は撤回した (B50 r1 司令塔裁定)。行の判定には使わない</dd>
@@ -149,7 +172,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 305 (PDF p. 325) &middot; &sect;7 &middot; Table &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>2·29 = ³√12</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(近似・実測値: Playfair の比重の表の値で、印刷は approximately、許容誤差は印刷にない。差の大きさ keynes_misc_numerics/th_25_playfair_gap_sizes)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">Approximation / measured value</span>(近似・実測値: Playfair の比重の表の値で、印刷は approximately、許容誤差は印刷にない。差の大きさ keynes_misc_numerics/th_25_playfair_gap_sizes)</dd>
 <dt>Quoted from</dt><dd>Playfair</dd>
 <dt>Anchor words</dt><dd><code>Graphite</code></dd>
 <dt>Remarks</dt><dd>同表 2 行目。既存の Lean に対応なし。B50: 未のまま。ch25-008 と同じ (approximately)。参考: keynes_misc_numerics/th_25_playfair_gap_sizes (2·29 と ∛12 の差の絶対値が 1/200 未満; 差の大きさ)</dd>
@@ -161,7 +184,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 305 (PDF p. 325) &middot; &sect;7 &middot; Table &middot; Display &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>1·88 = ⁴√12</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(近似・実測値: Playfair の比重の表の値で、印刷は approximately、許容誤差は印刷にない。差の大きさ keynes_misc_numerics/th_25_playfair_gap_sizes)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">Approximation / measured value</span>(近似・実測値: Playfair の比重の表の値で、印刷は approximately、許容誤差は印刷にない。差の大きさ keynes_misc_numerics/th_25_playfair_gap_sizes)</dd>
 <dt>Quoted from</dt><dd>Playfair</dd>
 <dt>Anchor words</dt><dd><code>Charcoal</code></dd>
 <dt>Remarks</dt><dd>同表 3 行目。直後 <code>approximately, the atomic weight of carbon being 12.</code>。既存の Lean に対応なし。B50: 未のまま。ch25-008 と同じ (approximately)。参考: keynes_misc_numerics/th_25_playfair_gap_sizes (1·88 − ⁴√12 &gt; 1/100; 差の大きさ)。ch25-008 と同じく旧 所見候補 S は撤回 (B50 r1)</dd>

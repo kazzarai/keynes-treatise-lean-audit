@@ -28,6 +28,11 @@ code{font-family:Menlo,Consolas,monospace;font-size:.95em;background:#f5f5f5;pad
 .external{background:#e4e0d4}
 .definition{background:#dcefef}
 .notation{background:#f3eaf6}
+.mi{display:inline-block;border:1px solid #999;border-radius:3px;padding:0 5px;margin-right:6px;font-size:.88em;background:#f7f7f7}
+.legend{margin:0 0 1em;font-size:.92em}
+.legend h2{font-size:1.05em;margin:.8em 0 .3em}
+.legend dl{grid-template-columns:13em 1fr}
+.legend dt{color:#111}
 footer{font-size:.85em;color:#666;margin-top:2em}
 nav.nav{font-size:.92em;margin:0 0 1em}
 nav.nav a{white-space:nowrap}
@@ -43,18 +48,36 @@ nav.nav.end{margin:2em 0 0}
 <tr><th>Ledger rows</th><td>129</td></tr>
 <tr><th>Formulas</th><td>31 (display 3, inline 28; items 31, numbered 0)</td></tr>
 <tr><th>Formulas by Lean status</th><td><span class="mark printed">&#10003;</span>15 &nbsp; <span class="mark equiv">&asymp;</span>1 &nbsp; <span class="mark corrected">&#9998;</span>0 &nbsp; <span class="mark none">&#26410;</span>6 &nbsp; <span class="mark definition">&#23450;</span>9</td></tr>
+<tr><th>Not yet, by class</th><td><span class="mi">Boundary: needs an outside axiom</span>6</td></tr>
 <tr><th>Notation</th><td>95 (with a Lean counterpart 0)</td></tr>
 <tr><th>Reference rows</th><td>3</td></tr>
 </table></div>
 <div class="filter" hidden>Show: <button type="button" data-k="all" class="on">All (129)</button><button type="button" data-k="printed">&#10003; (15)</button><button type="button" data-k="equiv">&asymp; (1)</button><button type="button" data-k="corrected">&#9998; (0)</button><button type="button" data-k="none">not yet (6)</button><button type="button" data-k="definition">definition (9)</button><button type="button" data-k="notation">notation (95)</button></div>
-<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically: <b>&#10003;</b> the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ); <b>&asymp;</b> a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables); <b>&#9998;</b> the printed line is refuted or not derivable, and a corrected form is proved; <b>&#26410;</b> none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); <b>&#22806;</b> depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not; <b>&#23450;</b> the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</p>
+<p class="rules">Every count on this page is computed from the census ledger, which is built from the page images of the 1921 first edition only (no translation, OCR or e-text is used to count). A <b>formula</b> is an expression containing a relation sign (=, &ne;, &lt;, &gt;, &le;, &ge;, &equiv;, &sup;, &rarr; and their printed variants, including formulas inside figures, tables and footnotes, and formulas quoted from other authors); a display formula counts one per printed line, so a chain of equalities set over three lines counts three, and an inline formula counts one per expression. A compound expression without a relation sign (such as <i>a/h</i>, <i>g</i>(&phi;, <i>f</i>) or <i>x</i><sub>1</sub><i>x</i><sub>2</sub>&hellip;<i>x<sub>n</sub></i>/<i>&#289;h</i>) is counted separately as <b>notation</b>; a bare symbol, even with subscripts, primes or bars, is not counted. Footnote formulas follow the same rule, and a formula reprinted on another page is counted again. The Lean column of a formula row takes one of six values, fixed mechanically (legend below).</p>
+<div class="legend">
+<h2>Legend: the Lean column of a formula row</h2>
+<dl>
+<dt><span class="mark printed">✓</span>Printed form</dt><dd>the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ).</dd>
+<dt><span class="mark equiv">≈</span>Equivalent form</dt><dd>a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables).</dd>
+<dt><span class="mark corrected">✎</span>Corrected form</dt><dd>the printed line is refuted or not derivable, and a corrected form is proved.</dd>
+<dt><span class="mark external">外</span>Depends on a named external axiom</dt><dd>depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not.</dd>
+<dt><span class="mark definition">定</span>Definition counterpart</dt><dd>the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</dd>
+<dt><span class="mark none">未</span>Not yet</dt><dd>none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); the card names one of the five classes below.</dd>
+</dl>
+<h2>Not yet (&#26410;): five classes</h2><dl>
+<dt><span class="mi">Other author&#x27;s formula</span></dt><dd>another author's formula, quoted or criticised by Keynes; a theorem refuting it, if any, is named; &#9998; is not used, since &#9998; is reserved for Keynes's own printed errors.</dd>
+<dt><span class="mi">Rejected by Keynes</span></dt><dd>a rule or a simplified form that Keynes himself rejects as invalid, or says does not follow.</dd>
+<dt><span class="mi">Boundary: needs an outside axiom</span></dt><dd>boundary: the line becomes a theorem only if an axiom Keynes does not state is added, e.g. an application of the Principle of Indifference such as &phi;(x)/h = &phi;(y)/h, or a probability value assigned in an example; the contrast is <code>phase12b_underdetermination/underdetermined</code>, where the axioms leave a/h undetermined.</dd>
+<dt><span class="mi">Approximation / measured value</span></dt><dd>an equation printed as approximate, or a value from a table of measurements.</dd>
+<dt><span class="mi">No general proof</span></dt><dd>no proof of the general form: only numerical checks, finite-model values, or steps inside a proof.</dd>
+</dl></div>
 <section class="card" id="ch04-001">
 <h2>ch04-001</h2>
 <img src="img/ch04-001.png" alt="½" loading="lazy">
 <div class="meta">folio 42 (PDF p. 62) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>the probability of each is</dd>
 <dt>Remarks</dt><dd>数値 (a と ā の確率)</dd>
 <dt>Crop</dt><dd>folio 42, x 125&ndash;1335, y 1916&ndash;1985 (full-size scan pixels)</dd>
@@ -65,7 +88,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 42 (PDF p. 62) &middot; &sect;4 &middot; Footnote 2 &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Jevons (Principles of Science, vol. i. p. 243)</dd>
 <dt>Anchor words</dt><dd>assigns the probability</dd>
 <dt>Remarks</dt><dd>数値。「A Platythliptic Coefficient is positive」への賦値</dd>
@@ -77,7 +100,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 43 (PDF p. 63) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>may be each</dd>
 <dt>Remarks</dt><dd>数値 (b, c の確率)</dd>
 <dt>Crop</dt><dd>folio 43, x 125&ndash;1335, y 253&ndash;303 (full-size scan pixels)</dd>
@@ -88,7 +111,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 43 (PDF p. 63) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>we could conclude that</dd>
 <dt>Remarks</dt><dd>数値 (「This book is red」)</dd>
 <dt>Crop</dt><dd>folio 43, x 125&ndash;1335, y 557&ndash;607 (full-size scan pixels)</dd>
@@ -99,7 +122,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 43 (PDF p. 63) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>is also</dd>
 <dt>Remarks</dt><dd>数値 (black / blue)</dd>
 <dt>Crop</dt><dd>folio 43, x 125&ndash;1335, y 708&ndash;758 (full-size scan pixels)</dd>
@@ -110,7 +133,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 43 (PDF p. 63) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>āb</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>is contrary to a for all values of b</dd>
 <dt>Remarks</dt><dd>否定の上線と連言の併置 (複合)</dd>
 <dt>Crop</dt><dd>folio 43, x 125&ndash;1335, y 1462&ndash;1512 (full-size scan pixels)</dd>
@@ -121,7 +144,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 43 (PDF p. 63) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>a/h = ½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: 値 ½ は無差別原理による確率の割当で、Keynes の公理からは出ない; 前提に運ぶ定理なし。対照: phase12b_underdetermination/underdetermined)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">Boundary: needs an outside axiom</span>(境界: 外から公理が要る: 値 ½ は無差別原理による確率の割当で、Keynes の公理からは出ない; 前提に運ぶ定理なし。対照: phase12b_underdetermination/underdetermined)</dd>
 <dt>Anchor words</dt><dd>For example,</dd>
 <dt>Remarks</dt><dd>hires で確認。B50: 未のまま。値 ½ は無差別原理による確率の割当で、算術の検算で出る関係ではない (norm_num で評価できる数値の等式ではない)</dd>
 <dt>Crop</dt><dd>folio 43, x 125&ndash;1335, y 1562&ndash;1612 (full-size scan pixels)</dd>
@@ -133,7 +156,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 43 (PDF p. 63) &middot; &sect;4 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>ab/h = ½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: ab/h の値 ½ は無差別原理による確率の割当で、Keynes の公理からは出ない (ch04-007 と同じ); 前提に運ぶ定理なし。対照: phase12b_underdetermination/underdetermined)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">Boundary: needs an outside axiom</span>(境界: 外から公理が要る: ab/h の値 ½ は無差別原理による確率の割当で、Keynes の公理からは出ない (ch04-007 と同じ); 前提に運ぶ定理なし。対照: phase12b_underdetermination/underdetermined)</dd>
 <dt>Anchor words</dt><dd>and ab/h = ½, if h is</dd>
 <dt>Remarks</dt><dd>続く folio 44「irrelevant both to a and to b」。B50: 未のまま。ch04-007 と同じ (確率の値の割当; 検算できない)</dd>
 <dt>Crop</dt><dd>folio 43, x 125&ndash;1335, y 1562&ndash;1612 (full-size scan pixels)</dd>
@@ -144,7 +167,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 43 (PDF p. 63) &middot; &sect;4 &middot; Footnote 2 (continued from folio 42) &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Boole (Edin. Phil. Trans. vol. xxi. p. 624)</dd>
 <dt>Anchor words</dt><dd>not by the fraction</dd>
 <dt>Remarks</dt><dd>数値</dd>
@@ -157,7 +180,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 43 (PDF p. 63) &middot; &sect;4 &middot; Footnote 2 (continued from folio 42) &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>0/0</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Boole (同上)</dd>
 <dt>Anchor words</dt><dd>but by the indefinite form</dd>
 <dt>Remarks</dt><dd>hires で 0/0 を確認</dd>
@@ -169,7 +192,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 44 (PDF p. 64) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>has a probability of</dd>
 <dt>Remarks</dt><dd>数値 (「A is a red book」)</dd>
 <dt>Crop</dt><dd>folio 44, x 125&ndash;1335, y 360&ndash;410 (full-size scan pixels)</dd>
@@ -180,7 +203,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 44 (PDF p. 64) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>is also</dd>
 <dt>Remarks</dt><dd>数値 (「A is red」)</dd>
 <dt>Crop</dt><dd>folio 44, x 125&ndash;1335, y 411&ndash;462 (full-size scan pixels)</dd>
@@ -191,7 +214,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 44 (PDF p. 64) &middot; &sect;4 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>is not necessarily</dd>
 <dt>Remarks</dt><dd>数値</dd>
 <dt>Crop</dt><dd>folio 44, x 125&ndash;1335, y 612&ndash;662 (full-size scan pixels)</dd>
@@ -202,7 +225,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 44 (PDF p. 64) &middot; &sect;4 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>a/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Reprint of</dt><dd><a href="../ch03/index.html#ch03-028">ch03-028</a></dd>
 <dt>Anchor words</dt><dd>stands for</dd>
 <dt>Remarks</dt><dd>「a/h stands for ‘the probability of a on hypothesis h.’」</dd>
@@ -214,7 +237,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 45 (PDF p. 65) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>1/v</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Von Kries (op. cit. p. 24; 脚注1)</dd>
 <dt>Anchor words</dt><dd>the former is</dd>
 <dt>Remarks</dt><dd>活字の分数 (比容積 v の逆数)</dd>
@@ -226,7 +249,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 45 (PDF p. 65) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>⅓</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Von Kries</dd>
 <dt>Anchor words</dt><dd>must lie between 1 and</dd>
 <dt>Remarks</dt><dd>数値</dd>
@@ -238,7 +261,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 45 (PDF p. 65) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>⅔</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Von Kries</dd>
 <dt>Anchor words</dt><dd>as likely to lie between 1 and</dd>
 <dt>Remarks</dt><dd>数値</dd>
@@ -251,7 +274,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 45 (PDF p. 65) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>⅔</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Von Kries</dd>
 <dt>Anchor words</dt><dd>as between</dd>
 <dt>Remarks</dt><dd>数値</dd>
@@ -264,7 +287,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 45 (PDF p. 65) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>⅓</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Von Kries</dd>
 <dt>Anchor words</dt><dd>as between ⅔ and</dd>
 <dt>Remarks</dt><dd>数値</dd>
@@ -276,7 +299,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 45 (PDF p. 65) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>⅔</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Von Kries</dd>
 <dt>Anchor words</dt><dd>if the latter lies between 1 and</dd>
 <dt>Remarks</dt><dd>数値</dd>
@@ -289,7 +312,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 45 (PDF p. 65) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>1½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Von Kries</dd>
 <dt>Anchor words</dt><dd>the former lies between 1 and</dd>
 <dt>Remarks</dt><dd>数値</dd>
@@ -301,7 +324,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 45 (PDF p. 65) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>⅔</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Von Kries</dd>
 <dt>Anchor words</dt><dd>if the latter lies between</dd>
 <dt>Remarks</dt><dd>数値</dd>
@@ -314,7 +337,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 45 (PDF p. 65) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>⅓</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Von Kries</dd>
 <dt>Anchor words</dt><dd>lies between ⅔ and</dd>
 <dt>Remarks</dt><dd>数値</dd>
@@ -327,7 +350,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 45 (PDF p. 65) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>1½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Von Kries</dd>
 <dt>Anchor words</dt><dd>the former lies between</dd>
 <dt>Remarks</dt><dd>数値</dd>
@@ -339,7 +362,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 45 (PDF p. 65) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>1½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Von Kries</dd>
 <dt>Anchor words</dt><dd>as likely to lie between 1 and</dd>
 <dt>Remarks</dt><dd>数値</dd>
@@ -352,7 +375,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 45 (PDF p. 65) &middot; &sect;6 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>1½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Von Kries</dd>
 <dt>Anchor words</dt><dd>as between 1½ and 3</dd>
 <dt>Remarks</dt><dd>数値</dd>
@@ -364,7 +387,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 48 (PDF p. 68) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>⅔</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Bertrand (Calcul des probabilités, p. 5; 脚注1)</dd>
 <dt>Anchor words</dt><dd>the answer is easily shown to be</dd>
 <dt>Remarks</dt><dd>数値 (弦の問題 第1解)。番号欄 (a) は箇条記号</dd>
@@ -376,7 +399,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 48 (PDF p. 68) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Bertrand</dd>
 <dt>Anchor words</dt><dd>we find that the answer is</dd>
 <dt>Remarks</dt><dd>数値 (第2解)</dd>
@@ -388,7 +411,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 48 (PDF p. 68) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>¾</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Bertrand</dd>
 <dt>Anchor words</dt><dd>greater distance than this is</dd>
 <dt>Remarks</dt><dd>数値 (面積の割合)</dd>
@@ -400,7 +423,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 48 (PDF p. 68) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>¾</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Bertrand</dd>
 <dt>Anchor words</dt><dd>Hence our answer is</dd>
 <dt>Remarks</dt><dd>数値 (第3解)</dd>
@@ -412,7 +435,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 48 (PDF p. 68) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>f(x)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>In general, if x and</dd>
 <dt>Remarks</dt><dd>連続変数</dd>
 <dt>Crop</dt><dd>folio 48, x 125&ndash;1335, y 814&ndash;864 (full-size scan pixels)</dd>
@@ -435,7 +458,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 48 (PDF p. 68) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>(d − c)/(b − a)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>seems to be</dd>
 <dt>Remarks</dt><dd>活字は横線の分数 (hires で確認)。「seems to be」で結ぶので関係記号なし</dd>
 <dt>Crop</dt><dd>folio 48, x 125&ndash;1335, y 963&ndash;1070 (full-size scan pixels)</dd>
@@ -446,7 +469,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 48 (PDF p. 68) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>f(x)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>and the probability that</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 48, x 125&ndash;1335, y 1070&ndash;1180 (full-size scan pixels)</dd>
@@ -458,7 +481,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 48 (PDF p. 68) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>f(c)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>lies between</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 48, x 125&ndash;1335, y 1070&ndash;1180 (full-size scan pixels)</dd>
@@ -470,7 +493,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 48 (PDF p. 68) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>f(d)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>and f(d) to be</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 48, x 125&ndash;1335, y 1070&ndash;1180 (full-size scan pixels)</dd>
@@ -482,7 +505,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 48 (PDF p. 68) &middot; &sect;7 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>(f(d) − f(c))/(f(b) − f(a))</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>to be</dd>
 <dt>Remarks</dt><dd>横線の分数。脚注2 Borel (Éléments, p. 85) を参照</dd>
 <dt>Crop</dt><dd>folio 48, x 125&ndash;1335, y 1070&ndash;1180 (full-size scan pixels)</dd>
@@ -493,7 +516,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 49 (PDF p. 69) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>dx</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Poincaré (Calcul des probabilités, pp. 126 et seq.; 脚注1)</dd>
 <dt>Anchor words</dt><dd>every infinitesimal interval</dd>
 <dt>Remarks</dt><dd>微分 (2 文字の複合) として記法に残す → 裁定事項</dd>
@@ -505,7 +528,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 49 (PDF p. 69) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(x)dx</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Poincaré</dd>
 <dt>Anchor words</dt><dd>by the function</dd>
 <dt>Remarks</dt><dd></dd>
@@ -517,7 +540,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 49 (PDF p. 69) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(x)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Poincaré</dd>
 <dt>Anchor words</dt><dd>if we can assume that</dd>
 <dt>Remarks</dt><dd>「is a regular function」</dd>
@@ -529,7 +552,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 49 (PDF p. 69) &middot; &sect;8 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(x)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>the probability φ(x) is not necessarily</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 49, x 125&ndash;1335, y 908&ndash;958 (full-size scan pixels)</dd>
@@ -540,7 +563,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 50 (PDF p. 70) &middot; &sect;9 &middot; Footnote 3 &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Stumpf (Bavarian Academy 1892)</dd>
 <dt>Anchor words</dt><dd>is, in any case,</dd>
 <dt>Remarks</dt><dd>数値 (白球を引く確率)</dd>
@@ -552,7 +575,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 51 (PDF p. 71) &middot; &sect;9 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>⅔</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Quoted from</dt><dd>Poisson (Recherches, p. 96; 脚注1)</dd>
 <dt>Anchor words</dt><dd>being black is therefore</dd>
 <dt>Remarks</dt><dd>数値 (2 枚目の黒の確率)</dd>
@@ -564,7 +587,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 54 (PDF p. 74) &middot; &sect;14 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>we may wish to compare</dd>
 <dt>Remarks</dt><dd>選好の判断</dd>
 <dt>Crop</dt><dd>folio 54, x 125&ndash;1335, y 1650&ndash;1701 (full-size scan pixels)</dd>
@@ -576,7 +599,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 54 (PDF p. 74) &middot; &sect;14 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>y/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>compare x/h with</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 54, x 125&ndash;1335, y 1650&ndash;1701 (full-size scan pixels)</dd>
@@ -588,7 +611,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 54 (PDF p. 74) &middot; &sect;14 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>or x/h with</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 54, x 125&ndash;1335, y 1650&ndash;1701 (full-size scan pixels)</dd>
@@ -599,7 +622,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 54 (PDF p. 74) &middot; &sect;14 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/h₁h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>or x/h with</dd>
 <dt>Remarks</dt><dd>関連の判断</dd>
 <dt>Crop</dt><dd>folio 54, x 125&ndash;1335, y 1700&ndash;1750 (full-size scan pixels)</dd>
@@ -610,7 +633,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 54 (PDF p. 74) &middot; &sect;14 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>when there is equality between</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 54, x 125&ndash;1335, y 1750&ndash;1800 (full-size scan pixels)</dd>
@@ -622,7 +645,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 54 (PDF p. 74) &middot; &sect;14 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>y/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>equality between x/h and</dd>
 <dt>Remarks</dt><dd>無差別 (indifference)</dd>
 <dt>Crop</dt><dd>folio 54, x 125&ndash;1335, y 1750&ndash;1800 (full-size scan pixels)</dd>
@@ -633,7 +656,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 54 (PDF p. 74) &middot; &sect;14 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>is equality between</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 54, x 125&ndash;1335, y 1848&ndash;1898 (full-size scan pixels)</dd>
@@ -645,7 +668,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 54 (PDF p. 74) &middot; &sect;14 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/h₁h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>equality between x/h and</dd>
 <dt>Remarks</dt><dd>無関連 (irrelevance)</dd>
 <dt>Crop</dt><dd>folio 54, x 125&ndash;1335, y 1848&ndash;1898 (full-size scan pixels)</dd>
@@ -713,7 +736,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 55 (PDF p. 75) &middot; &sect;14 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>h₁ is irrelevant to</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 55, x 125&ndash;1335, y 1956&ndash;1993 (full-size scan pixels)</dd>
@@ -737,7 +760,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 55 (PDF p. 75) &middot; &sect;14 &middot; Footnote 2 &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>x/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>h₁ is irrelevant to</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 55, x 125&ndash;1335, y 1993&ndash;2029 (full-size scan pixels)</dd>
@@ -830,7 +853,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>expressible in the forms</dd>
 <dt>Remarks</dt><dd>命題関数</dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 704&ndash;755 (full-size scan pixels)</dd>
@@ -842,7 +865,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(b)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>φ(a) and</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 704&ndash;755 (full-size scan pixels)</dd>
@@ -853,7 +876,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(x)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>where φ(x) is a propositional function</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 755&ndash;803 (full-size scan pixels)</dd>
@@ -864,7 +887,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>is applicable to the alternatives</dd>
 <dt>Remarks</dt><dd>無差別原理の精密化</dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 905&ndash;955 (full-size scan pixels)</dd>
@@ -876,7 +899,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(b)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>φ(a) and</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 905&ndash;955 (full-size scan pixels)</dd>
@@ -888,7 +911,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>f(a)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>so constituted that, if</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 905&ndash;955 (full-size scan pixels)</dd>
@@ -899,7 +922,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>which is relevant to</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 955&ndash;1005 (full-size scan pixels)</dd>
@@ -910,7 +933,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>which are irrelevant to</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 1055&ndash;1104 (full-size scan pixels)</dd>
@@ -922,7 +945,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>f(b)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>then h includes</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 1055&ndash;1104 (full-size scan pixels)</dd>
@@ -933,7 +956,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a₁a₂)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>compare the probabilities of</dd>
 <dt>Remarks</dt><dd>2 変数への拡張</dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 1254&ndash;1308 (full-size scan pixels)</dd>
@@ -945,7 +968,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(b₁a₂)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>φ(a₁a₂) and</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 1254&ndash;1308 (full-size scan pixels)</dd>
@@ -957,7 +980,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(b₁a₂)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>and of</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 1254&ndash;1308 (full-size scan pixels)</dd>
@@ -969,7 +992,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(b₁b₂)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>φ(b₁a₂) and</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 1254&ndash;1308 (full-size scan pixels)</dd>
@@ -980,7 +1003,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a₁a₂)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>establish equality between</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 1308&ndash;1357 (full-size scan pixels)</dd>
@@ -992,7 +1015,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(b₁b₂)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>φ(a₁a₂) and</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 1308&ndash;1357 (full-size scan pixels)</dd>
@@ -1003,7 +1026,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>If φ(a), φ(b), etc., are propositions</dd>
 <dt>Remarks</dt><dd>命題関数の定義</dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 2128&ndash;2165 (full-size scan pixels)</dd>
@@ -1015,7 +1038,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(b)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>If φ(a), φ(b), etc.</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 2128&ndash;2165 (full-size scan pixels)</dd>
@@ -1026,7 +1049,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 56 (PDF p. 76) &middot; &sect;16 &middot; Footnote 1 &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(x)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>then φ(x) is a propositional function</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 56, x 125&ndash;1335, y 2165&ndash;2203 (full-size scan pixels)</dd>
@@ -1059,7 +1082,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 57 (PDF p. 77) &middot; &sect;17 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>φ(x)/h = φ(y)/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: 「ratio」仮説の無差別判断 φ(x)/h = φ(y)/h は無差別原理の適用で、Keynes の公理からは出ない。対照: phase12b_underdetermination/underdetermined)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">Boundary: needs an outside axiom</span>(境界: 外から公理が要る: 「ratio」仮説の無差別判断 φ(x)/h = φ(y)/h は無差別原理の適用で、Keynes の公理からは出ない。対照: phase12b_underdetermination/underdetermined)</dd>
 <dt>Anchor words</dt><dd>the judgment of indifference,</dd>
 <dt>Remarks</dt><dd>「ratio」仮説の無差別判断。対照: phase12b underdetermined</dd>
 <dt>Crop</dt><dd>folio 57, x 125&ndash;1335, y 454&ndash;555 (full-size scan pixels)</dd>
@@ -1070,7 +1093,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 57 (PDF p. 77) &middot; &sect;17 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>f(x)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>in the form</dd>
 <dt>Remarks</dt><dd>関連証拠の形</dd>
 <dt>Crop</dt><dd>folio 57, x 125&ndash;1335, y 555&ndash;606 (full-size scan pixels)</dd>
@@ -1082,7 +1105,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 57 (PDF p. 77) &middot; &sect;17 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>f(y)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>in the form f(x)</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 57, x 125&ndash;1335, y 555&ndash;606 (full-size scan pixels)</dd>
@@ -1127,7 +1150,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 58 (PDF p. 78) &middot; &sect;18 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(x)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>anything of which</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 58, x 125&ndash;1335, y 959&ndash;1009 (full-size scan pixels)</dd>
@@ -1138,7 +1161,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 58 (PDF p. 78) &middot; &sect;18 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a)/ψ(a) = φ(b)/ψ(b)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: φ(a)/ψ(a) = φ(b)/ψ(b) は無差別原理の形の等式で、a, b が区別できるときは「the equality does not necessarily hold」。公理からは出ない。対照: phase12b_underdetermination/underdetermined)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">Boundary: needs an outside axiom</span>(境界: 外から公理が要る: φ(a)/ψ(a) = φ(b)/ψ(b) は無差別原理の形の等式で、a, b が区別できるときは「the equality does not necessarily hold」。公理からは出ない。対照: phase12b_underdetermination/underdetermined)</dd>
 <dt>Anchor words</dt><dd>Does</dd>
 <dt>Remarks</dt><dd>疑問文中の等式 (hires で確認)</dd>
 <dt>Crop</dt><dd>folio 58, x 125&ndash;1335, y 1160&ndash;1260 (full-size scan pixels)</dd>
@@ -1149,7 +1172,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 58 (PDF p. 78) &middot; &sect;18 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a)/ψ(a)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>For in this case</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 58, x 125&ndash;1335, y 1460&ndash;1510 (full-size scan pixels)</dd>
@@ -1160,7 +1183,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 58 (PDF p. 78) &middot; &sect;18 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(b)/ψ(b)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>means the same as</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 58, x 125&ndash;1335, y 1510&ndash;1560 (full-size scan pixels)</dd>
@@ -1171,7 +1194,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 58 (PDF p. 78) &middot; &sect;18 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(x)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>If, for instance,</dd>
 <dt>Remarks</dt><dd>「stands for ‘x is Socrates’」</dd>
 <dt>Crop</dt><dd>folio 58, x 125&ndash;1335, y 1710&ndash;1760 (full-size scan pixels)</dd>
@@ -1182,7 +1205,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 58 (PDF p. 78) &middot; &sect;18 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a)/ψ(a) = φ(b)/ψ(b)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: φ(a)/ψ(a) = φ(b)/ψ(b) は無差別原理の形の等式で、a, b が区別できるときは「the equality does not necessarily hold」。公理からは出ない。対照: phase12b_underdetermination/underdetermined)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">Boundary: needs an outside axiom</span>(境界: 外から公理が要る: φ(a)/ψ(a) = φ(b)/ψ(b) は無差別原理の形の等式で、a, b が区別できるときは「the equality does not necessarily hold」。公理からは出ない。対照: phase12b_underdetermination/underdetermined)</dd>
 <dt>Reprint of</dt><dd><a href="#ch04-094">ch04-094</a></dd>
 <dt>Anchor words</dt><dd>it is plainly false that</dd>
 <dt>Remarks</dt><dd></dd>
@@ -1194,7 +1217,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 58 (PDF p. 78) &middot; &sect;19 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a)/h = φ(b)/h</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span>(境界: 外から公理が要る: φ(a)/h = φ(b)/h は無差別原理の適用で、ある組 a, b では真、別の組 a′, b′ では偽になりうる。公理からは出ない。対照: phase12b_underdetermination/underdetermined)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">Boundary: needs an outside axiom</span>(境界: 外から公理が要る: φ(a)/h = φ(b)/h は無差別原理の適用で、ある組 a, b では真、別の組 a′, b′ では偽になりうる。公理からは出ない。対照: phase12b_underdetermination/underdetermined)</dd>
 <dt>Anchor words</dt><dd>Thus</dd>
 <dt>Remarks</dt><dd>「may be true for one pair of values a, b, and not true for another pair of values a′, b′」</dd>
 <dt>Crop</dt><dd>folio 58, x 125&ndash;1335, y 2107&ndash;2157 (full-size scan pixels)</dd>
@@ -1205,7 +1228,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 59 (PDF p. 79) &middot; &sect;19 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>the probability of a is</dd>
 <dt>Remarks</dt><dd>数値</dd>
 <dt>Crop</dt><dd>folio 59, x 125&ndash;1335, y 292&ndash;344 (full-size scan pixels)</dd>
@@ -1216,7 +1239,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 59 (PDF p. 79) &middot; &sect;19 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>‘This book is red’ is</dd>
 <dt>Remarks</dt><dd>数値</dd>
 <dt>Crop</dt><dd>folio 59, x 125&ndash;1335, y 344&ndash;395 (full-size scan pixels)</dd>
@@ -1227,7 +1250,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 60 (PDF p. 80) &middot; &sect;20 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>1½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>lies in the interval 1 to</dd>
 <dt>Remarks</dt><dd>数値 (比容積の例の再掲)</dd>
 <dt>Crop</dt><dd>folio 60, x 125&ndash;1335, y 406&ndash;456 (full-size scan pixels)</dd>
@@ -1239,7 +1262,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 60 (PDF p. 80) &middot; &sect;20 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>1½</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>or 1½ to 2</dd>
 <dt>Remarks</dt><dd>数値</dd>
 <dt>Crop</dt><dd>folio 60, x 125&ndash;1335, y 406&ndash;456 (full-size scan pixels)</dd>
@@ -1250,7 +1273,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 60 (PDF p. 80) &middot; &sect;21 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a₁)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>be</dd>
 <dt>Remarks</dt><dd>選択肢の列</dd>
 <dt>Crop</dt><dd>folio 60, x 125&ndash;1335, y 758&ndash;808 (full-size scan pixels)</dd>
@@ -1261,7 +1284,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 60 (PDF p. 80) &middot; &sect;21 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a₂)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>φ(a₁),</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 60, x 125&ndash;1335, y 808&ndash;858 (full-size scan pixels)</dd>
@@ -1273,7 +1296,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 60 (PDF p. 80) &middot; &sect;21 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a_r)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>φ(a₂) . . .</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 60, x 125&ndash;1335, y 808&ndash;858 (full-size scan pixels)</dd>
@@ -1284,7 +1307,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 60 (PDF p. 80) &middot; &sect;21 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(x)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>alternatives of the form</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 60, x 125&ndash;1335, y 959&ndash;1009 (full-size scan pixels)</dd>
@@ -1295,7 +1318,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 60 (PDF p. 80) &middot; &sect;21 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a_r)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>An alternative</dd>
 <dt>Remarks</dt><dd>「is divisible if」</dd>
 <dt>Crop</dt><dd>folio 60, x 125&ndash;1335, y 1059&ndash;1110 (full-size scan pixels)</dd>
@@ -1339,7 +1362,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 60 (PDF p. 80) &middot; &sect;21 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(x)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>the same propositional function</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 60, x 125&ndash;1335, y 1384&ndash;1434 (full-size scan pixels)</dd>
@@ -1361,7 +1384,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 60 (PDF p. 80) &middot; &sect;21 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>a_r b + a_r b̄</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>resolved into the disjunction</dd>
 <dt>Remarks</dt><dd>選言 (+)・連言・否定の上線 (複合)</dd>
 <dt>Crop</dt><dd>folio 60, x 125&ndash;1335, y 1680&ndash;1731 (full-size scan pixels)</dd>
@@ -1384,7 +1407,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 60 (PDF p. 80) &middot; &sect;21 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a₁)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>can be expressed in the forms</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 60, x 125&ndash;1335, y 1781&ndash;1834 (full-size scan pixels)</dd>
@@ -1396,7 +1419,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 60 (PDF p. 80) &middot; &sect;21 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a₂)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>φ(a₁) and</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 60, x 125&ndash;1335, y 1781&ndash;1834 (full-size scan pixels)</dd>
@@ -1407,7 +1430,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 60 (PDF p. 80) &middot; &sect;21 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(x)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>where the function</dd>
 <dt>Remarks</dt><dd>「is distinct from x」</dd>
 <dt>Crop</dt><dd>folio 60, x 125&ndash;1335, y 1834&ndash;1882 (full-size scan pixels)</dd>
@@ -1418,7 +1441,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 61 (PDF p. 81) &middot; &sect;21 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(a_r)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>alternative</dd>
 <dt>Remarks</dt><dd>「into a disjunction of two sub-alternatives」</dd>
 <dt>Crop</dt><dd>folio 61, x 125&ndash;1335, y 205&ndash;261 (full-size scan pixels)</dd>
@@ -1440,7 +1463,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 61 (PDF p. 81) &middot; &sect;23 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(x)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>a propositional function</dd>
 <dt>Remarks</dt><dd>「which will satisfy the necessary conditions」</dd>
 <dt>Crop</dt><dd>folio 61, x 125&ndash;1335, y 1719&ndash;1769 (full-size scan pixels)</dd>
@@ -1451,7 +1474,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 61 (PDF p. 81) &middot; &sect;23 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(x)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>For the function</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 61, x 125&ndash;1335, y 2070&ndash;2120 (full-size scan pixels)</dd>
@@ -1485,7 +1508,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 62 (PDF p. 82) &middot; &sect;25 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>m.l.</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>on a line of length</dd>
 <dt>Remarks</dt><dd>長さ m·l (ピリオドは積; 複合)</dd>
 <dt>Crop</dt><dd>folio 62, x 125&ndash;1335, y 1822&ndash;1869 (full-size scan pixels)</dd>
@@ -1507,7 +1530,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 62 (PDF p. 82) &middot; &sect;25 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(1)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>to the m alternatives</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 62, x 125&ndash;1335, y 2020&ndash;2070 (full-size scan pixels)</dd>
@@ -1519,7 +1542,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 62 (PDF p. 82) &middot; &sect;25 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(2)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>φ(1),</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 62, x 125&ndash;1335, y 2020&ndash;2070 (full-size scan pixels)</dd>
@@ -1531,7 +1554,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 62 (PDF p. 82) &middot; &sect;25 &middot; Text &middot; Inline &middot; Notation</div>
 <dl>
 <dt>Transcription</dt><dd>φ(m)</dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not in Lean">未</span></dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span></dd>
 <dt>Anchor words</dt><dd>φ(2) . . .</dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 62, x 125&ndash;1335, y 2020&ndash;2070 (full-size scan pixels)</dd>
