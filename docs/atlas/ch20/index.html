@@ -57,12 +57,12 @@ nav.nav.end{margin:2em 0 0}
 <div class="legend">
 <h2>Legend: the Lean column of a formula row</h2>
 <dl>
-<dt><span class="mark printed">✓</span>Printed form</dt><dd>the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ).</dd>
-<dt><span class="mark equiv">≈</span>Equivalent form</dt><dd>a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables).</dd>
-<dt><span class="mark corrected">✎</span>Corrected form</dt><dd>the printed line is refuted or not derivable, and a corrected form is proved.</dd>
+<dt><span class="mark printed">✓</span>Printed form</dt><dd>the printed relation appears in a theorem statement (only bound-variable names, Lean notation and subscript layout may differ).</dd>
+<dt><span class="mark equiv">≈</span>Equivalent form</dt><dd>the theorem states an algebraically equivalent form (denominators cleared, a definition substituted, hypotheses re-parametrised).</dd>
+<dt><span class="mark corrected">✎</span>Corrected form</dt><dd>the printed form is refuted and a corrected form is the theorem.</dd>
 <dt><span class="mark external">外</span>Depends on a named external axiom</dt><dd>depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not.</dd>
-<dt><span class="mark definition">定</span>Definition counterpart</dt><dd>the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</dd>
-<dt><span class="mark none">未</span>Not yet</dt><dd>none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); the card names one of the five classes below.</dd>
+<dt><span class="mark definition">定</span>Definition counterpart</dt><dd>the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition, or the theorem whose hypothesis carries it, is cited; there is no theorem statement to compare.</dd>
+<dt><span class="mark none">未</span>Not yet</dt><dd>nothing in the statement of any theorem (lines inside a proof, values absorbed by substitution, sums only). The card names one of the five classes below.</dd>
 </dl>
 <h2>Not yet (&#26410;): five classes</h2><dl>
 <dt><span class="mi">Other author&#x27;s formula</span></dt><dd>another author's formula, quoted or criticised by Keynes; a theorem refuting it, if any, is named; &#9998; is not used, since &#9998; is reserved for Keynes's own printed errors.</dd>
@@ -238,9 +238,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>φ(x) ≡ &#x27; x can be inferred from h &#x27;</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">No general proof</span>(一般の証明なし: 脚注の一般化記法 (≡ による名付け) で、対応する定義・定理なし)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">No general proof</span>(一般の証明なし: 被定義項が引用符つきの語句「x は h から推論できる」で、これを命題 (IProp) として与える結合子がなく、def に書けない; x/h = 1 は ℝ の等式で命題ではない)</dd>
 <dt>Anchor words</dt><dd><code>and we put</code></dd>
-<dt>Remarks</dt><dd>F20.8。被定義項は引用符つきの語句</dd>
+<dt>Remarks</dt><dd>F20.8。被定義項は引用符つきの語句。B54: 裁定 (c)。理由を具体的に書き直した (判定は 未 のまま)。</dd>
 <dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 1957&ndash;1993 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch20-016">
@@ -250,9 +250,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>f(x) ≡ x,</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">No general proof</span>(一般の証明なし: 脚注の一般化記法 (≡ による名付け) で、対応する定義・定理なし)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">No general proof</span>(一般の証明なし: x は命題の上を動くが、キャリアの全称量化子 iall は事例 (Inst) の上を動くので、命題の上の全称量化子を新たに置かないと定義に書けない (この f を使う一般化 g(φ, f) も同じ); 印刷に無い道具は足さない)</dd>
 <dt>Anchor words</dt><dd><code>and</code> / <code>, then</code></dd>
-<dt>Remarks</dt><dd>F20.8</dd>
+<dt>Remarks</dt><dd>F20.8。B54 で一度 定 (def f_ch20 と命題の上の全称量化子 iallP) にしたが、B54 r1 の裁定で 未 に戻した (015・017 と判定を揃える)。</dd>
 <dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 1957&ndash;1993 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch20-017">
@@ -262,9 +262,9 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 235 (PDF p. 255) &middot; &sect;3 &middot; Footnote 1 &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>g(φ, f) ≡ h.</code></dd>
-<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">No general proof</span>(一般の証明なし: 脚注の一般化記法 (≡ による名付け) で、対応する定義・定理なし)</dd>
+<dt>Lean</dt><dd><span class="mark none" title="Not yet">未</span><span class="mi">No general proof</span>(一般の証明なし: 脚注の結論 (then g(φ, f) ≡ h) で約定ではない; 導くには ch20-015 の推論関係を命題として持つことが要り、対応する定理なし)</dd>
 <dt>Anchor words</dt><dd><code>then</code> / <code>Since</code></dd>
-<dt>Remarks</dt><dd>F20.8。第19章の記法 g(φ, f)</dd>
+<dt>Remarks</dt><dd>F20.8。第19章の記法 g(φ, f)。B54: 裁定 (c)。理由を具体的に書き直した (判定は 未 のまま)。</dd>
 <dt>Crop</dt><dd>folio 235, x 125&ndash;1335, y 1957&ndash;1993 (full-size scan pixels)</dd>
 </dl></section>
 <section class="card" id="ch20-018">

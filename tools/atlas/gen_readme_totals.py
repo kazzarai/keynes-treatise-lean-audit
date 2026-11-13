@@ -5,11 +5,11 @@
 #   節の他の文章は残る)。
 #   「## Per chapter」の表は数値の列と all 行を書き換え、all 行が 2 行以上あれば 1 行にする。
 #   部・章・題の列、表の見出し行、他の文章は変えない。
-# 版の表示: --version <版> (例 v1.21) を渡せば見出しを「## Totals (<版>)」にする。渡さなければ最後の
-#   Totals 見出しの版をそのまま使う (--check は版を渡さずに回す)。
-# 出力は入力と --version だけで決まる。何度回しても同じ。
+# 版は書かない (B54): 見出しはいつも「## Totals」。数は台帳から決まるので版に紐づけない
+#   (旧版の「## Totals (v1.21)」のような見出しは「## Totals」に置き換わる)。
+# 出力は入力だけで決まる。何度回しても同じ。
 # --check: README.md を書き換えず、作り直した内容とバイト単位で一致するかだけを調べる (違えば終了コード 1)。
-# 使い方: python3 -I tools/atlas/gen_readme_totals.py [--check] [--version <版>] <ledger_dir>
+# 使い方: python3 -I tools/atlas/gen_readme_totals.py [--check] <ledger_dir>
 #   (README.md は <ledger_dir>/README.md)
 import importlib.util
 import os
@@ -77,7 +77,7 @@ def chapter_cells(x):
 TOTALS_RE = re.compile(r"^## Totals(?: \((?P<ver>[^)]*)\))?\s*$")
 
 
-def rebuild(text, st, version=None):
+def rebuild(text, st):
     lines = text.split("\n")
     # Totals 節: 最初の「## Totals」見出しから「## Per chapter」の前までを、見出し 1 つ・段落 1 つ
     # (+ 節に残る他の文章) にする。古い版の見出しと「Formula lines **」で始まる段落は消す (追記しない)。
@@ -85,9 +85,7 @@ def rebuild(text, st, version=None):
     assert heads, "README.md に「## Totals」の見出しがない"
     end = next(n for n, l in enumerate(lines) if l.startswith("## Per chapter"))
     assert heads[-1] < end, "Totals の見出しが「## Per chapter」の後にある"
-    if version is None:
-        version = TOTALS_RE.match(lines[heads[-1]]).group("ver")
-    head = "## Totals" + (f" ({version})" if version else "")
+    head = "## Totals"
     para, tot = totals_paragraph(st)
     rest = [l for l in lines[heads[0] + 1:end]
             if not l.startswith("Formula lines **") and not TOTALS_RE.match(l)]
@@ -133,16 +131,13 @@ def main():
     check = "--check" in args
     if check:
         args.remove("--check")
-    version = None
     if "--version" in args:
-        k = args.index("--version")
-        version = args[k + 1]
-        del args[k:k + 2]
+        sys.exit("--version は廃止 (B54): 見出しは版を書かない「## Totals」")
     ledger_dir = args[0]
     path = os.path.join(ledger_dir, "README.md")
     with open(path, encoding="utf-8", newline="") as f:
         old = f.read()
-    new = rebuild(old, collect(ledger_dir), version)
+    new = rebuild(old, collect(ledger_dir))
     if check:
         if new != old:
             sys.exit("README.md の合計・章別表が台帳から作り直した内容と一致しない (gen_readme_totals.py で作り直す)")

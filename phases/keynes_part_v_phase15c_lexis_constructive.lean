@@ -85,10 +85,11 @@
 #   θ h r x = fq r x / h (043)、Xt・Yt (095・096)、corr (相関係数 cov/√(Var·Var))。
 #
 # ## 外部公理 (Keynes の公理から出ないもの)
-#   ax_freq_eq_prob : 証拠 h が S の φ の真理頻度を知らせるなら、random member x について
+#   ax_statistical_generalisation : 証拠 h が S の φ の真理頻度を知らせるなら、random member x について
 #     φ(x)/R(x, S, φ, h) . h = tfreq S φ。folio 413 の「by a straightforward application of the Principle of
-#     Indifference we have p = f」の結論を公理に置く (B43 第 8 章の同名の公理と同じく「確率 = 頻度」の等置;
-#     この phase は B43 の phase を import しない)。021・022・026 がこれに依る。外すと th_33_021・th_33_022・
+#     Indifference we have p = f」の結論を公理に置く (§6 の Keynes 自身の主張。「確率 = 頻度」の等置だが、
+#     B43 第 8 章の ax_truth_frequency (Keynes が再構成した頻度説) とは別の主張; この phase は B43 の phase を
+#     import しない)。021・022・026 がこれに依る。外すと th_33_021・th_33_022・
 #     th_33_026 が通らない (Unknown identifier) ことを確かめた。公理なしでは出ないことは th_33_022_needs_ax。
 #   それ以外の定理は外部公理に依らない (Θ の数値評価・分散・共分散は Mathlib から証明した)。
 #
@@ -591,15 +592,17 @@ axiom tfreq : (Inst → IProp) → (Inst → IProp) → ℝ
 /-- 証拠 h は S の φ の真理頻度を知らせる (「of which we know the truth frequency」「is known to be f」)。 -/
 axiom KnowsFreq : IProp → (Inst → IProp) → (Inst → IProp) → Prop
 
-/-- **外部公理: 頻度と確率の一致** (folio 413「by a straightforward application of the Principle of
-Indifference we have p = f」の結論; B43 第 8 章の同名の公理と同じく「確率 = 頻度」の等置で、Keynes の第II部の
-公理からは出ない)。h が S の φ の真理頻度を知らせるなら、random member x について φ(x)/R(x, S, φ, h) . h = f。 -/
-axiom ax_freq_eq_prob (h : IProp) (S φ : Inst → IProp) (hK : KnowsFreq h S φ) (x : Inst) :
+/-- **外部公理: 統計的一般化の確率は既知の真理頻度に等しい**: h が S の φ の真理頻度 f を知らせるなら、
+random member x について φ(x)/R(x, S, φ, h) . h = f。第 33 章 §6 の Keynes 自身の主張 (建設的理論) である。
+folio 413「by a straightforward application of the Principle of Indifference we have p = f」の結論を公理に置く。
+「確率 = 頻度」の等置で Keynes の第II部の公理からは出ない; 第 8 章の ax_truth_frequency (Keynes が再構成した
+頻度説の主張) とは別の主張で、別の名前を付ける。 -/
+axiom ax_statistical_generalisation (h : IProp) (S φ : Inst → IProp) (hK : KnowsFreq h S φ) (x : Inst) :
     PrI (φ x) (iand (R x S φ h) h) = tfreq S φ
 
-/-- ax_freq_eq_prob の形の等式は、真理頻度と「知らせる」の割り当てが何であっても満たせる
+/-- ax_statistical_generalisation の形の等式は、真理頻度と「知らせる」の割り当てが何であっても満たせる
 (確率を (x, S, φ, h) の関数として f を返すものにとればよい)。 -/
-theorem ax_freq_eq_prob_sat {I Γ : Type} (tf : (I → Γ) → (I → Γ) → ℝ)
+theorem ax_statistical_generalisation_sat {I Γ : Type} (tf : (I → Γ) → (I → Γ) → ℝ)
     (Kn : Γ → (I → Γ) → (I → Γ) → Prop) :
     ∃ K : I → (I → Γ) → (I → Γ) → Γ → ℝ, ∀ h S φ, Kn h S φ → ∀ x, K x S φ h = tf S φ :=
   ⟨fun _ S φ _ => tf S φ, fun _ _ _ _ _ => rfl⟩
@@ -607,13 +610,13 @@ theorem ax_freq_eq_prob_sat {I Γ : Type} (tf : (I → Γ) → (I → Γ) → �
 /-- ch33-022 (外部公理依存): φ(x)/R(x, S, φ, h) . h = f (f は真理頻度)。 -/
 theorem th_33_022 (h : IProp) (S φ : Inst → IProp) (hK : KnowsFreq h S φ) :
     StatGen φ S h (tfreq S φ) :=
-  fun x => ax_freq_eq_prob h S φ hK x
+  fun x => ax_statistical_generalisation h S φ hK x
 
 /-- ch33-021 (外部公理依存): 有限の系列 S の真理頻度 f を知っているとき、統計的一般化の値 p は p = f
 (事例が 1 つでもあれば; 前提 a)。 -/
 theorem th_33_021 (h : IProp) (S φ : Inst → IProp) (hK : KnowsFreq h S φ) (p : ℝ)
     (hp : StatGen φ S h p) (a : Inst) : p = tfreq S φ := by
-  rw [← hp a]; exact ax_freq_eq_prob h S φ hK a
+  rw [← hp a]; exact ax_statistical_generalisation h S φ hK a
 
 /-- ch33-026 (外部公理依存): 原子からなる系列 S の φ の決まった割合 f が知られているとき、「as before」p = f
 (021 と同じ公理に依る; 真理頻度 tfreq を決まった割合と読む)。 -/
@@ -621,9 +624,9 @@ theorem th_33_026 (h : IProp) (S φ : Inst → IProp) (hK : KnowsFreq h S φ) (p
     (hp : StatGen φ S h p) (a : Inst) : p = tfreq S φ :=
   th_33_021 h S φ hK p hp a
 
-/-- 022 の外部公理の必要性 (th_33_022 から ax_freq_eq_prob を落とした形): 命題・事例・確率・R・真理頻度・
+/-- 022 の外部公理の必要性 (th_33_022 から ax_statistical_generalisation を落とした形): 命題・事例・確率・R・真理頻度・
 「知らせる」を自由にとれるとすると、h が真理頻度を知らせるのに φ(x)/R(x, S, φ, h) . h ≠ f の模型がある
-(命題も事例も 1 つ、確率はいつも 0、真理頻度は 1)。定理文に IProp・PrI・R・tfreq・ax_freq_eq_prob は現れない。 -/
+(命題も事例も 1 つ、確率はいつも 0、真理頻度は 1)。定理文に IProp・PrI・R・tfreq・ax_statistical_generalisation は現れない。 -/
 theorem th_33_022_needs_ax :
     ¬ ∀ (Γ I : Type) (and' : Γ → Γ → Γ) (Pr : Γ → Γ → ℝ) (R' : I → (I → Γ) → (I → Γ) → Γ → Γ)
       (tf : (I → Γ) → (I → Γ) → ℝ) (Kn : Γ → (I → Γ) → (I → Γ) → Prop)
@@ -917,7 +920,7 @@ end KeynesXXXc
 #print axioms KeynesXXXc.th_33_016
 #print axioms KeynesXXXc.RandomMemberFn
 #print axioms KeynesXXXc.th_33_018
-#print axioms KeynesXXXc.ax_freq_eq_prob_sat
+#print axioms KeynesXXXc.ax_statistical_generalisation_sat
 #print axioms KeynesXXXc.th_33_022
 #print axioms KeynesXXXc.th_33_021
 #print axioms KeynesXXXc.th_33_026

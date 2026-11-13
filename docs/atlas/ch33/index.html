@@ -56,12 +56,12 @@ nav.nav.end{margin:2em 0 0}
 <div class="legend">
 <h2>Legend: the Lean column of a formula row</h2>
 <dl>
-<dt><span class="mark printed">✓</span>Printed form</dt><dd>the printed relation appears as stated in a theorem (only the names of bound variables, Lean notation and the layout of subscripts may differ).</dd>
-<dt><span class="mark equiv">≈</span>Equivalent form</dt><dd>a theorem states an algebraically equivalent form (cleared denominators, a definition substituted, a change of variables).</dd>
-<dt><span class="mark corrected">✎</span>Corrected form</dt><dd>the printed line is refuted or not derivable, and a corrected form is proved.</dd>
+<dt><span class="mark printed">✓</span>Printed form</dt><dd>the printed relation appears in a theorem statement (only bound-variable names, Lean notation and subscript layout may differ).</dd>
+<dt><span class="mark equiv">≈</span>Equivalent form</dt><dd>the theorem states an algebraically equivalent form (denominators cleared, a definition substituted, hypotheses re-parametrised).</dd>
+<dt><span class="mark corrected">✎</span>Corrected form</dt><dd>the printed form is refuted and a corrected form is the theorem.</dd>
 <dt><span class="mark external">外</span>Depends on a named external axiom</dt><dd>depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not yield; the theorem is proved, the premise is not.</dd>
-<dt><span class="mark definition">定</span>Definition counterpart</dt><dd>the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it is cited; there is no theorem statement to compare.</dd>
-<dt><span class="mark none">未</span>Not yet</dt><dd>none of these (a line inside a proof, a definition with no Lean definition behind it, or no counterpart); the card names one of the five classes below.</dd>
+<dt><span class="mark definition">定</span>Definition counterpart</dt><dd>the line defines, names, fixes a notation, or states a premise of an example (not a claim to be derived); it is carried as a hypothesis, and the Lean definition, or the theorem whose hypothesis carries it, is cited; there is no theorem statement to compare.</dd>
+<dt><span class="mark none">未</span>Not yet</dt><dd>nothing in the statement of any theorem (lines inside a proof, values absorbed by substitution, sums only). The card names one of the five classes below.</dd>
 </dl>
 <h2>Not yet (&#26410;): five classes</h2><dl>
 <dt><span class="mi">Other author&#x27;s formula</span></dt><dd>another author's formula, quoted or criticised by Keynes; a theorem refuting it, if any, is named; &#9998; is not used, since &#9998; is reserved for Keynes's own printed errors.</dd>
@@ -305,7 +305,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 413 (PDF p. 433) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>p = f,</code></dd>
-<dt>Lean</dt><dd><span class="mark external" title="Depends on a named external axiom">外</span>外部公理依存 phase15c_lexis_constructive/ax_freq_eq_prob・th_33_021 (h が S の真理頻度 f を知らせる (KnowsFreq) とき、統計的一般化の値 p は p = f; 「a straightforward application of the Principle of Indifference」の結論を外部公理 ax_freq_eq_prob (B43 第 8 章と同名、「確率 = 頻度」の等置) に置く; 公理なしでは出ない (th_33_022_needs_ax))</dd>
+<dt>Lean</dt><dd><span class="mark external" title="Depends on a named external axiom">外</span>外部公理依存 phase15c_lexis_constructive/ax_statistical_generalisation・th_33_021 (h が S の真理頻度 f を知らせる (KnowsFreq) とき、統計的一般化の値 p は p = f; 「a straightforward application of the Principle of Indifference」の結論を外部公理 ax_statistical_generalisation (§6 の Keynes 自身の主張、「確率 = 頻度」の等置; 第 8 章の頻度説の公理とは別の公理) に置く; 公理なしでは出ない (th_33_022_needs_ax))</dd>
 <dt>Anchor words</dt><dd><code>Principle of Indifference we have</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 413, x 125&ndash;1335, y 895&ndash;947 (full-size scan pixels)</dd>
@@ -317,7 +317,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 413 (PDF p. 433) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>φ(x)/R(x, S, φ, h) . h = f.</code></dd>
-<dt>Lean</dt><dd><span class="mark external" title="Depends on a named external axiom">外</span>外部公理依存 phase15c_lexis_constructive/ax_freq_eq_prob・th_33_022 (φ(x)/R(x, S, φ, h) . h = f; 公理なしでは出ない (th_33_022_needs_ax))</dd>
+<dt>Lean</dt><dd><span class="mark external" title="Depends on a named external axiom">外</span>外部公理依存 phase15c_lexis_constructive/ax_statistical_generalisation・th_33_022 (φ(x)/R(x, S, φ, h) . h = f; 公理なしでは出ない (th_33_022_needs_ax))</dd>
 <dt>Anchor words</dt><dd><code>so that</code></dd>
 <dt>Remarks</dt><dd></dd>
 <dt>Crop</dt><dd>folio 413, x 125&ndash;1335, y 895&ndash;947 (full-size scan pixels)</dd>
@@ -364,7 +364,7 @@ nav.nav.end{margin:2em 0 0}
 <div class="meta">folio 413 (PDF p. 433) &middot; &sect;§6 &middot; Text &middot; Inline &middot; Formula</div>
 <dl>
 <dt>Transcription</dt><dd><code>p = f.</code></dd>
-<dt>Lean</dt><dd><span class="mark external" title="Depends on a named external axiom">外</span>外部公理依存 phase15c_lexis_constructive/ax_freq_eq_prob・th_33_026 (原子からなる系列の決まった割合 f が知られているとき「as before」p = f; 021 と同じ公理)</dd>
+<dt>Lean</dt><dd><span class="mark external" title="Depends on a named external axiom">外</span>外部公理依存 phase15c_lexis_constructive/ax_statistical_generalisation・th_33_026 (原子からなる系列の決まった割合 f が知られているとき「as before」p = f; 021 と同じ公理)</dd>
 <dt>Reprint of</dt><dd><a href="#ch33-021">ch33-021</a></dd>
 <dt>Anchor words</dt><dd><code>we have, as before,</code></dd>
 <dt>Remarks</dt><dd></dd>

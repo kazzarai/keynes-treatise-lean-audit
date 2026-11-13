@@ -48,7 +48,7 @@
 #     「a is an α and b a β」は同じ成員についての対と読む (αβ・δ′ は成員ごとの連言・選言;
 #     folio 106 の「the actual proportion in fact of persons who are both colour-blind and
 #     black-haired」の読み)。この読みと「α と β が同じ系列」(前提 hS) は印刷に無いので、
-#     010・011・026 は ≈。頻度と確率の一致は外部公理 ax_freq_eq_prob に置く。
+#     010・011・026 は ≈。頻度と確率の一致は外部公理 ax_truth_frequency に置く。
 #   §2b 第8章 ch08-023: 添字の無い Keynes 自身の記法の行なので、第II部の担体 (IProp・PrI・Cons、
 #     phase10c の KeynesI の写しの一部) の上で、022 を加法定理 (24) th_24_i に代入する。
 #     頻度の担体の上の 023 (024 を前提に置く形) は th_8_r023_freq。
@@ -317,12 +317,14 @@ axiom refCls : FProp → FProp → RefCls ℕ
 axiom KPr : FProp → FProp → ℚ
 
 /-- **外部公理: 頻度と確率の一致** (頻度理論の主張): 確率 a/h は、h が a に定める参照類の真理頻度
-a_α/h = α_f に等しい。KPr := (a h ↦ FreqProb a (refCls a h) h) で満たされるので無矛盾
-(ax_freq_eq_prob_sat)。 -/
-axiom ax_freq_eq_prob (a h : FProp) : KPr a h = FreqProb a (refCls a h) h
+a_α/h = α_f に等しい。第 8 章 §§9–13 で Keynes が再構成した頻度説 (命題の類の真理頻度で確率を
+定義する説) の主張であり、Keynes 自身の主張ではない (第 33 章 §6 の Keynes 自身の主張は phase15c の
+ax_statistical_generalisation で、別の公理)。KPr := (a h ↦ FreqProb a (refCls a h) h) で満たされるので無矛盾
+(ax_truth_frequency_sat)。 -/
+axiom ax_truth_frequency (a h : FProp) : KPr a h = FreqProb a (refCls a h) h
 
-/-- ax_freq_eq_prob の形の等式は、参照類の割り当てが何であっても満たせる。 -/
-theorem ax_freq_eq_prob_sat {Γ : Type} (cls : Γ → Γ → RefCls ℕ) :
+/-- ax_truth_frequency の形の等式は、参照類の割り当てが何であっても満たせる。 -/
+theorem ax_truth_frequency_sat {Γ : Type} (cls : Γ → Γ → RefCls ℕ) :
     ∃ K : Γ → Γ → ℚ, ∀ a h, K a h = FreqProb a (cls a h) h :=
   ⟨fun a h => FreqProb a (cls a h) h, fun _ _ => rfl⟩
 
@@ -337,12 +339,12 @@ theorem th_8_r024 (a b h : FProp) (p₁ p₂ q : ℚ)
     (h022 : IndepForKnowledge (KPr (fand a b) h) (KPr a h) (KPr b h)) :
     (conjCls (refCls a h) (refCls b h)).tf = p₁ * p₂ / q ^ 2 := by
   unfold IndepForKnowledge at h022
-  rw [ax_freq_eq_prob, h014, h020, h021] at h022
+  rw [ax_truth_frequency, h014, h020, h021] at h022
   rw [th_8_r009] at h022
   rw [h022]
   ring
 
-/-- **ch08-024 の外部公理の必要性** (th_8_r024 から ax_freq_eq_prob を落とした形): 命題の型 Γ、
+/-- **ch08-024 の外部公理の必要性** (th_8_r024 から ax_truth_frequency を落とした形): 命題の型 Γ、
 連言 fand'、参照類の割り当て cls、確率 K を自由に取れるとすると、th_8_r024 の前提 h020・h021・
 h014・h022 がすべて成り立つのに結論 αβ_f = p₁p₂/q² が成り立たない模型がある。
 模型: Γ = Fin 3 (a = 0、b = 1、ab = fand' a b = 2、h = 0)、参照類はどれも 2 人の系列
@@ -350,8 +352,8 @@ h014・h022 がすべて成り立つのに結論 αβ_f = p₁p₂/q² が成り
 確率は K a h = K b h = 1/2、K (ab) h = 1/4。p₁ = p₂ = 1、q = 2。
 h020・h021: a/h = b/h = 1/2 = p₁/q = p₂/q。h014: 参照類はどれも同じなので γ = αβ。
 h022: 模型の中で IndepForKnowledge (K ab h) (K a h) (K b h) が成り立つ (1/4 = 1/2 · 1/2)。
-結論: αβ_f = 1/2 ≠ p₁p₂/q² = 1/4。模型の K は (ab, h) で ax_freq_eq_prob を満たさない
-(K ab h = 1/4、頻度 αβ_f = 1/2)。定理文に FProp・fand・refCls・KPr・ax_freq_eq_prob は現れない。 -/
+結論: αβ_f = 1/2 ≠ p₁p₂/q² = 1/4。模型の K は (ab, h) で ax_truth_frequency を満たさない
+(K ab h = 1/4、頻度 αβ_f = 1/2)。定理文に FProp・fand・refCls・KPr・ax_truth_frequency は現れない。 -/
 theorem th_8_r024_needs_ax :
     ¬ ∀ (Γ : Type) (fand' : Γ → Γ → Γ) (cls : Γ → Γ → RefCls ℕ) (K : Γ → Γ → ℚ)
       (a b h : Γ) (p₁ p₂ q : ℚ),
@@ -673,7 +675,7 @@ end KeynesP15a
 #print axioms KeynesP15a.th_8_r010_needs_013
 #print axioms KeynesP15a.th_8_r010_needs_014
 #print axioms KeynesP15a.th_8_r023_freq_needs_024
-#print axioms KeynesP15a.ax_freq_eq_prob_sat
+#print axioms KeynesP15a.ax_truth_frequency_sat
 #print axioms KeynesP15a.th_8_r024
 #print axioms KeynesP15a.th_8_r024_needs_ax
 #print axioms KeynesP15a.th_24_i

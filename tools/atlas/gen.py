@@ -163,18 +163,19 @@ L = {
         # 凡例 (章頁と目次で共用): Lean 欄の 6 値と、未の 5 分類。mi_label は未のカードに付く札
         "legend_h": "Legend: the Lean column of a formula row", "legend_mi_h": "Not yet (&#26410;): five classes",
         "legend_mark": {
-            "✓": "the printed relation appears as stated in a theorem (only the names of bound variables, "
-                 "Lean notation and the layout of subscripts may differ).",
-            "≈": "a theorem states an algebraically equivalent form (cleared denominators, a definition "
-                 "substituted, a change of variables).",
-            "✎": "the printed line is refuted or not derivable, and a corrected form is proved.",
+            # 台帳 README (docs/全数台帳/README.md) の Lean status の定義と同文 (読み手 F52.R5)
+            "✓": "the printed relation appears in a theorem statement (only bound-variable names, Lean notation and "
+                 "subscript layout may differ).",
+            "≈": "the theorem states an algebraically equivalent form (denominators cleared, a definition substituted, "
+                 "hypotheses re-parametrised).",
+            "✎": "the printed form is refuted and a corrected form is the theorem.",
             "外": "depends on a named external axiom (e.g. independence, equal chance) that Keynes's own axioms do not "
                   "yield; the theorem is proved, the premise is not.",
             "定": "the line defines, names, fixes a notation, or states a premise of an example (not a claim to be "
-                  "derived); it is carried as a hypothesis, and the Lean definition or hypothesis name that carries it "
-                  "is cited; there is no theorem statement to compare.",
-            "未": "none of these (a line inside a proof, a definition with no Lean definition behind it, or no "
-                  "counterpart); the card names one of the five classes below.",
+                  "derived); it is carried as a hypothesis, and the Lean definition, or the theorem whose hypothesis "
+                  "carries it, is cited; there is no theorem statement to compare.",
+            "未": "nothing in the statement of any theorem (lines inside a proof, values absorbed by substitution, sums "
+                  "only). The card names one of the five classes below.",
         },
         "legend_mi": {
             "他の著者の式": "another author's formula, quoted or criticised by Keynes; a theorem refuting it, if any, "
@@ -307,14 +308,15 @@ L = {
         "mark": {"✓": "印刷どおり", "≈": "同値な形", "✎": "修正形", "未": "Lean になし", "外": "外部公理依存", "定": "定義対応"},
         "legend_h": "凡例: 式の行の Lean 欄", "legend_mi_h": "未 (Lean になし) の 5 分類",
         "legend_mark": {
-            "✓": "印刷された関係が定理の文にそのまま現れる (束縛変数の名前・Lean の記法・添字の組み方だけは違ってよい)。",
-            "≈": "代数的に同値な形を定理が述べる (分母を払う、定義を代入する、変数を替える)。",
-            "✎": "印刷の行は反駁されるか導けず、修正形が証明されている。",
+            # 台帳 README の Lean status の定義の訳 (英語版の凡例と同じ内容; 読み手 F52.R5)
+            "✓": "印刷された関係が定理の文に現れる (束縛変数の名前・Lean の記法・添字の組み方だけは違ってよい)。",
+            "≈": "定理が代数的に同値な形を述べる (分母を払う、定義を代入する、前提の変数の取り方を替える)。",
+            "✎": "印刷の形は反駁され、修正形が定理である。",
             "外": "名指しされた外部公理 (独立性・等しい見込みなど) に依存する。ケインズ自身の公理からは出ない公理で、"
                   "定理は証明されているが、その前提は証明されていない。",
             "定": "定義・名付け・記法の約束・例の中で置かれた仮定 (印刷が主張ではなく前提として置いている行)。"
-                  "定理の前提として写し、それを担う Lean の定義 (または前提の名前) を挙げる。比べるべき定理文はない。",
-            "未": "そのどれでもない (証明の途中の行、Lean の定義がない定義だけの行、対応なし)。"
+                  "前提として写し、Lean の定義、またはそれを前提に運ぶ定理の名前を挙げる。比べるべき定理文はない。",
+            "未": "どの定理の文にも現れない (証明の途中の行、代入で吸収された値、和だけ)。"
                   "カードには下の 5 分類のどれかを札として付ける。",
         },
         "legend_mi": {
