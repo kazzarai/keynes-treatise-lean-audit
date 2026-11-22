@@ -2,11 +2,17 @@
 # others/gt12/interval_decision.lean — (56.1) の区間の上の投資決定: 内側・沈黙・慣習・血気
 
 **これは Keynes の式ではなく、Keynes の (56.1) の区間の上に報告者が置いた決定モデルである。**
-帰属: 区間の読み Brady (2004)、α 規準 Hurwicz (1951)、血気 = 幅しか持たない確率の下の衝動
+帰属: 区間の読み Brady (2004)、ζ による規準 (Hurwicz (1951) の α 規準にあたる)、血気 = 幅しか持たない確率の下の衝動
 新井 (2015)。『確率論』の印刷行ではないので docs/全数台帳 に対応する行は無く、判定数
 (check_all の [3]) にも数えない。『一般理論』第 12 章の本文は公理化も引用もしない。
 骨格は phases/keynes_part_ii_phase16a_boole_challenge (th_17_56_*) と
 others/boole/compare_keynes_56 (B46・B47) の定理に載せる。
+
+## 記号 (2026-11-22 改名)
+  区間内の位置 (血気) は ζ と書く。初めは α と書いていたが、『確率論』は確率関係を a/h = α と
+  書く (ch01-001) ので、同じ文字を別の意味に使うと原典の記法と衝突する。ζ は『確率論』の式に
+  現れない。定理名も alpha_* → zeta_*、boole_half_alpha → boole_half_zeta、uα → uζ に改めた。
+  定理の内容と証明は変えていない。
 
 ## 設定
   (56) の data: a₁/h = c₁, a₂/h = c₂, e/a₁h = p₁, e/a₂h = p₂, e/ā₁ā₂h = 0, Cons h (DataI)。
@@ -30,8 +36,8 @@ others/boole/compare_keynes_56 (B46・B47) の定理に載せる。
   | 4(i) 区間内・単調 | blood_in_interval, blood_mono, blood_in_interval_i | 模 / 模 / K |
   | 4(ii) 閾値の式 | blood_threshold | 模 |
   | 4(iii) data 不変で反転 | blood_flip, blood_flip_exists | 模 |
-  | 4(iv) α は定まらない | alpha_unique, alpha_not_determined | 模 |
-  | 5 数値例 | half_L, half_U, boole_half_solution, boole_half_unique, boole_half_value, half_excl_value, half_indep_value, half_threshold, half_blood_mid, boole_half_alpha, boole_half_invest | 模 (boole_half_value・half_excl_value・half_indep_value は K) |
+  | 4(iv) ζ は定まらない | zeta_unique, zeta_not_determined | 模 |
+  | 5 数値例 | half_L, half_U, boole_half_solution, boole_half_unique, boole_half_value, half_excl_value, half_indep_value, half_threshold, half_blood_mid, boole_half_zeta, boole_half_invest | 模 (boole_half_value・half_excl_value・half_indep_value は K) |
   § 8 の run_cmd が上の依存の区別を検査し、外れればコンパイルが落ちる。
 
 ## 読み
@@ -43,8 +49,8 @@ others/boole/compare_keynes_56 (B46・B47) の定理に載せる。
     は、どれも無矛盾 (模型あり) で、公理と data からは出ず (偽の模型あり)、同じ data
     c = p = 1/2 に u = (3 − √2)/4, 1/2, 1/4 という違う値を与える。k = 3/8 では排反と Boole の
     慣習で Invest、独立 (w = 1) の慣習で ¬Invest。
-  4 血気: u_α := L + α(U − L)。data を固定したまま α だけで決定が反転し、α は data と公理からは
-    定まらない (u = L の模型は α = 0、u = U の模型は α = 1)。上の三つの慣習は α の特定の値
+  4 血気: u_ζ := L + ζ(U − L)。data を固定したまま ζ だけで決定が反転し、ζ は data と公理からは
+    定まらない (u = L の模型は ζ = 0、u = U の模型は ζ = 1)。上の三つの慣習は ζ の特定の値
     (c = p = 1/2 で Boole 2 − √2、排反 1、独立 0) に当たる。
 
 ## 未達・限界
@@ -440,43 +446,43 @@ theorem conventions_flip_decision {a₁ a₂ e h a₁' a₂' e' h' a₁'' a₂''
 
 /-! ## § 5 血気 = 区間内の位置: 項目 4 -/
 
-/-- 血気の位置 α での評価 u_α := L + α(U − L)。 -/
-noncomputable def uα (c₁ c₂ p₁ p₂ α : ℝ) : ℝ :=
-  L c₁ c₂ p₁ p₂ + α * (U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂)
+/-- 血気の位置 ζ での評価 u_ζ := L + ζ(U − L)。 -/
+noncomputable def uζ (c₁ c₂ p₁ p₂ ζ : ℝ) : ℝ :=
+  L c₁ c₂ p₁ p₂ + ζ * (U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂)
 
 /-- 投資の閾値 (k − L)/(U − L)。 -/
 noncomputable def threshold (c₁ c₂ p₁ p₂ k : ℝ) : ℝ :=
   (k - L c₁ c₂ p₁ p₂) / (U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂)
 
-/-- **4 (i) 区間内**: L ⩽ U なら、α ∈ [0, 1] の u_α は区間 [L, U] にある。 -/
-theorem blood_in_interval {c₁ c₂ p₁ p₂ α : ℝ} (hLU : L c₁ c₂ p₁ p₂ ≤ U c₁ c₂ p₁ p₂)
-    (h0 : 0 ≤ α) (h1 : α ≤ 1) :
-    L c₁ c₂ p₁ p₂ ≤ uα c₁ c₂ p₁ p₂ α ∧ uα c₁ c₂ p₁ p₂ α ≤ U c₁ c₂ p₁ p₂ := by
-  unfold uα
+/-- **4 (i) 区間内**: L ⩽ U なら、ζ ∈ [0, 1] の u_ζ は区間 [L, U] にある。 -/
+theorem blood_in_interval {c₁ c₂ p₁ p₂ ζ : ℝ} (hLU : L c₁ c₂ p₁ p₂ ≤ U c₁ c₂ p₁ p₂)
+    (h0 : 0 ≤ ζ) (h1 : ζ ≤ 1) :
+    L c₁ c₂ p₁ p₂ ≤ uζ c₁ c₂ p₁ p₂ ζ ∧ uζ c₁ c₂ p₁ p₂ ζ ≤ U c₁ c₂ p₁ p₂ := by
+  unfold uζ
   have hw : 0 ≤ U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂ := by linarith
-  have k1 : 0 ≤ α * (U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂) := mul_nonneg h0 hw
-  have k2 : α * (U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂) ≤ 1 * (U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂) :=
+  have k1 : 0 ≤ ζ * (U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂) := mul_nonneg h0 hw
+  have k2 : ζ * (U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂) ≤ 1 * (U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂) :=
     mul_le_mul_of_nonneg_right h1 hw
   constructor <;> linarith
 
-/-- **4 (i) 単調**: L ⩽ U なら、u_α は α について単調。 -/
+/-- **4 (i) 単調**: L ⩽ U なら、u_ζ は ζ について単調。 -/
 theorem blood_mono {c₁ c₂ p₁ p₂ : ℝ} (hLU : L c₁ c₂ p₁ p₂ ≤ U c₁ c₂ p₁ p₂) :
-    Monotone (uα c₁ c₂ p₁ p₂) := by
-  intro α β hαβ
-  unfold uα
-  have := mul_le_mul_of_nonneg_right hαβ (show 0 ≤ U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂ by linarith)
+    Monotone (uζ c₁ c₂ p₁ p₂) := by
+  intro ζ β hζβ
+  unfold uζ
+  have := mul_le_mul_of_nonneg_right hζβ (show 0 ≤ U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂ by linarith)
   linarith
 
-/-- **4 (i) を data の下で** (KeynesI): data があれば、α ∈ [0, 1] の u_α は (56.1) の区間にある。 -/
-theorem blood_in_interval_i {a₁ a₂ e h : IProp} {c₁ c₂ p₁ p₂ α : ℝ}
-    (hd : DataI a₁ a₂ e h c₁ c₂ p₁ p₂) (h0 : 0 ≤ α) (h1 : α ≤ 1) :
-    L c₁ c₂ p₁ p₂ ≤ uα c₁ c₂ p₁ p₂ α ∧ uα c₁ c₂ p₁ p₂ α ≤ U c₁ c₂ p₁ p₂ :=
+/-- **4 (i) を data の下で** (KeynesI): data があれば、ζ ∈ [0, 1] の u_ζ は (56.1) の区間にある。 -/
+theorem blood_in_interval_i {a₁ a₂ e h : IProp} {c₁ c₂ p₁ p₂ ζ : ℝ}
+    (hd : DataI a₁ a₂ e h c₁ c₂ p₁ p₂) (h0 : 0 ≤ ζ) (h1 : ζ ≤ 1) :
+    L c₁ c₂ p₁ p₂ ≤ uζ c₁ c₂ p₁ p₂ ζ ∧ uζ c₁ c₂ p₁ p₂ ζ ≤ U c₁ c₂ p₁ p₂ :=
   blood_in_interval (L_le_U_of_data hd) h0 h1
 
-/-- **4 (ii) 閾値の式**: L < k ⩽ U のとき、Invest (u_α) k ↔ α ⩾ (k − L)/(U − L)。 -/
+/-- **4 (ii) 閾値の式**: L < k ⩽ U のとき、Invest (u_ζ) k ↔ ζ ⩾ (k − L)/(U − L)。 -/
 theorem blood_threshold {c₁ c₂ p₁ p₂ k : ℝ} (hL : L c₁ c₂ p₁ p₂ < k) (hU : k ≤ U c₁ c₂ p₁ p₂)
-    (α : ℝ) : Invest (uα c₁ c₂ p₁ p₂ α) k ↔ threshold c₁ c₂ p₁ p₂ k ≤ α := by
-  unfold Invest uα threshold
+    (ζ : ℝ) : Invest (uζ c₁ c₂ p₁ p₂ ζ) k ↔ threshold c₁ c₂ p₁ p₂ k ≤ ζ := by
+  unfold Invest uζ threshold
   have hw : 0 < U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂ := by linarith
   rw [div_le_iff₀ hw]
   constructor <;> intro H <;> linarith
@@ -489,69 +495,69 @@ theorem threshold_mem {c₁ c₂ p₁ p₂ k : ℝ} (hL : L c₁ c₂ p₁ p₂ 
   exact ⟨div_pos (by linarith) hw, (div_le_one hw).mpr (by linarith)⟩
 
 /-- **4 (iii) data 不変で決定が反転**: L < k ⩽ U のとき、data (c, p, k) を固定したまま、
-閾値以上の α では Invest、閾値未満の α' では ¬Invest。 -/
+閾値以上の ζ では Invest、閾値未満の ζ' では ¬Invest。 -/
 theorem blood_flip {c₁ c₂ p₁ p₂ k : ℝ} (hL : L c₁ c₂ p₁ p₂ < k) (hU : k ≤ U c₁ c₂ p₁ p₂)
-    {α α' : ℝ} (hα : threshold c₁ c₂ p₁ p₂ k ≤ α) (hα' : α' < threshold c₁ c₂ p₁ p₂ k) :
-    Invest (uα c₁ c₂ p₁ p₂ α) k ∧ ¬ Invest (uα c₁ c₂ p₁ p₂ α') k :=
-  ⟨(blood_threshold hL hU α).mpr hα, fun H => absurd ((blood_threshold hL hU α').mp H) (not_le.mpr hα')⟩
+    {ζ ζ' : ℝ} (hζ : threshold c₁ c₂ p₁ p₂ k ≤ ζ) (hζ' : ζ' < threshold c₁ c₂ p₁ p₂ k) :
+    Invest (uζ c₁ c₂ p₁ p₂ ζ) k ∧ ¬ Invest (uζ c₁ c₂ p₁ p₂ ζ') k :=
+  ⟨(blood_threshold hL hU ζ).mpr hζ, fun H => absurd ((blood_threshold hL hU ζ').mp H) (not_le.mpr hζ')⟩
 
-/-- **4 (iii) の存在形**: L < k ⩽ U なら、[0, 1] の中に α' < α があり、α を α' に下げると
-Invest が ¬Invest に変わる (α = 1, α' = 0)。 -/
+/-- **4 (iii) の存在形**: L < k ⩽ U なら、[0, 1] の中に ζ' < ζ があり、ζ を ζ' に下げると
+Invest が ¬Invest に変わる (ζ = 1, ζ' = 0)。 -/
 theorem blood_flip_exists {c₁ c₂ p₁ p₂ k : ℝ} (hL : L c₁ c₂ p₁ p₂ < k) (hU : k ≤ U c₁ c₂ p₁ p₂) :
-    ∃ α α' : ℝ, 0 ≤ α' ∧ α' < α ∧ α ≤ 1
-      ∧ Invest (uα c₁ c₂ p₁ p₂ α) k ∧ ¬ Invest (uα c₁ c₂ p₁ p₂ α') k := by
+    ∃ ζ ζ' : ℝ, 0 ≤ ζ' ∧ ζ' < ζ ∧ ζ ≤ 1
+      ∧ Invest (uζ c₁ c₂ p₁ p₂ ζ) k ∧ ¬ Invest (uζ c₁ c₂ p₁ p₂ ζ') k := by
   obtain ⟨t0, t1⟩ := threshold_mem hL hU
   exact ⟨1, 0, le_refl 0, one_pos, le_refl 1, blood_flip hL hU t1 t0⟩
 
-/-- L < U なら u_α = u となる α はただ一つ: α = (u − L)/(U − L)。 -/
-theorem alpha_unique {c₁ c₂ p₁ p₂ u : ℝ} (hLU : L c₁ c₂ p₁ p₂ < U c₁ c₂ p₁ p₂) (α : ℝ) :
-    uα c₁ c₂ p₁ p₂ α = u ↔ α = (u - L c₁ c₂ p₁ p₂) / (U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂) := by
-  unfold uα
+/-- L < U なら u_ζ = u となる ζ はただ一つ: ζ = (u − L)/(U − L)。 -/
+theorem zeta_unique {c₁ c₂ p₁ p₂ u : ℝ} (hLU : L c₁ c₂ p₁ p₂ < U c₁ c₂ p₁ p₂) (ζ : ℝ) :
+    uζ c₁ c₂ p₁ p₂ ζ = u ↔ ζ = (u - L c₁ c₂ p₁ p₂) / (U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂) := by
+  unfold uζ
   have hw : U c₁ c₂ p₁ p₂ - L c₁ c₂ p₁ p₂ ≠ 0 := by linarith
   rw [eq_div_iff hw]
   constructor <;> intro H <;> linarith
 
-/-- **4 (iv) α は data と公理から定まらない**: 公理 13 本と同じ data (c = p = 1/2) を満たす二つの
-模型で、u = 1/4 の模型 2 は α = 0 にだけ、u = 1/2 の模型 1 は α = 1 にだけ対応する。 -/
-theorem alpha_not_determined :
+/-- **4 (iv) ζ は data と公理から定まらない**: 公理 13 本と同じ data (c = p = 1/2) を満たす二つの
+模型で、u = 1/4 の模型 2 は ζ = 0 にだけ、u = 1/2 の模型 1 は ζ = 1 にだけ対応する。 -/
+theorem zeta_not_determined :
     Boole.SysK Boole.MU
     ∧ DataS Boole.MU a₁ₘ Boole.a₂ᵢ Boole.eᵢ mtrue (1/2) (1/2) (1/2) (1/2)
     ∧ DataS Boole.MU a₁ₘ a₂ₘ eₘ mtrue (1/2) (1/2) (1/2) (1/2)
-    ∧ (∀ α, uα (1/2) (1/2) (1/2) (1/2) α = Boole.MU.pr Boole.eᵢ mtrue ↔ α = 0)
-    ∧ (∀ α, uα (1/2) (1/2) (1/2) (1/2) α = Boole.MU.pr eₘ mtrue ↔ α = 1) := by
+    ∧ (∀ ζ, uζ (1/2) (1/2) (1/2) (1/2) ζ = Boole.MU.pr Boole.eᵢ mtrue ↔ ζ = 0)
+    ∧ (∀ ζ, uζ (1/2) (1/2) (1/2) (1/2) ζ = Boole.MU.pr eₘ mtrue ↔ ζ = 1) := by
   have hLU : L (1/2) (1/2) (1/2) (1/2) < U (1/2) (1/2) (1/2) (1/2) := by
     rw [half_L, half_U]; norm_num
-  refine ⟨Boole.sysK_MU, data_m2, data_m1, fun α => ?_, fun α => ?_⟩
-  · rw [alpha_unique hLU, u_m2, half_L, half_U]; norm_num
-  · rw [alpha_unique hLU, u_m1, half_L, half_U]; norm_num
+  refine ⟨Boole.sysK_MU, data_m2, data_m1, fun ζ => ?_, fun ζ => ?_⟩
+  · rw [zeta_unique hLU, u_m2, half_L, half_U]; norm_num
+  · rw [zeta_unique hLU, u_m1, half_L, half_U]; norm_num
 
 /-! ## § 6 数値例 (c₁ = c₂ = p₁ = p₂ = 1/2): 項目 5
 
 L = 1/4 (half_L)、U = 1/2 (half_U)、Boole の根 (3 − √2)/4 ≈ 0.396 (boole_half_solution;
 B47 half_solution の区間 (1/4, 1/2) に入る)、排反の慣習で u = 1/2 (half_excl_value)、
-独立 + e/a₁a₂h = 1 の慣習で u = 1/4 (half_indep_value)、k = 3/8 の閾値 α = 1/2。 -/
+独立 + e/a₁a₂h = 1 の慣習で u = 1/4 (half_indep_value)、k = 3/8 の閾値 ζ = 1/2。 -/
 
-/-- k = 3/8 の閾値は α = 1/2。 -/
+/-- k = 3/8 の閾値は ζ = 1/2。 -/
 theorem half_threshold : threshold (1/2) (1/2) (1/2) (1/2) (3/8) = 1/2 := by
   unfold threshold; rw [half_L, half_U]; norm_num
 
-/-- α = 1/2 の血気の評価は u = 3/8 (閾値ちょうど)。 -/
-theorem half_blood_mid : uα (1/2) (1/2) (1/2) (1/2) (1/2) = 3/8 := by
-  unfold uα; rw [half_L, half_U]; norm_num
+/-- ζ = 1/2 の血気の評価は u = 3/8 (閾値ちょうど)。 -/
+theorem half_blood_mid : uζ (1/2) (1/2) (1/2) (1/2) (1/2) = 3/8 := by
+  unfold uζ; rw [half_L, half_U]; norm_num
 
 /-- Boole の根は B47 half_solution の区間 (1/4, 1/2) の内部にあり、Boole の慣習は血気の位置
-α = 2 − √2 (≈ 0.586) に当たる。 -/
-theorem boole_half_alpha :
+ζ = 2 − √2 (≈ 0.586) に当たる。 -/
+theorem boole_half_zeta :
     1/4 < (3 - √2) / 4 ∧ (3 - √2) / 4 < 1/2
-    ∧ uα (1/2) (1/2) (1/2) (1/2) (2 - √2) = (3 - √2) / 4 := by
+    ∧ uζ (1/2) (1/2) (1/2) (1/2) (2 - √2) = (3 - √2) / 4 := by
   have hs : √2 * √2 = 2 := Real.mul_self_sqrt (by norm_num)
   have h0 : 0 ≤ √2 := Real.sqrt_nonneg 2
   have h1 : 1 < √2 := by nlinarith
   have h2 : √2 < 2 := by nlinarith
   refine ⟨by linarith, by linarith, ?_⟩
-  unfold uα; rw [half_L, half_U]; ring
+  unfold uζ; rw [half_L, half_U]; ring
 
-/-- Boole の慣習の評価 (3 − √2)/4 は k = 3/8 の閾値を越える (Invest)、α = 2 − √2 ⩾ 1/2。 -/
+/-- Boole の慣習の評価 (3 − √2)/4 は k = 3/8 の閾値を越える (Invest)、ζ = 2 − √2 ⩾ 1/2。 -/
 theorem boole_half_invest :
     Invest ((3 - √2) / 4) (3/8) ∧ threshold (1/2) (1/2) (1/2) (1/2) (3/8) ≤ 2 - √2 := by
   have hs : √2 * √2 = 2 := Real.mul_self_sqrt (by norm_num)
@@ -598,9 +604,9 @@ run_cmd liftCoreM do
       ``GT12.indep_val_m2, ``GT12.not_indep_m1, ``GT12.conv_indep_consistent,
       ``GT12.conv_indep_not_forced, ``GT12.boole_half_solution, ``GT12.boole_half_unique,
       ``GT12.blood_in_interval, ``GT12.blood_mono, ``GT12.blood_threshold, ``GT12.threshold_mem,
-      ``GT12.blood_flip, ``GT12.blood_flip_exists, ``GT12.alpha_unique,
-      ``GT12.alpha_not_determined, ``GT12.half_threshold, ``GT12.half_blood_mid,
-      ``GT12.boole_half_alpha, ``GT12.boole_half_invest] do
+      ``GT12.blood_flip, ``GT12.blood_flip_exists, ``GT12.zeta_unique,
+      ``GT12.zeta_not_determined, ``GT12.half_threshold, ``GT12.half_blood_mid,
+      ``GT12.boole_half_zeta, ``GT12.boole_half_invest] do
     unless ← GT12.onlyStd n do
       throwError "{n} が Lean 標準以外の公理に依存している"
   -- B: 3(a) の data 版だけが Boole.ax_* に依存する
@@ -658,10 +664,10 @@ run_cmd liftCoreM do
 #print axioms GT12.threshold_mem
 #print axioms GT12.blood_flip
 #print axioms GT12.blood_flip_exists
-#print axioms GT12.alpha_unique
-#print axioms GT12.alpha_not_determined
+#print axioms GT12.zeta_unique
+#print axioms GT12.zeta_not_determined
 -- 5 数値例
 #print axioms GT12.half_threshold
 #print axioms GT12.half_blood_mid
-#print axioms GT12.boole_half_alpha
+#print axioms GT12.boole_half_zeta
 #print axioms GT12.boole_half_invest
